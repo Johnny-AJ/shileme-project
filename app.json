@@ -1,8 +1,10 @@
 {
   "pages": [
     "pages/index/index",
-    "pages/find/find",
     "pages/cart/cart",
+    "pages/inetAddress/inetAddress",
+    "pages/shipping/shipping",
+    "pages/find/find",
     "pages/user/user"
   ],
   "window": {

@@ -1,0 +1,36 @@
+<!--pages/inetAddress/inetAddress.wxml-->
+
+<!-- 背景颜色 -->
+<view class="bgc">
+
+  <!-- 页面名称 -->
+  <view class="username">
+    <text>姓名：</text>
+    <input placeholder="收货人姓名"></input>
+  </view>
+
+  <view class="username">
+    <text>手机号：</text>
+    <input placeholder="收货人手机号"></input>
+  </view>
+
+  <view class="username">
+    <text>省/市/区</text>
+    <input placeholder="选择所在地区"></input>
+  </view>
+
+  <view class="username">
+    <text>收货地址:</text>
+    <input placeholder="详细地址，如街道，楼盘号等"></input>
+  </view>
+
+  <view class="inetAddress">
+    <radio></radio>
+    <text>设为默认地址</text>
+  </view>
+
+  <!-- 按钮 -->
+  <view class="button">
+    <text>保存</text>
+  </view>
+</view>

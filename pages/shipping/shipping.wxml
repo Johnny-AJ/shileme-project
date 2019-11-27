@@ -1,0 +1,122 @@
+<!--pages/shipping/shipping.wxml-->
+
+<!-- 背景有颜色 -->
+<view class="bgc">
+
+  <view class="address_box">
+
+    <view class="name_box p30">
+      <text>花礼晴</text>
+      <text>13923856789</text>
+    </view>
+
+    <view class="shipping_address p30">
+      广东省广州市天河区长湴工业园13号
+    </view>
+
+    <view class="address_nav p30">
+
+      <view class="address_radio">
+        <radio>默认地址</radio>
+      </view>
+
+      <view class="address_right">
+
+        <view class="address_bianji">
+          <view>
+            <image src="../../static/imgs/编辑.png"></image>
+            <text>编辑</text>
+          </view>
+        </view>
+
+        <view class="address_bianji">
+          <view>
+            <image src="../../static/imgs/删除.png"></image>
+            <text>删除</text>
+          </view>
+        </view>
+      </view>
+
+    </view>
+  </view>
+
+  <view class="address_box">
+
+    <view class="name_box p30">
+      <text>花礼晴</text>
+      <text>13923856789</text>
+    </view>
+
+    <view class="shipping_address p30">
+      广东省广州市天河区长湴工业园13号
+    </view>
+
+    <view class="address_nav p30">
+
+      <view class="address_radio">
+        <radio>默认地址</radio>
+      </view>
+
+      <view class="address_right">
+
+        <view class="address_bianji">
+          <view>
+            <image src="../../static/imgs/编辑.png"></image>
+            <text>编辑</text>
+          </view>
+        </view>
+
+        <view class="address_bianji">
+          <view>
+            <image src="../../static/imgs/删除.png"></image>
+            <text>删除</text>
+          </view>
+        </view>
+      </view>
+
+    </view>
+  </view>
+
+  <view class="address_box">
+
+    <view class="name_box p30">
+      <text>花礼晴</text>
+      <text>13923856789</text>
+    </view>
+
+    <view class="shipping_address p30">
+      广东省广州市天河区长湴工业园13号
+    </view>
+
+    <view class="address_nav p30">
+
+      <view class="address_radio">
+        <radio>默认地址</radio>
+      </view>
+
+      <view class="address_right">
+
+        <view class="address_bianji">
+          <view>
+            <image src="../../static/imgs/编辑.png"></image>
+            <text>编辑</text>
+          </view>
+        </view>
+
+        <view class="address_bianji">
+          <view>
+            <image src="../../static/imgs/删除.png"></image>
+            <text>删除</text>
+          </view>
+        </view>
+      </view>
+
+    </view>
+  </view>
+
+
+  <!-- 按钮 -->
+  <view class="button">
+    <text>新建地址</text>
+  </view>
+</view>

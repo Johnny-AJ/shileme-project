@@ -1,1 +1,200 @@
 /* pages/index/index.wxss */
+
+/* 搜索开始 */
+
+.search_box {
+  display: flex;
+  box-sizing: border-box;
+  padding: 0 30rpx;
+  align-items: center;
+}
+
+.search_box .search {
+  border-style: solid;
+  border-width: 2rpx;
+  border-color: #f84e67;
+  border-radius: 10rpx;
+  /* margin-left: 30rpx; */
+  overflow: hidden;
+  flex: 1;
+  display: flex;
+}
+
+.search_box .search .search_logo {
+  float: left;
+  /* padding: 14rpx 12rpx 14rpx 30rpx; */
+  padding: 14rpx 12rpx 14rpx 30rpx;
+  width: 40rpx;
+  height: 32rpx;
+}
+
+.search_box .search .search_logo image {
+  display: block;
+  width: 40rpx;
+  height: 32rpx;
+}
+
+.search_box .search input {
+  height: 60rpx;
+  width: 90%;
+  font-size: 29rpx;
+  margin-left: 42rpx;
+}
+
+.search_box .search_button {
+  width: 100rpx;
+  height: 60rpx;
+  margin-left: 10rpx;
+  /* padding: 0 30rpx 0 10rpx; */
+}
+
+.search_box .search_button image {
+  width: 100%;
+  height: 100%;
+}
+
+/* 搜索结束 */
+
+/* 轮播图开始 */
+
+.swiper_box {
+  height: 340rpx;
+  width: 100%;
+  padding-top: 30rpx;
+  display: flex;
+  justify-content: center;
+}
+
+.swiper_box swiper {
+  background-color: blue;
+  height: 100%;
+  width: 690rpx;
+  border-radius: 7rpx;
+}
+
+/* 轮播图结束 */
+
+/* 按钮开始 */
+
+.button_nav {
+  display: flex;
+}
+
+.button_nav navigator {
+  flex: 1;
+  padding: 20rpx;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+.button_nav navigator image {
+  height: 84rpx;
+  width: 84rpx;
+  margin-bottom: 21rpx;
+}
+
+.button_nav navigator .text {
+  font-size: 25rpx;
+  color: #444;
+}
+
+/* 按钮结束 */
+
+/* 2周年开始 */
+
+.Anniversary_box {
+  text-align: center;
+  margin-top: 9rpx;
+  width: 100%;
+}
+
+.Anniversary_box navigator image {
+  height: 384rpx;
+  width: 690rpx;
+}
+
+/* 2周年结束 */
+
+/* 超值拼团开始 */
+
+/* 背景颜色 */
+
+.bgc_color {
+  background-color: blueviolet;
+}
+
+.geigegao {
+  height: 20rpx;
+}
+
+.bargain_box {
+  width: 730rpx;
+  height: 374rpx;
+  border-radius: 5rpx;
+  background-color: #fff;
+  margin-left: 10rpx;
+}
+
+.bargain_box .bargain_top {
+  width: 100%;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.bargain_box .bargain_top .bargain_left {
+  font-size: 26rpx;
+  font-weight: 1000;
+  color: #666;
+  padding: 30rpx 0 30rpx 20rpx;
+}
+
+.bargain_box .bargain_top .bargain_right {
+  font-size: 26rpx;
+  /* font-weight: 1000; */
+  color: #666;
+}
+
+.bargain_box .bargain_top navigator image {
+  height: 30rpx;
+  width: 30rpx;
+  margin-left: 16rpx;
+}
+
+.bargain_box .bargain_top navigator {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 28rpx 20rpx 28rpx 0;
+  /* justify-content: space-between; */
+}
+
+.bargain_box .bargain_buttom {
+}
+
+.bargain_box .bargain_buttom navigator image {
+  height: 200rpx;
+  width: 200rpx;
+}
+
+/* 下 */
+
+.bargain_buttom {
+  /* border: 1px red solid; */
+  width: 100%;
+  height: 276rpx;
+  display: flex;
+  background: rgba(255, 255, 255, 1);
+  /* border-radius: 10px; */
+}
+
+.a {
+  flex: 1;
+  border: 1px red solid;
+  border-radius: 10px;
+  margin: 10rpx;
+}
+
+/* 超值拼团结束 */
