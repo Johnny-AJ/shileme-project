@@ -1,2 +1,141 @@
-<!--pages/user/user.wxml-->
-<text>pages/user/user.wxml</text>
+<!-- 个人中心 -->
+<view class="user">
+  <view class="username">
+    <view class="bg">
+      <image src="../../static/userimags/bg1.png"></image>
+    </view>
+    <view class="usercont">
+      <view class="img">
+        <image src="../../static/userimags/头像.png"></image>
+      </view>
+      <view class="text">
+        <text class="name">用户名1</text>
+        <text class="id">13923812345</text>
+
+      </view>
+    </view>
+  </view>
+  <view class="allorders">
+    <view class="oderhead">
+      <view class="ot">
+        <text class="oleft">全部订单</text>
+        <image src="../../static/userimags/矩形 34.png"></image>
+      </view>
+      <view class="ob"></view>
+    </view>
+    <view class="odercont">
+      <view class="cont">
+        <image src="../../static/userimags/待付款.png"></image>
+        <text>代付款</text>
+      </view>
+      <view class="cont">
+        <image src="../../static/userimags/待发货 (1).png"></image>
+        <text>待发货</text>
+      </view>
+      <view class="cont">
+        <image src="../../static/userimags/待收货 (3).png"></image>
+        <text>待收货</text>
+      </view>
+      <view class="cont">
+        <image src="../../static/userimags/待评价.png"></image>
+        <text>待评价</text>
+      </view>
+      <view class="cont">
+        <image src="../../static/userimags/退货_售后-我的.png"></image>
+        <text>退货/售后</text>
+      </view>
+
+
+    </view>
+
+  </view>
+  <view class="function m20">
+    <view class="content">
+      <image src="../../static/userimags/拼团.png"></image>
+      <text> 我的拼团</text>
+    </view>
+    <view class="content">
+      <image src="../../static/userimags/试用.png"></image>
+      <text> 我的试用</text>
+    </view>
+    <view class="content">
+      <image src="../../static/userimags/优惠券.png"></image>
+      <text> 优惠券</text>
+    </view>
+    <view class="content">
+      <image src="../../static/userimags/收藏夹.png"></image>
+      <text> 收藏夹</text>
+    </view>
+    <view class="content">
+      <image src="../../static/userimags/我的地址.png"></image>
+      <text> 我的地址</text>
+    </view>
+
+    <view class="content">
+      <image src="../../static/userimags/联系客服.png"></image>
+      <text> 联系客服</text>
+    </view>
+    <view class="content">
+      <image src="../../static/userimags/关于我们.png"></image>
+      <text> 关于我们</text>
+    </view>
+
+    <view class="content">
+      <image src="../../static/userimags/用户协议.png"></image>
+      <text> 用户协议</text>
+    </view>
+  </view>
+  <view class="likes">
+    <view class="ltittle dc">
+      <view></view>
+
+      <image src="../../static/userimags/形状 2.png"></image>
+      <text>猜你喜欢</text>
+
+      <view></view>
+
+    </view>
+    <view class="conts">
+      <view class="content">
+        <view class="cont">
+          <image src="../../static/userimags/待收货 (3).png"></image>
+          <view class="name">保湿急救 网红蓝药丸面.</view>
+          <view class="content_client">Dr.Jart 宛若新生保湿面膜.</view>
+          <view class="price">￥
+            <text class="nowprice">79 </text>￥
+            <text class="oldprice">160 </text>
+          </view>
+        </view>
+        <view class="cont">
+          <image src="../../static/userimags/待收货 (3).png"></image>
+          <view class="name">保湿急救 网红蓝药丸面.</view>
+          <view class="content_client">Dr.Jart 宛若新生保湿面膜.</view>
+          <view class="price">￥
+            <text class="nowprice">79 </text>￥
+            <text class="oldprice">160 </text>
+          </view>
+        </view>
+        <view class="cont">
+          <image src="../../static/userimags/待收货 (3).png"></image>
+          <view class="name">保湿急救 网红蓝药丸面.</view>
+          <view class="content_client">Dr.Jart 宛若新生保湿面膜.</view>
+          <view class="price">￥
+            <text class="nowprice">79 </text>￥
+            <text class="oldprice">160 </text>
+          </view>
+        </view>
+        <view class="cont">
+          <image src="../../static/userimags/待收货 (3).png"></image>
+          <view class="name">保湿急救 网红蓝药丸面.</view>
+          <view class="content_client">Dr.Jart 宛若新生保湿面膜.</view>
+          <view class="price">
+            <text class="nowprice">￥79 </text>
+            <text class="oldprice">￥160 </text>
+          </view>
+        </view>
+      </view>
+    </view>
+
+  </view>
+
+</view>

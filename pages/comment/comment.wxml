@@ -1,0 +1,84 @@
+<!--商品评论-->
+
+<view class="comment">
+  <view class="label">
+    <view class="lcont   {{ishow?'open':'close'}}">
+      <text class="{{ischecked?'checked':''}}" bindtap="ischecked">全部</text>
+      <text>很便宜</text>
+      <text>不错</text>
+      <text>包装挺好</text>
+      <text>不划算</text>
+      <text>保湿效果好</text>
+      <text>是正品</text>
+      <text>效果好</text>
+      <text>好用</text>
+    </view>
+    <view class="imgs">
+      <view class="isopen" bindtap="open">
+        <image src="../../static/imgs/矩形 19.png" class="{{ishow?'show1':'close1'}}"></image>
+        <image src="../../static/imgs/矩形 19 (2).png" class="{{ishow?'close1':'show1'}}"></image>
+      </view>
+
+    </view>
+  </view>
+  <view class="conts">
+    <view class="pj">
+      <view class="head">
+        <image src="../../static/imgs/组 22(1).png "></image>
+      </view>
+      <view class="pr">
+        <text class="name">李四</text>
+        <text class="time">2019-8-8</text>
+     <view class="text{{isok?'spread':''}}" >
+          商品很有保证，不错！
+          <text bindtap="spread" class="{{unfold.length<55?'s1':''}}"  >全文</text>
+        </view>
+
+
+      </view>
+    </view>
+    <view class="pj">
+      <view class="head">
+        <image src="../../static/imgs/组 22(1).png "></image>
+      </view>
+      <view class="pr">
+        <text class="name">李四</text>
+        <text class="time">2019-8-8</text>
+         <view class="text{{isok?'spread':''}}" >
+          商品很有保证，不错！
+          <text bindtap="spread" class="{{unfold.length<55?'s1':''}}"  >全文</text>
+        </view>
+        <view class="{{show2?'imgshow':'imghidden'}} ">
+          <image src="../../static/imgs/组 2.png"></image>
+          <image src="../../static/imgs/矩形 3.png"></image>
+        </view>
+
+      </view>
+
+    </view>
+    <view class="pj">
+      <view class="head">
+        <image src="../../static/imgs/组 22(1).png "></image>
+      </view>
+      <view class="pr">
+        <text class="name">李四</text>
+        <text class="time">2019-8-8</text>
+        <view class="text{{isok?'spread':''}}" >
+          商品很有保证，不错！商品很有保证，不错！商品很有保证，不错！商品很有保证，不错！商品很有保证，不错！商品很有
+          <text bindtap="spread" class="{{unfold.length<55?'s1':''}}"  >全文</text>
+        </view>
+        <view class="{{show2?'imgshow':'imghidden'}} ">
+          <image src="../../static/imgs/组 2.png"></image>
+          <image src="../../static/imgs/矩形 3.png"></image>
+          <image src="../../static/imgs/矩形 3.png"></image>
+          <image src="../../static/imgs/矩形 3.png"></image>
+        </view>
+
+      </view>
+
+    </view>
+  </view>
+
+
+
+</view>
