@@ -1,5 +1,5 @@
 /**app.wxss**/
-
+@import './weui.wxss';
 .container {
   height: 100%;
   display: flex;
@@ -19,3 +19,4 @@ page, view, swiper, swiper-item, navigator, image, button, input, text {
 image {
   width: 100%;
 }
+

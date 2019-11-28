@@ -1,11 +1,21 @@
 {
   "pages": [
+   
+    "pages/order/order",
+    "pages/user/user",
+    "pages/search/search",
     "pages/index/index",
     "pages/cart/cart",
     "pages/inetAddress/inetAddress",
     "pages/shipping/shipping",
     "pages/find/find",
-    "pages/user/user"
+    "pages/user/user",
+    "pages/comment/comment",
+    "pages/details/details",
+    "pages/scango/scango",
+   
+    "pages/cart/cart",
+    "pages/find/find"
   ],
   "window": {
     "backgroundTextStyle": "light",
@@ -21,7 +31,7 @@
         "pagePath": "pages/index/index",
         "text": "首页",
         "iconPath": "static/imgs/矢量智能对象.png",
-        "selectedIconPath": "static/imgs/矢量智能对象@2x.png"
+        "selectedIconPath": "static/imgs/矢量智能对象.png"
       },
       {
         "pagePath": "pages/find/find",
@@ -33,7 +43,7 @@
         "pagePath": "pages/cart/cart",
         "text": "购物车",
         "iconPath": "static/imgs/购物车.png",
-        "selectedIconPath": "static/imgs/购物车@2x.png"
+        "selectedIconPath": "static/imgs/购物车2.png"
       },
       {
         "pagePath": "pages/user/user",
