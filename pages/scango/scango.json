@@ -2,11 +2,11 @@
   "usingComponents": {
     "mp-halfScreenDialog": "../../components/half-screen-dialog/half-screen-dialog"
   },
-  "window": {
+
     "navigationBarBackgroundColor": "#ffffff",
     "navigationBarTextStyle": "black",
     "backgroundColor": "#eeeeee",
     "backgroundTextStyle": "light"
     
-  }
+
 }

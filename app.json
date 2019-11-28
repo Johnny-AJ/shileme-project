@@ -5,17 +5,16 @@
     "pages/user/user",
     "pages/search/search",
     "pages/index/index",
-    "pages/cart/cart",
     "pages/inetAddress/inetAddress",
     "pages/shipping/shipping",
     "pages/find/find",
-    "pages/user/user",
+  
     "pages/comment/comment",
     "pages/details/details",
     "pages/scango/scango",
    
-    "pages/cart/cart",
-    "pages/find/find"
+    "pages/cart/cart"
+ 
   ],
   "window": {
     "backgroundTextStyle": "light",
@@ -37,7 +36,7 @@
         "pagePath": "pages/find/find",
         "text": "发现",
         "iconPath": "static/imgs/find21.png",
-        "selectedIconPath": "static/imgs/组 21@2x.png"
+        "selectedIconPath": "static/imgs/find21.png"
       },
       {
         "pagePath": "pages/cart/cart",
