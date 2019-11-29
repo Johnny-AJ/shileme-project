@@ -1,18 +1,20 @@
 {
   "pages": [
-    "pages/template/template",
-    "pages/indent/indent",
+    "pages/scango/scango",
     "pages/index/index",
+    "pages/indent/indent",
+    "pages/user/user", 
+    "pages/cart/cart",  
     "pages/order/order",
+    "pages/template/template",
     "pages/search/search",
-    "pages/user/user",
     "pages/inetAddress/inetAddress",
     "pages/shipping/shipping",
     "pages/find/find",
     "pages/comment/comment",
-    "pages/details/details",
-    "pages/scango/scango",
-    "pages/cart/cart"
+    "pages/details/details"
+    
+  
   ],
   "window": {
     "backgroundTextStyle": "light",

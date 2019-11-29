@@ -12,7 +12,14 @@ Page({
       current: detail.key
     });
   },
+  goto(e){
+    console.log(e)
+    wx.reLaunch({
 
+      url: '/pages/scango/scango'
+
+    })
+  },
   /**
    * 生命周期函数--监听页面加载
    */
