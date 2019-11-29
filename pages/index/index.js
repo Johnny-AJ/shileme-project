@@ -1,13 +1,18 @@
-
 // 引入测试
 const appconfig = require('../../app.config.js')
 // 路由封装
-const http = require('../../server/http');
+const http = require('../../server/http.js');
 
+// 引入封装请求
 import {
   auth_API,
   updateUserInfo_API
-} from '../../server/login/index'
+} from '../../server/login/index.js'
+
+// 引入banner图
+import {
+  banners_API
+} from '../../server/banner/index.js'
 
 
 // pages/index/index.js
@@ -18,59 +23,54 @@ Page({
    */
   data: {
     // 轮播图数组:
-    SwiperList: [
-      'http://img02.tooopen.com/images/20150928/tooopen_sy_143912755726.jpg',
-      'http://img06.tooopen.com/images/20160818/tooopen_sy_175866434296.jpg',
-      'http://img06.tooopen.com/images/20160818/tooopen_sy_175833047715.jpg'
-
-    ]
+    SwiperList: []
   },
 
   /**
    * 生命周期函数--监听页面加载
    */
-  onLoad: function (options) {
+  onLoad: function(options) {
+
     // 微信登录
     wx.login({
-      success: function (res) {
-        console.log(appconfig.apiUrl, 123)
+      success: function(res) {
         if (res.code) {
           // 发送请求
           wx.request({
             // 微信登录
-            url: appconfig.apiUrl + '/api/wechat/auth',
+            // url: appconfig.apiUrl + '/api/wechat/auth',
             data: {
               code: res.code
             },
             method: "get",
-            success: function (res) {
+            success: function(res) {
               if (res.data.code == 0) {
                 var token = res.data.msg;
                 // 获取用户信息
                 wx.getUserInfo({
-                  success: function (res) {
-                    // console.log(res, 456)
-                    var userInfo = res.userInfo //用户信息
-                    wx.request({
-                      // 用户信息
-                      url: 'http://192.168.2.119:9095/api/wechat/updateUserInfo',
-                      method: "post",
-                      data: res.userInfo,
-                      header: {
-                        'token': token, //请求头携带参数
-                        'content-type': 'application/json',
-                      },
-                    })
-                  }
-                }),
+                    success: function(res) {
+                      // console.log(res, 456)
+                      var userInfo = res.userInfo //用户信息
+                      wx.request({
+                        // 用户信息
+                        // url: appconfig.apiUrl + '/api/wechat/updateUserInfo',
+                        method: "post",
+                        data: res.userInfo,
+                        header: {
+                          'token': token, //请求头携带参数
+                          'content-type': 'application/json',
+                        },
+                      })
+                    }
+                  }),
                   wx.request({
                     // 支付地址
-                    url: 'http://192.168.2.119:9095/api/wx/pay/weixinPay',
+                    // url: 'http://192.168.2.119:9095/api/wx/pay/weixinPay',
                     method: "get",
                     header: {
                       'token': token, //请求头携带参数
                     },
-                    success: function (res) {
+                    success: function(res) {
                       // console.log(res)
                       // 微信支付
                       wx.requestPayment({
@@ -88,57 +88,15 @@ Page({
         }
       }
     })
-  },
-  // 测试按钮
-  handlegetuserinfo(e) {
-    console.log(e)
-  },
-  /**
-   * 生命周期函数--监听页面初次渲染完成
-   */
-  onReady: function () {
 
   },
-
-  /**
-   * 生命周期函数--监听页面显示
-   */
-  onShow: function () {
-
+  // 路劲封装
+  handurl: function(e) {
+    // 路由封装
+    wx.navigateTo({
+      url: e.currentTarget.dataset.url,
+    })
   },
-
-  /**
-   * 生命周期函数--监听页面隐藏
-   */
-  onHide: function () {
-
-  },
-
-  /**
-   * 生命周期函数--监听页面卸载
-   */
-  onUnload: function () {
-
-  },
-
-  /**
-   * 页面相关事件处理函数--监听用户下拉动作
-   */
-  onPullDownRefresh: function () {
-
-  },
-
-  /**
-   * 页面上拉触底事件的处理函数
-   */
-  onReachBottom: function () {
-
-  },
-
-  /**
-   * 用户点击右上角分享
-   */
-  onShareAppMessage: function () {
-
-  }
+  // 轮播图
+  
 })

@@ -1,5 +1,5 @@
 <!-- 个人中心 -->
-<view class="user">
+<view class="user" bindgetuserinfo="handlegetuserinfo">
   <view class="username">
     <view class="bg">
       <image src="../../static/userimags/bg1.png"></image>
@@ -11,7 +11,6 @@
       <view class="text">
         <text class="name">用户名1</text>
         <text class="id">13923812345</text>
-
       </view>
     </view>
   </view>
@@ -97,7 +96,8 @@
     </view>
     <view class="conts">
       <view class="content">
-        <view class="cont">
+
+        <view class="cont" bindtap="handurl" data-url="/pages/scango/scango">
           <image src="../../static/userimags/待收货 (3).png"></image>
           <view class="name">保湿急救 网红蓝药丸面.</view>
           <view class="content_client">Dr.Jart 宛若新生保湿面膜.</view>
@@ -106,7 +106,8 @@
             <text class="oldprice">160 </text>
           </view>
         </view>
-        <view class="cont">
+
+        <view class="cont" bindtap="handurl" data-url="/pages/scango/scango">
           <image src="../../static/userimags/待收货 (3).png"></image>
           <view class="name">保湿急救 网红蓝药丸面.</view>
           <view class="content_client">Dr.Jart 宛若新生保湿面膜.</view>
@@ -115,7 +116,8 @@
             <text class="oldprice">160 </text>
           </view>
         </view>
-        <view class="cont">
+
+        <view class="cont" bindtap="handurl" data-url="/pages/scango/scango">
           <image src="../../static/userimags/待收货 (3).png"></image>
           <view class="name">保湿急救 网红蓝药丸面.</view>
           <view class="content_client">Dr.Jart 宛若新生保湿面膜.</view>
@@ -124,7 +126,8 @@
             <text class="oldprice">160 </text>
           </view>
         </view>
-        <view class="cont">
+
+        <view class="cont" bindtap="handurl" data-url="/pages/scango/scango">
           <image src="../../static/userimags/待收货 (3).png"></image>
           <view class="name">保湿急救 网红蓝药丸面.</view>
           <view class="content_client">Dr.Jart 宛若新生保湿面膜.</view>
@@ -133,6 +136,7 @@
             <text class="oldprice">￥160 </text>
           </view>
         </view>
+
       </view>
     </view>
 

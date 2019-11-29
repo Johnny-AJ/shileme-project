@@ -1,0 +1,69 @@
+/* pages/Spell_group_order/Spell_group_order.wxss */
+
+.big_box {
+  width: 750rpx;
+  height: 202rpx;
+  box-sizing: border-box;
+  padding-bottom: 50rpx;
+  border-top: 4rpx solid #f5f5f5;
+}
+
+.big_box .flex_box {
+  display: flex;
+  height: 100%;
+  width: 100%;
+  align-items: center;
+}
+
+.big_box .top_box {
+  width: 668rpx;
+  height: 144rpx;
+  box-sizing: border-box;
+  margin: 30rpx;
+}
+
+.top_box .t1 {
+  font-size: 30rpx;
+  font-family: PingFang SC;
+  color: rgba(34, 34, 34, 1);
+}
+
+.top_box .t1 text {
+  width: 70rpx;
+  height: 40rpx;
+  background: rgba(240, 43, 80, 1);
+  border-radius: 5rpx;
+  color: #fff;
+  font-size: 23rpx;
+}
+
+.top_box .t2 {
+  font-size: 30rpx;
+  font-family: PingFang SC;
+  color: rgba(240, 43, 80, 1);
+}
+
+.big_box image {
+  height: 35rpx;
+  width: 22rpx;
+  margin-right: 30rpx;
+}
+
+.flex1_box .imgs1 {
+  width: 100%;
+  height: 4rpx;
+  margin-bottom: 32rpx;
+}
+
+/* ------------------------------ */
+
+.body_box {
+  width: 100%;
+}
+
+.body_box text {
+  font-size: 30rpx;
+  font-family: PingFang SC;
+  font-weight: 400;
+  color: rgba(34, 34, 34, 1);
+}

@@ -9,16 +9,16 @@ const http = require('./../http');
  * 首页轮播图--banner图
  */
 const banners_API = (
-    data,
-    success,
+  data,
+  success,
 ) => {
-    return http.GET({
-        url: appconfig.apiUrl + '/api/index/banner/banners',
-        success,
-        fail: (res) => { }
-    })
+  return http.GET({
+    url: appconfig.apiUrl + '/api/index/banner/banners',
+    success,
+    fail: (res) => {}
+  })
 }
 
 export {
-    banners_API   //banner图-轮播图
+  banners_API //banner图-轮播图
 }

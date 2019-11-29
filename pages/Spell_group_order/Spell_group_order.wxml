@@ -1,0 +1,32 @@
+<!--pages/Spell_group_order/Spell_group_order.wxml-->
+<view class="bgc">
+
+  <!-- 头部部分 -->
+  <view class="big_box">
+    <view class="flex1_box">
+      <view class="flex_box">
+        <view class="top_box">
+          <view class="t1">花礼晴 13923856789
+            <text>默认</text>
+          </view>
+          <view class="t1">广东省广州市天河区长湴工业园13栋</view>
+          <view class="t2">附近门店自取</view>
+        </view>
+        <image src="../../static/cart/矩形 16.png"></image>
+      </view>
+      <image src="../../static/imgs/分割线.png" class="imgs1"></image>
+    </view>
+  </view>
+  <!-- 头部部分 -->
+
+  <!-- 主体部分 -->
+  <view class="body_box">
+    <text>商品信息</text>
+  </view>
+  <!-- 主体部分 -->
+
+
+  <!-- 下半部分 -->
+  <!-- 下半部分 -->
+
+</view>

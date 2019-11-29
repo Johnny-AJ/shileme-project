@@ -1,16 +1,17 @@
 {
   "pages": [
-    "pages/index/index",
-    "pages/order/order",
-    "pages/search/search",
-    "pages/cart/cart",
-    "pages/inetAddress/inetAddress",
-    "pages/shipping/shipping",
-    "pages/find/find",
     "pages/user/user",
-    "pages/comment/comment",
+    "pages/Spell_group_order/Spell_group_order",
+    "pages/order/order",
+    "pages/scango/scango",
     "pages/details/details",
-    "pages/scango/scango"
+    "pages/shipping/shipping",
+    "pages/comment/comment",
+    "pages/inetAddress/inetAddress",
+    "pages/index/index",
+    "pages/find/find",
+    "pages/search/search",
+    "pages/cart/cart"
   ],
   "window": {
     "backgroundTextStyle": "light",

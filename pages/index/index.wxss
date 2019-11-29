@@ -36,7 +36,7 @@
 
 .search_box .search input {
   height: 60rpx;
-  width: 90%;
+  width: 100%;
   font-size: 29rpx;
   margin-left: 42rpx;
 }
@@ -80,24 +80,19 @@
   display: flex;
 }
 
-.button_nav navigator {
+.button_nav .navigator {
   flex: 1;
-  padding: 20rpx;
   display: flex;
-  flex-direction: column;
-  justify-content: center;
   align-items: center;
+  justify-content: center;
+  flex-direction: column;
+  padding: 20rpx;
 }
 
-.button_nav navigator image {
-  height: 84rpx;
+.button_nav .navigator image {
   width: 84rpx;
+  height: 84rpx;
   margin-bottom: 21rpx;
-}
-
-.button_nav navigator .text {
-  font-size: 25rpx;
-  color: #444;
 }
 
 /* 按钮结束 */
@@ -110,7 +105,7 @@
   width: 100%;
 }
 
-.Anniversary_box navigator image {
+.Anniversary_box .navigator image {
   height: 384rpx;
   width: 690rpx;
 }
