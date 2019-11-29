@@ -1,14 +1,23 @@
-<!-- 搜索 -->
-<view class="search_box">
-  <view class="search">
-    <view class="search_logo">
-      <image mode="widthFix" src="../../static/imgs/搜索.png"></image>
+<!-- 首页 -->
+<view class="index">
+
+  <!-- 搜索 -->
+  <view class="search_box">
+    <view class="search">
+      <view class="search_logo">
+        <image mode="widthFix" src="../../static/imgs/搜索.png"></image>
+      </view>
+      <input placeholder="搜索" bindtap="handurl" data-url="/pages/search/search"></input>
     </view>
-    <input placeholder="搜索" bindtap="handurl" data-url="/pages/search/search"></input>
+    <view class="search_button">
+      <image src="../../static/imgs/矩形 16 拷贝 5.png"></image>
+    </view>
+
   </view>
-  <view class="search_button">
-    <image mode="widthFix" src="../../static/imgs/矩形 16 拷贝 5.png"></image>
-  </view>
+  <!-- 搜索 -->
+
+  <!-- 轮播图 -->
+  
 </view>
 <!-- 搜索 -->
 
@@ -63,62 +72,206 @@
 <view class="bgc_color">
   <view class="geigegao">
   </view>
+  <!-- 2周年庆 -->
 
-  <!-- 大盒子 -->
-  <view class="bargain_box">
-    <!-- 上 -->
-    <view class="bargain_top">
-      <!-- 左边 -->
-      <view class="bargain_left">超值拼团</view>
-      <!-- 右边 -->
-      <navigator class="bargain_right"> 好 友 正 在 拼
-        <image src="../../static/imgs/箭头.png"></image>
-      </navigator>
+  <!-- 超值拼团 -->
+
+  <!-- 背景图片颜色 -->
+  <view class="conts">
+    <view class="bgc_color">
+      <!-- 大盒子 -->
+      <view class="bargain_box">
+        <!-- 上 -->
+        <view class="bargain_top">
+          <!-- 左边 -->
+          <view class="bargain_left">超值拼团</view>
+          <!-- 右边 -->
+          <view class="bargain_right"> 好 友 正 在 拼
+            <image src="../../static/imgs/箭头.png"></image>
+          </view>
+        </view>
+        <!-- 下 -->
+        <view class="bargain_buttom">
+          <!-- <view class="a">
+          </view>
+          <view class="a">
+          </view>
+          <view class="a">
+          </view>
+          <view class="a">
+          </view> -->
+
+          <swiper indicator-dots="{{indicatorDots}}" autoplay="{{autoplay}}" interval="{{interval}}" duration="{{duration}}" previous-margin="{{previousMargin}}" next-margin="{{nextMargin}}" circular="{{circular}}" bindchange="swiperBindchange">
+            <block wx:for="{{imgUrls}}">
+              <swiper-item>
+                <image src="{{item}}" class="slide-image {{currentSwiperIndex == index ? 'zoom-in' : 'zoom-out'}}" />
+              </swiper-item>
+            </block>
+          </swiper>
+
+
+        </view>
+      </view>
     </view>
-    <!-- 下 -->
-    <view class="bargain_buttom">
-      <view class="a">
+    <!-- 超值拼团 -->
+
+    <!-- 背景图片颜色 -->
+    <view class="bgc_color">
+      <!-- 大盒子 -->
+      <view class="bargain_box">
+        <!-- 上 -->
+        <view class="bargain_top">
+          <!-- 左边 -->
+          <view class="bargain_left">
+            <text>限 时 购</text>
+            <view class="time">
+              <text>12</text>:
+              <text>02</text>:
+              <text>00</text>
+
+            </view>
+          </view>
+          <!-- 右边 -->
+          <view class="bargain_right"> 更 多 场 次
+            <image src="../../static/imgs/箭头.png"></image>
+          </view>
+        </view>
+        <!-- 下 -->
+        <view class="bargain_buttom">
+          <view class="a">
+          </view>
+          <view class="a">
+          </view>
+          <view class="a">
+          </view>
+          <view class="a">
+          </view>
+        </view>
       </view>
-      <view class="a">
+
+
+    </view>
+    <view class="hot">
+      <view class="hl .p21">
+        <view class="tittle">
+          <view class="imgage">
+            <image src="../../static/imgs/bb.png"></image>
+          </view>
+          <text>剁手必看指南</text>
+        </view>
+        <view class="imgs">
+          <view>
+            <!-- <image src="../../static/imgs/矩形 16 拷贝 5.png"></image> -->
+          </view>
+          <view>
+            <!-- <image src="../../static/imgs/矩形 16 拷贝 5.png"></image> -->
+          </view>
+        </view>
       </view>
-      <view class="a">
-      </view>
-      <view class="a">
+      <view class="hr .p21">
+        <view class="tittle">
+          <image src="../../static/imgs/aaa.png"></image>
+          <text>什么值得买</text>
+        </view>
+        <view class="imgs">
+          <view>
+            <!-- <image src="../../static/imgs/矩形 16 拷贝 5.png"></image> -->
+          </view>
+          <view>
+            <!-- <image src="../../static/imgs/矩形 16 拷贝 5.png"></image> -->
+          </view>
+        </view>
       </view>
     </view>
+    <view class="likes">
+      <view class="block">
+        <image src="../../static/imgs/猜你喜欢.png"></image>
+        <text class="color">猜你喜欢</text>
+
+        <view class="i"></view>
+      </view>
+      <view class="block">
+        <image src="../../static/imgs/美妆.png"></image>
+        <text>美妆护肤</text>
+        <view class="i"></view>
+      </view>
+      <view class="block">
+        <image src="../../static/imgs/鞋包(2).png"></image>
+        <text>鞋包</text>
+        <view class="i"></view>
+      </view>
+      <view class="block">
+        <image src="../../static/imgs/男装.png"></image>
+        <text>男装</text>
+        <view class="ii"></view>
+      </view>
+      <view class="block">
+        <image src="../../static/imgs/女装(1).png"></image>
+        <text>女装</text>
+        <view class="i"></view>
+
+      </view>
+
+
+    </view>
+    <view class="contens">
+      <view class="content">
+        <view class="cont">
+          <image src="../../static/cart/组 26.png"></image>
+          <view class="name pl20">保湿急救 网红蓝药丸面.</view>
+          <view class="content_client pl20">Dr.Jart 宛若新生保湿面膜.</view>
+          <view class="price pl20">￥
+            <text class="nowprice">79 </text>
+
+            <text class="oldprice">  ￥160</text>
+
+          </view>
+        </view>
+
+        <view class="cont">
+          <image src="../../static/cart/组 26.png"></image>
+          <view class="name pl20">保湿急救 网红蓝药丸面.</view>
+          <view class="content_client pl20">Dr.Jart 宛若新生保湿面膜.</view>
+          <view class="price pl20">￥
+            <text class="nowprice">79 </text>
+
+            <text class="oldprice">  ￥160</text>
+
+          </view>
+        </view>
+
+        <view class="cont">
+          <image src="../../static/cart/组 26.png"></image>
+          <view class="name pl20">保湿急救 网红蓝药丸面.</view>
+          <view class="content_client pl20">Dr.Jart 宛若新生保湿面膜.</view>
+          <view class="price pl20">￥
+            <text class="nowprice">79 </text>
+
+            <text class="oldprice">  ￥160</text>
+
+          </view>
+        </view>
+
+        <view class="cont">
+          <image src="../../static/cart/组 26.png"></image>
+          <view class="name pl20">保湿急救 网红蓝药丸面.</view>
+          <view class="content_client pl20">Dr.Jart 宛若新生保湿面膜.</view>
+          <view class="price pl20">￥
+            <text class="nowprice">79 </text>
+
+            <text class="oldprice">  ￥160</text>
+
+          </view>
+        </view>
+
+
+
+
+
+      </view>
+    </view>
+
+
   </view>
+
 </view>
-<!-- 超值拼团 -->
-
-<!-- 背景图片颜色 -->
-<view class="bgc_color">
-  <view class="geigegao">
-  </view>
-
-  <!-- 大盒子 -->
-  <view class="bargain_box">
-    <!-- 上 -->
-    <view class="bargain_top">
-      <!-- 左边 -->
-      <view class="bargain_left">限 时 购</view>
-      <!-- 右边 -->
-      <navigator class="bargain_right"> 更 多 场 次
-        <image src="../../static/imgs/箭头.png"></image>
-      </navigator>
-    </view>
-    <!-- 下 -->
-    <view class="bargain_buttom">
-      <view class="a">
-      </view>
-      <view class="a">
-      </view>
-      <view class="a">
-      </view>
-      <view class="a">
-      </view>
-    </view>
-  </view>
-</view>
-
-<!-- 测试 -->
-<button open-type="getUserInfo" bindgetuserinfo="handlegetuserinfo">获取用户信息</button>

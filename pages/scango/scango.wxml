@@ -86,6 +86,23 @@
         <view>晒图(225)</view>
       </view>
       <view class="tbottom">
+        <view class="tblog">
+         <view class="pl">
+          <view class="head">
+            <image src="../../static/scango/椭圆 4.png"></image>
+          </view>
+          <view class="cont">
+            <text class="name">匿名</text>
+            <text class="time">2019-9-6</text>
+            <view class="textcont">
+              商品很有保证，不错！
+            </view>
+          </view>
+          <view class="imsg">
+            <image src="../../static/scango/椭圆 4.png"></image>
+            <text>2张</text>
+          </view>
+        </view>
         <view class="pl">
           <view class="head">
             <image src="../../static/scango/椭圆 4.png"></image>
@@ -117,6 +134,40 @@
             <image src="../../static/scango/椭圆 4.png"></image>
             <text>2张</text>
           </view>
+        </view>
+        <view class="pl">
+          <view class="head">
+            <image src="../../static/scango/椭圆 4.png"></image>
+          </view>
+          <view class="cont">
+            <text class="name">匿名</text>
+            <text class="time">2019-9-6</text>
+            <view class="textcont">
+              商品很有保证，不错！
+            </view>
+          </view>
+          <view class="imsg">
+            <image src="../../static/scango/椭圆 4.png"></image>
+            <text>2张</text>
+          </view>
+        </view>
+        <view class="pl">
+          <view class="head">
+            <image src="../../static/scango/椭圆 4.png"></image>
+          </view>
+          <view class="cont">
+            <text class="name">匿名</text>
+            <text class="time">2019-9-6</text>
+            <view class="textcont">
+              商品很有保证，不错！
+            </view>
+          </view>
+          <view class="imsg">
+            <image src="../../static/scango/椭圆 4.png"></image>
+            <text>2张</text>
+          </view>
+        </view>
+
         </view>
       </view>
     </view>
@@ -158,7 +209,7 @@
     </view>
   </view>
   <view class="buy">立即购买</view>
-   <!-- 领劵弹出层 -->
+  <!-- 领劵弹出层 -->
   <view class="zan-dialog {{ showDialog ? 'zan-dialog--show' : '' }}">
     <!-- <view class="zan-dialog  zan-dialog--show"> -->
     <view class="zan-dialog__mask" />
@@ -215,8 +266,8 @@
       </view>
     </view>
   </view>
-   <!-- 选择弹出层 -->
-    <view class="popup {{ showDialog1 ? 'show1' : '' }}">
+  <!-- 选择弹出层 -->
+  <view class="popup {{ showDialog1 ? 'show1' : '' }}">
 
     <view class="zan-dialog__mask" bindtap="toggleDialog1" />
     <view class="zan-dialog__container">
@@ -240,18 +291,18 @@
             <text>绿色</text>
 
           </view>
-   
+
 
         </view>
         <view class="spec ">
-           <view class="thead">规格</view>
+          <view class="thead">规格</view>
           <view class="cont">
             <text class="checkout">5片/盒</text>
             <text>10片/盒</text>
           </view>
         </view>
         <view class="num">
-      
+
           <text>数量</text>
           <view class="totalizer">
             <image src="../../static/scango/组 3.png" class="numimgs"></image>
