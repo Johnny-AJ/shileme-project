@@ -1,7 +1,8 @@
 {
   "pages": [
+        "pages/index/index",
     "pages/scango/scango",
-    "pages/index/index",
+
     "pages/cart/cart",
     "pages/indent/indent",
     "pages/user/user",

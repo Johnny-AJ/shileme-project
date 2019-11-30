@@ -179,7 +179,7 @@
       <text>商品信息</text>
       <view></view>
     </view>
-    <view class="imgs">
+    <view class="imgs" wx:for="{{shangping_imgs}}">
       <image src="../../static/scango/矩形 16 拷贝.png"></image>
     </view>
     <view class="message">

@@ -9,11 +9,6 @@ import {
   updateUserInfo_API
 } from '../../server/login/index.js'
 
-// 引入banner图
-import {
-  banners_API
-} from '../../server/banner/index.js'
-
 
 // pages/index/index.js
 Page({
@@ -23,12 +18,10 @@ Page({
    */
   data: {
     // 轮播图数组:
-    SwiperList: [
-      'http://img02.tooopen.com/images/20150928/tooopen_sy_143912755726.jpg',
-      'http://img06.tooopen.com/images/20160818/tooopen_sy_175866434296.jpg',
-      'http://img06.tooopen.com/images/20160818/tooopen_sy_175833047715.jpg'
+    swiperList: [],
+  
 
-    ],
+  
     background: ['demo-text-1', 'demo-text-2', 'demo-text-3', 'demo-text-4'],
     indicatorDots: false, //是否显示面板指示点
     autoplay: true, //是否自动播放
@@ -44,6 +37,8 @@ Page({
    * 生命周期函数--监听页面加载
    */
   onLoad: function(options) {
+    // 轮播图
+    this.setSwiperData()
 
     // 微信登录
     wx.login({
@@ -54,6 +49,7 @@ Page({
             url: appconfig.apiUrl + '/api/wechat/auth',
             
             // 微信登录
+            url: 'http://192.168.2.98:9095//api/wechat/auth',
             data: {
               code: res.code
             },
@@ -68,7 +64,7 @@ Page({
                       var userInfo = res.userInfo //用户信息
                       wx.request({
                         // 用户信息
-                        // url: appconfig.apiUrl + '/api/wechat/updateUserInfo',
+                        url: 'http://192.168.2.98:9095/api/wechat/updateUserInfo',
                         method: "post",
                         data: res.userInfo,
                         header: {
@@ -113,5 +109,18 @@ Page({
     })
   },
   // 轮播图
-  
+  setSwiperData() {
+    wx.request({
+      url: 'http://192.168.2.98:9095/api/index/banner/banners',
+      success: (res) => {
+        this.setData({
+          swiperList: res.data.data
+        })
+      }
+    })
+  },
+  //按钮测试
+  handlegetuserinfo(e) {
+    console.log(e)
+  }
 })
