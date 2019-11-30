@@ -9,11 +9,6 @@ import {
   updateUserInfo_API
 } from '../../server/login/index.js'
 
-// 引入banner图
-import {
-  banners_API
-} from '../../server/banner/index.js'
-
 
 // pages/index/index.js
 Page({
@@ -23,13 +18,15 @@ Page({
    */
   data: {
     // 轮播图数组:
-    SwiperList: []
+    swiperList: []
   },
 
   /**
    * 生命周期函数--监听页面加载
    */
   onLoad: function(options) {
+    // 轮播图
+    this.setSwiperData()
 
     // 微信登录
     wx.login({
@@ -38,7 +35,7 @@ Page({
           // 发送请求
           wx.request({
             // 微信登录
-            // url: appconfig.apiUrl + '/api/wechat/auth',
+            url: 'http://192.168.2.98:9095//api/wechat/auth',
             data: {
               code: res.code
             },
@@ -53,7 +50,7 @@ Page({
                       var userInfo = res.userInfo //用户信息
                       wx.request({
                         // 用户信息
-                        // url: appconfig.apiUrl + '/api/wechat/updateUserInfo',
+                        url: 'http://192.168.2.98:9095/api/wechat/updateUserInfo',
                         method: "post",
                         data: res.userInfo,
                         header: {
@@ -98,5 +95,18 @@ Page({
     })
   },
   // 轮播图
-  
+  setSwiperData() {
+    wx.request({
+      url: 'http://192.168.2.98:9095/api/index/banner/banners',
+      success: (res) => {
+        this.setData({
+          swiperList: res.data.data
+        })
+      }
+    })
+  },
+  //按钮测试
+  handlegetuserinfo(e) {
+    console.log(e)
+  }
 })
