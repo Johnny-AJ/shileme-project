@@ -1,13 +1,10 @@
 {
   "pages": [
-     "pages/cart/cart",
-      
-    "pages/index/index",
     "pages/scango/scango",
-    
+    "pages/index/index",
+    "pages/cart/cart",
     "pages/indent/indent",
-    "pages/user/user", 
- 
+    "pages/user/user",
     "pages/order/order",
     "pages/template/template",
     "pages/search/search",
@@ -16,8 +13,6 @@
     "pages/find/find",
     "pages/comment/comment",
     "pages/details/details"
-    
-  
   ],
   "window": {
     "backgroundTextStyle": "light",
@@ -32,14 +27,14 @@
       {
         "pagePath": "pages/index/index",
         "text": "首页",
-        "iconPath": "static/imgs/矢量智能对象.png",
+        "iconPath": "static/imgs/start.png",
         "selectedIconPath": "static/imgs/矢量智能对象.png"
       },
       {
         "pagePath": "pages/find/find",
         "text": "发现",
         "iconPath": "static/imgs/find21.png",
-        "selectedIconPath": "static/imgs/find21.png"
+        "selectedIconPath": "static/imgs/组 21@2x.png"
       },
       {
         "pagePath": "pages/cart/cart",
@@ -51,7 +46,7 @@
         "pagePath": "pages/user/user",
         "text": "个人中心",
         "iconPath": "static/imgs/个人中心.png",
-        "selectedIconPath": "static/imgs/个人中心.png"
+        "selectedIconPath": "static/imgs/个人中心@2x（1）.png"
       }
     ]
   },

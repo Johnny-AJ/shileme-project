@@ -87,37 +87,53 @@
 .button_nav {
   display: flex;
   background: #fff;
+  box-sizing: border-box;
+  padding: 0 30rpx;
 }
 
-.button_nav view {
-  flex: 1;
+.button_nav .navigator {
+  height: 180rpx;
+  width: 172.5rpx;
   display: flex;
   align-items: center;
   justify-content: center;
-  flex-direction: column;
-  padding: 20rpx;
+  flex-wrap: wrap;
+  box-sizing: border-box;
+  padding-top: 20rpx;
+  padding-bottom: 10rpx;
+}
+
+.button_nav .navigator  .text {
+  font-size: 26rpx;
+  width: 100%;
+  font-family: PingFang SC;
+  font-weight: 400;
+  color: rgba(68, 68, 68, 1);
+  text-align: center;
 }
 
 .button_nav view image {
   width: 84rpx;
   height: 84rpx;
-  margin-bottom: 21rpx;
 }
 
+.swiper-item 
 /* 按钮结束 */
 
 /* 2周年开始 */
 
-.Anniversary_box {
-  text-align: center;
-  padding-top: 9rpx;
-  width: 100%;
-  background: #fff;
+
+
+.content-box view {
+ width: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
 }
 
-.Anniversary_box .navigator image {
-  height: 384rpx;
+.content-box view image {
   width: 690rpx;
+  height: 384rpx;
 }
 
 .conts {
@@ -158,36 +174,37 @@
   align-items: center;
   height: 86rpx;
   box-sizing: border-box;
-  padding: 0 20rpx 
+  padding: 0 20rpx;
 }
 
 .bargain_box .bargain_top .bargain_left {
   font-size: 26rpx;
   font-weight: 1000;
   color: #666;
+}
 
-}
-.bargain_box .bargain_top .bargain_left  .time{
+.bargain_box .bargain_top .bargain_left  .time {
   margin-left: 30rpx;
-   color:rgba(240,43,80,1);
+  color: rgba(240, 43, 80, 1);
 }
-.bargain_box .bargain_top .bargain_left  .time text{
+
+.bargain_box .bargain_top .bargain_left  .time text {
   display: inline-block;
   width: 32rpx;
   height: 32rpx;
   line-height: 32rpx;
   margin: 0 8rpx;
   text-align: center;
-  background:rgba(254,238,241,1);
-border-radius:50%;
-font-size:20rpx;
-  font-family:PingFang SC;
-  font-weight:400;
-  color:rgba(240,43,80,1);
+  background: rgba(254, 238, 241, 1);
+  border-radius: 50%;
+  font-size: 20rpx;
+  font-family: PingFang SC;
+  font-weight: 400;
+  color: rgba(240, 43, 80, 1);
 }
+
 .bargain_box .bargain_top .bargain_right {
   font-size: 26rpx;
-  
   /* font-weight: 1000; */
   color: #666;
 }
@@ -202,13 +219,17 @@ font-size:20rpx;
   display: flex;
   justify-content: center;
   align-items: center;
-
   /* justify-content: space-between; */
 }
 
-.bargain_box .bargain_buttom navigator image {
-  height: 200rpx;
-  width: 200rpx;
+.bargain_box .bargain_buttom .imgs {
+  height: 150rpx;
+  width: 150rpx;
+}
+
+.bargain_box .bargain_buttom .imgs image {
+  height: 100%;
+  width: 100%;
 }
 
 /* 下 */
@@ -220,12 +241,80 @@ font-size:20rpx;
   display: flex;
   background: rgba(255, 255, 255, 1);
   /* border-radius: 10px; */
+  box-sizing: border-box;
+  padding: 0 20rpx;
 }
-.bargain_buttom swiper{
+
+.bargain_buttom swiper {
   width: 100%;
   height: 100%;
-  background: #444;
+  display: flex;
+  align-items: center;
 }
+
+.bargain_buttom .swiper-item {
+  width: 100%;
+  height: 100%;
+  display: flex;
+  order: 1;
+}
+
+.bargain_buttom .swiper-cont {
+  width: 150rpx;
+  height: 288rpx;
+  margin-left: 30rpx;
+}
+
+.bargain_buttom .swiper-cont:first-child {
+  margin-left: 0;
+}
+
+.bargain_buttom .swiper-cont .price {
+  width: 100%;
+}
+
+.bargain_box .bargain_buttom  .text {
+  width: 100%;
+  display: flex;
+  justify-content: space-between;
+  position: relative;
+  margin-top: 16rpx;
+}
+
+.bargain_box .bargain_buttom  .text .t1 {
+  font-size: 20rpx;
+  font-family: PingFang SC;
+  font-weight: 400;
+  color: rgba(240, 43, 80, 1);
+  background: rgba(240, 43, 80, 0.08);
+  padding: 6rpx 10rpx;
+  border-radius: 20rpx;
+  position: absolute;
+  left: 0;
+  top: 0;
+}
+
+.bargain_box .bargain_buttom  .price .now {
+  font-size: 23rpx;
+  font-family: PingFang SC;
+  font-weight: bold;
+  right: 0;
+  top: 0;
+  position: absolute;
+  color: rgba(240, 43, 80, 1);
+}
+
+.bargain_box .bargain_buttom  .price .old {
+  font-size: 18rpx;
+  font-family: PingFang SC;
+  font-weight: 400;
+  text-decoration: line-through;
+  color: rgba(153, 153, 153, 1);
+  right: 0;
+  top: 30rpx;
+  position: absolute;
+}
+
 .a {
   flex: 1;
   border: 1px red solid;
@@ -429,32 +518,31 @@ font-size:20rpx;
   font-size: 24rpx;
   color: rgba(231, 86, 79, 1);
 }
+
 .contens .cont .price .oldprice {
-
- font-family:PingFang SC;
-font-weight:bold;
-text-decoration:line-through;
-margin-left: 20rpx;
-color:rgba(231,86,79,1);
+  font-family: PingFang SC;
+  font-weight: bold;
+  text-decoration: line-through;
+  margin-left: 20rpx;
+  color: rgba(231, 86, 79, 1);
 }
+
 /* 超值拼团结束 */
-
-
 
 /* swiper{
   margin-top: 50rpx;
 } */
- 
+
 .slide-image {
   width: 50%;
   height: 50%;
 }
- 
+
 .zoom-out {
   transform: scale(0.8);
   transition: all 0.7s ease-out 0s;
 }
- 
+
 .zoom-in {
   transform: scale(1);
   transition: all 0.7s ease-in 0s;
