@@ -1,0 +1,9 @@
+<!--pages/abc/abc.wxml-->
+<view class="pad10" wx:for="{{twoList}}" wx:key="id">
+  <view>
+    {{index+1}}、{{item.name}}
+  </view>
+  <view wx:for="{{item.twodata}}" wx:for-item="twodata" wx:key="id">
+    ----{{twodata.name}}---{{item.name}}
+  </view>
+</view>

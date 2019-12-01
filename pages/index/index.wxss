@@ -128,12 +128,15 @@
 /* 2周年开始 */
 
 
-
+.content-box{
+  width: 100%;
+}
 .content-box view {
  width: 100%;
   display: flex;
   align-items: center;
   justify-content: center;
+
 }
 
 .content-box view image {
