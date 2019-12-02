@@ -15,12 +15,12 @@ Page({
 
     wx.login({
       success: function(res) {
-        console.log(res, 123)
+        // console.log(res, 123)
         if (res.code) {
           // 发送请求
           wx.request({
             // 微信登录
-            url: 'http://192.168.2.98:9095//api/wechat/auth',
+            url: 'http://192.168.2.98:9095/api/wechat/auth',
             data: {
               code: res.code
             },

@@ -5,26 +5,17 @@ App({
     userInfo: null,
   },
   onLaunch: function() {
-    // 用户当前设置
-    wx.getSetting({
-      success: (res) => {
-        // 授权结果
-        if (res.authSetting["scope.userInfo"]) {
-          // 获取用户信息
-          wx.getUserInfo({
-            success: (res) => {
-              // console.log(res)
-              this.globaData.userInfo = res.userInfo;
-              if (this.userInfoReadyCallback) {
-                this.userInfoReadyCallback(res)
-              }
-            },
-            // 失败回调
-            fail: (res) => {
-              wx.showModal({
-                title: '获取用户失败'
-                // content: 'pages/login/login',
-              })
+    // 微信登录
+    wx.login({
+      success: res => {
+        // console.log(res)
+        if (res.code) {
+          // 发送请求
+          wx.request({
+            url: 'http://192.168.2.119:9095/api/wechat/auth',
+            method: 'get',
+            data: {
+              code: res.code
             }
           })
         }
