@@ -7,141 +7,6 @@ Page({
   data: {
     value1: 1,
     commodityAttr: [
-      {
-        priceId: 1,
-        price: 35.0,
-        "stock": 8,
-        "attrValueList": [
-          {
-            "attrKey": "规格：",
-            "attrValue": "+免费配料",
-            "attrCode": "1001"
-          },
-          {
-            "attrKey": "甜度：",
-            "attrValue": "七分甜",
-            "attrCode": "2001"
-          },
-          {
-            "attrKey": "加料：",
-            "attrValue": "珍珠",
-            "attrCode": "3001"
-          },
-          {
-            "attrKey": "冰块：",
-            "attrValue": "少冰",
-            "attrCode": "4001"
-          }
-        ]
-      },
-      {
-        priceId: 2,
-        price: 35.1,
-        "stock": 9,
-        "attrValueList": [
-          {
-            "attrKey": "规格：",
-            "attrValue": "+燕麦",
-            "attrCode": "1002"
-          },
-          {
-            "attrKey": "甜度：",
-            "attrValue": "五分甜",
-            "attrCode": "2002"
-          },
-          {
-            "attrKey": "加料：",
-            "attrValue": "椰果",
-            "attrCode": "3002"
-          },
-          {
-            "attrKey": "冰块：",
-            "attrValue": "去冰",
-            "attrCode": "4002"
-          }
-        ]
-      },
-      {
-        priceId: 3,
-        price: 35.2,
-        "stock": 10,
-        "attrValueList": [
-          {
-            "attrKey": "规格：",
-            "attrValue": "+布丁",
-            "attrCode": "1003"
-          },
-          {
-            "attrKey": "甜度：",
-            "attrValue": "无糖",
-            "attrCode": "2003"
-          },
-          {
-            "attrKey": "加料：",
-            "attrValue": "仙草",
-            "attrCode": "3003"
-          },
-          {
-            "attrKey": "冰块：",
-            "attrValue": "常温",
-            "attrCode": "4003"
-          }
-        ]
-      },
-      {
-        priceId: 4,
-        price: 35.2,
-        "stock": 10,
-        "attrValueList": [
-          {
-            "attrKey": "规格：",
-            "attrValue": "再加一份奶霜",
-            "attrCode": "1004"
-          },
-          {
-            "attrKey": "甜度：",
-            "attrValue": "无糖",
-            "attrCode": "2003"
-          },
-          {
-            "attrKey": "加料：",
-            "attrValue": "仙草",
-            "attrCode": "3004"
-          },
-          {
-            "attrKey": "冰块：",
-            "attrValue": "热饮",
-            "attrCode": "4004"
-          }
-        ]
-      },
-      {
-        priceId: 5,
-        price: 35.2,
-        "stock": 10,
-        "attrValueList": [
-          {
-            "attrKey": "规格：",
-            "attrValue": "+免费配料",
-            "attrCode": "1004"
-          },
-          {
-            "attrKey": "甜度：",
-            "attrValue": "五分甜",
-            "attrCode": "2003"
-          },
-          {
-            "attrKey": "加料：",
-            "attrValue": "椰果",
-            "attrCode": "3004"
-          },
-          {
-            "attrKey": "冰块：",
-            "attrValue": "常温",
-            "attrCode": "4004"
-          }
-        ]
-      }
     ],
     attrValueList: [],
     imgUrls: [],
@@ -162,7 +27,8 @@ Page({
   toggleDialog() {
 
     this.setData({
-      showDialog: !this.data.showDialog
+      showDialog: !this.data.showDialog,
+
     });
   },
   toggleDialog1() {
@@ -170,6 +36,7 @@ Page({
     this.setData({
       showDialog1: !this.data.showDialog1
     });
+   
   },
   swiperChange: function(e) {
     this.setData({
@@ -242,6 +109,24 @@ Page({
   },
   /* 获取数据 */
   distachAttrValue: function (commodityAttr) {
+    wx.request({
+      url: 'http://192.168.2.98:9095/api/wares/details/getPropertyList  ',
+      data:{
+        waresId:28
+      },
+      success:(res)=>{
+        console.log(11111,res)
+      },
+      fail:(res)=>{
+        wx.navigateTo({
+          url: '/pages/login/login'
+        })
+
+      }
+     
+    })
+
+
     /** 
     将后台返回的数据组合成类似 
     { 

@@ -2,7 +2,6 @@
 const appconfig = require('../../app.config.js')
 // 路由封装
 const http = require('../../server/http.js');
-
 // 引入封装请求
 import {
   auth_API,
@@ -19,8 +18,8 @@ Page({
   data: {
     // 轮播图数组:
     swiperList: [],
-  
-
+ 
+    result:'',
   
     background: ['demo-text-1', 'demo-text-2', 'demo-text-3', 'demo-text-4'],
     indicatorDots: false, //是否显示面板指示点
@@ -103,10 +102,26 @@ Page({
   },
   // 路劲封装
   handurl: function(e) {
+
+    var _this = this;
+
+    // wx.scanCode({
+    //   success: (res) => {
+    //     var result = res.result;
+
+    //     _this.setData({
+    //       result: result,
+
+    //     }),
+    //       console.log(result)
+    //   }
+    // })
     // 路由封装
-    wx.navigateTo({
-      url: e.currentTarget.dataset.url,
-    })
+    // wx.navigateTo({
+    //   url: e.currentTarget.dataset.url
+
+    // })
+
   },
   // 轮播图
   setSwiperData() {
@@ -120,7 +135,6 @@ Page({
     })
   },
   //按钮测试
-  handlegetuserinfo(e) {
-    console.log(e)
-  }
+  
+
 })

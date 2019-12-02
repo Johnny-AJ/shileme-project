@@ -1,16 +1,16 @@
 {
   "pages": [
-        "pages/index/index",
-    "pages/scango/scango", 
+    "pages/index/index",
+    "pages/scango/scango",
+    "pages/logistics/logistics",
     "pages/template/template",
-   "pages/abc/abc",
+    "pages/abc/abc",
     "pages/cart/cart",
     "pages/inetAddress/inetAddress",
     "pages/indent/indent",
     "pages/comment/comment",
     "pages/order/order",
     "pages/Spell_group_order/Spell_group_order",
-
     "pages/user/user",
     "pages/search/search",
     "pages/shipping/shipping",
