@@ -22,6 +22,36 @@
   <!-- 主体部分 -->
   <view class="body_box">
     <text>商品信息</text>
+    <view class="conts">
+      <view class="cont p30">
+        <view class="imgs">
+          <image src="../../static/cart/矩形 16.png"></image>
+        </view>
+        <view class="cr">
+          <view class="name">
+            <text>保湿急救 网红蓝药丸面膜</text>
+            <text class="price">￥79</text>
+          </view>
+          <view class="spec">
+            <text class="t1">5片/盒</text>
+            <text class="t2"><text>x1</text></text>
+          </view>
+          <view class="gifts">
+            <view class="gl">赠品:</view>
+            <view class="num">
+              <view class="nums">
+                <text>Dr.jart蓝色药丸面膜（5ml/片）</text>
+                <text>X1</text>
+              </view>
+              <view class="nums">
+                <text>Dr.jart蓝色药丸面膜（5ml/片）</text>
+                <text>X1</text>
+              </view>
+            </view>
+          </view>
+        </view>
+      </view>
+    </view>
   </view>
   <!-- 主体部分 -->
 

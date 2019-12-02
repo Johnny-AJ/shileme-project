@@ -86,15 +86,17 @@
             <image src="../../static/imgs/箭头.png"></image>
           </view>
         </view>
+
         <!-- 下 -->
         <view class="bargain_buttom">
-          <swiper indicator-dots="{{indicatorDots}}" circular="true" autoplay="true" interval="{{interval}}" duration="{{duration}}">
-            <block wx:for="{{background}}" wx:key="*this">
+          <swiper autoplay="false" interval="888" circular="false">
+            <block wx:for="{{swiperList}}" wx:key="goods_id">
               <swiper-item>
                 <view class="swiper-item">
                   <view class="swiper-cont">
                     <view class="imgs">
                       <image src="../../static/imgs/扫码购.png"> </image>
+
                     </view>
                     <view class="text">
                       <view class="t1">2人团</view>
@@ -112,6 +114,7 @@
                   <view class="swiper-cont">
                     <view class="imgs">
                       <image src="../../static/imgs/扫码购.png"> </image>
+
                     </view>
                     <view class="text">
                       <view class="t1">2人团</view>
@@ -129,6 +132,7 @@
                   <view class="swiper-cont">
                     <view class="imgs">
                       <image src="../../static/imgs/扫码购.png"> </image>
+
                     </view>
                     <view class="text">
                       <view class="t1">2人团</view>
@@ -146,6 +150,7 @@
                   <view class="swiper-cont">
                     <view class="imgs">
                       <image src="../../static/imgs/扫码购.png"> </image>
+
                     </view>
                     <view class="text">
                       <view class="t1">2人团</view>
@@ -164,7 +169,10 @@
               </swiper-item>
             </block>
           </swiper>
+
+
         </view>
+
       </view>
     </view>
     <!-- 超值拼团 -->

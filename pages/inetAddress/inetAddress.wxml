@@ -14,10 +14,10 @@
     <input placeholder="收货人手机号"></input>
   </view>
 
-  <view class="username">
+  <picker mode="region" class="username">
     <text>省/市/区</text>
     <input placeholder="选择所在地区"></input>
-  </view>
+  </picker>
 
   <view class="username">
     <text>收货地址:</text>

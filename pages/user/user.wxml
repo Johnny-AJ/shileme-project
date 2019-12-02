@@ -65,7 +65,7 @@
       <image src="../../static/userimags/收藏夹.png"></image>
       <text> 收藏夹</text>
     </view>
-    <view class="content">
+    <view class="content" bindtap="handurl" data-url="/pages/Spell_group_order/Spell_group_order">
       <image src="../../static/userimags/我的地址.png"></image>
       <text> 我的地址</text>
     </view>

@@ -87,86 +87,86 @@
       </view>
       <view class="tbottom">
         <view class="tblog">
-         <view class="pl">
-          <view class="head">
-            <image src="../../static/scango/椭圆 4.png"></image>
-          </view>
-          <view class="cont">
-            <text class="name">匿名</text>
-            <text class="time">2019-9-6</text>
-            <view class="textcont">
-              商品很有保证，不错！
+          <view class="pl">
+            <view class="head">
+              <image src="../../static/scango/椭圆 4.png"></image>
+            </view>
+            <view class="cont">
+              <text class="name">匿名</text>
+              <text class="time">2019-9-6</text>
+              <view class="textcont">
+                商品很有保证，不错！
+              </view>
+            </view>
+            <view class="imsg">
+              <image src="../../static/scango/椭圆 4.png"></image>
+              <text>2张</text>
             </view>
           </view>
-          <view class="imsg">
-            <image src="../../static/scango/椭圆 4.png"></image>
-            <text>2张</text>
-          </view>
-        </view>
-        <view class="pl">
-          <view class="head">
-            <image src="../../static/scango/椭圆 4.png"></image>
-          </view>
-          <view class="cont">
-            <text class="name">匿名</text>
-            <text class="time">2019-9-6</text>
-            <view class="textcont">
-              商品很有保证，不错！
+          <view class="pl">
+            <view class="head">
+              <image src="../../static/scango/椭圆 4.png"></image>
+            </view>
+            <view class="cont">
+              <text class="name">匿名</text>
+              <text class="time">2019-9-6</text>
+              <view class="textcont">
+                商品很有保证，不错！
+              </view>
+            </view>
+            <view class="imsg">
+              <image src="../../static/scango/椭圆 4.png"></image>
+              <text>2张</text>
             </view>
           </view>
-          <view class="imsg">
-            <image src="../../static/scango/椭圆 4.png"></image>
-            <text>2张</text>
-          </view>
-        </view>
-        <view class="pl">
-          <view class="head">
-            <image src="../../static/scango/椭圆 4.png"></image>
-          </view>
-          <view class="cont">
-            <text class="name">匿名</text>
-            <text class="time">2019-9-6</text>
-            <view class="textcont">
-              商品很有保证，不错！
+          <view class="pl">
+            <view class="head">
+              <image src="../../static/scango/椭圆 4.png"></image>
+            </view>
+            <view class="cont">
+              <text class="name">匿名</text>
+              <text class="time">2019-9-6</text>
+              <view class="textcont">
+                商品很有保证，不错！
+              </view>
+            </view>
+            <view class="imsg">
+              <image src="../../static/scango/椭圆 4.png"></image>
+              <text>2张</text>
             </view>
           </view>
-          <view class="imsg">
-            <image src="../../static/scango/椭圆 4.png"></image>
-            <text>2张</text>
-          </view>
-        </view>
-        <view class="pl">
-          <view class="head">
-            <image src="../../static/scango/椭圆 4.png"></image>
-          </view>
-          <view class="cont">
-            <text class="name">匿名</text>
-            <text class="time">2019-9-6</text>
-            <view class="textcont">
-              商品很有保证，不错！
+          <view class="pl">
+            <view class="head">
+              <image src="../../static/scango/椭圆 4.png"></image>
+            </view>
+            <view class="cont">
+              <text class="name">匿名</text>
+              <text class="time">2019-9-6</text>
+              <view class="textcont">
+                商品很有保证，不错！
+              </view>
+            </view>
+            <view class="imsg">
+              <image src="../../static/scango/椭圆 4.png"></image>
+              <text>2张</text>
             </view>
           </view>
-          <view class="imsg">
-            <image src="../../static/scango/椭圆 4.png"></image>
-            <text>2张</text>
-          </view>
-        </view>
-        <view class="pl">
-          <view class="head">
-            <image src="../../static/scango/椭圆 4.png"></image>
-          </view>
-          <view class="cont">
-            <text class="name">匿名</text>
-            <text class="time">2019-9-6</text>
-            <view class="textcont">
-              商品很有保证，不错！
+          <view class="pl">
+            <view class="head">
+              <image src="../../static/scango/椭圆 4.png"></image>
+            </view>
+            <view class="cont">
+              <text class="name">匿名</text>
+              <text class="time">2019-9-6</text>
+              <view class="textcont">
+                商品很有保证，不错！
+              </view>
+            </view>
+            <view class="imsg">
+              <image src="../../static/scango/椭圆 4.png"></image>
+              <text>2张</text>
             </view>
           </view>
-          <view class="imsg">
-            <image src="../../static/scango/椭圆 4.png"></image>
-            <text>2张</text>
-          </view>
-        </view>
 
         </view>
       </view>
