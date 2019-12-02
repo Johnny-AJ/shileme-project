@@ -1,12 +1,13 @@
 {
   "pages": [
-        "pages/index/index",
+    "pages/index/index",
+    "pages/user/user",
+    "pages/login/login",
+    "pages/UserRelated/UserRelated",
+    "pages/order/order",
     "pages/scango/scango",
-
     "pages/cart/cart",
     "pages/indent/indent",
-    "pages/user/user",
-    "pages/order/order",
     "pages/template/template",
     "pages/search/search",
     "pages/inetAddress/inetAddress",

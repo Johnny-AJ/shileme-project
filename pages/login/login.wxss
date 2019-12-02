@@ -1,1 +1,24 @@
 /* pages/login/login.wxss */
+
+.Box .Box_imgs {
+  width: 750rpx;
+  text-align: center;
+  padding-top: 255rpx;
+}
+
+.Box .Box_imgs image {
+  width: 181rpx;
+  height: 181rpx;
+}
+
+/* .Box .button {
+  padding-top: 50rpx;
+} */
+
+.Box .button {
+  font-size: 35rpx;
+  line-height: 35rpx;
+  border-radius: 40rpx;
+  padding-top: 50rpx;
+  color: #fff;
+}
