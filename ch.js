@@ -1,6 +1,6 @@
 // 微信登录
 wx.login({
-  success: function(res) {
+  success: function (res) {
     if (res.code) {
       // 发送请求
       wx.request({
@@ -12,26 +12,26 @@ wx.login({
           code: res.code
         },
         method: "get",
-        success: function(res) {
+        success: function (res) {
           if (res.data.code == 0) {
             var token = res.data.msg;
             // 获取用户信息
             wx.getUserInfo({
-                success: function(res) {
-                  // console.log(res, 456)
-                  var userInfo = res.userInfo //用户信息
-                  wx.request({
-                    // 用户信息
-                    url: 'http://192.168.2.98:9095/api/wechat/updateUserInfo',
-                    method: "post",
-                    data: res.userInfo,
-                    header: {
-                      'token': token, //请求头携带参数
-                      'content-type': 'application/json',
-                    },
-                  })
-                }
-              }),
+              success: function (res) {
+                // console.log(res, 456)
+                var userInfo = res.userInfo //用户信息
+                wx.request({
+                  // 用户信息
+                  url: 'http://192.168.2.98:9095/api/wechat/updateUserInfo',
+                  method: "post",
+                  data: res.userInfo,
+                  header: {
+                    'token': token, //请求头携带参数
+                    'content-type': 'application/json',
+                  },
+                })
+              }
+            }),
               wx.request({
                 // 支付地址
                 // url: 'http://192.168.2.119:9095/api/wx/pay/weixinPay',
@@ -39,7 +39,7 @@ wx.login({
                 header: {
                   'token': token, //请求头携带参数
                 },
-                success: function(res) {
+                success: function (res) {
                   // console.log(res)
                   // 微信支付
                   wx.requestPayment({

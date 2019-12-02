@@ -5,9 +5,13 @@ Page({
    * 页面的初始数据
    */
   data: {
+    token:'',
+    contents:{},
+    imgs:[],
     value1: 1,
     commodityAttr: [
     ],
+    imgindex:0,
     attrValueList: [],
     imgUrls: [],
     currentSwiper: 0,
@@ -54,44 +58,72 @@ Page({
    * 生命周期函数--监听页面加载
    */
   onLoad: function(options) {
-    var self = this;
-    wx.setNavigationBarTitle({
-        title: '商品详情'
-      }),
-      // 数据请求
-      wx.request({
-        url: 'http://192.168.2.98:9095/api/wares/details/getWaresInfo',
-        method: "get",
-        data: {
-          waresId: 28
-        },
-
-        success(res) {
-          self.setData({
-            list: res.data.data
-          })
-          
-        }
-      }),
-      // 评论请求
-      wx.request({
-        url: 'http://192.168.2.98:9095/api/wares/details/getCommentList',
-        data: {
-          start: 0,
-          limit: 4,
-          waresId: 28
-        },
-        success(res) {
-          comments:res.data
-        }
-      })
-
-
+    
   },
    /**
    * 生命周期函数--监听页面显示
    */
+
+  onLoad:function(){
+
+
+    // wx.navigateTo({
+    //   url: '/pages/login/login'
+    // })
+
+   
+
+  },
   onShow: function () {
+    var self = this;
+    wx.setNavigationBarTitle({
+      title: '商品详情'
+    }),
+      // 数据请求
+      wx.request({
+        url: 'http://192.168.2.98:9095/api/wares/details/getWaresInfo',
+        method: "get",
+
+        data: {
+          waresId: 28
+        },
+        success(res) {
+        
+          self.setData({
+            list: res.data.data
+          })
+
+        }
+      }),
+      // 评论请求
+      // wx.request({
+      //   url: 'http://192.168.2.98:9095/api/wares/details/getCommentList',
+      //   data: {
+      //     start: 0,
+      //     limit: 4,
+      //     waresId: 28
+      //   },
+      //   success(res) {
+      //     comments: res.data
+      //   }
+      // })
+
+      wx.request({
+        url: 'http://192.168.2.119:9095//api/wares/details/getPropertyList',
+        method: "get",
+        data: {
+          waresId: 28
+        },
+        success(res) {
+          console.log(1111, res.data.data)
+          self.setData({
+            commodityAttr: res.data.data.commodityAttr
+          })
+
+        }
+      }),
+
+
     this.setData({
       includeGroup: this.data.commodityAttr
     });
@@ -109,23 +141,21 @@ Page({
   },
   /* 获取数据 */
   distachAttrValue: function (commodityAttr) {
-    wx.request({
-      url: 'http://192.168.2.98:9095/api/wares/details/getPropertyList  ',
-      data:{
-        waresId:28
-      },
-      success:(res)=>{
-        console.log(11111,res)
-      },
-      fail:(res)=>{
-        wx.navigateTo({
-          url: '/pages/login/login'
-        })
-
-      }
+    var self= this;
+    //  wx.getStorage({
+      
+    //   key: 'token',
+    //   success(res) {
+    //     let token =res.data
+    //     console.log(token)
+    //    self.setData({
+    //      token
+    //    })
      
-    })
-
+    //   }
+    // })
+    
+  
 
     /** 
     将后台返回的数据组合成类似 
@@ -345,6 +375,12 @@ Page({
   goto:function(e){
     wx.navigateTo({
       url: '/pages/comment/comment',
+    })
+  },
+  buys:function(){
+    console.log(111)
+    wx.navigateTo({
+      url: '/pages/Spell_group_order/Spell_group_order',
     })
   }
 })

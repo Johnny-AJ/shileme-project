@@ -75,7 +75,7 @@
 
   </view>
   <view class="comment">
-    <view class="title" bindtap="goto" data-id="28">
+    <view class="title" bindtap="goto" data-url="28">
       <view class="conts">宝贝评价（262）</view>
       <view class="more">查看更多
         <image src="../../static/scango/矩形 16 拷贝.png"></image>
@@ -213,7 +213,8 @@
     </view>
   </view>
   <!-- 选择弹出层 -->
-  <view class="popup {{ showDialog1 ? 'show1' : '' }}">
+  <!-- <view class="popup {{ showDialog1 ? 'show1' : '' }}"> -->
+  <view class="popup show1">
 
     <view class="zan-dialog__mask" bindtap="toggleDialog1" />
     <view class="zan-dialog__container">
@@ -229,38 +230,34 @@
             <text class="repertory">库存：<text>30</text></text>
           </view>
         </view>
-        <view class="spec"  wx:for="{{attrValueList}}" wx:for-item="attrValueObj" wx:for-index="attrIndex">
+     
+        <view class="spec "  wx:for="{{attrValueList}}" wx:for-item="attrValueObj" wx:for-index="attrIndex">
           <view class="thead">{{attrValueObj.attrKey}}</view>
           <view class="cont">
-            <view class="text {{attrIndex==firstIndex || attrValueObj.attrValueStatus[valueIndex]?(value==attrValueObj.selectedValue?'checkout':''):'attr_value_disabled'}}" bindtap="selectAttrValue" data-status="{{attrValueObj.attrValueStatus[valueIndex]}}"
-          data-value="{{value}}" data-key="{{attrValueObj.attrKey}}" data-code="{{attrCode}}" data-index="{{attrIndex}}" data-selectedvalue="{{attrValueObj.selectedValue}}" wx:for="{{attrValueObj.attrValues}}" wx:for-item="value" wx:for-index="valueIndex">{{value}}</view>
-         
+            <view class=".text {{attrIndex==firstIndex || attrValueObj.attrValueStatus[valueIndex]?(value==attrValueObj.selectedValue?'attr_value_active':''):'attr_value_disabled'}}" bindtap="selectAttrValue" data-status="{{attrValueObj.attrValueStatus[valueIndex]}}"
+          data-value="{{value}}" data-key="{{attrValueObj.attrKey}}" data-code="{{attrCode}}" data-index="{{attrIndex}}" data-selectedvalue="{{attrValueObj.selectedValue}}" wx:for="{{attrValueObj.attrValues}}" wx:for-item="value" wx:for-index="valueIndex">{{value}}</view> 
           </view>
         </view>
-   
         <view class="num">
 
           <text>数量</text>
           <view class="totalizer">
-            <!-- <image src="../../static/scango/组 3.png" class="numimgs"></image>
+            <image src="../../static/scango/组 3.png" class="numimgs"></image>
             <view class="reduce">
               <image src="../../static/scango/1.png"></image>
             </view>
             <input class="weui-input" type="number" placeholder="1" />
             <view>
               <image src="../../static/scango/+.png"></image>
-            </view> -->
-
-          <i-input-number i-class="input" value="{{ value1 }}" min="0" max="100" bindchange="handleChange1" />
+            </view>
           </view>
 
         </view>
-        <view class="next" bindtap="submit">下一步</view>
+        <view class="next" bindtap="buys" data-waresId="28" data-propertyId="344" data-num="2">下一步</view>
 
       </view>
     </view>
   </view>
-  <view wx:for="list.imags"></view>
 
 
 </view>

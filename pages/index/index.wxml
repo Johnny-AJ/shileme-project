@@ -88,6 +88,14 @@
         </view>
         <!-- 下 -->
         <view class="bargain_buttom">
+          <!-- <view class="a">
+</view>
+<view class="a">
+</view>
+<view class="a">
+</view>
+<view class="a">
+</view> -->
           <swiper indicator-dots="{{indicatorDots}}" circular="true" autoplay="true" interval="{{interval}}" duration="{{duration}}">
             <block wx:for="{{background}}" wx:key="*this">
               <swiper-item>
@@ -95,6 +103,7 @@
                   <view class="swiper-cont">
                     <view class="imgs">
                       <image src="../../static/imgs/扫码购.png"> </image>
+
                     </view>
                     <view class="text">
                       <view class="t1">2人团</view>
@@ -112,6 +121,7 @@
                   <view class="swiper-cont">
                     <view class="imgs">
                       <image src="../../static/imgs/扫码购.png"> </image>
+
                     </view>
                     <view class="text">
                       <view class="t1">2人团</view>
@@ -129,6 +139,7 @@
                   <view class="swiper-cont">
                     <view class="imgs">
                       <image src="../../static/imgs/扫码购.png"> </image>
+
                     </view>
                     <view class="text">
                       <view class="t1">2人团</view>
@@ -146,6 +157,7 @@
                   <view class="swiper-cont">
                     <view class="imgs">
                       <image src="../../static/imgs/扫码购.png"> </image>
+
                     </view>
                     <view class="text">
                       <view class="t1">2人团</view>
@@ -164,6 +176,8 @@
               </swiper-item>
             </block>
           </swiper>
+
+
         </view>
       </view>
     </view>
@@ -318,10 +332,5 @@
       </view>
     </view>
   </view>
-<<<<<<< HEAD
 
-  <view>1111111{{result}}</view>
-
-=======
->>>>>>> hwb
 </view>
