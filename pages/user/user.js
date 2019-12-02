@@ -13,6 +13,10 @@ Page({
    */
   onLoad: function(options) {
 
+    wx.setNavigationBarTitle({
+      title: '个人中心'
+    })
+
     wx.login({
       success: function(res) {
         // console.log(res, 123)

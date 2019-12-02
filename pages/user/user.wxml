@@ -15,27 +15,27 @@
     </view>
   </view>
   <view class="allorders">
-    <view class="oderhead">
-      <view class="ot">
+    <view class="oderhead" bindtap="handurl" data-url="/pages/indent/indent">
+      <view class="ot"> 
         <text class="oleft">全部订单</text>
         <image src="../../static/userimags/矩形 34.png"></image>
       </view>
       <view class="ob"></view>
     </view>
-    <view class="odercont">
+    <view class="odercont" bindtap="handurl" data-url="/pages/indent/indent">
       <view class="cont">
         <image src="../../static/userimags/待付款.png"></image>
         <text>代付款</text>
       </view>
-      <view class="cont">
+      <view class="cont" bindtap="handurl" data-url="/pages/indent/indent">
         <image src="../../static/userimags/待发货 (1).png"></image>
         <text>待发货</text>
       </view>
-      <view class="cont">
+      <view class="cont" bindtap="handurl" data-url="/pages/indent/indent">
         <image src="../../static/userimags/待收货 (3).png"></image>
         <text>待收货</text>
       </view>
-      <view class="cont">
+      <view class="cont" bindtap="handurl" data-url="/pages/indent/indent">
         <image src="../../static/userimags/待评价.png"></image>
         <text>待评价</text>
       </view>
