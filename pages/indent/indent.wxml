@@ -10,6 +10,7 @@
     </i-tabs>
   </view>
   <view class="conttent">
+
     <view class="conts">
       <view class="state p30">
         <text class="time">2019-08-07</text>
@@ -43,6 +44,7 @@
           </view>
         </view>
       </view>
+
       <view class="payment">
         <view class="number">
           <text class="t1">共1件</text>
@@ -86,6 +88,7 @@
               </view>
             </view>
           </view>
+          
         </view>
       </view>
       <view class="payment">

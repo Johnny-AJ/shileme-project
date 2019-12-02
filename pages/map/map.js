@@ -1,4 +1,9 @@
-// pages/inetAddress/inetAddress.js
+// pages/map/map.js
+
+// 引入SDK核心类
+var QQMapWX = require('../../libs/qqmap-wx-jssdk.js');
+var qqmapsdk;
+
 Page({
 
   /**
@@ -12,11 +17,16 @@ Page({
    * 生命周期函数--监听页面加载
    */
   onLoad: function(options) {
+
     // 头部标题
     wx.setNavigationBarTitle({
-      title: '新增地址'
+      title: '物流'
     })
 
+    // // 实例化API核心类
+    // qqmapsdk = new QQMapWX({
+    //   key: 'LSEBZ-ZWOCX-SF64B-TD3ML-WWPM6-ITBUP'
+    // });
   },
 
   /**
@@ -31,6 +41,19 @@ Page({
    */
   onShow: function() {
 
+    // // 调用接口
+    // qqmapsdk.search({
+    //   keyword: '酒店',
+    //   success: function(res) {
+    //     console.log(res);
+    //   },
+    //   fail: function(res) {
+    //     console.log(res);
+    //   },
+    //   complete: function(res) {
+    //     console.log(res);
+    //   }
+    // });
   },
 
   /**
