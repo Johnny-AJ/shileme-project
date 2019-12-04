@@ -14,10 +14,11 @@
     <input placeholder="收货人手机号"></input>
   </view>
 
-  <view class="username">
-    <text>省/市/区</text>
-    <input placeholder="选择所在地区"></input>
-  </view>
+  <picker mode="region" bindchange="bindRegionChange" value="{{region}}" custom-item="{{customItem}}" class="username p30">
+    <text>省/市/区：</text>
+    <!-- <input type="text" placeholder="选择所在地区"></input> -->
+    <view class="picker">{{region[0]}} {{region[1]}} {{region[2]}}</view>
+  </picker>
 
   <view class="username">
     <text>收货地址:</text>
@@ -30,7 +31,7 @@
   </view>
 
   <!-- 按钮 -->
-  <view class="button">
+  <view class="button" bindtap="handurl" data-url="/pages/shipping/shipping">
     <text>保存</text>
   </view>
 </view>

@@ -12,7 +12,10 @@ Page({
    * 生命周期函数--监听页面加载
    */
   onLoad: function(options) {
-
+    // 头部标题
+    wx.setNavigationBarTitle({
+      title: '个人中心'
+    })
     wx.login({
       success: function(res) {
         // console.log(res, 123)

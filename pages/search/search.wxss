@@ -1,116 +1,116 @@
 /* pages/search/search.wxss */
-.bs{
+
+.bs {
   box-sizing: border-box;
 }
-.dc{
+
+.dc {
   display: flex;
   justify-content: center;
   align-items: center;
 }
-.dj{
+
+.dj {
   display: flex;
   justify-content: space-between;
   align-items: center;
 }
-.search{
+
+.search {
   width: 100%;
   height: 100%;
   margin: 0;
   padding: 0 30rpx;
-  
-  
 }
-.mysearch{
+
+.mysearch {
   height: 120rpx;
-  width: 100%
+  width: 100%;
 }
-.mysearch .sl{
+
+.mysearch .sl {
   width: 620rpx;
   height: 60rpx;
-  border:2rpx solid rgba(240,43,80,1);
-border-radius:10rpx;
+  border: 2rpx solid rgba(240, 43, 80, 1);
+  border-radius: 10rpx;
 }
-.mysearch .sl image{
+
+.mysearch .sl image {
   width: 40rpx;
   height: 32rpx;
   margin-left: 30rpx;
-
 }
-.mysearch .sl input{
+
+.mysearch .sl input {
   width: 540rpx;
   height: 100%;
-  font-size:30rpx;
-font-family:PingFang SC;
-font-weight:400;
-color:rgba(204,204,204,1);
-
-
+  font-size: 30rpx;
+  font-family: PingFang SC;
+  font-weight: 400;
+  color: #000;
 }
-.mysearch .sr{
-  font-size:26rpx;
-font-family:PingFang SC;
-font-weight:400;
-color:rgba(34,34,34,1);
+
+.mysearch .sr {
+  font-size: 26rpx;
+  font-family: PingFang SC;
+  font-weight: 400;
+  color: rgba(34, 34, 34, 1);
 }
-.top-search,history{
+
+.top-search, history {
   padding: 20rpx 0;
-
 }
-.top-search  .title{
+
+.top-search  .title {
   margin-bottom: 38rpx;
   width: 100%;
   height: 31rpx;
   display: flex;
   align-items: center;
-  
 }
-.history .title{
- margin-bottom: 38rpx;
+
+.history .title {
+  margin-bottom: 38rpx;
   width: 100%;
   height: 31rpx;
   justify-content: space-between;
   align-items: center;
   margin-top: 34rpx;
   display: flex;
-
-
-  
 }
-.top-search  .title image{
+
+.top-search  .title image {
   width: 21rpx;
   height: 31rpx;
   margin-right: 11rpx;
   line-height: 31rpx;
-
 }
-.history .title image{
+
+.history .title image {
   width: 21rpx;
   height: 25rpx;
 }
-.title text{
-  font-size:30rpx;
-font-family:PingFang SC;
-font-weight:bold;
 
-
-color:rgba(34,34,34,1);
-
+.title text {
+  font-size: 30rpx;
+  font-family: PingFang SC;
+  font-weight: bold;
+  color: rgba(34, 34, 34, 1);
 }
 
-.top-search .searchcont text,.history .history-cont text{
-background:rgba(238,238,238,1);
-border-radius:25px;
-display: inline-block;
-padding: 13rpx 35rpx 13rpx 34rpx;
-margin-left: 20rpx;
-font-size:26rpx;
-font-family:PingFang SC;
-font-weight:400;
-color:rgba(34,34,34,1);
-margin-top: 20rpx;
+.top-search .searchcont text, .history .history-cont text {
+  background: rgba(238, 238, 238, 1);
+  border-radius: 25px;
+  display: inline-block;
+  padding: 13rpx 35rpx 13rpx 34rpx;
+  margin-left: 20rpx;
+  font-size: 26rpx;
+  font-family: PingFang SC;
+  font-weight: 400;
+  color: rgba(34, 34, 34, 1);
+  margin-top: 20rpx;
 }
-.top-search .searchcont ,history .history-cont{
- margin-left: -20rpx;
 
-
+.top-search .searchcont, history .history-cont {
+  margin-left: -20rpx;
 }

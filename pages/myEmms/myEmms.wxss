@@ -1,0 +1,5 @@
+/* pages/myEmms/myEmms.wxss */
+
+text {
+  font-size: 66rpx;
+}

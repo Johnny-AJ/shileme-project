@@ -6,22 +6,22 @@ Page({
    */
   data: {
     token: '',
-    userIno:{}
+    userIno: {}
   },
   handgetuserInfo(e) {
     console.log(e)
-    var self=this;
+    var self = this;
     wx.getStorage({
       key: 'token',
       success(res) {
-       let token=res.data;
+        let token = res.data;
         self.setData({
           token
         })
         wx.request({
           url: 'http://192.168.2.98:9095//api/wechat/updateUserInfo',
           data: {
-               userIno:e.detail.userInfo
+            userIno: e.detail.userInfo
           },
           header: {
             token: self.data.token
@@ -29,28 +29,31 @@ Page({
           method: 'POST',
           dataType: 'json',
           responseType: 'text',
-          success: function (res) { },
-          fail: function (res) { },
-          complete: function (res) { },
+          success: function(res) {},
+          fail: function(res) {},
+          complete: function(res) {},
         })
 
       }
     })
-   
- 
 
-   
+
+
+
     wx.navigateBack({
       delta: 1
     })
 
-    
+
   },
   /**
    * 生命周期函数--监听页面加载
    */
   onLoad: function(options) {
-
+    // 头部标题
+    wx.setNavigationBarTitle({
+      title: '登录'
+    })
   },
 
   /**

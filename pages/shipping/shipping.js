@@ -5,7 +5,8 @@ Page({
    * 页面的初始数据
    */
   data: {
-
+    // 删除
+    delArray: []
   },
 
   /**
@@ -17,53 +18,30 @@ Page({
       title: '收货地址'
     })
   },
-
-  /**
-   * 生命周期函数--监听页面初次渲染完成
-   */
-  onReady: function() {
-
+  // 路径封装
+  handurl: function(e) {
+    // 路由封装
+    wx.navigateTo({
+      url: e.currentTarget.dataset.url,
+    })
   },
-
-  /**
-   * 生命周期函数--监听页面显示
-   */
-  onShow: function() {
-
-  },
-
-  /**
-   * 生命周期函数--监听页面隐藏
-   */
-  onHide: function() {
-
-  },
-
-  /**
-   * 生命周期函数--监听页面卸载
-   */
-  onUnload: function() {
-
-  },
-
-  /**
-   * 页面相关事件处理函数--监听用户下拉动作
-   */
-  onPullDownRefresh: function() {
-
-  },
-
-  /**
-   * 页面上拉触底事件的处理函数
-   */
-  onReachBottom: function() {
-
-  },
-
-  /**
-   * 用户点击右上角分享
-   */
-  onShareAppMessage: function() {
-
+  // 删除
+  handdel(e) {
+    console.log(1)
+    wx.showModal({
+      title: '劝你别搞事情',
+      content: '是否确认删除你的当前收货地址',
+      success: (res) => {
+        if (res.confirm) {
+          console.log(2)
+          this.data.delArray.splice(e.currentTarget.dataset.index, 1)
+          this.setData({
+            delArray: this.data.delArray
+          })
+        } else if (res.cancel) {
+          console.log(3)
+        }
+      }
+    })
   }
 })

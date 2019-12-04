@@ -155,6 +155,7 @@
     </view> -->
   </view>
   <view class="buy">立即购买</view>
+
   <!-- 领劵弹出层 -->
   <view class="zan-dialog {{ showDialog ? 'zan-dialog--show' : '' }}">
     <!-- <view class="zan-dialog  zan-dialog--show"> -->
@@ -164,7 +165,6 @@
         <image src="../../static/scango/关闭icon.png" bindtap="toggleDialog"></image>
       </view>
       <view class="conts">
-
         <view class="title"> 优惠劵 </view>
         <view class="coupon">
           <view class="cont">
@@ -184,7 +184,6 @@
                 <text class="t2 ">有效期至：2019-08-01</text>
               </view>
             </view>
-
           </view>
           <view class="cont">
             <image src="../../static/scango/组 4.png"></image>
@@ -203,23 +202,18 @@
                 <text class="t2 ">有效期至：2019-08-01</text>
               </view>
             </view>
-
           </view>
         </view>
-
-
-
       </view>
     </view>
   </view>
+  
   <!-- 选择弹出层 -->
-  <!-- <view class="popup {{ showDialog1 ? 'show1' : '' }}"> -->
-  <view class="popup show1">
-
+  <view class="popup {{ showDialog1 ? 'show1' : '' }}">
+    <!-- <view class="popup show1"> -->
     <view class="zan-dialog__mask" bindtap="toggleDialog1" />
     <view class="zan-dialog__container">
       <view class="conts">
-
         <view class="trade">
           <view class="imags">
             <image src="../../static/scango/关闭icon.png"></image>
@@ -230,12 +224,12 @@
             <text class="repertory">库存：<text>30</text></text>
           </view>
         </view>
-     
-        <view class="spec "  wx:for="{{attrValueList}}" wx:for-item="attrValueObj" wx:for-index="attrIndex">
+
+        <view class="spec " wx:for="{{attrValueList}}" wx:for-item="attrValueObj" wx:for-index="attrIndex">
           <view class="thead">{{attrValueObj.attrKey}}</view>
           <view class="cont">
             <view class=".text {{attrIndex==firstIndex || attrValueObj.attrValueStatus[valueIndex]?(value==attrValueObj.selectedValue?'attr_value_active':''):'attr_value_disabled'}}" bindtap="selectAttrValue" data-status="{{attrValueObj.attrValueStatus[valueIndex]}}"
-          data-value="{{value}}" data-key="{{attrValueObj.attrKey}}" data-code="{{attrCode}}" data-index="{{attrIndex}}" data-selectedvalue="{{attrValueObj.selectedValue}}" wx:for="{{attrValueObj.attrValues}}" wx:for-item="value" wx:for-index="valueIndex">{{value}}</view> 
+              data-value="{{value}}" data-key="{{attrValueObj.attrKey}}" data-code="{{attrCode}}" data-index="{{attrIndex}}" data-selectedvalue="{{attrValueObj.selectedValue}}" wx:for="{{attrValueObj.attrValues}}" wx:for-item="value" wx:for-index="valueIndex">{{value}}</view>
           </view>
         </view>
         <view class="num">

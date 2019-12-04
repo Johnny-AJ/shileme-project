@@ -1,4 +1,4 @@
-// pages/UserRelated/UserRelated.js
+// pages/myEmms/myEmms.js
 Page({
 
   /**
@@ -14,7 +14,7 @@ Page({
   onLoad: function (options) {
     // 头部标题
     wx.setNavigationBarTitle({
-      title: '用户协议'
+      title: '我的拼团'
     })
   },
 
