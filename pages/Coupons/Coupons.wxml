@@ -19,7 +19,7 @@
       <view>满100元可用</view>
     </view>
     <view class="coupons_tx">
-      <!-- <view>全品类通用券</view> -->
+      <view>全品类通用券</view>
     </view>
   </view>
 </view>
