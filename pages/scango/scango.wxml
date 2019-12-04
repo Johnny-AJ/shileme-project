@@ -194,8 +194,8 @@
     </view>
   </view>
   <!-- 选择弹出层 -->
-  <!-- <view class="popup {{ showDialog1 ? 'show1' : '' }}"> -->
-  <view class="popup show1">
+  <view class="popup {{ showDialog1 ? 'show1' : '' }}">
+  <!-- <view class="popup show1"> -->
 
     <view class="zan-dialog__mask" bindtap="toggleDialog1" />
     <view class="zan-dialog__container">
@@ -223,18 +223,11 @@
 
           <text>数量</text>
           <view class="totalizer">
-            <image src="../../static/scango/组 3.png" class="numimgs"></image>
-            <view class="reduce">
-              <image src="../../static/scango/1.png"></image>
-            </view>
-            <input class="weui-input" type="number" placeholder="1" />
-            <view>
-              <image src="../../static/scango/+.png"></image>
-            </view>
+             <i-input-number value="{{ value1 }}"  i-class="inputs" min="0" max="100" bindchange="handleChange1" />
           </view>
 
         </view>
-        <view class="next" bindtap="buys" data-waresId="28" data-propertyId="344" data-num="2">下一步</view>
+        <view class="next" bindtap="buys" data-waresId="28" data-propertyId="588" data-amount="2">下一步</view>
 
       </view>
     </view>

@@ -1,11 +1,11 @@
 {
   "pages": [
-
+    "pages/scango/scango",
+    "pages/Spell_group_order/Spell_group_order", 
+    "pages/template/template",
     "pages/user/user",
     "pages/index/index",
     "pages/map/map",
-    "pages/scango/scango",
-    "pages/Spell_group_order/Spell_group_order",
     "pages/indent/indent",
     "pages/comment/comment",
     "pages/order/order",
@@ -15,10 +15,8 @@
     "pages/cart/cart",
     "pages/UserRelated/UserRelated",
     "pages/login/login",
-    "pages/template/template",
     "pages/search/search",
     "pages/find/find"
-
   ],
   "window": {
     "backgroundTextStyle": "light",

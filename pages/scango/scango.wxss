@@ -826,12 +826,9 @@
   text-align: center;
 }
 
-.popup .num   .totalizer view {
-  width: 83.3333rpx;
-  height: 99%;
-  display: flex;
-  justify-content: center;
-  align-items: center;
+.popup .num   .totalizer .inputs{
+  width: 100%;
+  height: 100%;
 }
 
 .popup .num   .totalizer .input{
