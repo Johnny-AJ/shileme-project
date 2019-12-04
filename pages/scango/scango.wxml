@@ -227,7 +227,7 @@
           </view>
 
         </view>
-        <view class="next" bindtap="buys" data-waresId="28" data-propertyId="588" data-amount="2">下一步</view>
+        <view class="next" bindtap="buys" data-waresId="28" data-propertyId="588" data-amount="1">下一步</view>
 
       </view>
     </view>
