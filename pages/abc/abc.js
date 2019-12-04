@@ -1,4 +1,4 @@
-// pages/UserRelated/UserRelated.js
+// pages/abc/abc.js
 Page({
 
   /**
@@ -12,10 +12,7 @@ Page({
    * 生命周期函数--监听页面加载
    */
   onLoad: function (options) {
-    // 头部标题
-    wx.setNavigationBarTitle({
-      title: '用户协议'
-    })
+
   },
 
   /**

@@ -17,7 +17,10 @@ Page({
   /**
    * 生命周期函数--监听页面加载
    */
+
+
   onLoad: function(options) {
+    console.log(555555,options)
     // 获取扫码购的参数
     var list = JSON.parse(options.dtos)
   console.log(5656,list)
@@ -98,10 +101,8 @@ Page({
 
   },
   goto(e) {  //提交订单
-    console.log(e)
-    wx.navigateTo({
-      url: e.currentTarget.dataset.url,
-    })
+    console.log(this.data.dtos)
+   
 
     wx.request({
       // 支付地址
@@ -125,7 +126,19 @@ Page({
           package: res.data.data.package,
           signType: res.data.data.signType,
           paySign: res.data.data.paySign,
+          success(res) {
+
+            wx.navigateTo({
+              url: e.currentTarget.dataset.url,
+            })
+           },
+          fail(res) { 
+            wx.navigateTo({
+              url: e.currentTarget.dataset.url,
+            })
+          }
         })
+
       }
     })
     // let url=e.

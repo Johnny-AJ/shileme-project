@@ -35,8 +35,8 @@
   position: absolute;
   left: 187rpx;
   top: 0rpx;
-  font-size: 26rpx;
-  color: #999;
+  font-size: 30rpx;
+  color: #222;
   height: 100%;
   width: 560rpx;
 }
@@ -48,10 +48,24 @@
   display: flex;
   justify-content: center;
   align-items: center;
-  font-size: 26rpx;
+  font-size: 30rpx;
   color: #222;
   font-family: PingFang SC;
   background-color: #fff;
+}
+
+.picker {
+  background-color: #fff;
+  position: absolute;
+  left: 24.8%;
+  top: 25.41%;
+  font-size: 30rpx;
+  margin-right: 10rpx;
+}
+
+.p30 {
+  /* display: flex; *//* justify-content: space-between; */
+  position: relative;
 }
 
 /* 地址 */

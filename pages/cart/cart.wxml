@@ -71,7 +71,7 @@
 
   <!-- 推荐内容 -->
 
-  <view class="conts">
+  <view class="conts" bindtap="handurl" data-url="/pages/scango/scango">
     <view class="content">
       <view class="cont">
         <image src="../../static/cart/组 26.png"></image>
@@ -79,7 +79,6 @@
         <view class="content_client pl20">Dr.Jart 宛若新生保湿面膜.</view>
         <view class="price pl20">￥
           <text class="nowprice">79 </text>
-
         </view>
       </view>
       <view class="cont">
@@ -88,7 +87,6 @@
         <view class="content_client pl20">Dr.Jart 宛若新生保湿面膜.</view>
         <view class="price pl20">￥
           <text class="nowprice">79 </text>
-
         </view>
       </view>
       <view class="cont">
@@ -97,7 +95,6 @@
         <view class="content_client pl20">Dr.Jart 宛若新生保湿面膜.</view>
         <view class="price pl20">￥
           <text class="nowprice">79 </text>
-
         </view>
       </view>
       <view class="cont">
@@ -128,6 +125,6 @@
       </view>
     </view>
 
-    <view class="button">去结算</view>
+    <view class="button" bindtap="handurl" data-url="/pages/Spell_group_order/Spell_group_order">去结算</view>
   </view>
 </view>

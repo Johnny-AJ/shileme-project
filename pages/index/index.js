@@ -31,30 +31,18 @@ Page({
 
     // 轮播图
     this.setSwiperData()
+    // 头部标题
+    wx.setNavigationBarTitle({
+      title: '首页'
+    })
   },
-  // 路劲封装
-  handurl: function(e) {
+handurl: function(e) {
+  // 路由封装
+  wx.navigateTo({
+    url: e.currentTarget.dataset.url,
+  })
+},
 
-    var _this = this;
-
-    // wx.scanCode({
-    //   success: (res) => {
-    //     var result = res.result;
-
-    //     _this.setData({
-    //       result: result,
-
-    //     }),
-    //       console.log(result)
-    //   }
-    // })
-    // 路由封装
-    // wx.navigateTo({
-    //   url: e.currentTarget.dataset.url
-
-    // })
-
-  },
   // 轮播图
   setSwiperData() {
     wx.request({
@@ -66,6 +54,4 @@ Page({
       }
     })
   },
-  //按钮测试
-
 })
