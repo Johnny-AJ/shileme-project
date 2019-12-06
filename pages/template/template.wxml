@@ -1,4 +1,9 @@
-  <view class="pup-sku" wx:if="{{skuShow}}">
+<!-- <view class="sku" bindtap='showSku'>
+    <view class="sku-tit">已选</view>
+    <view class="sku-con">{{selectedProp.length>0?selectedProp+'，':selectedProp}}{{prodNum}}件</view>
+    <view class="more">...</view>
+  </view>
+    <view class="pup-sku" wx:if="{{skuShow}}">
     <view class="pup-sku-main">
       <view class='pup-sku-header'>
         <image class="pup-sku-img" src="{{defaultSku.pic?defaultSku.pic:pic}}"></image>
@@ -46,3 +51,16 @@
       </view>
     </view>
   </view>
+  <wxs module="wxs" src="../../wxs/number.wxs" />
+ -->
+<view class="tbar">
+  <i-tab-bar current="{{ current }}" color="#f759ab"  bindchange="handleChange">
+    <i-tab-bar-item  i-class="block" key="a1" img="../../static/imgs/猜你喜欢.png" current-img="../../static/imgs/猜你喜欢.png" title="首页"></i-tab-bar-item>
+    <i-tab-bar-item i-class="block" key="a2" img="../../static/imgs/美妆.png" current-img="../../static/imgs/猜你喜欢.png" title="朋友"></i-tab-bar-item>
+    <i-tab-bar-item i-class="block" key="a3" img="../../static/imgs/鞋包(2).png" current-img="../../static/imgs/猜你喜欢.png" title="通知"></i-tab-bar-item>
+    <i-tab-bar-item i-class="block" key="a4" img="../../static/imgs/男装.png" current-img="../../static/imgs/猜你喜欢.png" title="我的"></i-tab-bar-item>
+    <i-tab-bar-item i-class="block" key="a5" img="../../static/imgs/男装.png" current-img="../../static/imgs/猜你喜欢.png" title="我的"></i-tab-bar-item>
+    <i-tab-bar-item i-class="block" key="a6" img="../../static/imgs/男装.png" current-img="../../static/imgs/猜你喜欢.png" title="我的">666666666</i-tab-bar-item>
+  </i-tab-bar>
+
+</view>

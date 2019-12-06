@@ -5,7 +5,7 @@ Page({
    * 页面的初始数据
    */
   data: {
-
+    current: 'tab1',
   },
 
   /**
@@ -24,7 +24,11 @@ Page({
   onReady: function () {
 
   },
-
+  handleChange({ detail }) {
+    this.setData({
+      current: detail.key
+    });
+  },
   /**
    * 生命周期函数--监听页面显示
    */
@@ -65,5 +69,11 @@ Page({
    */
   onShareAppMessage: function () {
 
-  }
+  },
+  handurl: function (e) {
+  // 路由封装
+  wx.navigateTo({
+    url: e.currentTarget.dataset.url,
+  })
+},
 })

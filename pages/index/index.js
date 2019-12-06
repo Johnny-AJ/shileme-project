@@ -16,7 +16,10 @@ Page({
    * 页面的初始数据
    */
   data: {
+    current: 'homepage',
+    show:true,
     // 轮播图数组:
+    width:144,
     swiperList: [],
   },
   swiperBindchange(e) {
@@ -36,13 +39,22 @@ Page({
       title: '首页'
     })
   },
+  clik(){
+    this.setData({
+      show:!this.data.show
+    })
+  },
 handurl: function(e) {
   // 路由封装
   wx.navigateTo({
     url: e.currentTarget.dataset.url,
   })
 },
-
+  handleChange({ detail }) {
+    this.setData({
+      current: detail.key
+    });
+  },
   // 轮播图
   setSwiperData() {
     wx.request({

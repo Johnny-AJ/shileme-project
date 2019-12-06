@@ -5,7 +5,8 @@ Page({
    * 页面的初始数据
    */
   data: {
-
+    value1: 1,
+      show:false
   },
 
   /**
@@ -23,6 +24,11 @@ Page({
     // 路由封装
     wx.navigateTo({
       url: e.currentTarget.dataset.url,
+    })
+  },
+  handleChange1({ detail }) {
+    this.setData({
+      value1: detail.value
     })
   },
 })
