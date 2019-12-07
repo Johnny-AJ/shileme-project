@@ -5,11 +5,12 @@
       <swiper class="swipers" autoplay="{{autoplay}}" current="{{currentSwiper}}" bindchange="swiperChange">
         <block wx:for="{{imgUrls}}">
           <swiper-item>
-      <view class="dots">
-        <block wx:for="{{imgUrls}}">
-          <view class="dot{{index == currentSwiper ? ' active' : ''}}"></view>
-        </block>
-      </view>
+            <view class="dots">
+              <block wx:for="{{imgUrls}}">
+                <view class="dot{{index == currentSwiper ? ' active' : ''}}"></view>
+              </block>
+            </view>
+          </swiper-item>
     </view>
 
     <view class="scgtxt">

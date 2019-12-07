@@ -1,5 +1,4 @@
 <!--pages/Collection/Collection.wxml-->
-<<<<<<< HEAD
 
 
 <view class="colletion">
@@ -80,6 +79,4 @@
     <!-- 字体 -->
   </view>
 </view>
-=======
-<text>我的收藏</text>
->>>>>>> llc
+

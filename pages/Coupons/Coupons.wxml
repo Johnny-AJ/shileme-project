@@ -13,7 +13,7 @@
 <!-- tab栏 -->
 
 <view class="coupons_box">
-<<<<<<< HEAD
+
   <view class="coupons_nav">
     <view class="coupons_img">
       <view>￥10</view>
@@ -23,7 +23,7 @@
       <view>全品类通用券</view>
     </view>
   </view>
-=======
+
 
   <view class="not">
     <view class="imgs">
@@ -109,5 +109,5 @@
   </view> -->
 
 
->>>>>>> llc
+
 </view>
