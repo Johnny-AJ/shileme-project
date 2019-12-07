@@ -63,16 +63,8 @@
   </view>
   <!-- 2周年庆 -->
 
-  <!-- 超值拼团 -->
 
-  <!-- 背景图片颜色 -->
-
-
-  <!-- 2周年庆 -->
-
-  <!-- 超值拼团 -->
-
-  <!-- 背景图片颜色 -->
+ <!-- 超值拼团 -->
   <view class="conts">
     <view class="bgc_color">
       <!-- 大盒子 -->
@@ -87,12 +79,12 @@
           </view>
         </view>
 
-        <!-- 下 -->
+       
         <view class="bargain_buttom">
 
           <swiper autoplay="false" interval="7000" circular="false">
             <block wx:for="{{swiperList}}" wx:key="goods_id">
-
+    
               <swiper-item>
                 <view class="swiper-item">
                   <view class="swiper-cont">
@@ -113,79 +105,6 @@
                       </view>
                     </view>
                   </view>
-                  <view class="swiper-cont">
-                    <view class="imgs">
-                      <image src="../../static/imgs/imgs1.png"> </image>
-                      <view class="text">已拼22件</view>
-                    </view>
-                    <view class="text">
-                      <view class="t1">2人团</view>
-                      <view class="price">
-                        <view class="now">￥
-                          <text>9.9</text>
-                        </view>
-                        <view class="old">
-                          ￥
-                          <text>160</text>
-                        </view>
-                      </view>
-                    </view>
-                  </view>
-                  <view class="swiper-cont">
-                    <view class="imgs">
-                      <image src="../../static/imgs/imgs1.png"> </image>
-                      <view class="text">已拼22件</view>
-                    </view>
-                    <view class="text">
-                      <view class="t1">2人团</view>
-                      <view class="price">
-                        <view class="now">￥
-                          <text>9.9</text>
-                        </view>
-                        <view class="old">
-                          ￥
-                          <text>160</text>
-                        </view>
-                      </view>
-                    </view>
-                  </view>
-                  <view class="swiper-cont">
-                    <view class="imgs">
-                      <image src="../../static/imgs/imgs1.png"> </image>
-                      <view class="text">已拼22件</view>
-                    </view>
-                    <view class="text">
-                      <view class="t1">2人团</view>
-                      <view class="price">
-                        <view class="now">￥
-                          <text>9.9</text>
-                        </view>
-                        <view class="old">
-                          ￥
-                          <text>160</text>
-                        </view>
-                      </view>
-                    </view>
-                  </view>
-                  <view class="swiper-cont">
-                    <view class="imgs">
-                      <image src="../../static/imgs/imgs1.png"> </image>
-                      <view class="text">已拼22件</view>
-                    </view>
-                    <view class="text">
-                      <view class="t1">2人团</view>
-                      <view class="price">
-                        <view class="now">￥
-                          <text>9.9</text>
-                        </view>
-                        <view class="old">
-                          ￥
-                          <text>160</text>
-                        </view>
-                      </view>
-                    </view>
-                  </view>
-
                 </view>
               </swiper-item>
             </block>
@@ -196,7 +115,7 @@
 
         </view>
       </view>
-      <!-- 超值拼团 -->
+
 
       <!-- 背景图片颜色 -->
       <view class="bgc_color  content">

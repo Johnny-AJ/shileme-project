@@ -1,5 +1,6 @@
 {
   "pages": [
+    "pages/index/index",
     "pages/formats/formats",
     "pages/friends/friends",
     "pages/finetuxedos/finetuxedos",
@@ -8,7 +9,6 @@
     "pages/order/order",
     "pages/comment/comment",
     "pages/template/template",
-    "pages/index/index",
     "pages/scango/scango",
     "pages/details/details",
     "pages/shipping/shipping",
