@@ -1,5 +1,6 @@
 {
   "pages": [
+    "pages/cart/cart",
     "pages/index/index",
     "pages/template/template",
 
@@ -8,7 +9,6 @@
     "pages/order/order",
     "pages/scango/scango",
     "pages/Spell/Spell",
-    "pages/cart/cart",
     "pages/searches/searches",
     "pages/search/search",
     "pages/Coupons/Coupons",
