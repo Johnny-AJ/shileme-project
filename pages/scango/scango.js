@@ -5,7 +5,7 @@ Page({
    * 页面的初始数据
    */
   data: {
-    value1:1,
+    value1: 1,
     token: '',
     contents: {},
     imgs: [],
@@ -22,13 +22,14 @@ Page({
     list: {},
     comments: {}
   },
-  // 弹出层方法
+  // 弹出领劵层方法
   toggleDialog() {
     this.setData({
       showDialog: !this.data.showDialog,
 
     });
   },
+  // 弹出规格层方法
   toggleDialog1() {
     this.setData({
       showDialog1: !this.data.showDialog1
@@ -41,8 +42,10 @@ Page({
     })
   },
   // input输入框
-  
-  handleChange1({ detail }) {
+
+  handleChange1({
+    detail
+  }) {
     this.setData({
       value1: detail.value
     })
@@ -54,48 +57,31 @@ Page({
     // 头部标题
     wx.setNavigationBarTitle({
       title: '扫码购'
-    })
+    }),
+      this.request()
   },
   /**
    * 生命周期函数--监听页面显示
    */
 
-  onLoad: function() {
-
-  },
+  
   onShow: function() {
 
-    var self = this;
-    wx.setNavigationBarTitle({
-        title: '商品详情'
-      }),
-      // 数据请求
-      wx.request({
-        url: 'http://192.168.2.98:9095/api/wares/details/getWaresInfo',
-        method: "get",
-        data: {
-          waresId: 28
-        },
-        success(res) {
-          self.setData({
-            list: res.data.data
-          })
-        }
-      }),
-      // 评论请求
-      // wx.request({
-      //   url: 'http://192.168.2.98:9095/api/wares/details/getCommentList',
-      //   data: {
-      //     start: 0,
-      //     limit: 4,
-      //     waresId: 28
-      //   },
-      //   success(res) {
-      //     comments: res.data
-      //   }
-      // })
-
-      wx.request({
+  var self=this;
+    // 评论请求
+    // wx.request({
+    //   url: 'http://192.168.2.98:9095/api/wares/details/getCommentList',
+    //   data: {
+    //     start: 0,
+    //     limit: 4,
+    //     waresId: 28
+    //   },
+    //   success(res) {
+    //     comments: res.data
+    //   }
+    // })
+    // 规格选择
+    wx.request({
         url: 'http://192.168.2.119:9095//api/wares/details/getPropertyList',
         method: "get",
         data: {
@@ -127,7 +113,6 @@ Page({
   /* 获取数据 */
   distachAttrValue: function(commodityAttr) {
     var self = this;
-   
 
     /** 
     将后台返回的数据组合成类似 
@@ -344,11 +329,37 @@ Page({
     })
   },
   buys: function(e) {
+
+    console.log(e)
     var dtos = JSON.stringify(e.currentTarget.dataset);
     // var dtos = e.currentTarget.dataset;
 
-      wx.navigateTo({
-        url: '/pages/Spell_group_order/Spell_group_order?dtos=' + dtos
+    wx.navigateTo({
+      url: '/pages/Spell_group_order/Spell_group_order?dtos=' + dtos
+    })
+  },
+  request() {
+   
+    var self = this;
+    wx.setNavigationBarTitle({
+        title: '商品详情'
+      }),
+      // 数据请求
+      wx.request({
+        url: 'http://192.168.2.98:9095/api/wares/details/getWaresInfo',
+        method: "get",
+        data: {
+          waresId: 28
+        },
+        success(res) {
+          console.log(66666,res)
+          self.setData({
+            list: res.data.data
+          })
+
+
+        }
       })
   }
+
 })

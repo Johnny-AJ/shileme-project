@@ -16,6 +16,7 @@
     "pages/inetAddress/inetAddress",
     "pages/indent/indent",
     "pages/group/group",
+    "pages/Spell/Spell",
     "pages/Spell_group_order/Spell_group_order",
     "pages/mynote/mynote",
     "pages/Collection/Collection",
@@ -32,7 +33,8 @@
     "pages/login/login",
     "pages/UserRelated/UserRelated",
     "pages/comment/comment",
-    "pages/user/user"
+    "pages/user/user",
+    "pages/searches/searches"
   ],
   "window": {
     "backgroundTextStyle": "light",
