@@ -25,13 +25,10 @@ Page({
     wx.navigateTo({
       url: e.currentTarget.dataset.url,
     })
-<<<<<<< HEAD
-=======
   },
   handleChange1({ detail }) {
     this.setData({
       value1: detail.value
     })
->>>>>>> llc
   },
 })

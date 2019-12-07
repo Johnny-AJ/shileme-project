@@ -1,5 +1,4 @@
-<<<<<<< HEAD
-/* pages/Collection/Collection.wxss */
+
 
 .colletion {
   width: 750rpx;
@@ -56,6 +55,3 @@
   font-weight: 400;
   color: rgba(240, 43, 80, 1);
 }
-=======
-/* pages/Collection/Collection.wxss */
->>>>>>> llc
