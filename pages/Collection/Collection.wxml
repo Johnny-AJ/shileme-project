@@ -1,0 +1,81 @@
+<!--pages/Collection/Collection.wxml-->
+
+
+<view class="colletion">
+  <view class="collection_nav">
+    <!-- 图片 -->
+    <view>
+      <image src="../../static/cart/矩形 16.png"></image>
+    </view>
+    <!-- 图片 -->
+
+    <!-- 字体 -->
+    <view class="collection_tt">
+      <view class="t1">Dr.jart+宛若新生水样保湿急救面 膜 5片/盒</view>
+      <view class="t2">1002人收藏</view>
+      <view class="t3">￥79.00</view>
+    </view>
+    <!-- 字体 -->
+
+  </view>
+
+  <view class="collection_nav">
+    <!-- 图片 -->
+    <view>
+      <image src="../../static/cart/矩形 16.png"></image>
+    </view>
+    <!-- 图片 -->
+    <!-- 字体 -->
+    <view class="collection_tt">
+      <view class="t1">Dr.jart+宛若新生水样保湿急救面 膜 5片/盒</view>
+      <view class="t2">1002人收藏</view>
+      <view class="t3">￥79.00</view>
+    </view>
+    <!-- 字体 -->
+  </view>
+
+  <view class="collection_nav">
+    <!-- 图片 -->
+    <view>
+      <image src="../../static/cart/矩形 16.png"></image>
+    </view>
+    <!-- 图片 -->
+    <!-- 字体 -->
+    <view class="collection_tt">
+      <view class="t1">Dr.jart+宛若新生水样保湿急救面 膜 5片/盒</view>
+      <view class="t2">1002人收藏</view>
+      <view class="t3">￥79.00</view>
+    </view>
+    <!-- 字体 -->
+  </view>
+
+  <view class="collection_nav">
+    <!-- 图片 -->
+    <view>
+      <image src="../../static/cart/矩形 16.png"></image>
+    </view>
+    <!-- 图片 -->
+    <!-- 字体 -->
+    <view class="collection_tt">
+      <view class="t1">Dr.jart+宛若新生水样保湿急救面 膜 5片/盒</view>
+      <view class="t2">1002人收藏</view>
+      <view class="t3">￥79.00</view>
+    </view>
+    <!-- 字体 -->
+  </view>
+
+  <view class="collection_nav">
+    <!-- 图片 -->
+    <view>
+      <image src="../../static/cart/矩形 16.png"></image>
+    </view>
+    <!-- 图片 -->
+    <!-- 字体 -->
+    <view class="collection_tt">
+      <view class="t1">Dr.jart+宛若新生水样保湿急救面 膜 5片/盒</view>
+      <view class="t2">1002人收藏</view>
+      <view class="t3">￥79.00</view>
+    </view>
+    <!-- 字体 -->
+  </view>
+</view>

@@ -1,0 +1,57 @@
+/* pages/Collection/Collection.wxss */
+
+.colletion {
+  width: 750rpx;
+  height: 1334rpx;
+  overflow: hidden;
+  background-color: skyblue;
+}
+
+.collection_nav {
+  border: 1px solid blue;
+  width: 730rpx;
+  height: 240rpx;
+  border-radius: 10rpx;
+  box-sizing: border-box;
+  margin: 20rpx 10rpx;
+  background-color: floralwhite;
+  position: relative;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.collection_nav image {
+  height: 190rpx;
+  width: 190rpx;
+  /* border: 1px solid red; */
+}
+
+.collection_nav .collection_tt {
+  height: 100%;
+  width: 485rpx;
+  /* border: 1px solid black; */
+  margin-left: 30rpx;
+}
+
+.collection_tt .t1 {
+  font-size: 30rpx;
+  font-family: PingFang SC;
+  font-weight: bold;
+  margin-bottom: 15rpx;
+}
+
+.collection_tt .t2 {
+  margin-bottom: 15rpx;
+  font-size: 28rpx;
+  font-family: PingFang SC;
+  font-weight: 400;
+  color: rgba(153, 153, 153, 1);
+}
+
+.collection_tt .t3 {
+  font-size: 26rpx;
+  font-family: PingFang SC;
+  font-weight: 400;
+  color: rgba(240, 43, 80, 1);
+}

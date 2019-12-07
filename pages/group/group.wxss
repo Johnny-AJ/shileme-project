@@ -1,0 +1,154 @@
+/* pages/group/group.wxss */
+
+/* 背景 */
+
+.bgc {
+  width: 750rpx;
+  height: 1470rpx;
+  background-color: skyblue;
+  overflow: hidden;
+}
+
+/* 大图 */
+
+.bgc .img {
+  width: 100%;
+}
+
+.bgc .img image {
+  width: 750rpx;
+  height: 500rpx;
+  padding-bottom: 20rpx;
+}
+
+/* 小图 */
+
+.bgc .img1 {
+  width: 100%;
+}
+
+.bgc .img1 image {
+  width: 100%;
+  height: 200rpx;
+  padding-bottom: 20rpx;
+}
+
+/* ========== */
+
+/* 拼团 */
+
+.group_box {
+  height: 90rpx;
+  width: 730rpx;
+  box-sizing: border-box;
+  margin: 0 10rpx 20rpx;
+  background-color: #fff;
+  border-radius: 10rpx;
+}
+
+.group_box .group_nav {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  line-height: 90rpx;
+  margin: 0 20rpx;
+}
+
+.group_box .group_nav image {
+  width: 140rpx;
+  height: 31rpx;
+}
+
+.group_box .group_nav .t2 {
+  font-size: 32rpx;
+  font-family: PingFang SC;
+  font-weight: 400;
+  color: rgba(240, 43, 80, 1);
+}
+
+/* ========== */
+
+/* 内容 */
+
+.group_box1 {
+  width: 730rpx;
+  height: 240rpx;
+  box-sizing: border-box;
+  margin: 0 10rpx;
+  background-color: #fff;
+  border-radius: 10rpx;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  position: relative;
+  margin-bottom: 20rpx;
+}
+
+.group_box1 .group_nav1 {
+  margin-left: 20rpx;
+}
+
+.group_box1 .group_nav1 image {
+  /* border: 1px solid brown; */
+  width: 190rpx;
+  height: 190rpx;
+}
+
+.group_box1 .group_text {
+  width: 502rpx;
+  height: 190rpx;
+  /* border: 1px solid salmon; */
+  margin-left: 30rpx;
+}
+
+.group_box1 .group_text .t3 {
+  font-size: 30rpx;
+  font-family: PingFang SC;
+  font-weight: bold;
+  color: rgba(34, 34, 34, 1);
+}
+
+.group_box1 .group_text .t4 {
+  font-size: 28rpx;
+  font-family: PingFang SC;
+  font-weight: bold;
+  color: rgba(34, 34, 34, 1);
+  position: absolute;
+  top: 125rpx;
+  left: 245rpx;
+}
+
+.group_box1 .group_text .t5 {
+  font-size: 28rpx;
+  font-family: PingFang SC;
+  font-weight: 400;
+  color: rgba(34, 34, 34, 1);
+  position: absolute;
+  top: 170rpx;
+  left: 245rpx;
+}
+
+.group_box1 .group_text .t6 {
+  font-size: 26rpx;
+  font-family: PingFang SC;
+  font-weight: 400;
+  color: rgba(240, 43, 80, 1);
+  position: absolute;
+  top: 173rpx;
+  left: 336rpx;
+}
+
+.group_button {
+  width: 150rpx;
+  height: 60rpx;
+  border: 1px solid #00c098;
+  border-radius: 10rpx;
+  text-align: center;
+  position: absolute;
+  top: 155rpx;
+  left: 545rpx;
+}
+
+.group_button .t7 {
+  color: #2dc1a4;
+}

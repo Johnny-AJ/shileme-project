@@ -1,0 +1,114 @@
+<!--我的订单-->
+<view class="indent">
+  <view class="checktbs">
+    <i-tabs current="{{ current }}" color="#F02B50" bindchange="handleChange" i-class="tabs">
+      <i-tab key="tab1" title="全部" ></i-tab>
+      <i-tab key="tab2" title="代付款"></i-tab>
+      <i-tab key="tab3" title="代发货"></i-tab>
+      <i-tab key="tab4" title="待收货"></i-tab>
+      <i-tab key="tab5" title="待评价"></i-tab>
+    </i-tabs>
+  </view>
+  <view class="conttent">
+
+    <view class="conts">
+      <view class="state p30">
+        <text class="time">2019-08-07</text>
+        <text>待付款</text>
+      </view>
+      <view class="cont p30">
+        <view class="imgs">
+          <image src="../../static/imgs/交易成功.png"></image>
+        </view>
+        <view class="cr">
+          <view class="name">
+            <text>保湿急救 网红蓝药丸面膜</text>
+            <text class="price">￥79</text>
+          </view>
+          <view class="spec">
+            <text class="t1">5片/盒</text>
+            <text class="t2"><text>x1</text></text>
+          </view>
+          <view class="gifts">
+            <view class="gl">赠品:</view>
+            <view class="num">
+              <view class="nums">
+                <text>Dr.jart蓝色药丸面膜（5ml/片）</text>
+                <text>X1</text>
+              </view>
+              <view class="nums">
+                <text>Dr.jart蓝色药丸面膜（5ml/片）</text>
+                <text>X1</text>
+              </view>
+            </view>
+          </view>
+        </view>
+      </view>
+
+      <view class="payment">
+        <view class="number">
+          <text class="t1">共1件</text>
+          <text class="t2">实付：</text>
+          <text class="price">￥ <text>79.00</text></text>
+        </view>
+        <view class="way p30">
+          <text class="color" bindtap="goto">付款</text>
+        </view>
+
+      </view>
+    </view>
+      <view class="conts">
+      <view class="state p30">
+        <text class="time">2019-08-07</text>
+        <text>待付款</text>
+      </view>
+      <view class="cont p30">
+        <view class="imgs">
+          <image src="../../static/imgs/交易成功.png"></image>
+        </view>
+        <view class="cr">
+          <view class="name">
+            <text>保湿急救 网红蓝药丸面膜</text>
+            <text class="price">￥79</text>
+          </view>
+          <view class="spec">
+            <text class="t1">5片/盒</text>
+            <text class="t2"><text>x1</text></text>
+          </view>
+          <view class="gifts">
+            <view class="gl">赠品:</view>
+            <view class="num">
+              <view class="nums">
+                <text>Dr.jart蓝色药丸面膜（5ml/片）</text>
+                <text>X1</text>
+              </view>
+              <view class="nums">
+                <text>Dr.jart蓝色药丸面膜（5ml/片）</text>
+                <text>X1</text>
+              </view>
+            </view>
+          </view>
+          
+        </view>
+      </view>
+      <view class="payment">
+        <view class="number">
+          <text class="t1">共1件</text>
+          <text class="t2">实付：</text>
+          <text class="price">￥ <text>79.00</text></text>
+        </view>
+        <view class="way p30">
+          
+          <text class="color">付款</text>
+          <text>物流信息</text>
+           <text>取件码</text>
+        </view>
+
+      </view>
+    </view>
+
+
+  </view>
+
+
+</view>

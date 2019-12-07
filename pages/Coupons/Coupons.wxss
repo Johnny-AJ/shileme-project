@@ -1,0 +1,32 @@
+.indent  .checktbs {
+  height: 90rpx;
+  width: 100%;
+}
+
+.indent .tabs {
+  width: 100%;
+  position: fixed;
+  left: 0;
+  top: 0;
+  height: 91rpx;
+  display: flex;
+  background: #fff;
+  align-items: center;
+  padding-bottom: 10rpx;
+  box-sizing: border-box;
+  border: none !important;
+}
+
+/* -------------------------- */
+
+.coupons_box {
+  box-sizing: border-box;
+  padding: 30rpx;
+  background-color: skyblue;
+  display: flex;
+}
+
+.coupons_box .coupons_nav {
+  width: 345rpx;
+  height: 105rpx;
+}
