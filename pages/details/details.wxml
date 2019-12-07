@@ -5,10 +5,6 @@
       <swiper class="swipers" autoplay="{{autoplay}}" current="{{currentSwiper}}" bindchange="swiperChange">
         <block wx:for="{{imgUrls}}">
           <swiper-item>
-          </swiper-item>
-        </block>
-      </swiper>
-      <!--重置小圆点的样式  -->
       <view class="dots">
         <block wx:for="{{imgUrls}}">
           <view class="dot{{index == currentSwiper ? ' active' : ''}}"></view>

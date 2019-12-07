@@ -1,5 +1,11 @@
 {
   "pages": [
+    "pages/user/user",
+    "pages/indent/indent",
+    "pages/order/order",
+    "pages/comment/comment",
+    "pages/template/template",
+    "pages/details/details",
     "pages/index/index",
     "pages/finetuxedos/finetuxedos",
     "pages/friends/friends",
