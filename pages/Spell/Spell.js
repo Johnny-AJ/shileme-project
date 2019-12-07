@@ -4,15 +4,16 @@ Page({
    * 页面的初始数据
    */
   data: {
-    show:1,
-    arry: [{ name: 'a1' }, { name: 'a2' }, { name: 'a3' }, { name: 'a4' }, { name: 'a5' }]
+    
   },
 
   /**
    * 生命周期函数--监听页面加载
    */
   onLoad: function (options) {
-    
+    wx.setNavigationBarTitle({
+      title: '下单',
+    })
   },
 
   /**
@@ -61,25 +62,6 @@ Page({
    * 用户点击右上角分享
    */
   onShareAppMessage: function () {
- 
-  }
-  ,
-  click(e){
-console.log(e)
-    let index = e.currentTarget.dataset.index;
-    console.log(index)
-    this.setData({
-      show: index
-    })
-   
-
-   
-    // arry.forEach(function(item,index){
-    //   if(index==e.currentTarge.dataset.index){
-    //     show: e.currentTarge.dataset.index
-    //   }else{
-    //     show:0
-    //   }
-    // })
+    
   }
 })

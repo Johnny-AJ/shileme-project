@@ -20,7 +20,11 @@ Page({
 
 
   onLoad: function(options) {
-    console.log(555555,options)
+
+     wx.setNavigationBarTitle({
+      title: '下单',
+    })
+
     // 获取扫码购的参数
     var list = JSON.parse(options.dtos)
   console.log(5656,list)
@@ -54,9 +58,7 @@ Page({
 
     })
 
-    wx.setNavigationBarTitle({
-      title: '下单',
-    })
+   
 
   },
   toggleDialog() {
