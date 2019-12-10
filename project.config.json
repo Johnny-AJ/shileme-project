@@ -25,7 +25,7 @@
 		"nodeModules": true
 	},
 	"compileType": "miniprogram",
-	"libVersion": "2.9.3",
+	"libVersion": "2.9.4",
 	"appid": "wx528c4e364682d4e2",
 	"projectname": "shileme-project",
 	"debugOptions": {

@@ -1,8 +1,10 @@
 {
   "component": true,
- "usingComponents": {
-  "i-tab-bar": "../../components/tab-bar/index",
-  "i-tab-bar-item": "../../components/tab-bar-item/index"
-}
-
+  "navigationBarTitleText": "首页",
+  "usingComponents": {
+    "i-tab-bar": "../../components/tab-bar/index",
+    "i-toast": "../../components/toast/index",
+    "i-tab-bar-item": "../../components/tab-bar-item/index",
+    "i-count-down": "../../components/count-down/index"
+  }
 }
