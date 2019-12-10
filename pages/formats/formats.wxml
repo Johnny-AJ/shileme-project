@@ -100,7 +100,7 @@
       </view>
 
       <!-- 参团 -->
-      <view class="swiper_botton">
+      <view class="swiper_botton" bindtap="handurl" data-url="/pages/friends/friends">
         <view class="t13">去参团</view>
       </view>
 
@@ -126,7 +126,7 @@
       </view>
 
       <!-- 参团 -->
-      <view class="swiper_botton">
+      <view class="swiper_botton" bindtap="handurl" data-url="/pages/friends/friends">
         <view class="t13">去参团</view>
       </view>
 
@@ -222,7 +222,7 @@
 <!-- 结算 -->
 <view class="settlements_box">
 
-  <view class="settlements_img">
+  <view class="settlements_img" bindtap="handurl" data-url="/pages/index/index">
     <image src="../../static/formats/start.png"></image>
   </view>
   <text>首页</text>
@@ -233,8 +233,8 @@
   </view>
 
   <view class="settlements_box2">
-    <view class="s3">￥160</view>
-    <view class="s3">单独购买</view>
+    <view class="s3">￥79</view>
+    <view class="s3">2人拼团</view>
   </view>
 </view>
 <!-- 结算 -->

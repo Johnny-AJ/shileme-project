@@ -86,4 +86,9 @@
   line-height: 88rpx;
 }
 
+.button button {
+  background: rgba(240, 43, 80, 1);
+  color: #f5f5f5;
+}
+
 /* 按钮 */

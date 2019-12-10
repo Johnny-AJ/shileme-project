@@ -6,7 +6,9 @@
   <view class="address_box">
     <view class="name_box p30">
       <text>花礼晴</text>
+      <!-- <text>{{address}}</text> -->
       <text>13923856789</text>
+      <!-- <text>{{address1}}</text> -->
     </view>
     <view class="shipping_address p30">
       广东省广州市天河区长湴工业园13号

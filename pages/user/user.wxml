@@ -14,7 +14,7 @@
       </view>
     </view>
   </view>
-  <view class="allorders">
+  <view class="allorders" bindtap="handurl" data-url="/pages/indent/indent">
     <view class="oderhead">
       <view class="ot">
         <text class="oleft">全部订单</text>
@@ -22,7 +22,7 @@
       </view>
       <view class="ob"></view>
     </view>
-    <view class="odercont">
+    <view class="odercont" bindtap="handurl" data-url="/pages/indent/indent">
       <view class="cont">
         <image src="../../static/userimags/待付款.png"></image>
         <text>代付款</text>
@@ -53,7 +53,7 @@
       <image src="../../static/userimags/拼团.png"></image>
       <text> 我的拼团</text>
     </view>
-    <view class="content">
+    <view class="content" bindtap="handurl" data-url="/pages/free/free">
       <image src="../../static/userimags/试用.png"></image>
       <text> 我的试用</text>
     </view>
@@ -65,16 +65,16 @@
       <image src="../../static/userimags/收藏夹.png"></image>
       <text> 收藏夹</text>
     </view>
-    <view class="content" bindtap="handurl" data-url="/pages/Spell_group_order/Spell_group_order">
+    <view class="content" bindtap="handurl" data-url="/pages/shipping/shipping">
       <image src="../../static/userimags/我的地址.png"></image>
       <text> 我的地址</text>
     </view>
 
-    <view class="content">
+    <view class="content" bindtap="handurl" data-url="/pages/customer/customer">
       <image src="../../static/userimags/联系客服.png"></image>
       <text> 联系客服</text>
     </view>
-    <view class="content">
+    <view class="content" bindtap="handurl" data-url="/pages/aboutIntro/aboutIntro">
       <image src="../../static/userimags/关于我们.png"></image>
       <text> 关于我们</text>
     </view>

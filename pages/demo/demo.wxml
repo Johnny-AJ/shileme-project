@@ -1,0 +1,39 @@
+<!--pages/demo/demo.wxml-->
+<!-- <text>pages/demo/demo.wxml</text> -->
+
+
+<!--index.wxml-->
+<view class="content">
+  <view class="common">
+    <view class="hr">
+      <text>快递预约</text>
+    </view>
+    <form bindsubmit="submitdate">
+      <view class="order">
+
+        <view class="date">
+          <input name="date" placeholder="请输入预定的日期....." placeholder-style="color:#eee" />
+        </view>
+
+        <view class="date">
+          <input name="username" placeholder="请输入预定的人....." placeholder-style="color:#eee" />
+        </view>
+
+        <view class="date">
+          <input name="telpho" placeholder="请输入预定电话....." placeholder-style="color:#eee" />
+        </view>
+
+        <view class="date">
+          <input name="address" placeholder="请输入预定的地址....." placeholder-style="color:#eee" />
+        </view>
+
+        <view class="date">
+          <input name="other" placeholder="请输入预定的其他信息....." placeholder-style="color:#eee" />
+        </view>
+
+        <button form-type="submit">确认提交</button>
+
+      </view>
+    </form>
+  </view>
+</view>

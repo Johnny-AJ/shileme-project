@@ -1,14 +1,13 @@
-
-
 .colletion {
   width: 750rpx;
   height: 1334rpx;
   overflow: hidden;
   background-color: skyblue;
+  /* background-color: #f5f5f5; */
 }
 
 .collection_nav {
-  border: 1px solid blue;
+  /* border: 1px solid blue; */
   width: 730rpx;
   height: 240rpx;
   border-radius: 10rpx;

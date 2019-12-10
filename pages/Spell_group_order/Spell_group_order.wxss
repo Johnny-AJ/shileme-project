@@ -26,25 +26,15 @@
   box-sizing: border-box;
   margin: 30rpx;
 }
-.big_box .top_box1{
-  width: 668rpx;
-  height: 144rpx;
-  box-sizing: border-box;
-  margin: 30rpx;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-}
+
 .top_box .t1 {
 font-size:30rpx;
 font-family:PingFang SC;
 font-weight:bold;
 color:rgba(34,34,34,1);
 }
-
 .top_box .t1 text:nth-child(1){
   margin: 0 29rpx;
-  
 }
 .top_box .t1 .text {
   width: 70rpx;
@@ -63,9 +53,7 @@ color:rgba(34,34,34,1);
   color: rgba(240, 43, 80, 1);
   margin-top: 10rpx;
 }
-.top_box .t3{
-  margin-top: 10rpx;
-}
+
 .big_box image {
   height: 35rpx;
   width: 22rpx;
@@ -102,38 +90,20 @@ color:rgba(34,34,34,1);
   align-items: center;
 }
 
-.name .text {
+text {
   font-size: 30rpx;
   font-family: PingFang SC;
-  font-weight: bold;
+  font-weight: 400;
   color: rgba(34, 34, 34, 1);
 }
 
 /* ------------ */
 
- .zan-dialog .conts {
+.conts {
   width: 100%;
   background: #fff;
-  display: flex;
-  height: 700rpx;
-  justify-content: center;
-  align-items: center;
-  flex-wrap: wrap;
 }
-.zan-dialog .conts image {
-  width: 248.7rpx;
-  height: 267.7rpx;
-}
-.zan-dialog .conts text{
-  width: 100%;
-  font-size:34rpx;
-font-family:PingFang SC;
-font-weight:400;
-color:rgba(102,102,102,1);
-display: flex;
-justify-content: center;
-margin-top: 30rpx;
-}
+
 .conttent .conts .state {
   height: 72rpx;
   width: 100%;
@@ -307,7 +277,6 @@ margin-top: 30rpx;
  margin-top: 20rpx;
 
 }
-
 .coupon  view{
   height: 60rpx;
   width: 100%;
@@ -316,9 +285,10 @@ margin-top: 30rpx;
   display: flex;
   justify-content: space-between;
   align-items: center;
+ 
+
 
 }
-
 .coupon  view text{
   font-size:26rpx;
 font-family:PingFang SC;

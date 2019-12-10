@@ -6,7 +6,6 @@
   "navigationBarBackgroundColor": "#ffffff",
   "navigationBarTextStyle": "black",
   "backgroundColor": "#eeeeee",
-  "backgroundTextStyle": "light",
-  "navigationBarTitleText": "商品详情"
+  "backgroundTextStyle": "light"
 
 }

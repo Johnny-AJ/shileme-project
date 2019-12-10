@@ -1,4 +1,4 @@
-// pages/finetuxedos/finetuxedos.js
+// pages/find/find.js
 Page({
 
   /**
@@ -14,13 +14,7 @@ Page({
   onLoad: function(options) {
     // 头部标题
     wx.setNavigationBarTitle({
-      title: '参团详情页'
-    })
-  },
-  handurl: function(e) {
-    // 路由封装
-    wx.navigateTo({
-      url: e.currentTarget.dataset.url,
+      title: '积分兑换'
     })
   },
 })
