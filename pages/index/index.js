@@ -1,12 +1,12 @@
 // 引入测试
-const appconfig = require('../../app.config.js')
+// const appconfig = require('../../app.config.js')
 // 路由封装
-const http = require('../../server/http.js');
+// const http = require('../../server/http.js');
 // 引入封装请求
-import {
-  auth_API,
-  updateUserInfo_API
-} from '../../server/login/index.js'
+// import {
+//   auth_API,
+//   updateUserInfo_API
+// } from '../../server/login/index.js'
 
 
 // pages/index/index.js
@@ -17,10 +17,10 @@ Page({
    */
   data: {
     current: 'homepage',
-    show:true,
+    show: true,
     // 轮播图数组:
-    width:144,
-    swiperList: [],
+    width: 144,
+    swiperList: []
   },
   swiperBindchange(e) {
     this.setData({
@@ -40,18 +40,20 @@ Page({
       title: '首页'
     })
   },
-  clik(){
+  clik() {
     this.setData({
-      show:!this.data.show
+      show: !this.data.show
     })
   },
-handurl: function(e) {
-  // 路由封装
-  wx.navigateTo({
-    url: e.currentTarget.dataset.url,
-  })
-},
-  handleChange({ detail }) {
+  handurl: function(e) {
+    // 路由封装
+    wx.navigateTo({
+      url: e.currentTarget.dataset.url,
+    })
+  },
+  handleChange({
+    detail
+  }) {
     this.setData({
       current: detail.key
     });
@@ -61,33 +63,28 @@ handurl: function(e) {
     wx.request({
       url: 'http://192.168.2.98:9095/api/index/banner/banners',
       success: (res) => {
-       
         this.setData({
           swiperList: res.data.data
         })
       }
     })
   },
-  selling(){
+  selling() {
     wx.request({
       url: 'http://192.168.2.98:9095/api/index/findAllCategoryName',
       success: (res) => {
         // console.log(res)
-        this.setData({
-         
-        })
+        this.setData({})
       }
     })
   },
-  group(){
+  group() {
     wx.request({
       url: 'http://192.168.2.98:9095/api/index/findGroupBuyRollList',
       success: (res) => {
-        console.log(res)
-        this.setData({
-
-        })
+        // console.log(res, 3)
+        this.setData({})
       }
     })
-  }
+  },
 })

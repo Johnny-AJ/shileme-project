@@ -25,7 +25,7 @@
 		"nodeModules": true
 	},
 	"compileType": "miniprogram",
-	"libVersion": "2.9.3",
+	"libVersion": "2.9.4",
 	"appid": "wx528c4e364682d4e2",
 	"projectname": "shileme-project",
 	"debugOptions": {
@@ -52,32 +52,32 @@
 			"list": []
 		},
 		"miniprogram": {
-			"current": -1,
+			"current": 3,
 			"list": [
 				{
-					"id": -1,
-					"name": "pages/scango/scango",
+					"id": 0,
+					"name": "扫码购",
 					"pathName": "pages/scango/scango",
 					"query": "",
 					"scene": null
 				},
 				{
-					"id": -1,
-					"name": "pages/user/user",
+					"id": 1,
+					"name": "个人",
 					"pathName": "pages/user/user",
 					"query": "",
 					"scene": null
 				},
 				{
-					"id": -1,
-					"name": "pages/login/login",
+					"id": 2,
+					"name": "登录",
 					"pathName": "pages/login/login",
 					"query": "",
 					"scene": null
 				},
 				{
-					"id": -1,
-					"name": "pages/index/index",
+					"id": 3,
+					"name": "首页",
 					"pathName": "pages/index/index",
 					"query": "",
 					"scene": null

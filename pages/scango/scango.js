@@ -26,7 +26,6 @@ Page({
   toggleDialog() {
     this.setData({
       showDialog: !this.data.showDialog,
-
     });
   },
   // 弹出规格层方法
@@ -34,15 +33,12 @@ Page({
     this.setData({
       showDialog1: !this.data.showDialog1
     });
-
   },
   swiperChange: function(e) {
     this.setData({
       currentSwiper: e.detail.current
     })
   },
-  // input输入框
-
   handleChange1({
     detail
   }) {
@@ -56,18 +52,18 @@ Page({
   onLoad: function(options) {
     // 头部标题
     wx.setNavigationBarTitle({
-      title: '扫码购'
-    }),
+        title: '扫码购'
+      }),
       this.request()
   },
   /**
    * 生命周期函数--监听页面显示
    */
 
-  
+
   onShow: function() {
 
-  var self=this;
+    var self = this;
     // 评论请求
     // wx.request({
     //   url: 'http://192.168.2.98:9095/api/wares/details/getCommentList',
@@ -108,12 +104,10 @@ Page({
         attrValueList: this.data.attrValueList
       });
     }
-
   },
   /* 获取数据 */
   distachAttrValue: function(commodityAttr) {
     var self = this;
-
     /** 
     将后台返回的数据组合成类似 
     { 
@@ -320,7 +314,6 @@ Page({
           }
         }
       })
-      console.log(valueStr);
     }
   },
   goto: function(e) {
@@ -329,17 +322,13 @@ Page({
     })
   },
   buys: function(e) {
-
-    console.log(e)
     var dtos = JSON.stringify(e.currentTarget.dataset);
     // var dtos = e.currentTarget.dataset;
-
     wx.navigateTo({
       url: '/pages/Spell_group_order/Spell_group_order?dtos=' + dtos
     })
   },
   request() {
-   
     var self = this;
     wx.setNavigationBarTitle({
         title: '商品详情'
@@ -352,14 +341,10 @@ Page({
           waresId: 28
         },
         success(res) {
-          console.log(66666,res)
           self.setData({
             list: res.data.data
           })
-
-
         }
       })
   }
-
 })
