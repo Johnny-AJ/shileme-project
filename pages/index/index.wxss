@@ -6,7 +6,13 @@
   margin: 0;
   padding: 0;
   background: #f5f5f5;
-  
+}
+
+.index .bargain_box .bargain_top .bargain_left .time .targettime {
+  color: #f84e67;
+}
+
+.index .bargain_box .bargain_top .bargain_left .time text {
 }
 
 .search_box {
@@ -75,7 +81,7 @@
 }
 
 .swiper_box swiper {
-  background-color: blue;
+  /* background-color: blue; */
   height: 100%;
   width: 690rpx;
   border-radius: 7rpx;
@@ -129,16 +135,16 @@
 /* 2周年开始 */
 
 
-.content-box{
+.content-box {
   width: 100%;
-background: #fff;
+  background: #fff;
 }
+
 .content-box view {
   width: 100%;
   display: flex;
   align-items: center;
   justify-content: center;
-
 }
 
 .content-box view image {
@@ -160,7 +166,6 @@ background: #fff;
 /* 背景颜色 */
 
 .bgc_color {
-  
   margin-top: 20rpx;
   width: 100%;
   border-radius: 10rpx;
@@ -190,15 +195,21 @@ background: #fff;
 .bargain_box .bargain_top .bargain_left {
   font-size: 26rpx;
   font-weight: 1000;
-  color: #666;
+  color: #F02B50
 }
 
 .bargain_box .bargain_top .bargain_left  .time {
   margin-left: 30rpx;
   color: rgba(240, 43, 80, 1);
+  height: 100%;
+  display: flex;
+  align-items: center;
+  line-height: 106%;
+  box-sizing: border-box;
+  padding-bottom: 28rpx;
 }
 
-.bargain_box .bargain_top .bargain_left  .time text {
+/* .bargain_box .bargain_top .bargain_left  .time text {
   display: inline-block;
   width: 32rpx;
   height: 32rpx;
@@ -211,7 +222,7 @@ background: #fff;
   font-family: PingFang SC;
   font-weight: 400;
   color: rgba(240, 43, 80, 1);
-}
+} */
 
 .bargain_box .bargain_top .bargain_right {
   font-size: 26rpx;
@@ -254,12 +265,15 @@ background: #fff;
   box-sizing: border-box;
   padding: 0 20rpx;
 }
-.content  .bargain_box{
+
+.content  .bargain_box {
   height: 330rpx;
 }
-.content  .bargain_buttom{
+
+.content  .bargain_buttom {
   height: 210rpx;
 }
+
 .bargain_buttom swiper {
   width: 100%;
   height: 100%;
@@ -273,52 +287,64 @@ background: #fff;
   display: flex;
   order: 1;
 }
- .index .bgc_color .conts  .content{
+
+.index .bgc_color .conts  .content {
   height: 330rpx;
 }
+
 .content  .bargain_buttom {
-display: flex;
-justify-content: space-between;
+  display: flex;
 }
-.bargain_buttom .a{
+
+.bargain_buttom .a {
   width: 157.8rpx;
   height: 210rpx;
-
+  margin-left: 18rpx;
 }
 
-.bargain_buttom .a image{
+.bargain_buttom .a:nth-child(1) {
+  margin-left: 0;
+}
+
+.bargain_buttom .a image {
   width: 158rpx;
   height: 160rpx;
-  border-radius:10rpx 10rpx 0rpx 0rpx;
+  border-radius: 10rpx 10rpx 0rpx 0rpx;
 }
-.bargain_buttom .a .price{
-  width:100%;
+
+.bargain_buttom .a .price {
+  width: 100%;
   display: flex;
   justify-content: space-between;
   align-items: center;
   box-sizing: border-box;
-  padding: 0 5rpx;
+  padding: 0 8rpx;
 }
-.bargain_buttom .a .price text{
-  font-size:26rpx;
-font-family:PingFang SC;
-font-weight:bold;
-color:rgba(240,43,80,1);
+
+.bargain_buttom .a .price text {
+  font-size: 26rpx;
+  font-family: PingFang SC;
+  font-weight: bold;
+  color: rgba(240, 43, 80, 1);
 }
+
 .bargain_buttom .a .price text:nth-child(2) {
-    font-size:18rpx;
-font-family:PingFang SC;
-font-weight:400;
-text-decoration:line-through;
-color:rgba(153,153,153,1);
+  font-size: 18rpx;
+  font-family: PingFang SC;
+  font-weight: 400;
+  text-decoration: line-through;
+  color: rgba(153, 153, 153, 1);
 }
-.bargain_buttom .a .price text:nth-child(2) text{
+
+.bargain_buttom .a .price text:nth-child(2) text {
   font-size: 16rpx;
-  color:rgba(153,153,153,1);
+  color: rgba(153, 153, 153, 1);
 }
-.bargain_buttom .a .price text text{
+
+.bargain_buttom .a .price text text {
   font-size: 23rpx;
 }
+
 .bargain_buttom .swiper-cont {
   width: 150rpx;
   height: 288rpx;
@@ -328,26 +354,28 @@ color:rgba(153,153,153,1);
 .bargain_buttom .swiper-cont:first-child {
   margin-left: 0;
 }
+
 .bargain_buttom .swiper-cont .imgs {
   position: relative;
 }
-.bargain_buttom .swiper-cont .imgs .text{
+
+.bargain_buttom .swiper-cont .imgs .text {
   position: absolute;
   bottom: 0;
   left: 0;
   width: 100%;
-  border-radius:0rpx 0rpx 10rpx 10px;
+  border-radius: 0rpx 0rpx 10rpx 10px;
   height: 40rpx;
-  background:rgba(0,0,0,0.3);
+  background: rgba(0, 0, 0, 0.3);
   display: flex;
   align-items: center;
   justify-content: center;
-  font-size:22rpx;
-font-family:PingFang SC;
-font-weight:400;
-color:rgba(255,255,255,1);
-
+  font-size: 22rpx;
+  font-family: PingFang SC;
+  font-weight: 400;
+  color: rgba(255, 255, 255, 1);
 }
+
 .bargain_buttom .swiper-cont .price {
   width: 100%;
 }
@@ -393,8 +421,6 @@ color:rgba(255,255,255,1);
   top: 30rpx;
   position: absolute;
 }
-
-
 
 .hot {
   width: 100%;
@@ -463,10 +489,9 @@ color:rgba(255,255,255,1);
   width: 133rpx;
   height: 100%;
   box-sizing: border-box;
- 
 }
 
-.hot  .hl .imgs  view image, .hot  .hr .imgs  view image{
+.hot  .hl .imgs  view image, .hot  .hr .imgs  view image {
   width: 100%;
   height: 100%;
 }
@@ -474,16 +499,17 @@ color:rgba(255,255,255,1);
 .likes {
   height: 115rpx;
   width: 730rpx;
-    overflow-x: auto;
-
+  overflow-x: auto;
 }
+
 .likes::-webkit-scrollbar {
   display: none;
 }
-.likes .conts{
-height: 100%;
 
+.likes .conts {
+  height: 100%;
 }
+
 .likes .block {
   width: 140rpx;
   height: 100%;
@@ -521,8 +547,6 @@ height: 100%;
   height: 30rpx;
   background: rgba(204, 204, 204, 1);
 }
-
-
 
 .contens {
   width: 750rpx;
