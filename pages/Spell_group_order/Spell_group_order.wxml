@@ -4,16 +4,19 @@
   <!-- 头部部分 -->
   <view class="big_box">
     <view class="flex1_box">
-      <view class="flex_box">
-        <view class="top_box">
-          <view class="t1">花礼晴
-            <text>13923856789</text>
+      <view class="flex_box" >
+       <view class="top_box1" wx:if="{{!addressok}}" bindtap = "handurl" >
+          请填写个人信息地址
+        </view>
+        <view class="top_box" wx:if="{{addressok}}">
+          <view class="t1  ">{{address.name}}
+            <text>{{address.phone}}</text>
             <text class="text">默认</text>
           </view>
-          <view class="t1">广东省广州市天河区长湴工业园13栋</view>
+          <view class="t1 t3">{{address.province}}{{address.city}}{{address.region}}{{address.address}}</view>
           <view class="t2" bindtap="toggleDialog">附近门店自取</view>
         </view>
-        <image src="../../static/cart/矩形 16.png"></image>
+        <image src="../../static/cart/矩形 16.png" bindtap = "handurl"></image>
       </view>
       <view class="imgs">
         <image src="../../static/imgs/分割线.png" class="imgs1"></image>
@@ -28,23 +31,24 @@
       <text>商品信息</text>
     </view>
     <view class="conts">
-      <view class="cont p30">
+      <view class="cont p30" wx:for="{{orderWaresVos}}" wx:key="{{item.waresId}}">
         <view class="imgs">
-          <image src="../../static/cart/矩形 16.png"></image>
+          <image src="{{item.logoUrl}}"></image>
         </view>
         <view class="cr">
           <view class="name">
-            <text>保湿急救 网红蓝药丸面膜</text>
-            <text class="t2"><text>x1</text></text>
+            <text>{{item.waresName}}</text>
+            <text class="t2"><text>x{{item.amount}}</text></text>
           </view>
           <view class="spec">
-            <text class="t1">5片/盒</text>
+            <!-- <text class="t1">规格：{{item.specification}}</text> -->
+            <text class="t1"></text>
 
           </view>
           <view class="price">
-            <text class="price">￥79</text>
+            <text class="price">￥{{item.price}}</text>
           </view>
-          <view class="gifts">
+          <!-- <view class="gifts">
             <view class="gl">赠品:</view>
             <view class="num">
               <view class="nums">
@@ -56,7 +60,7 @@
                 <text>X1</text>
               </view>
             </view>
-          </view>
+          </view> -->
         </view>
       </view>
 
@@ -64,7 +68,7 @@
     </view>
     <view class="leave">
       <text>卖家留言</text>
-      <input type="text" placeholder="选填，有什么可以跟卖家说的"></input>
+      <input type="text" placeholder="选填，有什么可以跟卖家说的" bindinput="bindKeyInput"></input>
     </view>
   </view>
   <view class="coupon">
@@ -74,7 +78,8 @@
     </view>
     <view class="ccont">
       <text class="lt">优惠劵</text>
-      <text class="color">一张可用</text>
+      <text class="color"  wx:if="{{!quota}}">一张可用</text>
+      <text class="color" wx:if="{{quota}}">无</text>
     </view>
   </view>
   <view class="minute">
@@ -92,17 +97,17 @@
     </view>
     <view>
       <text class="ml">合计</text>
-      <text class="mr">￥79.00</text>
+      <text class="mr">￥{{allprice}}.00</text>
     </view>
 
   </view>
   <view class="buy">
-    <view class="bl" >
+    <view class="bl">
 
-      <text>￥79</text>
+      <text>￥{{allprice}}</text>
       <text> 合计： </text>
     </view>
-    <view class="br"  bindtap="goto" data-url="/pages/order/order">
+    <view class="br" bindtap="goto" data-url="/pages/order/order">
       提交订单
     </view>
 
@@ -115,7 +120,7 @@
 
   <!-- 弹出层 -->
   <view class="zan-dialog {{ showDialog ? 'zan-dialog--show' : '' }}">
-  <!-- <view class="zan-dialog zan-dialog--show"> -->
+    <!-- <view class="zan-dialog zan-dialog--show"> -->
     <!-- <view class="zan-dialog  zan-dialog--show"> -->
     <view class="zan-dialog__mask" />
     <view class="zan-dialog__container">
@@ -123,10 +128,8 @@
         <image src="../../static/scango/关闭icon.png" bindtap="toggleDialog"></image>
       </view>
       <view class="conts">
-      <view> 
-        <text class="tittle">代收门店</text>
-      </view>
-      <view class=""> </view>
+         <image src="../../static/imgs/组 7.png"></image>
+         <text>功能暂未开放,敬请期待!</text>
       </view>
     </view>
 

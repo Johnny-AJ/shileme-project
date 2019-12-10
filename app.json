@@ -1,6 +1,8 @@
 {
   "pages": [
     "pages/index/index",
+    "pages/scango/scango",
+    "pages/template/template",
     "pages/formats/formats",
     "pages/friends/friends",
     "pages/finetuxedos/finetuxedos",
@@ -8,8 +10,6 @@
     "pages/indent/indent",
     "pages/order/order",
     "pages/comment/comment",
-    "pages/template/template",
-    "pages/scango/scango",
     "pages/details/details",
     "pages/shipping/shipping",
     "pages/inetAddress/inetAddress",

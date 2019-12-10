@@ -2,7 +2,7 @@
 <view class="scango">
   <view class="scgheade">
     <view class="slideshow">
-      <swiper class="swipers" autoplay="{{autoplay}}" circular="true" current="{{currentSwiper}}" bindchange="swiperChange">
+      <swiper class="swipers" autoplay="true" circular="true" indicator-active-color="#F02B50" indicator-dots="true" current="{{currentSwiper}}" bindchange="swiperChange">
         <block wx:for="{{list.images}}" wx:key="{{index}}">
           <swiper-item>
 
@@ -68,15 +68,15 @@
     <view class="lj" bindtap="toggleDialog1">
       <view class="title">选择</view>
       <view class="xzcont">
-        <text>已选“蓝色药丸5片”</text>
+        <text></text>
       </view>
       <image src="../../static/scango/矩形 16(1).png"></image>
     </view>
 
   </view>
-  <view >{{index111}}</view>
+  <view>{{index111}}</view>
   <view>{{index222}}</view>
- <view class="comment">
+  <view class="comment">
     <view class="title" bindtap="goto" data-id="28">
       <view class="conts">宝贝评价（262）</view>
       <view class="more">查看更多
@@ -156,8 +156,8 @@
       </view>
     </view> -->
   </view>
-  <view class="buy" bindtap="buys" data-waresId="28" data-propertyId="588" data-amount="1">立即购买</view>
-  
+  <view class="buy" bindtap="buys" data-waresId="9" data-propertyId="{{includeGroup[0].priceId}}" data-amount="{{value1}}">立即购买</view>
+
   <!-- 领劵弹出层 -->
   <view class="zan-dialog {{ showDialog ? 'zan-dialog--show' : '' }}">
     <!-- <view class="zan-dialog  zan-dialog--show"> -->
@@ -168,7 +168,7 @@
       </view>
       <view class="conts">
         <view class="title"> 优惠劵 </view>
-        <view class="coupon">
+        <!-- <view class="coupon">
           <view class="cont">
             <image src="../../static/scango/组 4.png"></image>
             <view class="cl">
@@ -180,7 +180,7 @@
                 <text class="t1">全品类通用券</text>
                 <text class="t2">领取</text>
                 <!-- <text class="t2">已领取</text> -->
-              </view>
+              <!-- </view>
               <view class=" rb ">
                 <text class="t1 ">适用平台：全平台</text>
                 <text class="t2 ">有效期至：2019-08-01</text>
@@ -195,9 +195,9 @@
             </view>
             <view class="cr">
               <view class="rt">
-                <text class="t1">全品类通用券</text>
-                <!-- <text class="t2">领取</text> -->
-                <text class="t3">已领取</text>
+                <text class="t1">全品类通用券</text> -->
+                  <!-- <text class="t2">领取</text> -->
+                <!-- <text class="t3">已领取</text>
               </view>
               <view class=" rb ">
                 <text class="t1 ">适用平台：全平台</text>
@@ -205,11 +205,15 @@
               </view>
             </view>
           </view>
+        </view> --> 
+        <view class="coupon1">
+            <image src="../../static/imgs/组 7.png"></image>
+            <text>功能暂未开放,敬请期待!</text>
         </view>
       </view>
     </view>
   </view>
-  
+
   <!-- 选择弹出层 -->
   <view class="popup {{ showDialog1 ? 'show1' : '' }}">
 
@@ -222,32 +226,32 @@
     <view class="zan-dialog__container">
       <view class="conts">
         <view class="trade">
-          <view class="imags"  bindtap="toggleDialog">
-            <image src="../../static/scango/关闭icon.png"></image>
+          <view class="imags" bindtap="toggleDialog" wx:for="{{imgsurl}}" wx:key="index">
+            <image src="{{item.url}}"></image>
           </view>
           <view class="tcont">
-            <text class="name">保湿急救 网红蓝药丸面膜</text>
-            <text class="prcie">￥<text>97</text></text>
-            <text class="repertory">库存：<text>30</text></text>
+            <view class="name">{{list.name}}</view>
+            <text class="prcie">￥<text>{{list. mallPrice}}</text></text>
+            <text class="repertory">库存：<text>{{commodityAttr[0].stock}}</text></text>
           </view>
         </view>
 
-        <view class="spec " wx:for="{{attrValueList}}" wx:for-item="attrValueObj" wx:for-index="attrIndex">
+        <view class="spec " wx:for="{{attrValueList}}" wx:for-item="attrValueObj" wx:for-index="attrIndex" wx:key="{{attrIndex}}">
           <view class="thead">{{attrValueObj.attrKey}}</view>
           <view class="cont">
-            <view class=".text {{attrIndex==firstIndex || attrValueObj.attrValueStatus[valueIndex]?(value==attrValueObj.selectedValue?'attr_value_active':''):'attr_value_disabled'}}" bindtap="selectAttrValue" data-status="{{attrValueObj.attrValueStatus[valueIndex]}}"
-              data-value="{{value}}" data-key="{{attrValueObj.attrKey}}" data-code="{{attrCode}}" data-index="{{attrIndex}}" data-selectedvalue="{{attrValueObj.selectedValue}}" wx:for="{{attrValueObj.attrValues}}" wx:for-item="value" wx:for-index="valueIndex">{{value}}</view>
+            <view class=".text {{attrIndex==firstIndex || attrValueObj.attrValueStatus[valueIndex]?(value==attrValueObj.selectedValue?'checkout':''):'attr_value_disabled'}}" bindtap="selectAttrValue" data-status="{{attrValueObj.attrValueStatus[valueIndex]}}" data-value="{{value}}"
+              data-key="{{attrValueObj.attrKey}}" data-code="{{attrCode}}" data-index="{{attrIndex}}" data-selectedvalue="{{attrValueObj.selectedValue}}" wx:for="{{attrValueObj.attrValues}}" wx:for-item="value" wx:for-index="valueIndex">{{value}}</view>
           </view>
         </view>
         <view class="num">
 
           <text>数量</text>
           <view class="totalizer">
-             <i-input-number value="{{ value1 }}"  i-class="inputs" min="0" max="100" bindchange="handleChange1" />
+            <i-input-number value="{{ value1 }}" i-class="inputs" min="1" max="100" bindchange="handleChange1" />
           </view>
 
         </view>
-        <view class="next" >下一步</view>
+        <view class="next" bindtap="toggleDialog1" >下一步</view>
 
       </view>
     </view>
