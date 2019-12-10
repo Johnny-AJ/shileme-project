@@ -37,7 +37,7 @@
       <view class="text">扫码购</view>
     </view>
 
-    <view class="navigator">
+    <view class="navigator" bindtap="handurl" data-url="/pages/free/free">
       <image mode="widthFix" src="../../static/imgs/试用.png"></image>
       <view class="text">免费试用</view>
     </view>
@@ -47,7 +47,7 @@
       <view class="text">超值拼团</view>
     </view>
 
-    <view class="navigator">
+    <view class="navigator" bindtap="handurl" data-url="/pages/pointsfor/pointsfor">
       <image mode="widthFix" src="../../static/imgs/积分兑换.png"></image>
       <view class="text">积分兑换</view>
     </view>

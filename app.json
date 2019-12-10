@@ -1,6 +1,8 @@
 {
   "pages": [
     "pages/index/index",
+    "pages/pointsfor/pointsfor",
+    "pages/free/free",
     "pages/formats/formats",
     "pages/inetAddress/inetAddress",
     "pages/shipping/shipping", 
