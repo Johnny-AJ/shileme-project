@@ -1,5 +1,6 @@
 {
   "pages": [
+    "pages/cart/cart",
     "pages/index/index",
     "pages/scango/scango",
     "pages/template/template",
@@ -15,8 +16,14 @@
     "pages/inetAddress/inetAddress",
     "pages/group/group",
     "pages/Spell/Spell",
+<<<<<<< HEAD
     "pages/Spell_group_order/Spell_group_order",
     "pages/mynote/mynote",
+=======
+    "pages/searches/searches",
+    "pages/search/search",
+    "pages/Coupons/Coupons",
+>>>>>>> 04a60dd784460d3bece55c9f018a9f0617096dd6
     "pages/Collection/Collection",
     "pages/Coupons/Coupons",
     "pages/find/find",
