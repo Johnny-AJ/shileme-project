@@ -99,7 +99,7 @@
       <view class="content">
 
         <view class="cont" bindtap="handurl" data-url="/pages/scango/scango">
-          <image src="../../static/userimags/待收货 (3).png"></image>
+          <image src="../../static/imgs/imgs1.png"></image>
           <view class="name">保湿急救 网红蓝药丸面.</view>
           <view class="content_client">Dr.Jart 宛若新生保湿面膜.</view>
           <view class="price">￥
@@ -109,7 +109,7 @@
         </view>
 
         <view class="cont" bindtap="handurl" data-url="/pages/scango/scango">
-          <image src="../../static/userimags/待收货 (3).png"></image>
+          <image src="../../static/imgs/imgs1.png"></image>
           <view class="name">保湿急救 网红蓝药丸面.</view>
           <view class="content_client">Dr.Jart 宛若新生保湿面膜.</view>
           <view class="price">￥
@@ -119,7 +119,7 @@
         </view>
 
         <view class="cont" bindtap="handurl" data-url="/pages/scango/scango">
-          <image src="../../static/userimags/待收货 (3).png"></image>
+          <image src="../../static/imgs/imgs1.png"></image>
           <view class="name">保湿急救 网红蓝药丸面.</view>
           <view class="content_client">Dr.Jart 宛若新生保湿面膜.</view>
           <view class="price">￥
@@ -129,7 +129,7 @@
         </view>
 
         <view class="cont" bindtap="handurl" data-url="/pages/scango/scango">
-          <image src="../../static/userimags/待收货 (3).png"></image>
+          <image src="../../static/imgs/imgs1.png"></image>
           <view class="name">保湿急救 网红蓝药丸面.</view>
           <view class="content_client">Dr.Jart 宛若新生保湿面膜.</view>
           <view class="price">

@@ -11,19 +11,28 @@ Page({
     addAddressList: [],
     token: '',
     address: [],
-    dto: {}
+    dtos: {}
   },
 
   /**
    * 生命周期函数--监听页面加载
    */
   onLoad: function(options) {
+
+    this.setData({
+      dtos: options.dtos
+    })
+    console.log(options, 'options')
+
     var self = this;
+
+    
     const token = wx.getStorageSync('token')
     // console.log(token, 11)
     self.setData({
       token
     })
+    self.list();
     // console.log(this.data.token, 11)
     // 头部标题
     wx.setNavigationBarTitle({
@@ -57,7 +66,7 @@ Page({
   handurl: function(e) {
     // 路由封装
     wx.navigateTo({
-      url: e.currentTarget.dataset.url,
+      url: '/pages/inetAddress/inetAddress?dto='+this.data.dtos,
     })
   },
   // 删除
@@ -72,6 +81,24 @@ Page({
             delArray: this.data.delArray
           })
         } else if (res.cancel) {}
+      }
+    })
+  },
+  list(){
+    var self=this;
+    console.log(self.data.token,'token')
+    wx.request({
+      url: 'http://192.168.2.98:9095/api/address/list',
+      method: 'GET',
+      data: {
+
+      },
+      header: {
+        'token': self.data.token, //请求头携带参数
+        'content-type': 'application/json'
+      },
+      success: res => {
+        console.log('666',res)
       }
     })
   }

@@ -3,7 +3,10 @@
  page {
   background-color: #f5f5f5;
 }
-
+.bgc{
+  overflow: hidden;
+  width: 100%;
+}
 .big_box {
   width: 750rpx;
   height: 202rpx;

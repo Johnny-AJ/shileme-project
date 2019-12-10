@@ -1,39 +1,20 @@
-<!--pages/demo/demo.wxml-->
-<!-- <text>pages/demo/demo.wxml</text> -->
+<!-- <view class="title">属性值联动选择</view>   -->
+<!--options-->
+<view class="commodity_attr_list"> 
+    <!--每组属性-->
+    <view class="attr_box" wx:for="{{attrValueList}}" wx:for-item="attrValueObj" wx:for-index="attrIndex"> 
+      <!--属性名-->
+      <view class="attr_name">{{attrValueObj.attrKey}}</view> 
 
-
-<!--index.wxml-->
-<view class="content">
-  <view class="common">
-    <view class="hr">
-      <text>快递预约</text>
-    </view>
-    <form bindsubmit="submitdate">
-      <view class="order">
-
-        <view class="date">
-          <input name="date" placeholder="请输入预定的日期....." placeholder-style="color:#eee" />
-        </view>
-
-        <view class="date">
-          <input name="username" placeholder="请输入预定的人....." placeholder-style="color:#eee" />
-        </view>
-
-        <view class="date">
-          <input name="telpho" placeholder="请输入预定电话....." placeholder-style="color:#eee" />
-        </view>
-
-        <view class="date">
-          <input name="address" placeholder="请输入预定的地址....." placeholder-style="color:#eee" />
-        </view>
-
-        <view class="date">
-          <input name="other" placeholder="请输入预定的其他信息....." placeholder-style="color:#eee" />
-        </view>
-
-        <button form-type="submit">确认提交</button>
-
-      </view>
-    </form>
-  </view>
-</view>
+      <!--属性值-->
+      <view class="attr_value_box"> 
+          <!--每个属性值-->
+          <view class="attr_value {{attrIndex==firstIndex || attrValueObj.attrValueStatus[valueIndex]?(value==attrValueObj.selectedValue?'attr_value_active':''):'attr_value_disabled'}}" bindtap="selectAttrValue" data-status="{{attrValueObj.attrValueStatus[valueIndex]}}"
+          data-value="{{value}}" data-key="{{attrValueObj.attrKey}}" data-code="{{attrCode}}" data-index="{{attrIndex}}" data-selectedvalue="{{attrValueObj.selectedValue}}" wx:for="{{attrValueObj.attrValues}}" wx:for-item="value" wx:for-index="valueIndex">{{value}}</view> 
+      </view> 
+  </view> 
+</view> 
+<!--button-->
+<view class="weui-btn-area"> 
+    <button class="weui-btn" bindtap="submit">选好了       </button> 
+</view> 

@@ -24,7 +24,8 @@ Page({
     province: '', //省
     city: '', //市
     region: "", //区
-    address: ''
+    address: '',
+    dtos:{}
 
   },
 
@@ -32,6 +33,11 @@ Page({
    * 生命周期函数--监听页面加载
    */
   onLoad: function(options) {
+    console.log(options, 'options1111')
+    this.setData({
+      dtos: options.dto
+    })
+
     var self = this;
     const token = wx.getStorageSync('token')
     // console.log(token, 11)
@@ -73,7 +79,7 @@ Page({
         console.log(res, 11)
         if (0 == res.data.code) {
           wx.navigateTo({
-            url: '/pages/Spell_group_order/Spell_group_order',
+            url: '/pages/Spell_group_order/Spell_group_order?dtos=' + this.data.dtos,
           })
         } else {
           wx.showModal({

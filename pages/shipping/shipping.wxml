@@ -37,7 +37,7 @@
   </view>
 
   <!-- 按钮 -->
-  <view class="button" bindtap="handurl" data-url="/pages/inetAddress/inetAddress">
+  <view class="button" bindtap="handurl" >
     <text>新建地址</text>
   </view>
 </view>

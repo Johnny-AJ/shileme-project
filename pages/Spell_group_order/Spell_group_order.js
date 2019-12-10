@@ -1,4 +1,3 @@
-
 Page({
 
   /**
@@ -6,12 +5,19 @@ Page({
    */
   data: {
     showDialog: false,
-    waresId: '28',
-    propertyId: '344',
-    num: '2',
+    waresId: '',
+    propertyId: '',
+    num: '',
     token: '',
-    dtos:[]
-    
+    dtos: [],
+    address: {},
+    addressok: true,
+    orderWaresVos: {},
+    quota: {},
+    allprice: 0,
+    inputValue: '',
+    doto: {}
+
   },
 
   /**
@@ -21,52 +27,34 @@ Page({
 
   onLoad: function(options) {
 
-     wx.setNavigationBarTitle({
-      title: '下单',
-    })
 
-    // 获取扫码购的参数
-    var list = JSON.parse(options.dtos)
-  console.log(5656,list)
-    let dd=[];
-    var dtos = dd.concat(list)
-    this.setData({
-      dtos: dtos
-    })
     var self = this;
+    self.setData({
+      doto: options.dtos
+    })
 
+    console.log(self.data.doto, '68888')
     const token = wx.getStorageSync('token')
     self.setData({
       token
     })
-    console.log(88888, dtos)
-    wx.request({
-      url: 'http://192.168.2.119:9095/api/order/savePlace',
-      method: 'POST',
-      data: {
-        dtos: dtos
-      },
-      header: {
-        token: self.data.token
-      },
-      success: (res) => {
-        console.log(6666,res)
-      },
-      fail: (error) => {
-        console.log(777,error)
-      }
 
-    })
+    this.oders(options); // 获取扫码购的参数
 
-   
+    if (self.data.address) {
+
+      console
+      self.setData({
+        addressok: false
+      })
+    } else {
+      self.setData({
+        addressok: true
+      })
+    }
 
   },
-  toggleDialog() {
-    this.setData({
-      showDialog: !this.data.showDialog,
 
-    });
-  },
   /**
    * 生命周期函数--监听页面初次渲染完成
    */
@@ -102,25 +90,28 @@ Page({
   onPullDownRefresh: function() {
 
   },
-  goto(e) {  //提交订单
-    console.log(this.data.dtos)
-   
+  goto(e) { //提交订单
+    console.log(66666)
+    var self = this;
 
     wx.request({
       // 支付地址
-      url: 'http://192.168.2.119:9095/api/order/saveOrder',
+      url: 'http://192.168.2.98:9095/api/order/saveOrder',
       method: "POST",
       header: {
         'token': this.data.token, //请求头携带参数
       },
-      data:{
-        addressId:1,
-        waresList: this.data.dtos
+      data: {
+        discountId: '',
+        remark: this.data.inputValue,
+        addressId: this.data.address.id,
+        waresList: this.data.dtos,
+
       },
       success: function(res) {
-        console.log(78888,res)
+        console.log(78888, res)
 
-    
+
         // 微信支付
         wx.requestPayment({
           timeStamp: res.data.data.timeStamp,
@@ -129,16 +120,17 @@ Page({
           signType: res.data.data.signType,
           paySign: res.data.data.paySign,
           success(res) {
+            console.log(res, '支付')
 
-            wx.navigateTo({
-              url: e.currentTarget.dataset.url,
-            })
-           },
-          fail(res) { 
-            wx.navigateTo({
-              url: e.currentTarget.dataset.url,
-            })
+            if (res.errMsg.split(":")[1] == "ok") {
+              wx.navigateTo({
+                url: e.currentTarget.dataset.url,
+              })
+            }else{
+              console.log(66666666)
+            }
           }
+
         })
 
       }
@@ -157,5 +149,77 @@ Page({
    */
   onShareAppMessage: function() {
 
-  }
+  },
+  oders(options) { //获取下单详细信息
+
+    var self = this;
+    var list = JSON.parse(options.dtos)
+
+    let dd = [];
+    var dtos = dd.concat(list)
+    self.setData({
+      dtos: dtos
+    })
+
+    // console.log(88888, dtos)
+    wx.request({
+      url: 'http://192.168.2.98:9095/api/order/savePlace',
+      method: 'POST',
+      data: {
+        dtos: dtos
+      },
+      header: {
+        token: self.data.token
+      },
+      success: (res) => {
+        console.log(6666, res.data)
+
+        self.setData({
+          allprice: res.data.data.allprice
+        })
+
+        self.setData({
+          address: res.data.data.address
+        })
+
+        self.setData({
+          orderWaresVos: res.data.data.orderWaresVos
+        })
+
+
+
+
+
+      },
+      fail: (error) => {
+        // console.log(777,error)
+      }
+
+    })
+
+
+
+  },
+
+  handurl: function(e) { //路由跳转到填写地址
+    console.log(this.data.doto)
+    // 路由封装
+    wx.navigateTo({
+      url: '/pages/shipping/shipping?dtos=' + this.data.doto,
+    })
+  },
+  toggleDialog() { //弹出页关闭
+    this.setData({
+      showDialog: !this.data.showDialog,
+
+    });
+  },
+
+  bindKeyInput: function(e) { //卖家留言
+    this.setData({
+      inputValue: e.detail.value
+    })
+
+    console.log(this.data.inputValue)
+  },
 })
