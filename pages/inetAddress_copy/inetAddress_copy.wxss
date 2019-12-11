@@ -1,0 +1,94 @@
+/* pages/inetAddress/inetAddress.wxss */
+
+/* 背景颜色 */
+
+.bgc {
+  background-color: #f5f5f5;
+  height: 1206rpx;
+  width: 750rpx;
+  overflow: hidden;
+}
+
+/* 地址 */
+
+.username {
+  width: 750rpx;
+  height: 90rpx;
+  border-top: 1px solid #eee;
+  position: relative;
+  background-color: #fff;
+}
+
+.username text {
+  width: 187rpx;
+  display: inline-block;
+  height: 100%;
+  line-height: 90rpx;
+  box-sizing: border-box;
+  padding-left: 29rpx;
+  color: #222;
+  font-size: 26rpx;
+  font-family: PingFang SC;
+}
+
+.username input {
+  position: absolute;
+  left: 187rpx;
+  top: 0rpx;
+  font-size: 30rpx;
+  color: #222;
+  height: 100%;
+  width: 560rpx;
+}
+
+.inetAddress {
+  height: 90rpx;
+  width: 750rpx;
+  border: 1px solid #eee;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-size: 30rpx;
+  color: #222;
+  font-family: PingFang SC;
+  background-color: #fff;
+}
+
+.picker {
+  background-color: #fff;
+  position: absolute;
+  left: 24.8%;
+  top: 25.41%;
+  font-size: 30rpx;
+  margin-right: 10rpx;
+}
+
+.p30 {
+  /* display: flex; *//* justify-content: space-between; */
+  position: relative;
+}
+
+/* 地址 */
+
+/* 按钮 */
+
+.button {
+  height: 88rpx;
+  width: 690rpx;
+  background: rgba(240, 43, 80, 1);
+  color: #fff;
+  font-size: 32rpx;
+  border-radius: 10rpx;
+  position: fixed;
+  bottom: 50rpx;
+  left: 30rpx;
+  text-align: center;
+  line-height: 88rpx;
+}
+
+.button button {
+  background: rgba(240, 43, 80, 1);
+  color: #f5f5f5;
+}
+
+/* 按钮 */

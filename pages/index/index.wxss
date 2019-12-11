@@ -5,16 +5,13 @@
 .index {
   margin: 0;
   padding: 0;
-  background: #f5f5f5;
+  background: #630505;
   overflow: hidden;
   width: 100%;
 }
 
 .index .bargain_box .bargain_top .bargain_left .time .targettime {
   color: #f84e67;
-}
-
-.index .bargain_box .bargain_top .bargain_left .time text {
 }
 
 .search_box {
@@ -197,7 +194,7 @@
 .bargain_box .bargain_top .bargain_left {
   font-size: 26rpx;
   font-weight: 1000;
-  color: #F02B50
+  color: #f02b50;
 }
 
 .bargain_box .bargain_top .bargain_left  .time {

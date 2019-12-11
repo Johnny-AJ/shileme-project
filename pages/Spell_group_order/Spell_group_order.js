@@ -109,7 +109,7 @@ Page({
 
       },
       success: function(res) {
-        console.log(78888, res)
+        // console.log(78888, res)
 
 
         // 微信支付
@@ -120,14 +120,14 @@ Page({
           signType: res.data.data.signType,
           paySign: res.data.data.paySign,
           success(res) {
-            console.log(res, '支付')
+            // console.log(res, '支付')
 
             if (res.errMsg.split(":")[1] == "ok") {
               wx.navigateTo({
                 url: e.currentTarget.dataset.url,
               })
-            }else{
-              console.log(66666666)
+            } else {
+              // console.log(66666666)
             }
           }
 
@@ -172,7 +172,7 @@ Page({
         token: self.data.token
       },
       success: (res) => {
-        console.log(6666, res.data)
+        // console.log(6666, res.data)
 
         self.setData({
           allprice: res.data.data.allprice
@@ -202,7 +202,7 @@ Page({
   },
 
   handurl: function(e) { //路由跳转到填写地址
-    console.log(this.data.doto)
+    // console.log(this.data.doto)
     // 路由封装
     wx.navigateTo({
       url: '/pages/shipping/shipping?dtos=' + this.data.doto,
@@ -220,6 +220,6 @@ Page({
       inputValue: e.detail.value
     })
 
-    console.log(this.data.inputValue)
+    // console.log(this.data.inputValue)
   },
 })

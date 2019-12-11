@@ -1,0 +1,40 @@
+<!--pages/inetAddress/inetAddress.wxml-->
+
+<!-- 背景颜色 -->
+
+<view class="bgc">
+
+  <view class="username">
+    <text>姓名：</text>
+    <input name="name" class="weui-input" type="text" bindinput="handuserName" value="{{id.name}}" />
+  </view>
+
+  <view class="username">
+    <text>手机号：</text>
+    <input name="number" maxlength="11" bindinput="handNumber" value="{{id.phone}}" />
+  </view>
+
+  <picker mode="region" bindchange="bindRegionChange" custom-item="{{customItem}}" class="username p30">
+    <text>省/市/区：</text>
+    <!-- <input type="text" placeholder="选择所在地区"></input> -->
+    <view name="RectRegion" class="picker">{{id.province}}{{id.city}}{{id.region}}</view>
+  </picker>
+
+  <view class="username">
+    <text>收货地址:</text>
+    <input name="address" bindinput="handAddress" value="{{id.address}}" />
+  </view>
+
+  <radio-group bindchange="handradio" class="inetAddress">
+    <radio></radio>
+    <text>设为默认地址</text>
+  </radio-group>
+
+  <!-- 按钮 -->
+  <!-- <view class="button" bindtap="handurl" data-url="/pages/shipping/shipping"> -->
+  <view class="button" bindtap="handtap">
+    <!-- <button>保存</button> -->
+    <button>提交</button>
+  </view>
+
+</view>

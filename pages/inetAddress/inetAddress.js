@@ -25,18 +25,18 @@ Page({
     city: '', //市
     region: "", //区
     address: '',
-    dtos:{}
-
+    dtos: {}
   },
 
   /**
    * 生命周期函数--监听页面加载
    */
   onLoad: function(options) {
-    console.log(options, 'options1111')
-    this.setData({
-      dtos: options.dto
-    })
+    // console.log(options, 'options1111')
+    // console.log(options)
+    // this.setData({
+    //   dtos: options.dto
+    // })
 
     var self = this;
     const token = wx.getStorageSync('token')
@@ -76,10 +76,11 @@ Page({
         'token': self.data.token, //请求头携带参数
       },
       success: res => {
-        console.log(res, 11)
+        // console.log(res, "新增成功")
         if (0 == res.data.code) {
           wx.navigateTo({
-            url: '/pages/Spell_group_order/Spell_group_order?dtos=' + this.data.dtos,
+            // url: '/pages/shipping/shipping?dtos=' + this.data.dtos,
+            url: '/pages/shipping/shipping'
           })
         } else {
           wx.showModal({
@@ -98,10 +99,8 @@ Page({
   },
   // 选框
   handradio: function(e) {
-    console.log(1)
+    // console.log(1)
   },
-
-
   // 姓名
   handuserName: function(e) {
     // console.log(e)
@@ -120,7 +119,7 @@ Page({
   },
   // 省/市/区
   bindRegionChange: function(e) {
-    console.log('picker发送选择改变，携带值为', e.detail.value)
+    // console.log('picker发送选择改变，携带值为', e.detail.value)
     var self = this;
     self.setData({
       province: e.detail.value, //省

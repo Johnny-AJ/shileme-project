@@ -831,7 +831,8 @@
   width: 17rpx;
   height: 17rpx;
 }
-.conts .coupon1{
+
+.conts .coupon1 {
   width: 100%;
   height: 700rpx;
   display: flex;
@@ -839,16 +840,18 @@
   align-items: center;
   flex-wrap: wrap;
 }
-.conts .coupon1 image{
+
+.conts .coupon1 image {
   width: 248.7rpx;
   height: 267.7rpx;
-
 }
-.coupon1 text{
+
+.coupon1 text {
   width: 100%;
   display: flex;
   justify-content: center;
 }
+
 .popup .num   .totalizer {
   width: 260rpx;
   height: 60rpx;

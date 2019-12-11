@@ -11,29 +11,23 @@ Page({
     addAddressList: [],
     token: '',
     address: [],
-    dtos: {}
+    dtos: {},
+    dto: {},
+    id: ''
   },
 
   /**
    * 生命周期函数--监听页面加载
    */
   onLoad: function(options) {
-
-    this.setData({
-      dtos: options.dtos
-    })
-    console.log(options, 'options')
-
     var self = this;
-
-    
+    // self.setData({
+    //   dtos: options.dtos
+    // })
     const token = wx.getStorageSync('token')
-    // console.log(token, 11)
     self.setData({
       token
     })
-    self.list();
-    // console.log(this.data.token, 11)
     // 头部标题
     wx.setNavigationBarTitle({
       title: '收货地址'
@@ -46,60 +40,72 @@ Page({
     //   address
     // })
 
+    // 地址列表
     wx.request({
-      url: 'http://192.168.2.98:9095/api/address/save',
-      method: 'POST',
-      data: {
-        
-      },
+      url: 'http://192.168.2.98:9095/api/address/list',
+      method: 'GET',
       header: {
         'token': self.data.token, //请求头携带参数
-        'content-type': 'application/json'
       },
       success: res => {
-        console.log(res)
+        // console.log(res, "地址")
+        self.setData({
+          addAddressList: res.data.data
+        })
       }
     })
   },
 
-  // 路径封装
-  handurl: function(e) {
-    // 路由封装
+  // 编辑
+  handeditor(e) {
+    // console.log(e)
+    let index = e.currentTarget.dataset.index
+    const addAddressList = this.data.addAddressList
+    let bb = addAddressList[index]
+    let cc = JSON.stringify(bb)
     wx.navigateTo({
-      url: '/pages/inetAddress/inetAddress?dto='+this.data.dtos,
+      url: '/pages/inetAddress_copy/inetAddress_copy?id=' + cc //跳转到编辑页面
+      // url: '/pages/inetAddress_copy/inetAddress_copy'
     })
   },
   // 删除
   handdel(e) {
+    console.log(e)
+    var id = e.currentTarget.dataset.id
+    var self = this
+    // console.log(self.data.addAddressList)
     wx.showModal({
       title: '警告',
       content: '是否确认删除你的当前收货地址',
       success: (res) => {
-        if (res.confirm) {
-          this.data.delArray.splice(e.currentTarget.dataset.index, 1)
-          this.setData({
-            delArray: this.data.delArray
-          })
-        } else if (res.cancel) {}
+        // var addAddressList = this.data.addAddressList
+        // if (res.confirm) {
+        //   addAddressList.splice(e.currentTarget.dataset.index, 1)
+        //   this.setData({
+        //     addAddressList: addAddressList
+        //   })
+        // } else if (res.cancel) {}
+        wx.request({
+          url: 'http://192.168.2.98:9095/api/address/delete?id=' + self.data.id,
+          // url: 'http://192.168.2.98:9095/api/address/delete?id=' + 40,
+          method: 'GET',
+          data: {
+            id: id
+          },
+          header: {
+            'token': self.data.token, //请求头携带参数
+          },
+          success: (res) => {
+            console.log("删除成功", res)
+          }
+        })
       }
     })
   },
-  list(){
-    var self=this;
-    console.log(self.data.token,'token')
-    wx.request({
-      url: 'http://192.168.2.98:9095/api/address/list',
-      method: 'GET',
-      data: {
-
-      },
-      header: {
-        'token': self.data.token, //请求头携带参数
-        'content-type': 'application/json'
-      },
-      success: res => {
-        console.log('666',res)
-      }
+  // 新增地址
+  handNewvoid(e) {
+    wx.navigateTo({
+      url: '/pages/inetAddress/inetAddress'
     })
   }
 })
