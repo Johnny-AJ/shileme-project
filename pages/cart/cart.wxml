@@ -17,58 +17,64 @@
 
   <!-- 购物车下半部分 -->
   <view class="cart">
-   <view class="product-item" wx:for="{{slideProductList}}" wx:for-index="index" wx:key="{{item.id}}">
-    <slide-delete pid="{{item.id}}" bindaction="handleSlideDelete" wx:key="{{item.id}}">
-     <view class="cart_box">
-      <!-- 按钮 -->
+    <view class="product-item">
+      <checkbox-group>
+        <label class="checkbox" wx:for="{{slideProductList}}" for="checkbox" wx:for-index="index" wx:key="{{item.id}}">
+          <slide-delete pid="{{item.id}}" bindaction="handleSlideDelete" wx:key="{{item.id}}">
+            <view class="cart_box">
+              <!-- 按钮 -->
 
-      <view class="cart-box_left">
-        <image src="../../static/imgs/失效.png" wx:if="{{show}}"></image>
-        <radio wx:if="{{!show}}"></radio>
-      </view>
-      <!-- 图片 -->
-      <view class="images">
-        <image src="../../static/imgs/矩形 3.png"></image>
-      </view>
-      <!-- 内容 -->
-      <view class="cart_nav">
+              <view class="cart-box_left">
+                <image src="../../static/imgs/失效.png" wx:if="{{show}}"></image>
+                <checkbox value="{{item.id}}" bindchange="checkboxChange" disabled="{{item.repertory==0}}" checked="{{item.checked}}" wx:if="{{!show}}" class="checkout">
+                </checkbox>
+              </view>
+              <!-- 图片 -->
+              <view class="images">
+                <image src="../../static/imgs/矩形 3.png"></image>
+              </view>
+              <!-- 内容 -->
+              <view class="cart_nav">
 
-        <view class="text1">Dr.jart+保湿急救 网红蓝药丸面 膜</view>
+                <view class="text1">{{item.name}}</view>
 
-        <view class="text2">5片/盒</view>
-        <view class="state">
-          <text wx:if="{{show}}">库存不足，请重新选择</text>
-        </view>
-        <view class="cart_price">
-          <view class="text3">
-            <text>￥ <text>79.00</text> </text>
-          </view>
-          <view class="text4">
-              <i-input-number i-class="inputs" value="{{ value1 }}" min="1" max="100" bindchange="handleChange1" />
-          </view>
-        </view>
-        <view class="text5">
-          <view class="tl">赠品：</view>
-          <view class="tr">
-            <view>
-              <text> Dr.jart蓝色药丸面膜（5ml/片）</text>
-              <text class="t1">X1</text>
+                <view class="text2">{{item.standard}}</view>
+                <view class="state">
+                  <text wx:if="{{item.repertory==0}}">库存不足，请重新选择</text>
+                </view>
+                <view class="cart_price">
+                  <view class="text3">
+                    <text>￥ <text>{{item.price}}</text> </text>
+                  </view>
+                  <view class="text4">
+                    <i-input-number i-class="inputs" data-id="{{item.id}}" value="{{item.num}}" min="1" max="100" bindchange="handleChange1" />
+                  </view>
+                </view>
+
+
+                <view class="text5 {{item.gift.length==0?'none':'block'}} ">
+
+                  <view class="tl">赠品：</view>
+                  <view class="tr">
+                    <view wx:for="{{item.gift}}" wx:for-item="i" wx:key="*this">
+                      <text>{{i.name}}</text>
+                      <text class="t1">X{{i.num}}</text>
+                    </view>
+
+                  </view>
+                </view>
+
+
+              </view>
             </view>
-            <view>
-              <text> Dr.jart蓝色药丸面膜（5ml/片）</text>
-              <text class="t1">X1</text>
-            </view>
-          </view>
-        </view>
-
-      </view>
+          </slide-delete>
+        </label>
+      </checkbox-group>
     </view>
-    </slide-delete>
-  </view>
 
   </view>
 
- 
+
   <!-- 推荐 -->
   <view class="tuijian_img">
     <image mode="widthFix" src="../../static/cart/组 25.png"></image>
@@ -126,7 +132,7 @@
 
     <view class="heji">
       <view class="text6">合计：
-        <text>￥79</text>
+        <text>￥{{totalPrice}}</text>
       </view>
     </view>
 
