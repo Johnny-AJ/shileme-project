@@ -62,6 +62,7 @@ text {
   width: 100%;
   box-sizing: border-box;
   padding: 0 10rpx;
+ 
 }
 
 .cart_box {
@@ -167,10 +168,48 @@ color:rgba(240,43,80,1);
 .cart_price .text3  text text {
   font-size: 26rpx;
 }
+ .movable-area {
+  height: 120rpx;
+  width: calc(100vw - 120rpx);
+}
+movable-view {
+  height: 120rpx;
+  width: 100vw;
+  background: #fff;
+  z-index: 999;
+}
+.delete-btn {
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  right: 0; 
+  width: 120rpx;
+  font-family: PingFangSC-Regular;
+  font-size: 24rpx;
+  color: #FFFFFF;
+  line-height: 120rpx;
+  z-index: 1;
+  background: #E66671;
+  text-align: center;
+}
+.product-item {
+position: relative;
+width: 100vw;
+border-bottom: 2rpx solid #E9E9E9;
+box-sizing: border-box;
+background: #fff;
+/* z-index: 999; */
 
+}
+.product-item{
+  width: 100%;
+  overflow: hidden;
+  margin-top: 20rpx;
+
+}
 .cart_price .text4 {
   height: 50rpx;
-  width: 223rpx;
+  width: 248rpx;
   position: relative;
   z-index: 2;
 }
@@ -256,6 +295,7 @@ line-height: 40px;
   background-color: rgba(255, 255, 255, 1);
   border-top: 1px solid #eaeaea;
   line-height: 98rpx;
+  z-index: 1000
 }
 
 .settlement radio {

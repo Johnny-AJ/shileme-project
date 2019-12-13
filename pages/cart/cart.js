@@ -6,7 +6,21 @@ Page({
    */
   data: {
     value1: 1,
-      show:false
+      show:false,
+    slideProductList: [
+      {
+        id: 4,
+       
+      },
+      {
+        id: 5,
+       
+      },
+      {
+        id: 6,
+      
+      }
+    ] 
   },
 
   /**
@@ -31,4 +45,14 @@ Page({
       value1: detail.value
     })
   },
+  handleSlideDelete({ detail: { id } }) {//
+    let slideProductList = this.data.slideProductList
+    let productIndex = slideProductList.findIndex(item => item.id === id)
+
+    slideProductList.splice(productIndex, 1)
+
+    this.setData({
+      slideProductList
+    })
+  }
 })

@@ -1,6 +1,7 @@
 {
   "usingComponents": {
-   "i-input-number": "../../components/input-number/index"
+   "i-input-number": "../../components/input-number/index",
+    "i-toast": "../../components/toast/index"
   },
 
   "navigationBarBackgroundColor": "#ffffff",

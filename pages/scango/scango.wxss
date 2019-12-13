@@ -701,11 +701,20 @@
   display: -webkit-box;
   -webkit-line-clamp: 2;
   -webkit-box-orient: vertical;
+font-size:28rpx;
+font-family:PingFang SC;
+font-weight:bold;
+color:rgba(34,34,34,1);
 }
-
+.popup  .trade .tcont  .text{
+  font-size:20rpx;
+font-family:PingFang SC;
+font-weight:400;
+color:rgba(34,34,34,1);
+}
 .popup  .trade .tcont .prcie {
   position: absolute;
-  top: 131rpx;
+top: 150rpx;
   font-size: 26rpx;
   left: 0;
   font-family: PingFang SC;
@@ -769,7 +778,7 @@
   border: 1rpx solid #eee;
 }
 
-.popup   .checkout {
+.popup .cont   .checkout {
   width: 160rpx;
   height: 60rpx;
   background: #eee;
@@ -791,10 +800,20 @@
   left: -20rpx;
 }
 
-.popup .spec .cont  .checkout {
+.popup .checkout {
   background: #fdf2f6;
   color: rgba(240, 43, 80, 1);
   border: 1rpx solid #f02b50;
+}
+.sku-choose-item  .active {
+  background-color: #eb2444;
+  border:1px solid #eb2444 !important;
+  color: #fff;
+}
+
+
+.sku-choose-item .dashed {
+  border:1px dashed #aaa;
 }
 
 .popup .num {
@@ -896,3 +915,8 @@
 .contents {
   width: 100%;
 }
+.contents  image{
+  width: 100%;
+}
+
+

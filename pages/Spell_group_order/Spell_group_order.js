@@ -33,7 +33,7 @@ Page({
       doto: options.dtos
     })
 
-    console.log(self.data.doto, '68888')
+
     const token = wx.getStorageSync('token')
     self.setData({
       token
@@ -41,17 +41,7 @@ Page({
 
     this.oders(options); // 获取扫码购的参数
 
-    if (self.data.address) {
 
-      console
-      self.setData({
-        addressok: false
-      })
-    } else {
-      self.setData({
-        addressok: true
-      })
-    }
 
   },
 
@@ -91,7 +81,7 @@ Page({
 
   },
   goto(e) { //提交订单
-    console.log(66666)
+    // console.log(66666)
     var self = this;
 
     wx.request({
@@ -109,7 +99,7 @@ Page({
 
       },
       success: function(res) {
-        console.log(78888, res)
+        // console.log(78888, res)
 
 
         // 微信支付
@@ -120,14 +110,14 @@ Page({
           signType: res.data.data.signType,
           paySign: res.data.data.paySign,
           success(res) {
-            console.log(res, '支付')
+            // console.log(res, '支付')
 
             if (res.errMsg.split(":")[1] == "ok") {
               wx.navigateTo({
                 url: e.currentTarget.dataset.url,
               })
-            }else{
-              console.log(66666666)
+            } else {
+              // console.log(66666666)
             }
           }
 
@@ -151,17 +141,18 @@ Page({
 
   },
   oders(options) { //获取下单详细信息
-
+    console.log(options, 'options')
     var self = this;
     var list = JSON.parse(options.dtos)
 
     let dd = [];
     var dtos = dd.concat(list)
+    console.log(dtos, 'dtos')
     self.setData({
       dtos: dtos
     })
 
-    // console.log(88888, dtos)
+
     wx.request({
       url: 'http://192.168.2.98:9095/api/order/savePlace',
       method: 'POST',
@@ -174,17 +165,52 @@ Page({
       success: (res) => {
         console.log(6666, res.data)
 
-        self.setData({
-          allprice: res.data.data.allprice
-        })
 
-        self.setData({
-          address: res.data.data.address
-        })
+        if (res.data.msg !== "操作成功") {
+          wx.showToast({
+            title: '规格不存在！',
+            icon: 'loading',
+            duration: 2000
+          }, () => {
+            wx.navigateBack({
+              delta: 1,
+            })
+          })
 
-        self.setData({
-          orderWaresVos: res.data.data.orderWaresVos
-        })
+
+        } else {
+
+          self.setData({
+            allprice: res.data.data.allprice
+          })
+
+          self.setData({
+            address: res.data.data.address
+          })
+
+          self.setData({
+            orderWaresVos: res.data.data.orderWaresVos
+          })
+          var address = self.data.address;
+          console.log(Object.keys(address).length === 0)
+          if (Object.keys(address).length === 0) { //判断地址是否存在默认
+
+            self.setData({
+              addressok: false
+            })
+          } else {
+            self.setData({
+              addressok: true
+            })
+          }
+
+        }
+
+
+
+
+
+
 
 
 
@@ -202,7 +228,7 @@ Page({
   },
 
   handurl: function(e) { //路由跳转到填写地址
-    console.log(this.data.doto)
+    // console.log(this.data.doto)
     // 路由封装
     wx.navigateTo({
       url: '/pages/shipping/shipping?dtos=' + this.data.doto,
@@ -220,6 +246,6 @@ Page({
       inputValue: e.detail.value
     })
 
-    console.log(this.data.inputValue)
+    // console.log(this.data.inputValue)
   },
 })

@@ -1,13 +1,6 @@
-<!--pages/demo1/demo1.wxml-->
-<!-- <text>pages/demo1/demo1.wxml</text> -->
-
-<!--logs.wxml-->
-<view class="content">
-<view class="classname">预约信息</view>
-<view class="classname">预约日期：<text>
-{{orderInfo.date}}</text></view>
-<view class="classname">联系人姓名：<text>{{orderInfo.username}}</text></view>
-<view class="classname">联系人电话：<text>{{orderInfo.telpho}}</text></view>
-<view class="classname">联系人地址：<text>{{orderInfo.address}}</text></view>
-<view class="classname">其他备注信息：<text>{{orderInfo.other}}</text></view>
+<view class="dom1">
+  <view class="t1" wx:for="{{list}}">
+    <text class="">{{item.name}}</text>
+    <text>{{item.num}}</text>
+  </view>
 </view>

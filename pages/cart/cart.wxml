@@ -17,30 +17,34 @@
 
   <!-- 购物车下半部分 -->
   <view class="cart">
-    <view class="cart_box">
+   <view class="product-item" wx:for="{{slideProductList}}" wx:for-index="index" wx:key="{{item.id}}">
+    <slide-delete pid="{{item.id}}" bindaction="handleSlideDelete" wx:key="{{item.id}}">
+     <view class="cart_box">
       <!-- 按钮 -->
-    
+
       <view class="cart-box_left">
-          <image src="../../static/imgs/失效.png" wx:if="{{show}}"></image>
-          <radio  wx:if="{{!show}}"></radio>
-      </view> 
+        <image src="../../static/imgs/失效.png" wx:if="{{show}}"></image>
+        <radio wx:if="{{!show}}"></radio>
+      </view>
       <!-- 图片 -->
-    <view class="images">
-      <image src="../../static/imgs/矩形 3.png"></image>
-    </view>
+      <view class="images">
+        <image src="../../static/imgs/矩形 3.png"></image>
+      </view>
       <!-- 内容 -->
       <view class="cart_nav">
 
         <view class="text1">Dr.jart+保湿急救 网红蓝药丸面 膜</view>
 
         <view class="text2">5片/盒</view>
-        <view class="state"><text wx:if="{{show}}">库存不足，请重新选择</text></view>
+        <view class="state">
+          <text wx:if="{{show}}">库存不足，请重新选择</text>
+        </view>
         <view class="cart_price">
           <view class="text3">
             <text>￥ <text>79.00</text> </text>
           </view>
           <view class="text4">
-              <i-input-number i-class="inputs" value="{{ value1 }}" min="0" max="100" bindchange="handleChange1" />
+            <i-input-number i-class="inputs" value="{{ value1 }}" min="0" max="100" bindchange="handleChange1" />
           </view>
         </view>
         <view class="text5">
@@ -59,8 +63,12 @@
 
       </view>
     </view>
+    </slide-delete>
+  </view>
 
   </view>
+
+ 
   <!-- 推荐 -->
   <view class="tuijian_img">
     <image mode="widthFix" src="../../static/cart/组 25.png"></image>

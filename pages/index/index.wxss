@@ -14,8 +14,7 @@
   color: #f84e67;
 }
 
-.index .bargain_box .bargain_top .bargain_left .time text {
-}
+
 
 .search_box {
   display: flex;
