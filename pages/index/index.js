@@ -62,14 +62,14 @@ Page({
 
   },
   clik(e) {
-    console.log(e)
+    // console.log(e)
     this.setData({
       index1: e.currentTarget.dataset.index
     })
     
   },
   onShow: function() {
-    console.log(this.data.clearTimer)
+    // console.log(this.data.clearTimer)
   },
   handurl: function(e) {
 
@@ -133,13 +133,13 @@ Page({
     wx.request({
       url: 'http://192.168.2.98:9095/api/index/findAllCategoryName',
       success: (res) => {
-        console.log('商品详情列表', res.data.data)
+        // console.log('商品详情列表', res.data.data)
         self.setData({
           commoditylist: res.data.data
         })
 
 
-        console.log(this.data.commoditylist, 66666)
+        // console.log(this.data.commoditylist, 66666)
       }
     })
 
@@ -149,7 +149,7 @@ Page({
     wx.request({
       url: 'http://192.168.2.98:9095/api/index/findGroupBuyRollList',
       success: (res) => {
-        console.log('超值拼团', res.data.data.arrList)
+        // console.log('超值拼团', res.data.data.arrList)
         self.setData({
           buyRollList: res.data.data.arrList
         })
@@ -169,7 +169,7 @@ Page({
           time: time
 
         }, () => {
-          console.log(res.data.data)
+          // console.log(res.data.data)
           var time = this.data.time
           // self.setData({
           //   targetTime: new Date().getTime() +69000
