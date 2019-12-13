@@ -206,6 +206,13 @@
   margin-bottom: 20rpx;
 }
 
+.indirectly_box .swiper_box {
+  width: 100%;
+  height: 100%;
+  display: flex;
+  order: 1;
+}
+
 .indirectly_box .indirectly_text {
   font-size: 30rpx;
   font-family: PingFang SC;

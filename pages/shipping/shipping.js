@@ -6,17 +6,16 @@ Page({
    */
   data: {
 
-    // 删除
-    delArray: [],
-    // 新增地址
-    addAddressList: [],
+
+    delArray: [], // 删除
+    addAddressList: [], // 新增地址
     token: '',
     address: [],
     dtos: {},
     dto: {},
-    delid: '',
-
-    id: ''
+    delid: '', //删除
+    id: '',
+    isDefault: '' //默认
   },
 
   /**
@@ -35,7 +34,6 @@ Page({
     wx.setNavigationBarTitle({
       title: '收货地址'
     })
-
     // 用户名
     // let address = wx.getStorageSync("address")
     // // console.log(address)
@@ -113,6 +111,25 @@ Page({
   handNewvoid(e) {
     wx.navigateTo({
       url: '/pages/inetAddress/inetAddress'
+    })
+  },
+  // 默认勾选地址
+  radioChange(e) {
+    this.setData({
+      isDefault: e.detail.value
+    })
+    wx.request({
+      url: 'http://192.168.2.119:9095/api/address/updateDefault',
+      method: 'GET',
+      data: {
+        isDefault: this.data.isDefault
+      },
+      header: {
+        'token': this.data.token, //请求头携带参数
+      },
+      success: res => {
+        console.log(res, 31312321)
+      }
     })
   }
 })

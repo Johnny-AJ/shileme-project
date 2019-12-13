@@ -25,7 +25,7 @@ Page({
     current: 'homepage',
     buyRollList: [],
     timeoutbuylist: {},
-    index1:0,
+    index1: 0,
     commoditylist: [], //商品列表
     show: true,
     // 轮播图数组:
@@ -57,7 +57,7 @@ Page({
     // 头部标题
 
     self.setData({
-      targetTime: new Date().getTime() +   11169000
+      targetTime: new Date().getTime() + 11169000
     })
 
   },
@@ -66,7 +66,7 @@ Page({
     this.setData({
       index1: e.currentTarget.dataset.index
     })
-    
+
   },
   onShow: function() {
     // console.log(this.data.clearTimer)
@@ -79,7 +79,7 @@ Page({
       success: (res) => {
 
         var result = res.result.split("=")[1];
-       
+
         _this.setData({
           result: result,
 
@@ -89,7 +89,7 @@ Page({
           wx.navigateTo({
             url: '/pages/scango/scango?waresId=' + _this.data.result
           })
-        }else{
+        } else {
           $Toast({
             content: '商品已经不存在！',
             icon: 'prompt',
@@ -105,10 +105,7 @@ Page({
 
 
 
-    // 路由封装
-    // wx.navigateTo({
-    //   url: e.currentTarget.dataset.url,
-    // })
+
   },
   handleChange({
     detail
@@ -145,7 +142,7 @@ Page({
 
   },
   group() { //超值拼团
-  var self=this;
+    var self = this;
     wx.request({
       url: 'http://192.168.2.98:9095/api/index/findGroupBuyRollList',
       success: (res) => {
@@ -154,7 +151,7 @@ Page({
           buyRollList: res.data.data.arrList
         })
 
-        
+
       }
     })
   },
@@ -185,7 +182,10 @@ Page({
       }
     })
   },
-  listtime() {
-
+  hangURL(e) {
+    // 路由封装
+    wx.navigateTo({
+      url: e.currentTarget.dataset.url,
+    })
   }
 })

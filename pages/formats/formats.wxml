@@ -80,58 +80,63 @@
 
     <view class="indirectly_text">直接参团 立即拼成</view>
 
-    <view class="swiper_item">
+    <swiper circular="false" vertical="false" autoplay="false" interval="999" easing-function='easeInOutCubic'>
+      <swiper-item wx:for="{{swiperArrat}}" wx:key='name'>
 
-      <!-- 图片 -->
-      <view class="swiper_img">
-        <image src="../../static/formats/团团.jpg"></image>
-      </view>
+        <view class="swiper_item">
 
-      <!-- 还差一人 -->
-      <view class="swiper_text">
-        <view class="swiper_top">
-          <view class="t9">mango</view>
-          <view class="t10">广州市</view>
+          <!-- 图片 -->
+          <view class="swiper_img">
+            <image src="{{item.img}}"></image>
+          </view>
+
+          <!-- 还差一人 -->
+          <view class="swiper_text">
+            <view class="swiper_top">
+              <view class="t9">{{item.name}}</view>
+              <view class="t10">{{item.address}}</view>
+            </view>
+            <view class="swiper_buttom">
+              <view class="t11">还差1人成团</view>
+              <view class="t12">剩余23:48:56</view>
+            </view>
+          </view>
+
+          <!-- 参团 -->
+          <view class="swiper_botton" bindtap="handurl" data-url="/pages/friends/friends">
+            <view class="t13">去参团</view>
+          </view>
+
         </view>
-        <view class="swiper_buttom">
-          <view class="t11">还差1人成团</view>
-          <view class="t12">剩余23:48:56</view>
+
+        <view class="swiper_item">
+
+          <!-- 图片 -->
+          <view class="swiper_img">
+            <image src="../../static/imgs/小樱.jpg"></image>
+          </view>
+
+          <!-- 还差一人 -->
+          <view class="swiper_text">
+            <view class="swiper_top">
+              <view class="t9">mango</view>
+              <view class="t10">广州市</view>
+            </view>
+            <view class="swiper_buttom">
+              <view class="t11">还差1人成团</view>
+              <view class="t12">剩余23:48:56</view>
+            </view>
+          </view>
+
+          <!-- 参团 -->
+          <view class="swiper_botton" bindtap="handurl" data-url="/pages/friends/friends">
+            <view class="t13">去参团</view>
+          </view>
+
         </view>
-      </view>
 
-      <!-- 参团 -->
-      <view class="swiper_botton" bindtap="handurl" data-url="/pages/friends/friends">
-        <view class="t13">去参团</view>
-      </view>
-
-    </view>
-
-    <view class="swiper_item">
-
-      <!-- 图片 -->
-      <view class="swiper_img">
-        <image src="../../static/formats/团团.jpg"></image>
-      </view>
-
-      <!-- 还差一人 -->
-      <view class="swiper_text">
-        <view class="swiper_top">
-          <view class="t9">mango</view>
-          <view class="t10">广州市</view>
-        </view>
-        <view class="swiper_buttom">
-          <view class="t11">还差1人成团</view>
-          <view class="t12">剩余23:48:56</view>
-        </view>
-      </view>
-
-      <!-- 参团 -->
-      <view class="swiper_botton" bindtap="handurl" data-url="/pages/friends/friends">
-        <view class="t13">去参团</view>
-      </view>
-
-    </view>
-
+      </swiper-item>
+    </swiper>
   </view>
   <!-- 直接参团 -->
 
@@ -224,8 +229,8 @@
 
   <view class="settlements_img" bindtap="handurl" data-url="/pages/index/index">
     <image src="../../static/formats/start.png"></image>
+    <text>首页</text>
   </view>
-  <text>首页</text>
 
   <view class="settlements_box1">
     <view class="s3">￥160</view>

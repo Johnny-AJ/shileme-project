@@ -48,7 +48,7 @@
 
   </view>
   <view class="function m20">
-    <view class="content">
+    <view class="content" bindtap="handurl" data-url="/pages/myEmms/myEmms">
       <image src="../../static/userimags/拼团.png"></image>
       <text> 我的拼团</text>
     </view>
