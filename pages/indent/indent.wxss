@@ -4,12 +4,13 @@
   box-sizing: border-box;
   padding: 0 30rpx;
 }
-
+page{
+  background: #f5f5f5
+}
 .indent {
-  width: 750rpx;
-  height: 1206rpx;
+  width: 100%;
+
   margin: 0;
-  overflow: hidden;
   padding: 0;
   background: #f5f5f5;
 }
@@ -236,8 +237,8 @@
   line-height: 60rpx;
   margin-left: 30rpx;
 }
-.payment   .way   .color{
-  border:1rpx solid rgba(240,43,80,1);
-  color:rgba(240,43,80,1);
 
+.payment   .way   .color {
+  border: 1rpx solid rgba(240, 43, 80, 1);
+  color: rgba(240, 43, 80, 1);
 }

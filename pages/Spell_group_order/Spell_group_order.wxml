@@ -5,10 +5,10 @@
   <view class="big_box">
     <view class="flex1_box">
       <view class="flex_box" >
-       <view class="top_box1" wx:if="{{addressok}}" bindtap = "handurl" >
+       <view class="top_box1" wx:if="{{!addressok}}" bindtap = "handurl" >
           请填写个人信息地址
         </view>
-        <view class="top_box" wx:if="{{!addressok}}">
+        <view class="top_box" wx:else>
           <view class="t1  ">{{address.name}}
             <text>{{address.phone}}</text>
             <text class="text">默认</text>
@@ -31,7 +31,7 @@
       <text>商品信息</text>
     </view>
     <view class="conts">
-      <view class="cont p30" wx:for="{{orderWaresVos}}" wx:key="{{item.waresId}}">
+      <view class="cont p30" wx:for="{{orderWaresVos}}" wx:key="*this">
         <view class="imgs">
           <image src="{{item.logoUrl}}"></image>
         </view>

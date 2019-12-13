@@ -1,13 +1,3 @@
-// 引入测试
-// const appconfig = require('../../app.config.js')
-// 路由封装
-// const http = require('../../server/http.js');
-// 引入封装请求
-// import {
-//   auth_API,
-//   updateUserInfo_API
-// } from '../../server/login/index.js'
-
 
 // pages/index/index.js
 Page({
@@ -20,6 +10,7 @@ Page({
     result: '',
     // 倒计时
     targetTime: 0,
+    newtime:0,
     clearTimer: false,
     timelist: [],
     current: 'homepage',
@@ -31,7 +22,12 @@ Page({
     // 轮播图数组:
     width: 144,
     swiperList: [],
-    time: 0
+    time: 0,
+    categoryId:'',
+    start:0,
+    productlist:[],
+    categoryId:''
+
   },
   swiperBindchange(e) {
     this.setData({
@@ -43,31 +39,20 @@ Page({
    */
   onLoad: function(options) {
     var self = this;
-
     // 超值拼团滚动
     this.group();
     // 限时购
     this.tiembuy();
-
-
     // 商品标签列表
     this.selling();
+
     // 轮播图
     this.setSwiperData()
-    // 头部标题
-
-    self.setData({
-      targetTime: new Date().getTime() +   11169000
-    })
-
+  
+    // 商品标列表
+ 
   },
-  clik(e) {
-    // console.log(e)
-    this.setData({
-      index1: e.currentTarget.dataset.index
-    })
-    
-  },
+
   onShow: function() {
     // console.log(this.data.clearTimer)
   },
@@ -110,15 +95,9 @@ Page({
     //   url: e.currentTarget.dataset.url,
     // })
   },
-  handleChange({
-    detail
-  }) {
-    this.setData({
-      current: detail.key
-    });
-  },
-  // 轮播图
-  setSwiperData() {
+
+
+  setSwiperData() { // 轮播图
     wx.request({
       url: 'http://192.168.2.98:9095/api/index/banner/banners',
       success: (res) => {
@@ -128,23 +107,22 @@ Page({
       }
     })
   },
-  selling() {
+  selling() {// 商品标列表
     var self = this;
     wx.request({
       url: 'http://192.168.2.98:9095/api/index/findAllCategoryName',
       success: (res) => {
-        // console.log('商品详情列表', res.data.data)
+
         self.setData({
           commoditylist: res.data.data
         })
-
-
-        // console.log(this.data.commoditylist, 66666)
+        self.productlist();
+      // console.log(this.data.commoditylist, 66666)
       }
     })
 
   },
-  group() { //超值拼团
+  group() { //// 超值拼团滚动
   var self=this;
     wx.request({
       url: 'http://192.168.2.98:9095/api/index/findGroupBuyRollList',
@@ -159,22 +137,20 @@ Page({
     })
   },
 
-  tiembuy() {
+  tiembuy() {  // 限时购
     var self = this;
     wx.request({
       url: 'http://192.168.2.98:9095//api/index/timeoutbuy',
       success: (res) => {
         var time = res.data.data.endTime - res.data.data.nowTime;
-        self.setData({
-          time: time
 
-        }, () => {
-          // console.log(res.data.data)
-          var time = this.data.time
-          // self.setData({
-          //   targetTime: new Date().getTime() +69000
-          // })
-        })
+        if(time){
+      
+          self.setData({
+            targetTime: new Date().getTime() + time
+          })
+        }
+      
         self.setData({
           timeoutbuylist: res.data.data.list
         })
@@ -185,7 +161,62 @@ Page({
       }
     })
   },
-  listtime() {
+  productlist(e) { // 商品标列表
+   
+   
+    if (e){
+      this.setData({
+        categoryId: e.currentTarget.dataset.id
+      });
+      this.setData({
+        index1: e.currentTarget.dataset.index
+      })
+    }else{
+      var categoryId = this.data.commoditylist[0].id;
+      this.setData({
+        categoryId: categoryId
+      });
+     
+    }
+    // var token = wx.getStorageSync('token');
+    // console.log(token)
+    wx.request({
+      url: 'http://192.168.2.98:9095/api/index/findAllWaresByCate',
+      data:{
+        limit:4,
+        categoryId: this.data.categoryId,
+        start:this.data.start
+      },
+      header:{
+        token: wx.getStorageSync('token')
+      },
+      success:function(res){
+         console.log(res,'res')
+      }
+    })
 
-  }
+
+
+
+    
+
+    
+  },
+  goto(e){
+    let waresid = e.currentTarget.dataset.waresid
+   wx:wx.navigateTo({
+     url: '/pages/details/details?waresid=' + waresid,
+     success: function(res) {
+     },
+    
+   })
+  },
+  /**
+   * 页面相关事件处理函数--监听用户下拉动作
+   */
+  onReachBottom: function () {
+    console.log(55555)
+  },
+  
+  
 })

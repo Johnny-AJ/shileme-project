@@ -21,7 +21,7 @@
   <!-- 轮播图 -->
   <view class="swiper_box">
     <swiper indicator-dots="false" autoplay="false" interval="3000" circular="false">
-      <swiper-item wx:for="{{swiperList}}" wx:key='goods_id'>
+      <swiper-item wx:for="{{swiperList}}" wx:key='*this'>
         <image mode="widthFix" src="{{item.url}}"></image>
       </swiper-item>
     </swiper>
@@ -31,7 +31,7 @@
   <!-- 按钮 -->
   <view class="button_nav">
 
-    <view class="navigator" bindtap="handurl" >
+    <view class="navigator" bindtap="handurl">
       <image mode="widthFix" src="../../static/imgs/扫码购.png"></image>
       <view class="text">扫码购</view>
     </view>
@@ -63,10 +63,10 @@
   <view class="conts">
     <view class="bgc_color">
 
-    <!-- 超值拼团 -->
+      <!-- 超值拼团 -->
       <view class="bargain_box">
 
-        
+
         <view class="bargain_top">
           <view class="bargain_left">超值拼团</view>
           <view class="bargain_right"> 好 友 正 在 拼
@@ -75,12 +75,12 @@
         </view>
         <view class="bargain_buttom">
           <swiper autoplay="false" interval="7000" circular="false">
-            <block >
-              <swiper-item wx:for="{{buyRollList}}"  wx:for-item="i" wx:for-index="num" wx:if="{{i.arr.length !==0}}">
+            <block>
+              <swiper-item wx:for="{{buyRollList}}" wx:for-item="i" wx:key="*this" wx:for-index="num" wx:if="{{i.arr.length !==0}}">
                 <view class="swiper-item">
 
-                  <view class="swiper-cont" wx:for="{{i.arr}}">
-                     
+                  <view class="swiper-cont" wx:key="*this" wx:for="{{i.arr}}">
+
                     <view class="imgs">
                       <image src="{{item.waresImg}}"> </image>
                       <view class="text">已拼{{item.joinNum}}件</view>
@@ -98,7 +98,7 @@
                       </view>
                     </view>
                   </view>
-                
+
 
                 </view>
               </swiper-item>
@@ -119,8 +119,8 @@
               <text>限 时 购</text>
               <view class="time">
 
-               
-                <i-count-down target="{{targetTime}}" countdown-class="targettime"  bindcallback="listtime" clear-timer="{{clearTimer}}"></i-count-down>
+
+                <i-count-down target="{{targetTime}}" countdown-class="targettime" bindcallback="listtime" clear-timer="{{clearTimer}}"></i-count-down>
 
               </view>
             </view>
@@ -131,14 +131,14 @@
           </view>
           <!-- 下 -->
           <view class="bargain_buttom">
-            <view class="a"  wx:for="{{timeoutbuylist}}" data-waresId="{{item. waresId}}">
+            <view class="a" wx:for="{{timeoutbuylist}}" bindtap="goto" wx:key='*this' data-waresId="{{item. waresId}}">
               <image src="{{item.logoUrl}}"></image>
               <view class="price">
                 <text> <text>￥</text>{{item.nowPrice}}</text>
                 <text><text>￥</text>{{item.mallPrice}}</text>
               </view>
             </view>
-           
+
 
 
 
@@ -178,48 +178,20 @@
         </view>
       </view>
 
-<!-- 商品详情列表 -->
+      <!-- 商品详情列表 -->
       <view class="likes">
         <view class="conts" style="width:{{commoditylist.length*143}}rpx">
-          <view class="block" bindtap="clik" wx:for="{{commoditylist}}" data-index="{{index}}" data-id="{{item.id}}" wx:key="id">
+          <view class="block" bindtap="clik" wx:for="{{commoditylist}}" data-index="{{index}}" data-id="{{item.id}}" bindtap="productlist" wx:key="*this">
             <image wx:if="{{show}}" src="{{item.url}}"></image>
             <!-- <image wx:if="{{!show}}" src="../../static/imgs/美妆.png"></image> -->
-            <text class=" {{index1==index?'color':''}}" >{{item.name}}</text>
+            <text class=" {{index1==index?'color':''}}">{{item.name}}</text>
             <text class="i"></text>
           </view>
-        
+
         </view>
       </view>
       <view class="contens">
         <view class="content">
-          <view class="cont">
-            <image src="../../static/imgs/imgs1.png"></image>
-            <view class="name pl20">保湿急救 网红蓝药丸面.</view>
-            <view class="content_client pl20">Dr.Jart 宛若新生保湿面膜.</view>
-            <view class="price pl20">￥
-              <text class="nowprice">79 </text>
-              <text class="oldprice">  ￥160</text>
-            </view>
-          </view>
-          <view class="cont">
-            <image src="../../static/imgs/imgs1.png"></image>
-            <view class="name pl20">保湿急救 网红蓝药丸面.</view>
-            <view class="content_client pl20">Dr.Jart 宛若新生保湿面膜.</view>
-            <view class="price pl20">￥
-              <text class="nowprice">79 </text>
-              <text class="oldprice">  ￥160</text>
-            </view>
-          </view>
-          <view class="cont">
-            <image src="../../static/imgs/imgs1.png"></image>
-            <view class="name pl20">保湿急救 网红蓝药丸面.</view>
-            <view class="content_client pl20">Dr.Jart 宛若新生保湿面膜.</view>
-            <view class="price pl20">￥
-              <text class="nowprice">79 </text>
-              <text class="oldprice">  ￥160</text>
-            </view>
-          </view>
-
           <view class="cont">
             <image src="../../static/imgs/imgs1.png"></image>
             <view class="name pl20">保湿急救 网红蓝药丸面.</view>

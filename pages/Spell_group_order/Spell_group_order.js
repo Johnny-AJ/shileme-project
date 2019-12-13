@@ -16,7 +16,8 @@ Page({
     quota: {},
     allprice: 0,
     inputValue: '',
-    doto: {}
+    doto: {},
+    options:{}
 
   },
 
@@ -33,25 +34,17 @@ Page({
       doto: options.dtos
     })
 
-    console.log(self.data.doto, '68888')
+
     const token = wx.getStorageSync('token')
     self.setData({
       token
     })
+    self.setData({
+      options: options
+    })
+    
 
-    this.oders(options); // 获取扫码购的参数
 
-    if (self.data.address) {
-
-      console
-      self.setData({
-        addressok: false
-      })
-    } else {
-      self.setData({
-        addressok: true
-      })
-    }
 
   },
 
@@ -66,7 +59,7 @@ Page({
    * 生命周期函数--监听页面显示
    */
   onShow: function() {
-
+    this.oders(); // 获取扫码购的参数
 
   },
 
@@ -91,7 +84,7 @@ Page({
 
   },
   goto(e) { //提交订单
-    console.log(66666)
+    // console.log(66666)
     var self = this;
 
     wx.request({
@@ -150,18 +143,22 @@ Page({
   onShareAppMessage: function() {
 
   },
-  oders(options) { //获取下单详细信息
+  oders() { //获取下单详细信息
 
+
+  
     var self = this;
-    var list = JSON.parse(options.dtos)
+    console.log(self.data.options, 'options')
+    var list = JSON.parse(self.data.options.dtos)
 
     let dd = [];
     var dtos = dd.concat(list)
+    console.log(dtos, 'dtos')
     self.setData({
       dtos: dtos
     })
 
-    // console.log(88888, dtos)
+
     wx.request({
       url: 'http://192.168.2.98:9095/api/order/savePlace',
       method: 'POST',
@@ -174,17 +171,53 @@ Page({
       success: (res) => {
         // console.log(6666, res.data)
 
-        self.setData({
-          allprice: res.data.data.allprice
-        })
 
-        self.setData({
-          address: res.data.data.address
-        })
+        if (res.data.msg !== "操作成功") {
+          wx.showToast({
+            title: '规格不存在！',
+            icon: 'loading',
+            duration: 2000
+          }, () => {
+            wx.navigateBack({
+              delta: 1,
+            })
+          })
 
-        self.setData({
-          orderWaresVos: res.data.data.orderWaresVos
-        })
+
+        } else {
+
+          self.setData({
+            allprice: res.data.data.allprice
+          })
+
+          self.setData({
+            address: res.data.data.address
+          })
+
+
+          self.setData({
+            orderWaresVos: res.data.data.orderWaresVos
+          })
+          var address = self.data.address;
+          console.log(Object.keys(address).length === 0)
+          if (Object.keys(address).length === 0) { //判断地址是否存在默认
+
+            self.setData({
+              addressok: false
+            })
+          } else {
+            self.setData({
+              addressok: true
+            })
+          }
+
+        }
+
+
+
+
+
+
 
 
 
