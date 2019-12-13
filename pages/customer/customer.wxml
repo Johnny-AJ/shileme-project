@@ -1,5 +1,8 @@
+<view>
 
-<view class="img">
-  <image src="../../static/imgs/组 7 (1).png"></image>
+  <view class="img">
+    <image src="../../static/imgs/组 7 (1).png"></image>
+  </view>
+  <text>功能暂未开放,敬请期待!</text>
+  
 </view>
-<text>功能暂未开放,敬请期待!</text>

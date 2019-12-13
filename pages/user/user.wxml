@@ -1,16 +1,15 @@
 <!-- 个人中心 -->
-<view class="user" bindgetuserinfo="handlegetuserinfo">
+<view class="user" open-type="getUserInfo" bindgetuserinfo="handlegetuserinfo">
   <view class="username">
     <view class="bg">
       <image src="../../static/userimags/bg1.png"></image>
     </view>
     <view class="usercont">
       <view class="img">
-        <image src="../../static/userimags/头像.png"></image>
+        <image src="{{userInfo.avatarUrl}}"></image>
       </view>
       <view class="text">
-        <text class="name">用户名1</text>
-        <text class="id">13923812345</text>
+        <text class="name">{{userInfo.nickName}}</text>
       </view>
     </view>
   </view>

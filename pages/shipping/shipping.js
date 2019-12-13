@@ -5,6 +5,7 @@ Page({
    * 页面的初始数据
    */
   data: {
+
     // 删除
     delArray: [],
     // 新增地址
@@ -13,6 +14,8 @@ Page({
     address: [],
     dtos: {},
     dto: {},
+    delid: '',
+
     id: ''
   },
 
@@ -58,20 +61,24 @@ Page({
 
   // 编辑
   handeditor(e) {
-    // console.log(e)
+    console.log(e)
     let index = e.currentTarget.dataset.index
+    // let id = e.currentTarget.dataset.oder
+    // this.setData({
+    //   id: id
+    // })
     const addAddressList = this.data.addAddressList
     let bb = addAddressList[index]
     let cc = JSON.stringify(bb)
     wx.navigateTo({
-      url: '/pages/inetAddress_copy/inetAddress_copy?id=' + cc //跳转到编辑页面
+      url: '/pages/inetAddress_copy/inetAddress_copy?bjid=' + cc //跳转到编辑页面
       // url: '/pages/inetAddress_copy/inetAddress_copy'
     })
   },
   // 删除
   handdel(e) {
     console.log(e)
-    var id = e.currentTarget.dataset.id
+    var delid = e.currentTarget.dataset.id
     var self = this
     // console.log(self.data.addAddressList)
     wx.showModal({
@@ -90,7 +97,7 @@ Page({
           // url: 'http://192.168.2.98:9095/api/address/delete?id=' + 40,
           method: 'GET',
           data: {
-            id: id
+            id: delid
           },
           header: {
             'token': self.data.token, //请求头携带参数

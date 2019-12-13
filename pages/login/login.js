@@ -29,21 +29,24 @@ Page({
             method: 'POST',
             dataType: 'json',
             responseType: 'text',
-            success: function(res) {},
-            fail: function(res) {},
-            complete: function(res) {},
+            success: function(res) {
+              console.log(res, 111)
+              if (0 == res.code) {
+                wx.navigateTo({
+                  url: 'pages/index/index',
+                })
+              } else {
+                wx.navigateTo({
+                  url: 'pages/login/login',
+                })
+              }
+            },
           })
         }
       }),
-
-
-
-
       wx.navigateBack({
         delta: 1
       })
-
-
   },
   /**
    * 生命周期函数--监听页面加载

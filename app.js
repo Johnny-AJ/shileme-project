@@ -50,9 +50,9 @@ App({
         }
       },
     })
-   
+
   },
-   globalData: {
+  globalData: {
     // 定义全局请求队列
     requestQueue: [],
     // 是否正在进行登陆

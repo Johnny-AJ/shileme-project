@@ -5,14 +5,15 @@ Page({
    * 页面的初始数据
    */
   data: {
-
+    userInfo: ''
   },
 
   /**
    * 生命周期函数--监听页面加载
    */
-  onLoad: function(options) {
+  onLoad(options) {
     // 头部标题
+    var that = this
     wx.setNavigationBarTitle({
       title: '个人中心'
     })
@@ -28,14 +29,17 @@ Page({
               code: res.code
             },
             method: "get",
-            success: function(res) {
+            success: (res) => {
               if (res.data.code == 0) {
                 var token = res.data.msg;
                 // 获取用户信息
                 wx.getUserInfo({
-                  success: function(res) {
-                    console.log(res, 456)
+                  success: (res) => {
                     var userInfo = res.userInfo //用户信息
+                    // console.log(userInfo, 456)
+                    that.setData({
+                      userInfo
+                    })
                     wx.request({
                       // 用户信息
                       url: 'http://192.168.2.98:9095/api/wechat/updateUserInfo',
@@ -44,7 +48,7 @@ Page({
                       header: {
                         'token': token, //请求头携带参数
                         'content-type': 'application/json',
-                      },
+                      }
                     })
                   }
                 })
@@ -58,7 +62,7 @@ Page({
 
   // 用户信息
   handlegetuserinfo(e) {
-    // console.log(e, 123)
+    console.log(e, 123)
   },
   // 路径封装
   handurl: function(e) {
