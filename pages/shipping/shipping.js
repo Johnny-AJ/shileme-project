@@ -6,17 +6,16 @@ Page({
    */
   data: {
 
-    // 删除
-    delArray: [],
-    // 新增地址
-    addAddressList: [],
+
+    delArray: [], // 删除
+    addAddressList: [], // 新增地址
     token: '',
     address: [],
     dtos: {},
     dto: {},
-    delid: '',
-
-    id: ''
+    delid: '', //删除
+    id: '',
+    isDefault: '' //默认
   },
 
   /**
@@ -35,7 +34,6 @@ Page({
     wx.setNavigationBarTitle({
       title: '收货地址'
     })
-
     // 用户名
     // let address = wx.getStorageSync("address")
     // // console.log(address)
@@ -43,22 +41,29 @@ Page({
     //   address
     // })
 
+
+  self.address();
     // 地址列表
+   
+  },
+  address(){
+    var self=this;
+    var token = wx.getStorageSync('token');
+    console.log(token)
     wx.request({
       url: 'http://192.168.2.98:9095/api/address/list',
       method: 'GET',
       header: {
-        'token': self.data.token, //请求头携带参数
+        'token':token, //请求头携带参数
       },
       success: res => {
-        // console.log(res, "地址")
+        console.log(res, "地址")
         self.setData({
           addAddressList: res.data.data
         })
       }
     })
   },
-
   // 编辑
   handeditor(e) {
     console.log(e)
@@ -86,15 +91,14 @@ Page({
       content: '是否确认删除你的当前收货地址',
       success: (res) => {
         // var addAddressList = this.data.addAddressList
-        // if (res.confirm) {
-        //   addAddressList.splice(e.currentTarget.dataset.index, 1)
-        //   this.setData({
-        //     addAddressList: addAddressList
-        //   })
-        // } else if (res.cancel) {}
+        if (res.confirm) {
+          self.address()
+        } else if (res.cancel) {
+
+        }
         wx.request({
           url: 'http://192.168.2.98:9095/api/address/delete?id=' + self.data.id,
-          // url: 'http://192.168.2.98:9095/api/address/delete?id=' + 40,
+         
           method: 'GET',
           data: {
             id: delid
@@ -104,6 +108,7 @@ Page({
           },
           success: (res) => {
             console.log("删除成功", res)
+            
           }
         })
       }
@@ -114,5 +119,27 @@ Page({
     wx.navigateTo({
       url: '/pages/inetAddress/inetAddress'
     })
+  },
+  // 默认勾选地址
+  radioChange(e) {
+    this.setData({
+      isDefault: e.detail.value
+    })
+    wx.request({
+      url: 'http://192.168.2.98:9095/api/address/updateDefault',
+      method: 'GET',
+      data: {
+        isDefault: this.data.isDefault
+      },
+      header: {
+        'token': this.data.token, //请求头携带参数
+      },
+      success: res => {
+        console.log(res, 31312321)
+      }
+    })
+  },
+  onShow(){
+    this.address()
   }
 })

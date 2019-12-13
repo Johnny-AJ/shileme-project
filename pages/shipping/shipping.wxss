@@ -8,6 +8,7 @@
   height: 100%;
   width: 750rpx;
   /* overflow: hidden; */
+  padding-bottom: 100rpx;
 }
 
 .p30 {
@@ -34,7 +35,7 @@
   padding-right: 29rpx;
   font-size: 29rpx;
   color: #222;
-  padding-bottom: 61rpx;
+  padding-bottom: 30rpx;
   padding-top: 30rpx;
   font-family: PingFang SC;
   font-weight: bold;
@@ -81,7 +82,7 @@
 
 /* 按钮 */
 
-.button {
+.bgc .button {
   width: 690rpx;
   height: 88rpx;
   background: rgba(240, 43, 80, 1);
@@ -89,7 +90,7 @@
   font-size: 32rpx;
   color: #fff;
   position: fixed;
-  bottom: 50rpx;
+  bottom: 35rpx;
   left: 30rpx;
   text-align: center;
   line-height: 88rpx;

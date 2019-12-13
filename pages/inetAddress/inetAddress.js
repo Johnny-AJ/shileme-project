@@ -78,9 +78,8 @@ Page({
       success: res => {
         // console.log(res, "新增成功")
         if (0 == res.data.code) {
-          wx.navigateTo({
-            // url: '/pages/shipping/shipping?dtos=' + this.data.dtos,
-            url: '/pages/shipping/shipping'
+          wx.navigateBack({
+            delta:1
           })
         } else {
           wx.showModal({

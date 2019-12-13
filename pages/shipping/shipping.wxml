@@ -3,40 +3,54 @@
 <!-- 背景有颜色 -->
 <view class="bgc">
 
-  <view class="address_box" wx:for="{{addAddressList}}" wx:key="id">
-    <view class="name_box p30">
-      <!-- <text>花礼晴</text> -->
-      <text>{{item.name}}</text>
-      <!-- <text>13923856789</text> -->
-      <text>{{item.phone}}</text>
-    </view>
-    <view class="shipping_address p30">
-      <!-- 广东省广州市天河区长湴工业园13号 -->
-      {{item.province}}{{item.city}}{{item.region}}{{item.address}}
-    </view>
-    <view class="address_nav p30">
-      <view class="address_radio">
-        <radio-group class="radio-group" bindchange="radioChange">
-          <!-- <radio>默认地址</radio> -->
-          <radio>{{item.isDefault}}</radio>
-        </radio-group>
-      </view>
-      <view class="address_right">
-        <view class="address_bianji" bindtap="handeditor" data-index="{{index}}" data-oder="{{item.id}}">
-          <view>
-            <image src="../../static/imgs/编辑.png"></image>
-            <text>编辑</text>
+  <radio-group class="radio-group" bindchange="radioChange">
+    <label class="checkbox" wx:for="{{addAddressList}}" wx:key="id" for="radio">
+
+
+      <view class="address_box">
+
+        <view class="name_box p30">
+          <!-- <text>花礼晴</text> -->
+          <text>{{item.name}}</text>
+          <!-- <text>13923856789</text> -->
+          <text>{{item.phone}}</text>
+        </view>
+
+        <view class="shipping_address p30">
+          <!-- 广东省广州市天河区长湴工业园13号 -->
+          {{item.province}}{{item.city}}{{item.region}}{{item.address}}
+        </view>
+
+        <view class="address_nav p30">
+          <!-- 按钮 -->
+          <view class="address_radio">
+            <!-- <text>{{item.id}}</text> -->
+            <radio class="radio" wx:key="*this" value="{{item.id}}" checked="{{item.checked}}" />
+          </view>
+          <!-- 编辑 -->
+          <view class="address_right">
+            <view class="address_bianji" bindtap="handeditor" data-index="{{index}}" data-oder="{{item.id}}">
+              <view>
+                <image src="../../static/imgs/编辑.png"></image>
+                <text>编辑</text>
+              </view>
+            </view>
+            <!-- 删除 -->
+            <view class="address_bianji" bindtap="handdel" data-id="{{item.id}}">
+              <view>
+                <image src="../../static/imgs/删除.png"></image>
+                <text>删除</text>
+              </view>
+            </view>
           </view>
         </view>
-        <view class="address_bianji" bindtap="handdel" data-id="{{item.id}}">
-          <view>
-            <image src="../../static/imgs/删除.png"></image>
-            <text>删除</text>
-          </view>
-        </view>
+
       </view>
-    </view>
-  </view>
+
+
+    </label>
+  </radio-group>
+
 
   <!-- 按钮 -->
   <view class="button" bindtap="handNewvoid">

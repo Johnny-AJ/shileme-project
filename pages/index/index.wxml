@@ -41,7 +41,7 @@
       <view class="text">免费试用</view>
     </view>
 
-    <view class="navigator" bindtap="handurl" data-url="/pages/group/group">
+    <view class="navigator" bindtap="hangURL" data-url="/pages/group/group">
       <image mode="widthFix" src="../../static/imgs/拼团.png"></image>
       <view class="text">超值拼团</view>
     </view>
@@ -73,6 +73,7 @@
             <image src="../../static/imgs/箭头.png"></image>
           </view>
         </view>
+
         <view class="bargain_buttom">
           <swiper autoplay="false" interval="7000" circular="false">
             <block>
@@ -104,6 +105,8 @@
               </swiper-item>
             </block>
           </swiper>
+
+
         </view>
       </view>
 

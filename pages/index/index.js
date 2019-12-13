@@ -16,7 +16,7 @@ Page({
     current: 'homepage',
     buyRollList: [],
     timeoutbuylist: {},
-    index1:0,
+    index1: 0,
     commoditylist: [], //商品列表
     show: true,
     // 轮播图数组:
@@ -64,7 +64,7 @@ Page({
       success: (res) => {
 
         var result = res.result.split("=")[1];
-       
+
         _this.setData({
           result: result,
 
@@ -74,7 +74,7 @@ Page({
           wx.navigateTo({
             url: '/pages/scango/scango?waresId=' + _this.data.result
           })
-        }else{
+        } else {
           $Toast({
             content: '商品已经不存在！',
             icon: 'prompt',
@@ -90,10 +90,7 @@ Page({
 
 
 
-    // 路由封装
-    // wx.navigateTo({
-    //   url: e.currentTarget.dataset.url,
-    // })
+
   },
 
 
@@ -132,7 +129,7 @@ Page({
           buyRollList: res.data.data.arrList
         })
 
-        
+
       }
     })
   },
@@ -217,6 +214,11 @@ Page({
   onReachBottom: function () {
     console.log(55555)
   },
-  
+  hangURL(e) {
+    // 路由封装
+    wx.navigateTo({
+      url: e.currentTarget.dataset.url,
+    })
+  }
   
 })

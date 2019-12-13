@@ -169,9 +169,9 @@ Page({
         token: self.data.token
       },
       success: (res) => {
-        // console.log(6666, res.data)
+        console.log(6666, res.data)
 
-
+        console.log(res.data.msg)
         if (res.data.msg !== "操作成功") {
           wx.showToast({
             title: '规格不存在！',
@@ -185,7 +185,7 @@ Page({
 
 
         } else {
-
+          
           self.setData({
             allprice: res.data.data.allprice
           })
@@ -194,13 +194,13 @@ Page({
             address: res.data.data.address
           })
 
-
+          console.log(self.data.address)
           self.setData({
             orderWaresVos: res.data.data.orderWaresVos
           })
           var address = self.data.address;
-          console.log(Object.keys(address).length === 0)
-          if (Object.keys(address).length === 0) { //判断地址是否存在默认
+         
+          if (address ==null) { //判断地址是否存在默认
 
             self.setData({
               addressok: false

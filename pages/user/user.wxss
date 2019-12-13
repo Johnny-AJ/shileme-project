@@ -40,7 +40,7 @@
   left: 26rpx;
   height: 98rpx;
   width: 98rpx;
-  border-radius: 50%;
+  border-radius: 50rpx;
 }
 
 .user .usercont .img image {
