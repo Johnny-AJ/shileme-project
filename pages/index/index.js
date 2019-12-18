@@ -1,4 +1,3 @@
-
 // pages/index/index.js
 Page({
 
@@ -10,7 +9,7 @@ Page({
     result: '',
     // 倒计时
     targetTime: 0,
-    newtime:0,
+    newtime: 0,
     clearTimer: false,
     timelist: [],
     current: 'homepage',
@@ -23,10 +22,10 @@ Page({
     width: 144,
     swiperList: [],
     time: 0,
-    categoryId:'',
-    start:0,
-    productlist:[],
-    categoryId:''
+    categoryId: '',
+    start: 0,
+    productlist: [],
+    categoryId: ''
 
   },
   swiperBindchange(e) {
@@ -48,9 +47,9 @@ Page({
 
     // 轮播图
     this.setSwiperData()
-  
+
     // 商品标列表
- 
+
   },
 
   onShow: function() {
@@ -104,7 +103,7 @@ Page({
       }
     })
   },
-  selling() {// 商品标列表
+  selling() { // 商品标列表
     var self = this;
     wx.request({
       url: 'http://192.168.2.98:9095/api/index/findAllCategoryName',
@@ -114,13 +113,13 @@ Page({
           commoditylist: res.data.data
         })
         self.productlist();
-      // console.log(this.data.commoditylist, 66666)
+        // console.log(this.data.commoditylist, 66666)
       }
     })
 
   },
   group() { //// 超值拼团滚动
-  var self=this;
+    var self = this;
     wx.request({
       url: 'http://192.168.2.98:9095/api/index/findGroupBuyRollList',
       success: (res) => {
@@ -134,20 +133,20 @@ Page({
     })
   },
 
-  tiembuy() {  // 限时购
+  tiembuy() { // 限时购
     var self = this;
     wx.request({
       url: 'http://192.168.2.98:9095//api/index/timeoutbuy',
       success: (res) => {
         var time = res.data.data.endTime - res.data.data.nowTime;
 
-        if(time){
-      
+        if (time) {
+
           self.setData({
             targetTime: new Date().getTime() + time
           })
         }
-      
+
         self.setData({
           timeoutbuylist: res.data.data.list
         })
@@ -159,59 +158,65 @@ Page({
     })
   },
   productlist(e) { // 商品标列表
-   
-   
-    if (e){
+
+
+    if (e) {
       this.setData({
         categoryId: e.currentTarget.dataset.id
       });
       this.setData({
         index1: e.currentTarget.dataset.index
       })
-    }else{
+    } else {
       var categoryId = this.data.commoditylist[0].id;
       this.setData({
         categoryId: categoryId
       });
-     
+
     }
     // var token = wx.getStorageSync('token');
     // console.log(token)
     wx.request({
       url: 'http://192.168.2.98:9095/api/index/findAllWaresByCate',
-      data:{
-        limit:4,
+      data: {
+        limit: 4,
         categoryId: this.data.categoryId,
-        start:this.data.start
+        start: this.data.start
       },
-      header:{
+      header: {
         token: wx.getStorageSync('token')
       },
-      success:function(res){
-         console.log(res,'res')
+      success: function(res) {
+        console.log(res, 'res')
       }
     })
 
 
 
 
-    
 
-    
+
+
   },
-  goto(e){
-    let waresid = e.currentTarget.dataset.waresid
-   wx:wx.navigateTo({
-     url: '/pages/details/details?waresid=' + waresid,
-     success: function(res) {
-     },
-    
-   })
+  jump(){
+    wx.navigateTo({
+      url: '/pages/group/group',
+    })
+  },
+  goto(e) {
+    let waresid = e.currentTarget.dataset.waresid;
+   
+    console.log(e,'e')
+    wx: wx.navigateTo({
+      url: '/pages/details/details?waresid=' + waresid,
+      success: function(res) {},
+
+    })
   },
   /**
    * 页面相关事件处理函数--监听用户下拉动作
    */
-  onReachBottom: function () {
+  onReachBottom: function() {
     console.log(55555)
   },
   hangURL(e) {
@@ -220,5 +225,5 @@ Page({
       url: e.currentTarget.dataset.url,
     })
   }
-  
+
 })

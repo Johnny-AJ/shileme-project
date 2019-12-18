@@ -1,41 +1,41 @@
 <!--订单详情-->
 <view class="order">
   <view class="orderhead">
-    <view class="t1">待发货</view>
-    <view class="t2 ">剩余3天00时00分00秒自动收货</view>
-    <image src="../../static/imgs/交易成功.png" class="img1 none"></image>
-    <image src="../../static/imgs/qianbao.png" class="img2"></image>
+    <view class="t1">{{data.text}}</view>
+    <view class="t2" wx:if="{{data.orderState==4||data.orderState==3}}">剩余3天00时00分00秒自动收货</view>
+    <view class="t2  {{data.orderState ==1?'':'none'}}">请在30分钟内完成支付</view>
+    <image src="../../static/imgs/交易成功.png" class="img1" wx:if="{{data.orderState==4||data.orderState==3||data.orderState==2}}"></image>
+    <image src="../../static/imgs/qianbao.png" class="img2 {{data.orderState==1?'':'none'}}"></image>
   </view>
   <view class="users">
 
     <view class="user pl30">
-      <text>用户1</text>
-      <text class="phone">173*****3220</text>
+      <text>{{data.name}}</text>
+      <text class="phone">{{data.phone}}</text>
     </view>
-
     <view class="address p30">
       <image src="../../static/imgs/居乐乐 地点.png"></image>
-      <text>广东广州市天河区长白沙水路119号</text>
-      <text class="pacode">查看取件码</text>
+      <text>{{data.province}}{{data.city}}{{data.region}}{{data.address}}</text>
+      <text class="pacode" wx:if="{{data.orderState !=1}}">查看取件码</text>
     </view>
-    
+
     <image src="../../static/imgs/分割线.png" class="imgs"></image>
 
   </view>
   <view class="commodity m20">
     <view class="tittle pl30">商品信息</view>
     <view class="conts ">
-      <view class="cont p30">
+      <view class="cont p30" wx:for="{{data.orderWares}}">
         <view class="imgs">
-          <image src="../../static/imgs/交易成功.png"></image>
+          <image src="{{item.logoUrl}}"></image>
         </view>
         <view class="cr">
-          <view class="name">保湿急救 网红蓝药丸面膜</view>
+          <view class="name">{{item.waresName}}</view>
           <view class="spec">
-            <text class="t1">5片/盒</text>
-            <text class="t2">￥79<text>x1</text></text>
+            <text class="t1">{{item.specification}}</text>
+            <text class="t2">￥{{item.price}}<text>x{{item.amount}}</text></text>
           </view>
-          <view class="gifts">
+          <!-- <view class="gifts">
             <view class="gl">赠品:</view>
             <view class="num">
               <view class="nums">
@@ -47,11 +47,8 @@
                 <text>X1</text>
               </view>
             </view>
-          </view>
+          </view> -->
         </view>
-      </view>
-      <view class="refund p30">
-        <text>退款</text>
       </view>
       <view class="payment p30">
         <view>
@@ -60,20 +57,20 @@
         </view>
         <view>
           <text>商品总价</text>
-          <text>￥79.00</text>
+          <text>￥{{data.fullPrice}}</text>
         </view>
         <view>
           <text>优惠券</text>
-          <text>￥0.00</text>
+          <text>￥{{data.discountsPrice}}</text>
         </view>
         <view>
           <text>订单总价</text>
-          <text>￥79.00</text>
+          <text>￥{{data.totalPrice}}</text>
         </view>
       </view>
       <view class="money  p30">
         <text class="t1">实付款</text>
-        <text class="t2">￥79.00</text>
+        <text class="t2">￥{{data.totalPrice}}</text>
       </view>
     </view>
 
@@ -88,11 +85,11 @@
     <view class="time p30">
       <view class="t1">
         订单编号：
-        <text>201908070001002</text>
+        <text>{{data.orderNo}}</text>
       </view>
       <view class="t1">
         下单时间：
-        <text>2019-09-0617：16：00</text>
+        <text>{{data.createTime}}</text>
       </view>
       <view class="t1">
         付款时间：
@@ -103,8 +100,12 @@
 
   </view>
   <view class="reminder ">
-    <text class="reminders">提醒发货</text>
-    <text class="reminders">提醒发货</text>
+    <text class="reminders" wx:if="{{data.orderState==2}}" bindtap="remind">提醒发货</text>
+    <text class=" check reminders" wx:if="{{data.orderState==3}}">确认收货</text>
+    <text class="check reminders" wx:if="{{data.orderState==4}}">待评论</text>
+    <text class="reminders" wx:if="{{data.orderState==3||data.orderState==4}}">物流信息</text>
+
+    <text class="check reminders" wx:if="{{data.orderState==1}}">付款</text>
     <text class="feedback">我要反馈</text>
   </view>
 </view>

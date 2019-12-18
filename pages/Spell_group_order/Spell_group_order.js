@@ -17,7 +17,8 @@ Page({
     allprice: 0,
     inputValue: '',
     doto: {},
-    options:{}
+    options:{},
+    discountId:''
 
   },
 
@@ -84,7 +85,7 @@ Page({
 
   },
   goto(e) { //提交订单
-    // console.log(66666)
+  
     var self = this;
 
     wx.request({
@@ -102,26 +103,38 @@ Page({
 
       },
       success: function(res) {
-        // console.log(78888, res)
+        var timeStamp = res.data.data.timeStamp;
+     
 
 
         // 微信支付
         wx.requestPayment({
-          timeStamp: res.data.data.timeStamp,
+          timeStamp: timeStamp,
           nonceStr: res.data.data.nonceStr,
           package: res.data.data.package,
           signType: res.data.data.signType,
           paySign: res.data.data.paySign,
           success(res) {
-            // console.log(res, '支付')
-
-            if (res.errMsg.split(":")[1] == "ok") {
+           
+              // console.log(res,'支付成功')
+            if (res.errMsg.split(":")[1] == "ok") {    
+              var allprice = self.data.allprice;
+          
               wx.navigateTo({
-                url: e.currentTarget.dataset.url,
+                url: '/pages/view/view?allprice=' + allprice,
               })
             } else {
-              // console.log(66666666)
+
+              
+          
             }
+          },
+          fail:function(res){
+            var waresList = JSON.stringify(self.data.dtos);
+         
+            wx.navigateTo({
+              url: '/pages/view1/view1?discountId=' + self.data.discountId + '&remark=' + self.data.inputValue + '&addressId=' + self.data.address.id + '&waresList=' + waresList + '&allprice=' + self.data.allprice,
+              })
           }
 
         })
@@ -144,21 +157,13 @@ Page({
 
   },
   oders() { //获取下单详细信息
-
-
-  
     var self = this;
-    console.log(self.data.options, 'options')
     var list = JSON.parse(self.data.options.dtos)
-
     let dd = [];
     var dtos = dd.concat(list)
-    console.log(dtos, 'dtos')
     self.setData({
       dtos: dtos
     })
-
-
     wx.request({
       url: 'http://192.168.2.98:9095/api/order/savePlace',
       method: 'POST',
@@ -169,9 +174,7 @@ Page({
         token: self.data.token
       },
       success: (res) => {
-        console.log(6666, res.data)
 
-        console.log(res.data.msg)
         if (res.data.msg !== "操作成功") {
           wx.showToast({
             title: '规格不存在！',

@@ -24,99 +24,26 @@
   <!-- 正在拼团 -->
 
   <!-- 急救 -->
-  <view class="group_box1">
+  <view class="group_box1" wx:for="{{spelllist}}" wx:key="*this">
 
     <view class="group_nav1">
       <image src="../../static/group/170.180.png"></image>
     </view>
 
     <view class="group_text">
-      <view class="t3">保湿急救 网红蓝药丸面膜</view>
-      <view class="t4">22人已拼</view>
-      <view class="t5">2人团</view>
-      <view class="t6">￥79.00</view>
+      <view class="t3">{{item.name}}</view>
+      <view class="t4">{{item.numbers}}人已拼</view>
+      <view class="t5">{{item.number}}人团</view>
+      <view class="t6">￥{{item.price}}</view>
     </view>
 
-    <view class="group_button" bindtap="handurl" data-url="/pages/finetuxedos/finetuxedos"> 
+    <view class="group_button" bindtap="handurl" data-id="{{item.id}}"> 
+     <image src="../../static/imgs/矩形 29 拷贝 2.png"></image>
       <view class="t7">去拼团</view>
     </view>
 
   </view>
 
-  <view class="group_box1">
 
-    <view class="group_nav1">
-      <image src="../../static/group/170.180.png"></image>
-    </view>
-
-    <view class="group_text">
-      <view class="t3">保湿急救 网红蓝药丸面膜</view>
-      <view class="t4">22人已拼</view>
-      <view class="t5">2人团</view>
-      <view class="t6">￥79.00</view>
-    </view>
-
-    <view class="group_button" bindtap="handurl" data-url="/pages/finetuxedos/finetuxedos">
-      <view class="t7">去拼团</view>
-    </view>
-
-  </view>
-
-  <view class="group_box1">
-
-    <view class="group_nav1">
-      <image src="../../static/group/170.180.png"></image>
-    </view>
-
-    <view class="group_text">
-      <view class="t3">保湿急救 网红蓝药丸面膜</view>
-      <view class="t4">22人已拼</view>
-      <view class="t5">2人团</view>
-      <view class="t6">￥79.00</view>
-    </view>
-
-    <view class="group_button" bindtap="handurl" data-url="/pages/finetuxedos/finetuxedos">
-      <view class="t7">去拼团</view>
-    </view>
-
-  </view>
-
-  <view class="group_box1">
-
-    <view class="group_nav1">
-      <image src="../../static/group/170.180.png"></image>
-    </view>
-
-    <view class="group_text">
-      <view class="t3">保湿急救 网红蓝药丸面膜</view>
-      <view class="t4">22人已拼</view>
-      <view class="t5">2人团</view>
-      <view class="t6">￥79.00</view>
-    </view>
-
-    <view class="group_button" bindtap="handurl" data-url="/pages/finetuxedos/finetuxedos">
-      <view class="t7">去拼团</view>
-    </view>
-
-  </view>
-
-  <view class="group_box1">
-
-    <view class="group_nav1">
-      <image src="../../static/group/170.180.png"></image>
-    </view>
-
-    <view class="group_text">
-      <view class="t3">保湿急救 网红蓝药丸面膜</view>
-      <view class="t4">22人已拼</view>
-      <view class="t5">2人团</view>
-      <view class="t6">￥79.00</view>
-    </view>
-
-    <view class="group_button" bindtap="handurl" data-url="/pages/finetuxedos/finetuxedos">
-      <view class="t7">去拼团</view>
-    </view>
-
-  </view>
   <!-- 急救 -->
 </view>

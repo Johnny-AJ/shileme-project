@@ -1,0 +1,18 @@
+<!--pages/view/view.wxml-->
+<view class="view">
+
+    <view class="cont">
+      <view class="imgs">
+        <image src="../../static/imgs/插画.png"></image>
+      </view>
+      <text>订单支付成功</text>
+    </view>
+    <view class="cont1">
+      <view><text>支付方式：微信零钱</text></view>
+      <view><text>支付金额：￥{{allprice}}</text></view>
+    
+    </view>
+    <view class="see" bindtap="goto">
+      查看订单
+    </view>
+</view>

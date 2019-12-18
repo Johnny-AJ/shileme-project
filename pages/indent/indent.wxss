@@ -44,7 +44,9 @@ page{
   background: #fff;
   margin-top: 20rpx;
 }
-
+.indent .conttent .close{
+  display: none
+}
 .conttent .conts .state {
   height: 72rpx;
   width: 100%;
@@ -103,8 +105,16 @@ page{
   display: flex;
   justify-content: space-between;
   align-items: center;
-}
+  width: 100%;
 
+}
+.cont .cr .name  .t1{
+  width: 405rpx;
+  display: -webkit-box;
+-webkit-box-orient: vertical;
+-webkit-line-clamp: 2;
+overflow: hidden;
+}
 .cont .cr  .spec {
   width: 100%;
   display: flex;
@@ -231,7 +241,7 @@ page{
   border-radius: 30rpx;
   font-size: 28rpx;
   font-family: PingFang SC;
-  font-weight: bold;
+  font-weight: 500;
   color: rgba(102, 102, 102, 1);
   text-align: center;
   line-height: 60rpx;

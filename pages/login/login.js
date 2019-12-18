@@ -14,6 +14,8 @@ Page({
     wx.getStorage({
         key: 'token',
         success(res) {
+
+         
           let token = res.data;
           self.setData({
             token
@@ -30,14 +32,15 @@ Page({
             dataType: 'json',
             responseType: 'text',
             success: function(res) {
-              console.log(res, 111)
-              if (0 == res.code) {
-                wx.navigateTo({
-                  url: 'pages/index/index',
+             console.log(res,'res')
+              if ( res.data.code==0) {
+                console.log(666666)
+                wx.reLaunch({
+                  url: '/pages/index/index',
                 })
               } else {
-                wx.navigateTo({
-                  url: 'pages/login/login',
+              wx.reLaunch({
+                  url: '/pages/login/login',
                 })
               }
             },
@@ -48,14 +51,40 @@ Page({
         delta: 1
       })
   },
+  // getUserInfo: function (e) {
+  //   let that = this;
+  //   // console.log(e)s
+  //   // 获取用户信息
+  //   wx.getSetting({
+  //     success(res) {
+  //       // console.log("res", res)
+  //       if (res.authSetting['scope.userInfo']) {
+     
+  //         // 已经授权，可以直接调用 getUserInfo 获取头像昵称
+  //         wx.getUserInfo({
+  //           success(res) {
+  //             console.log("获取用户信息成功", res)
+  //             // that.setData({
+  //             //   name: res.userInfo.nickName
+  //             // })
+  //           },
+  //           fail(res) {
+  //             console.log("获取用户信息失败", res)
+  //           }
+  //         })
+  //       } else {
+  //         console.log("未授权=====")
+  //         that.showSettingToast("请授权")
+  //       }
+  //     }
+  //   })
+  // },
   /**
    * 生命周期函数--监听页面加载
    */
   onLoad: function(options) {
     // 头部标题
-    wx.setNavigationBarTitle({
-      title: '登录'
-    })
+  
   },
 
   /**

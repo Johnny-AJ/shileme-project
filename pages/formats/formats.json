@@ -1,3 +1,6 @@
 {
-  "usingComponents": {}
+  "usingComponents": {
+      "i-count-down": "../../components/count-down/index"
+  },
+  "navigationBarTitleText": "详情页"
 }

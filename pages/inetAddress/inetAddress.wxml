@@ -34,7 +34,7 @@
   <!-- <view class="button" bindtap="handurl" data-url="/pages/shipping/shipping"> -->
   <view class="button" bindtap="handtap">
     <!-- <button>保存</button> -->
-    <button>新增地址</button>
+    <button>保存</button>
   </view>
 
 </view>

@@ -4,7 +4,7 @@
 
   <!-- 轮播图 -->
   <view class="swiper_box">
-    <swiper indicator-active-color='#f02b50' indicator-dots="false" autoplay='false' interval='999' circular="false">
+    <swiper indicator-active-color='#f02b50' indicator-dots="false" autoplay='false' interval='3000' circular="false">
       <swiper-item wx:for="{{swiperList}}" wx:key="goods_is">
         <image src="{{item}}"></image>
       </swiper-item>
@@ -70,7 +70,10 @@
       <view class="t7">>></view>
       <view class="t7">邀请好友</view>
       <view class="t7">>></view>
-      <view class="t7 t8">满员发货 不满自动退单</view>
+      <view class="t7 t8">
+        <view> 满员发货</view>
+        <view> 不满自动退单</view>
+      </view>
     </view>
   </view>
   <!-- 拼团规则 -->
@@ -80,7 +83,7 @@
 
     <view class="indirectly_text">直接参团 立即拼成</view>
 
-    <swiper circular="false" vertical="false" autoplay="false" interval="999" easing-function='easeInOutCubic'>
+    <swiper circular="false" vertical="false" duration="1000" interval="5000" easing-function='easeInOutCubic'>
       <swiper-item wx:for="{{swiperArrat}}" wx:key='name'>
 
         <view class="swiper_item">
@@ -98,7 +101,10 @@
             </view>
             <view class="swiper_buttom">
               <view class="t11">还差1人成团</view>
-              <view class="t12">剩余23:48:56</view>
+              <view class="t12">
+                剩余
+                <i-count-down i-class="icount" target="{{targetTime}}" clear-timer="{{clearTimer}}"></i-count-down>
+              </view>
             </view>
           </view>
 
@@ -108,23 +114,25 @@
           </view>
 
         </view>
-
-        <view class="swiper_item">
+ <view class="swiper_item">
 
           <!-- 图片 -->
           <view class="swiper_img">
-            <image src="../../static/imgs/小樱.jpg"></image>
+            <image src="{{item.img}}"></image>
           </view>
 
           <!-- 还差一人 -->
           <view class="swiper_text">
             <view class="swiper_top">
-              <view class="t9">mango</view>
-              <view class="t10">广州市</view>
+              <view class="t9">{{item.name}}</view>
+              <view class="t10">{{item.address}}</view>
             </view>
             <view class="swiper_buttom">
               <view class="t11">还差1人成团</view>
-              <view class="t12">剩余23:48:56</view>
+              <view class="t12">
+                剩余
+                <i-count-down i-class="icount" target="{{targetTime}}" clear-timer="{{clearTimer}}"></i-count-down>
+              </view>
             </view>
           </view>
 
@@ -134,6 +142,7 @@
           </view>
 
         </view>
+   
 
       </swiper-item>
     </swiper>

@@ -16,7 +16,9 @@
           <view class="t1 t3">{{address.province}}{{address.city}}{{address.region}}{{address.address}}</view>
           <view class="t2" bindtap="toggleDialog">附近门店自取</view>
         </view>
-        <image src="../../static/cart/矩形 16.png" bindtap = "handurl"></image>
+          <view class="top_img" bindtap = "handurl">
+               <image src="../../static/cart/矩形 16.png" ></image>
+          </view>
       </view>
       <view class="imgs">
         <image src="../../static/imgs/分割线.png" class="imgs1"></image>
@@ -97,7 +99,7 @@
     </view>
     <view>
       <text class="ml">合计</text>
-      <text class="mr">￥{{allprice}}.00</text>
+      <text class="mr">￥{{allprice}}</text>
     </view>
 
   </view>

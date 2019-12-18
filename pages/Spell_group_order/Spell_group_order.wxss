@@ -19,13 +19,21 @@
   height: 100%;
   width: 100%;
   align-items: center;
-}
-
-.big_box .top_box {
-  width: 668rpx;
-  height: 144rpx;
   box-sizing: border-box;
-  margin: 30rpx;
+  padding: 0 30rpx;
+}
+.big_box .flex_box .top_img{
+  height: 100%;
+  display: flex;
+  width: 30rpx;
+  align-items: center;
+  justify-content: flex-end;
+
+}
+.big_box .top_box {
+  width: 660rpx;
+  height: 144rpx;
+
 }
 .big_box .top_box1{
   width: 668rpx;
@@ -70,7 +78,7 @@ color:rgba(34,34,34,1);
 .big_box image {
   height: 35rpx;
   width: 22rpx;
-  margin-right: 30rpx;
+
 }
 
 .flex1_box {

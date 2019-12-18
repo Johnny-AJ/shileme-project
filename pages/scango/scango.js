@@ -22,7 +22,8 @@ Page({
     selectedPropObj: {},
     propKeys: [],
     allProperties: [],
-    pic: ''
+    pic: '',
+    token: ''
   },
 
   /**
@@ -180,7 +181,7 @@ Page({
       //找到和商品价格一样的那个SKU，作为默认选中的SKU
       var defaultSku = this.data.defaultSku;
       var isDefault = false;
-      
+
       if (!defaultSku || skuList[i].price == this.data.price) {
 
 
@@ -281,25 +282,22 @@ Page({
   // 立即购买
   buys: function(e) {
 
-
+    var self = this;
 
     var dtos = JSON.stringify(e.currentTarget.dataset);
-   
+
     if (e.currentTarget.dataset.propertyid == undefined) {
-      console.log(6666666)
       wx.showToast({
         title: '请选择规格！',
         icon: 'loading',
         duration: 2000
       })
     } else {
-
-
       wx.navigateTo({
         url: '/pages/Spell_group_order/Spell_group_order?dtos=' + dtos
-      })
+      }) 
+
     }
-    // var dtos = e.currentTarget.dataset;
 
   }
 })

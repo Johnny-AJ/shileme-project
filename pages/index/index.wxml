@@ -69,7 +69,7 @@
 
         <view class="bargain_top">
           <view class="bargain_left">超值拼团</view>
-          <view class="bargain_right"> 好 友 正 在 拼
+          <view class="bargain_right"   bindtap="jump"> 好 友 正 在 拼
             <image src="../../static/imgs/箭头.png"></image>
           </view>
         </view>

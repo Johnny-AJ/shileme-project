@@ -14,9 +14,7 @@ Page({
   onLoad(options) {
     // 头部标题
     var that = this
-    wx.setNavigationBarTitle({
-      title: '个人中心'
-    })
+
     wx.login({
       success: function(res) {
         // console.log(res, 123)
@@ -30,29 +28,30 @@ Page({
             },
             method: "get",
             success: (res) => {
-              if (res.data.code == 0) {
-                var token = res.data.msg;
-                // 获取用户信息
-                wx.getUserInfo({
-                  success: (res) => {
-                    var userInfo = res.userInfo //用户信息
-                    // console.log(userInfo, 456)
-                    that.setData({
-                      userInfo
-                    })
-                    wx.request({
-                      // 用户信息
-                      url: 'http://192.168.2.98:9095/api/wechat/updateUserInfo',
-                      method: "post",
-                      data: res.userInfo,
-                      header: {
-                        'token': token, //请求头携带参数
-                        'content-type': 'application/json',
-                      }
-                    })
-                  }
-                })
-              }
+              console.log('个人中心',res)
+              // if (res.data.code == 0) {
+              //   var token = res.data.msg;
+              //   // 获取用户信息
+              //   wx.getUserInfo({
+              //     success: (res) => {
+              //       var userInfo = res.userInfo //用户信息
+              //       // console.log(userInfo, 456)
+              //       that.setData({
+              //         userInfo
+              //       })
+              //       wx.request({
+              //         // 用户信息
+              //         url: 'http://192.168.2.98:9095/api/wechat/updateUserInfo',
+              //         method: "post",
+              //         data: res.userInfo,
+              //         header: {
+              //           'token': token, //请求头携带参数
+              //           'content-type': 'application/json',
+              //         }
+              //       })
+              //     }
+              //   })
+              // }
             }
           })
         }

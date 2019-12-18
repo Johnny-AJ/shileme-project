@@ -42,19 +42,19 @@ Page({
     // })
 
 
-  self.address();
+
     // 地址列表
-   
+
   },
-  address(){
-    var self=this;
+  address() {
+    var self = this;
     var token = wx.getStorageSync('token');
     console.log(token)
     wx.request({
       url: 'http://192.168.2.98:9095/api/address/list',
       method: 'GET',
       header: {
-        'token':token, //请求头携带参数
+        'token': token, //请求头携带参数
       },
       success: res => {
         console.log(res, "地址")
@@ -98,7 +98,7 @@ Page({
         }
         wx.request({
           url: 'http://192.168.2.98:9095/api/address/delete?id=' + self.data.id,
-         
+
           method: 'GET',
           data: {
             id: delid
@@ -108,7 +108,7 @@ Page({
           },
           success: (res) => {
             console.log("删除成功", res)
-            
+
           }
         })
       }
@@ -122,24 +122,25 @@ Page({
   },
   // 默认勾选地址
   radioChange(e) {
-    this.setData({
-      isDefault: e.detail.value
-    })
+   
+
+    console.log(e, 'e默认勾选地址');
     wx.request({
       url: 'http://192.168.2.98:9095/api/address/updateDefault',
       method: 'GET',
       data: {
-        isDefault: this.data.isDefault
+        id: e.detail.value,
+        isDefault: 0
       },
       header: {
-        'token': this.data.token, //请求头携带参数
+        'token': wx.getStorageSync('token'), //请求头携带参数
       },
-      success: res => {
-        console.log(res, 31312321)
+      success: function(res) {
+        console.log(res, 'res')
       }
     })
   },
-  onShow(){
+  onShow() {
     this.address()
   }
 })

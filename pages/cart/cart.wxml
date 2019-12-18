@@ -18,7 +18,7 @@
   <!-- 购物车下半部分 -->
   <view class="cart">
     <view class="product-item">
-      <checkbox-group>
+      <checkbox-group   bindchange="checkboxChange" >
         <label class="checkbox" wx:for="{{slideProductList}}" for="checkbox" wx:for-index="index" wx:key="{{item.id}}">
           <slide-delete pid="{{item.id}}" bindaction="handleSlideDelete" wx:key="{{item.id}}">
             <view class="cart_box">
@@ -26,7 +26,7 @@
 
               <view class="cart-box_left">
                 <image src="../../static/imgs/失效.png" wx:if="{{show}}"></image>
-                <checkbox value="{{item.id}}" bindchange="checkboxChange" disabled="{{item.repertory==0}}" checked="{{item.checked}}" wx:if="{{!show}}" class="checkout">
+                <checkbox value="{{item.id}}" disabled="{{item.repertory==0}}" checked="{{item.checked}}" wx:if="{{!show}}" class="checkout">
                 </checkbox>
               </view>
               <!-- 图片 -->

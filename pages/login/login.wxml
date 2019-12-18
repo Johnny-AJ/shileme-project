@@ -6,7 +6,8 @@
   </view>
 
   <view class="button">
-    <button type="primary" style='display:{{ isShow ? "block" : "none" }}' plain="true" size="default" open-type="getUserInfo" bindtap="getUserInfo" bindgetuserinfo="handgetuserInfo">微信一键登录</button>
+   <button type="primary"  plain="true" size="default" open-type="getUserInfo" bindtap="getUserInfo" bindgetuserinfo="handgetuserInfo">微信一键登录</button>
+    <!-- <button type="primary" style='display:{{ isShow ? "block" : "none" }}' plain="true" size="default" open-type="getUserInfo" bindtap="getUserInfo" bindgetuserinfo="handgetuserInfo">微信一键登录</button> -->
   </view>
 
 </view>

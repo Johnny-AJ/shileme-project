@@ -5,6 +5,8 @@ Page({
    * 页面的初始数据
    */
   data: {
+    targetTime: 0,
+    clearTimer: false,
     // 轮播图
     swiperList: [
       "https://timgsa.baidu.com/timg?image&quality=80&size=b9999_10000&sec=1575541027970&di=ecf2c0391eb72e50a428c14e99c39bf3&imgtype=0&src=http%3A%2F%2Fk.zol-img.com.cn%2Fdiybbs%2F5812%2Fa5811338_s.jpg",
@@ -17,7 +19,9 @@ Page({
     swiperArrat: [{
         img: 'https://timgsa.baidu.com/timg?image&quality=80&size=b9999_10000&sec=1576231348885&di=36b17adf6cfb8d734a5e6f51deedd9b6&imgtype=0&src=http%3A%2F%2Fb-ssl.duitang.com%2Fuploads%2Fitem%2F201812%2F08%2F20181208123535_joilh.thumb.700_0.jpg',
         name: '三吉彩花',
-        address: '广州'
+        address: '广州',
+
+
       },
       {
         img: 'https://timgsa.baidu.com/timg?image&quality=80&size=b9999_10000&sec=1576231348885&di=36b17adf6cfb8d734a5e6f51deedd9b6&imgtype=0&src=http%3A%2F%2Fb-ssl.duitang.com%2Fuploads%2Fitem%2F201812%2F08%2F20181208123535_joilh.thumb.700_0.jpg',
@@ -36,9 +40,16 @@ Page({
    * 生命周期函数--监听页面加载
    */
   onLoad: function(options) {
+    this.setData({
+      targetTime: new Date().getTime() + 6430000,
+    
+    });
     // 头部标题
-    wx.setNavigationBarTitle({
-      title: '详情页'
-    })
+    console.log(options,'options')
+  },
+  onUnload:function(){
+    this.setData({
+      clearTimer: true
+    });
   }
 })

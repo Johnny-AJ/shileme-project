@@ -128,8 +128,9 @@
     </view>
   
   </view>
-  <!-- <view class="buy" bindtap="buys" data-waresId="{{waresId}}" data-propertyId="{{defaultSku.skuid}}" data-amount="{{value1}}">立即购买</view> -->
+
    <view class="buy" bindtap="buys" data-waresId="{{waresId}}" data-propertyId="{{defaultSku.skuid}}" data-amount="{{value1}}">立即购买</view>
+    <!-- <view class="buy" bindtap="buys" data-waresId="1" data-propertyId="{{defaultSku.skuid}}" data-amount="{{value1}}">立即购买</view> -->
    
 
   <!-- 领劵弹出层 -->
