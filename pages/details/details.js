@@ -22,34 +22,41 @@ Page({
     selectedPropObj: {},
     propKeys: [],
     allProperties: [],
-    pic: ''
+    pic: '',
+    token: '',
+    pageSize: 5,
+    currPage: 0
+
+
   },
 
   /**
    * 生命周期函数--监听页面加载
    */
   onLoad: function (options) {
+   
     var self = this;
-
     this.setData({
-      waresId: options.waresId
+      waresId: options.waresid
     })
 
-    this.get_data(options.waresId); // 获取商品数据
+    // this.setData({
+    //   waresId: 9
+    // })
 
-
+    this.get_data(options.waresid); // 获取商品数据
     var self = this;
-    wx.request({//获取商品规格
+    wx.request({ //获取商品规格
       url: 'http://192.168.2.98:9095/api/wares/details/getPropertyList',
       method: "get",
       data: {
-        waresId: 3 //waresId
+        waresId: self.data.waresId
       },
       success(res) {
 
-
+        console.log(res.data, '66666666')
         self.setData({
-          imgsurl: res.data.data.imgs
+          imgsurl: res.data.data.imgUrl
         })
 
         self.setData({
@@ -62,7 +69,8 @@ Page({
 
 
 
-    })
+    }),
+      this.getcommentList()
 
   },
 
@@ -99,14 +107,16 @@ Page({
 
   // 获取商品数据
   get_data(waresId) {
+
     var self = this;
     wx.request({
       url: 'http://192.168.2.98:9095/api/wares/details/getWaresInfo',
       method: "get",
       data: {
-        waresId: 3 //waresId
+        waresId: waresId
       },
       success(res) {
+        console.log(res,'getWaresInfo')
 
         self.setData({
           list: res.data.data
@@ -123,12 +133,6 @@ Page({
       }
     })
   },
-
-  /**
-   * 用户点击右上角分享
-   */
-
-
   // 弹出领劵层方法
   toggleDialog() {
 
@@ -180,16 +184,17 @@ Page({
       //找到和商品价格一样的那个SKU，作为默认选中的SKU
       var defaultSku = this.data.defaultSku;
       var isDefault = false;
-      if (!defaultSku && skuList[i].price == this.data.price) {
+
+      // if (!defaultSku || skuList[i].price == this.data.price) {
 
 
-        defaultSku = skuList[i];
+      //   defaultSku = skuList[i];
 
-        isDefault = true;
-        this.setData({
-          defaultSku: defaultSku
-        });
-      }
+      //   isDefault = true;
+      //   this.setData({
+      //     defaultSku: defaultSku
+      //   });
+      // }
 
       var properties = skuList[i].properties; //如：版本:公开版;颜色:金色;内存:64GB
       allProperties.push(properties);
@@ -277,14 +282,48 @@ Page({
     }
     return false;
   },
-  // 立即购买
-  buys: function (e) {
 
+  buys: function (e) {// 立即购买
+
+    var self = this;
 
     var dtos = JSON.stringify(e.currentTarget.dataset);
-    // var dtos = e.currentTarget.dataset;
-    wx.navigateTo({
-      url: '/pages/Spell_group_order/Spell_group_order?dtos=' + dtos
+    if (e.currentTarget.dataset.propertyid == undefined) {
+      wx.showToast({
+        title: '请选择规格！',
+        icon: 'loading',
+        duration: 2000
+      })
+    } else {
+      wx.navigateTo({
+        url: '/pages/Spell_group_order/Spell_group_order?dtos=' + dtos
+      })
+
+    }
+
+  },
+  getcommentList() {
+    var self = this;
+    wx.request({
+      url: 'http://192.168.2.98:9095/api/wares/details/getCommentList',
+      header: {
+        token: wx.getStorageSync('token')
+      },
+      data: {
+        waresId: 9,//self.data.waresId,
+        pageSize: self.data.pageSize,
+        currPage: self.data.currPage
+
+      },
+      success: function (res) {
+        console.log(res, 'getCommentList')
+      }
+    })
+  },
+  goback(){
+    wx.reLaunch({
+      url: '/pages/index/index'
+    ,
     })
   }
 })

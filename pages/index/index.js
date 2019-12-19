@@ -1,3 +1,4 @@
+
 // pages/index/index.js
 Page({
 
@@ -9,23 +10,23 @@ Page({
     result: '',
     // 倒计时
     targetTime: 0,
-    newtime: 0,
+    newtime:0,
     clearTimer: false,
     timelist: [],
     current: 'homepage',
     buyRollList: [],
     timeoutbuylist: {},
-    index1: 0,
+    index1:0,
     commoditylist: [], //商品列表
     show: true,
     // 轮播图数组:
     width: 144,
     swiperList: [],
     time: 0,
-    categoryId: '',
-    start: 0,
-    productlist: [],
-    categoryId: ''
+    categoryId:'',
+    start:0,
+    productlist:[],
+    categoryId:''
 
   },
   swiperBindchange(e) {
@@ -47,9 +48,9 @@ Page({
 
     // 轮播图
     this.setSwiperData()
-
+  
     // 商品标列表
-
+ 
   },
 
   onShow: function() {
@@ -63,7 +64,7 @@ Page({
       success: (res) => {
 
         var result = res.result.split("=")[1];
-
+       
         _this.setData({
           result: result,
 
@@ -73,7 +74,7 @@ Page({
           wx.navigateTo({
             url: '/pages/scango/scango?waresId=' + _this.data.result
           })
-        } else {
+        }else{
           $Toast({
             content: '商品已经不存在！',
             icon: 'prompt',
@@ -89,7 +90,10 @@ Page({
 
 
 
-
+    // 路由封装
+    // wx.navigateTo({
+    //   url: e.currentTarget.dataset.url,
+    // })
   },
 
 
@@ -103,7 +107,7 @@ Page({
       }
     })
   },
-  selling() { // 商品标列表
+  selling() {// 商品标列表
     var self = this;
     wx.request({
       url: 'http://192.168.2.98:9095/api/index/findAllCategoryName',
@@ -113,13 +117,13 @@ Page({
           commoditylist: res.data.data
         })
         self.productlist();
-        // console.log(this.data.commoditylist, 66666)
+      // console.log(this.data.commoditylist, 66666)
       }
     })
 
   },
   group() { //// 超值拼团滚动
-    var self = this;
+  var self=this;
     wx.request({
       url: 'http://192.168.2.98:9095/api/index/findGroupBuyRollList',
       success: (res) => {
@@ -128,25 +132,25 @@ Page({
           buyRollList: res.data.data.arrList
         })
 
-
+        
       }
     })
   },
 
-  tiembuy() { // 限时购
+  tiembuy() {  // 限时购
     var self = this;
     wx.request({
       url: 'http://192.168.2.98:9095//api/index/timeoutbuy',
       success: (res) => {
         var time = res.data.data.endTime - res.data.data.nowTime;
 
-        if (time) {
-
+        if(time){
+      
           self.setData({
             targetTime: new Date().getTime() + time
           })
         }
-
+      
         self.setData({
           timeoutbuylist: res.data.data.list
         })
@@ -157,73 +161,62 @@ Page({
       }
     })
   },
-  productlist(e) { // 商品标列表
 
-
-    if (e) {
-      this.setData({
-        categoryId: e.currentTarget.dataset.id
-      });
-      this.setData({
-        index1: e.currentTarget.dataset.index
-      })
-    } else {
-      var categoryId = this.data.commoditylist[0].id;
-      this.setData({
-        categoryId: categoryId
-      });
-
-    }
-    // var token = wx.getStorageSync('token');
-    // console.log(token)
+  vector(){
+    var self =this;
+    var categoryId= self.data.categoryId;
+    var productlist = self.data.productlist;
     wx.request({
       url: 'http://192.168.2.98:9095/api/index/findAllWaresByCate',
       data: {
         limit: 4,
-        categoryId: this.data.categoryId,
-        start: this.data.start
+        categoryId: self.data.categoryId,
+        start: self.data.start
       },
       header: {
         token: wx.getStorageSync('token')
       },
-      success: function(res) {
-        console.log(res, 'res')
+      success: function (res) {
+        productlist[categoryId] = res.data.data.list;
+        self.setData({
+          productlist
+        })
+        console.log(self.data.productlist)
       }
     })
 
-
-
-
-
-
-
   },
-  jump(){
-    wx.navigateTo({
-      url: '/pages/group/group',
-    })
-  },
-  goto(e) {
-    let waresid = e.currentTarget.dataset.waresid;
+  productlist(e) { // 商品标列表
    
+   var self =this;
+    
+      this.setData({
+        categoryId: e.currentTarget.dataset.id
+      });
+    var categoryId = self.data.categoryId;
+      this.setData({
+        index1: e.currentTarget.dataset.index
+      })
+    !self.data.productlist[categoryId]&&self.vector()
+   
+    
+   
+    
+  },
+  goto(e){
     console.log(e,'e')
-    wx: wx.navigateTo({
-      url: '/pages/details/details?waresid=' + waresid,
-      success: function(res) {},
-
-    })
+    let waresid = e.currentTarget.dataset.waresid
+   wx.navigateTo({
+     url: '/pages/details/details?waresid=' + waresid,
+  
+   })
   },
   /**
    * 页面相关事件处理函数--监听用户下拉动作
    */
-  onReachBottom: function() {
+  onReachBottom: function () {
     console.log(55555)
   },
-  hangURL(e) {
-    // 路由封装
-    wx.navigateTo({
-      url: e.currentTarget.dataset.url,
-    })
-  }
-
+  
+  
 })

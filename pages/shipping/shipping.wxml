@@ -9,6 +9,7 @@
 
       <view class="address_box">
 
+       <view bindtap="click" data-isDefault="{{item.isDefault}}" data-addressId="{{item.id}}">
         <view class="name_box p30">
           <!-- <text>花礼晴</text> -->
           <text>{{item.name}}</text>
@@ -20,6 +21,7 @@
           <!-- 广东省广州市天河区长湴工业园13号 -->
           {{item.province}}{{item.city}}{{item.region}}{{item.address}}
         </view>
+       </view>
 
         <view class="address_nav p30">
           <!-- 按钮 -->

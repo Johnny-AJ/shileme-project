@@ -14,8 +14,6 @@
     </view>
 
 
-
-
   </view>
 
   <!-- 轮播图 -->
@@ -69,7 +67,7 @@
 
         <view class="bargain_top">
           <view class="bargain_left">超值拼团</view>
-          <view class="bargain_right"   bindtap="jump"> 好 友 正 在 拼
+          <view class="bargain_right" bindtap="jump"> 好 友 正 在 拼
             <image src="../../static/imgs/箭头.png"></image>
           </view>
         </view>
@@ -195,15 +193,18 @@
       </view>
       <view class="contens">
         <view class="content">
-          <view class="cont">
-            <image src="../../static/imgs/imgs1.png"></image>
-            <view class="name pl20">保湿急救 网红蓝药丸面.</view>
-            <view class="content_client pl20">Dr.Jart 宛若新生保湿面膜.</view>
+          <view class="cont" wx:for="{{ productlist[categoryId]}}" wx:key="*this" bindtap="goto"  data-waresId="{{item.waresId}}">
+        
+            <image src="{{item.logoUrl}}"></image>
+            <view class="name pl20">{{item.waresName}}</view>
+            <view class="content_client pl20">{{item.advertising}}</view>
             <view class="price pl20">￥
-              <text class="nowprice">79 </text>
-              <text class="oldprice">  ￥160</text>
+              <text class="nowprice">{{item.mallPrice}} </text>
+              <text class="oldprice">  ￥{{item.marketPrice}}</text>
             </view>
           </view>
+         
+         <!-- </block> -->
         </view>
       </view>
     </view>

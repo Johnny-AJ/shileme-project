@@ -11,7 +11,7 @@
         <view class="top_box" wx:else>
           <view class="t1  ">{{address.name}}
             <text>{{address.phone}}</text>
-            <text class="text">默认</text>
+            <text class="text" wx:if="{{isdefault ==1}}">默认</text>
           </view>
           <view class="t1 t3">{{address.province}}{{address.city}}{{address.region}}{{address.address}}</view>
           <view class="t2" bindtap="toggleDialog">附近门店自取</view>

@@ -8,7 +8,7 @@ Page({
 
 
     delArray: [], // 删除
-    addAddressList: [], // 新增地址
+    addAddressList: [], // 地址列表
     token: '',
     address: [],
     dtos: {},
@@ -31,9 +31,7 @@ Page({
       token
     })
     // 头部标题
-    wx.setNavigationBarTitle({
-      title: '收货地址'
-    })
+  
     // 用户名
     // let address = wx.getStorageSync("address")
     // // console.log(address)
@@ -60,7 +58,20 @@ Page({
         console.log(res, "地址")
         self.setData({
           addAddressList: res.data.data
-        })
+        });
+        var addAddressList = self.data.addAddressList;
+        for (var i = 0; i <addAddressList.length;i++){
+          addAddressList[i].checked=false;
+          if (addAddressList[i].isDefault==0){
+            addAddressList[i].checked=true;
+          }
+
+          self.setData({
+            addAddressList: addAddressList
+          });
+
+        }
+        
       }
     })
   },
@@ -107,8 +118,10 @@ Page({
             'token': self.data.token, //请求头携带参数
           },
           success: (res) => {
-            console.log("删除成功", res)
-
+            self.setData({
+              addAddressList: res.data.data
+            });
+            this.address();
           }
         })
       }
@@ -141,6 +154,19 @@ Page({
     })
   },
   onShow() {
-    this.address()
+    this.address();
+   
+  },
+  click(e){
+
+
+    var addressId = e.currentTarget.dataset.addressid;
+    var isdefault = e.currentTarget.dataset.isdefault;
+
+    wx.navigateBack({
+   
+      url: '/pages/Spell_group_order/Spell_group_order?addressId=' + addressId + '&isdefault=' + isdefault
+    })
+  
   }
 })

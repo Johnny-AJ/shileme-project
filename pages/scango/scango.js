@@ -23,32 +23,34 @@ Page({
     propKeys: [],
     allProperties: [],
     pic: '',
-    token: ''
+    token: '',
+    pageSize:5,
+    currPage:0
+
+
   },
 
   /**
    * 生命周期函数--监听页面加载
    */
   onLoad: function(options) {
-    var self = this;
 
+    var self = this;
     this.setData({
       waresId: options.waresId
     })
 
     this.get_data(options.waresId); // 获取商品数据
-
-
     var self = this;
     wx.request({ //获取商品规格
       url: 'http://192.168.2.98:9095/api/wares/details/getPropertyList',
       method: "get",
       data: {
-        waresId: self.data.waresId
+        waresId: 9//self.data.waresId
       },
       success(res) {
 
-
+        console.log(res.data,'')
         self.setData({
           imgsurl: res.data.data.imgs
         })
@@ -63,7 +65,8 @@ Page({
 
 
 
-    })
+    }),
+    this.getcommentList()
 
   },
 
@@ -100,12 +103,13 @@ Page({
 
   // 获取商品数据
   get_data(waresId) {
+  
     var self = this;
     wx.request({
       url: 'http://192.168.2.98:9095/api/wares/details/getWaresInfo',
       method: "get",
       data: {
-        waresId: waresId
+        waresId:9//waresId
       },
       success(res) {
 
@@ -124,12 +128,6 @@ Page({
       }
     })
   },
-
-  /**
-   * 用户点击右上角分享
-   */
-
-
   // 弹出领劵层方法
   toggleDialog() {
 
@@ -182,16 +180,16 @@ Page({
       var defaultSku = this.data.defaultSku;
       var isDefault = false;
 
-      if (!defaultSku || skuList[i].price == this.data.price) {
+      // if (!defaultSku || skuList[i].price == this.data.price) {
 
 
-        defaultSku = skuList[i];
+      //   defaultSku = skuList[i];
 
-        isDefault = true;
-        this.setData({
-          defaultSku: defaultSku
-        });
-      }
+      //   isDefault = true;
+      //   this.setData({
+      //     defaultSku: defaultSku
+      //   });
+      // }
 
       var properties = skuList[i].properties; //如：版本:公开版;颜色:金色;内存:64GB
       allProperties.push(properties);
@@ -279,13 +277,12 @@ Page({
     }
     return false;
   },
-  // 立即购买
-  buys: function(e) {
+  
+  buys: function (e) {// 立即购买
 
     var self = this;
 
     var dtos = JSON.stringify(e.currentTarget.dataset);
-
     if (e.currentTarget.dataset.propertyid == undefined) {
       wx.showToast({
         title: '请选择规格！',
@@ -299,5 +296,23 @@ Page({
 
     }
 
+  },
+  getcommentList(){
+    var self=this;
+    wx.request({
+      url: 'http://192.168.2.98:9095/api/wares/details/getCommentList',
+      header:{
+        token: wx.getStorageSync('token')
+      },
+      data:{
+        waresId: 9,//self.data.waresId,
+        pageSize: self.data.pageSize,
+        currPage: self.data.currPage
+
+      },
+      success:function(res){
+        console.log(res,'getCommentList')
+      }
+    })
   }
 })

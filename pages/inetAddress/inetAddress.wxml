@@ -25,10 +25,13 @@
     <input name="address" bindinput="handAddress" placeholder="详细地址，如街道，楼盘号等" value="{{inputAddress}}"></input>
   </view>
 
-  <radio-group bindchange="handradio" class="inetAddress">
-    <radio></radio>
+  <view class="dizhi">
+
+     <i-radio disabled="{{disabled}}" checked="{{checked}}" color="#F02B50" bindchange="handleAnimalChange">
+    </i-radio>
     <text>设为默认地址</text>
-  </radio-group>
+  </view>
+
 
   <!-- 按钮 -->
   <!-- <view class="button" bindtap="handurl" data-url="/pages/shipping/shipping"> -->

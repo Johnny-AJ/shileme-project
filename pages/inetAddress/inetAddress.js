@@ -7,6 +7,8 @@ Page({
    * 页面的初始数据
    */
   data: {
+    animal: 1,
+    checked: false,
     customItem: '全部',
     // 存储数据
     arrayList: [],
@@ -25,7 +27,8 @@ Page({
     city: '', //市
     region: "", //区
     address: '',
-    dtos: {}
+    dtos: {},
+    isDefault:1
   },
 
   /**
@@ -70,7 +73,7 @@ Page({
         city: self.data.city[1],
         region: self.data.region[2],
         address: self.data.address,
-        isDefault: 0
+        isDefault: self.data.isDefault
       },
       header: {
         'token': self.data.token, //请求头携带参数
@@ -97,8 +100,21 @@ Page({
     // console.log(self.data.address, 66)
   },
   // 选框
-  handradio: function(e) {
-    // console.log(1)
+  handleAnimalChange(e) {
+   
+    this.setData({
+      checked: e.detail.current
+    });
+    if (e.detail.current){
+      this.setData({
+        isDefault:0
+      })
+    }else{
+      this.setData({
+        isDefault: 1
+      })
+    }
+    console.log(this.data.isDefault)
   },
   // 姓名
   handuserName: function(e) {

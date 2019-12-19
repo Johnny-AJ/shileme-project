@@ -18,7 +18,11 @@ Page({
     inputValue: '',
     doto: {},
     options:{},
-    discountId:''
+    discountId:'',
+    isdefault:1,
+    addressId:'',
+    addAddressList:[]
+
 
   },
 
@@ -28,6 +32,13 @@ Page({
 
 
   onLoad: function(options) {
+    var addressId = options.addressid;
+    this.setData({
+      addressId
+    })
+   
+  
+
 
 
     var self = this;
@@ -61,7 +72,7 @@ Page({
    */
   onShow: function() {
     this.oders(); // 获取扫码购的参数
-
+    this.checked();
   },
 
   /**
@@ -87,6 +98,7 @@ Page({
   goto(e) { //提交订单
   
     var self = this;
+    console.log(self.data.address,'  var addressId = self.data.addressId;')
 
     wx.request({
       // 支付地址
@@ -174,20 +186,29 @@ Page({
         token: self.data.token
       },
       success: (res) => {
-
-        if (res.data.msg !== "操作成功") {
+        if(res.data.code==500){
           wx.showToast({
-            title: '规格不存在！',
+            title: '库存不足！',
             icon: 'loading',
-            duration: 2000
-          }, () => {
-            wx.navigateBack({
-              delta: 1,
-            })
+            duration: 2000,
+            success:function(res){
+              setTimeout(function () {
+              wx.navigateBack({
+                delta: 1,
+              })
+              },2000)
+            }
           })
+            
+
+           
+         
+        }
+        // console.log(res,'savePlaceres')
+        
 
 
-        } else {
+      
           
           self.setData({
             allprice: res.data.data.allprice
@@ -197,7 +218,7 @@ Page({
             address: res.data.data.address
           })
 
-          console.log(self.data.address)
+          // console.log(self.data.address)
           self.setData({
             orderWaresVos: res.data.data.orderWaresVos
           })
@@ -214,7 +235,7 @@ Page({
             })
           }
 
-        }
+        // 
 
 
 
@@ -258,4 +279,35 @@ Page({
 
     // console.log(this.data.inputValue)
   },
+  checked(options){
+  
+    var self = this;
+    var addressId = self.data.addressId;
+    var token = wx.getStorageSync('token');
+    // console.log(token)
+    wx.request({
+      url: 'http://192.168.2.98:9095/api/address/list',
+      method: 'GET',
+      header: {
+        'token': token, //请求头携带参数
+      },
+      success: res => {
+        // console.log(res, "地址")
+        self.setData({
+          addAddressList: res.data.data
+        });
+        var addAddressList = self.data.addAddressList;
+        for (var i = 0; i < addAddressList.length; i++) {
+        
+          if (addAddressList[i].id == addressId){
+           this.setData({
+             address: addAddressList[i]
+           })
+          }
+        }
+
+      }
+    })
+    
+  }
 })
