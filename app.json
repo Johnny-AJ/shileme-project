@@ -1,8 +1,8 @@
 {
   "pages": [
+    "pages/service/service",
     "pages/inetAddress/inetAddress",
     "pages/shipping/shipping",
-    "pages/service/service",
     "pages/consk_box/consk_box",
     "pages/credits/credits",
     "pages/credits_copy/credits_copy",
