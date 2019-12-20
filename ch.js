@@ -144,3 +144,8 @@
 // }
 // --------------------------------------------------
 // "navigationBarTitleText": "热卖榜"
+
+// ==============
+// <view class="img2">
+//   <image src="../../static/imgs/imgs.png"></image>
+// </view>

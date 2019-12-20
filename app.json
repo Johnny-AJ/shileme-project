@@ -1,5 +1,16 @@
 {
   "pages": [
+    "pages/detailstable/detailstable",
+    "pages/consistent/consistent",
+    "pages/reporting/reporting",
+    "pages/commodity/commodity",
+    "pages/between/between",
+    "pages/refunded/refunded",
+    "pages/entry/entry",
+    "pages/refundDate/refundDate",
+    "pages/returning/returning",
+    "pages/sales/sales",
+    "pages/history/history",
     "pages/service/service",
     "pages/inetAddress/inetAddress",
     "pages/shipping/shipping",

@@ -1,0 +1,260 @@
+/* pages/between/between.wxss */
+
+/* pages/refunded/refunded.wxss */
+
+/* pages/refundDate/refundDate.wxss */
+
+.bgc {
+  width: 750rpx;
+  height: 1334rpx;
+  background-color: skyblue;
+  overflow: hidden;
+}
+
+/* 商家 */
+
+.song {
+  width: 750rpx;
+  height: 200rpx;
+  background: rgba(240, 43, 80, 1);
+}
+
+.song .te1 {
+  padding: 59rpx 30rpx;
+}
+
+.song .te1 .s1 {
+  font-size: 34rpx;
+  font-family: PingFang SC;
+  font-weight: bold;
+  color: rgba(255, 255, 255, 1);
+}
+
+.song .te1 .s2 {
+  font-size: 28rpx;
+  font-family: PingFang SC;
+  font-weight: bold;
+  color: rgba(255, 255, 255, 1);
+  margin-top: 30rpx;
+}
+
+/* xia */
+
+.xong {
+  width: 750rpx;
+  height: 90rpx;
+  display: flex;
+  text-align: center;
+  justify-content: space-between;
+  background-color: #fff;
+  line-height: 90rpx;
+  border: 1px solid #f5f5f5;
+}
+
+.xong .x1 {
+  font-size: 30rpx;
+  font-family: PingFang SC;
+  font-weight: 400;
+  color: rgba(34, 34, 34, 1);
+  margin-left: 30rpx;
+}
+
+.xong .x2 {
+  font-size: 30rpx;
+  font-family: PingFang SC;
+  font-weight: 400;
+  color: rgba(153, 153, 153, 1);
+}
+
+.xong .img3 {
+  display: flex;
+  margin-right: 30rpx;
+}
+
+.xong .img3 image {
+  width: 19rpx;
+  height: 30rpx;
+  margin-top: 30rpx;
+  margin-left: 30rpx;
+}
+
+.xong .x2 {
+  font-size: 30rpx;
+  font-family: PingFang SC;
+  font-weight: 400;
+  color: rgba(240, 43, 80, 1);
+  margin-right: 30rpx;
+}
+
+/* xia1 */
+
+.xong1 {
+  width: 750rpx;
+  height: 90rpx;
+  display: flex;
+  text-align: center;
+  justify-content: space-between;
+  background-color: #fff;
+  line-height: 90rpx;
+}
+
+.xong1 .x1 {
+  font-size: 30rpx;
+  font-family: PingFang SC;
+  font-weight: 400;
+  color: rgba(34, 34, 34, 1);
+  margin-left: 30rpx;
+}
+
+.xong1 .x2 {
+  font-size: 30rpx;
+  font-family: PingFang SC;
+  font-weight: 400;
+  color: rgba(153, 153, 153, 1);
+}
+
+.xong1 .img3 {
+  display: flex;
+  margin-right: 30rpx;
+}
+
+.xong1 .img3 image {
+  width: 19rpx;
+  height: 30rpx;
+  margin-top: 30rpx;
+  margin-left: 30rpx;
+}
+
+/* 退款 */
+
+.xong2 {
+  width: 750rpx;
+  height: 90rpx;
+  background-color: #fff;
+  line-height: 90rpx;
+  padding-left: 30rpx;
+  margin-top: 20rpx;
+}
+
+.xong2 .x3 {
+  font-size: 30rx;
+  font-family: PingFang SC;
+  font-weight: 400;
+  color: rgba(34, 34, 34, 1);
+}
+
+/* 图片 */
+
+.jong {
+  width: 750rpx;
+  height: 240rpx;
+  /* border: 1px solid #f5f5f5;Q */
+  display: flex;
+  background-color: #f5f5f5;
+}
+
+.jong .imgs2 {
+  margin-left: 30rpx;
+  margin-top: 30rpx;
+}
+
+.jong .imgs2 image {
+  width: 150rpx;
+  height: 150rpx;
+}
+
+.jong .cong {
+  width: 570rpx;
+  height: 150rpx;
+  /* border: 1px solid red; */
+  margin-left: 28rpx;
+  margin-right: 29rpx;
+  margin-top: 30rpx;
+}
+
+.cong .nav_box {
+  display: flex;
+  text-align: center;
+  justify-content: space-between;
+  margin-bottom: 25rpx;
+}
+
+.nav_box .c1 {
+  font-size: 28rpx;
+  font-family: PingFang SC;
+  font-weight: bold;
+  color: rgba(34, 34, 34, 1);
+}
+
+.cong .nac_box {
+  display: flex;
+  text-align: center;
+  justify-content: space-between;
+}
+
+.nac_box .c2 {
+  font-size: 28rpx;
+  font-family: PingFang SC;
+  font-weight: 400;
+  color: rgba(153, 153, 153, 1);
+}
+
+/* 不喜欢 */
+
+.donLike {
+  width: 750rpx;
+  height: 250rpx;
+  background-color: #fff;
+  box-sizing: border-box;
+}
+
+.donLike_box {
+  margin-left: 29rpx;
+}
+
+.donLike_box .d1 {
+  font-size: 28rpx;
+  font-family: PingFang SC;
+  font-weight: 400;
+  color: rgba(102, 102, 102, 1);
+  padding-top: 15rpx;
+}
+
+/* 撤销 */
+
+.btn_box {
+  width: 750rpx;
+  height: 100rpx;
+  background: rgba(255, 255, 255, 1);
+  border: 1px solid #f5f5f5;
+  display: flex;
+  padding-top: 20rpx;
+  padding-left: 380rpx;
+}
+
+.btn {
+  width: 160rpx;
+  height: 60rpx;
+  border: 1px solid rgba(240, 43, 80, 1);
+  border-radius: 30rpx;
+  font-size: 28rpx;
+  font-family: PingFang SC;
+  font-weight: 400;
+  color: rgba(240, 43, 80, 1);
+  text-align: center;
+  line-height: 60rpx;
+  margin-right: 20rpx;
+}
+
+.btn_box .btn1 {
+  width: 160rpx;
+  height: 60rpx;
+  border: 1px solid rgba(240, 43, 80, 1);
+  border-radius: 30rpx;
+  font-size: 28rpx;
+  font-family: PingFang SC;
+  font-weight: 400;
+  color: rgba(240, 43, 80, 1);
+  text-align: center;
+  line-height: 60rpx;
+}

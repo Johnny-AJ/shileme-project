@@ -1,0 +1,137 @@
+/* pages/history/history.wxss */
+
+.bgc {
+  width: 750rpx;
+  height: 1334rpx;
+  overflow: hidden;
+  background-color: skyblue;
+}
+
+/* top */
+
+.top_box {
+  width: 750rpx;
+  height: 290rpx;
+  background: rgba(255, 255, 255, 1);
+  border: 1px solid #f5f5f5;
+}
+
+.iong {
+  width: 750rpx;
+  height: 70rpx;
+  /* border: 1px solid red; */
+  display: flex;
+  margin: 30rpx;
+}
+
+.iong .img1 image {
+  width: 69rpx;
+  height: 69rpx;
+}
+
+.iong1 {
+  margin-left: 21rpx;
+}
+
+.iong .i1 {
+  font-size: 30rpx;
+  font-family: PingFang SC;
+  font-weight: bold;
+  color: rgba(34, 34, 34, 1);
+  flex-wrap: wrap;
+}
+
+.iong .i2 {
+  font-size: 26rpx;
+  font-family: PingFang SC;
+  font-weight: 400;
+  color: rgba(153, 153, 153, 1);
+}
+
+.top_box .t1 {
+  font-size: 28rpx;
+  font-family: PingFang SC;
+  font-weight: bold;
+  color: rgba(34, 34, 34, 1);
+  margin: 0 30rpx;
+}
+
+.top_box .t2 {
+  font-size: 28rpx;
+  font-family: PingFang SC;
+  font-weight: 400;
+  color: rgba(34, 34, 34, 1);
+  margin: 20rpx 0 0 30rpx;
+}
+
+/* bottom */
+
+.top_box1 {
+  width: 750rpx;
+  height: 710rpx;
+  background: rgba(255, 255, 255, 1);
+  border: 1px solid #f5f5f5;
+  margin-top: 20rpx;
+}
+
+.iong {
+  width: 750rpx;
+  height: 70rpx;
+  /* border: 1px solid red; */
+  display: flex;
+  margin: 30rpx;
+}
+
+.iong .img1 image {
+  width: 69rpx;
+  height: 69rpx;
+}
+
+.iong1 {
+  margin-left: 21rpx;
+}
+
+.iong .i1 {
+  font-size: 30rpx;
+  font-family: PingFang SC;
+  font-weight: bold;
+  color: rgba(34, 34, 34, 1);
+  flex-wrap: wrap;
+}
+
+.iong .i2 {
+  font-size: 26rpx;
+  font-family: PingFang SC;
+  font-weight: 400;
+  color: rgba(153, 153, 153, 1);
+}
+
+.nav_box {
+  margin-left: 30rpx;
+}
+
+.nav_box .n1 {
+  width: 655rpx;
+  height: 68rpx;
+  font-size: 28rpx;
+  font-family: PingFang SC;
+  font-weight: bold;
+  color: rgba(34, 34, 34, 1);
+}
+
+.nav_box .n2 {
+  font-size: 28rpx;
+  font-family: PingFang SC;
+  font-weight: 400;
+  color: rgba(34, 34, 34, 1);
+  padding-top: 19rpx;
+}
+
+.nav_box .img2 {
+  margin-top: 70rpx;
+}
+
+.nav_box .img2 image {
+  width: 180rpx;
+  height: 180rpx;
+}

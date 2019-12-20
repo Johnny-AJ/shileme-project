@@ -1,0 +1,70 @@
+<!--pages/returning/returning.wxml-->
+<!-- <text>pages/returning/returning.wxml</text> -->
+
+
+<!--pages/sales/sales.wxml-->
+<!-- <text>pages/sales/sales.wxml</text> -->
+
+<view class="bgc">
+
+  <view class="top_box">
+    <view class="img2">
+      <image src="../../static/imgs/imgs.png"></image>
+    </view>
+    <view class="long">
+      <view class="l1">保湿急救 网红蓝药丸面膜</view>
+      <view class="l2">￥79</view>
+    </view>
+    <view class="l3">5片/盒</view>
+    <view class="l4">X1</view>
+  </view>
+
+
+  <!-- xia -->
+  <view class="xong">
+    <view class="x1">货物状态</view>
+    <view class="img3">
+      <view class="x2">请选择</view>
+      <image src="../../static/imgs/矩形 16 拷贝.png"></image>
+    </view>
+  </view>
+  <!-- xia1 -->
+  <view class="xong1">
+    <view class="x3">退货原因</view>
+    <view class="img4">
+      <view class="x4">请选择</view>
+      <image src="../../static/imgs/矩形 16 拷贝.png"></image>
+    </view>
+  </view>
+  <!-- xia4 -->
+  <view class="xong1">
+    <view class="x3">选择快递</view>
+    <view class="img4">
+      <view class="x4">请选择</view>
+      <image src="../../static/imgs/矩形 16 拷贝.png"></image>
+    </view>
+  </view>
+  <!-- xia5 -->
+  <view class="xong3">
+    <view class="x3">运单号:</view>
+    <input placeholder="选填"></input>
+  </view>
+  <!-- xia2 -->
+  <view class="xong2">
+    <view class="x3">退款金额：￥79.00</view>
+  </view>
+  <!-- xia3 -->
+  <view class="xong3">
+    <view class="x3">退款说明:</view>
+    <input placeholder="选填"></input>
+  </view>
+  <!-- 上传 -->
+  <view class="kong">
+    <view class="k1">上传凭证</view>
+    <view class="img6">
+      <image src="../../static/imgs/组 2.png"></image>
+    </view>
+  </view>
+  <!-- anniu -->
+  <view class="btn">提交</view>
+</view>
