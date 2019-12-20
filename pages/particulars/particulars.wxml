@@ -1,0 +1,102 @@
+<!--pages/particulars/particulars.wxml-->
+<!-- <text>pages/particulars/particulars.wxml</text> -->
+
+<view class="top_box">
+  <view class="img_box">
+    <image src="../../static/imgs/小樱.jpg"></image>
+    <view class="t1">用户11111</view>
+  </view>
+
+  <view class="nav_box">
+    这款面膜真的是猛药啊 隔天起来洗完脸 你的皮肤呈现的就是最佳的状态 细腻水润 掐一掐感觉能掐出水来 出门简直是仙子本仙 但是一定要记住 这类猛药型的面膜 一周最多不能超过两次 过多的使用会给皮肤带来负担 太营养了
+  </view>
+
+  <view class="imgs_box">
+    <image src="../../static/imgs/imgs1.png"></image>
+    <image src="../../static/imgs/imgs1.png"></image>
+    <image src="../../static/imgs/imgs1.png"></image>
+  </view>
+</view>
+
+<!-- 热门 -->
+<view class="bottom_box">
+  <view class="remen">
+    <view class="t1">
+      <view class="p1"></view>
+      热门试用
+      <view class="p1"></view>
+    </view>
+  </view>
+  <!-- 图片 -->
+  <view class="img2_box">
+    <view class="img_nav_box">
+      <view class="imgs">
+        <image src="../../static/imgs/imgs1.png"></image>
+      </view>
+      <view class="t1">Dr.Jart 宛若新生保湿面 膜...</view>
+      <view class="p1">￥160
+        <view class="t2">免费</view>
+      </view>
+    </view>
+
+    <view class="img_nav_box">
+      <view class="imgs">
+        <image src="../../static/imgs/imgs1.png"></image>
+      </view>
+      <view class="t1">Dr.Jart 宛若新生保湿面 膜...</view>
+      <view class="p1">￥160
+        <view class="t2">免费</view>
+      </view>
+    </view>
+
+    <view class="img_nav_box">
+      <view class="imgs">
+        <image src="../../static/imgs/imgs1.png"></image>
+      </view>
+      <view class="t1">Dr.Jart 宛若新生保湿面 膜...</view>
+      <view class="p1">￥160
+        <view class="t2">免费</view>
+      </view>
+    </view>
+  </view>
+</view>
+
+<!-- 相关 -->
+<view class="bottom_box1">
+  <view class="remen">
+    <view class="t1">
+      <view class="p1"></view>
+      相关产品
+      <view class="p1"></view>
+    </view>
+  </view>
+  <!-- 图片 -->
+  <view class="img2_box">
+    <view class="img_nav_box">
+      <view class="imgs">
+        <image src="../../static/imgs/imgs1.png"></image>
+      </view>
+      <view class="t1">Dr.Jart 宛若新生保湿面 膜...</view>
+      <view class="p1">￥160
+      </view>
+    </view>
+
+    <view class="img_nav_box">
+      <view class="imgs">
+        <image src="../../static/imgs/imgs1.png"></image>
+      </view>
+      <view class="t1">Dr.Jart 宛若新生保湿面 膜...</view>
+      <view class="p1">￥160
+      </view>
+    </view>
+
+    <view class="img_nav_box">
+      <view class="imgs">
+        <image src="../../static/imgs/imgs1.png"></image>
+      </view>
+      <view class="t1">Dr.Jart 宛若新生保湿面 膜...</view>
+      <view class="p1">￥160
+      </view>
+    </view>
+  </view>
+</view>

@@ -58,8 +58,8 @@
       <view class="title">领劵</view>
       <view class="ljcont">
 
-        <view>满100减10</view>
-        <view>满299减30</view>
+        <view wx:for="{{getListByWaresId}}" wx:key="*this">{{item.name}}</view>
+
 
       </view>
       <image src="../../static/scango/矩形 16(1).png"></image>

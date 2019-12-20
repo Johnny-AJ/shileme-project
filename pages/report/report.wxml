@@ -1,0 +1,109 @@
+<!--pages/report/report.wxml-->
+<!-- <text>pages/report/report.wxml</text> -->
+
+
+
+<!-- tab栏 -->
+<view class="checktbs">
+  <i-tabs current="{{ current }}" color="#F02B50" bindchange="handleChange" i-class="tabs">
+    <i-tab key="tab1" title="申请中"></i-tab>
+    <i-tab key="tab2" title="申请成功"></i-tab>
+    <i-tab key="tab3" title="申请失败"></i-tab>
+    <i-tab key="tab4" title="我的试用报告"></i-tab>
+  </i-tabs>
+</view>
+
+<view class="bgc">
+  <!-- 申请中 -->
+  <view class="report_box">
+
+    <view class="report_top">
+      <view class="t1">2019-08-07</view>
+      <view class="t2">申请中</view>
+    </view>
+
+    <view class="report_buttom">
+      <view class="img">
+        <image src="../../static/imgs/imgs.png"></image>
+      </view>
+      <view class="report_nav">
+        <view class="t3">保湿急救 网红蓝药丸面膜</view>
+        <view class="t4">5片/盒</view>
+        <view class="t5">免费
+          <view class="t6">￥79</view>
+        </view>
+        <view class="t7">查看详情</view>
+      </view>
+    </view>
+
+  </view>
+
+  <!-- 申请成功 -->
+  <view class="report_box1">
+
+    <view class="report_top">
+      <view class="t1">2019-08-07</view>
+      <view class="t2">已完成</view>
+    </view>
+
+    <view class="report_buttom">
+      <view class="img">
+        <image src="../../static/imgs/imgs.png"></image>
+      </view>
+      <view class="report_nav">
+        <view class="t3">保湿急救 网红蓝药丸面膜</view>
+        <view class="t4">5片/盒</view>
+        <view class="t5">免费
+          <view class="t6">￥79</view>
+        </view>
+        <view class="t7">订单详情</view>
+        <view class="t8">提交报告</view>
+      </view>
+    </view>
+
+  </view>
+
+  <!-- 申请失败 -->
+  <view class="report_box2">
+
+    <view class="report_top">
+      <view class="t1">2019-08-07</view>
+      <view class="t2">申请失败</view>
+    </view>
+
+    <view class="report_buttom">
+      <view class="img">
+        <image src="../../static/imgs/imgs.png"></image>
+      </view>
+      <view class="report_nav">
+        <view class="t3">保湿急救 网红蓝药丸面膜</view>
+        <view class="t4">5片/盒</view>
+        <view class="t5">免费
+          <view class="t6">￥79</view>
+        </view>
+        <view class="t7">订单详情</view>
+      </view>
+    </view>
+
+  </view>
+
+  <!-- 我的试用报告 -->
+  <view class="report_box3">
+    <view class="nav_box">
+      <view class="box_left">
+        <view class="t1">
+          这款面膜真的是猛药啊 隔天起 来洗完脸 你的皮肤呈现的就是 最佳的状态 细腻水润 掐一掐感 觉能掐出水来 出门简直是仙子...
+        </view>
+        <view class="img">
+          <image src="../../static/imgs/小樱.jpg"></image>
+          <view class="t2">米粒</view>
+        </view>
+      </view>
+      <view class="box_right">
+        <view class="img2">
+          <image src="../../static/imgs/imgs.png"></image>
+        </view>
+      </view>
+    </view>
+  </view>
+</view>

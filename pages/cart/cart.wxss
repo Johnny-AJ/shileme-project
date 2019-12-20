@@ -61,7 +61,6 @@ text {
   width: 100%;
   box-sizing: border-box;
   padding: 0 10rpx;
- 
 }
 
 .cart_box {
@@ -87,31 +86,32 @@ text {
   margin-top: 110rpx;
 }
 
-.cart_box  .cart-box_left .checkout .wx-checkbox-input{
-margin-top: 110rpx;
+.cart_box  .cart-box_left .checkout .wx-checkbox-input {
+  margin-top: 110rpx;
   border-radius: 50%;
   width: 40rpx;
   height: 40rpx;
-  
-  
 }
 
- .cart_box .cart_nav .none{
-  display: none
+.cart_box .cart_nav .none {
+  display: none;
 }
-.block{
-  display: block
+
+.block {
+  display: block;
 }
+
 checkbox .wx-checkbox-input.wx-checkbox-input-checked::before {
- border-radius: 50%;
-background: #F02B50;
+  border-radius: 50%;
+  background: #f02b50;
   width: 60rpx;
   height: 60rpx;
-color: #fff;
-display: flex;
+  color: #fff;
+  display: flex;
   justify-content: center;
   align-items: center;
 }
+
 /* 图片 */
 
 .cart_box .images {
@@ -186,45 +186,49 @@ display: flex;
 .cart_price .text3  text text {
   font-size: 26rpx;
 }
- .movable-area {
+
+.movable-area {
   height: 120rpx;
   width: calc(100vw - 120rpx);
 }
+
 movable-view {
   height: 120rpx;
   width: 100vw;
   background: #fff;
   z-index: 999;
 }
+
 .delete-btn {
   position: absolute;
   top: 0;
   bottom: 0;
-  right: 0; 
+  right: 0;
   width: 120rpx;
   font-family: PingFangSC-Regular;
   font-size: 24rpx;
-  color: #FFFFFF;
+  color: #fff;
   line-height: 120rpx;
   z-index: 1;
-  background: #E66671;
+  background: #e66671;
   text-align: center;
 }
-.product-item {
-position: relative;
-width: 100vw;
-border-bottom: 2rpx solid #E9E9E9;
-box-sizing: border-box;
-background: #fff;
-/* z-index: 999; */
 
+.product-item {
+  position: relative;
+  width: 100vw;
+  border-bottom: 2rpx solid #e9e9e9;
+  box-sizing: border-box;
+  background: #fff;
+  /* z-index: 999; */
 }
-.product-item{
+
+.product-item {
   width: 100%;
   overflow: hidden;
   margin-top: 20rpx;
-
 }
+
 .cart_price .text4 {
   height: 50rpx;
   width: 270rpx;
@@ -236,12 +240,15 @@ background: #fff;
   width: 100%;
   height: 100%;
 }
-checkbox-group{
-  background: #f5f5f5
+
+checkbox-group {
+  background: #f5f5f5;
 }
-.checkbox{
+
+.checkbox {
   margin-top: 20rpx;
 }
+
 .cart_price .text4 .inputs .i-input-number {
   min-height: 36rpx;
 }
@@ -331,8 +338,6 @@ checkbox-group{
 
 .settlement .heji {
   height: 100%;
- 
-
 }
 
 .settlement .text6 {

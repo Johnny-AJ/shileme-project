@@ -143,3 +143,4 @@
 //     "i-tab": "../../components/tab/index"
 // }
 // --------------------------------------------------
+// "navigationBarTitleText": "热卖榜"

@@ -114,7 +114,7 @@
           </view>
 
         </view>
- <view class="swiper_item">
+        <view class="swiper_item">
 
           <!-- 图片 -->
           <view class="swiper_img">
@@ -142,7 +142,7 @@
           </view>
 
         </view>
-   
+
 
       </swiper-item>
     </swiper>

@@ -116,7 +116,7 @@ Page({
       url: 'http://192.168.2.98:9095/api/wares/details/getWaresInfo',
       method: "get",
       data: {
-        waresId: 9 //waresId
+        waresId: waresId
       },
       success(res) {
         console.log(res, 'getWaresInfo')
@@ -313,7 +313,7 @@ Page({
         token: wx.getStorageSync('token')
       },
       data: {
-        waresId: 9, //self.data.waresId,
+        waresId: self.data.waresId,
         pageSize: self.data.pageSize,
         currPage: self.data.currPage
 
@@ -337,7 +337,7 @@ Page({
         token: wx.getStorageSync('token')
       },
       data: {
-        waresId: 9, //self.data.waresId,
+        waresId: self.data.waresId,
         storeId: ''
 
       },
@@ -371,7 +371,7 @@ Page({
     console.log(id)
     var self = this;
     wx.request({
-      url: 'http://192.168.2.119:9095/api/discount/data/getDiscountById',
+      url: 'http://192.168.2.98:9095/api/discount/data/getDiscountById',
       header: {
         token: wx.getStorageSync('token')
       },
@@ -381,7 +381,9 @@ Page({
       },
       success: function (res) {
 
-        // if(res.code==0){
+        console.log(res,'getDiscountById')
+
+        if(res.code==0){
           var getListByWaresId = self.data.getListByWaresId;
           for (var i = 0; i < getListByWaresId.length; i++) {
             if (getListByWaresId[i].id==id){
@@ -391,7 +393,7 @@ Page({
               })
             }
            
-          // }
+          }
         }
 
         console.log(self.data.getListByWaresId, 'getListByWaresId')

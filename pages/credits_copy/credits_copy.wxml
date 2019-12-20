@@ -1,0 +1,77 @@
+<!--pages/credits_copy/credits_copy.wxml-->
+<!-- <text>pages/credits_copy/credits_copy.wxml</text> -->
+
+<view class="const_box">
+
+  <view class="consk">
+    <view class="imf1">
+      <image src="../../static/group/组 18(3).png"></image>
+    </view>
+    <view class="m1">保湿急救蓝药丸面膜</view>
+    <view class="m2">1000积分</view>
+    <view class="m3">兑换</view>
+  </view>
+
+  <view class="consk">
+    <view class="imf1">
+      <image src="../../static/group/组 18(2).png"></image>
+    </view>
+    <view class="m1">保湿急救蓝药丸面膜</view>
+    <view class="m2">1000积分</view>
+    <view class="m3">兑换</view>
+  </view>
+
+  <view class="consk">
+    <view class="imf1">
+      <image src="../../static/group/组 18(1).png"></image>
+    </view>
+    <view class="m1">保湿急救蓝药丸面膜</view>
+    <view class="m2">1000积分</view>
+    <view class="m3">兑换</view>
+  </view>
+
+  <view class="consk">
+    <view class="imf1">
+      <image src="../../static/group/组 18(3).png"></image>
+    </view>
+    <view class="m1">保湿急救蓝药丸面膜</view>
+    <view class="m2">1000积分</view>
+    <view class="m3">兑换</view>
+  </view>
+
+  <view class="consk">
+    <view class="imf1">
+      <image src="../../static/group/组 18(3).png"></image>
+    </view>
+    <view class="m1">保湿急救蓝药丸面膜</view>
+    <view class="m2">1000积分</view>
+    <view class="m3">兑换</view>
+  </view>
+
+  <view class="consk">
+    <view class="imf1">
+      <image src="../../static/group/组 18(1).png"></image>
+    </view>
+    <view class="m1">保湿急救蓝药丸面膜</view>
+    <view class="m2">1000积分</view>
+    <view class="m3">兑换</view>
+  </view>
+  <view class="consk">
+    <view class="imf1">
+      <image src="../../static/group/组 18(3).png"></image>
+    </view>
+    <view class="m1">保湿急救蓝药丸面膜</view>
+    <view class="m2">1000积分</view>
+    <view class="m3">兑换</view>
+  </view>
+
+  <view class="consk">
+    <view class="imf1">
+      <image src="../../static/group/组 18(2).png"></image>
+    </view>
+    <view class="m1">保湿急救蓝药丸面膜</view>
+    <view class="m2">1000积分</view>
+    <view class="m3">兑换</view>
+  </view>
+
+</view>

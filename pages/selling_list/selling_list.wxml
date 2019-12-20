@@ -1,0 +1,30 @@
+<!--pages/selling_list/selling_list.wxml-->
+<!-- <text>pages/selling_list/selling_list.wxml</text> -->
+
+<view class="bgc">
+  <!-- tab -->
+  <view class="checktbs">
+    <i-tabs current="{{ current }}" color="#F02B50" bindchange="handleChange" i-class="tabs">
+      <i-tab key="tab1" title="热销总榜"></i-tab>
+      <i-tab key="tab2" title="美妆护肤"></i-tab>
+      <i-tab key="tab3" title="鞋包"></i-tab>
+      <i-tab key="tab4" title="男装"></i-tab>
+      <i-tab key="tab5" title="女装"></i-tab>
+    </i-tabs>
+  </view>
+  <!-- tab -->
+
+  <!-- 急救 -->
+  <view class="cons_box">
+    <view class="imgs">
+      <image src="../../static/group/170.180.png"></image>
+    </view>
+    <view class="navd">
+      <view class="d1">急救保湿 网红蓝药丸面膜</view>
+      <view class="d2">Dr.Jart+ 宛若新生水漾宝石急救面 膜 5片/盒</view>
+      <view class="d3">￥79.00</view>
+      <view class="d4">2条用户评价</view>
+    </view>
+  </view>
+  <!-- 急救 -->
+</view>

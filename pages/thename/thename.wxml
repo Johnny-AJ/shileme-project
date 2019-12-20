@@ -1,0 +1,140 @@
+<!--pages/thename/thename.wxml-->
+<!-- <text>pages/thename/thename.wxml</text> -->
+
+
+<view class="bgc">
+  <!-- 轮播图 -->
+  <view class="swiper_box">
+    <swiper indicator-active-color='#f02b50' indicator-dots="false" autoplay='false' interval='3000' circular="false">
+      <swiper-item wx:for="{{swiperList}}" wx:key="goods_is">
+        <image src="{{item}}"></image>
+      </swiper-item>
+    </swiper>
+  </view>
+  <!-- 轮播图 -->
+
+  <!-- 价格 -->
+  <view class="price">
+
+    <image src="../../static/formats/组 7.png"></image>
+
+    <view class="price_box">
+
+      <view class="price_left">
+        <view class="t1">免费</view>
+      </view>
+
+      <view class="price_left1">
+        <view class="price_top">
+          <view class="t2">￥79</view>
+          <view class="t3">活动已结束</view>
+        </view>
+        <view class="price_bottom">
+          限30件
+        </view>
+      </view>
+
+      <view class="price_right">查看商品</view>
+
+    </view>
+
+  </view>
+  <!-- 价格 -->
+
+  <!-- 新生 -->
+  <view class="price_new">
+    <view class="t3">宛若新生 网红蓝药丸面膜</view>
+    <view class="t4">保湿急救 网红蓝药丸面膜保湿急救 网红蓝药丸面 膜5片装</view>
+  </view>
+  <!-- 新生 -->
+
+  <!-- 活动流程 -->
+  <view class="activity_box">
+    <view class="img1">
+      <image src="../../static/group/活动流程.png"></image>
+    </view>
+    <view class="img2">
+      <image src="../../static/group/组 24.png"></image>
+      <view class="p1">活动须知</view>
+    </view>
+  </view>
+  <!-- 活动流程 -->
+
+
+  <!-- 中奖名单 -->
+  <view class="zhong_box">
+    <view class="imgs">
+      <image src="../../static/group/组 11.png"></image>
+      <view class="t1">中奖名单</view>
+    </view>
+
+    <view class="t2">恭喜以下用户获得商品试用机会（共xx人）</view>
+
+    <view class="imgssss">
+      <view class="img1">
+        <image src="../../static/imgs/小樱.jpg"></image>
+        <view class="p1">Jenny</view>
+      </view>
+      <view class="img1">
+        <image src="../../static/imgs/小樱.jpg"></image>
+        <view class="p1">Jenny</view>
+      </view>
+      <view class="img1">
+        <image src="../../static/imgs/小樱.jpg"></image>
+        <view class="p1">Jenny</view>
+      </view>
+      <view class="img1">
+        <image src="../../static/imgs/小樱.jpg"></image>
+        <view class="p1">Jenny</view>
+      </view>
+      <view class="img1">
+        <image src="../../static/imgs/小樱.jpg"></image>
+        <view class="p1">Jenny</view>
+      </view>
+      <view class="img1">
+        <image src="../../static/imgs/小樱.jpg"></image>
+        <view class="p1">Jenny</view>
+      </view>
+      <view class="img1">
+        <image src="../../static/imgs/小樱.jpg"></image>
+        <view class="p1">Jenny</view>
+      </view>
+    </view>
+  </view>
+  <!-- 中奖名单 -->
+
+  <!-- 图片 -->
+  <view class="img3">
+    <image src="../../static/group/O1CN01AmApMA2K4QKxuHhGL___2816529503.png"></image>
+  </view>
+  <view class="img4">
+    <image src="../../static/group/O1CN01Amf2WR2K4QKvpyOGy___2816529503.png"></image>
+  </view>
+  <!-- 图片 -->
+
+  <!-- 阿牛 -->
+  <view class="end_box">
+    <view class="t1">距结束还剩8天</view>
+    <view class="images1">
+      <view class="t2">
+        <view class="p1">12</view>
+      </view>
+      <view class="imgs2">
+        <image src="../../static/group/：.png"></image>
+      </view>
+      <view class="t2">
+        <view class="p1">12</view>
+      </view>
+      <view class="imgs2">
+        <image src="../../static/group/：.png"></image>
+      </view>
+      <view class="t2">
+        <view class="p1">12</view>
+      </view>
+    </view>
+    <view class="imgs3">
+      <image src="../../static/group/矩形 16 拷贝 3.png"></image>
+    </view>
+  </view>
+  <!-- 阿牛 -->
+</view>
