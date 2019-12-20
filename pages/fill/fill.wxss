@@ -1,0 +1,29 @@
+/* pages/fill/fill.wxss */
+
+.box {
+  width: 690rpx;
+  height: 400rpx;
+  background: rgba(244, 244, 244, 1);
+  border-radius: 10rpx;
+  margin: 30rpx;
+}
+
+.imgs image {
+  width: 150rpx;
+  height: 150rpx;
+  margin: 30rpx;
+}
+
+.btn {
+  width: 690rpx;
+  height: 88rpx;
+  background: rgba(240, 43, 80, 1);
+  border-radius: 10rpx;
+  font-size: 34rpx;
+  font-family: PingFang SC;
+  font-weight: bold;
+  color: rgba(255, 255, 255, 1);
+  text-align: center;
+  line-height: 88rpx;
+  margin: 30rpx;
+}

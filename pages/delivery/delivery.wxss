@@ -1,0 +1,186 @@
+/* pages/delivery/delivery.wxss */
+
+.bgc {
+  width: 750px;
+  height: 1463rpx;
+  overflow: hidden;
+  background-color: skyblue;
+  position: relative;
+}
+
+/* 交易 */
+
+.top_box {
+  width: 750rpx;
+  height: 150rpx;
+  background: rgba(240, 43, 80, 1);
+  position: relative;
+}
+
+.top_box .t1 {
+  font-size: 34rpx;
+  font-family: PingFang SC;
+  font-weight: bold;
+  color: rgba(255, 255, 255, 1);
+  position: absolute;
+  top: 59rpx;
+  left: 55rpx;
+}
+
+.top_box .imgs image {
+  width: 149rpx;
+  height: 121rpx;
+  position: absolute;
+  top: 17rpx;
+  right: 95rpx;
+}
+
+/* 交易 */
+
+/* 用户 */
+
+.user_box {
+  width: 750rpx;
+  height: 151rpx;
+  background-color: #fff;
+}
+
+.user_box .text_box {
+  padding: 28rpx 0 0 40rpx;
+}
+
+.user_box .text_box .t1 {
+  font-size: 30rpx;
+  font-family: PingFang SC;
+  font-weight: bold;
+  color: rgba(34, 34, 34, 1);
+}
+
+.bottom_box {
+  display: flex;
+  text-align: center;
+  justify-content: center;
+  padding-top: 31rpx;
+}
+
+.bottom_box .imgs1 image {
+  width: 25rpx;
+  height: 33rpx;
+}
+
+.bottom_box .t2 {
+  font-size: 26rpx;
+  font-family: PingFang SC;
+  font-weight: 400;
+  color: rgba(34, 34, 34, 1);
+  padding: 0 96rpx 0 14rpx;
+}
+
+.bottom_box .t3 {
+  font-size: 26rpx;
+  font-family: PingFang SC;
+  font-weight: 400;
+  text-decoration: underline;
+  color: rgba(240, 43, 80, 1);
+}
+
+/* 用户 */
+
+/* 分割 */
+
+.xian image {
+  width: 750rpx;
+  height: 3rpx;
+  position: absolute;
+  top: 302rpx;
+  left: 0;
+}
+
+/* 分割 */
+
+/* 商品 */
+
+.commodities {
+  width: 750rpx;
+  height: 510rpx;
+  background-color: #fff;
+  margin-top: 20rpx;
+}
+
+.commodities .t1 {
+  font-size: 30rpx;
+  font-family: PingFang SC;
+  font-weight: 400;
+  color: rgba(34, 34, 34, 1);
+  width: 750rpx;
+  height: 71rpx;
+  line-height: 71rpx;
+  padding-left: 30rpx;
+}
+
+.commodities .nav_box {
+  width: 750rpx;
+  height: 359rpx;
+  border: 2px solid #f5f5f5;
+  display: flex;
+  padding: 30rpx;
+}
+
+.nav_box .cont {
+  border: 1px solid red;
+  display: flex;
+  position: relative;
+}
+
+.nav_box .imgs1 image {
+  width: 170rpx;
+  height: 180rpx;
+}
+
+.cont .s1 {
+  padding-left: 20rpx;
+  width: 487rpx;
+  height: 64rpx;
+  font-size: 30rpx;
+  font-family: PingFang SC;
+  font-weight: bold;
+  color: rgba(34, 34, 34, 1);
+}
+
+.cont .s2 {
+  position: absolute;
+  top: 92rpx;
+  left: 190rpx;
+  font-size: 28rpx;
+  font-family: PingFang SC;
+  font-weight: bold;
+  color: rgba(153, 153, 153, 1);
+}
+
+.cont .s3 {
+  position: absolute;
+  top: 92rpx;
+  right: 72rpx;
+  font-size: 26rpx;
+  font-family: PingFang SC;
+  font-weight: 400;
+  color: rgba(34, 34, 34, 1);
+}
+
+.cont .s4 {
+  position: absolute;
+  top: 94rpx;
+  right: 30rpx;
+  font-size: 22rpx;
+  font-family: PingFang SC;
+  font-weight: 400;
+  color: rgba(153, 153, 153, 1);
+}
+
+.cont .cons {
+  width: 690rpx;
+  height: 140rpx;
+  border: 1px solid red;
+}
+
+/* 商品 */

@@ -1,0 +1,50 @@
+<!--pages/time_to_buy/time_to_buy.wxml-->
+<!-- <text>pages/time_to_buy/time_to_buy.wxml</text> -->
+
+<view class="bgc">
+  <!-- 头部 -->
+  <view class="top_box">
+    <view class="img1">
+      <image src="../../static/group/背景 (1).png"></image>
+    </view>
+    <view class="k1">实时热销榜</view>
+    <view class="bbox1">
+      <view class="k2">距下次更新还有</view>
+      <view class="k3">01</view>
+      <view class="k4">：</view>
+      <view class="k3">01</view>
+      <view class="k4">：</view>
+      <view class="k3">01</view>
+    </view>
+    <view class="k5">综合销售额、购买人数、好评率等数据综合计算得出 每2小时更新一次</view>
+  </view>
+  <!-- 头部 -->
+
+  <!-- o2o -->
+  <view class="cont_box">
+    <view class="imgv1">
+      <image src="../../static/group/组 23 拷贝.png"></image>
+    </view>
+    <view class="z1">O2O限时购</view>
+    <view class="imgv1">
+      <image src="../../static/group/组 23.png"></image>
+    </view>
+  </view>
+  <!-- o2o -->
+
+  <!-- 急救 -->
+  <view class="cons_box">
+    <view class="imgs">
+      <image src="../../static/group/170.180.png"></image>
+    </view>
+    <view class="navd">
+      <view class="d1">急救保湿 网红蓝药丸面膜</view>
+      <view class="d2">Dr.Jart+ 宛若新生水漾宝石急救面 膜 5片/盒</view>
+      <view class="d3">￥79.00</view>
+      <view class="d4">2条用户评价
+        <view class="d5">98.5%好评</view>
+      </view>
+    </view>
+  </view>
+  <!-- 急救 -->
+</view>
