@@ -158,12 +158,13 @@ Page({
    
   },
   click(e){
-
-
     var addressId = e.currentTarget.dataset.addressid;
     var isdefault = e.currentTarget.dataset.isdefault;
+    wx.setStorageSync('addressId', addressId);
+    wx.setStorageSync('isdefault', isdefault)
 
     wx.navigateBack({
+  
    
       url: '/pages/Spell_group_order/Spell_group_order?addressId=' + addressId + '&isdefault=' + isdefault
     })

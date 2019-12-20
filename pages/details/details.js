@@ -25,7 +25,8 @@ Page({
     pic: '',
     token: '',
     pageSize: 5,
-    currPage: 0
+    currPage: 0,
+    getListByWaresId: []
 
 
   },
@@ -33,8 +34,8 @@ Page({
   /**
    * 生命周期函数--监听页面加载
    */
-  onLoad: function (options) {
-   
+  onLoad: function(options) {
+
     var self = this;
     this.setData({
       waresId: options.waresid
@@ -47,58 +48,60 @@ Page({
     this.get_data(options.waresid); // 获取商品数据
     var self = this;
     wx.request({ //获取商品规格
-      url: 'http://192.168.2.98:9095/api/wares/details/getPropertyList',
-      method: "get",
-      data: {
-        waresId: self.data.waresId
-      },
-      success(res) {
+        url: 'http://192.168.2.98:9095/api/wares/details/getPropertyList',
+        method: "get",
+        data: {
+          waresId: self.data.waresId
+        },
+        success(res) {
 
-        console.log(res.data, '66666666')
-        self.setData({
-          imgsurl: res.data.data.imgUrl
-        })
+          console.log(res.data, '66666666')
+          self.setData({
+            imgsurl: res.data.data.imgUrl
+          })
 
-        self.setData({
-          skuList: res.data.data.skuList
-        })
+          self.setData({
+            skuList: res.data.data.skuList
+          })
 
-        self.groupSkuProp();
+          self.groupSkuProp();
 
-      }
+        }
 
 
 
-    }),
-      this.getcommentList()
+      }),
+      this.getcommentList(); //评论列表
+    this.getListByWaresId() //根据商品查询优惠券列表
+
 
   },
 
   /**
    * 生命周期函数--监听页面初次渲染完成
    */
-  onReady: function () {
+  onReady: function() {
 
   },
 
   /**
    * 生命周期函数--监听页面显示
    */
-  onShow: function () {
+  onShow: function() {
 
   },
 
   /**
    * 生命周期函数--监听页面隐藏
    */
-  onHide: function () {
+  onHide: function() {
 
   },
 
   /**
    * 生命周期函数--监听页面卸载
    */
-  onUnload: function () {
+  onUnload: function() {
 
   },
 
@@ -113,10 +116,10 @@ Page({
       url: 'http://192.168.2.98:9095/api/wares/details/getWaresInfo',
       method: "get",
       data: {
-        waresId: waresId
+        waresId: 9 //waresId
       },
       success(res) {
-        console.log(res,'getWaresInfo')
+        console.log(res, 'getWaresInfo')
 
         self.setData({
           list: res.data.data
@@ -147,7 +150,7 @@ Page({
     });
   },
   // 轮播图
-  swiperChange: function (e) {
+  swiperChange: function(e) {
     this.setData({
       currentSwiper: e.detail.current
     })
@@ -161,7 +164,7 @@ Page({
     })
   },
   //规格选择
-  groupSkuProp: function () {
+  groupSkuProp: function() {
     var self = this;
 
     var skuList = self.data.skuList;
@@ -234,7 +237,7 @@ Page({
       allProperties: allProperties
     });
   },
-  parseSelectedObjToVals: function () {
+  parseSelectedObjToVals: function() {
     var selectedPropObj = this.data.selectedPropObj;
     var selectedProperties = "";
     var selectedProp = [];
@@ -262,7 +265,7 @@ Page({
     });
 
   },
-  toChooseItem: function (e) {
+  toChooseItem: function(e) {
 
     var val = e.currentTarget.dataset.val;
     var key = e.currentTarget.dataset.key;
@@ -275,7 +278,7 @@ Page({
 
   },
 
-  array_contain: function (array, obj) {
+  array_contain: function(array, obj) {
     for (var i = 0; i < array.length; i++) {
       if (array[i] == obj) //如果要求数据类型也一致，这里可使用恒等号===
         return true;
@@ -283,7 +286,7 @@ Page({
     return false;
   },
 
-  buys: function (e) {// 立即购买
+  buys: function(e) { // 立即购买
 
     var self = this;
 
@@ -302,7 +305,7 @@ Page({
     }
 
   },
-  getcommentList() {
+  getcommentList() { //评论列表
     var self = this;
     wx.request({
       url: 'http://192.168.2.98:9095/api/wares/details/getCommentList',
@@ -310,20 +313,92 @@ Page({
         token: wx.getStorageSync('token')
       },
       data: {
-        waresId: 9,//self.data.waresId,
+        waresId: 9, //self.data.waresId,
         pageSize: self.data.pageSize,
         currPage: self.data.currPage
 
       },
-      success: function (res) {
+      success: function(res) {
         console.log(res, 'getCommentList')
       }
     })
   },
-  goback(){
+  goback() {
     wx.reLaunch({
-      url: '/pages/index/index'
-    ,
+      url: '/pages/index/index',
     })
+  },
+  getListByWaresId() { //根据商品查询优惠券列表
+
+    var self = this;
+    wx.request({
+      url: 'http://192.168.2.98:9095/api/discount/data/getListByWaresId',
+      header: {
+        token: wx.getStorageSync('token')
+      },
+      data: {
+        waresId: 9, //self.data.waresId,
+        storeId: ''
+
+      },
+      success: function(res) {
+
+        self.setData({
+          getListByWaresId: res.data.data
+        })
+        var getListByWaresId = self.data.getListByWaresId;
+        for (var i = 0; i < getListByWaresId.length; i++) {
+          getListByWaresId[i].text = '';
+          if (getListByWaresId[i].discountCouponFor == 0) {
+            getListByWaresId[i].text = '全平台'
+          } else if (getListByWaresId[i].discountCouponFor == 1) {
+            getListByWaresId[i].text = '门店'
+          } else {
+            getListByWaresId[i].text = '指定商品'
+          }
+          self.setData({
+            getListByWaresId
+          })
+        }
+
+        console.log(self.data.getListByWaresId, 'getListByWaresId')
+      }
+    })
+  },
+  getDiscountById(e) {// 领取优惠券
+
+    var id = e.currentTarget.dataset.id;
+    console.log(id)
+    var self = this;
+    wx.request({
+      url: 'http://192.168.2.119:9095/api/discount/data/getDiscountById',
+      header: {
+        token: wx.getStorageSync('token')
+      },
+      data: {
+        id: e.currentTarget.dataset.id
+
+      },
+      success: function (res) {
+
+        // if(res.code==0){
+          var getListByWaresId = self.data.getListByWaresId;
+          for (var i = 0; i < getListByWaresId.length; i++) {
+            if (getListByWaresId[i].id==id){
+              getListByWaresId[i].isGet=0;
+              self.setData({
+                getListByWaresId
+              })
+            }
+           
+          // }
+        }
+
+        console.log(self.data.getListByWaresId, 'getListByWaresId')
+        // console.log(res,'getListByWaresId')
+      }
+    })
+
+
   }
 })

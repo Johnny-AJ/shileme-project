@@ -190,13 +190,15 @@ Page({
    
    var self =this;
     
+    if(e){
       this.setData({
         categoryId: e.currentTarget.dataset.id
       });
-    var categoryId = self.data.categoryId;
+      var categoryId = self.data.categoryId;
       this.setData({
         index1: e.currentTarget.dataset.index
       })
+    }
     !self.data.productlist[categoryId]&&self.vector()
    
     
@@ -217,6 +219,11 @@ Page({
   onReachBottom: function () {
     console.log(55555)
   },
+  search(){
+    wx.navigateTo({
+      url: '/pages/search/search', 
+    })
+  }
   
   
 })

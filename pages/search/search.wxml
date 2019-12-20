@@ -3,10 +3,11 @@
   <view class="mysearch dj">
     <view class="sl dj">
       <image src="../../static/imgs/搜索.png"></image>
-      <input class="weui-input" focus='{{inputShowed}}' type='text' placeholder="搜索更多好物" />
+      <input class="weui-input" value='{{inputValue}}' data-name="inputValue" bindinput="bindKeyInput" type='text' placeholder="搜索更多好物" />
     </view>
     <view class="sr">取消</view>
   </view>
+
   <view class="top-search">
 
     <view class="title">
@@ -14,17 +15,12 @@
       <text>热门搜索</text>
     </view>
     <view class="searchcont" bindtap="handurl" data-url="/pages/scango/scango">
-      <text>面膜</text>
-      <text>洗面奶</text>
-      <text>项链</text>
-      <text>洗面奶</text>
-      <text>连衣裙</text>
-      <text>项链</text>
-      <text>连衣裙</text>
+      <text wx:for="{{getHotSearch}}" wx:key="*this"> {{item.name}}</text>
+
     </view>
     <view class="history">
       <view class="title">
-        <text>热门搜索</text>
+        <text>历史搜索</text>
         <image src="../../static/imgs/垃圾桶.png"></image>
       </view>
 
@@ -35,6 +31,8 @@
       </view>
     </view>
   </view>
+
+
 
 
 </view>

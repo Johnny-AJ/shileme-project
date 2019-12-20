@@ -1,31 +1,69 @@
 <view class="seaches">
-  <view class="search_box">
-    <view class="search">
-      <view class="search_logo">
-        <image mode="widthFix" src="../../static/imgs/搜索.png"></image>
+  <view class="top">
+    <view class="search_box">
+      <view class="search">
+        <view class="search_logo">
+          <image mode="widthFix" src="../../static/imgs/搜索.png"></image>
+        </view>
+        <input placeholder="{{inputValue}}" bindinput="bindKeyInput" value='{{inputValue}}' data-name="inputValue"  type='text'></input>
       </view>
-      <input placeholder="面膜" bindtap="handurl" data-url="/pages/search/search"></input>
+      <view class="search_button">
+        取消
+      </view>
     </view>
-    <view class="search_button">
-      取消
+    <view class="checktbs">
+      <i-tabs current="{{ current }}" i-class="tabs" color="#F02B50" bindchange="handleChange" i-class="tabs">
+        <i-tab key="tab1" title="全部"></i-tab>
+        <i-tab key="tab2" title="价格从低到到高"></i-tab>
+        <i-tab key="tab3" title="价格从高到低"></i-tab>
+      </i-tabs>
     </view>
-  </view>
-  <view class="checktbs">
-    <i-tabs current="{{ current }}" i-class="tabs" color="#F02B50" bindchange="handleChange" i-class="tabs">
-      <i-tab key="tab1" title="全部"></i-tab>
-      <i-tab key="tab2" title="价格从低到到高"></i-tab>
-      <i-tab key="tab3" title="价格从高到低"></i-tab>
-     
-    </i-tabs>
-  </view>
 
+  </view>
   <view class="content">
-    <view class="imgs">
+    <view class="imgs" wx:if="{{seachnum=='undefined'}}">
         <image src="../../static/imgs/组 1 (1).png"></image>
-        <!-- <image class="img" src="../../static/imgs/搜索无结果！.png"></image> -->
+   
         <text>搜索无结果！</text>
     
     </view>
-  
+    <view class="contents" wx:if="{{seachnum}}">
+      <view class="cont">
+        <image src="../../static/imgs/矩形 3.png"></image>
+        <view class="name pl20">保湿急救 网红蓝药丸面.</view>
+        <view class="content_client pl20">Dr.Jart 宛若新生保湿面膜.</view>
+        <view class="price pl20">￥
+          <text class="nowprice">79 </text>
+        </view>
+      </view>
+      <view class="cont">
+        <image src="../../static/imgs/矩形 3.png"></image>
+        <view class="name pl20">保湿急救 网红蓝药丸面.</view>
+        <view class="content_client pl20">Dr.Jart 宛若新生保湿面膜.</view>
+        <view class="price pl20">￥
+          <text class="nowprice">79 </text>
+        </view>
+      </view>
+      <view class="cont">
+        <image src="../../static/imgs/矩形 3.png"></image>
+        <view class="name pl20">保湿急救 网红蓝药丸面.</view>
+        <view class="content_client pl20">Dr.Jart 宛若新生保湿面膜.</view>
+        <view class="price pl20">￥
+          <text class="nowprice">79 </text>
+        </view>
+      </view>
+      <view class="cont">
+        <image src="../../static/imgs/矩形 3.png"></image>
+        <view class="name pl20">保湿急救 网红蓝药丸面.</view>
+        <view class="content_client pl20">Dr.Jart 宛若新生保湿面膜.</view>
+        <view class="price pl20">￥
+          <text class="nowprice">79 </text>
+
+        </view>
+      </view>
+
+
+    </view>
+
   </view>
 </view>

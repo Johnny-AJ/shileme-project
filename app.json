@@ -1,7 +1,10 @@
 {
   "pages": [
-    "pages/index/index",
     "pages/details/details",
+    "pages/group/group",
+    "pages/index/index",
+    "pages/search/search",
+    "pages/searches/searches",
     "pages/shipping/shipping",
     "pages/inetAddress/inetAddress",
     "pages/scango/scango",
@@ -11,13 +14,11 @@
     "pages/order/order",
     "pages/view/view",
     "pages/formats/formats",
-    "pages/group/group",
     "pages/mynote/mynote",
     "pages/cart/cart",
     "pages/myEmms/myEmms",
     "pages/customer/customer",
     "pages/addLogistics/addLogistics",
-    "pages/searches/searches",
     "pages/Coupons/Coupons",
     "pages/Review/Review",
     "pages/Collection/Collection",
@@ -29,8 +30,7 @@
     "pages/friends/friends",
     "pages/user/user",
     "pages/comment/comment",
-    "pages/Spell/Spell",
-    "pages/search/search"
+    "pages/Spell/Spell"
   ],
   "window": {
     "backgroundTextStyle": "light",

@@ -7,7 +7,7 @@
       <view class="search_logo">
         <image mode="widthFix" src="../../static/imgs/搜索.png"></image>
       </view>
-      <input placeholder="搜索" bindtap="handurl" data-url="/pages/search/search"></input>
+      <input placeholder="搜索" bindtap="search" ></input>
     </view>
     <view class="search_button">
       <image src="../../static/imgs/矩形 16 拷贝 5.png"></image>

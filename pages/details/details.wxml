@@ -166,42 +166,26 @@
       <view class="conts">
         <view class="title"> 优惠劵 </view>
         <view class="coupon">
-          <view class="cont">
+          <view class="cont" wx:for="{{getListByWaresId}}" wx:key="*this">
             <image src="../../static/scango/组 4.png"></image>
             <view class="cl">
-              <text class="t1">￥10</text>
-              <text class="t2">满100元可用</text>
+              <text class="t1">￥{{item.money}}</text>
+              <text class="t2">满{{item.startMoney}}元可用</text>
+              {{itme.id}}
             </view>
             <view class="cr">
               <view class="rt">
-                <text class="t1">全品类通用券</text>
-                <text class="t2">领取</text>
-                <!-- <text class="t2">已领取</text>  -->
+                <text class="t1">{{item.name}}</text>
+                <text class="t2" wx:if="{{item.isGet==1}}" data-id="{{item.id}}" bindtap="getDiscountById" >领取</text>
+                <text class="t3" wx:if="{{item.isGet==0}}">已领取</text> 
               </view>
               <view class=" rb ">
-                <text class="t1 ">适用平台：全平台</text>
-                <text class="t2 ">有效期至：2019-08-01</text>
+                <text class="t1 ">适用平台：{{item.text}}</text>
+                <text class="t2 ">有效期至：{{item.endDate}}</text>
               </view>
             </view>
           </view>
-          <view class="cont">
-            <image src="../../static/scango/组 4.png"></image>
-            <view class="cl">
-              <text class="t1">￥10</text>
-              <text class="t2">满100元可用</text>
-            </view>
-            <view class="cr">
-              <view class="rt">
-                <text class="t1">全品类通用券</text>
-                <!-- <text class="t2">领取</text>  -->
-                <text class="t3">已领取</text>
-              </view>
-              <view class=" rb ">
-                <text class="t1 ">适用平台：全平台</text>
-                <text class="t2 ">有效期至：2019-08-01</text>
-              </view>
-            </view>
-          </view>
+       
         </view>
         <!-- <view class="coupon1">
           <image src="../../static/imgs/组 7.png"></image>
