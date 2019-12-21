@@ -1,11 +1,11 @@
 {
   "pages": [
     "pages/detailstable/detailstable",
-    "pages/consistent/consistent",
-    "pages/reporting/reporting",
-    "pages/commodity/commodity",
-    "pages/between/between",
     "pages/refunded/refunded",
+    "pages/between/between",
+    "pages/commodity/commodity",
+    "pages/reporting/reporting",
+    "pages/consistent/consistent",
     "pages/entry/entry",
     "pages/refundDate/refundDate",
     "pages/returning/returning",

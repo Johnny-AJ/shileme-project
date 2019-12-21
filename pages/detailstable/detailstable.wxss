@@ -12,4 +12,80 @@
 .imgs1 image {
   width: 750rpx;
   height: 400rpx;
+  vertical-align: top;
+}
+
+/* 头像 */
+
+.top_box {
+  height: 1219rpx;
+  width: 750rpx;
+  background-color: #fff;
+}
+
+.zong_box_wai {
+  width: 750rpx;
+  height: 153rpx;
+  border: 1px solid red;
+  display: flex;
+  box-sizing: border-box;
+  position: relative;
+}
+
+.tu {
+  position: absolute;
+  top: 61rpx;
+  left: 31rpx;
+}
+
+.hao {
+  position: absolute;
+  top: 56rpx;
+  left: 114rpx;
+}
+
+.tu .imgs2 image {
+  width: 62rpx;
+  height: 62rpx;
+  border-radius: 30rpx;
+}
+
+.zong_box_wai .hao .h1 {
+  font-size: 30rpx;
+  font-family: PingFang SC;
+  font-weight: 500;
+  color: rgba(0, 0, 0, 1);
+}
+
+.zong_box_wai .hao .h2 {
+  font-size: 26rpx;
+  font-family: PingFang SC;
+  font-weight: 400;
+  color: rgba(102, 102, 102, 1);
+}
+
+/* 文字 */
+
+.song {
+  width: 684rpx;
+  height: 148rpx;
+  font-size: 28rpx;
+  font-family: PingFang SC;
+  font-weight: 400;
+  color: rgba(34, 34, 34, 1);
+  margin-left: 30rpx;
+  margin-top: 27rpx;
+  border: 1px solid red;
+}
+
+/* 图 */
+
+.photo {
+  margin-top: 58rpx;
+  margin-left: 30rpx;
+}
+
+.photo .imgs3 image {
+  width: 690rpx;
+  height: 400rpx;
 }

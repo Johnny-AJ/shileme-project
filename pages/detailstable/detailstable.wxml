@@ -4,11 +4,36 @@
 
 <view class="bgc">
 
-
   <view class="imgs1">
     <image src="../../static/imgs/组 22.png"></image>
   </view>
+
   <view class="top_box">
+
+    <view class="zong_box_wai">
+      <view class="tu">
+        <view class="imgs2">
+          <image src="../../static/imgs/小樱.jpg"></image>
+        </view>
+      </view>
+
+      <view class="hao">
+        <view class="h1">好物测评人员</view>
+        <view class="h2">2019-8-8</view>
+      </view>
+    </view>
+
+    <view class="song">收到给朋友化了这个妆，她一直很喜欢colorpop家的东西，但是官网一直容易断货，所以就在这里看看能不能找到，结果被我找到了。朋友说这个质地很软糯，是正品没错了。附：朋友的眼睛太好看了。</view>
+
+    <!-- tu -->
+    <view class="photo">
+      <view class="imgs3">
+        <image src="../../static/imgs/1发现.png"></image>
+      </view>
+      <view class="imgs3">
+        <image src="../../static/imgs/1组 17.png"></image>
+      </view>
+    </view>
 
   </view>
 </view>
