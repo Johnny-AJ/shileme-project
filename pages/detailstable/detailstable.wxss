@@ -1,0 +1,15 @@
+/* pages/detailstable/detailstable.wxss */
+
+.bgc {
+  width: 750rpx;
+  height: 2678rpx;
+  overflow: hidden;
+  background-color: skyblue;
+}
+
+/* 图 */
+
+.imgs1 image {
+  width: 750rpx;
+  height: 400rpx;
+}

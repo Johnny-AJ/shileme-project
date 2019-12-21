@@ -227,9 +227,59 @@ Page({
 
   },
   realistic() {//热卖榜
+  var self =this;
+    wx.request({
+      url: 'http://192.168.2.98:9095/api/index/getSellingList',
+      header:{
+       token: wx.getStorageSync('token')
+      },
+      data:{
+        categoryId: '',
+        currPage:0,
+        pageSize:2
+      },
+      success:function(res){
+
+        self.setData({
+          realistic: res.data.data.list
+        })
+
+       
+       
+      }
+    })
+  },
+  newselling() {//热卖榜
+  var self=this;
+    wx.request({
+      url: 'http://192.168.2.98:9095/api/index/getNewList',
+      header: {
+        token: wx.getStorageSync('token')
+      },
+      data: {
+        categoryId:'',
+        currPage: 0,
+        pageSize: 2
+      },
+      success: function (res) {
+      
+        self.setData({
+          newselling: res.data.data.list
+        })
+        
+       
+      }
+    })
+  },
+  jump(e){
+    console.log(e,'eeee')
+
+    wx.navigateTo({
+      url: e.currentTarget.dataset.url,
+     
+    })
 
   }
-
   
   
 })

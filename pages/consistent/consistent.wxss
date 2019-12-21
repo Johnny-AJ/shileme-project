@@ -1,0 +1,158 @@
+/* pages/consistent/consistent.wxss */
+
+.bgc {
+  width: 750rpx;
+  height: 1308rpx;
+  overflow: hidden;
+  background-color: skyblue;
+}
+
+.indent.checktbs {
+  height: 90rpx;
+  width: 100%;
+}
+
+.indent.tabs {
+  width: 100%;
+  position: fixed;
+  left: 0;
+  top: 0;
+  height: 91rpx;
+  display: flex;
+  background: #fff;
+  text-align: center;
+  padding: 10rpx;
+  box-sizing: border-box;
+  border: none !important;
+}
+
+/* tab栏 */
+
+/* top */
+
+.dong {
+  width: 690rpx;
+  height: 420rpx;
+  background: rgba(255, 255, 255, 1);
+  border-radius: 10rpx;
+  box-sizing: border-box;
+  margin: 30rpx;
+  position: relative;
+}
+
+.dong .imgs1 image {
+  width: 690rpx;
+  height: 291rpx;
+  z-index: -9;
+}
+
+.nav_box {
+  width: 690rpx;
+  height: 129rpx;
+  position: relative;
+}
+
+.nav_box1 {
+  display: flex;
+}
+
+.nav_box1 .nav1 {
+  font-size: 26rpx;
+  font-family: PingFang SC;
+  font-weight: bold;
+  text-decoration: line-through;
+  color: rgba(0, 0, 0, 1);
+}
+
+.nav_box1 {
+  margin-top: 29rpx;
+  margin-left: 30rpx;
+}
+
+.nav_box2 {
+  margin-top: 10rpx;
+  margin-left: 30rpx;
+}
+
+.nav_box3 {
+  width: 160rpx;
+  height: 60rpx;
+  background: rgba(240, 43, 80, 1);
+  border-radius: 30rpx;
+  font-size: 26rpx;
+  font-family: PingFang SC;
+  font-weight: bold;
+  color: rgba(255, 255, 255, 1);
+  text-align: center;
+  line-height: 60rpx;
+  position: absolute;
+  bottom: 55rpx;
+  right: 30rpx;
+}
+
+.nav_box1 .nav2 {
+  font-size: 26rpx;
+  font-family: PingFang SC;
+  font-weight: bold;
+  color: rgba(34, 34, 34, 1);
+  margin-left: 10rpx;
+}
+
+.nav_box2 .nav3 {
+  font-size: 26rpx;
+  font-family: PingFang SC;
+  font-weight: 400;
+  color: rgba(102, 102, 102, 1);
+}
+
+.dong .dong_1 {
+  width: 197rpx;
+  height: 58rpx;
+  background-color: #844725;
+  font-size: 26rpx;
+  font-family: PingFang SC;
+  font-weight: 400;
+  color: rgba(254, 254, 254, 1);
+  border-radius: 10rpx;
+  text-align: center;
+  line-height: 58rpx;
+  position: absolute;
+  top: 0;
+  right: 0;
+  opacity: 0.9;
+}
+
+.dong .dong_2 {
+  font-size: 28rpx;
+  font-family: PingFang SC;
+  font-weight: bold;
+  color: rgba(255, 255, 255, 1);
+  position: absolute;
+  top: 63rpx;
+  right: 216rpx;
+}
+
+.dong .dong_3 {
+  font-size: 28rpx;
+  font-family: PingFang SC;
+  font-weight: bold;
+  color: rgba(255, 255, 255, 1);
+  position: absolute;
+  top: 111rpx;
+  right: 58rpx;
+}
+
+.dong .dong_4 {
+  font-size: 28rpx;
+  font-family: PingFang SC;
+  font-weight: bold;
+  color: #fff;
+  text-align: center;
+  line-height: 50rpx;
+  width: 170rpx;
+  height: 50rpx;
+  background: rgba(255, 255, 255, 0.3);
+  position: absolute;
+  top: 180rpx;
+  right: 207rpx;
+}

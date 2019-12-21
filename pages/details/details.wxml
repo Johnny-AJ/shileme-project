@@ -129,23 +129,23 @@
 
   </view>
   <view class="or">
-  <view class="or-left">
-    <view bindtap="goback">
-    <image src="../../static/imgs/矢量智能对象.png"></image>
-    <text class="color">首页</text>
-    
+    <view class="or-left">
+      <view bindtap="goback">
+        <image src="../../static/imgs/矢量智能对象.png"></image>
+        <text class="color">首页</text>
+
+      </view>
+      <view>
+        <image src="../../static/imgs/形状 1.png"></image>
+        <text>收藏</text>
+
+      </view>
+      <view>
+        <image src="../../static/imgs/购物车.png"></image>
+        <text>购物车</text>
+
+      </view>
     </view>
-    <view>
-    <image src="../../static/imgs/形状 1.png"></image>
-    <text >收藏</text>
-    
-    </view>
-    <view>
-    <image src="../../static/imgs/购物车.png"></image>
-    <text >购物车</text>
-    
-    </view>
-  </view>
     <view class="cart">
       <image src="../../static/imgs/矩形 29 拷贝 2.png"></image>加入购物车</view>
     <view class="nowbuy" bindtap="buys" data-waresId="{{waresId}}" data-propertyId="{{defaultSku.skuid}}" data-amount="{{value1}}">
@@ -170,14 +170,13 @@
             <image src="../../static/scango/组 4.png"></image>
             <view class="cl">
               <text class="t1">￥{{item.money}}</text>
-              <text class="t2">满{{item.startMoney}}元可用</text>
-              {{itme.id}}
+              <text class="t2">满{{item.startMoney}}元可用</text> {{itme.id}}
             </view>
             <view class="cr">
               <view class="rt">
                 <text class="t1">{{item.name}}</text>
-                <text class="t2" wx:if="{{item.isGet==1}}" data-id="{{item.id}}" bindtap="getDiscountById" >领取</text>
-                <text class="t3" wx:if="{{item.isGet==0}}">已领取</text> 
+                <text class="t2" wx:if="{{item.isGet==1}}" data-id="{{item.id}}" bindtap="getDiscountById">领取</text>
+                <text class="t3" wx:if="{{item.isGet==0}}">已领取</text>
               </view>
               <view class=" rb ">
                 <text class="t1 ">适用平台：{{item.text}}</text>
@@ -185,7 +184,7 @@
               </view>
             </view>
           </view>
-       
+
         </view>
         <!-- <view class="coupon1">
           <image src="../../static/imgs/组 7.png"></image>

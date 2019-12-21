@@ -1,0 +1,64 @@
+<!--pages/commodity/commodity.wxml-->
+<!-- <text>pages/commodity/commodity.wxml</text> -->
+
+<view class="bgc">
+
+  <!-- top -->
+  <view class="dong">
+    <view class="kong">
+      <view class="k1">Dr.Jart 保湿急救 网红蓝 药丸面膜</view>
+      <view class="k2">￥69</view>
+    </view>
+    <view class="img3">
+      <image src="../../static/imgs/imgs1.png"></image>
+    </view>
+  </view>
+
+  <!-- 中 -->
+  <view class="gong">共15份试用报告</view>
+
+  <!-- 下 -->
+  <view class="jong">
+    <view class="jong_left">
+
+      <view class="jong_box">
+        <view class="j2">
+          <text>精华</text>这款面膜真的是猛药啊隔 天起来洗完脸你的皮肤呈现的就 是最佳的状态 细腻水润 掐一掐 感觉能掐出水来 出门简...</view>
+      </view>
+
+      <view class="imgd1">
+        <image src="../../static/imgs/组 22(1).png"></image>
+        <view class="i1">米粒</view>
+      </view>
+    </view>
+
+    <view class="jong_right">
+      <view class="img4">
+        <image src="../../static/imgs/imgs1.png"></image>
+      </view>
+    </view>
+
+  </view>
+
+  <view class="jong">
+    <view class="jong_left">
+
+      <view class="jong_box">
+        <view class="j2">
+          <text>精华</text>这款面膜真的是猛药啊隔 天起来洗完脸你的皮肤呈现的就 是最佳的状态 细腻水润 掐一掐 感觉能掐出水来 出门简...</view>
+      </view>
+
+      <view class="imgd1">
+        <image src="../../static/imgs/组 22(1).png"></image>
+        <view class="i1">米粒</view>
+      </view>
+    </view>
+
+    <view class="jong_right">
+      <view class="img4">
+        <image src="../../static/imgs/imgs1.png"></image>
+      </view>
+    </view>
+
+  </view>
+</view>

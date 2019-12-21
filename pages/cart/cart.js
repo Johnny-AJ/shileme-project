@@ -9,6 +9,8 @@ Page({
     show: false,
     totalPrice: 0.00,
     chooseGoods: [],
+    getListByWaresId: [],//优惠劵列表
+    showDialog: false, //领劵开关
     slideProductList: [{
 
         id: 4,
@@ -115,7 +117,8 @@ Page({
    * 生命周期函数--监听页面加载
    */
   onLoad: function(options) {
-    this.totalPrice()
+    this.totalPrice();
+    this.getListByWaresId();//领劵
   },
   onShow: function() {
 
@@ -127,7 +130,7 @@ Page({
       url: e.currentTarget.dataset.url,
     })
   },
-  // handleChange1({ detail }) {//计算器
+ 
   handleChange1(e) { //改变num的数量
 
     var slideProductList = this.data.slideProductList;
@@ -185,5 +188,81 @@ Page({
     });
 
   },
+  toggleDialog() {//优惠劵选择弹出
 
+    this.setData({
+      showDialog: !this.data.showDialog,
+    });
+  },
+  getListByWaresId() { //根据商品查询优惠券列表
+
+    var self = this;
+    wx.request({
+      url: 'http://192.168.2.98:9095/api/discount/data/getListByWaresIds',
+      header: {
+        token: wx.getStorageSync('token')
+      },
+      data: {
+       
+      },
+      success: function (res) {
+        console.log(res,'res66666')
+        self.setData({
+          getListByWaresId: res.data.data
+        })
+        var getListByWaresId = self.data.getListByWaresId;
+        for (var i = 0; i < getListByWaresId.length; i++) {
+          getListByWaresId[i].text = '';
+          if (getListByWaresId[i].discountCouponFor == 0) {
+            getListByWaresId[i].text = '全平台'
+          } else if (getListByWaresId[i].discountCouponFor == 1) {
+            getListByWaresId[i].text = '门店'
+          } else {
+            getListByWaresId[i].text = '指定商品'
+          }
+          self.setData({
+            getListByWaresId
+          })
+          self.setData({
+            getListByWaresId1: getListByWaresId.slice(0, 2)
+          })
+        }
+      }
+    })
+  },
+  getDiscountById(e) {// 领取优惠券
+
+    if (e) {
+      var cartid = e.currentTarget.dataset.id;
+      var self = this;
+      wx.request({
+        url: 'http://192.168.2.98:9095/api/discount/data/getDiscountById',
+        header: {
+          token: wx.getStorageSync('token')
+        },
+        data: {
+          id: cartid
+        },
+        success: function (res) {
+          if (res.data.code == '0') {
+            var getListByWaresId = self.data.getListByWaresId;
+
+            for (var i = 0; i < getListByWaresId.length; i++) {
+
+              if (getListByWaresId[i].id == cartid) {
+
+                getListByWaresId[i].isGet = 0;
+                self.setData({
+                  getListByWaresId: getListByWaresId
+                })
+              }
+
+            }
+          }
+        }
+      })
+
+    }
+
+  }
 })

@@ -148,32 +148,27 @@
       </view>
       <view class="hot">
         <view class="hl .p21">
-          <view class="tittle">
+          <view class="tittle" bindtap="jump" data-url="/pages/selling_list/selling_list">
             <view class="imgage">
               <image src="../../static/imgs/bb.png"></image>
             </view>
             <text>剁手必看指南</text>
           </view>
           <view class="imgs">
-            <view>
-              <image src="../../static/imgs/手机 (2).png"></image>
+            <view wx:for="{{realistic}}" wx:key="{{item.waresId}}" bindtap="goto" data-waresId="{{item.waresId}}">
+              <image src="{{item.logoUrl}}"></image>
             </view>
-            <view>
-              <image src="../../static/imgs/水壶.png"></image>
-            </view>
+           
           </view>
         </view>
         <view class="hr .p21">
-          <view class="tittle">
+          <view class="tittle" bindtap="jump"  data-url="/pages/new_product/new_product" >
             <image src="../../static/imgs/aaa.png"></image>
             <text>什么值得买</text>
           </view>
           <view class="imgs">
-            <view>
-              <image src="../../static/imgs/包.png"></image>
-            </view>
-            <view>
-              <image src="../../static/imgs/箱子.png"></image>
+             <view wx:for="{{newselling}}" wx:key="{{item.waresId}}" bindtap="goto" data-waresId="{{item.waresId}}">
+              <image src="{{item.logoUrl}}"></image>
             </view>
           </view>
         </view>

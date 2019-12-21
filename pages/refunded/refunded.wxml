@@ -1,0 +1,69 @@
+<!--pages/refunded/refunded.wxml-->
+<!-- <text>pages/refunded/refunded.wxml</text> -->
+
+
+<!--pages/refundDate/refundDate.wxml-->
+<!-- <text>pages/refundDate/refundDate.wxml</text> -->
+
+
+<view class="bgc">
+
+  <!-- 处理中 -->
+  <view class="song">
+    <view class="te1">
+      <view class="s1">申请失败</view>
+      <view class="s2">2016-12-12 15:00</view>
+    </view>
+  </view>
+
+  <!-- xia -->
+  <view class="xong">
+    <view class="x1">货物状态</view>
+    <view class="x2">￥79.00</view>
+  </view>
+  <!-- xia1 -->
+  <view class="xong1">
+    <view class="x1">协商历史</view>
+    <view class="img3">
+      <image src="../../static/imgs/矩形 16 拷贝.png "></image>
+    </view>
+  </view>
+  <!-- 退款 -->
+  <view class="xong2">
+    <view class="x3">退款信息</view>
+  </view>
+
+  <!-- 图片 -->
+  <view class="jong">
+    <view class="imgs2">
+      <image src="../../static/group/170.180.png"></image>
+    </view>
+
+    <view class="cong">
+      <view class="nav_box">
+        <view class="c1">保湿急救 网红蓝药丸面膜</view>
+      </view>
+      <view class="nac_box">
+        <view class="c2">5片/盒</view>
+        <view class="c2">X1</view>
+      </view>
+    </view>
+  </view>
+
+  <!-- 不喜欢 -->
+  <view class="donLike">
+    <view class="donLike_box">
+      <view class="d1">退款原因：不喜欢了</view>
+      <view class="d1">退款金额：￥79.00</view>
+      <view class="d1">申请时间：2019-12-12 12：43</view>
+      <view class="d1">退款编号：132132142213</view>
+    </view>
+  </view>
+
+  <!-- 按钮 -->
+  <view class="btn_box">
+    <view class="btn">删除</view>
+    <view class="btn1">撤销申请</view>
+  </view>
+  
+</view>

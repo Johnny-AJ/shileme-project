@@ -1,0 +1,14 @@
+<!--pages/detailstable/detailstable.wxml-->
+<!-- <text>pages/detailstable/detailstable.wxml</text> -->
+
+
+<view class="bgc">
+
+
+  <view class="imgs1">
+    <image src="../../static/imgs/组 22.png"></image>
+  </view>
+  <view class="top_box">
+
+  </view>
+</view>

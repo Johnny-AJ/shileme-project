@@ -1,0 +1,50 @@
+<!--pages/entry/entry.wxml-->
+<!-- <text>pages/entry/entry.wxml</text> -->
+
+<view class="bgc">
+
+  <!-- 图片 -->
+  <view class="jong">
+    <view class="imgs2">
+      <image src="../../static/group/170.180.png"></image>
+    </view>
+
+    <view class="cong">
+      <view class="nav_box">
+        <view class="c1">保湿急救 网红蓝药丸面膜</view>
+        <view class="c1">￥79</view>
+      </view>
+      <view class="nac_box">
+        <view class="c2">5片/盒</view>
+        <view class="c2">X1</view>
+      </view>
+    </view>
+  </view>
+
+  <!-- 退款 -->
+  <view class="wong">
+    <view class="imga1">
+      <image src="../../static/imgs/退款 (1).png"></image>
+    </view>
+    <view class="nav_box">
+      <view class="n1">我要退款</view>
+      <view class="n2">未收到货，与门店协调退</view>
+    </view>
+    <view class="imga2">
+      <image src="../../static/imgs/矩形 16 拷贝.png"></image>
+    </view>
+  </view>
+  <!-- 退货 -->
+  <view class="wong">
+    <view class="imga1">
+      <image src="../../static/imgs/退货-01.png"></image>
+    </view>
+    <view class="nav_box">
+      <view class="n1">我要退款</view>
+      <view class="n2">未收到货，与门店协调退</view>
+    </view>
+    <view class="imga2">
+      <image src="../../static/imgs/矩形 16 拷贝.png"></image>
+    </view>
+  </view>
+</view>

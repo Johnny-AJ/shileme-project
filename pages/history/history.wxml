@@ -1,0 +1,47 @@
+<!--pages/history/history.wxml-->
+<!-- <text>pages/history/history.wxml</text> -->
+
+
+<view class="bgc">
+
+  <!-- top -->
+  <view class="top_box">
+    <view class="iong">
+      <view class="img1">
+        <image src="../../static/imgs/组 22(1).png"></image>
+      </view>
+      <view class="iong1">
+        <view class="i1">9号店</view>
+        <view class="i2">2019-12-12 12:00</view>
+      </view>
+    </view>
+
+    <view class="t1">商家同意退款</view>
+    <view class="t2">退款说明：</view>
+  </view>
+
+  <!-- bottom -->
+  <view class="top_box1">
+    <view class="iong">
+      <view class="img1">
+        <image src="../../static/imgs/组 22(1).png"></image>
+      </view>
+      <view class="iong1">
+        <view class="i1">9号店</view>
+        <view class="i2">2019-12-12 12:00</view>
+      </view>
+    </view>
+    <view class="nav_box">
+      <view class="n1">买家(梦之夜ye)于2019-8-31 19:14:00创建了退 款申请</view>
+      <view class="n2">退款类型：仅退款</view>
+      <view class="n2">退款金额：¥8.00</view>
+      <view class="n2">退款原因：退运费</view>
+      <view class="n2">退款说明：</view>
+      <view class="img2">
+        <image src="../../static/imgs/imgs.png"></image>
+      </view>
+    </view>
+  </view>
+
+
+</view>
