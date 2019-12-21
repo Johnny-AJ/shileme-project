@@ -26,7 +26,11 @@ Page({
     categoryId:'',
     start:0,
     productlist:[],
-    categoryId:''
+    categoryId:'',
+    realistic:[],//热卖榜
+    newselling: [],//新卖榜
+
+
 
   },
   swiperBindchange(e) {
@@ -39,18 +43,13 @@ Page({
    */
   onLoad: function(options) {
     var self = this;
-    // 超值拼团滚动
-    this.group();
-    // 限时购
-    this.tiembuy();
-    // 商品标签列表
-    this.selling();
-
-    // 轮播图
-    this.setSwiperData()
+    this.group();    // 超值拼团滚动
+    this.tiembuy();    // 限时购
+    this.selling();    // 商品标签列表
+    this.setSwiperData();    // 轮播图
+    this.newselling();//新卖榜
+    this.realistic(); //热卖榜
   
-    // 商品标列表
- 
   },
 
   onShow: function() {
@@ -223,7 +222,14 @@ Page({
     wx.navigateTo({
       url: '/pages/search/search', 
     })
+  },
+  newselling(){//新卖榜
+
+  },
+  realistic() {//热卖榜
+
   }
+
   
   
 })

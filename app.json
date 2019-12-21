@@ -2,7 +2,6 @@
   "pages": [
     "pages/index/index",
     "pages/service/service",
-
     "pages/shipping/shipping",
     "pages/consk_box/consk_box",
     "pages/credits/credits",

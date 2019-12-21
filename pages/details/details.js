@@ -26,7 +26,8 @@ Page({
     token: '',
     pageSize: 5,
     currPage: 0,
-    getListByWaresId: []
+    getListByWaresId: [],
+    getListByWaresId1: []
 
 
   },
@@ -88,6 +89,8 @@ Page({
    * 生命周期函数--监听页面显示
    */
   onShow: function() {
+    this.getDiscountById();
+  
 
   },
 
@@ -359,48 +362,46 @@ Page({
           self.setData({
             getListByWaresId
           })
+          self.setData({
+            getListByWaresId1: getListByWaresId.slice(0,2)
+          })
         }
-
-        console.log(self.data.getListByWaresId, 'getListByWaresId')
       }
     })
   },
   getDiscountById(e) {// 领取优惠券
 
-    var id = e.currentTarget.dataset.id;
-    console.log(id)
-    var self = this;
-    wx.request({
-      url: 'http://192.168.2.98:9095/api/discount/data/getDiscountById',
-      header: {
-        token: wx.getStorageSync('token')
-      },
-      data: {
-        id: e.currentTarget.dataset.id
+   if(e){
+     var cartid = e.currentTarget.dataset.id;
+     var self = this;
+     wx.request({
+       url: 'http://192.168.2.98:9095/api/discount/data/getDiscountById',
+       header: {
+         token: wx.getStorageSync('token')
+       },
+       data: {
+         id: cartid
+       },
+       success: function (res) {
+         if (res.data.code == '0') {
+           var getListByWaresId = self.data.getListByWaresId;
+         
+           for (var i = 0; i < getListByWaresId.length; i++) {
 
-      },
-      success: function (res) {
+             if (getListByWaresId[i].id == cartid) {
 
-        console.log(res,'getDiscountById')
+               getListByWaresId[i].isGet = 0;
+               self.setData({
+                 getListByWaresId: getListByWaresId
+               })
+             }
 
-        if(res.code==0){
-          var getListByWaresId = self.data.getListByWaresId;
-          for (var i = 0; i < getListByWaresId.length; i++) {
-            if (getListByWaresId[i].id==id){
-              getListByWaresId[i].isGet=0;
-              self.setData({
-                getListByWaresId
-              })
-            }
-           
-          }
-        }
+           }
+         }
+       }
+     })
 
-        console.log(self.data.getListByWaresId, 'getListByWaresId')
-        // console.log(res,'getListByWaresId')
-      }
-    })
-
+   }
 
   }
 })

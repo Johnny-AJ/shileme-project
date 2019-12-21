@@ -158,15 +158,13 @@ Page({
    
   },
   click(e){
-    var addressId = e.currentTarget.dataset.addressid;
-    var isdefault = e.currentTarget.dataset.isdefault;
-    wx.setStorageSync('addressId', addressId);
-    wx.setStorageSync('isdefault', isdefault)
+    console.log()
+    // var addressId = e.currentTarget.dataset.addressid;
+    // console.log(addressId,'addressId666')
+    wx.setStorageSync('addressId', e.currentTarget.dataset.addressid)
 
     wx.navigateBack({
-  
-   
-      url: '/pages/Spell_group_order/Spell_group_order?addressId=' + addressId + '&isdefault=' + isdefault
+      url: '/pages/Spell_group_order/Spell_group_order'
     })
   
   }

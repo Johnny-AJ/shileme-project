@@ -21,7 +21,6 @@ Page({
     discountId: '',
     isdefault: 1,
     addressId: '',
-    addressId1: '',
     addAddressList: []
 
 
@@ -33,25 +32,13 @@ Page({
 
 
   onLoad: function(options) {
-    var addressId = wx.getStorageSync('addressId')
-    this.setData({
-      addressId
-    })
-
- 
-
-
-
+  
     var self = this;
     self.setData({
       doto: options.dtos
     })
 
 
-    const token = wx.getStorageSync('token')
-    self.setData({
-      token
-    })
     self.setData({
       options: options
     })
@@ -72,7 +59,7 @@ Page({
    * 生命周期函数--监听页面显示
    */
   onShow: function() {
-    // console.log(self.data.address,'address')
+ 
     this.oders(); // 获取扫码购的参数
     this.checked();
   },
@@ -98,39 +85,34 @@ Page({
 
   },
   goto(e) { //提交订单
-
     var self = this;
-    console.log(self.data.address, '  var addressId = self.data.addressId;')
-
+  
     wx.request({
       // 支付地址
       url: 'http://192.168.2.98:9095/api/order/saveOrder',
       method: "POST",
       header: {
-        'token': this.data.token, //请求头携带参数
+        'token': wx.getStorageSync('token') //请求头携带参数
       },
       data: {
         discountId: '',
-        remark: this.data.inputValue,
-        addressId: this.data.addressId,
-        waresList: this.data.dtos,
+        remark: self.data.inputValue,
+        addressId: self.data.addressId,
+        waresList: self.data.dtos,
 
       },
       success: function(res) {
-        var timeStamp = res.data.data.timeStamp;
-
-
-
+        
         // 微信支付
         wx.requestPayment({
-          timeStamp: timeStamp,
+          timeStamp: res.data.data.timeStamp,
           nonceStr: res.data.data.nonceStr,
           package: res.data.data.package,
           signType: res.data.data.signType,
           paySign: res.data.data.paySign,
           success(res) {
 
-            // console.log(res,'支付成功')
+         
             if (res.errMsg.split(":")[1] == "ok") {
               var allprice = self.data.allprice;
 
@@ -144,6 +126,8 @@ Page({
             }
           },
           fail: function(res) {
+
+      
             var waresList = JSON.stringify(self.data.dtos);
 
             wx.navigateTo({
@@ -185,9 +169,11 @@ Page({
         dtos: dtos
       },
       header: {
-        token: self.data.token
+        token: wx.getStorageSync('token')
       },
       success: (res) => {
+
+      
         if (res.data.code == 500) {
           wx.showToast({
             title: '库存不足！',
@@ -212,26 +198,27 @@ Page({
           address: res.data.data.address
         })
         self.setData({
-          addressId1: res.data.data.address.id
-        })
-
-
-        // console.log(self.data.address)
-        self.setData({
           orderWaresVos: res.data.data.orderWaresVos
         })
+
         var address = self.data.address;
 
-
+        self.setData({
+          addressId: self.data.address.id
+        })
         if (address == null) { //判断地址是否存在默认
 
+        
           self.setData({
             addressok: false
           })
         } else {
+
           self.setData({
             addressok: true
           })
+
+
         }
       },
       fail: (error) => {
@@ -241,23 +228,13 @@ Page({
   },
   handurl: function(e) { //路由跳转到填写地址
     var self = this;
-    // console.log(this.data.doto)
-    // 路由封装
+ 
+  
     wx.navigateTo({
-      url: '/pages/shipping/shipping?dtos=' + this.data.doto,
+      url: '/pages/shipping/shipping'
     })
 
-    // if (self.data.addressId) {
-    //   if (self.data.address.id == self.data.addressId) {
 
-    //   } else {
-    //     console.log(555555)
-    //     self.checked()
-    //   }
-
-    // } else {
-
-    // }
   },
   toggleDialog() { //弹出页关闭
     this.setData({
@@ -272,37 +249,39 @@ Page({
     })
   },
   checked() { //从新选择地址
-    
+
     var self = this;
     var addressId = wx.getStorageSync('addressId');
-    var token = wx.getStorageSync('token');
-    // console.log(token)
+
     wx.request({
       url: 'http://192.168.2.98:9095/api/address/list',
       method: 'GET',
       header: {
-        'token': token, //请求头携带参数
+        'token': wx.getStorageSync('token') //请求头携带参数
       },
       success: res => {
         self.setData({
           addAddressList: res.data.data
         });
         var addAddressList = self.data.addAddressList;
-        // console.log(addAddressList, 'self.data.address')
+
         for (var i = 0; i < addAddressList.length; i++) {
 
           if (addAddressList[i].id == addressId) {
+
             this.setData({
               address: addAddressList[i]
+            }, () => {
+              wx.setStorageSync('addressId', '')
             })
-            console.log(self.data.address, 'self.data.address')
-          }else{
 
-          
-          
-            
           }
-         
+
+
+
+
+
+
         }
       }
 

@@ -58,7 +58,7 @@
       <view class="title">领劵</view>
       <view class="ljcont">
 
-        <view wx:for="{{getListByWaresId}}" wx:key="*this">{{item.name}}</view>
+        <view wx:for="{{getListByWaresId1}}" wx:key="*this">{{item.name}}</view>
 
 
       </view>

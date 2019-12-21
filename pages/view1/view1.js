@@ -131,17 +131,14 @@ Page({
       },
       data: {
  
-        orderNo: 6606772254393377000
+        orderNo: self.data.orderNo
 
       },
       success: function (res) {
         console.log(res,'saveScanPlace')
-        var timeStamp = res.data.data.timeStamp;
-
-
         // 微信支付)
         wx.requestPayment({
-          timeStamp: timeStamp,
+          timeStamp: res.data.data.timeStamp,
           nonceStr: res.data.data.nonceStr,
           package: res.data.data.package,
           signType: res.data.data.signType,
@@ -156,8 +153,6 @@ Page({
                 url: '/pages/view/view?allprice=' + allprice,
               })
             } else {
-
-
 
             }
           },
