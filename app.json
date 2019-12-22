@@ -1,5 +1,6 @@
 {
   "pages": [
+    "pages/find_copy/find_copy",
     "pages/find/find",
     "pages/formats/formats",
     "pages/group/group",
