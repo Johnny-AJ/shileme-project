@@ -65,25 +65,33 @@ text {
 
 .cart_box {
   width: 100%;
+  height: 330rpx;
   margin-top: 20rpx;
   border-radius: 10rpx;
   display: flex;
   background-color: #fff;
   margin-bottom: 20rpx;
+  overflow: hidden;
 }
 
 .cart_box  .cart-box_left {
-  height: 81rpx;
+  height: 100%;
   box-sizing: border-box;
   padding: 0 0%;
+  width: 80rpx;
+  display: flex;
+  justify-content: center;
+  align-items: center;
 }
 
-.cart_box  .cart-box_left image {
+.cart_box  .cart-box_left  image {
+  width: 40rpx;
+  height: 40rpx;
+}
+
+.cart_box  .cart-box_left .imgs1 {
   width: 70rpx;
   height: 36rpx;
-  margin: 0;
-  border-radius: 0;
-  margin-top: 110rpx;
 }
 
 .cart_box  .cart-box_left .checkout .wx-checkbox-input {
@@ -219,8 +227,16 @@ movable-view {
   width: 100vw;
   border-bottom: 2rpx solid #e9e9e9;
   box-sizing: border-box;
-  background: #fff;
-  /* z-index: 999; */
+  /* background: #fff; *//* z-index: 999; */
+}
+
+.cart .wrap .action-wrap {
+  border-radius: 0 15rpx 10rpx 0;
+  overflow: hidden;
+}
+
+.cart  .wrap .content {
+  background: none;
 }
 
 .product-item {
@@ -331,8 +347,9 @@ checkbox-group {
   padding-right: 30rpx;
 }
 
-.settlement radio {
-  height: 98rpx;
+.settlement image {
+  width: 40rpx;
+  height: 40rpx;
   margin-left: 30rpx;
 }
 
@@ -366,6 +383,22 @@ checkbox-group {
 
 /* 结算 */
 
+.cart .null {
+  width: 100%;
+  height: 150rpx;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-size: 24rpx;
+  font-family: PingFang SC;
+  font-weight: bold;
+  color: #999;
+}
+
+.content .weui-loadmore__tips_in-line {
+  background: #f5f5f5;
+}
+
 /* 推荐产品 */
 
 .conts {
@@ -397,7 +430,7 @@ checkbox-group {
   box-sizing: border-box;
   align-items: space-between;
   margin: -20rpx 0 0 -10rpx;
-  padding-bottom: 120rpx;
+  padding-bottom: 50rpx;
 }
 
 .pl20 {
@@ -417,6 +450,7 @@ checkbox-group {
 }
 
 .conts .cont .content_client {
+  height: 36rpx;
   font-size: 26rpx;
   font-family: PingFang SC;
   font-weight: 400;
@@ -457,7 +491,8 @@ checkbox-group {
   margin-left: 22rpx;
   color: rgba(255, 255, 255, 1);
 }
- .lj {
+
+.lj {
   width: 100%;
   height: 90rpx;
   display: flex;
@@ -470,13 +505,13 @@ checkbox-group {
   padding: 0 33rpx 0 30rpx;
 }
 
- .lj image {
+.lj image {
   width: 14rpx;
   height: 23rpx;
 }
 
- .lj .title {
-  width: 70rpx;
+.lj .title {
+  width: 120rpx;
   display: inline-block;
 }
 
@@ -512,6 +547,7 @@ checkbox-group {
   font-weight: 500;
   color: rgba(34, 34, 34, 1);
 }
+
 /* 推荐产品 */
 
 .zan-dialog__mask {
@@ -536,7 +572,6 @@ checkbox-group {
   z-index: 12;
   box-shadow: 0px 3px 3px 2px gainsboro;
   padding-bottom: 30rpx;
-  max-height: 600rpx;
 }
 
 .zan-dialog__container .conts {
@@ -579,12 +614,13 @@ checkbox-group {
 
 .zan-dialog__container .conts .coupon {
   width: 100%;
-  box-sizing: border-box;
   border-top: 1rpx solid rgba(8, 8, 8, 0.2);
   display: flex;
-flex-wrap: wrap;
-justify-content: center;
-
+  flex-wrap: wrap;
+  justify-content: center;
+  max-height: 800rpx;
+  overflow: auto;
+  padding-bottom: 30rpx;
 }
 
 .zan-dialog__container .conts .coupon .cont {
@@ -594,6 +630,7 @@ justify-content: center;
   margin-top: 30rpx;
   display: flex;
   justify-content: flex-start;
+  z-index: 3;
 }
 
 .zan-dialog__container .conts .coupon image {
@@ -629,7 +666,7 @@ justify-content: center;
 }
 
 .zan-dialog__container .conts .coupon .cr {
-  width: 590rpx;
+  width: 520rpx;
 }
 
 .zan-dialog__container .conts .coupon .cr .rt {

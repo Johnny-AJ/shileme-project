@@ -6,11 +6,29 @@ Page({
    */
   data: {
     current: 'tab1',
-    seachnum: '',
-    inputValue:'',
+    seachtext: '',
     pageSize:10,
     currPage:1,
-    seach:[]
+    seach:[],
+    type:'',
+    subscript:0,
+    tittle:[{
+      text:'推荐',
+      type:''
+
+    },
+      {
+        text: '价格从低到高',
+        type: 2
+
+      },
+      {
+        text: '价格从高到低',
+        type:1
+
+      }
+    ]
+
 
 
   },
@@ -21,8 +39,7 @@ Page({
   onLoad: function (options) {
     var self =this;
     self.setData({
-      seachnum: options.seach,
-      inputValue: options.inputValue,
+      seachtext: options.seach,
     })
     self.search()
   },
@@ -81,29 +98,42 @@ Page({
     });
   },
   search() { //搜索结果
-    var self = this;
- 
+    var self = this
 
     wx.request({
-      url: 'http://192.168.2.98:9095/api/search/wares/search',
+      url: 'http://192.168.2.98:9095/api/search/wares/searchWares',
       header: {
         token: wx.getStorageSync('token')
       },
       data: {
         pageSize: self.data.pageSize,
         currPage: self.data.currPage,
-        'search': self.data.inputValue
+        search: self.data.seachtext
       },
       success: function (res) {
-       
-        self.setData({
-          seach: res.data.data
-        })
-
+     
+        console.log(res,'55555')
+        if (JSON.stringify(res.data.data) == "{}"){
+          console.log(9999)
+          self.setData({
+            seach: []
+          }) 
+        }else{
+          self.setData({
+            seach: res.data.data
+          }) 
+          
+        }
+           
         console.log(self.data.seach,'self.data.seach')
-
 
       }
     })
   },
+  change(e){
+    console.log(e)
+    // this.setData({
+    //   subscript:e.currPage.d
+    // })
+  }
 })

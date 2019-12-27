@@ -82,30 +82,42 @@ page {
   height: 99rpx;
   box-sizing: border-box;
   padding-top: 10rpx;
+  display: flex;
+  justify-content: flex-start;
+  align-items: center;
   background: #fff;
 }
 
 .search_box .search_button image {
   width: 100%;
   height: 100%;
+ 
+
 }
 
-.indent.checktbs {
-  height: 90rpx;
-  width: 100%;
-}
+
 
 .checktbs .tabs {
-  width: 100%;
-  height: 91rpx;
-  display: flex;
-  background: #fff;
-  align-items: center;
-  padding-bottom: 8rpx;
-  box-sizing: border-box;
-  border: none !important;
-}
+ width: 290rpx;
 
+ height: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.checktbs .tabs:nth-child(1){
+width: 160rpx;
+
+}
+.checktbs .tabs text{
+  font-size:28rpx;
+  font-family:PingFang SC;
+  font-weight:bold;
+  border-bottom: 4rpx solid #fff;
+  padding-bottom: 16rpx;
+  box-sizing: border-box;
+
+}
 .content {
   width: 100%;
   box-sizing: border-box;
@@ -137,16 +149,20 @@ page {
 .content .imgs text {
   color: rgba(0, 0, 0, 0.5);
   font-family: PingFang SC;
+  
 }
 
 .contents {
   width: 100%;
   padding: 0 0 82rpx 0;
   display: flex;
-  justify-content: center;
+  justify-content: space-between;
   flex-wrap: wrap;
 }
-
+.checktbs .tabs  .color{
+  border-color: rgba(240,43,80,1);
+  color:rgba(240,43,80,1);
+}
 .contents .cont {
   width: 330rpx;
   height: 500rpx;

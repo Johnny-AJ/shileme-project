@@ -5,25 +5,45 @@ Page({
    * 页面的初始数据
    */
   data: {
-    current: '1',
-    cartlist: [],
-    cartlist1: [],
-    cartlist2: [],
-    cartlist3: [],
-    cartlist4: [],
-    orderState: '',//订单状态。不传 全部, 1 待付款，2 待发货，3 待收货，4 待评论，5 已完成
-    currPage:1, //页码
-    pageSize:5  //最多输入条数
+    current: 0,
+    tbslist: [{
+        titie: '全部',
+        indes: 0,
+        orderState: '',
+        currPage: 1
+      },
+      {
+        titie: '待付款',
+        indes: 1,
+        orderState: 1,
+        currPage: 1
+      },
+      {
+        titie: '待发货',
+        indes: 2,
+        orderState: 2,
 
-  },
-  handleChange({ //点击上面tabs
-    detail
-  }) {
-    this.setData({
-      current: detail.key
-    }, () => {
-      this.click()
-    });
+      },
+      {
+        titie: '待收货',
+        indes: 3,
+        orderState: 3,
+
+      },
+      {
+        titie: '待评价',
+        indes: 4,
+        orderState: 4,
+
+      },
+    ],
+    cartlist: [], //全部数据
+    cartlist1: [], //拿到最新的数据
+    orderState: '', //订单状态。不传 全部, 1 待付款，2 待发货，3 待收货，4 待评论，5 已完成
+    currPage: 1, //页码
+    pageSize: 5, //最多输入条数
+    hasNext: true,
+    loading: false, // 是否显示loading
   },
   goto(e) {
 
@@ -33,52 +53,55 @@ Page({
 
     })
   },
-  click() { //点击切换tabs
-   var self=this;
-    switch (self.data.current) {
-      case '1':
-        self.setData({
+  click(e) { //点击切换tabs
+    if (e) {
+      if (e.currentTarget.dataset.orderstate) {
+
+        this.setData({
+          cartlist: [],
+          currPage: 1,
+          current: e.currentTarget.dataset.index,
+          orderState: e.currentTarget.dataset.orderstate
+        })
+
+
+      } else {
+        this.setData({
+          cartlist: [],
+          current: 0,
+          currPage: 1,
           orderState: ''
+        })
 
-        });
-        console.log(1)
-        break;
-        case '2':
-
-        self.setData({
-          orderState: 1
-        })
-        console.log(2)
-        break;
-      case '3':
-
-        self.setData({
-          orderState: 2
-        })
-        console.log(3)
-        break;
-      case '4':
-        self.setData({
-          orderState: 3
-        })
-        console.log(4)
-        break;
-      case '5':
-        self.setData({
-          orderState: 4
-        })
-        console.log(5)
-        break;
+      }
+      this.software()
     }
-    this.software()
+
+    // this.software();
+
+    // !this.data.cartlist[this.data.current] && this.software();
+    // console.log(e,'this.data.cartlist')
+
+
   },
   /**
    * 生命周期函数--监听页面加载
    */
   onLoad: function(options) {
 
-    this.software1(); //获取列表页
+    console.log(options)
+    if (options.index == 0) {
+      this.setData({
+        current: options.index,
+        orderState: ''
+      })
+    } else {
 
+      this.setData({
+        current: options.index,
+        orderState: options.orderState
+      })
+    }
 
   },
 
@@ -93,7 +116,7 @@ Page({
    * 生命周期函数--监听页面显示
    */
   onShow: function() {
-    this.software1()
+    this.software()
   },
 
   /**
@@ -121,7 +144,16 @@ Page({
    * 页面上拉触底事件的处理函数
    */
   onReachBottom: function() {
+    var self = this;
+    if (!self.data.hasMore) return;
+    self.setData({
+      currPage: self.data.currPage + 1,
+      loading: true
+    }, () => {
+      self.software()
+    })
 
+    console.log(self.data, 'currPage')
   },
 
   /**
@@ -131,12 +163,13 @@ Page({
 
   },
   software() {
+
+   
     var self = this;
-    const token = wx.getStorageSync('token')
     wx.request({
       url: 'http://192.168.2.98:9095/api/order/getUserOrderList',
       header: {
-        token: token
+        token: wx.getStorageSync('token')
       },
       data: {
         pageSize: self.data.pageSize,
@@ -144,141 +177,69 @@ Page({
         currPage: self.data.currPage
       },
       success(res) {
-        const list =res.data.data.list;
-        console.log(self.data,'self.data')
-        switch (self.data.current) {
-          case '1':
-            self.setData({
-              cartlist: list
-            })
-            break;
-          case '2':
-          
-            self.setData({
-              cartlist1: list
-            })
-            break;
-          case '3':
-      
-            self.setData({
-              cartlist2:list
-            })
-            break;
-          case '4':
-            self.setData({
-              cartlist3: list
-            })
-          
-            break;
-          case '5':
-            self.setData({
-              cartlist4: list
-            })
-            break;
-        }
-
-     
- 
-        for (var i = 0; i < list.length; i++) {
-          switch (list[i].orderState) {
-            case 0:
-              
-              break;
-            case 1:
-              list[i].text = '待付款';
-             
-              break;
-            case 2:
-              list[i].text = '待发货';
-             
-              break;
-            case 3:
-              
-              list[i].text = '待收货';
-              break;
-            case 4:
-             
-              list[i].text = '待评论';
-              break;
-          }
-        }
-        
-
-
+        var cartlist = self.data.cartlist;
+        var cartlist1 = [];
+        cartlist1 = res.data.data.list;
         self.setData({
-          cartlist: res.data.data.list
+          loading: false,
+          cartlist: cartlist.concat(cartlist1),
+          hasMore: cartlist1.length == 5
+
         })
+        console.log(self.data.cartlist, '66666')
 
       }
 
     })
+
+
   },
-  software1() {
-    var self = this;
-    const token = wx.getStorageSync('token')
+  confirm(e) {
+    var self =this;
     wx.request({
-      url: 'http://192.168.2.98:9095/api/order/getUserOrderList',
+      url: 'http://192.168.2.98:9095/api/order/updateOrderStateIsSucceed',
       header: {
-        token: token
+        token: wx.getStorageSync('token')
       },
       data: {
-        pageSize: self.data.pageSize,
-        orderState: self.data.orderState,
-        currPage: self.data.currPage
+        orderId: e.currentTarget.dataset.orderid
       },
-      success(res) {
-       
-        var list = res.data.data.list;
-        for (var i = 0; i < list.length; i++) {
-          switch (list[i].orderState) {
-            case 0:
-
-              break;
-            case 1:
-              list[i].text = '待付款';
-
-              break;
-            case 2:
-              list[i].text = '待发货';
-
-              break;
-            case 3:
-
-              list[i].text = '待收货';
-              break;
-            case 4:
-
-              list[i].text = '待评论';
-              break;
-          }
+      success: function(res) {
+          var cartlist = self.data.cartlist;
+           
+        if(res.data.code==0){
+          wx.showToast({
+            title: '已经确认收货',
+            icon: 'success',
+            duration: 1500
+          },()=>{
+            cartlist.forEach(i => {
+              if (i.orderId == e.currentTarget.dataset.orderid) {
+                cartlist.slice(i, 1)
+              }
+            })
+          })
         }
-
-
-
-
-        self.setData({
-          cartlist: res.data.data.list
-        })
-
+        console.log(res,'updateOrderStateIsSucceed')
       }
 
     })
   },
-  goto(e){//跳转到订单详情
+  goto(e) { //跳转到订单详情
     let orderId = e.currentTarget.dataset.orderid;
-      wx.navigateTo({
-        url: '/pages/order/order?orderId=' + orderId 
-      })
+    wx.navigateTo({
+      url: '/pages/order/order?orderId=' + orderId+'&s=0'
+    })
   },
-  buys(e){
+  buys(e) {
     console.log()
   },
-  remind(){//提示发货
+  remind() { //提示发货
     wx.showToast({
       title: '提醒成功',
       icon: 'success',
       duration: 2000
     })
   }
-  
+
 })

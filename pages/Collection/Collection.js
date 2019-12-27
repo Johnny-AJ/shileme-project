@@ -5,7 +5,9 @@ Page({
    * 页面的初始数据
    */
   data: {
-
+    collection:[],//收藏列表
+    currPage: 1,
+    pageSize: 10
   },
 
   /**
@@ -13,16 +15,14 @@ Page({
    */
   onLoad: function (options) {
     // 头部标题
-    wx.setNavigationBarTitle({
-      title: '我的收藏'
-    })
+    this.Collection()//收藏列表请求
   },
 
   /**
    * 生命周期函数--监听页面初次渲染完成
    */
   onReady: function () {
-
+   
   },
 
   /**
@@ -65,5 +65,22 @@ Page({
    */
   onShareAppMessage: function () {
 
+  },
+  Collection(){
+    var self =this;
+    wx.request({
+      url: 'http://192.168.2.98:9095/api/shop/collect/getList',
+      header:{
+        token:wx.getStorageSync('token')
+      },
+      data:{
+        currPage: self.data.currPage,
+        pageSize: self.data.pageSize
+      },
+      success:function(res){
+        console.log(res)
+      }
+
+    })
   }
 })

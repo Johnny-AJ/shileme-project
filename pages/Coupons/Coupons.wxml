@@ -1,20 +1,20 @@
 <!--pages/Coupons/Coupons.wxml-->
 
 
-<!-- tab栏 -->
-<view class="checktbs">
-  <i-tabs current="{{ current }}" color="#F02B50" bindchange="handleChange" i-class="tabs">
-    <i-tab key="tab1" title="未使用"></i-tab>
-    <i-tab key="tab2" title="已使用"></i-tab>
-    <i-tab key="tab3" title="已过期"></i-tab>
-  </i-tabs>
-</view>
 
-<!-- tab栏 -->
+<view class="Coupons">
 
-<view class="coupons_box">
+  <view class="checktbs">
+    <view class="tbs" wx:for="{{title}}" wx:key="*this"  bindtap="changetbs"  data-index="{{index}}">
+      <text class="{{index==current?'color':''}}">{{item.text}}</text>
+    </view>
+  </view>
 
-  <view class="coupons_nav">
+  <!-- tab栏 -->
+
+  <view class="coupons_box">
+
+    <!-- <view class="coupons_nav">
     <view class="coupons_img">
       <view>￥10</view>
       <view>满100元可用</view>
@@ -22,92 +22,94 @@
     <view class="coupons_tx">
       <view>全品类通用券</view>
     </view>
-  </view>
-
-
-  <view class="not">
-    <view class="imgs">
-       <image src="../../static/scango/组 1.png"></image>
-    </view>
-    <text>暂无记录！</text>
-  </view>
-  <!-- <view class="cont">
-
-    <view class="imgs">
-      <image src="../../static/scango/组 4.png"></image>
-    </view>
-
-
-    <view class="cl ">
-      <view class="t1 ">
-        <text>￥</text>
-        <text>10</text>
-      </view>
-      <view class="t2 ">
-        <text> 满100元可用 </text>
-      </view>
-    </view>
-
-    <view class="cr ">
-      <view class="upper ">
-        全品类通用券
-      </view>
-
-      <view class="rights ">
-        <view class="r1 ">
-          <text>适用平台：</text>
-          <text>全平台</text>
-        </view>
-        <view class="r1 ">
-          <text>有效期至：</text>
-          <text>2019-08-01</text>
-        </view>
-      </view>
-     
-    </view>
-     <view class="rimgs ">
-        <image src="../../static/scango/矩形 16(1).png "></image>
-      </view>
-  </view>
-   <view class="cont">
-
-    <view class="imgs">
-      <image src="../../static/scango/组 4.png"></image>
-    </view>
-
-
-    <view class="cl ">
-      <view class="t1 ">
-        <text>￥</text>
-        <text>10</text>
-      </view>
-      <view class="t2 ">
-        <text> 满100元可用 </text>
-      </view>
-    </view>
-
-    <view class="cr ">
-      <view class="upper ">
-        全品类通用券
-      </view>
-
-      <view class="rights ">
-        <view class="r1 ">
-          <text>适用平台：</text>
-          <text>全平台</text>
-        </view>
-        <view class="r1 ">
-          <text>有效期至：</text>
-          <text>2019-08-01</text>
-        </view>
-      </view>
-     
-    </view>
-     <view class="rimgs ">
-        <image src="../../static/scango/矩形 16(1).png "></image>
-      </view>
   </view> -->
 
 
+    <!-- <view class="not">
+    <view class="imgs">
+      <image src="../../static/scango/组 1.png"></image>
+    </view>
+    <text>暂无记录！</text>
+  </view> -->
+    <view class="cont">
 
+      <view class="imgs">
+        <image src="../../static/scango/组 4.png"></image>
+      </view>
+
+
+      <view class="cl ">
+        <view class="t1 ">
+          <text>￥</text>
+          <text>10</text>
+        </view>
+        <view class="t2 ">
+          <text> 满100元可用 </text>
+        </view>
+      </view>
+
+      <view class="cr ">
+        <view class="upper ">
+          全品类通用券
+        </view>
+
+        <view class="rights ">
+          <view class="r1 ">
+            <text>适用平台：</text>
+            <text>全平台</text>
+          </view>
+          <view class="r1 ">
+            <text>有效期至：</text>
+            <text>2019-08-01</text>
+          </view>
+        </view>
+
+      </view>
+      <view class="rimgs ">
+        <image src="../../static/scango/矩形 16(1).png "></image>
+      </view>
+    </view>
+    <view class="cont">
+
+      <view class="imgs">
+        <image src="../../static/scango/组 4.png"></image>
+      </view>
+
+
+      <view class="cl ">
+        <view class="t1 ">
+          <text>￥</text>
+          <text>10</text>
+        </view>
+        <view class="t2 ">
+          <text> 满100元可用 </text>
+        </view>
+      </view>
+
+      <view class="cr ">
+        <view class="upper ">
+          全品类通用券
+        </view>
+
+        <view class="rights ">
+          <view class="r1 ">
+            <text>适用平台：</text>
+            <text>全平台</text>
+          </view>
+          <view class="r1 ">
+            <text>有效期至：</text>
+            <text>2019-08-01</text>
+          </view>
+        </view>
+
+      </view>
+      <!-- <view class="rimgs ">
+      <image src="../../static/scango/矩形 16(1).png "></image>
+    </view> -->
+    </view>
+
+
+
+  </view>
 </view>
+<!-- tab栏 -->

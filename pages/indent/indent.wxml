@@ -1,17 +1,16 @@
 <!--我的订单-->
 <view class="indent">
   <view class="checktbs">
-    <i-tabs current="{{ current }}" color="#F02B50" bindchange="handleChange" i-class="tabs">
-      <i-tab key="1" title="全部"></i-tab>
-      <i-tab key="2" title="代付款"></i-tab>
-      <i-tab key="3" title="代发货"></i-tab>
-      <i-tab key="4" title="待收货"></i-tab>
-      <i-tab key="5" title="待评价"></i-tab>
-    </i-tabs>
+
+
+    <view class="tbs" wx:for="{{tbslist}}" data-index="{{index}}" data-currPage="{{item.currPage}}" data-orderState="{{item.orderState}}" wx:key="*this" bindtap="click">
+      <text class="{{item.indes==current?'color':''}}">{{item.titie}}</text>
+    </view>
+
   </view>
   <view class="conttent">
 
-    <view class="conts " wx:for="{{cartlist}}" wx:key='*this'>
+    <view class="conts " wx:for="{{cartlist}}" wx:key='*this' wx:if="{{cartlist}}">
       <view class="state p30">
         <text class="time">{{item.createTime}}</text>
         <text>{{item.text}}</text>
@@ -29,19 +28,7 @@
             <text class="t1">{{item.specification}}</text>
             <text class="t2"><text>x1</text></text>
           </view>
-          <!-- <view class="gifts">
-              <view class="gl">赠品:</view>
-              <view class="num">
-                <view class="nums">
-                  <text>Dr.jart蓝色药丸面膜（5ml/片）</text>
-                  <text>X1</text>
-                </view>
-                <view class="nums">
-                  <text>Dr.jart蓝色药丸面膜（5ml/片）</text>
-                  <text>X1</text>
-                </view>
-              </view>
-            </view> -->
+
         </view>
       </view>
 
@@ -56,232 +43,24 @@
           <text class="color" bindtap="busy" wx:if="{{item.orderState ==1}}">付款</text>
           <text class="color" wx:if="{{item.orderState ==2}}" bindtap="remind">提醒发货</text>
           <text wx:if="{{item.orderState ==2}}">取证码</text>
-          <text class="color" wx:if="{{item.orderState ==3}}" >确认收货</text>
+          <text class="color" wx:if="{{item.orderState ==3}}" bindtap="confirm" data-orderId="{{item.orderId}}">确认收货</text>
           <text wx:if="{{item.orderState ==3}}">物流信息</text>
           <text class="color" wx:if="{{item.orderState ==4}}">评价</text>
-
-
         </view>
 
       </view>
+
+
     </view>
-    <view class="conts  {{current==item.orderState+1?'':'close'}} " wx:for="{{cartlist1}}" wx:key='*this'>
-      <view class="state p30">
-        <text class="time">{{item.createTime}}</text>
-        <text>{{item.text}}</text>
-      </view>
-      <view class="cont p30" bindtap="goto" data-orderId="{{item.orderId}}">
-        <view class="imgs">
-          <image src="{{item.logoUrl}}"></image>
-        </view>
-        <view class="cr">
-          <view class="name">
-            <view class="t1">{{item.waresName}}</view>
-            <text class="price">￥{{item.price}}</text>
-          </view>
-          <view class="spec">
-            <text class="t1">{{item.specification}}</text>
-            <text class="t2"><text>x1</text></text>
-          </view>
-          <!-- <view class="gifts">
-              <view class="gl">赠品:</view>
-              <view class="num">
-                <view class="nums">
-                  <text>Dr.jart蓝色药丸面膜（5ml/片）</text>
-                  <text>X1</text>
-                </view>
-                <view class="nums">
-                  <text>Dr.jart蓝色药丸面膜（5ml/片）</text>
-                  <text>X1</text>
-                </view>
-              </view>
-            </view> -->
-        </view>
-      </view>
-
-      <view class="payment">
-        <view class="number">
-          <text class="t1">共{{item.amount}}件</text>
-          <text class="t2">实付：</text>
-          <text class="price">￥ <text>{{item.price}}</text></text>
-        </view>
-        <view class="way p30">
-
-          <text class="color" bindtap="busy" wx:if="{{item.orderState ==1}}">付款</text>
-          <text class="color" wx:if="{{item.orderState ==2}}" bindtap="remind">提醒发货</text>
-          <text wx:if="{{item.orderState ==2}}">取证码</text>
-          <text class="color" wx:if="{{item.orderState ==3}}" >确认收货</text>
-          <text wx:if="{{item.orderState ==3}}">物流信息</text>
-          <text class="color" wx:if="{{item.orderState ==4}}">评价</text>
-
-
-        </view>
-
-      </view>
+    <view class="null" wx:if="{{!cartlist.length}}">
+      <image src="../../static/imgs/组 1 (1).png"></image>
+       <view>  <text>暂无数据！</text></view>
     </view>
-    <view class="conts  {{current==item.orderState+1?'':'close'}} " wx:for="{{cartlist2}}" wx:key='*this'>
-      <view class="state p30">
-        <text class="time">{{item.createTime}}</text>
-        <text>{{item.text}}</text>
-      </view>
-      <view class="cont p30" bindtap="goto" data-orderId="{{item.orderId}}">
-        <view class="imgs">
-          <image src="{{item.logoUrl}}"></image>
-        </view>
-        <view class="cr">
-          <view class="name">
-            <view class="t1">{{item.waresName}}</view>
-            <text class="price">￥{{item.price}}</text>
-          </view>
-          <view class="spec">
-            <text class="t1">{{item.specification}}</text>
-            <text class="t2"><text>x1</text></text>
-          </view>
-          <!-- <view class="gifts">
-              <view class="gl">赠品:</view>
-              <view class="num">
-                <view class="nums">
-                  <text>Dr.jart蓝色药丸面膜（5ml/片）</text>
-                  <text>X1</text>
-                </view>
-                <view class="nums">
-                  <text>Dr.jart蓝色药丸面膜（5ml/片）</text>
-                  <text>X1</text>
-                </view>
-              </view>
-            </view> -->
-        </view>
-      </view>
-
-      <view class="payment">
-        <view class="number">
-          <text class="t1">共{{item.amount}}件</text>
-          <text class="t2">实付：</text>
-          <text class="price">￥ <text>{{item.price}}</text></text>
-        </view>
-        <view class="way p30">
-
-          <text class="color" bindtap="busy" wx:if="{{item.orderState ==1}}">付款</text>
-          <text class="color" wx:if="{{item.orderState ==2}}"  bindtap="remind">提醒发货</text>
-          <text wx:if="{{item.orderState ==2}}">取证码</text>
-          <text class="color" wx:if="{{item.orderState ==3}}">确认收货</text>
-          <text wx:if="{{item.orderState ==3}}">物流信息</text>
-          <text class="color" wx:if="{{item.orderState ==4}}">评价</text>
-
-
-        </view>
-
-      </view>
+    <!-- <view class="weui-loadmore" > -->
+    <view class="weui-loadmore" hidden='{{!loading}}'>
+      <view class="weui-loading"></view>
+      <view class="weui-loadmore__tips">正在加载</view>
     </view>
-    <view class="conts  {{current==item.orderState+1?'':'close'}} " wx:for="{{cartlist3}}" wx:key='*this'>
-      <view class="state p30">
-        <text class="time">{{item.createTime}}</text>
-        <text>{{item.text}}</text>
-      </view>
-      <view class="cont p30" bindtap="goto" data-orderId="{{item.orderId}}">
-        <view class="imgs">
-          <image src="{{item.logoUrl}}"></image>
-        </view>
-        <view class="cr">
-          <view class="name">
-            <view class="t1">{{item.waresName}}</view>
-            <text class="price">￥{{item.price}}</text>
-          </view>
-          <view class="spec">
-            <text class="t1">{{item.specification}}</text>
-            <text class="t2"><text>x1</text></text>
-          </view>
-          <!-- <view class="gifts">
-              <view class="gl">赠品:</view>
-              <view class="num">
-                <view class="nums">
-                  <text>Dr.jart蓝色药丸面膜（5ml/片）</text>
-                  <text>X1</text>
-                </view>
-                <view class="nums">
-                  <text>Dr.jart蓝色药丸面膜（5ml/片）</text>
-                  <text>X1</text>
-                </view>
-              </view>
-            </view> -->
-        </view>
-      </view>
-
-      <view class="payment">
-        <view class="number">
-          <text class="t1">共{{item.amount}}件</text>
-          <text class="t2">实付：</text>
-          <text class="price">￥ <text>{{item.price}}</text></text>
-        </view>
-        <view class="way p30">
-
-          <text class="color" bindtap="busy" wx:if="{{item.orderState ==1}}">付款</text>
-          <text class="color" wx:if="{{item.orderState ==2}}" bindtap="remind">提醒发货</text>
-          <text wx:if="{{item.orderState ==2}}">取证码</text>
-          <text class="color" wx:if="{{item.orderState ==3}}" >确认收货</text>
-          <text wx:if="{{item.orderState ==3}}">物流信息</text>
-          <text class="color" wx:if="{{item.orderState ==4}}">评价</text>
-
-
-        </view>
-
-      </view>
-    </view>
-    <view class="conts  {{current==item.orderState+1?'':'close'}} " wx:for="{{cartlist4}}" wx:key='*this'>
-      <view class="state p30">
-        <text class="time">{{item.createTime}}</text>
-        <text>{{item.text}}</text>
-      </view>
-      <view class="cont p30" bindtap="goto" data-orderId="{{item.orderId}}">
-        <view class="imgs">
-          <image src="{{item.logoUrl}}"></image>
-        </view>
-        <view class="cr">
-          <view class="name">
-            <view class="t1">{{item.waresName}}</view>
-            <text class="price">￥{{item.price}}</text>
-          </view>
-          <view class="spec">
-            <text class="t1">{{item.specification}}</text>
-            <text class="t2"><text>x1</text></text>
-          </view>
-          <!-- <view class="gifts">
-              <view class="gl">赠品:</view>
-              <view class="num">
-                <view class="nums">
-                  <text>Dr.jart蓝色药丸面膜（5ml/片）</text>
-                  <text>X1</text>
-                </view>
-                <view class="nums">
-                  <text>Dr.jart蓝色药丸面膜（5ml/片）</text>
-                  <text>X1</text>
-                </view>
-              </view>
-            </view> -->
-        </view>
-      </view>
-
-      <view class="payment">
-        <view class="number">
-          <text class="t1">共{{item.amount}}件</text>
-          <text class="t2">实付：</text>
-          <text class="price">￥ <text>{{item.price}}</text></text>
-        </view>
-        <view class="way p30">
-
-          <text class="color" bindtap="busy" wx:if="{{item.orderState ==1}}">付款</text>
-          <text class="color" wx:if="{{item.orderState ==2}}" bindtap="remind">提醒发货</text>
-          <text wx:if="{{item.orderState ==2}}">取证码</text>
-          <text class="color" wx:if="{{item.orderState ==3}}" >确认收货</text>
-          <text wx:if="{{item.orderState ==3}}">物流信息</text>
-          <text class="color" wx:if="{{item.orderState ==4}}">评价</text>
-
-
-        </view>
-
-      </view>
-    </view>
-
 
 
   </view>

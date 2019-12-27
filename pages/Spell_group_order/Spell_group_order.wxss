@@ -4,7 +4,7 @@
   width: 100%;
   height: 100%;
   background: #f5f5f5;
-  overflow: hidden;
+ 
 }
 
 .big_box {
@@ -22,20 +22,21 @@
   box-sizing: border-box;
   padding: 0 30rpx;
 }
-.big_box .flex_box .top_img{
+
+.big_box .flex_box .top_img {
   height: 100%;
   display: flex;
   width: 30rpx;
   align-items: center;
   justify-content: flex-end;
-
 }
+
 .big_box .top_box {
   width: 660rpx;
   height: 144rpx;
-
 }
-.big_box .top_box1{
+
+.big_box .top_box1 {
   width: 668rpx;
   height: 144rpx;
   box-sizing: border-box;
@@ -44,17 +45,18 @@
   justify-content: center;
   align-items: center;
 }
+
 .top_box .t1 {
-font-size:30rpx;
-font-family:PingFang SC;
-font-weight:bold;
-color:rgba(34,34,34,1);
+  font-size: 30rpx;
+  font-family: PingFang SC;
+  font-weight: bold;
+  color: rgba(34, 34, 34, 1);
 }
 
-.top_box .t1 text:nth-child(1){
+.top_box .t1 text:nth-child(1) {
   margin: 0 29rpx;
-  
 }
+
 .top_box .t1 .text {
   width: 70rpx;
   height: 40rpx;
@@ -63,7 +65,6 @@ color:rgba(34,34,34,1);
   padding: 9rpx 11rpx;
   color: #fff;
   font-size: 23rpx;
-
 }
 
 .top_box .t2 {
@@ -72,13 +73,14 @@ color:rgba(34,34,34,1);
   color: rgba(240, 43, 80, 1);
   margin-top: 10rpx;
 }
-.top_box .t3{
+
+.top_box .t3 {
   margin-top: 10rpx;
 }
+
 .big_box image {
   height: 35rpx;
   width: 22rpx;
-
 }
 
 .flex1_box {
@@ -120,29 +122,31 @@ color:rgba(34,34,34,1);
 
 /* ------------ */
 
- .zan-dialog .conts {
+.zan-dialog .conts {
   width: 100%;
   background: #fff;
   display: flex;
-  height: 700rpx;
+
   justify-content: center;
   align-items: center;
   flex-wrap: wrap;
 }
+
 .zan-dialog .conts image {
   width: 248.7rpx;
   height: 267.7rpx;
 }
-.zan-dialog .conts text{
+
+.zan-dialog .conts text {
   width: 100%;
-  font-size:34rpx;
-font-family:PingFang SC;
-font-weight:400;
-color:rgba(102,102,102,1);
-display: flex;
-justify-content: center;
-margin-top: 30rpx;
+  font-size: 34rpx;
+  font-family: PingFang SC;
+  font-weight: 400;
+  color: rgba(102, 102, 102, 1);
+
+  /* margin-top: 30rpx; */
 }
+
 .conttent .conts .state {
   height: 72rpx;
   width: 100%;
@@ -309,37 +313,37 @@ margin-top: 30rpx;
   color: rgba(153, 153, 153, 1);
 }
 
-.coupon {
+.coupons {
   width: 100%;
   height: 120rpx;
- background: #fff;
- margin-top: 20rpx;
-
+  background: #fff;
+  margin-top: 20rpx;
 }
 
-.coupon  view{
+.coupons  view {
   height: 60rpx;
   width: 100%;
-    box-sizing: border-box;
+  box-sizing: border-box;
   padding: 0 30rpx;
   display: flex;
   justify-content: space-between;
   align-items: center;
-
 }
 
-.coupon  view text{
-  font-size:26rpx;
-font-family:PingFang SC;
-font-weight:400;
-color:rgba(34,34,34,1);
+.coupons  view text {
+  font-size: 26rpx;
+  font-family: PingFang SC;
+  font-weight: 400;
+  color: rgba(34, 34, 34, 1);
 }
-.coupon  view  .color{
-  font-size:22rpx;
-font-family:PingFang SC;
-font-weight:400;
-color:rgba(240,43,80,1);
+
+.coupons  view  .color {
+  font-size: 22rpx;
+  font-family: PingFang SC;
+  font-weight: 400;
+  color: rgba(240, 43, 80, 1);
 }
+
 .minute {
   width: 100%;
   height: 240rpx;
@@ -347,7 +351,8 @@ color:rgba(240,43,80,1);
   background: #fff;
   margin-bottom: 20rpx;
 }
-.minute view{
+
+.minute view {
   height: 60rpx;
   display: flex;
   width: 100%;
@@ -356,21 +361,22 @@ color:rgba(240,43,80,1);
   box-sizing: border-box;
   padding: 0 29rpx;
 }
-.minute view  text{
 
-  font-size:26rpx;
-font-family:PingFang SC;
-font-weight:400;
-color:rgba(34,34,34,1);
-}
-.minute view .color{
-  font-size:26rpx;
-font-family:PingFang SC;
-font-weight:400;
-color:rgba(240,43,80,1);
+.minute view  text {
+  font-size: 26rpx;
+  font-family: PingFang SC;
+  font-weight: 400;
+  color: rgba(34, 34, 34, 1);
 }
 
-.buy{
+.minute view .color {
+  font-size: 26rpx;
+  font-family: PingFang SC;
+  font-weight: 400;
+  color: rgba(240, 43, 80, 1);
+}
+
+.buy {
   height: 98rpx;
   width: 100%;
   position: fixed;
@@ -379,36 +385,40 @@ color:rgba(240,43,80,1);
   display: flex;
   background: #fff;
 }
-.buy .bl{
+
+.buy .bl {
   width: 490rpx;
   height: 100%;
   display: flex;
   align-items: center;
   /* text-align: right; */
-   flex-direction:row-reverse;
+  flex-direction: row-reverse;
 }
-.buy .bl text:nth-child(1){
-  margin-right: 34rpx;
- font-family:PingFang SC;
-font-weight:bold;
-color:rgba(240,43,80,1);
 
+.buy .bl text:nth-child(1) {
+  margin-right: 34rpx;
+  font-family: PingFang SC;
+  font-weight: bold;
+  color: rgba(240, 43, 80, 1);
 }
-.buy .bl text:nth-child(2){
+
+.buy .bl text:nth-child(2) {
   margin-right: 6rpx;
 }
-.buy .br{
+
+.buy .br {
   width: 260rpx;
   height: 100%;
   display: flex;
   justify-content: center;
   align-items: center;
-  background:rgba(240,43,80,1);
- font-size:34rpx;
-font-family:PingFang SC;
-font-weight:bold;
-color:rgba(255,255,255,1);
+  background: rgba(240, 43, 80, 1);
+  font-size: 34rpx;
+  font-family: PingFang SC;
+  font-weight: bold;
+  color: rgba(255, 255, 255, 1);
 }
+
 .zan-dialog__mask {
   position: fixed;
   top: 0;
@@ -419,9 +429,7 @@ color:rgba(255,255,255,1);
   background: rgba(0, 0, 0, 0.75);
   display: none;
 }
-.zan-dialog--show{
-  position: relative;
-}
+
 .zan-dialog__container {
   position: fixed;
   bottom: 0rpx;
@@ -432,8 +440,13 @@ color:rgba(255,255,255,1);
   transition: all 0.4s ease;
   z-index: 12;
   box-shadow: 0px 3px 3px 2px gainsboro;
+  padding-bottom: 30rpx;
+}
 
-  padding-bottom: 178rpx
+.zan-dialog__container .conts {
+  width: 100%;
+  box-sizing: border-box;
+  padding: 0 30rpx;
 }
 
 .zan-dialog--show .zan-dialog__container {
@@ -444,20 +457,7 @@ color:rgba(255,255,255,1);
 .zan-dialog--show .zan-dialog__mask {
   display: block;
 }
-.zan-dialog--show .zan-dialog__container .imgs{
-  width: 61rpx;
-  height: 61rpx;
-  position: absolute;
-  top: -122rpx;
-  left: 50%;
-  transform: translateX(-50%)
 
-
-}
-.zan-dialog--show .zan-dialog__container .imgs image{
-  height: 100%;
-  width: 100%
-}
 .show1 .zan-dialog__container {
   transform: translateY(0);
   background: #fff;
@@ -465,4 +465,159 @@ color:rgba(255,255,255,1);
 
 .show1 .zan-dialog__mask {
   display: block;
+}
+
+.show1 .zan-dialog__container .conts {
+  width: 100%;
+  box-sizing: border-box;
+  padding: 0 30rpx;
+}
+
+.zan-dialog__container .conts .title {
+  width: 100%;
+  height: 90rpx;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.zan-dialog__container .conts .coupon {
+  width: 100%;
+  border-top: 1rpx solid rgba(8, 8, 8, 0.2);
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  max-height: 800rpx;
+
+  overflow: auto;
+  padding-bottom: 30rpx;
+}
+
+.zan-dialog__container .conts .coupon .cont {
+  width: 690rpx;
+  height: 210rpx;
+  margin: 0;
+  padding: 0;
+  position: relative;
+  margin-top: 30rpx;
+  display: flex;
+  justify-content: flex-start;
+  border: 1rpx solid #f5f5f5;
+  z-index: 3;
+}
+
+.zan-dialog__container .conts .coupon image {
+  width: 100%;
+  height: 100%;
+  position: absolute;
+  z-index: -1;
+}
+
+.zan-dialog__container .conts .coupon .cl {
+  width: 400rpx;
+  height: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  box-sizing: border-box;
+padding-left: 18rpx;
+
+}
+
+.zan-dialog__container .conts .coupon .cl  .t1 {
+  font-size: 80rpx;
+  font-family: PingFang SC;
+  font-weight: bold;
+  color: rgba(255, 255, 255, 1);
+}
+
+.zan-dialog__container .conts .coupon .cl  .t2 {
+  font-size: 30rpx;
+  font-family: PingFang SC;
+  font-weight: 400;
+  color: rgba(255, 255, 255, 1);
+  position: relative;
+top: -14rpx;
+left: 16rpx;
+
+}
+
+.zan-dialog__container .conts .coupon .cr {
+  width: 520rpx;
+  height: 100%;
+}
+
+.zan-dialog__container .conts .coupon .cr .rt {
+  width: 100%;
+  height: 86rpx;
+ display: flex;
+justify-content: center;
+flex-wrap: wrap;
+
+}
+
+.zan-dialog__container .conts .coupon .cr .rt .t1 {
+  font-size: 30rpx;
+  font-family: PingFang SC;
+  font-weight: 500;
+  color: rgba(34, 34, 34, 1);
+  display: flex;
+  align-items: center;
+}
+
+.zan-dialog__container .conts .coupon .cr .rt .t2 {
+  position: absolute;
+  width: 150rpx;
+  height: 60rpx;
+  border: 1rpx solid rgba(240, 43, 80, 1);
+  border-radius: 30rpx;
+  right: 21rpx;
+  font-size: 28rpx;
+  font-family: PingFang SC;
+  font-weight: bold;
+  color: rgba(240, 43, 80, 1);
+  text-align: center;
+  line-height: 60rpx;
+}
+
+.zan-dialog__container .conts .coupon .cr .rt .t3 {
+  position: absolute;
+  width: 150rpx;
+  height: 60rpx;
+  border: 1px solid rgba(153, 153, 153, 1);
+  border-radius: 30rpx;
+  right: 21rpx;
+  font-size: 28rpx;
+  font-family: PingFang SC;
+  font-weight: bold;
+  color: rgba(153, 153, 153, 1);
+  text-align: center;
+  line-height: 60rpx;
+}
+
+.zan-dialog__container .conts .coupon .cr .rb {
+  display: flex;
+  flex-direction: column;
+  width: 100%;
+}
+
+.zan-dialog__container .conts .coupon .cr .rb  text {
+  font-size: 26rpx;
+  font-family: PingFang SC;
+  font-weight: 400;
+  color: rgba(153, 153, 153, 1);
+}
+
+.zan-dialog__container .imgs {
+  position: absolute;
+  top: -120rpx;
+  width: 61rpx;
+  height: 61rpx;
+  left: 350rpx;
+}
+
+.zan-dialog__container .imgs image {
+  width: 100%;
+  height: 100%;
 }

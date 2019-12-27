@@ -68,35 +68,6 @@ Page({
 
 
   },
-
-  search() { //搜索结果
-    var self = this;
-    var token = wx.getStorageSync('token')
-
-    wx.request({
-      url: 'http://192.168.2.98:9095/api/search/wares/search',
-      header: {
-        token: wx.getStorageSync('token')
-      },
-      data: {
-        pageSize: self.data.pageSize,
-        currPage: self.data.currPage,
-        'search': self.data.inputValue
-      },
-      success: function(res) {
-        // console.log(res, 'res')
-        self.setData({
-          seach: res.data.data
-        })
-
-
-        wx.navigateTo({
-          url: '/pages/searches/searches?seach=' + res.data.data.length + '&inputValue=' + self.data.inputValue,
-        })
-
-      }
-    })
-  },
   clear() {
     this.setData({
       inputValue: ''
@@ -139,5 +110,20 @@ Page({
         // console.log(res)
       }
     })
+  },
+  // 点击键盘上的搜索
+  bindconfirm: function (e) {
+    var that = this;
+    var discountName = e.detail.value['search - input'] ? e.detail.value['search - input'] : e.detail.value;
+
+    if (discountName.trim()){
+      wx.navigateTo({
+        url: '/pages/searches/searches?seach=' + discountName 
+      })
+    }
+
+    console.log('e.detail.value', discountName)
   }
+
+
 })

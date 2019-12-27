@@ -77,17 +77,9 @@ Page({
   },
   // 编辑
   handeditor(e) {
-    console.log(e)
-    let index = e.currentTarget.dataset.index
-    // let id = e.currentTarget.dataset.oder
-    // this.setData({
-    //   id: id
-    // })
-    const addAddressList = this.data.addAddressList
-    let bb = addAddressList[index]
-    let cc = JSON.stringify(bb)
+    console.log(e,'修改地址')
     wx.navigateTo({
-      url: '/pages/inetAddress_copy/inetAddress_copy?bjid=' + cc //跳转到编辑页面
+      url: '/pages/inetAddress_copy/inetAddress_copy?id=' + e.currentTarget.dataset.id //跳转到编辑页面
       // url: '/pages/inetAddress_copy/inetAddress_copy'
     })
   },

@@ -7,51 +7,55 @@
 
   <!-- 购物车上半部分 -->
   <view class="lj" bindtap="toggleDialog">
-      <view class="title">购物车</view>
-      <view class="ljcont">
-        <view wx:for="{{getListByWaresId1}}" wx:key="*this">{{item.name}}</view>
-      </view>
-      <image src="../../static/scango/矩形 16(1).png"></image>
+    <view class="title">购物车</view>
+    <view class="ljcont">
+      <view wx:for="{{getListByWaresId1}}" wx:key="*this">{{item.name}}</view>
     </view>
+    <image src="../../static/scango/矩形 16(1).png"></image>
+  </view>
 
   <!-- 购物车下半部分 -->
   <view class="cart">
-    <view class="product-item">
-      <checkbox-group bindchange="checkboxChange">
-        <label class="checkbox" wx:for="{{slideProductList}}" for="checkbox" wx:for-index="index" wx:key="{{item.id}}">
-          <slide-delete pid="{{item.id}}" bindaction="handleSlideDelete" wx:key="{{item.id}}">
-            <view class="cart_box">
-              <!-- 按钮 -->
+    <view class="null" wx:if="{{!chooseGoods.length}}">
+      购物车没有商品，快去逛一逛
+    </view>
+    <view class="product-item" wx:if="{{chooseGoods}}">
 
-              <view class="cart-box_left">
-                <image src="../../static/imgs/失效.png" wx:if="{{show}}"></image>
-                <checkbox value="{{item.id}}" disabled="{{item.repertory==0}}" checked="{{item.checked}}" wx:if="{{!show}}" class="checkout">
-                </checkbox>
+      <!-- <label class="checkbox" > -->
+      <block wx:for="{{chooseGoods}}" wx:for-index="index" wx:key="*this">
+        <slide-delete pid="{{item.id}}" bindaction="handleSlideDelete" wx:key="{{item.id}}">
+          <view class="cart_box">
+            <!-- 按钮 -->
+
+            <view class="cart-box_left">
+              <image src="../../static/imgs/失效.png" wx:if="{{item.waresStatus==1}}" class="imgs1"></image>
+              <image src="../../static/imgs/椭圆 1.png" wx:if="{{!item.flag}}" bindtap="chooseThis" data-id="{{item.id}}"></image>
+              <image src="../../static/imgs/组 26.png" wx:if="{{item.flag}}" bindtap="chooseThis" data-id="{{item.id}}"></image>
+            </view>
+            <!-- 图片 -->
+            <view class="images">
+              <image src="{{item.logoUrl}}"></image>
+            </view>
+            <!-- 内容 -->
+            <view class="cart_nav">
+
+              <view class="text1">{{item.waresName}}</view>
+
+              <view class="text2">{{item.specification}}</view>
+              <view class="state">
+                <text wx:if="{{item.repertory==0}}">库存不足，请重新选择</text>
               </view>
-              <!-- 图片 -->
-              <view class="images">
-                <image src="../../static/imgs/矩形 3.png"></image>
+              <view class="cart_price">
+                <view class="text3">
+                  <text>￥ <text>{{item.allPrice}}</text> </text>
+                </view>
+                <view class="text4">
+                  <i-input-number i-class="inputs" data-id="{{item.id}}" value="{{item.amount}}" min="1" max="100" bindchange="handleChange1" />
+                </view>
               </view>
-              <!-- 内容 -->
-              <view class="cart_nav">
-
-                <view class="text1">{{item.name}}</view>
-
-                <view class="text2">{{item.standard}}</view>
-                <view class="state">
-                  <text wx:if="{{item.repertory==0}}">库存不足，请重新选择</text>
-                </view>
-                <view class="cart_price">
-                  <view class="text3">
-                    <text>￥ <text>{{item.price}}</text> </text>
-                  </view>
-                  <view class="text4">
-                    <i-input-number i-class="inputs" data-id="{{item.id}}" value="{{item.num}}" min="1" max="100" bindchange="handleChange1" />
-                  </view>
-                </view>
 
 
-                <view class="text5 {{item.gift.length==0?'none':'block'}} ">
+              <!-- <view class="text5 {{item.gift.length==0?'none':'block'}} ">
 
                   <view class="tl">赠品：</view>
                   <view class="tr">
@@ -61,14 +65,15 @@
                     </view>
 
                   </view>
-                </view>
+                </view> -->
 
 
-              </view>
             </view>
-          </slide-delete>
-        </label>
-      </checkbox-group>
+          </view>
+        </slide-delete>
+      </block>
+      <!-- </label> -->
+
     </view>
 
   </view>
@@ -83,42 +88,27 @@
 
   <view class="conts" bindtap="handurl" data-url="/pages/scango/scango">
     <view class="content">
-      <view class="cont">
-        <image src="../../static/imgs/矩形 3.png"></image>
-        <view class="name pl20">保湿急救 网红蓝药丸面.</view>
-        <view class="content_client pl20">Dr.Jart 宛若新生保湿面膜.</view>
-        <view class="price pl20">￥
-          <text class="nowprice">79 </text>
+      <view class="cont" wx:for="{{cartlist}}" wx:key="*this" bindtap="goto" data-waresId="{{item.waresId}}">
+        <image src="{{item.logoUrl}}"></image>
+        <view class="name pl20">{{item.waresName}}</view>
+        <view class="content_client pl20">
+          <text hidden="{{!item.advertising}}">{{item.advertising}}</text>
         </view>
-      </view>
-      <view class="cont">
-        <image src="../../static/imgs/矩形 3.png"></image>
-        <view class="name pl20">保湿急救 网红蓝药丸面.</view>
-        <view class="content_client pl20">Dr.Jart 宛若新生保湿面膜.</view>
         <view class="price pl20">￥
-          <text class="nowprice">79 </text>
-        </view>
-      </view>
-      <view class="cont">
-        <image src="../../static/imgs/矩形 3.png"></image>
-        <view class="name pl20">保湿急救 网红蓝药丸面.</view>
-        <view class="content_client pl20">Dr.Jart 宛若新生保湿面膜.</view>
-        <view class="price pl20">￥
-          <text class="nowprice">79 </text>
-        </view>
-      </view>
-      <view class="cont">
-        <image src="../../static/imgs/矩形 3.png"></image>
-        <view class="name pl20">保湿急救 网红蓝药丸面.</view>
-        <view class="content_client pl20">Dr.Jart 宛若新生保湿面膜.</view>
-        <view class="price pl20">￥
-          <text class="nowprice">79 </text>
-
+          <text class="nowprice">{{item.mallPrice}} </text>
         </view>
       </view>
 
+      <view class="weui-loadmore" hidden='{{!loading}}'>
+        <view class="weui-loading"></view>
+        <view class="weui-loadmore__tips">正在加载</view>
+      </view>
+      <view class="weui-loadmore weui-loadmore_line" hidden='{{hasNext}}'>
+        <view class="weui-loadmore__tips weui-loadmore__tips_in-line">到底了</view>
+      </view>
 
     </view>
+
   </view>
 
 
@@ -127,7 +117,8 @@
   <!-- 结算 -->
   <view class="settlement">
 
-    <radio>全部</radio>
+    <image src="../../static/imgs/椭圆 1.png" wx:if="{{!selectAllStatus}}" bindtap="selectAllStatus" data-id="{{item.id}}"></image>
+    <image src="../../static/imgs/组 26.png" wx:if="{{selectAllStatus}}" bindtap="selectAllStatus" data-id="{{item.id}}"></image>
 
     <view class="heji">
       <view class="text6">合计：
@@ -135,45 +126,9 @@
       </view>
     </view>
 
-    <view class="button" bindtap="handurl" data-url="/pages/Spell_group_order/Spell_group_order">去结算</view>
+    <view class="button" bindtap="buys" data-url="/pages/Spell_group_order/Spell_group_order">去结算</view>
   </view>
 
-<!-- 弹窗 -->
-  <view class="zan-dialog {{ showDialog ? 'zan-dialog--show' : '' }}">
-    <!-- <view class="zan-dialog  zan-dialog--show"> -->
-    <view class="zan-dialog__mask" />
-    <view class="zan-dialog__container">
-      <view class="imgs">
-        <image src="../../static/scango/关闭icon.png" bindtap="toggleDialog"></image>
-      </view>
-      <view class="conts">
-        <view class="title"> 优惠劵 </view>
-        <view class="coupon">
-          <view class="cont" wx:for="{{getListByWaresId}}" wx:key="*this">
-            <image src="../../static/scango/组 4.png"></image>
-            <view class="cl">
-              <text class="t1">￥{{item.money}}</text>
-              <text class="t2">满{{item.startMoney}}元可用</text> {{itme.id}}
-            </view>
-            <view class="cr">
-              <view class="rt">
-                <text class="t1">{{item.name}}</text>
-                <text class="t2" wx:if="{{item.isGet==1}}" data-id="{{item.id}}" bindtap="getDiscountById">领取</text>
-                <text class="t3" wx:if="{{item.isGet==0}}">已领取</text>
-              </view>
-              <view class=" rb ">
-                <text class="t1 ">适用平台：{{item.text}}</text>
-                <text class="t2 ">有效期至：{{item.endDate}}</text>
-              </view>
-            </view>
-          </view>
+  <!-- 弹窗 -->
 
-        </view>
-        <!-- <view class="coupon1">
-          <image src="../../static/imgs/组 7.png"></image>
-          <text>功能暂未开放,敬请期待!</text>
-        </view> -->
-      </view>
-    </view>
-  </view>
 </view>

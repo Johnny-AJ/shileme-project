@@ -67,8 +67,9 @@ Page({
 
   },
   goto(){
+    console.log(6666)
     wx.navigateTo({
-      url: '/pages/order/order？s=1',
+      url: '/pages/order/order?s=2',
     })
   }
 })

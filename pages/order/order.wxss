@@ -6,7 +6,9 @@
   box-sizing: border-box;
   padding-left: 30rpx;
 }
-
+page{
+  background: #f5f5f5;
+}
 .p30 {
   box-sizing: border-box;
   padding: 0 30rpx ;
@@ -60,7 +62,7 @@ color:rgba(255,255,255,0.9);
 .order   .users {
   height: 151rpx;
   width: 100%;
-  padding-bottom: 11rpx;
+  padding-bottom: 19rpx;
   background: #fff;
 }
 

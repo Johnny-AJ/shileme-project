@@ -5,7 +5,13 @@ Page({
    * 页面的初始数据
    */
   data: {
-    userInfo: ''
+    avatarUrl:'',
+    nickName:'',
+    cartlist: [],
+    currPage: 0,
+    hasNext: true, //
+    loading: false, // 是否显示loading
+    hasNext: true,
   },
 
   /**
@@ -13,61 +19,95 @@ Page({
    */
   onLoad(options) {
     // 头部标题
-    var that = this
+   
+    this.login();
+    this.carlist(); //获取为你推荐的商品列表
+  },
+  onReachBottom: function () {//下拉触发
 
-    wx.login({
-      success: function(res) {
-        // console.log(res, 123)
-        if (res.code) {
-          // 发送请求
-          wx.request({
-            // 微信登录
-            url: 'http://192.168.2.98:9095/api/wechat/auth',
-            data: {
-              code: res.code
-            },
-            method: "get",
-            success: (res) => {
-              console.log('个人中心',res)
-              // if (res.data.code == 0) {
-              //   var token = res.data.msg;
-              //   // 获取用户信息
-              //   wx.getUserInfo({
-              //     success: (res) => {
-              //       var userInfo = res.userInfo //用户信息
-              //       // console.log(userInfo, 456)
-              //       that.setData({
-              //         userInfo
-              //       })
-              //       wx.request({
-              //         // 用户信息
-              //         url: 'http://192.168.2.98:9095/api/wechat/updateUserInfo',
-              //         method: "post",
-              //         data: res.userInfo,
-              //         header: {
-              //           'token': token, //请求头携带参数
-              //           'content-type': 'application/json',
-              //         }
-              //       })
-              //     }
-              //   })
-              // }
-            }
-          })
-        }
-      }
+
+    var self = this;
+    if (!self.data.hasMore) return;
+    self.setData({
+      currPage: self.data.currPage + 1,
+      loading: true
+    }, () => {
+      self.carlist()
     })
+
   },
 
-  // 用户信息
-  handlegetuserinfo(e) {
-    console.log(e, 123)
-  },
   // 路径封装
   handurl: function(e) {
     // 路由封装
+    if (e.currentTarget.dataset.index==0){
+      wx.navigateTo({
+        url: '/pages/indent/indent?index=' + e.currentTarget.dataset.index 
+       
+      })
+    }else{
+      wx.navigateTo({
+        url: '/pages/indent/indent?index=' + e.currentTarget.dataset.index + '&orderState=' + e.currentTarget.dataset.orderstate,
+        // url: e.currentTarget.dataset.url,
+      })
+
+      
+    }
+  },
+  handurl1: function (e) {
+    // 路由封装
+   
+      wx.navigateTo({
+        url: '/pages/service/service',
+        // url: e.currentTarget.dataset.url,
+      })
+  
+  },
+  handur2: function (e) {
+    // 路由封装
+    console.log(2222)
     wx.navigateTo({
+      // url: '/pages/service/service',
       url: e.currentTarget.dataset.url,
+    })
+
+  },
+  login(){
+    this.setData({
+      avatarUrl: wx.getStorageSync('avatarUrl')
+    })
+    this.setData({
+      nickName: wx.getStorageSync('nickName')
+    })
+    
+  },
+  carlist() { //获取商品
+    var self = this;
+    wx: wx.request({
+      url: 'http://192.168.2.98:9095/api/index/findAllWaresByCate',
+      data: {
+        categoryId: '',
+        currPage: self.data.currPage,
+        pageSize: 4
+      },
+      header: {
+        token: wx.getStorageSync('token')
+      },
+      success: function (res) {
+
+
+        var cartlist = self.data.cartlist;
+        var productlist1 = [];
+        productlist1 = res.data.data.list,
+          self.setData({
+            loading: false,
+            cartlist: cartlist.concat(productlist1),
+            hasMore: res.data.data.list.length == 4,
+            hasNext: res.data.data.hasNext
+          })
+      },
+      fail: function (res) { },
+
     })
   },
 })

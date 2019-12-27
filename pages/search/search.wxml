@@ -3,9 +3,10 @@
   <view class="mysearch dj">
     <view class="sl dj">
       <image src="../../static/imgs/搜索.png"></image>
-      <input class="weui-input" value='{{inputValue}}' data-name="inputValue" bindinput="bindKeyInput" type='text' placeholder="搜索更多好物" />
+      <input  name="search" type='text' value='{{inputValue}}' confirm-type="search" bindconfirm="bindconfirm"  focus='{{focus}}' bindinput='bindinput' placeholder="搜索更多好物" ></input>
+      <!-- <input class="weui-input" value='{{inputValue}}' data-name="inputValue" bindinput="bindKeyInput" type='text' placeholder="搜索更多好物" /> -->
     </view>
-    <view class="sr">取消</view>
+    <view class="sr" bindtap="clear">取消</view>
   </view>
 
   <view class="top-search">

@@ -28,8 +28,6 @@ Page({
     currPage: 0,
     getListByWaresId: [],
     getListByWaresId1: []
-
-
   },
 
   /**
@@ -90,7 +88,7 @@ Page({
    */
   onShow: function() {
     this.getDiscountById();
-  
+
 
   },
 
@@ -270,14 +268,16 @@ Page({
   },
   toChooseItem: function(e) {
 
-    var val = e.currentTarget.dataset.val;
-    var key = e.currentTarget.dataset.key;
-    var selectedPropObj = this.data.selectedPropObj;
-    selectedPropObj[key] = val;
-    this.setData({
-      selectedPropObj: selectedPropObj
-    });
-    this.parseSelectedObjToVals();
+   if(e){
+     var val = e.currentTarget.dataset.val;
+     var key = e.currentTarget.dataset.key;
+     var selectedPropObj = this.data.selectedPropObj;
+     selectedPropObj[key] = val;
+     this.setData({
+       selectedPropObj: selectedPropObj
+     });
+     this.parseSelectedObjToVals();
+   }
 
   },
 
@@ -293,20 +293,23 @@ Page({
 
     var self = this;
 
-    var dtos = JSON.stringify(e.currentTarget.dataset);
-    if (e.currentTarget.dataset.propertyid == undefined) {
-      wx.showToast({
-        title: '请选择规格！',
-        icon: 'loading',
-        duration: 2000
-      })
-    } else {
-      wx.navigateTo({
-        url: '/pages/Spell_group_order/Spell_group_order?dtos=' + dtos
-      })
+   if(e){
+     var dtos = JSON.stringify(e.currentTarget.dataset);
+     console.log(dtos, 'dtos')
+     if (e.currentTarget.dataset.propertyid == undefined) {
+       wx.showToast({
+         title: '请选择规格！',
+         icon: 'loading',
+         duration: 2000
+       })
+     } else {
+       wx.navigateTo({
+         url: '/pages/Spell_group_order/Spell_group_order?dtos=' + dtos
+       })
 
-    }
+     }
 
+   }
   },
   getcommentList() { //评论列表
     var self = this;
@@ -329,6 +332,11 @@ Page({
   goback() {
     wx.reLaunch({
       url: '/pages/index/index',
+    })
+  },
+  goto() {
+    wx.reLaunch({
+      url: '/pages/cart/cart'
     })
   },
   getListByWaresId() { //根据商品查询优惠券列表
@@ -362,46 +370,119 @@ Page({
           self.setData({
             getListByWaresId
           })
-          self.setData({
-            getListByWaresId1: getListByWaresId.slice(0,2)
-          })
+
         }
+        var getListByWaresId = self.data.getListByWaresId;
+        self.setData({
+          getListByWaresId1: getListByWaresId.slice(0, 2)
+        })
+        console.log(self.data.getListByWaresId, 'getListByWaresId')
       }
     })
   },
-  getDiscountById(e) {// 领取优惠券
+  getDiscountById(e) { // 领取优惠券
 
    if(e){
-     var cartid = e.currentTarget.dataset.id;
-     var self = this;
-     wx.request({
-       url: 'http://192.168.2.98:9095/api/discount/data/getDiscountById',
-       header: {
-         token: wx.getStorageSync('token')
-       },
-       data: {
-         id: cartid
-       },
-       success: function (res) {
-         if (res.data.code == '0') {
-           var getListByWaresId = self.data.getListByWaresId;
-         
-           for (var i = 0; i < getListByWaresId.length; i++) {
-
-             if (getListByWaresId[i].id == cartid) {
-
-               getListByWaresId[i].isGet = 0;
-               self.setData({
-                 getListByWaresId: getListByWaresId
-               })
-             }
-
-           }
-         }
-       }
-     })
+     var id = e.currentTarget.dataset.id;
 
    }
+    var self = this;
+    wx.request({
+      url: 'http://192.168.2.98:9095/api/discount/data/getDiscountById',
+      header: {
+        token: wx.getStorageSync('token')
+      },
+      data: {
+        id: id
 
+      },
+      success: function(res) {
+
+
+        if (res.data.code == '0') {
+          var getListByWaresId = self.data.getListByWaresId;
+          for (var i = 0; i < getListByWaresId.length; i++) {
+
+            console.log(getListByWaresId[i], '555555')
+            if (getListByWaresId[i].id == id) {
+
+              console.log(88888)
+              getListByWaresId[i].isGet = 0;
+
+            }
+
+          }
+          self.setData({
+            getListByWaresId: getListByWaresId
+          })
+        
+        }
+
+      }
+    })
+
+
+  },
+  addcart(e) { //加入购物车
+    var self = this;
+  
+
+    if (e) {
+      if (e.currentTarget.dataset.propertyid) {
+        var dto = JSON.stringify(e.currentTarget.dataset)
+        wx.request({
+          url: 'http://192.168.2.98:9095/api/shop/cart/add',
+          header: {
+            token: wx.getStorageSync('token'),
+            'content-type': 'application/json' // 默认值
+          },
+          method: 'POST',
+          data: dto,
+          success: function (res) {
+            if (res.data.code == 0) {
+              wx.showToast({
+                title: '加入购物车成功',
+                icon: 'success',
+                duration: 1000
+              })
+            }
+          }
+
+        })
+      } else {
+        wx.showToast({
+          title: '请添加规格',
+          icon: 'loading',
+          duration: 1000
+        })
+      }
+    }
+    
+   
+  },
+  defined(e){
+    var self = this;
+    if(e){
+      if (e.currentTarget.dataset.waresid){
+        wx.request({
+          url: 'http://192.168.2.98:9095/api/shop/collect/add',
+          data:{
+            waresId: e.currentTarget.dataset.waresid
+          },
+          header:{
+            token:wx.getStorageSync('token')
+          },
+          success:function(res){
+            if(res.data.code=='0'){
+              wx.showToast({
+                title: '已经加入收藏',
+                icon: 'success',
+                duration: 1000
+              })
+            }
+          }
+        })
+      }
+    }
   }
 })

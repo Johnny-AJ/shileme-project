@@ -7,7 +7,7 @@
       <view class="search_logo">
         <image mode="widthFix" src="../../static/imgs/搜索.png"></image>
       </view>
-      <input placeholder="搜索" bindtap="search" ></input>
+      <input placeholder="搜索" bindtap="search"></input>
     </view>
     <view class="search_button">
       <image src="../../static/imgs/矩形 16 拷贝 5.png"></image>
@@ -155,19 +155,19 @@
             <text>剁手必看指南</text>
           </view>
           <view class="imgs">
-            <view wx:for="{{realistic}}" wx:key="{{item.waresId}}" bindtap="goto" data-waresId="{{item.waresId}}">
+            <view wx:for="{{realistic}}" wx:key="*this" bindtap="goto" data-waresId="{{item.waresId}}">
               <image src="{{item.logoUrl}}"></image>
             </view>
-           
+
           </view>
         </view>
         <view class="hr .p21">
-          <view class="tittle" bindtap="jump"  data-url="/pages/new_product/new_product" >
+          <view class="tittle" bindtap="jump" data-url="/pages/new_product/new_product">
             <image src="../../static/imgs/aaa.png"></image>
             <text>什么值得买</text>
           </view>
           <view class="imgs">
-             <view wx:for="{{newselling}}" wx:key="{{item.waresId}}" bindtap="goto" data-waresId="{{item.waresId}}">
+            <view wx:for="{{newselling}}" wx:key="*this"  bindtap="goto" data-waresId="{{item.waresId}}">
               <image src="{{item.logoUrl}}"></image>
             </view>
           </view>
@@ -188,18 +188,20 @@
       </view>
       <view class="contens">
         <view class="content">
-          <view class="cont" wx:for="{{ productlist[categoryId]}}" wx:key="*this" bindtap="goto"  data-waresId="{{item.waresId}}">
-        
+          <view class="cont" wx:for="{{ productlist}}" wx:key="*this" bindtap="goto" data-waresId="{{item.waresId}}">
+
             <image src="{{item.logoUrl}}"></image>
             <view class="name pl20">{{item.waresName}}</view>
-            <view class="content_client pl20">{{item.advertising}}</view>
+            <view class="content_client pl20">
+              <text hidden="{{!item.advertising}}">{{item.advertising}}</text>
+            </view>
             <view class="price pl20">￥
               <text class="nowprice">{{item.mallPrice}} </text>
-              <text class="oldprice">  ￥{{item.marketPrice}}</text>
+              <text class="oldprice" hidden="{{!item.marketPrice}}">  ￥{{item.marketPrice}}</text>
             </view>
           </view>
-         
-         <!-- </block> -->
+
+          <!-- </block> -->
         </view>
       </view>
     </view>
@@ -207,4 +209,12 @@
 
 
   </view>
+  <view class="weui-loadmore" hidden='{{!loading}}'>
+    <view class="weui-loading"></view>
+    <view class="weui-loadmore__tips">正在加载</view>
+  </view>
+  <view class="weui-loadmore weui-loadmore_line" hidden="{{hasNext}}">
+    <view class="weui-loadmore__tips weui-loadmore__tips_in-line">到底了</view>
+  </view>
+
 </view>

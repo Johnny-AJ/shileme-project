@@ -5,70 +5,36 @@ Page({
    * 页面的初始数据
    */
   data: {
-    current: 'tab1',
+    current: 0,
+    title:[{text:'未使用'},{text:'已使用'},{text:'已过期'}],
+    getListByWaresId: [],//优惠劵列表
+
   },
   // tab栏
-  handleChange({detail}) {
+  changetbs(e){
+
+    console.log(e)
     this.setData({
-      current: detail.key
-    });
+      current: e.currentTarget.dataset.index
+    })
   },
   /**
    * 生命周期函数--监听页面加载
    */
   onLoad: function(options) {
-    // 头部标题
-    wx.setNavigationBarTitle({
-      title: '优惠券'
-    })
+   
+    this.getListByWaresId()
   },
-
-  /**
-   * 生命周期函数--监听页面初次渲染完成
-   */
-  onReady: function() {
-
-  },
-
   /**
    * 生命周期函数--监听页面显示
    */
   onShow: function() {
 
   },
-
-  /**
-   * 生命周期函数--监听页面隐藏
-   */
-  onHide: function() {
-
-  },
-
-  /**
-   * 生命周期函数--监听页面卸载
-   */
-  onUnload: function() {
-
-  },
-
-  /**
-   * 页面相关事件处理函数--监听用户下拉动作
-   */
-  onPullDownRefresh: function() {
-
-  },
-
-  /**
-   * 页面上拉触底事件的处理函数
-   */
-  onReachBottom: function() {
-
-  },
-
-  /**
-   * 用户点击右上角分享
-   */
-  onShareAppMessage: function() {
-
+  getListByWaresId(){
+    wx.request({
+      // url: 'http://192.168.2.98:9095/',
+    })
   }
+
 })

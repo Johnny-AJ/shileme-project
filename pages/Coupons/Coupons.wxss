@@ -1,22 +1,29 @@
-.indent  .checktbs {
+.Coupons  .checktbs {
   height: 90rpx;
   width: 100%;
-}
-
-.indent .tabs {
-  width: 100%;
-  position: fixed;
-  left: 0;
-  top: 0;
-  height: 91rpx;
-  display: flex;
-  background: #fff;
+   display: flex;
+  justify-content: center;
   align-items: center;
-  padding-bottom: 10rpx;
-  box-sizing: border-box;
-  border: none !important;
 }
+.Coupons  .checktbs .tbs{
+  width: 250rpx;
+  height: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.Coupons  .checktbs .tbs text{
+  border-bottom: 4rpx solid #fff;
+  padding-bottom: 10rpx;
+  font-size:30rpx;
+font-family:PingFang SC; font-weight:bold;
 
+
+}
+.Coupons  .checktbs .tbs .color{
+ border-color: #F02B50;
+ color: #F02B50;
+}
 /* -------------------------- */
 
 .coupons_box {

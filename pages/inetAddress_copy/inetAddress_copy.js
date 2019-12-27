@@ -5,12 +5,11 @@ Page({
    * 页面的初始数据
    */
   data: {
-    addressID: '', // 传值ID
-    token: '',
-    addressList: '',
-    delID: '',
-    editorID: '',
 
+
+
+  
+    id:'',
     name: '', //用户名
     phone: '', //手机号
     province: '', //省
@@ -23,66 +22,15 @@ Page({
    * 生命周期函数--监听页面加载
    */
   onLoad: function(e) {
-    // console.log(e, 11)
-    var self = this
-    const token = wx.getStorageSync("token")
-    self.setData({
-      token
-    })
-    // console.log(token, 123)
+    console.log(e, 11)
+    // var self = this
 
-    // 传的参数
-    let addressID = JSON.parse(e.bjid)
-    this.setData({
-      addressID
-    })
-    // 赋值
-    let delID = JSON.parse(e.bjid)
-    this.setData({
-      delID
-    })
-    // 编辑ID
-    this.setData({
-      editorID: this.data.delID.id
-    })
+    this.info(e)//根据id查询
 
-    // 头部标题
-    wx.setNavigationBarTitle({
-      title: '编辑地址'
-    })
+ 
+ 
   },
-  // 省/市/区
-  bindRegionChange(e) {
-    // console.log(e)
-    let addressList = this.data.addressList
-    this.setData({
-      province: e.detail.value, //省
-      city: e.detail.value, //市
-      region: e.detail.value, //区  
-      addressList: e.detail.value + e.detail.value + e.detail.value
-    })
-  },
-  // 用户名
-  handuserName(e) {
-    // console.log(e)
-    this.setData({
-      name: e.detail.value
-    })
-  },
-  // 手机号
-  handNumber(e) {
-    // console.log(e)
-    this.setData({
-      phone: e.detail.value
-    })
-  },
-  // 地址
-  handAddress(e) {
-    // console.log(e)
-    this.setData({
-      address: e.detail.value
-    })
-  },
+  
   // 按钮
   handtap(e) {
     var self = this
@@ -93,32 +41,70 @@ Page({
       data: {
         name: self.data.name,
         phone: self.data.phone,
-        province: self.data.province[0],
-        city: self.data.city[1],
-        region: self.data.region[2],
+        province: self.data.province,
+        city: self.data.city,
+        region: self.data.region,
         address: self.data.address,
-        isDefault: 0,
-        id: self.data.editorID
+        isDefault: self.data.id,
+        id: self.data.id
       },
       header: {
-        'token': self.data.token, //请求头携带参数
+        'token': wx.getStorageSync("token"), //请求头携带参数
       },
       success: (res) => {
-        // console.log(res, "修改成功")
-        if (0 == res.code) {
+        console.log(res, "修改成功")
+        if ( res.data.code==0) {
           wx.navigateBack({
             url: 'pages/shipping/shipping'
           })
         } else {
           wx.showModal({
             title: '提示',
-            content: 'res.data.msg',
+            content: res.data.msg,
           })
         }
       }
     })
   },
-  handradio(e) {
-    // console.log(e)
+ 
+  info(e){
+    var self =this;
+    wx.request({
+      url: 'http://192.168.2.98:9095/api/address/info',
+      data:{
+        id:e.id
+      },
+      header:{
+        token:wx.getStorageSync('token')
+      },
+      success:function(res){
+        console.log(res,'info')
+        var data= res.data.data;
+        self.setData({
+          name: data.name,
+          phone: data.phone,
+          province: data.province,
+          city:data.city,
+          region: data.region,
+          address: data.address,
+          isDefault: data.isDefault,
+          id:data.id
+        })
+
+        console.log(self.data,'data')
+      }
+    })
+  },
+  change(){
+    if(this.data.isDefault==0){
+      this.setData({
+        isDefault:1
+      })
+    }else{
+      this.setData({
+        isDefault:0
+      })
+    }
   }
+  
 })

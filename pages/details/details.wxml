@@ -60,7 +60,6 @@
 
         <view wx:for="{{getListByWaresId1}}" wx:key="*this">{{item.name}}</view>
 
-
       </view>
       <image src="../../static/scango/矩形 16(1).png"></image>
     </view>
@@ -135,19 +134,19 @@
         <text class="color">首页</text>
 
       </view>
-      <view>
+      <view  data-waresId="{{waresId}}" bindtap="defined">
         <image src="../../static/imgs/形状 1.png"></image>
         <text>收藏</text>
 
       </view>
-      <view>
+      <view bindtap="goto">
         <image src="../../static/imgs/购物车.png"></image>
         <text>购物车</text>
 
       </view>
     </view>
-    <view class="cart">
-      <image src="../../static/imgs/矩形 29 拷贝 2.png"></image>加入购物车</view>
+    <view class="cart"  bindtap="addcart"  data-waresId="{{waresId}}" data-propertyId="{{defaultSku.skuid?defaultSku.skuid:''}}" data-amount="{{value1}}" >
+      <image src="../../static/imgs/矩形 29 拷贝 2.png" ></image>加入购物车</view>
     <view class="nowbuy" bindtap="buys" data-waresId="{{waresId}}" data-propertyId="{{defaultSku.skuid}}" data-amount="{{value1}}">
       <image src="../../static/imgs/矩形 29 拷贝 3.png"></image>立即购买</view>
   </view>

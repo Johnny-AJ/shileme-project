@@ -12,55 +12,40 @@
       </view>
     </view>
     <view class="checktbs">
-      <i-tabs current="{{ current }}" i-class="tabs" color="#F02B50" bindchange="handleChange" i-class="tabs">
+
+      <view class="tabs" wx:for="{{tittle}}" wx:key="*this" bindtap="change" data-index="{{index}}">
+        <text class="{{subscript==index?'color':''}}">{{item.text}}</text>
+      </view>
+      <!-- <i-tabs current="{{ current }}" i-class="tabs" color="#F02B50" bindchange="handleChange" i-class="tabs">
         <i-tab key="tab1" title="全部"></i-tab>
         <i-tab key="tab2" title="价格从低到到高"></i-tab>
         <i-tab key="tab3" title="价格从高到低"></i-tab>
-      </i-tabs>
+      </i-tabs> -->
     </view>
 
   </view>
   <view class="content">
-    <view class="imgs" wx:if="{{seachnum=='undefined'}}">
+
+
+    <view class="imgs" wx:if="{{seach.length==0}}">
         <image src="../../static/imgs/组 1 (1).png"></image>
    
         <text>搜索无结果！</text>
     
     </view>
-    <view class="contents" wx:if="{{seachnum}}">
-      <view class="cont">
-        <image src="../../static/imgs/矩形 3.png"></image>
-        <view class="name pl20">保湿急救 网红蓝药丸面.</view>
-        <view class="content_client pl20">Dr.Jart 宛若新生保湿面膜.</view>
-        <view class="price pl20">￥
-          <text class="nowprice">79 </text>
-        </view>
-      </view>
-      <view class="cont">
-        <image src="../../static/imgs/矩形 3.png"></image>
-        <view class="name pl20">保湿急救 网红蓝药丸面.</view>
-        <view class="content_client pl20">Dr.Jart 宛若新生保湿面膜.</view>
-        <view class="price pl20">￥
-          <text class="nowprice">79 </text>
-        </view>
-      </view>
-      <view class="cont">
-        <image src="../../static/imgs/矩形 3.png"></image>
-        <view class="name pl20">保湿急救 网红蓝药丸面.</view>
-        <view class="content_client pl20">Dr.Jart 宛若新生保湿面膜.</view>
-        <view class="price pl20">￥
-          <text class="nowprice">79 </text>
-        </view>
-      </view>
-      <view class="cont">
-        <image src="../../static/imgs/矩形 3.png"></image>
-        <view class="name pl20">保湿急救 网红蓝药丸面.</view>
-        <view class="content_client pl20">Dr.Jart 宛若新生保湿面膜.</view>
-        <view class="price pl20">￥
-          <text class="nowprice">79 </text>
 
+
+
+    <view class="contents"  wx:if="{{seach.length>0}}">
+      <view class="cont" wx:for="{{seach}}" wx:key="*this" data-id="{{item.id}}">
+        <image src="{{item.logoUrl}}"></image>
+        <view class="name pl20">{{item.name}}</view>
+        <view class="content_client pl20">{{item.advertising}}</view>
+        <view class="price pl20">￥
+          <text class="nowprice">{{item.mallPrice}}</text>
         </view>
       </view>
+     
 
 
     </view>
