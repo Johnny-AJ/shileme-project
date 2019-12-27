@@ -132,8 +132,8 @@ Page({
   },
   change(e){
     console.log(e)
-    // this.setData({
-    //   subscript:e.currPage.d
-    // })
+    this.setData({
+      subscript: e.currentTarget.dataset.index
+    })
   }
 })
