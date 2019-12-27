@@ -1,8 +1,8 @@
 {
   "pages": [
+    "pages/index/index",
     "pages/searches/searches",
     "pages/search/search",
-    "pages/index/index",
     "pages/user/user",
     "pages/inetAddress_copy/inetAddress_copy",
     "pages/Coupons/Coupons",
