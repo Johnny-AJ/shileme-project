@@ -6,12 +6,8 @@
   </view>
 
   <view class="button">
-<<<<<<< HEAD
-    <button type="primary" plain="true" size="default" open-type="getUserInfo" bindgetuserinfo="handgetuserInfo">微信一键登录</button>
-=======
    <button type="primary"  plain="true" size="default" open-type="getUserInfo" bindtap="getUserInfo" bindgetuserinfo="handgetuserInfo">微信一键登录</button>
     <!-- <button type="primary" style='display:{{ isShow ? "block" : "none" }}' plain="true" size="default" open-type="getUserInfo" bindtap="getUserInfo" bindgetuserinfo="handgetuserInfo">微信一键登录</button> -->
->>>>>>> 1eb06d9583af236b7485e283fba9b2d4b18d2d9d
   </view>
 
 </view>

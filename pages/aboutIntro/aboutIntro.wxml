@@ -1,9 +1,5 @@
 <!--pages/aboutIntro/aboutIntro.wxml-->
-<<<<<<< HEAD
-<text>关于我们</text>
-=======
 <view class="img">
   <image src="../../static/imgs/组 7 (1).png"></image>
 </view>
 <text>功能暂未开放,敬请期待!</text>
->>>>>>> 1eb06d9583af236b7485e283fba9b2d4b18d2d9d

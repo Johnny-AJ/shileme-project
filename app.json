@@ -1,73 +1,4 @@
 {
-<<<<<<< HEAD
-  "pages": [
-    "pages/index/index",
-    "pages/finetuxedos/finetuxedos",
-    "pages/friends/friends",
-    "pages/formats/formats",
-    "pages/scango/scango",
-    "pages/details/details",
-    "pages/shipping/shipping",
-    "pages/inetAddress/inetAddress",
-    "pages/indent/indent",
-    "pages/group/group",
-    "pages/Spell_group_order/Spell_group_order",
-    "pages/mynote/mynote",
-    "pages/Collection/Collection",
-    "pages/Coupons/Coupons",
-    "pages/order/order",
-    "pages/find/find",
-    "pages/cart/cart",
-    "pages/search/search",
-    "pages/aboutIntro/aboutIntro",
-    "pages/myEmms/myEmms",
-    "pages/logistics/logistics",
-    "pages/abc/abc",
-    "pages/template/template",
-    "pages/login/login",
-    "pages/UserRelated/UserRelated",
-    "pages/comment/comment",
-    "pages/user/user"
-  ],
-  "window": {
-    "backgroundTextStyle": "light",
-    "navigationBarBackgroundColor": "#fff",
-    "navigationBarTitleText": "WeChat",
-    "navigationBarTextStyle": "black"
-  },
-  "tabBar": {
-    "color": "#666",
-    "selectedColor": "#ff2d4a",
-    "list": [
-      {
-        "pagePath": "pages/index/index",
-        "text": "首页",
-        "iconPath": "static/imgs/start.png",
-        "selectedIconPath": "static/imgs/矢量智能对象.png"
-      },
-      {
-        "pagePath": "pages/find/find",
-        "text": "发现",
-        "iconPath": "static/imgs/find21.png",
-        "selectedIconPath": "static/imgs/组 21@2x.png"
-      },
-      {
-        "pagePath": "pages/cart/cart",
-        "text": "购物车",
-        "iconPath": "static/imgs/购物车.png",
-        "selectedIconPath": "static/imgs/购物车2.png"
-      },
-      {
-        "pagePath": "pages/user/user",
-        "text": "个人中心",
-        "iconPath": "static/imgs/个人中心.png",
-        "selectedIconPath": "static/imgs/个人中心@2x（1）.png"
-      }
-    ]
-  },
-  "style": "v2",
-  "sitemapLocation": "sitemap.json"
-=======
     "pages": [
         "pages/index/index",
         "pages/searches/searches",
@@ -163,5 +94,4 @@
     },
     "style": "v2",
     "sitemapLocation": "sitemap.json"
->>>>>>> 1eb06d9583af236b7485e283fba9b2d4b18d2d9d
 }

@@ -86,9 +86,6 @@
   line-height: 88rpx;
 }
 
-<<<<<<< HEAD
-/* 按钮 */
-=======
 .button button {
   background: rgba(240, 43, 80, 1);
   color: #f5f5f5;
@@ -105,4 +102,3 @@
 
 
 
->>>>>>> 1eb06d9583af236b7485e283fba9b2d4b18d2d9d

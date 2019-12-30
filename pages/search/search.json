@@ -1,11 +1,7 @@
 {
-<<<<<<< HEAD
-  "usingComponents": {}
-=======
-  "usingComponents": {
+    "usingComponents": {
 
-    "i-icon": "../../components/icon/index"
-  },
-  "navigationBarTitleText": "搜索"
->>>>>>> 1eb06d9583af236b7485e283fba9b2d4b18d2d9d
+        "i-icon": "../../components/icon/index"
+    },
+    "navigationBarTitleText": "搜索"
 }

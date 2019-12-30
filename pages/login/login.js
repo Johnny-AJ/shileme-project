@@ -1,230 +1,140 @@
 // pages/login/login.js
 Page({
 
-  /**
-  * 页面的初始数据
-  */
-  data: {
-    token: '',
-    userIno: {}
-<<<<<<< HEAD
-  },
-  handgetuserInfo(e) {
-    console.log(e)
-    var self = this;
-    wx.getStorage({
-      key: 'token',
-      success(res) {
-        let token = res.data;
-        self.setData({
-          token
-        })
-        wx.request({
-          url: 'http://192.168.2.98:9095//api/wechat/updateUserInfo',
-          data: {
-            userIno: e.detail.userInfo
-          },
-          header: {
-            token: self.data.token
-          },
-          method: 'POST',
-          dataType: 'json',
-          responseType: 'text',
-          success: function(res) {},
-          fail: function(res) {},
-          complete: function(res) {},
-        })
+    /**
+     * 页面的初始数据
+     */
+    data: {
+        token: '',
+        userIno: {}
+    },
+    handgetuserInfo(e) {
+        // console.log(e)
+        var self = this;
+        wx.getStorage({
+                key: 'token',
+                success(res) {
+                    console.log(res, 'res111')
 
-      }
-    }),
+                    let token = res.data;
+                    self.setData({
+                        token
+                    })
 
 
+                    wx.request({
+                        url: 'http://192.168.2.98:9095//api/wechat/updateUserInfo',
+                        data: {
+                            userIno: e.detail.userInfo
+                        },
+                        header: {
+                            token: self.data.token
+                        },
+                        method: 'POST',
+                        dataType: 'json',
+                        responseType: 'text',
+                        success: function(res) {
+                            console.log(res, 'res')
+                            if (res.data.code == 0) {
 
-
-    wx.navigateBack({
-      delta: 1
-    })
-
-
-  },
-=======
-  },
-  handgetuserInfo(e) {
-    // console.log(e)
-    var self = this;
-    wx.getStorage({
-        key: 'token',
-        success(res) {
-          console.log(res, 'res111')
-         
-          let token = res.data;
-          self.setData({
-            token
-          })
-
-      
-          wx.request({
-            url: 'http://192.168.2.98:9095//api/wechat/updateUserInfo',
-            data: {
-              userIno: e.detail.userInfo
-            },
-            header: {
-              token: self.data.token
-            },
-            method: 'POST',
-            dataType: 'json',
-            responseType: 'text',
-            success: function(res) {
-             console.log(res,'res')
-              if ( res.data.code==0) {
-              
-                wx.reLaunch({
-                  url: '/pages/index/index',
-                })
-              } else {
-              wx.reLaunch({
-                  url: '/pages/login/login',
-                })
-              }
-            },
-          })
-        }
-      }),
-      wx.navigateBack({
-        delta: 1
-      })
-  },
-  getUserInfo: function (e) {
-    let that = this;
-    // console.log(e)s
-    // 获取用户信息
-    wx.getSetting({
-      success(res) {
-        // console.log("res", res)
-        if (res.authSetting['scope.userInfo']) {
-     
-          // 已经授权，可以直接调用 getUserInfo 获取头像昵称
-          wx.getUserInfo({
+                                wx.reLaunch({
+                                    url: '/pages/index/index',
+                                })
+                            } else {
+                                wx.reLaunch({
+                                    url: '/pages/login/login',
+                                })
+                            }
+                        },
+                    })
+                }
+            }),
+            wx.navigateBack({
+                delta: 1
+            })
+    },
+    getUserInfo: function(e) {
+        let that = this;
+        // console.log(e)s
+        // 获取用户信息
+        wx.getSetting({
             success(res) {
-             
-              wx.setStorageSync('avatarUrl', res.userInfo.avatarUrl)//头像
-              wx.setStorageSync('nickName', res.userInfo.nickName)//名字
-             
-            },
-            fail(res) {
-              console.log("获取用户信息失败", res)
+                // console.log("res", res)
+                if (res.authSetting['scope.userInfo']) {
+
+                    // 已经授权，可以直接调用 getUserInfo 获取头像昵称
+                    wx.getUserInfo({
+                        success(res) {
+
+                            wx.setStorageSync('avatarUrl', res.userInfo.avatarUrl) //头像
+                            wx.setStorageSync('nickName', res.userInfo.nickName) //名字
+
+                        },
+                        fail(res) {
+                            console.log("获取用户信息失败", res)
+                        }
+                    })
+                } else {
+                    console.log("未授权=====")
+                    that.showSettingToast("请授权")
+                }
             }
-          })
-        } else {
-          console.log("未授权=====")
-          that.showSettingToast("请授权")
-        }
-      }
-    })
-  },
->>>>>>> 1eb06d9583af236b7485e283fba9b2d4b18d2d9d
-  /**
-   * 生命周期函数--监听页面加载
-   */
-  onLoad: function(options) {
-    // 头部标题
-<<<<<<< HEAD
-    wx.setNavigationBarTitle({
-      title: '登录'
-    })
-  },
+        })
+    },
+    /**
+     * 生命周期函数--监听页面加载
+     */
+    onLoad: function(options) {
+        // 头部标题
 
-  /**
-  * 生命周期函数--监听页面初次渲染完成
-  */
-  onReady: function () {
-=======
-  
-  },
+    },
 
-  /**
-   * 生命周期函数--监听页面初次渲染完成
-   */
-  onReady: function() {
->>>>>>> 1eb06d9583af236b7485e283fba9b2d4b18d2d9d
+    /**
+     * 生命周期函数--监听页面初次渲染完成
+     */
+    onReady: function() {
 
-  },
+    },
 
-  /**
-<<<<<<< HEAD
-  * 生命周期函数--监听页面显示
-  */
-  onShow: function () {
-=======
-   * 生命周期函数--监听页面显示
-   */
-  onShow: function() {
->>>>>>> 1eb06d9583af236b7485e283fba9b2d4b18d2d9d
+    /**
+     * 生命周期函数--监听页面显示
+     */
+    onShow: function() {
 
-  },
+    },
 
-  /**
-<<<<<<< HEAD
-  * 生命周期函数--监听页面隐藏
-  */
-  onHide: function () {
-=======
-   * 生命周期函数--监听页面隐藏
-   */
-  onHide: function() {
->>>>>>> 1eb06d9583af236b7485e283fba9b2d4b18d2d9d
+    /**
+     * 生命周期函数--监听页面隐藏
+     */
+    onHide: function() {
 
-  },
+    },
 
-  /**
-<<<<<<< HEAD
-  * 生命周期函数--监听页面卸载
-  */
-  onUnload: function () {
-=======
-   * 生命周期函数--监听页面卸载
-   */
-  onUnload: function() {
->>>>>>> 1eb06d9583af236b7485e283fba9b2d4b18d2d9d
+    /**
+     * 生命周期函数--监听页面卸载
+     */
+    onUnload: function() {
 
-  },
+    },
 
-  /**
-<<<<<<< HEAD
-  * 页面相关事件处理函数--监听用户下拉动作
-  */
-  onPullDownRefresh: function () {
-=======
-   * 页面相关事件处理函数--监听用户下拉动作
-   */
-  onPullDownRefresh: function() {
->>>>>>> 1eb06d9583af236b7485e283fba9b2d4b18d2d9d
+    /**
+     * 页面相关事件处理函数--监听用户下拉动作
+     */
+    onPullDownRefresh: function() {
 
-  },
+    },
 
-  /**
-<<<<<<< HEAD
-  * 页面上拉触底事件的处理函数
-  */
-  onReachBottom: function () {
-=======
-   * 页面上拉触底事件的处理函数
-   */
-  onReachBottom: function() {
->>>>>>> 1eb06d9583af236b7485e283fba9b2d4b18d2d9d
+    /**
+     * 页面上拉触底事件的处理函数
+     */
+    onReachBottom: function() {
 
-  },
+    },
 
-  /**
-<<<<<<< HEAD
-  * 用户点击右上角分享
-  */
-  onShareAppMessage: function () {
-=======
-   * 用户点击右上角分享
-   */
-  onShareAppMessage: function() {
->>>>>>> 1eb06d9583af236b7485e283fba9b2d4b18d2d9d
+    /**
+     * 用户点击右上角分享
+     */
+    onShareAppMessage: function() {
 
-  }
+    }
 })

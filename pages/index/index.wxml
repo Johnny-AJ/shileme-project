@@ -7,11 +7,7 @@
       <view class="search_logo">
         <image mode="widthFix" src="../../static/imgs/搜索.png"></image>
       </view>
-<<<<<<< HEAD
-      <input placeholder="搜索" bindtap="handurl" data-url="/pages/search/search"></input>
-=======
       <input placeholder="搜索" bindtap="search"></input>
->>>>>>> 1eb06d9583af236b7485e283fba9b2d4b18d2d9d
     </view>
     <view class="search_button">
       <image src="../../static/imgs/矩形 16 拷贝 5.png"></image>
@@ -20,75 +16,6 @@
 
   </view>
 
-<<<<<<< HEAD
-</view>
-<!-- 搜索 -->
-
-<!-- 轮播图 -->
-<view class="swiper_box">
-  <swiper indicator-dots="false" autoplay="false" interval="3000" circular="false">
-    <swiper-item wx:for="{{swiperList}}" wx:key='goods_id'>
-      <image mode="widthFix" src="{{item.url}}"></image>
-    </swiper-item>
-  </swiper>
-</view>
-
-
-<!-- 按钮 -->
-<view class="button_nav">
-
-  <view class="navigator" bindtap="handurl" data-url="/pages/scango/scango">
-    <image mode="widthFix" src="../../static/imgs/扫码购.png"></image>
-    <view class="text">扫码购</view>
-  </view>
-
-  <view class="navigator">
-    <image mode="widthFix" src="../../static/imgs/试用.png"></image>
-    <view class="text">免费试用</view>
-  </view>
-
-  <view class="navigator">
-    <image mode="widthFix" src="../../static/imgs/拼团.png"></image>
-    <view class="text">超值拼团</view>
-  </view>
-
-  <view class="navigator">
-    <image mode="widthFix" src="../../static/imgs/积分兑换.png"></image>
-    <view class="text">积分兑换</view>
-  </view>
-
-</view>
-<!-- 按钮 -->
-
-<!-- 2周年庆 -->
-<view class="content-box">
-  <view>
-    <image mode="widthFix" src="../../static/imgs/周年庆.png"></image>
-  </view>
-</view>
-<!-- 2周年庆 -->
-
-<!-- 超值拼团 -->
-
-<!-- 背景图片颜色 -->
-<view class="bgc_color">
-
-  <!-- 2周年庆 -->
-
-  <!-- 超值拼团 -->
-
-  <!-- 背景图片颜色 -->
-  <view class="conts">
-    <view class="bgc_color">
-      <!-- 大盒子 -->
-      <view class="bargain_box">
-        <!-- 上 -->
-        <view class="bargain_top">
-          <!-- 左边 -->
-          <view class="bargain_left">超值拼团</view>
-          <!-- 右边 -->
-          <view class="bargain_right"> 好 友 正 在 拼
-=======
   <!-- 轮播图 -->
   <view class="swiper_box">
     <swiper indicator-dots="false" autoplay="false" interval="3000" circular="false">
@@ -141,71 +68,10 @@
         <view class="bargain_top">
           <view class="bargain_left">超值拼团</view>
           <view class="bargain_right" bindtap="jump"> 好 友 正 在 拼
->>>>>>> 1eb06d9583af236b7485e283fba9b2d4b18d2d9d
             <image src="../../static/imgs/箭头.png"></image>
           </view>
         </view>
 
-<<<<<<< HEAD
-        <!-- 下 -->
-        <view class="bargain_buttom">
-
-          <swiper autoplay="false" interval="888" circular="false">
-            <block wx:for="{{swiperList}}" wx:key="goods_id">
-
-              <swiper-item>
-                <view class="swiper-item">
-                  <view class="swiper-cont">
-                    <view class="imgs">
-                      <image src="../../static/imgs/扫码购.png"> </image>
-
-                    </view>
-                    <view class="text">
-                      <view class="t1">2人团</view>
-                      <view class="price">
-                        <view class="now">￥
-                          <text>9.9</text>
-                        </view>
-                        <view class="old">
-                          ￥
-                          <text>160</text>
-                        </view>
-                      </view>
-                    </view>
-                  </view>
-                  <view class="swiper-cont">
-                    <view class="imgs">
-                      <image src="../../static/imgs/扫码购.png"> </image>
-
-                    </view>
-                    <view class="text">
-                      <view class="t1">2人团</view>
-                      <view class="price">
-                        <view class="now">￥
-                          <text>9.9</text>
-                        </view>
-                        <view class="old">
-                          ￥
-                          <text>160</text>
-                        </view>
-                      </view>
-                    </view>
-                  </view>
-                  <view class="swiper-cont">
-                    <view class="imgs">
-                      <image src="../../static/imgs/扫码购.png"> </image>
-
-                    </view>
-                    <view class="text">
-                      <view class="t1">2人团</view>
-                      <view class="price">
-                        <view class="now">￥
-                          <text>9.9</text>
-                        </view>
-                        <view class="old">
-                          ￥
-                          <text>160</text>
-=======
         <view class="bargain_buttom">
           <swiper autoplay="false" interval="7000" circular="false">
             <block>
@@ -227,34 +93,12 @@
                         <view class="old">
                           ￥
                           <text>{{item.groupBuyMoney}}</text>
->>>>>>> 1eb06d9583af236b7485e283fba9b2d4b18d2d9d
                         </view>
                       </view>
                     </view>
                   </view>
-<<<<<<< HEAD
-                  <view class="swiper-cont">
-                    <view class="imgs">
-                      <image src="../../static/imgs/扫码购.png"> </image>
-
-                    </view>
-                    <view class="text">
-                      <view class="t1">2人团</view>
-                      <view class="price">
-                        <view class="now">￥
-                          <text>9.9</text>
-                        </view>
-                        <view class="old">
-                          ￥
-                          <text>160</text>
-                        </view>
-                      </view>
-                    </view>
-                  </view>
-=======
 
 
->>>>>>> 1eb06d9583af236b7485e283fba9b2d4b18d2d9d
                 </view>
               </swiper-item>
             </block>
@@ -262,161 +106,6 @@
 
 
         </view>
-<<<<<<< HEAD
-
-      </view>
-    </view>
-    <!-- 超值拼团 -->
-
-    <!-- 背景图片颜色 -->
-    <view class="bgc_color">
-      <!-- 大盒子 -->
-      <view class="bargain_box">
-        <!-- 上 -->
-        <view class="bargain_top">
-          <!-- 左边 -->
-          <view class="bargain_left">
-            <text>限 时 购</text>
-            <view class="time">
-              <text>12</text>:
-              <text>02</text>:
-              <text>00</text>
-
-            </view>
-          </view>
-          <!-- 右边 -->
-          <view class="bargain_right"> 更 多 场 次
-            <image src="../../static/imgs/箭头.png"></image>
-          </view>
-        </view>
-        <!-- 下 -->
-        <view class="bargain_buttom">
-          <view class="a">
-          </view>
-          <view class="a">
-          </view>
-          <view class="a">
-          </view>
-          <view class="a">
-          </view>
-        </view>
-      </view>
-
-
-    </view>
-
-
-    <view class="hot">
-      <view class="hl .p21">
-        <view class="tittle">
-          <view class="imgage">
-            <image src="../../static/imgs/bb.png"></image>
-          </view>
-          <text>剁手必看指南</text>
-        </view>
-        <view class="imgs">
-          <view>
-            <!-- <image src="../../static/imgs/矩形 16 拷贝 5.png"></image> -->
-          </view>
-          <view>
-            <!-- <image src="../../static/imgs/矩形 16 拷贝 5.png"></image> -->
-          </view>
-        </view>
-      </view>
-
-
-      <view class="hr .p21">
-        <view class="tittle">
-          <image src="../../static/imgs/aaa.png"></image>
-          <text>什么值得买</text>
-        </view>
-        <view class="imgs">
-          <view>
-            <!-- <image src="../../static/imgs/矩形 16 拷贝 5.png"></image> -->
-          </view>
-          <view>
-            <!-- <image src="../../static/imgs/矩形 16 拷贝 5.png"></image> -->
-          </view>
-        </view>
-      </view>
-    </view>
-
-
-    <view class="likes">
-      <view class="block">
-        <image src="../../static/imgs/猜你喜欢.png"></image>
-        <text class="color">猜你喜欢</text>
-        <view class="i"></view>
-      </view>
-      <view class="block">
-        <image src="../../static/imgs/美妆.png"></image>
-        <text>美妆护肤</text>
-        <view class="i"></view>
-      </view>
-      <view class="block">
-        <image src="../../static/imgs/鞋包(2).png"></image>
-        <text>鞋包</text>
-        <view class="i"></view>
-      </view>
-      <view class="block">
-        <image src="../../static/imgs/男装.png"></image>
-        <text>男装</text>
-        <view class="ii"></view>
-      </view>
-      <view class="block">
-        <image src="../../static/imgs/女装(1).png"></image>
-        <text>女装</text>
-        <view class="i"></view>
-      </view>
-    </view>
-
-
-    <view class="contens">
-      <view class="content">
-
-        <view class="cont">
-          <image src="../../static/cart/组 26.png"></image>
-          <view class="name pl20">保湿急救 网红蓝药丸面.</view>
-          <view class="content_client pl20">Dr.Jart 宛若新生保湿面膜.</view>
-          <view class="price pl20">￥
-            <text class="nowprice">79 </text>
-            <text class="oldprice">  ￥160</text>
-          </view>
-        </view>
-
-        <view class="cont">
-          <image src="../../static/cart/组 26.png"></image>
-          <view class="name pl20">保湿急救 网红蓝药丸面.</view>
-          <view class="content_client pl20">Dr.Jart 宛若新生保湿面膜.</view>
-          <view class="price pl20">￥
-            <text class="nowprice">79 </text>
-            <text class="oldprice">  ￥160</text>
-          </view>
-        </view>
-
-        <view class="cont">
-          <image src="../../static/cart/组 26.png"></image>
-          <view class="name pl20">保湿急救 网红蓝药丸面.</view>
-          <view class="content_client pl20">Dr.Jart 宛若新生保湿面膜.</view>
-          <view class="price pl20">￥
-            <text class="nowprice">79 </text>
-            <text class="oldprice">  ￥160</text>
-          </view>
-        </view>
-
-        <view class="cont">
-          <image src="../../static/cart/组 26.png"></image>
-          <view class="name pl20">保湿急救 网红蓝药丸面.</view>
-          <view class="content_client pl20">Dr.Jart 宛若新生保湿面膜.</view>
-          <view class="price pl20">￥
-            <text class="nowprice">79 </text>
-            <text class="oldprice">  ￥160</text>
-          </view>
-        </view>
-
-      </view>
-    </view>
-=======
       </view>
 
 
@@ -526,7 +215,6 @@
   </view>
   <view class="weui-loadmore weui-loadmore_line" hidden="{{hasNext}}">
     <view class="weui-loadmore__tips weui-loadmore__tips_in-line">到底了</view>
->>>>>>> 1eb06d9583af236b7485e283fba9b2d4b18d2d9d
   </view>
 
 </view>

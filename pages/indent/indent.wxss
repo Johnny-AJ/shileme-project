@@ -4,14 +4,6 @@
   box-sizing: border-box;
   padding: 0 30rpx;
 }
-<<<<<<< HEAD
-
-.indent {
-  width: 750rpx;
-  height: 1206rpx;
-  margin: 0;
-  overflow: hidden;
-=======
 page{
   background: #f5f5f5
 }
@@ -19,7 +11,6 @@ page{
   width: 100%;
 position: relative;
   margin: 0;
->>>>>>> 1eb06d9583af236b7485e283fba9b2d4b18d2d9d
   padding: 0;
   background: #f5f5f5;
 }
@@ -27,27 +18,6 @@ position: relative;
 .indent  .checktbs {
   height: 90rpx;
   width: 100%;
-<<<<<<< HEAD
-}
-
-.indent .tabs {
-  width: 100%;
-  position: fixed;
-  left: 0;
-  top: 0;
-  height: 91rpx;
-  display: flex;
-  background: #fff;
-  align-items: center;
-  padding-bottom: 10rpx;
-  box-sizing: border-box;
-  border: none !important;
-}
-
-.conttent {
-  width: 100%;
-  padding-bottom: 26rpx;
-=======
   display: flex;
   background: #fff;
 }
@@ -79,7 +49,6 @@ padding-top: 19rpx;
 .conttent {
   width: 100%;
  
->>>>>>> 1eb06d9583af236b7485e283fba9b2d4b18d2d9d
 }
 
 .conttent .conts {
@@ -87,13 +56,9 @@ padding-top: 19rpx;
   background: #fff;
   margin-top: 20rpx;
 }
-<<<<<<< HEAD
-
-=======
 .indent .conttent .close{
   display: none
 }
->>>>>>> 1eb06d9583af236b7485e283fba9b2d4b18d2d9d
 .conttent .conts .state {
   height: 72rpx;
   width: 100%;
@@ -152,10 +117,6 @@ padding-top: 19rpx;
   display: flex;
   justify-content: space-between;
   align-items: center;
-<<<<<<< HEAD
-}
-
-=======
   width: 100%;
 
 }
@@ -166,7 +127,6 @@ padding-top: 19rpx;
 -webkit-line-clamp: 2;
 overflow: hidden;
 }
->>>>>>> 1eb06d9583af236b7485e283fba9b2d4b18d2d9d
 .cont .cr  .spec {
   width: 100%;
   display: flex;
@@ -293,21 +253,12 @@ overflow: hidden;
   border-radius: 30rpx;
   font-size: 28rpx;
   font-family: PingFang SC;
-<<<<<<< HEAD
-  font-weight: bold;
-=======
   font-weight: 500;
->>>>>>> 1eb06d9583af236b7485e283fba9b2d4b18d2d9d
   color: rgba(102, 102, 102, 1);
   text-align: center;
   line-height: 60rpx;
   margin-left: 30rpx;
 }
-<<<<<<< HEAD
-.payment   .way   .color{
-  border:1rpx solid rgba(240,43,80,1);
-  color:rgba(240,43,80,1);
-=======
 
 .payment   .way   .color {
   border: 1rpx solid rgba(240, 43, 80, 1);
@@ -339,6 +290,5 @@ font-size: 32rpx;
 color: #999;
 margin-top: -550rpx;
 
->>>>>>> 1eb06d9583af236b7485e283fba9b2d4b18d2d9d
 
 }

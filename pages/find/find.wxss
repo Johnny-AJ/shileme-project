@@ -1,26 +1,3 @@
-<<<<<<< HEAD
-/* pages/find/find.wxss */
-
-/* 轮播图 */
-
-.swiper_box {
-  height: 340rpx;
-  width: 100%;
-  padding-top: 30rpx;
-  display: flex;
-  justify-content: center;
-  background: #fff;
-}
-
-.swiper_box swiper {
-  background-color: blue;
-  height: 100%;
-  width: 690rpx;
-  border-radius: 7rpx;
-}
-
-.swiper_box image {
-=======
 .bgc {
   width: 750rpx;
   height: 2180rpx;
@@ -41,37 +18,10 @@
 }
 
 .swiper_box swiper image {
->>>>>>> 1eb06d9583af236b7485e283fba9b2d4b18d2d9d
   width: 100%;
   height: 100%;
 }
 
-<<<<<<< HEAD
-/* 轮播图 */
-
-/* tab栏 */
-
-.indent  .checktbs {
-  height: 90rpx;
-  width: 100%;
-}
-
-.indent .tabs {
-  width: 100%;
-  position: fixed;
-  left: 0;
-  top: 0;
-  height: 91rpx;
-  display: flex;
-  background: #fff;
-  align-items: center;
-  padding-bottom: 10rpx;
-  box-sizing: border-box;
-  border: none !important;
-}
-
-/* tab栏 */
-=======
 /* tab栏 */
 
 .tuijian {
@@ -259,4 +209,3 @@
   height: 260rpx;
   border-radius: 5rpx;
 }
->>>>>>> 1eb06d9583af236b7485e283fba9b2d4b18d2d9d

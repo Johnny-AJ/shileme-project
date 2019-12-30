@@ -6,75 +6,16 @@
 <view class="bgc">
 
   <!-- 购物车上半部分 -->
-<<<<<<< HEAD
-  <view class="shipping_car">
-    <text>购物车</text>
-    <view class="shipping_box">
-      <view class="text1">满100减10</view>
-      <view class="text1">满299减30</view>
-    </view>
-    <image mode="widthFix" src="../../static/cart/矩形 16.png"></image>
-=======
   <view class="lj" bindtap="toggleDialog">
     <view class="title">购物车</view>
     <view class="ljcont">
       <view wx:for="{{getListByWaresId1}}" wx:key="*this">{{item.name}}</view>
     </view>
     <image src="../../static/scango/矩形 16(1).png"></image>
->>>>>>> 1eb06d9583af236b7485e283fba9b2d4b18d2d9d
   </view>
 
   <!-- 购物车下半部分 -->
   <view class="cart">
-<<<<<<< HEAD
-    <view class="cart_box">
-      <!-- 按钮 -->
-      <radio></radio>
-      <!-- 图片 -->
-      <image mode="widthFix" src="../../static/cart/组 26.png"></image>
-      <!-- 内容 -->
-      <view class="cart_nav">
-
-        <view class="text1">Dr.jart+保湿急救 网红蓝药丸面 膜</view>
-
-        <view class="text2">5片/盒</view>
-
-        <view class="cart_price">
-          <view class="text3">
-            <text>￥ <text>79.00</text> </text>
-          </view>
-          <view class="text4">
-            <image src="../../static/cart/组 3.png" class="imgs"></image>
-            <view class="img">
-              <view class="reduce">
-                <image src="../../static/cart/-.png"></image>
-              </view>
-              <input class="weui-input" auto-focus placeholder="1" />
-              <view class="add">
-                <image src="../../static/cart/+.png"></image>
-              </view>
-            </view>
-          </view>
-        </view>
-        <view class="text5">
-          <view class="tl">赠品：</view>
-          <view class="tr">
-            <view>
-              <text> Dr.jart蓝色药丸面膜（5ml/片）</text>
-              <text class="t1">X1</text>
-            </view>
-            <view>
-              <text> Dr.jart蓝色药丸面膜（5ml/片）</text>
-              <text class="t1">X1</text>
-            </view>
-          </view>
-        </view>
-
-      </view>
-    </view>
-
-  </view>
-=======
     <view class="null" wx:if="{{!chooseGoods.length}}">
       购物车没有商品，快去逛一逛
     </view>
@@ -138,7 +79,6 @@
   </view>
 
 
->>>>>>> 1eb06d9583af236b7485e283fba9b2d4b18d2d9d
   <!-- 推荐 -->
   <view class="tuijian_img">
     <image mode="widthFix" src="../../static/cart/组 25.png"></image>
@@ -148,44 +88,6 @@
 
   <view class="conts" bindtap="handurl" data-url="/pages/scango/scango">
     <view class="content">
-<<<<<<< HEAD
-      <view class="cont">
-        <image src="../../static/cart/组 26.png"></image>
-        <view class="name pl20">保湿急救 网红蓝药丸面.</view>
-        <view class="content_client pl20">Dr.Jart 宛若新生保湿面膜.</view>
-        <view class="price pl20">￥
-          <text class="nowprice">79 </text>
-        </view>
-      </view>
-      <view class="cont">
-        <image src="../../static/cart/组 26.png"></image>
-        <view class="name pl20">保湿急救 网红蓝药丸面.</view>
-        <view class="content_client pl20">Dr.Jart 宛若新生保湿面膜.</view>
-        <view class="price pl20">￥
-          <text class="nowprice">79 </text>
-        </view>
-      </view>
-      <view class="cont">
-        <image src="../../static/cart/组 26.png"></image>
-        <view class="name pl20">保湿急救 网红蓝药丸面.</view>
-        <view class="content_client pl20">Dr.Jart 宛若新生保湿面膜.</view>
-        <view class="price pl20">￥
-          <text class="nowprice">79 </text>
-        </view>
-      </view>
-      <view class="cont">
-        <image src="../../static/cart/组 26.png"></image>
-        <view class="name pl20">保湿急救 网红蓝药丸面.</view>
-        <view class="content_client pl20">Dr.Jart 宛若新生保湿面膜.</view>
-        <view class="price pl20">￥
-          <text class="nowprice">79 </text>
-
-        </view>
-      </view>
-
-
-    </view>
-=======
       <view class="cont" wx:for="{{cartlist}}" wx:key="*this" bindtap="goto" data-waresId="{{item.waresId}}">
         <image src="{{item.logoUrl}}"></image>
         <view class="name pl20">{{item.waresName}}</view>
@@ -207,7 +109,6 @@
 
     </view>
 
->>>>>>> 1eb06d9583af236b7485e283fba9b2d4b18d2d9d
   </view>
 
 
@@ -216,18 +117,6 @@
   <!-- 结算 -->
   <view class="settlement">
 
-<<<<<<< HEAD
-    <radio>全部</radio>
-
-    <view class="heji">
-      <view class="text6">合计：
-        <text>￥79</text>
-      </view>
-    </view>
-
-    <view class="button" bindtap="handurl" data-url="/pages/Spell_group_order/Spell_group_order">去结算</view>
-  </view>
-=======
     <image src="../../static/imgs/椭圆 1.png" wx:if="{{!selectAllStatus}}" bindtap="selectAllStatus" data-id="{{item.id}}"></image>
     <image src="../../static/imgs/组 26.png" wx:if="{{selectAllStatus}}" bindtap="selectAllStatus" data-id="{{item.id}}"></image>
 
@@ -242,5 +131,4 @@
 
   <!-- 弹窗 -->
 
->>>>>>> 1eb06d9583af236b7485e283fba9b2d4b18d2d9d
 </view>

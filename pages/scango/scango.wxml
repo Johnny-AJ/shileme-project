@@ -2,13 +2,8 @@
 <view class="scango">
   <view class="scgheade">
     <view class="slideshow">
-<<<<<<< HEAD
-      <swiper class="swipers" autoplay="{{autoplay}}" circular="true" current="{{currentSwiper}}" bindchange="swiperChange">
-        <block wx:for="{{list.images}}" wx:key="{{index}}">
-=======
       <swiper class="swipers" autoplay="true" circular="true" indicator-active-color="#F02B50" indicator-dots="true" current="{{currentSwiper}}" bindchange="swiperChange">
         <block wx:for="{{list.images}}" wx:key="*this">
->>>>>>> 1eb06d9583af236b7485e283fba9b2d4b18d2d9d
           <swiper-item>
 
             <image src="{{item}}" class="slide-image" width="100%" height="150"></image>
@@ -19,11 +14,7 @@
       </swiper>
       <!--重置小圆点的样式  -->
       <view class="dots">
-<<<<<<< HEAD
-        <block wx:for="{{imgUrls}}">
-=======
         <block wx:for="{{imgUrls}}" wx:key="*this">
->>>>>>> 1eb06d9583af236b7485e283fba9b2d4b18d2d9d
           <view class="dot{{index == currentSwiper ? ' active' : ''}}"></view>
         </block>
       </view>
@@ -77,25 +68,16 @@
     <view class="lj" bindtap="toggleDialog1">
       <view class="title">选择</view>
       <view class="xzcont">
-<<<<<<< HEAD
-        <text>已选“蓝色药丸5片”</text>
-=======
         <text wx:if="{{selectedProp.length}}">{{selectedProp.length>0?selectedProp+'，':selectedProp}}{{value1+'件'}}</text>
->>>>>>> 1eb06d9583af236b7485e283fba9b2d4b18d2d9d
       </view>
       <image src="../../static/scango/矩形 16(1).png"></image>
     </view>
 
   </view>
-<<<<<<< HEAD
-  <view class="comment">
-    <view class="title" bindtap="goto" data-url="28">
-=======
   <view>{{index111}}</view>
   <view>{{index222}}</view>
   <view class="comment">
     <view class="title" bindtap="goto" data-id="28">
->>>>>>> 1eb06d9583af236b7485e283fba9b2d4b18d2d9d
       <view class="conts">宝贝评价（262）</view>
       <view class="more">查看更多
         <image src="../../static/scango/矩形 16 拷贝.png"></image>
@@ -110,9 +92,6 @@
       </view>
       <view class="tbottom">
         <view class="tblog">
-<<<<<<< HEAD
-
-=======
           <block>
             <view class="pl">
               <view class="head">
@@ -131,7 +110,6 @@
               </view>
             </view>
           </block>
->>>>>>> 1eb06d9583af236b7485e283fba9b2d4b18d2d9d
         </view>
       </view>
     </view>
@@ -144,45 +122,6 @@
       <view></view>
     </view>
 
-<<<<<<< HEAD
-    <view class="contents">
-
-    </view>
-    <!-- <view class="imgs" wx:for="{{shangping_imgs}}">
-      <image src="../../static/scango/矩形 16 拷贝.png"></image>
-    </view>
-    <view class="message">
-      <view class="tabhead">产品信息</view>
-      <view class="tabs">
-        <view class="tr bg-g">
-          <view class="td">失效时间</view>
-          <view class="td">
-            2021年4月21日--2021年8月29日，具体时间已实际发货批次为准
-          </view>
-        </view>
-        <view class="tr bg-g">
-          <view class="td">保质期</view>
-          <view class="td"> 900天</view>
-        </view>
-        <view class="tr bg-y">
-          <view class="td">关键属性</view>
-        </view>
-        <view class="tr bg-g">
-          <view class="td">功能</view>
-          <view class="td">美白修复提亮肤色补水保湿</view>
-        </view>
-        <view class="tr">
-        </view>
-
-      </view>
-    </view> -->
-  </view>
-  <view class="buy" bindtap="buys" data-waresId="28" data-propertyId="588" data-amount="1">立即购买</view>
-
-  <!-- 领劵弹出层 -->
-  <view class="zan-dialog {{ showDialog ? 'zan-dialog--show' : '' }}">
-    <!-- <view class="zan-dialog  zan-dialog--show"> -->
-=======
     <view class="contents" wx:for="{{list.content}}" wx:key='*this'>
 
       <image src="{{item}}"></image>
@@ -197,7 +136,6 @@
   <!-- 领劵弹出层 -->
   <view class="zan-dialog {{ showDialog ? 'zan-dialog--show' : '' }}" >
   <!-- <view class="zan-dialog  zan-dialog--show"> -->
->>>>>>> 1eb06d9583af236b7485e283fba9b2d4b18d2d9d
     <view class="zan-dialog__mask" />
     <view class="zan-dialog__container">
       <view class="imgs">
@@ -216,11 +154,7 @@
               <view class="rt">
                 <text class="t1">全品类通用券</text>
                 <text class="t2">领取</text>
-<<<<<<< HEAD
-                <!-- <text class="t2">已领取</text> -->
-=======
                 <!-- <text class="t2">已领取</text>  -->
->>>>>>> 1eb06d9583af236b7485e283fba9b2d4b18d2d9d
               </view>
               <view class=" rb ">
                 <text class="t1 ">适用平台：全平台</text>
@@ -237,11 +171,7 @@
             <view class="cr">
               <view class="rt">
                 <text class="t1">全品类通用券</text>
-<<<<<<< HEAD
-                <!-- <text class="t2">领取</text> -->
-=======
                 <!-- <text class="t2">领取</text>  -->
->>>>>>> 1eb06d9583af236b7485e283fba9b2d4b18d2d9d
                 <text class="t3">已领取</text>
               </view>
               <view class=" rb ">
@@ -251,19 +181,6 @@
             </view>
           </view>
         </view>
-<<<<<<< HEAD
-      </view>
-    </view>
-  </view>
-  
-  <!-- 选择弹出层 -->
-  <view class="popup {{ showDialog1 ? 'show1' : '' }}">
-
-  <!-- <view class="popup show1"> -->
-
-
-
-=======
         <!-- <view class="coupon1">
           <image src="../../static/imgs/组 7.png"></image>
           <text>功能暂未开放,敬请期待!</text>
@@ -275,31 +192,11 @@
   <!-- 选择弹出层 -->
   <view class="popup {{ showDialog1 ? 'show1' : '' }}">
     <!-- <view class="popup show1"> -->
->>>>>>> 1eb06d9583af236b7485e283fba9b2d4b18d2d9d
 
     <view class="zan-dialog__mask" bindtap="toggleDialog1" />
     <view class="zan-dialog__container">
       <view class="conts">
         <view class="trade">
-<<<<<<< HEAD
-          <view class="imags"  bindtap="toggleDialog">
-            <image src="../../static/scango/关闭icon.png"></image>
-          </view>
-          <view class="tcont">
-            <text class="name">保湿急救 网红蓝药丸面膜</text>
-            <text class="prcie">￥<text>97</text></text>
-            <text class="repertory">库存：<text>30</text></text>
-          </view>
-        </view>
-
-        <view class="spec " wx:for="{{attrValueList}}" wx:for-item="attrValueObj" wx:for-index="attrIndex">
-          <view class="thead">{{attrValueObj.attrKey}}</view>
-          <view class="cont">
-            <view class=".text {{attrIndex==firstIndex || attrValueObj.attrValueStatus[valueIndex]?(value==attrValueObj.selectedValue?'attr_value_active':''):'attr_value_disabled'}}" bindtap="selectAttrValue" data-status="{{attrValueObj.attrValueStatus[valueIndex]}}"
-              data-value="{{value}}" data-key="{{attrValueObj.attrKey}}" data-code="{{attrCode}}" data-index="{{attrIndex}}" data-selectedvalue="{{attrValueObj.selectedValue}}" wx:for="{{attrValueObj.attrValues}}" wx:for-item="value" wx:for-index="valueIndex">{{value}}</view>
-          </view>
-        </view>
-=======
           <view class="imags">
             <image src="{{defaultSku.imgUrl?defaultSku.imgUrl:pic}}"></image>
 
@@ -324,33 +221,20 @@
 
         </view>
 
->>>>>>> 1eb06d9583af236b7485e283fba9b2d4b18d2d9d
         <view class="num">
 
           <text>数量</text>
           <view class="totalizer">
-<<<<<<< HEAD
-             <i-input-number value="{{ value1 }}"  i-class="inputs" min="0" max="100" bindchange="handleChange1" />
-          </view>
-
-        </view>
-        <view class="next" >下一步</view>
-=======
             <i-input-number value="{{ value1 }}" i-class="inputs" min="1" max="100" bindchange="handleChange1" />
           </view>
 
         </view>
         <view class="next" bindtap="toggleDialog1">下一步</view>
->>>>>>> 1eb06d9583af236b7485e283fba9b2d4b18d2d9d
 
       </view>
     </view>
   </view>
 
 
-<<<<<<< HEAD
-</view>
-=======
 </view>
 <wxs module="wxs" src="../../wxs/number.wxs" />
->>>>>>> 1eb06d9583af236b7485e283fba9b2d4b18d2d9d

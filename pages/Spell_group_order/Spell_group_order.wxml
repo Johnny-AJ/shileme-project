@@ -4,18 +4,6 @@
   <!-- 头部部分 -->
   <view class="big_box">
     <view class="flex1_box">
-<<<<<<< HEAD
-      <view class="flex_box">
-        <view class="top_box">
-          <view class="t1">花礼晴
-            <text>13923856789</text>
-            <text class="text">默认</text>
-          </view>
-          <view class="t1">广东省广州市天河区长湴工业园13栋</view>
-          <view class="t2" bindtap="toggleDialog">附近门店自取</view>
-        </view>
-        <image src="../../static/cart/矩形 16.png"></image>
-=======
       <view class="flex_box" >
        <view class="top_box1" wx:if="{{!addressok}}" bindtap = "handurl" >
           请填写个人信息地址
@@ -31,7 +19,6 @@
           <view class="top_img" bindtap = "handurl">
                <image src="../../static/cart/矩形 16.png" ></image>
           </view>
->>>>>>> 1eb06d9583af236b7485e283fba9b2d4b18d2d9d
       </view>
       <view class="imgs">
         <image src="../../static/imgs/分割线.png" class="imgs1"></image>
@@ -46,25 +33,6 @@
       <text>商品信息</text>
     </view>
     <view class="conts">
-<<<<<<< HEAD
-      <view class="cont p30">
-        <view class="imgs">
-          <image src="../../static/cart/矩形 16.png"></image>
-        </view>
-        <view class="cr">
-          <view class="name">
-            <text>保湿急救 网红蓝药丸面膜</text>
-            <text class="t2"><text>x1</text></text>
-          </view>
-          <view class="spec">
-            <text class="t1">5片/盒</text>
-
-          </view>
-          <view class="price">
-            <text class="price">￥79</text>
-          </view>
-          <view class="gifts">
-=======
       <view class="cont p30" wx:for="{{orderWaresVos}}" wx:key="*this">
         <view class="imgs">
           <image src="{{item.logoUrl}}"></image>
@@ -83,7 +51,6 @@
             <text class="price">￥{{item.price}}</text>
           </view>
           <!-- <view class="gifts">
->>>>>>> 1eb06d9583af236b7485e283fba9b2d4b18d2d9d
             <view class="gl">赠品:</view>
             <view class="num">
               <view class="nums">
@@ -95,11 +62,7 @@
                 <text>X1</text>
               </view>
             </view>
-<<<<<<< HEAD
-          </view>
-=======
           </view> -->
->>>>>>> 1eb06d9583af236b7485e283fba9b2d4b18d2d9d
         </view>
       </view>
 
@@ -107,29 +70,18 @@
     </view>
     <view class="leave">
       <text>卖家留言</text>
-<<<<<<< HEAD
-      <input type="text" placeholder="选填，有什么可以跟卖家说的"></input>
-    </view>
-  </view>
-  <view class="coupon">
-=======
       <input type="text" placeholder="选填，有什么可以跟卖家说的" bindinput="bindKeyInput"></input>
     </view>
   </view>
   <view class="coupons">
->>>>>>> 1eb06d9583af236b7485e283fba9b2d4b18d2d9d
     <view class="ctop">
       <text class="lt">活动</text>
       <text class="rt">无活动</text>
     </view>
     <view class="ccont">
       <text class="lt">优惠劵</text>
-<<<<<<< HEAD
-      <text class="color">一张可用</text>
-=======
       <text class="color"  bindtap="toggleDialog" wx:if="{{getListByWaresId1.length>0}}" >{{getListByWaresId1.length}}张可用</text>
       <text class="color" wx:if="{{getListByWaresId1.length==0}}" >无</text>
->>>>>>> 1eb06d9583af236b7485e283fba9b2d4b18d2d9d
     </view>
   </view>
   <view class="minute">
@@ -139,11 +91,7 @@
     </view>
     <view>
       <text class="ml">优惠券</text>
-<<<<<<< HEAD
-      <text class="mr">-￥0.00</text>
-=======
       <text class="mr">-￥{{coupon}}</text>
->>>>>>> 1eb06d9583af236b7485e283fba9b2d4b18d2d9d
     </view>
     <view>
       <text class="ml">运费</text>
@@ -151,30 +99,17 @@
     </view>
     <view>
       <text class="ml">合计</text>
-<<<<<<< HEAD
-      <text class="mr">￥79.00</text>
-=======
       <text class="mr">￥{{allprice-coupon}}</text>
->>>>>>> 1eb06d9583af236b7485e283fba9b2d4b18d2d9d
     </view>
 
   </view>
   <view class="buy">
-<<<<<<< HEAD
-    <view class="bl" >
-
-      <text>￥79</text>
-      <text> 合计： </text>
-    </view>
-    <view class="br"  bindtap="goto" data-url="/pages/order/order">
-=======
     <view class="bl">
 
       <text>￥{{allprice-coupon}}</text>
       <text> 合计： </text>
     </view>
     <view class="br" bindtap="goto" data-url="/pages/order/order">
->>>>>>> 1eb06d9583af236b7485e283fba9b2d4b18d2d9d
       提交订单
     </view>
 
@@ -186,13 +121,8 @@
   <!-- 下半部分 -->
 
   <!-- 弹出层 -->
-<<<<<<< HEAD
-  <view class="zan-dialog {{ showDialog ? 'zan-dialog--show' : '' }}">
-  <!-- <view class="zan-dialog zan-dialog--show"> -->
-=======
 
     <view class="zan-dialog {{ showDialog ? 'zan-dialog--show' : '' }}">
->>>>>>> 1eb06d9583af236b7485e283fba9b2d4b18d2d9d
     <!-- <view class="zan-dialog  zan-dialog--show"> -->
     <view class="zan-dialog__mask" />
     <view class="zan-dialog__container">
@@ -200,15 +130,6 @@
         <image src="../../static/scango/关闭icon.png" bindtap="toggleDialog"></image>
       </view>
       <view class="conts">
-<<<<<<< HEAD
-      <view> 
-        <text class="tittle">代收门店</text>
-      </view>
-      <view class=""> </view>
-      </view>
-    </view>
-
-=======
         <view class="title"> 优惠劵 </view>
         <view class="coupon">
           <!-- <view class="cont" wx:for="{{getListByWaresId}}" wx:key="*this" bindtap="getDiscountById"> -->
@@ -238,6 +159,5 @@
         </view> -->
       </view>
     </view>
->>>>>>> 1eb06d9583af236b7485e283fba9b2d4b18d2d9d
   </view>
 </view>

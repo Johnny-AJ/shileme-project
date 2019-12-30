@@ -1,21 +1,13 @@
 {
-  "usingComponents": {
-<<<<<<< HEAD
-   "i-input-number": "../../components/input-number/index"
-=======
-   "i-input-number": "../../components/input-number/index",
-    "i-toast": "../../components/toast/index"
->>>>>>> 1eb06d9583af236b7485e283fba9b2d4b18d2d9d
-  },
+    "usingComponents": {
+        "i-input-number": "../../components/input-number/index",
+        "i-toast": "../../components/toast/index"
+    },
 
-  "navigationBarBackgroundColor": "#ffffff",
-  "navigationBarTextStyle": "black",
-  "backgroundColor": "#eeeeee",
-<<<<<<< HEAD
-  "backgroundTextStyle": "light"
-=======
-  "backgroundTextStyle": "light",
-  "navigationBarTitleText": "商品详情"
->>>>>>> 1eb06d9583af236b7485e283fba9b2d4b18d2d9d
+    "navigationBarBackgroundColor": "#ffffff",
+    "navigationBarTextStyle": "black",
+    "backgroundColor": "#eeeeee",
+    "backgroundTextStyle": "light",
+    "navigationBarTitleText": "商品详情"
 
 }

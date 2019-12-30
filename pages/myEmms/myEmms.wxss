@@ -3,8 +3,6 @@
 text {
   font-size: 66rpx;
 }
-<<<<<<< HEAD
-=======
 
 .myEmms {
   width: 750rpx;
@@ -179,4 +177,3 @@ color:rgba(240,43,80,1);
  font-size:26rpx;
  color:rgba(240,43,80,1);
 }
->>>>>>> 1eb06d9583af236b7485e283fba9b2d4b18d2d9d

@@ -142,9 +142,6 @@
 //   "i-tabs": "../../components/tabs/index",
 //     "i-tab": "../../components/tab/index"
 // }
-<<<<<<< HEAD
-// --------------------------------------------------
-=======
 // --------------------------------------------------
 // "navigationBarTitleText": "热卖榜"
 
@@ -152,4 +149,3 @@
 // <view class="img2">
 //   <image src="../../static/imgs/imgs.png"></image>
 // </view>
->>>>>>> 1eb06d9583af236b7485e283fba9b2d4b18d2d9d

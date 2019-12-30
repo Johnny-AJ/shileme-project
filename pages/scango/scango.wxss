@@ -58,14 +58,6 @@
 .scgtxt {
   height: 170rpx;
   width: 100%;
-<<<<<<< HEAD
-  padding-left: 29px;
-}
-.attr_value_disabled { 
- color: #ccc; 
-} 
-.scgtxt .title {
-=======
   box-sizing: border-box;
   padding: 0 29rpx;
 }
@@ -76,7 +68,6 @@
 
 .scgtxt .title {
   width: 100%;
->>>>>>> 1eb06d9583af236b7485e283fba9b2d4b18d2d9d
   margin-top: 21rpx;
   font-size: 30rpx;
   font-family: PingFang SC;
@@ -341,11 +332,7 @@
   font-family: PingFang SC;
   font-weight: 400;
   position: relative;
-<<<<<<< HEAD
-  top: -23rpx;
-=======
   top: -16rpx;
->>>>>>> 1eb06d9583af236b7485e283fba9b2d4b18d2d9d
   color: rgba(102, 102, 102, 1);
 }
 
@@ -357,11 +344,7 @@
   font-family: PingFang SC;
   font-weight: 400;
   color: rgba(34, 34, 34, 1);
-<<<<<<< HEAD
-  top: -23rpx;
-=======
   top: -15rpx;
->>>>>>> 1eb06d9583af236b7485e283fba9b2d4b18d2d9d
 }
 
 .comment  .pj  .tbottom .pl .imsg {
@@ -394,11 +377,7 @@
 
 .table {
   width: 100%;
-<<<<<<< HEAD
-  padding:  0  0 100rpx 0;
-=======
   padding: 0 0 100rpx 0;
->>>>>>> 1eb06d9583af236b7485e283fba9b2d4b18d2d9d
   background: #fff;
   margin-bottom: 20rpx;
 }
@@ -526,10 +505,6 @@
   transition: all 0.4s ease;
   z-index: 12;
   box-shadow: 0px 3px 3px 2px gainsboro;
-<<<<<<< HEAD
-
-  padding-bottom: 178rpx
-=======
   padding-bottom: 30rpx;
 }
 
@@ -537,7 +512,6 @@
   width: 100%;
   box-sizing: border-box;
   padding: 0 30rpx;
->>>>>>> 1eb06d9583af236b7485e283fba9b2d4b18d2d9d
 }
 
 .zan-dialog--show .zan-dialog__container {
@@ -560,11 +534,7 @@
 
 .show1 .zan-dialog__container .conts {
   width: 100%;
-<<<<<<< HEAD
-    box-sizing: border-box;
-=======
   box-sizing: border-box;
->>>>>>> 1eb06d9583af236b7485e283fba9b2d4b18d2d9d
   padding: 0 30rpx;
 }
 
@@ -577,13 +547,8 @@
 }
 
 .zan-dialog__container .conts .coupon {
-<<<<<<< HEAD
-  height: 210rpx;
-  width: 690rpx;
-=======
   width: 100%;
   box-sizing: border-box;
->>>>>>> 1eb06d9583af236b7485e283fba9b2d4b18d2d9d
   border-top: 1rpx solid rgba(8, 8, 8, 0.2);
 }
 
@@ -729,14 +694,6 @@
 
 .popup  .trade .tcont .name {
   margin-top: 30rpx;
-<<<<<<< HEAD
-  display: inline-block;
-}
-
-.popup  .trade .tcont .prcie {
-  position: absolute;
-  top: 131rpx;
-=======
   width: 100%;
   height: 80rpx;
   overflow: hidden;
@@ -758,7 +715,6 @@ color:rgba(34,34,34,1);
 .popup  .trade .tcont .prcie {
   position: absolute;
 top: 150rpx;
->>>>>>> 1eb06d9583af236b7485e283fba9b2d4b18d2d9d
   font-size: 26rpx;
   left: 0;
   font-family: PingFang SC;
@@ -819,18 +775,11 @@ top: 150rpx;
   font-family: PingFang SC;
   font-weight: 400;
   text-align: center;
-<<<<<<< HEAD
-}
-
-.popup   .checkout {
-    width: 160rpx;
-=======
   border: 1rpx solid #eee;
 }
 
 .popup .cont   .checkout {
   width: 160rpx;
->>>>>>> 1eb06d9583af236b7485e283fba9b2d4b18d2d9d
   height: 60rpx;
   background: #eee;
   display: inline-block;
@@ -851,17 +800,11 @@ top: 150rpx;
   left: -20rpx;
 }
 
-<<<<<<< HEAD
-.popup .spec .cont  .checkout {
-=======
 .popup .checkout {
->>>>>>> 1eb06d9583af236b7485e283fba9b2d4b18d2d9d
   background: #fdf2f6;
   color: rgba(240, 43, 80, 1);
   border: 1rpx solid #f02b50;
 }
-<<<<<<< HEAD
-=======
 .sku-choose-item  .active {
   background-color: #eb2444;
   border:1px solid #eb2444 !important;
@@ -872,7 +815,6 @@ top: 150rpx;
 .sku-choose-item .dashed {
   border:1px dashed #aaa;
 }
->>>>>>> 1eb06d9583af236b7485e283fba9b2d4b18d2d9d
 
 .popup .num {
   width: 100%;
@@ -909,10 +851,6 @@ top: 150rpx;
   height: 17rpx;
 }
 
-<<<<<<< HEAD
-.popup .num   .totalizer {
-  width: 250rpx;
-=======
 .conts .coupon1 {
   width: 100%;
   height: 700rpx;
@@ -935,7 +873,6 @@ top: 150rpx;
 
 .popup .num   .totalizer {
   width: 260rpx;
->>>>>>> 1eb06d9583af236b7485e283fba9b2d4b18d2d9d
   height: 60rpx;
   position: absolute;
   right: 0;
@@ -944,24 +881,14 @@ top: 150rpx;
   text-align: center;
 }
 
-<<<<<<< HEAD
-.popup .num   .totalizer .inputs{
-=======
 .popup .num   .totalizer .inputs {
->>>>>>> 1eb06d9583af236b7485e283fba9b2d4b18d2d9d
   width: 100%;
   height: 100%;
 }
 
-<<<<<<< HEAD
-.popup .num   .totalizer .input{
- width: 100%;
- height: 100%
-=======
 .popup .num   .totalizer .input {
   width: 100%;
   height: 100%;
->>>>>>> 1eb06d9583af236b7485e283fba9b2d4b18d2d9d
 }
 
 .popup .next {
@@ -970,10 +897,6 @@ top: 150rpx;
   display: flex;
   justify-content: center;
   align-items: center;
-<<<<<<< HEAD
-  position: absolute;
-=======
->>>>>>> 1eb06d9583af236b7485e283fba9b2d4b18d2d9d
   margin-top: 58rpx;
   background: rgba(240, 43, 80, 1);
   border-radius: 10rpx;
@@ -991,12 +914,6 @@ top: 150rpx;
   left: 0;
   z-index: -1;
 }
-<<<<<<< HEAD
-.contents{
-  width: 100%;
-
-}
-=======
 
 .contents {
   width: 100%;
@@ -1006,4 +923,3 @@ top: 150rpx;
 }
 
 
->>>>>>> 1eb06d9583af236b7485e283fba9b2d4b18d2d9d

@@ -1,50 +1,22 @@
 <!--pages/inetAddress/inetAddress.wxml-->
 
 <!-- 背景颜色 -->
-<<<<<<< HEAD
-<view class="bgc">
-  <!-- 页面名称 -->
-  <view class="username">
-    <text>姓名：</text>
-    <input type="text" placeholder="收货人姓名" value="{{inputValue}}"></input>
-=======
 
 <view class="bgc">
 
   <view class="username">
     <text>姓名：</text>
     <input name="name" class="weui-input" type="text" bindinput="handuserName" placeholder="收货人姓名" value="{{inputuserName}}" />
->>>>>>> 1eb06d9583af236b7485e283fba9b2d4b18d2d9d
   </view>
 
   <view class="username">
     <text>手机号：</text>
-<<<<<<< HEAD
-    <input maxlength="11" placeholder="收货人手机号" value="{{inputNumber}}"></input>
-=======
     <input name="number" maxlength="11" bindinput="handNumber" placeholder="收货人手机号" value="{{inputNumber}}"></input>
->>>>>>> 1eb06d9583af236b7485e283fba9b2d4b18d2d9d
   </view>
 
   <picker mode="region" bindchange="bindRegionChange" value="{{region}}" custom-item="{{customItem}}" class="username p30">
     <text>省/市/区：</text>
     <!-- <input type="text" placeholder="选择所在地区"></input> -->
-<<<<<<< HEAD
-    <view class="picker">{{region[0]}} {{region[1]}} {{region[2]}}</view>
-  </picker>
-  <view class="username">
-    <text>收货地址:</text>
-    <input placeholder="详细地址，如街道，楼盘号等" value="{{inputAddress}}"></input>
-  </view>
-  <view class="inetAddress">
-    <radio></radio>
-    <text>设为默认地址</text>
-  </view>
-  <!-- 按钮 -->
-  <view class="button" bindtap="handurl" data-url="/pages/shipping/shipping">
-    <text>保存</text>
-  </view>
-=======
     <view name="RectRegion" class="picker">{{region[0]}} {{region[1]}} {{region[2]}}</view>
   </picker>
 
@@ -68,5 +40,4 @@
     <button>保存</button>
   </view>
 
->>>>>>> 1eb06d9583af236b7485e283fba9b2d4b18d2d9d
 </view>
