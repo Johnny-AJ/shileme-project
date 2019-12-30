@@ -1,22 +1,20 @@
-
 Page({
 
   /**
    * 页面的初始数据
    */
   data: {
-    current: 'tab1',
-    seachtext: '',
-    pageSize:10,
-    currPage:1,
-    seach:[],
-    type:'',
-    subscript:0,
-    tittle:[{
-      text:'推荐',
-      type:''
+    seachtext: '', //传过来的数据
+    pageSize: 4,
+    currPage: 1,
+    seach: [],
+    type: '',
+    subscript: 0,
+    tittle: [{
+        text: '推荐',
+        type: ''
 
-    },
+      },
       {
         text: '价格从低到高',
         type: 2
@@ -24,7 +22,7 @@ Page({
       },
       {
         text: '价格从高到低',
-        type:1
+        type: 1
 
       }
     ]
@@ -36,8 +34,8 @@ Page({
   /**
    * 生命周期函数--监听页面加载
    */
-  onLoad: function (options) {
-    var self =this;
+  onLoad: function(options) {
+    var self = this;
     self.setData({
       seachtext: options.seach,
     })
@@ -47,55 +45,29 @@ Page({
   /**
    * 生命周期函数--监听页面初次渲染完成
    */
-  onReady: function () {
+  onReady: function() {
 
   },
 
   /**
    * 生命周期函数--监听页面显示
    */
-  onShow: function () {
-
-  },
-
-  /**
-   * 生命周期函数--监听页面隐藏
-   */
-  onHide: function () {
-
-  },
-
-  /**
-   * 生命周期函数--监听页面卸载
-   */
-  onUnload: function () {
-
-  },
-
-  /**
-   * 页面相关事件处理函数--监听用户下拉动作
-   */
-  onPullDownRefresh: function () {
+  onShow: function() {
 
   },
 
   /**
    * 页面上拉触底事件的处理函数
    */
-  onReachBottom: function () {
+  onReachBottom: function() {
 
   },
 
   /**
    * 用户点击右上角分享
    */
-  onShareAppMessage: function () {
+  onShareAppMessage: function() {
 
-  },
-  handleChange({ detail }) {
-    this.setData({
-      current: detail.key
-    });
   },
   search() { //搜索结果
     var self = this
@@ -106,34 +78,61 @@ Page({
         token: wx.getStorageSync('token')
       },
       data: {
+        type: self.data.type,
         pageSize: self.data.pageSize,
         currPage: self.data.currPage,
         search: self.data.seachtext
       },
-      success: function (res) {
-     
-        console.log(res,'55555')
-        if (JSON.stringify(res.data.data) == "{}"){
-          console.log(9999)
+      success: function(res) {
+        if (res.data.data.list.length == 0) {
           self.setData({
             seach: []
-          }) 
-        }else{
+          })
+        } else {
           self.setData({
-            seach: res.data.data
-          }) 
-          
+            seach: res.data.data.list
+          })
         }
-           
-        console.log(self.data.seach,'self.data.seach')
-
       }
     })
   },
-  change(e){
+  change(e) { //改变tab页
     console.log(e)
-    this.setData({
-      subscript: e.currentTarget.dataset.index
-    })
+    var self = this;
+
+    switch (e.currentTarget.dataset.index) {
+      case 0:
+        this.setData({
+          type: '',
+          seach: [],
+          subscript: e.currentTarget.dataset.index
+        }, () => {
+          self.search()
+        })
+        break;
+      case 1:
+        this.setData({
+          type: 2,
+          seach: [],
+          subscript: e.currentTarget.dataset.index
+        }, () => {
+          self.search()
+        })
+        break;
+      case 2:
+        this.setData({
+          type: 1,
+          seach: [],
+          subscript: e.currentTarget.dataset.index
+        }, () => {
+          self.search()
+        })
+        break;
+
+
+
+    }
+
+
   }
 })

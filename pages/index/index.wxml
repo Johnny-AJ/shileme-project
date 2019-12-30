@@ -34,17 +34,17 @@
       <view class="text">扫码购</view>
     </view>
 
-    <view class="navigator" bindtap="handurl" data-url="/pages/free/free">
+    <view class="navigator" bindtap="handurl1" data-url="/pages/free/free">
       <image mode="widthFix" src="../../static/imgs/试用.png"></image>
       <view class="text">免费试用</view>
     </view>
 
-    <view class="navigator" bindtap="hangURL" data-url="/pages/group/group">
+    <view class="navigator" bindtap="handurl1" data-url="/pages/group/group">
       <image mode="widthFix" src="../../static/imgs/拼团.png"></image>
       <view class="text">超值拼团</view>
     </view>
 
-    <view class="navigator" bindtap="handurl" data-url="/pages/pointsfor/pointsfor">
+    <view class="navigator" bindtap="handurl1" data-url="/pages/pointsfor/pointsfor">
       <image mode="widthFix" src="../../static/imgs/积分兑换.png"></image>
       <view class="text">积分兑换</view>
     </view>

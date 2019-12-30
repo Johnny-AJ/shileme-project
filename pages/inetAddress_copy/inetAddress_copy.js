@@ -45,7 +45,7 @@ Page({
         city: self.data.city,
         region: self.data.region,
         address: self.data.address,
-        isDefault: self.data.id,
+        isDefault: self.data.isDefault,
         id: self.data.id
       },
       header: {
@@ -91,7 +91,7 @@ Page({
           id:data.id
         })
 
-        console.log(self.data,'data')
+  
       }
     })
   },

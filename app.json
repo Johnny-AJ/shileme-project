@@ -1,9 +1,11 @@
 {
   "pages": [
     "pages/index/index",
-    "pages/searches/searches",
     "pages/search/search",
+    "pages/searches/searches",
     "pages/user/user",
+    "pages/free/free",
+    "pages/pointsfor/pointsfor",
     "pages/inetAddress_copy/inetAddress_copy",
     "pages/Coupons/Coupons",
     "pages/cart/cart",

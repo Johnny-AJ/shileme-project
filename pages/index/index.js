@@ -57,7 +57,7 @@ Page({
   onShow: function() {
     this.vector()//请求商品数据
   },
-  handurl: function(e) {
+  handurl: function(e) {//扫码购
 
     var _this = this;
 
@@ -96,6 +96,11 @@ Page({
     // })
   },
 
+  handurl1: function (e) {//扫码
+    wx.navigateTo({
+      url: e.currentTarget.dataset.url,
+    })
+  },
 
   setSwiperData() { // 轮播图
     wx.request({
