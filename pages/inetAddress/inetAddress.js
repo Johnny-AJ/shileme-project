@@ -47,11 +47,7 @@ Page({
     self.setData({
       token
     })
-    // console.log(this.data.token)
-    // 头部标题
-    wx.setNavigationBarTitle({
-      title: '新增地址'
-    })
+  
 
   },
 
@@ -92,12 +88,7 @@ Page({
         }
       }
     })
-    // console.log(self.data.name, 11)
-    // console.log(self.data.phone, 22)
-    // console.log(self.data.province, 33)
-    // console.log(self.data.city, 44)
-    // console.log(self.data.region, 55)
-    // console.log(self.data.address, 66)
+
   },
   // 选框
   handleAnimalChange(e) {

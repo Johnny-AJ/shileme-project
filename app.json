@@ -2,11 +2,12 @@
   "pages": [
     "pages/index/index",
     "pages/search/search",
+    "pages/shipping1/shipping1",
     "pages/searches/searches",
     "pages/user/user",
     "pages/free/free",
-    "pages/pointsfor/pointsfor",
     "pages/inetAddress_copy/inetAddress_copy",
+    "pages/pointsfor/pointsfor",
     "pages/Coupons/Coupons",
     "pages/cart/cart",
     "pages/indent/indent",

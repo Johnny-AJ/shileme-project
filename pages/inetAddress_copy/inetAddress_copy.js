@@ -22,13 +22,7 @@ Page({
    * 生命周期函数--监听页面加载
    */
   onLoad: function(e) {
-    console.log(e, 11)
-    // var self = this
-
     this.info(e)//根据id查询
-
- 
- 
   },
   
   // 按钮
@@ -66,8 +60,30 @@ Page({
       }
     })
   },
- 
-  info(e){
+  handuserName(e) {
+      this.setData({
+        name: e.detail.value
+      })
+  },
+  bindRegionChange(e) {
+    console.log(e,'adds')
+    this.setData({
+      city: e.detail.value[1], //市
+      region: e.detail.value[2], //区
+      province: e.detail.value[0], //地址
+    })
+  },
+  handNumber(e) {
+    this.setData({
+      phone: e.detail.value
+    })
+  },
+  handAddress(e) {
+    this.setData({
+      address: e.detail.value
+    })
+  },
+  info(e){//请求数据
     var self =this;
     wx.request({
       url: 'http://192.168.2.98:9095/api/address/info',

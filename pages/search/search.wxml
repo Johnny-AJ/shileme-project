@@ -15,20 +15,19 @@
       <image src="../../static/imgs/火.png"></image>
       <text>热门搜索</text>
     </view>
-    <view class="searchcont" bindtap="handurl" data-url="/pages/scango/scango">
+    <view class="searchcont"  data-url="/pages/scango/scango">
       <text wx:for="{{getHotSearch}}" wx:key="*this"> {{item.name}}</text>
 
     </view>
-    <view class="history">
+    <view class="history" hidden="{{searchHistory.length==0}}">
       <view class="title">
         <text>历史搜索</text>
-        <image src="../../static/imgs/垃圾桶.png"></image>
+        <image src="../../static/imgs/垃圾桶.png" bindtap="deletes"></image>
       </view>
 
-      <view class="history-cont" bindtap="handurl" data-url="/pages/scango/scango">
-        <text>面膜</text>
-        <text>洗面奶</text>
-        <text>项链</text>
+      <view class="history-cont" >
+        <text wx:for="{{searchHistory}}" wx:key="*this" bindtap="click" data-name="{{item.name}}">{{item.name}}</text>
+        
       </view>
     </view>
   </view>

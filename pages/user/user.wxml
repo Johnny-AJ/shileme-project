@@ -64,7 +64,7 @@
       <image src="../../static/userimags/收藏夹.png"></image>
       <text> 收藏夹</text>
     </view>
-    <view class="content" bindtap="handur2" data-url="/pages/shipping/shipping">
+    <view class="content" bindtap="handur2" data-url="/pages/shipping1/shipping1">
       <image src="../../static/userimags/我的地址.png"></image>
       <text> 我的地址</text>
     </view>
