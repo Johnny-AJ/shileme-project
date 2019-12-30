@@ -429,7 +429,6 @@
   background: rgba(0, 0, 0, 0.75);
   display: none;
 }
-
 .zan-dialog__container {
   position: fixed;
   bottom: 0rpx;
@@ -457,7 +456,6 @@
 .zan-dialog--show .zan-dialog__mask {
   display: block;
 }
-
 .show1 .zan-dialog__container {
   transform: translateY(0);
   background: #fff;
