@@ -1,0 +1,40 @@
+<!--搜索页-->
+<view class="search bs">
+  <view class="mysearch dj">
+    <view class="sl dj">
+      <image src="../../static/imgs/搜索.png"></image>
+      <input class="weui-input" focus='{{inputShowed}}' type='text' placeholder="搜索更多好物" />
+    </view>
+    <view class="sr">取消</view>
+  </view>
+  <view class="top-search">
+
+    <view class="title">
+      <image src="../../static/imgs/火.png"></image>
+      <text>热门搜索</text>
+    </view>
+    <view class="searchcont" bindtap="handurl" data-url="/pages/scango/scango">
+      <text>面膜</text>
+      <text>洗面奶</text>
+      <text>项链</text>
+      <text>洗面奶</text>
+      <text>连衣裙</text>
+      <text>项链</text>
+      <text>连衣裙</text>
+    </view>
+    <view class="history">
+      <view class="title">
+        <text>热门搜索</text>
+        <image src="../../static/imgs/垃圾桶.png"></image>
+      </view>
+
+      <view class="history-cont" bindtap="handurl" data-url="/pages/scango/scango">
+        <text>面膜</text>
+        <text>洗面奶</text>
+        <text>项链</text>
+      </view>
+    </view>
+  </view>
+
+
+</view>

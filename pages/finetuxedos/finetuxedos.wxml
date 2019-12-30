@@ -1,0 +1,208 @@
+<!--pages/finetuxedos/finetuxedos.wxml-->
+
+<view class="bgc">
+  <!-- 图片 -->
+  <view class="top_box">
+    <view class="img1">
+      <image src="../../static/finetuxedos/170.180.png"></image>
+    </view>
+    <!--  -->
+    <view class="top_box_nav">
+      <view class="t1">保湿急救 网红蓝药丸面膜保湿急救 网红蓝药丸面膜5片装</view>
+      <view class="t2">已拼xxx件</view>
+      <view class="t3">拼团价 ￥79.00
+        <view class="t4">省5元</view>
+      </view>
+    </view>
+  </view>
+  <!-- 图片 -->
+
+  <!-- 正品保证 -->
+  <view class="price_real">
+    <view class="price_real_nav">
+      <image src="../../static/finetuxedos/icon.png"></image>
+      <view class="t5">正品保证</view>
+    </view>
+
+    <view class="price_real_nav">
+      <image src="../../static/finetuxedos/icon.png"></image>
+      <view class="t5">精选商品</view>
+    </view>
+
+    <view class="price_real_nav">
+      <image src="../../static/finetuxedos/icon.png"></image>
+      <view class="t5">门店体验</view>
+    </view>
+  </view>
+  <!-- 正品保证 -->
+
+  <!-- 线 -->
+  <view class="hr"></view>
+
+  <!-- logo -->
+  <view class="logo_box">
+    <!-- logo -->
+    <view class="img2">
+      <image src="../../static/finetuxedos/团团.jpg"></image>
+    </view>
+    <!-- 米粒 -->
+    <view class="t6">米粒</view>
+    <!-- 用户说 -->
+    <view class="yonghushuo">用户说</view>
+  </view>
+  <!-- logo -->
+
+  <!-- 文字 -->
+  <view class="text_nav">
+    <view class="text_nav_t1">
+      收到给朋友化了这个妆，她一直很喜欢colorpop家的东西，但是官网一直容易断货，所以就在这里看看能不能找到，结果被我找到了。朋友说这个质地很软糯，是正品没错了。附：朋友的眼睛太好看了。
+    </view>
+  </view>
+  <!-- 文字 -->
+
+  <!-- 还差一人 -->
+  <view class="success_box">
+    <!-- 左 -->
+    <view class="success_box1">
+      <view class="t1">还差
+        <text class="t2">1人</text> 拼团成功
+      </view>
+    </view>
+
+    <!-- 右 -->
+    <view class="success_box2">
+      <view class="t1">剩余</view>
+      <view class="t2">
+        <text>01</text>：
+        <text>59</text>：
+        <text>01</text>
+      </view>
+    </view>
+
+  </view>
+  <!-- 还差一人 -->
+
+  <!-- 团长 -->
+  <view class="head">
+
+    <view class="img1">
+      <view class="head_nav">团长</view>
+      <image src="../../static/finetuxedos/团团.jpg"></image>
+    </view>
+
+    <view class="img2">
+      <image src="../../static/finetuxedos/团团.jpg"></image>
+    </view>
+
+  </view>
+  <!-- 团长 -->
+
+  <!-- 一键参团 -->
+  <view class="cantuan">一键参团</view>
+  <!-- 一键参团 -->
+
+  <!-- 拼团须知 -->
+  <view class="spell_nav">
+    <view class="t1"></view>
+    <view class="t2">拼团须知:
+      <text class="text_t1">好友拼团·人满发货·人不满退款</text>
+    </view>
+  </view>
+  <!-- 拼团须知 -->
+
+  <!-- 大家都在拼 -->
+  <view class="peopel">
+    <!-- 大家拼 -->
+    <view class="people_box1">
+
+      <view class="img_left">
+        <image src="../../static/finetuxedos/组 23.png"></image>
+      </view>
+
+      <view class="people_text">大家都在拼</view>
+
+      <view class="img_right">
+        <image src="../../static/finetuxedos/组 23 拷贝.png"></image>
+      </view>
+
+    </view>
+    <!-- 图片及内容 -->
+    <view class="people_box2">
+
+      <view class="people_nav">
+        <view class="people_img1">
+          <image src="../../static/finetuxedos/200.200.png"></image>
+          <view class="people_to">已拼22件</view>
+        </view>
+        <view class="people_nav_text">
+          <view class="t1">2人团</view>
+          <view class="t2">￥9.9</view>
+        </view>
+      </view>
+
+      <view class="people_nav">
+        <view class="people_img1">
+          <image src="../../static/finetuxedos/200.200.png"></image>
+          <view class="people_to">已拼22件</view>
+        </view>
+        <view class="people_nav_text">
+          <view class="t1">2人团</view>
+          <view class="t2">￥9.9</view>
+        </view>
+      </view>
+
+      <view class="people_nav">
+        <view class="people_img1">
+          <image src="../../static/finetuxedos/200.200.png"></image>
+          <view class="people_to">已拼22件</view>
+        </view>
+        <view class="people_nav_text">
+          <view class="t1">2人团</view>
+          <view class="t2">￥9.9</view>
+        </view>
+      </view>
+
+      <view class="people_nav">
+        <view class="people_img1">
+          <image src="../../static/finetuxedos/200.200.png"></image>
+          <view class="people_to">已拼22件</view>
+        </view>
+        <view class="people_nav_text">
+          <view class="t1">2人团</view>
+          <view class="t2">￥9.9</view>
+        </view>
+      </view>
+
+    </view>
+
+  </view>
+  <!-- 大家都在拼 -->
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+  <!--定位 -->
+  <view class="top_box_index">拼团首页</view>
+</view>

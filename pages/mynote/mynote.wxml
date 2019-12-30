@@ -1,0 +1,24 @@
+<!--pages/mynote/mynote.wxml-->
+
+
+<!-- 我的试用 -->
+<view class="checktbs">
+  <i-tabs current="{{ current }}" color="#F02B50" bindchange="handleChange" i-class="tabs">
+    <i-tab key="tab1" title="申请中"></i-tab>
+    <i-tab key="tab2" title="申请成功"></i-tab>
+    <i-tab key="tab3" title="申请失败"></i-tab>
+    <i-tab key="tab4" title="我的试用报告"></i-tab>
+  </i-tabs>
+</view>
+<!-- 我的试用 -->
+
+<!-- 申请中 -->
+<view class="bgc">
+  <view class="mynote_box">
+    <view class="top_nav">
+      <view class="t1">2019-08-07</view>
+      <view class="t2">申请中</view>
+    </view>
+  </view>
+</view>
+<!-- 申请中 -->

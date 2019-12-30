@@ -1,0 +1,17 @@
+/* pages/map/map.wxss */
+
+.head {
+  position: relative;
+}
+
+.head .head_box {
+  position: absolute;
+  left: 50%;
+  top: 0;
+  transform: translate(-50%, 0);
+  width: 690rpx;
+  height: 132rpx;
+  background: rgba(246, 252, 255, 1);
+  border-radius: 10rpx;
+  border: 1px solid skyblue;
+}
