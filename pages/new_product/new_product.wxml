@@ -1,0 +1,43 @@
+<!--pages/selling_list/selling_list.wxml-->
+<!-- <text>pages/selling_list/selling_list.wxml</text> -->
+
+<view class="bgc">
+  
+  <!-- <view class="img">
+    <image src=""></image>
+  </view> -->
+
+  <view class="checktbs">
+
+    <view class="conts">
+     <view class="cont" bindtap="click" data-index="0">
+        <text class="{{index1==0?'color':''}}">最爆新品</text>
+       
+      </view>
+      <view class="cont" bindtap="click" wx:for="{{findHotCategoryName}}" data-index="{{index+1}}" data-categoryId="{{item.id}}">
+        <text class="{{index1==index+1?'color':''}}">{{item.name}}</text>
+       
+      </view>
+   
+ 
+    </view>
+ 
+  </view>
+  <!-- tab -->
+
+  <!-- 急救 -->
+<view class="contcants">
+  <view class="cons_box" wx:for="{{getSellingList[index1]}}" wx:key="{{item.waresId}}" bindtap="goto" data-waresId="{{item.waresId}}">
+    <view class="imgs">
+      <image src="{{item.logoUrl}}"></image>
+    </view>
+    <view class="navd">
+      <view class="d1">{{item.advertising}}</view>
+      <view class="d2">{{item.waresName}}</view>
+      <view class="d3">￥{{item.mallPrice}}</view>
+      <view class="d4">{{item.commentNum}}条用户评价</view>
+    </view>
+  </view>
+</view>
+  <!-- 急救 -->
+</view>

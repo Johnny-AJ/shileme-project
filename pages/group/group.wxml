@@ -24,6 +24,41 @@
   <!-- 正在拼团 -->
 
   <!-- 急救 -->
+<<<<<<< HEAD
+  <view class="group_box1">
+=======
+  <view class="group_box1" wx:for="{{spelllist}}" wx:key="*this">
+>>>>>>> 1eb06d9583af236b7485e283fba9b2d4b18d2d9d
+
+    <view class="group_nav1">
+      <image src="../../static/group/170.180.png"></image>
+    </view>
+
+    <view class="group_text">
+<<<<<<< HEAD
+      <view class="t3">保湿急救 网红蓝药丸面膜</view>
+      <view class="t4">22人已拼</view>
+      <view class="t5">2人团</view>
+      <view class="t6">￥79.00</view>
+    </view>
+
+    <view class="group_button">
+=======
+      <view class="t3">{{item.name}}</view>
+      <view class="t4">{{item.numbers}}人已拼</view>
+      <view class="t5">{{item.number}}人团</view>
+      <view class="t6">￥{{item.price}}</view>
+    </view>
+
+    <view class="group_button" bindtap="handurl" data-id="{{item.id}}"> 
+     <image src="../../static/imgs/矩形 29 拷贝 2.png"></image>
+>>>>>>> 1eb06d9583af236b7485e283fba9b2d4b18d2d9d
+      <view class="t7">去拼团</view>
+    </view>
+
+  </view>
+
+<<<<<<< HEAD
   <view class="group_box1">
 
     <view class="group_nav1">
@@ -99,24 +134,8 @@
     </view>
 
   </view>
+=======
 
-  <view class="group_box1">
-
-    <view class="group_nav1">
-      <image src="../../static/group/170.180.png"></image>
-    </view>
-
-    <view class="group_text">
-      <view class="t3">保湿急救 网红蓝药丸面膜</view>
-      <view class="t4">22人已拼</view>
-      <view class="t5">2人团</view>
-      <view class="t6">￥79.00</view>
-    </view>
-
-    <view class="group_button">
-      <view class="t7">去拼团</view>
-    </view>
-
-  </view>
+>>>>>>> 1eb06d9583af236b7485e283fba9b2d4b18d2d9d
   <!-- 急救 -->
 </view>

@@ -1,3 +1,8 @@
 {
+<<<<<<< HEAD
   "usingComponents": {}
+=======
+  "usingComponents": {},
+  "navigationBarTitleText": "我的收藏"
+>>>>>>> 1eb06d9583af236b7485e283fba9b2d4b18d2d9d
 }

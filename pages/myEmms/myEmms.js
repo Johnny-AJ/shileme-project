@@ -5,7 +5,11 @@ Page({
    * 页面的初始数据
    */
   data: {
+<<<<<<< HEAD
 
+=======
+    current: 'tab1',
+>>>>>>> 1eb06d9583af236b7485e283fba9b2d4b18d2d9d
   },
 
   /**
@@ -24,7 +28,15 @@ Page({
   onReady: function () {
 
   },
+<<<<<<< HEAD
 
+=======
+  handleChange({ detail }) {
+    this.setData({
+      current: detail.key
+    });
+  },
+>>>>>>> 1eb06d9583af236b7485e283fba9b2d4b18d2d9d
   /**
    * 生命周期函数--监听页面显示
    */
@@ -65,5 +77,15 @@ Page({
    */
   onShareAppMessage: function () {
 
+<<<<<<< HEAD
   }
+=======
+  },
+  handurl: function (e) {
+  // 路由封装
+  wx.navigateTo({
+    url: e.currentTarget.dataset.url,
+  })
+},
+>>>>>>> 1eb06d9583af236b7485e283fba9b2d4b18d2d9d
 })

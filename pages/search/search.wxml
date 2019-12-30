@@ -3,10 +3,19 @@
   <view class="mysearch dj">
     <view class="sl dj">
       <image src="../../static/imgs/搜索.png"></image>
+<<<<<<< HEAD
       <input class="weui-input" focus='{{inputShowed}}' type='text' placeholder="搜索更多好物" />
     </view>
     <view class="sr">取消</view>
   </view>
+=======
+      <input  name="search" type='text' value='{{inputValue}}' confirm-type="search" bindconfirm="bindconfirm"  focus='{{focus}}' bindinput='bindinput' placeholder="搜索更多好物" ></input>
+      <!-- <input class="weui-input" value='{{inputValue}}' data-name="inputValue" bindinput="bindKeyInput" type='text' placeholder="搜索更多好物" /> -->
+    </view>
+    <view class="sr" bindtap="clear">取消</view>
+  </view>
+
+>>>>>>> 1eb06d9583af236b7485e283fba9b2d4b18d2d9d
   <view class="top-search">
 
     <view class="title">
@@ -14,6 +23,7 @@
       <text>热门搜索</text>
     </view>
     <view class="searchcont" bindtap="handurl" data-url="/pages/scango/scango">
+<<<<<<< HEAD
       <text>面膜</text>
       <text>洗面奶</text>
       <text>项链</text>
@@ -25,6 +35,14 @@
     <view class="history">
       <view class="title">
         <text>热门搜索</text>
+=======
+      <text wx:for="{{getHotSearch}}" wx:key="*this"> {{item.name}}</text>
+
+    </view>
+    <view class="history">
+      <view class="title">
+        <text>历史搜索</text>
+>>>>>>> 1eb06d9583af236b7485e283fba9b2d4b18d2d9d
         <image src="../../static/imgs/垃圾桶.png"></image>
       </view>
 
@@ -37,4 +55,9 @@
   </view>
 
 
+<<<<<<< HEAD
+=======
+
+
+>>>>>>> 1eb06d9583af236b7485e283fba9b2d4b18d2d9d
 </view>

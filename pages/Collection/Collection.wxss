@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 /* pages/Collection/Collection.wxss */
 
 .colletion {
@@ -9,6 +10,19 @@
 
 .collection_nav {
   border: 1px solid blue;
+=======
+.colletion {
+
+  height: 1334rpx;
+  overflow: hidden;
+  width: 100%;
+  background-color: skyblue;
+  /* background-color: #f5f5f5; */
+}
+
+.collection_nav {
+  /* border: 1px solid blue; */
+>>>>>>> 1eb06d9583af236b7485e283fba9b2d4b18d2d9d
   width: 730rpx;
   height: 240rpx;
   border-radius: 10rpx;

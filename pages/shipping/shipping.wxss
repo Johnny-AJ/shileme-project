@@ -1,6 +1,7 @@
 /* pages/shipping/shipping.wxss */
 
 /* 背景颜色 */
+<<<<<<< HEAD
 
 .bgc {
   /* background-color: #f5f5f5; */
@@ -8,6 +9,18 @@
   height: 1206rpx;
   width: 750rpx;
   overflow: hidden;
+=======
+page{
+  background: #f5f5f5
+}
+.bgc {
+  /* background-color: #f5f5f5; */
+ 
+  height: 100%;
+  width: 750rpx;
+  /* overflow: hidden; */
+  padding-bottom: 100rpx;
+>>>>>>> 1eb06d9583af236b7485e283fba9b2d4b18d2d9d
 }
 
 .p30 {
@@ -34,7 +47,11 @@
   padding-right: 29rpx;
   font-size: 29rpx;
   color: #222;
+<<<<<<< HEAD
   padding-bottom: 61rpx;
+=======
+  padding-bottom: 30rpx;
+>>>>>>> 1eb06d9583af236b7485e283fba9b2d4b18d2d9d
   padding-top: 30rpx;
   font-family: PingFang SC;
   font-weight: bold;
@@ -81,7 +98,11 @@
 
 /* 按钮 */
 
+<<<<<<< HEAD
 .button {
+=======
+.bgc .button {
+>>>>>>> 1eb06d9583af236b7485e283fba9b2d4b18d2d9d
   width: 690rpx;
   height: 88rpx;
   background: rgba(240, 43, 80, 1);
@@ -89,7 +110,11 @@
   font-size: 32rpx;
   color: #fff;
   position: fixed;
+<<<<<<< HEAD
   bottom: 50rpx;
+=======
+  bottom: 35rpx;
+>>>>>>> 1eb06d9583af236b7485e283fba9b2d4b18d2d9d
   left: 30rpx;
   text-align: center;
   line-height: 88rpx;

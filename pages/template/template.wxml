@@ -1,5 +1,11 @@
+<<<<<<< HEAD
   <view class="pup-sku" wx:if="{{skuShow}}">
     <view class="pup-sku-main">
+=======
+<view class="tabs">
+  <!-- <view wx:for="{{arry}}" class="{{show==index?'color':''}}" bindtap="click" data-index="{{index}}">{{item.name}}</view> -->
+<view class="pup-sku-main">
+>>>>>>> 1eb06d9583af236b7485e283fba9b2d4b18d2d9d
       <view class='pup-sku-header'>
         <image class="pup-sku-img" src="{{defaultSku.pic?defaultSku.pic:pic}}"></image>
         <view class="pup-sku-price" wx-if="{{findSku}}">
@@ -45,4 +51,10 @@
         <view class="btn buy" bindtap='buyNow'>立即购买</view>
       </view>
     </view>
+<<<<<<< HEAD
   </view>
+=======
+
+</view>
+<wxs module="wxs" src="../../wxs/number.wxs" />
+>>>>>>> 1eb06d9583af236b7485e283fba9b2d4b18d2d9d

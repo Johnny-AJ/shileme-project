@@ -1,0 +1,62 @@
+<!--pages/reporting/reporting.wxml-->
+<!-- <text>pages/reporting/reporting.wxml</text> -->
+
+
+<view class="bgc">
+
+  <!--  tab栏 -->
+  <view class="checktbs">
+    <i-tabs current="{{ current }}" color="#F02B50" bindchange="handleChange" i-class="tabs">
+      <i-tab key="tab1" title="试用申领"></i-tab>
+      <i-tab key="tab2" title="试用报告"></i-tab>
+    </i-tabs>
+  </view>
+  <!--  tab栏 -->
+
+  <!-- 内容 -->
+  <view class="nav_box">
+    <view class="nav_left">
+      <view class="nav1">Dr.Jart 保湿急救 网红蓝 药丸面膜</view>
+      <view class="nav2">
+        <text>精华报告</text> 这款面膜真的是猛 药啊，隔天起来洗完脸，你 的皮肤呈现...
+      </view>
+      <view class="nav3">
+        <view class="imgs1">
+          <image src="../../static/imgs/组 22(1).png"></image>
+        </view>
+        <view class="n1">米粒</view>
+      </view>
+    </view>
+
+    <view class="nav_right">
+      <view class="imgs2">
+        <image src="../../static/imgs/imgs1.png"></image>
+      </view>
+      <view class="nav4">共2份试用报告</view>
+    </view>
+  </view>
+
+  <view class="nav_box">
+    <view class="nav_left">
+      <view class="nav1">Dr.Jart 保湿急救 网红蓝 药丸面膜</view>
+      <view class="nav2">
+        <text>精华报告</text> 这款面膜真的是猛 药啊，隔天起来洗完脸，你 的皮肤呈现...
+      </view>
+      <view class="nav3">
+        <view class="imgs1">
+          <image src="../../static/imgs/组 22(1).png"></image>
+        </view>
+        <view class="n1">米粒</view>
+      </view>
+    </view>
+
+    <view class="nav_right">
+      <view class="imgs2">
+        <image src="../../static/imgs/imgs1.png"></image>
+      </view>
+      <view class="nav4">共2份试用报告</view>
+    </view>
+  </view>
+  <!-- 内容 -->
+
+</view>

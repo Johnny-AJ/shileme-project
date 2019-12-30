@@ -50,5 +50,32 @@ App({
         }
       },
     })
+<<<<<<< HEAD
+=======
+
+  },
+  globalData: {
+    // 定义全局请求队列
+    requestQueue: [],
+    // 是否正在进行登陆
+    isLanding: true,
+    // 购物车商品数量
+    totalCartCount: 0
+  },
+  returnFloat: function(value) { 
+    var value = Math.round(parseFloat(value) * 100) / 100; 
+    var xsd = value.toString().split("."); 
+    if (xsd.length == 1) { 
+      value = value.toString() + ".00"; 
+      return value; 
+    } 
+    if (xsd.length > 1) { 
+      if (xsd[1].length < 2) { 
+        value = value.toString() + "0"; 
+      } 
+      return value; 
+    }
+>>>>>>> 1eb06d9583af236b7485e283fba9b2d4b18d2d9d
   }
+
 })

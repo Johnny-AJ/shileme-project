@@ -4,6 +4,10 @@
   width: 100%;
   height: 100%;
   background: #f5f5f5;
+<<<<<<< HEAD
+=======
+ 
+>>>>>>> 1eb06d9583af236b7485e283fba9b2d4b18d2d9d
 }
 
 .big_box {
@@ -18,13 +22,35 @@
   height: 100%;
   width: 100%;
   align-items: center;
+<<<<<<< HEAD
 }
 
 .big_box .top_box {
+=======
+  box-sizing: border-box;
+  padding: 0 30rpx;
+}
+
+.big_box .flex_box .top_img {
+  height: 100%;
+  display: flex;
+  width: 30rpx;
+  align-items: center;
+  justify-content: flex-end;
+}
+
+.big_box .top_box {
+  width: 660rpx;
+  height: 144rpx;
+}
+
+.big_box .top_box1 {
+>>>>>>> 1eb06d9583af236b7485e283fba9b2d4b18d2d9d
   width: 668rpx;
   height: 144rpx;
   box-sizing: border-box;
   margin: 30rpx;
+<<<<<<< HEAD
 }
 
 .top_box .t1 {
@@ -36,6 +62,24 @@ color:rgba(34,34,34,1);
 .top_box .t1 text:nth-child(1){
   margin: 0 29rpx;
 }
+=======
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.top_box .t1 {
+  font-size: 30rpx;
+  font-family: PingFang SC;
+  font-weight: bold;
+  color: rgba(34, 34, 34, 1);
+}
+
+.top_box .t1 text:nth-child(1) {
+  margin: 0 29rpx;
+}
+
+>>>>>>> 1eb06d9583af236b7485e283fba9b2d4b18d2d9d
 .top_box .t1 .text {
   width: 70rpx;
   height: 40rpx;
@@ -44,7 +88,10 @@ color:rgba(34,34,34,1);
   padding: 9rpx 11rpx;
   color: #fff;
   font-size: 23rpx;
+<<<<<<< HEAD
 
+=======
+>>>>>>> 1eb06d9583af236b7485e283fba9b2d4b18d2d9d
 }
 
 .top_box .t2 {
@@ -54,10 +101,20 @@ color:rgba(34,34,34,1);
   margin-top: 10rpx;
 }
 
+<<<<<<< HEAD
 .big_box image {
   height: 35rpx;
   width: 22rpx;
   margin-right: 30rpx;
+=======
+.top_box .t3 {
+  margin-top: 10rpx;
+}
+
+.big_box image {
+  height: 35rpx;
+  width: 22rpx;
+>>>>>>> 1eb06d9583af236b7485e283fba9b2d4b18d2d9d
 }
 
 .flex1_box {
@@ -90,18 +147,51 @@ color:rgba(34,34,34,1);
   align-items: center;
 }
 
+<<<<<<< HEAD
 text {
   font-size: 30rpx;
   font-family: PingFang SC;
   font-weight: 400;
+=======
+.name .text {
+  font-size: 30rpx;
+  font-family: PingFang SC;
+  font-weight: bold;
+>>>>>>> 1eb06d9583af236b7485e283fba9b2d4b18d2d9d
   color: rgba(34, 34, 34, 1);
 }
 
 /* ------------ */
 
+<<<<<<< HEAD
 .conts {
   width: 100%;
   background: #fff;
+=======
+.zan-dialog .conts {
+  width: 100%;
+  background: #fff;
+  display: flex;
+
+  justify-content: center;
+  align-items: center;
+  flex-wrap: wrap;
+}
+
+.zan-dialog .conts image {
+  width: 248.7rpx;
+  height: 267.7rpx;
+}
+
+.zan-dialog .conts text {
+  width: 100%;
+  font-size: 34rpx;
+  font-family: PingFang SC;
+  font-weight: 400;
+  color: rgba(102, 102, 102, 1);
+
+  /* margin-top: 30rpx; */
+>>>>>>> 1eb06d9583af236b7485e283fba9b2d4b18d2d9d
 }
 
 .conttent .conts .state {
@@ -270,6 +360,7 @@ text {
   color: rgba(153, 153, 153, 1);
 }
 
+<<<<<<< HEAD
 .coupon {
   width: 100%;
   height: 120rpx;
@@ -281,10 +372,24 @@ text {
   height: 60rpx;
   width: 100%;
     box-sizing: border-box;
+=======
+.coupons {
+  width: 100%;
+  height: 120rpx;
+  background: #fff;
+  margin-top: 20rpx;
+}
+
+.coupons  view {
+  height: 60rpx;
+  width: 100%;
+  box-sizing: border-box;
+>>>>>>> 1eb06d9583af236b7485e283fba9b2d4b18d2d9d
   padding: 0 30rpx;
   display: flex;
   justify-content: space-between;
   align-items: center;
+<<<<<<< HEAD
  
 
 
@@ -301,6 +406,24 @@ font-family:PingFang SC;
 font-weight:400;
 color:rgba(240,43,80,1);
 }
+=======
+}
+
+.coupons  view text {
+  font-size: 26rpx;
+  font-family: PingFang SC;
+  font-weight: 400;
+  color: rgba(34, 34, 34, 1);
+}
+
+.coupons  view  .color {
+  font-size: 22rpx;
+  font-family: PingFang SC;
+  font-weight: 400;
+  color: rgba(240, 43, 80, 1);
+}
+
+>>>>>>> 1eb06d9583af236b7485e283fba9b2d4b18d2d9d
 .minute {
   width: 100%;
   height: 240rpx;
@@ -308,7 +431,12 @@ color:rgba(240,43,80,1);
   background: #fff;
   margin-bottom: 20rpx;
 }
+<<<<<<< HEAD
 .minute view{
+=======
+
+.minute view {
+>>>>>>> 1eb06d9583af236b7485e283fba9b2d4b18d2d9d
   height: 60rpx;
   display: flex;
   width: 100%;
@@ -317,6 +445,7 @@ color:rgba(240,43,80,1);
   box-sizing: border-box;
   padding: 0 29rpx;
 }
+<<<<<<< HEAD
 .minute view  text{
 
   font-size:26rpx;
@@ -332,6 +461,24 @@ color:rgba(240,43,80,1);
 }
 
 .buy{
+=======
+
+.minute view  text {
+  font-size: 26rpx;
+  font-family: PingFang SC;
+  font-weight: 400;
+  color: rgba(34, 34, 34, 1);
+}
+
+.minute view .color {
+  font-size: 26rpx;
+  font-family: PingFang SC;
+  font-weight: 400;
+  color: rgba(240, 43, 80, 1);
+}
+
+.buy {
+>>>>>>> 1eb06d9583af236b7485e283fba9b2d4b18d2d9d
   height: 98rpx;
   width: 100%;
   position: fixed;
@@ -340,12 +487,18 @@ color:rgba(240,43,80,1);
   display: flex;
   background: #fff;
 }
+<<<<<<< HEAD
 .buy .bl{
+=======
+
+.buy .bl {
+>>>>>>> 1eb06d9583af236b7485e283fba9b2d4b18d2d9d
   width: 490rpx;
   height: 100%;
   display: flex;
   align-items: center;
   /* text-align: right; */
+<<<<<<< HEAD
    flex-direction:row-reverse;
 }
 .buy .bl text:nth-child(1){
@@ -359,17 +512,44 @@ color:rgba(240,43,80,1);
   margin-right: 6rpx;
 }
 .buy .br{
+=======
+  flex-direction: row-reverse;
+}
+
+.buy .bl text:nth-child(1) {
+  margin-right: 34rpx;
+  font-family: PingFang SC;
+  font-weight: bold;
+  color: rgba(240, 43, 80, 1);
+}
+
+.buy .bl text:nth-child(2) {
+  margin-right: 6rpx;
+}
+
+.buy .br {
+>>>>>>> 1eb06d9583af236b7485e283fba9b2d4b18d2d9d
   width: 260rpx;
   height: 100%;
   display: flex;
   justify-content: center;
   align-items: center;
+<<<<<<< HEAD
   background:rgba(240,43,80,1);
  font-size:34rpx;
 font-family:PingFang SC;
 font-weight:bold;
 color:rgba(255,255,255,1);
 }
+=======
+  background: rgba(240, 43, 80, 1);
+  font-size: 34rpx;
+  font-family: PingFang SC;
+  font-weight: bold;
+  color: rgba(255, 255, 255, 1);
+}
+
+>>>>>>> 1eb06d9583af236b7485e283fba9b2d4b18d2d9d
 .zan-dialog__mask {
   position: fixed;
   top: 0;
@@ -380,9 +560,13 @@ color:rgba(255,255,255,1);
   background: rgba(0, 0, 0, 0.75);
   display: none;
 }
+<<<<<<< HEAD
 .zan-dialog--show{
   position: relative;
 }
+=======
+
+>>>>>>> 1eb06d9583af236b7485e283fba9b2d4b18d2d9d
 .zan-dialog__container {
   position: fixed;
   bottom: 0rpx;
@@ -393,8 +577,18 @@ color:rgba(255,255,255,1);
   transition: all 0.4s ease;
   z-index: 12;
   box-shadow: 0px 3px 3px 2px gainsboro;
+<<<<<<< HEAD
 
   padding-bottom: 178rpx
+=======
+  padding-bottom: 30rpx;
+}
+
+.zan-dialog__container .conts {
+  width: 100%;
+  box-sizing: border-box;
+  padding: 0 30rpx;
+>>>>>>> 1eb06d9583af236b7485e283fba9b2d4b18d2d9d
 }
 
 .zan-dialog--show .zan-dialog__container {
@@ -405,6 +599,7 @@ color:rgba(255,255,255,1);
 .zan-dialog--show .zan-dialog__mask {
   display: block;
 }
+<<<<<<< HEAD
 .zan-dialog--show .zan-dialog__container .imgs{
   width: 61rpx;
   height: 61rpx;
@@ -419,6 +614,9 @@ color:rgba(255,255,255,1);
   height: 100%;
   width: 100%
 }
+=======
+
+>>>>>>> 1eb06d9583af236b7485e283fba9b2d4b18d2d9d
 .show1 .zan-dialog__container {
   transform: translateY(0);
   background: #fff;
@@ -427,3 +625,161 @@ color:rgba(255,255,255,1);
 .show1 .zan-dialog__mask {
   display: block;
 }
+<<<<<<< HEAD
+=======
+
+.show1 .zan-dialog__container .conts {
+  width: 100%;
+  box-sizing: border-box;
+  padding: 0 30rpx;
+}
+
+.zan-dialog__container .conts .title {
+  width: 100%;
+  height: 90rpx;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.zan-dialog__container .conts .coupon {
+  width: 100%;
+  border-top: 1rpx solid rgba(8, 8, 8, 0.2);
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  max-height: 800rpx;
+
+  overflow: auto;
+  padding-bottom: 30rpx;
+}
+
+.zan-dialog__container .conts .coupon .cont {
+  width: 690rpx;
+  height: 210rpx;
+  margin: 0;
+  padding: 0;
+  position: relative;
+  margin-top: 30rpx;
+  display: flex;
+  justify-content: flex-start;
+  border: 1rpx solid #f5f5f5;
+  z-index: 3;
+}
+
+.zan-dialog__container .conts .coupon image {
+  width: 100%;
+  height: 100%;
+  position: absolute;
+  z-index: -1;
+}
+
+.zan-dialog__container .conts .coupon .cl {
+  width: 400rpx;
+  height: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  box-sizing: border-box;
+padding-left: 18rpx;
+
+}
+
+.zan-dialog__container .conts .coupon .cl  .t1 {
+  font-size: 80rpx;
+  font-family: PingFang SC;
+  font-weight: bold;
+  color: rgba(255, 255, 255, 1);
+}
+
+.zan-dialog__container .conts .coupon .cl  .t2 {
+  font-size: 30rpx;
+  font-family: PingFang SC;
+  font-weight: 400;
+  color: rgba(255, 255, 255, 1);
+  position: relative;
+top: -14rpx;
+left: 16rpx;
+
+}
+
+.zan-dialog__container .conts .coupon .cr {
+  width: 520rpx;
+  height: 100%;
+}
+
+.zan-dialog__container .conts .coupon .cr .rt {
+  width: 100%;
+  height: 86rpx;
+ display: flex;
+justify-content: center;
+flex-wrap: wrap;
+
+}
+
+.zan-dialog__container .conts .coupon .cr .rt .t1 {
+  font-size: 30rpx;
+  font-family: PingFang SC;
+  font-weight: 500;
+  color: rgba(34, 34, 34, 1);
+  display: flex;
+  align-items: center;
+}
+
+.zan-dialog__container .conts .coupon .cr .rt .t2 {
+  position: absolute;
+  width: 150rpx;
+  height: 60rpx;
+  border: 1rpx solid rgba(240, 43, 80, 1);
+  border-radius: 30rpx;
+  right: 21rpx;
+  font-size: 28rpx;
+  font-family: PingFang SC;
+  font-weight: bold;
+  color: rgba(240, 43, 80, 1);
+  text-align: center;
+  line-height: 60rpx;
+}
+
+.zan-dialog__container .conts .coupon .cr .rt .t3 {
+  position: absolute;
+  width: 150rpx;
+  height: 60rpx;
+  border: 1px solid rgba(153, 153, 153, 1);
+  border-radius: 30rpx;
+  right: 21rpx;
+  font-size: 28rpx;
+  font-family: PingFang SC;
+  font-weight: bold;
+  color: rgba(153, 153, 153, 1);
+  text-align: center;
+  line-height: 60rpx;
+}
+
+.zan-dialog__container .conts .coupon .cr .rb {
+  display: flex;
+  flex-direction: column;
+  width: 100%;
+}
+
+.zan-dialog__container .conts .coupon .cr .rb  text {
+  font-size: 26rpx;
+  font-family: PingFang SC;
+  font-weight: 400;
+  color: rgba(153, 153, 153, 1);
+}
+
+.zan-dialog__container .imgs {
+  position: absolute;
+  top: -120rpx;
+  width: 61rpx;
+  height: 61rpx;
+  left: 350rpx;
+}
+
+.zan-dialog__container .imgs image {
+  width: 100%;
+  height: 100%;
+}
+>>>>>>> 1eb06d9583af236b7485e283fba9b2d4b18d2d9d

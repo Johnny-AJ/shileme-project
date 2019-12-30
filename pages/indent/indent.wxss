@@ -4,12 +4,22 @@
   box-sizing: border-box;
   padding: 0 30rpx;
 }
+<<<<<<< HEAD
 
 .indent {
   width: 750rpx;
   height: 1206rpx;
   margin: 0;
   overflow: hidden;
+=======
+page{
+  background: #f5f5f5
+}
+.indent {
+  width: 100%;
+position: relative;
+  margin: 0;
+>>>>>>> 1eb06d9583af236b7485e283fba9b2d4b18d2d9d
   padding: 0;
   background: #f5f5f5;
 }
@@ -17,6 +27,7 @@
 .indent  .checktbs {
   height: 90rpx;
   width: 100%;
+<<<<<<< HEAD
 }
 
 .indent .tabs {
@@ -36,6 +47,39 @@
 .conttent {
   width: 100%;
   padding-bottom: 26rpx;
+=======
+  display: flex;
+  background: #fff;
+}
+.indent  .checktbs .tbs{
+  width: 150rpx;
+  height: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.indent  .checktbs .tbs text{
+
+font-size:30rpx;
+font-family:PingFang SC;
+font-weight:bold;
+color:rgba(34,34,34,1);
+
+}
+.indent  .checktbs .tbs .color{
+
+ font-weight:bold;
+ box-sizing: border-box;
+ color:rgba(240,43,80,1);
+padding-top: 19rpx;
+ padding-bottom: 13rpx;
+ border-bottom: 4rpx solid rgba(240,43,80,1);
+}
+.conttent {
+  width: 100%;
+ 
+>>>>>>> 1eb06d9583af236b7485e283fba9b2d4b18d2d9d
 }
 
 .conttent .conts {
@@ -43,7 +87,13 @@
   background: #fff;
   margin-top: 20rpx;
 }
+<<<<<<< HEAD
 
+=======
+.indent .conttent .close{
+  display: none
+}
+>>>>>>> 1eb06d9583af236b7485e283fba9b2d4b18d2d9d
 .conttent .conts .state {
   height: 72rpx;
   width: 100%;
@@ -102,8 +152,21 @@
   display: flex;
   justify-content: space-between;
   align-items: center;
+<<<<<<< HEAD
 }
 
+=======
+  width: 100%;
+
+}
+.cont .cr .name  .t1{
+  width: 405rpx;
+  display: -webkit-box;
+-webkit-box-orient: vertical;
+-webkit-line-clamp: 2;
+overflow: hidden;
+}
+>>>>>>> 1eb06d9583af236b7485e283fba9b2d4b18d2d9d
 .cont .cr  .spec {
   width: 100%;
   display: flex;
@@ -230,14 +293,52 @@
   border-radius: 30rpx;
   font-size: 28rpx;
   font-family: PingFang SC;
+<<<<<<< HEAD
   font-weight: bold;
+=======
+  font-weight: 500;
+>>>>>>> 1eb06d9583af236b7485e283fba9b2d4b18d2d9d
   color: rgba(102, 102, 102, 1);
   text-align: center;
   line-height: 60rpx;
   margin-left: 30rpx;
 }
+<<<<<<< HEAD
 .payment   .way   .color{
   border:1rpx solid rgba(240,43,80,1);
   color:rgba(240,43,80,1);
+=======
+
+.payment   .way   .color {
+  border: 1rpx solid rgba(240, 43, 80, 1);
+  color: rgba(240, 43, 80, 1);
+}
+.null{
+width: 100%;
+position: absolute;
+top: 90rpx;
+height: 1116rpx;
+display: flex;
+justify-content: center;
+align-items: center;
+flex-wrap: wrap;
+
+
+}
+.null image{
+  width: 230rpx;
+  height: 203rpx;
+margin-top: 180rpx;
+
+}
+.null  view{
+  width: 100%;
+display: flex;
+justify-content: center;
+font-size: 32rpx;
+color: #999;
+margin-top: -550rpx;
+
+>>>>>>> 1eb06d9583af236b7485e283fba9b2d4b18d2d9d
 
 }

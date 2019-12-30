@@ -2,6 +2,7 @@
 
 
 <view class="colletion">
+<<<<<<< HEAD
   <view class="collection_nav">
     <!-- 图片 -->
     <view>
@@ -78,4 +79,28 @@
     </view>
     <!-- 字体 -->
   </view>
+=======
+
+  <label class="checkbox" wx:for="{{slideProductList}}" for="checkbox" wx:for-index="index" wx:key="{{item.id}}">
+    <slide-delete pid="{{item.id}}" bindaction="handleSlideDelete" wx:key="{{item.id}}">
+      <view class="collection_nav">
+        <!-- 图片 -->
+        <view>
+          <image src="../../static/cart/购物车200.200.png"></image>
+        </view>
+        <!-- 图片 -->
+
+        <!-- 字体 -->
+        <view class="collection_tt">
+          <view class="t1">Dr.jart+宛若新生水样保湿急救面 膜 5片/盒</view>
+          <view class="t2">1002人收藏</view>
+          <view class="t3">￥79.00</view>
+        </view>
+        <!-- 字体 -->
+      </view>
+
+    </slide-delete>
+  </label>
+
+>>>>>>> 1eb06d9583af236b7485e283fba9b2d4b18d2d9d
 </view>

@@ -4,7 +4,11 @@
 
   <!-- 轮播图 -->
   <view class="swiper_box">
+<<<<<<< HEAD
     <swiper indicator-active-color='#f02b50' indicator-dots="false" autoplay='false' interval='999' circular="false">
+=======
+    <swiper indicator-active-color='#f02b50' indicator-dots="false" autoplay='false' interval='3000' circular="false">
+>>>>>>> 1eb06d9583af236b7485e283fba9b2d4b18d2d9d
       <swiper-item wx:for="{{swiperList}}" wx:key="goods_is">
         <image src="{{item}}"></image>
       </swiper-item>
@@ -70,7 +74,14 @@
       <view class="t7">>></view>
       <view class="t7">邀请好友</view>
       <view class="t7">>></view>
+<<<<<<< HEAD
       <view class="t7 t8">满员发货 不满自动退单</view>
+=======
+      <view class="t7 t8">
+        <view> 满员发货</view>
+        <view> 不满自动退单</view>
+      </view>
+>>>>>>> 1eb06d9583af236b7485e283fba9b2d4b18d2d9d
     </view>
   </view>
   <!-- 拼团规则 -->
@@ -80,6 +91,7 @@
 
     <view class="indirectly_text">直接参团 立即拼成</view>
 
+<<<<<<< HEAD
     <view class="swiper_item">
 
       <!-- 图片 -->
@@ -132,6 +144,71 @@
 
     </view>
 
+=======
+    <swiper circular="false" vertical="false" duration="1000" interval="5000" easing-function='easeInOutCubic'>
+      <swiper-item wx:for="{{swiperArrat}}" wx:key='name'>
+
+        <view class="swiper_item">
+
+          <!-- 图片 -->
+          <view class="swiper_img">
+            <image src="{{item.img}}"></image>
+          </view>
+
+          <!-- 还差一人 -->
+          <view class="swiper_text">
+            <view class="swiper_top">
+              <view class="t9">{{item.name}}</view>
+              <view class="t10">{{item.address}}</view>
+            </view>
+            <view class="swiper_buttom">
+              <view class="t11">还差1人成团</view>
+              <view class="t12">
+                剩余
+                <i-count-down i-class="icount" target="{{targetTime}}" clear-timer="{{clearTimer}}"></i-count-down>
+              </view>
+            </view>
+          </view>
+
+          <!-- 参团 -->
+          <view class="swiper_botton" bindtap="handurl" data-url="/pages/friends/friends">
+            <view class="t13">去参团</view>
+          </view>
+
+        </view>
+        <view class="swiper_item">
+
+          <!-- 图片 -->
+          <view class="swiper_img">
+            <image src="{{item.img}}"></image>
+          </view>
+
+          <!-- 还差一人 -->
+          <view class="swiper_text">
+            <view class="swiper_top">
+              <view class="t9">{{item.name}}</view>
+              <view class="t10">{{item.address}}</view>
+            </view>
+            <view class="swiper_buttom">
+              <view class="t11">还差1人成团</view>
+              <view class="t12">
+                剩余
+                <i-count-down i-class="icount" target="{{targetTime}}" clear-timer="{{clearTimer}}"></i-count-down>
+              </view>
+            </view>
+          </view>
+
+          <!-- 参团 -->
+          <view class="swiper_botton" bindtap="handurl" data-url="/pages/friends/friends">
+            <view class="t13">去参团</view>
+          </view>
+
+        </view>
+
+
+      </swiper-item>
+    </swiper>
+>>>>>>> 1eb06d9583af236b7485e283fba9b2d4b18d2d9d
   </view>
   <!-- 直接参团 -->
 
@@ -222,10 +299,17 @@
 <!-- 结算 -->
 <view class="settlements_box">
 
+<<<<<<< HEAD
   <view class="settlements_img">
     <image src="../../static/formats/start.png"></image>
   </view>
   <text>首页</text>
+=======
+  <view class="settlements_img" bindtap="handurl" data-url="/pages/index/index">
+    <image src="../../static/formats/start.png"></image>
+    <text>首页</text>
+  </view>
+>>>>>>> 1eb06d9583af236b7485e283fba9b2d4b18d2d9d
 
   <view class="settlements_box1">
     <view class="s3">￥160</view>
@@ -233,8 +317,13 @@
   </view>
 
   <view class="settlements_box2">
+<<<<<<< HEAD
     <view class="s3">￥160</view>
     <view class="s3">单独购买</view>
+=======
+    <view class="s3">￥79</view>
+    <view class="s3">2人拼团</view>
+>>>>>>> 1eb06d9583af236b7485e283fba9b2d4b18d2d9d
   </view>
 </view>
 <!-- 结算 -->

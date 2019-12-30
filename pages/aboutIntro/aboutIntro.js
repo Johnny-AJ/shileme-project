@@ -14,7 +14,11 @@ Page({
   onLoad: function (options) {
     // 头部标题
     wx.setNavigationBarTitle({
+<<<<<<< HEAD
       title: '关于'
+=======
+      title: '关于我们'
+>>>>>>> 1eb06d9583af236b7485e283fba9b2d4b18d2d9d
     })
   },
 

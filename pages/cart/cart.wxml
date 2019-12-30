@@ -6,6 +6,7 @@
 <view class="bgc">
 
   <!-- 购物车上半部分 -->
+<<<<<<< HEAD
   <view class="shipping_car">
     <text>购物车</text>
     <view class="shipping_box">
@@ -13,10 +14,19 @@
       <view class="text1">满299减30</view>
     </view>
     <image mode="widthFix" src="../../static/cart/矩形 16.png"></image>
+=======
+  <view class="lj" bindtap="toggleDialog">
+    <view class="title">购物车</view>
+    <view class="ljcont">
+      <view wx:for="{{getListByWaresId1}}" wx:key="*this">{{item.name}}</view>
+    </view>
+    <image src="../../static/scango/矩形 16(1).png"></image>
+>>>>>>> 1eb06d9583af236b7485e283fba9b2d4b18d2d9d
   </view>
 
   <!-- 购物车下半部分 -->
   <view class="cart">
+<<<<<<< HEAD
     <view class="cart_box">
       <!-- 按钮 -->
       <radio></radio>
@@ -64,6 +74,71 @@
     </view>
 
   </view>
+=======
+    <view class="null" wx:if="{{!chooseGoods.length}}">
+      购物车没有商品，快去逛一逛
+    </view>
+    <view class="product-item" wx:if="{{chooseGoods}}">
+
+      <!-- <label class="checkbox" > -->
+      <block wx:for="{{chooseGoods}}" wx:for-index="index" wx:key="*this">
+        <slide-delete pid="{{item.id}}" bindaction="handleSlideDelete" wx:key="{{item.id}}">
+          <view class="cart_box">
+            <!-- 按钮 -->
+
+            <view class="cart-box_left">
+              <image src="../../static/imgs/失效.png" wx:if="{{item.waresStatus==1}}" class="imgs1"></image>
+              <image src="../../static/imgs/椭圆 1.png" wx:if="{{!item.flag}}" bindtap="chooseThis" data-id="{{item.id}}"></image>
+              <image src="../../static/imgs/组 26.png" wx:if="{{item.flag}}" bindtap="chooseThis" data-id="{{item.id}}"></image>
+            </view>
+            <!-- 图片 -->
+            <view class="images">
+              <image src="{{item.logoUrl}}"></image>
+            </view>
+            <!-- 内容 -->
+            <view class="cart_nav">
+
+              <view class="text1">{{item.waresName}}</view>
+
+              <view class="text2">{{item.specification}}</view>
+              <view class="state">
+                <text wx:if="{{item.repertory==0}}">库存不足，请重新选择</text>
+              </view>
+              <view class="cart_price">
+                <view class="text3">
+                  <text>￥ <text>{{item.allPrice}}</text> </text>
+                </view>
+                <view class="text4">
+                  <i-input-number i-class="inputs" data-id="{{item.id}}" value="{{item.amount}}" min="1" max="100" bindchange="handleChange1" />
+                </view>
+              </view>
+
+
+              <!-- <view class="text5 {{item.gift.length==0?'none':'block'}} ">
+
+                  <view class="tl">赠品：</view>
+                  <view class="tr">
+                    <view wx:for="{{item.gift}}" wx:for-item="i" wx:key="*this">
+                      <text>{{i.name}}</text>
+                      <text class="t1">X{{i.num}}</text>
+                    </view>
+
+                  </view>
+                </view> -->
+
+
+            </view>
+          </view>
+        </slide-delete>
+      </block>
+      <!-- </label> -->
+
+    </view>
+
+  </view>
+
+
+>>>>>>> 1eb06d9583af236b7485e283fba9b2d4b18d2d9d
   <!-- 推荐 -->
   <view class="tuijian_img">
     <image mode="widthFix" src="../../static/cart/组 25.png"></image>
@@ -73,6 +148,7 @@
 
   <view class="conts" bindtap="handurl" data-url="/pages/scango/scango">
     <view class="content">
+<<<<<<< HEAD
       <view class="cont">
         <image src="../../static/cart/组 26.png"></image>
         <view class="name pl20">保湿急救 网红蓝药丸面.</view>
@@ -109,6 +185,29 @@
 
 
     </view>
+=======
+      <view class="cont" wx:for="{{cartlist}}" wx:key="*this" bindtap="goto" data-waresId="{{item.waresId}}">
+        <image src="{{item.logoUrl}}"></image>
+        <view class="name pl20">{{item.waresName}}</view>
+        <view class="content_client pl20">
+          <text hidden="{{!item.advertising}}">{{item.advertising}}</text>
+        </view>
+        <view class="price pl20">￥
+          <text class="nowprice">{{item.mallPrice}} </text>
+        </view>
+      </view>
+
+      <view class="weui-loadmore" hidden='{{!loading}}'>
+        <view class="weui-loading"></view>
+        <view class="weui-loadmore__tips">正在加载</view>
+      </view>
+      <view class="weui-loadmore weui-loadmore_line" hidden='{{hasNext}}'>
+        <view class="weui-loadmore__tips weui-loadmore__tips_in-line">到底了</view>
+      </view>
+
+    </view>
+
+>>>>>>> 1eb06d9583af236b7485e283fba9b2d4b18d2d9d
   </view>
 
 
@@ -117,6 +216,7 @@
   <!-- 结算 -->
   <view class="settlement">
 
+<<<<<<< HEAD
     <radio>全部</radio>
 
     <view class="heji">
@@ -127,4 +227,20 @@
 
     <view class="button" bindtap="handurl" data-url="/pages/Spell_group_order/Spell_group_order">去结算</view>
   </view>
+=======
+    <image src="../../static/imgs/椭圆 1.png" wx:if="{{!selectAllStatus}}" bindtap="selectAllStatus" data-id="{{item.id}}"></image>
+    <image src="../../static/imgs/组 26.png" wx:if="{{selectAllStatus}}" bindtap="selectAllStatus" data-id="{{item.id}}"></image>
+
+    <view class="heji">
+      <view class="text6">合计：
+        <text>￥{{totalPrice}}</text>
+      </view>
+    </view>
+
+    <view class="button" bindtap="buys" data-url="/pages/Spell_group_order/Spell_group_order">去结算</view>
+  </view>
+
+  <!-- 弹窗 -->
+
+>>>>>>> 1eb06d9583af236b7485e283fba9b2d4b18d2d9d
 </view>

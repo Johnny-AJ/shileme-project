@@ -17,6 +17,7 @@ Page({
       title: '参团详情页'
     })
   },
+<<<<<<< HEAD
 
   /**
    * 生命周期函数--监听页面初次渲染完成
@@ -66,4 +67,12 @@ Page({
   onShareAppMessage: function() {
 
   }
+=======
+  handurl: function(e) {
+    // 路由封装
+    wx.navigateTo({
+      url: e.currentTarget.dataset.url,
+    })
+  },
+>>>>>>> 1eb06d9583af236b7485e283fba9b2d4b18d2d9d
 })

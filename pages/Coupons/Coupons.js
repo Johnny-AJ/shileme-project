@@ -5,6 +5,7 @@ Page({
    * 页面的初始数据
    */
   data: {
+<<<<<<< HEAD
     current: 'tab1',
   },
   // tab栏
@@ -12,11 +13,26 @@ Page({
     this.setData({
       current: detail.key
     });
+=======
+    current: 0,
+    title:[{text:'未使用'},{text:'已使用'},{text:'已过期'}],
+    getListByWaresId: [],//优惠劵列表
+
+  },
+  // tab栏
+  changetbs(e){
+
+    console.log(e)
+    this.setData({
+      current: e.currentTarget.dataset.index
+    })
+>>>>>>> 1eb06d9583af236b7485e283fba9b2d4b18d2d9d
   },
   /**
    * 生命周期函数--监听页面加载
    */
   onLoad: function(options) {
+<<<<<<< HEAD
     // 头部标题
     wx.setNavigationBarTitle({
       title: '优惠券'
@@ -30,12 +46,18 @@ Page({
 
   },
 
+=======
+   
+    this.getListByWaresId()
+  },
+>>>>>>> 1eb06d9583af236b7485e283fba9b2d4b18d2d9d
   /**
    * 生命周期函数--监听页面显示
    */
   onShow: function() {
 
   },
+<<<<<<< HEAD
 
   /**
    * 生命周期函数--监听页面隐藏
@@ -71,4 +93,12 @@ Page({
   onShareAppMessage: function() {
 
   }
+=======
+  getListByWaresId(){
+    wx.request({
+      // url: 'http://192.168.2.98:9095/',
+    })
+  }
+
+>>>>>>> 1eb06d9583af236b7485e283fba9b2d4b18d2d9d
 })

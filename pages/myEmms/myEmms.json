@@ -1,3 +1,11 @@
 {
+<<<<<<< HEAD
   "usingComponents": {}
+=======
+  "component": true,
+  "usingComponents": {
+    "i-tabs": "../../components/tabs/index",
+    "i-tab": "../../components/tab/index"
+  }
+>>>>>>> 1eb06d9583af236b7485e283fba9b2d4b18d2d9d
 }

@@ -6,7 +6,13 @@
   box-sizing: border-box;
   padding-left: 30rpx;
 }
+<<<<<<< HEAD
 
+=======
+page{
+  background: #f5f5f5;
+}
+>>>>>>> 1eb06d9583af236b7485e283fba9b2d4b18d2d9d
 .p30 {
   box-sizing: border-box;
   padding: 0 30rpx ;
@@ -15,6 +21,10 @@
 .order {
   margin: 0;
   padding: 0;
+<<<<<<< HEAD
+=======
+  width: 100%;
+>>>>>>> 1eb06d9583af236b7485e283fba9b2d4b18d2d9d
   background: #f5f5f5;
 }
 
@@ -59,7 +69,11 @@ color:rgba(255,255,255,0.9);
 .order   .users {
   height: 151rpx;
   width: 100%;
+<<<<<<< HEAD
   padding-bottom: 20rpx;
+=======
+  padding-bottom: 19rpx;
+>>>>>>> 1eb06d9583af236b7485e283fba9b2d4b18d2d9d
   background: #fff;
 }
 
@@ -345,14 +359,25 @@ color:rgba(240,43,80,1);
 
 }
 .reminder .reminders{
+<<<<<<< HEAD
 
+=======
+  width: 160rpx;
+  height: 60rpx;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+>>>>>>> 1eb06d9583af236b7485e283fba9b2d4b18d2d9d
   border:1rpx solid rgba(153,153,153,1);
   border-radius:40rpx;
   font-size:28rpx;
   font-family:PingFang SC;
   font-weight:400;
   color:rgba(34,34,34,1);
+<<<<<<< HEAD
   padding: 16rpx 24rpx;
+=======
+>>>>>>> 1eb06d9583af236b7485e283fba9b2d4b18d2d9d
   margin-right: 29rpx;
 }
 .reminder  .check{

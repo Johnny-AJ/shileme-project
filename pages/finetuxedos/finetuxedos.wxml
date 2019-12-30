@@ -98,7 +98,11 @@
   <!-- 团长 -->
 
   <!-- 一键参团 -->
+<<<<<<< HEAD
   <view class="cantuan">一键参团</view>
+=======
+  <view class="cantuan" bindtap="handurl" data-url="/pages/formats/formats">一键参团</view>
+>>>>>>> 1eb06d9583af236b7485e283fba9b2d4b18d2d9d
   <!-- 一键参团 -->
 
   <!-- 拼团须知 -->

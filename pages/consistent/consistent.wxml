@@ -1,0 +1,84 @@
+<!--pages/consistent/consistent.wxml-->
+<!-- <text>pages/consistent/consistent.wxml</text> -->
+
+<view class="bgc">
+
+  <!--  tab栏 -->
+  <view class="checktbs">
+    <i-tabs current="{{ current }}" color="#F02B50" bindchange="handleChange" i-class="tabs">
+      <i-tab key="tab1" title="试用申领"></i-tab>
+      <i-tab key="tab2" title="试用报告"></i-tab>
+    </i-tabs>
+  </view>
+  <!--  tab栏 -->
+
+  <!-- top -->
+  <view class="dong">
+
+    <view class="imgs1">
+      <image src="../../static/imgs/组 8.png"></image>
+    </view>
+
+    <view class="nav_box">
+      <view class="nav_box1">
+        <view class="nav1">￥79</view>
+        <view class="nav2">Dr.Jart+宛若新生水漾急救面膜...</view>
+      </view>
+      <view class="nav_box2">
+        <view class="nav3">距结束：8天14时00分</view>
+      </view>
+      <view class="nav_box3">免费试用</view>
+    </view>
+
+    <view class="dong_1">20人已参加</view>
+    <view class="dong_2">0元免费试用</view>
+    <view class="dong_3">保湿急救 网红蓝药丸面膜</view>
+    <view class="dong_4">限量30份</view>
+  </view>
+
+  <view class="dong">
+
+    <view class="imgs1">
+      <image src="../../static/imgs/组 8.png"></image>
+    </view>
+
+    <view class="nav_box">
+      <view class="nav_box1">
+        <view class="nav1">￥79</view>
+        <view class="nav2">Dr.Jart+宛若新生水漾急救面膜...</view>
+      </view>
+      <view class="nav_box2">
+        <view class="nav3">距结束：8天14时00分</view>
+      </view>
+      <view class="nav_box3">免费试用</view>
+    </view>
+
+    <view class="dong_1">20人已参加</view>
+    <view class="dong_2">0元免费试用</view>
+    <view class="dong_3">保湿急救 网红蓝药丸面膜</view>
+    <view class="dong_4">限量30份</view>
+  </view>
+
+  <view class="dong">
+
+    <view class="imgs1">
+      <image src="../../static/imgs/组 8.png"></image>
+    </view>
+
+    <view class="nav_box">
+      <view class="nav_box1">
+        <view class="nav1">￥79</view>
+        <view class="nav2">Dr.Jart+宛若新生水漾急救面膜...</view>
+      </view>
+      <view class="nav_box2">
+        <view class="nav3">距结束：8天14时00分</view>
+      </view>
+      <view class="nav_box3">免费试用</view>
+    </view>
+
+    <view class="dong_1">20人已参加</view>
+    <view class="dong_2">0元免费试用</view>
+    <view class="dong_3">保湿急救 网红蓝药丸面膜</view>
+    <view class="dong_4">限量30份</view>
+  </view>
+</view>

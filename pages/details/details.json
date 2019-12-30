@@ -1,3 +1,14 @@
 {
+<<<<<<< HEAD
   "usingComponents": {}
+=======
+  "usingComponents": {
+    "i-input-number": "../../components/input-number/index"
+  },
+  "navigationBarBackgroundColor": "#ffffff",
+  "navigationBarTextStyle": "black",
+  "backgroundColor": "#eeeeee",
+  "backgroundTextStyle": "light",
+  "navigationBarTitleText": "商品详情"
+>>>>>>> 1eb06d9583af236b7485e283fba9b2d4b18d2d9d
 }

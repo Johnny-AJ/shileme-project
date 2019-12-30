@@ -1,3 +1,8 @@
 {
+<<<<<<< HEAD
   "usingComponents": {}
+=======
+  "usingComponents": {},
+  "navigationBarTitleText": "拼团"
+>>>>>>> 1eb06d9583af236b7485e283fba9b2d4b18d2d9d
 }

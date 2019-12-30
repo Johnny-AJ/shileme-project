@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 <!--pages/find/find.wxml-->
 
 <!-- 轮播图 -->
@@ -18,3 +19,92 @@
   </i-tabs>
 </view>
 <!-- tab栏 -->
+=======
+<view class="bgc">
+
+  <!-- 轮播图 -->
+  <view class="swiper_box">
+    <swiper indicator-active-color='#f02b50' indicator-dots="false" autoplay='false' interval='3000' circular="false">
+      <swiper-item wx:for="{{swiperList}}" wx:key="goods_is">
+        <image src="{{item.url}}"></image>
+      </swiper-item>
+    </swiper>
+  </view>
+  <!-- 轮播图 -->
+
+  <!-- tab栏 -->
+  <view class="tuijian">
+    <view class="imgs1">
+      <image src="../../static/imgs/矩形 4.png"></image>
+    </view>
+    <view class="t1">推荐</view>
+    <view class="t_box">
+      <view class="t2">晒单</view>
+      <view class="t3">SHARING</view>
+    </view>
+  </view>
+
+  <!-- 图文01 -->
+  <view class="bong">
+    <view class="bong_box">
+      <view class="imgs2">
+        <image src="../../static/imgs/小樱.jpg"></image>
+      </view>
+      <view class="b1">好物测评人员</view>
+    </view>
+
+    <view class="bong_nav_box">
+      <view class="bong_left">
+        <view class="b2">本年度最好用的都在这儿啦本 年度最好用的都在这儿啦！本 年度最好用的都在这儿啦本年 度最好用的都在这儿啦！</view>
+      </view>
+      <view class="bong_right">
+        <view class="imgs3">
+          <image src="../../static/imgs/260.260.png"></image>
+        </view>
+      </view>
+    </view>
+  </view>
+
+  <!-- 图文01 -->
+  <view class="bong1">
+    <view class="bong_box">
+      <view class="imgs2">
+        <image src="../../static/imgs/小樱.jpg"></image>
+      </view>
+      <view class="b1">好物测评人员</view>
+    </view>
+
+    <view class="bong_nav_box1">
+      <view class="bong_top">
+        <view class="b3">本年度最好用的都在这儿啦！本年度最好用的都在这儿 啦！本年度最好用的都在这儿啦！本年度最好用的都在 这儿啦！</view>
+      </view>
+      <view class="bong_bottom">
+        <view class="imgs4">
+          <image src="../../static/imgs/1组 3.png"></image>
+        </view>
+      </view>
+    </view>
+  </view>
+
+  <!-- 图文02 -->
+  <view class="bong2">
+    <view class="bong_box">
+      <view class="imgs2">
+        <image src="../../static/imgs/小樱.jpg"></image>
+      </view>
+      <view class="b1">好物测评人员</view>
+    </view>
+
+    <view class="bong_nav_box2">
+      <view class="bong_top1">
+        <view class="b4">本年度最好用的都在这儿啦！</view>
+      </view>
+      <view class="bong_bottom1">
+        <view class="imgs5">
+          <image src="../../static/imgs/1组 9.png"></image>
+        </view>
+      </view>
+    </view>
+  </view>
+</view>
+>>>>>>> 1eb06d9583af236b7485e283fba9b2d4b18d2d9d
