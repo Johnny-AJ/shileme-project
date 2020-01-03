@@ -12,9 +12,15 @@
   </view>
 
   <view class="imgs_box">
+<<<<<<< HEAD
     <image src="../../static/imgs/330.330.png"></image>
     <image src="../../static/imgs/330.330.png"></image>
     <image src="../../static/imgs/330.330.png"></image>
+=======
+    <image src="../../static/imgs/imgs1.png"></image>
+    <image src="../../static/imgs/imgs1.png"></image>
+    <image src="../../static/imgs/imgs1.png"></image>
+>>>>>>> 52f64f72e88e74a5d1fd6ab67dc3de89912ce267
   </view>
 </view>
 
@@ -31,7 +37,11 @@
   <view class="img2_box">
     <view class="img_nav_box">
       <view class="imgs">
+<<<<<<< HEAD
         <image src="../../static/imgs/330.330.png"></image>
+=======
+        <image src="../../static/imgs/imgs1.png"></image>
+>>>>>>> 52f64f72e88e74a5d1fd6ab67dc3de89912ce267
       </view>
       <view class="t1">Dr.Jart 宛若新生保湿面 膜...</view>
       <view class="p1">￥160
@@ -41,7 +51,11 @@
 
     <view class="img_nav_box">
       <view class="imgs">
+<<<<<<< HEAD
         <image src="../../static/imgs/330.330.png"></image>
+=======
+        <image src="../../static/imgs/imgs1.png"></image>
+>>>>>>> 52f64f72e88e74a5d1fd6ab67dc3de89912ce267
       </view>
       <view class="t1">Dr.Jart 宛若新生保湿面 膜...</view>
       <view class="p1">￥160
@@ -51,7 +65,11 @@
 
     <view class="img_nav_box">
       <view class="imgs">
+<<<<<<< HEAD
         <image src="../../static/imgs/330.330.png"></image>
+=======
+        <image src="../../static/imgs/imgs1.png"></image>
+>>>>>>> 52f64f72e88e74a5d1fd6ab67dc3de89912ce267
       </view>
       <view class="t1">Dr.Jart 宛若新生保湿面 膜...</view>
       <view class="p1">￥160
@@ -74,7 +92,11 @@
   <view class="img2_box">
     <view class="img_nav_box">
       <view class="imgs">
+<<<<<<< HEAD
         <image src="../../static/imgs/330.330.png"></image>
+=======
+        <image src="../../static/imgs/imgs1.png"></image>
+>>>>>>> 52f64f72e88e74a5d1fd6ab67dc3de89912ce267
       </view>
       <view class="t1">Dr.Jart 宛若新生保湿面 膜...</view>
       <view class="p1">￥160
@@ -83,7 +105,11 @@
 
     <view class="img_nav_box">
       <view class="imgs">
+<<<<<<< HEAD
         <image src="../../static/imgs/330.330.png"></image>
+=======
+        <image src="../../static/imgs/imgs1.png"></image>
+>>>>>>> 52f64f72e88e74a5d1fd6ab67dc3de89912ce267
       </view>
       <view class="t1">Dr.Jart 宛若新生保湿面 膜...</view>
       <view class="p1">￥160
@@ -92,7 +118,11 @@
 
     <view class="img_nav_box">
       <view class="imgs">
+<<<<<<< HEAD
         <image src="../../static/imgs/330.330.png"></image>
+=======
+        <image src="../../static/imgs/imgs1.png"></image>
+>>>>>>> 52f64f72e88e74a5d1fd6ab67dc3de89912ce267
       </view>
       <view class="t1">Dr.Jart 宛若新生保湿面 膜...</view>
       <view class="p1">￥160

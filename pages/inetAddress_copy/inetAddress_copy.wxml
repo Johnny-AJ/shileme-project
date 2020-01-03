@@ -14,7 +14,11 @@
     <input name="number" maxlength="11" bindinput="handNumber" value="{{phone}}" />
   </view>
 
+<<<<<<< HEAD
   <picker mode="region" bindchange="bindRegionChange" custom-item="{{customItem}}" class="username p30">
+=======
+  <picker mode="region" bindchange="bindRegionChange"   custom-item="{{customItem}}" class="username p30">
+>>>>>>> 52f64f72e88e74a5d1fd6ab67dc3de89912ce267
     <text>省/市/区：</text>
     <!-- <input type="text" placeholder="选择所在地区"></input> -->
     <view name="RectRegion" class="picker">{{province}}{{city}}{{region}}</view>

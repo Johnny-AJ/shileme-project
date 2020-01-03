@@ -8,18 +8,31 @@
 
 
       <view class="address_box">
+<<<<<<< HEAD
        <view bindtap="click" data-isDefault="{{item.isDefault}}" data-addressId="{{item.id}}">
+=======
+
+       <view   bindtap="click"   data-isDefault="{{item.isDefault}}" data-addressId="{{item.id}}">
+>>>>>>> 52f64f72e88e74a5d1fd6ab67dc3de89912ce267
         <view class="name_box p30">
           <!-- <text>花礼晴</text> -->
           <text>{{item.name}}</text>
           <!-- <text>13923856789</text> -->
           <text>{{item.phone}}</text>
         </view>
+<<<<<<< HEAD
+=======
+
+>>>>>>> 52f64f72e88e74a5d1fd6ab67dc3de89912ce267
         <view class="shipping_address p30">
           <!-- 广东省广州市天河区长湴工业园13号 -->
           {{item.province}}{{item.city}}{{item.region}}{{item.address}}
         </view>
        </view>
+<<<<<<< HEAD
+=======
+
+>>>>>>> 52f64f72e88e74a5d1fd6ab67dc3de89912ce267
         <view class="address_nav p30">
           <!-- 按钮 -->
           <view class="address_radio">
@@ -43,7 +56,14 @@
             </view>
           </view>
         </view>
+<<<<<<< HEAD
       </view>
+=======
+
+      </view>
+
+
+>>>>>>> 52f64f72e88e74a5d1fd6ab67dc3de89912ce267
     </label>
   </radio-group>
 

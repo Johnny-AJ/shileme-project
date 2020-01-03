@@ -4,8 +4,12 @@
   width: 750rpx;
   height: 1334rpx;
   overflow: hidden;
+<<<<<<< HEAD
   background-color: #f5f5f5;
   /* background-color: skyblue; */
+=======
+  background-color: skyblue;
+>>>>>>> 52f64f72e88e74a5d1fd6ab67dc3de89912ce267
   position: relative;
 }
 
@@ -31,7 +35,11 @@
   font-family: PingFang SC;
   font-weight: bold;
   color: rgba(34, 34, 34, 1);
+<<<<<<< HEAD
   margin-top: 10rpx;
+=======
+  margin-top: 28rpx;
+>>>>>>> 52f64f72e88e74a5d1fd6ab67dc3de89912ce267
   margin-left: 29rpx;
 }
 

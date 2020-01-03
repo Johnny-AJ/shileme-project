@@ -3,6 +3,7 @@
 
 <view class="bgc">
 
+<<<<<<< HEAD
   <view class="top_box" bindtap="handNewvoid">
     <view class="top_left">
       <view class="t1">{{item.name}}{{item.phone}}</view>
@@ -13,6 +14,16 @@
     </view>
     <view class="top_right">
       <image src="../../static/cart/矩形 16.png"></image>
+=======
+  <view class="top_box">
+    <view class="top_left">
+      <view class="t1">花礼晴 13923856789</view>
+      <view class="t2">广东省广州市天河区长湴工业园13栋</view>
+      <view class="t3">默认</view>
+    </view>
+    <view class="top_right">
+    <image src="../../static/cart/矩形 16.png"></image>
+>>>>>>> 52f64f72e88e74a5d1fd6ab67dc3de89912ce267
     </view>
   </view>
 
@@ -44,7 +55,11 @@
   </view>
 
   <!-- 按钮 -->
+<<<<<<< HEAD
   <view class="btn" bindtap="handleConversion">立刻兑换</view>
+=======
+  <view class="btn">立刻兑换</view>
+>>>>>>> 52f64f72e88e74a5d1fd6ab67dc3de89912ce267
 </view>
 
 

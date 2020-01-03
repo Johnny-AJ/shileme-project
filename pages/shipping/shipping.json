@@ -1,5 +1,10 @@
 {
+<<<<<<< HEAD
   "usingComponents": {},
   "navigationBarTitleText": "地址"
+=======
+    "usingComponents": {},
+    "navigationBarTitleText": "地址"
+>>>>>>> 52f64f72e88e74a5d1fd6ab67dc3de89912ce267
 
 }

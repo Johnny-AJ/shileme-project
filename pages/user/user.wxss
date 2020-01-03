@@ -2,6 +2,7 @@
   margin: 0;
   padding: 0;
   background: #f5f5f5;
+<<<<<<< HEAD
   width: 100%;
   overflow: hidden;
 }
@@ -12,6 +13,17 @@
   align-items: center;
 }
 
+=======
+  overflow: hidden;
+  width: 100%;
+}
+.dc{
+   display: flex;
+  justify-content: center;
+  align-items: center;
+
+}
+>>>>>>> 52f64f72e88e74a5d1fd6ab67dc3de89912ce267
 .user .username {
   background: none;
   height: 191.1rpx;
@@ -128,6 +140,7 @@
   flex-wrap: wrap;
   box-sizing: border-box;
   padding: 28rpx 0 0 0;
+<<<<<<< HEAD
 }
 
 .allorders .odercont .cont  image {
@@ -157,6 +170,34 @@
 }
 
 .function .content {
+=======
+ 
+}
+.allorders .odercont .cont  image{
+ width: 50rpx;
+ height: 40rpx;
+}
+.m20{
+  margin-top: 20rpx;
+}
+.allorders .odercont .cont  text{
+ width: 100%;
+ text-align: center;
+ font-size:26rpx;
+font-family:PingFang SC;
+font-weight:400;
+color:rgba(68,68,68,1);
+}
+.function{
+ width: 100%;
+ height: 317rpc;
+ background: #fff;
+ display: flex;
+   flex-wrap: wrap;
+
+}
+.function .content{
+>>>>>>> 52f64f72e88e74a5d1fd6ab67dc3de89912ce267
   width: 187.5rpx;
   height: 158.5rpx;
   display: flex;
@@ -166,6 +207,7 @@
   box-sizing: border-box;
   padding-top: 10rpx;
 }
+<<<<<<< HEAD
 
 .function .content image {
   width: 75rpx;
@@ -181,6 +223,21 @@
   color: rgba(68, 68, 68, 1);
 }
 
+=======
+.function .content image{
+  width: 75rpx;
+  height: 75rpx;
+
+}
+.function .content  text{
+  width: 100%;
+  text-align: center;
+  font-size:26rpx;
+font-family:PingFang SC;
+font-weight:400;
+color:rgba(68,68,68,1);
+}
+>>>>>>> 52f64f72e88e74a5d1fd6ab67dc3de89912ce267
 /* 推荐产品 */
 
 .conts {
@@ -212,12 +269,20 @@
   box-sizing: border-box;
   align-items: space-between;
   margin: -20rpx 0 0 -10rpx;
+<<<<<<< HEAD
 }
 
 .content .weui-loadmore__tips_in-line {
   background: #f5f5f5;
 }
 
+=======
+ 
+}
+.content .weui-loadmore__tips_in-line {
+  background: #f5f5f5;
+}
+>>>>>>> 52f64f72e88e74a5d1fd6ab67dc3de89912ce267
 .pl20 {
   box-sizing: border-box;
   padding-left: 10rpx;
@@ -257,6 +322,7 @@
   font-size: 24rpx;
   color: rgba(231, 86, 79, 1);
 }
+<<<<<<< HEAD
 
 .ltittle {
   height: 112rpx;
@@ -276,6 +342,24 @@
 
 .ltittle image {
   width: 30rpx;
+=======
+.ltittle{
+  height: 112rpx;
+  width: 100%;
+
+}
+.ltittle view{
+  width: 50rpx;
+  height: 2rpx;
+  background: #999999;
+  margin-right: 31rpx;
+}
+.ltittle .likes{
+  margin-left: 31rpx;
+}
+.ltittle image{
+  width:30rpx;
+>>>>>>> 52f64f72e88e74a5d1fd6ab67dc3de89912ce267
   height: 26rpx;
   margin-right: 7rpx;
 }

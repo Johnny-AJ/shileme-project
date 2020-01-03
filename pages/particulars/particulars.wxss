@@ -73,8 +73,12 @@
 .bottom_box {
   width: 750rpx;
   height: 100%;
+<<<<<<< HEAD
   background-color: #f5f5f5;
   /* background-color: skyblue; */
+=======
+  background-color: skyblue;
+>>>>>>> 52f64f72e88e74a5d1fd6ab67dc3de89912ce267
   padding-top: 31rpx;
 }
 
@@ -165,8 +169,12 @@
 .bottom_box1 {
   width: 750rpx;
   height: 100%;
+<<<<<<< HEAD
   background-color: #f5f5f5;
   /* background-color: skyblue; */
+=======
+  background-color: skyblue;
+>>>>>>> 52f64f72e88e74a5d1fd6ab67dc3de89912ce267
   padding-top: 31rpx;
 }
 

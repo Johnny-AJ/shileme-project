@@ -5,6 +5,7 @@ Page({
    * 页面的初始数据
    */
   data: {
+<<<<<<< HEAD
     currentIndex: '0', //tab选中
     statusList: 0, // 申请状态 0:申请中， 1:成功, 2:失败
     currPage: 1, //页码
@@ -86,13 +87,29 @@ Page({
     wx.navigateTo({
       url: '/pages/fill/fill?probationId=' + e.currentTarget.dataset.id
     })
+=======
+
+  },
+  // tab栏
+  handleChange({
+    detail
+  }) {
+    this.setData({
+      current: detail.key
+    });
+>>>>>>> 52f64f72e88e74a5d1fd6ab67dc3de89912ce267
   },
   /**
    * 生命周期函数--监听页面加载
    */
+<<<<<<< HEAD
   onLoad: function() {
     this.applyList()
     // this.setmyReportList()
+=======
+  onLoad: function(options) {
+
+>>>>>>> 52f64f72e88e74a5d1fd6ab67dc3de89912ce267
   },
 
   /**

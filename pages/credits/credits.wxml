@@ -5,10 +5,18 @@
 <view class="bgc">
 
   <!-- tab -->
+<<<<<<< HEAD
   <view class="tabs">
     <view wx:for="{{title}}" wx:key="*this" class='{{currentIndex==index?"tabNax":" "}}' class="p30" data-aa="{{index}}" bindtap="handTab">
       <view class='{{currentIndex==index?"tabVax":" "}}'>{{item}}</view>
     </view>
+=======
+  <view class="checktbs">
+    <i-tabs current="{{ current }}" color="#F02B50" bindchange="handleChange" i-class="tabs">
+      <i-tab key="tab1" title="当前积分 0"></i-tab>
+      <i-tab key="tab2" title="兑换记录"></i-tab>
+    </i-tabs>
+>>>>>>> 52f64f72e88e74a5d1fd6ab67dc3de89912ce267
   </view>
   <!-- tab -->
 
@@ -18,7 +26,11 @@
     <view class="jifen">
       <view class="r1">积分兑换</view>
       <view class="more">
+<<<<<<< HEAD
         <view class="p1" bindtap="handurl1" data-url="/pages/credits_copy/credits_copy">更多</view>
+=======
+        <view class="p1">更多</view>
+>>>>>>> 52f64f72e88e74a5d1fd6ab67dc3de89912ce267
         <view class="imgs1">
           <image src="../../static/group/矩形 16 拷贝 2.png"></image>
         </view>
@@ -28,6 +40,7 @@
 
     <view class="const_box">
 
+<<<<<<< HEAD
       <view class="photo_box" wx:for="{{conskList}}" wx:key="waresId">
         <view class="imgss">
           <image src="{{item.waresImg}}"></image>
@@ -83,6 +96,43 @@
           <view class="v5">兑换</view>
         </view>
       </view> -->
+=======
+      <view class="consk">
+        <view class="imf1">
+          <image src="../../static/group/组 18(3).png"></image>
+        </view>
+        <view class="m1">保湿急救蓝药丸面膜</view>
+        <view class="m2">1000积分</view>
+        <view class="m3">兑换</view>
+      </view>
+
+      <view class="consk">
+        <view class="imf1">
+          <image src="../../static/group/组 18(2).png"></image>
+        </view>
+        <view class="m1">保湿急救蓝药丸面膜</view>
+        <view class="m2">1000积分</view>
+        <view class="m3">兑换</view>
+      </view>
+
+      <view class="consk">
+        <view class="imf1">
+          <image src="../../static/group/组 18(1).png"></image>
+        </view>
+        <view class="m1">保湿急救蓝药丸面膜</view>
+        <view class="m2">1000积分</view>
+        <view class="m3">兑换</view>
+      </view>
+
+      <view class="consk">
+        <view class="imf1">
+          <image src="../../static/group/组 18(3).png"></image>
+        </view>
+        <view class="m1">保湿急救蓝药丸面膜</view>
+        <view class="m2">1000积分</view>
+        <view class="m3">兑换</view>
+      </view>
+>>>>>>> 52f64f72e88e74a5d1fd6ab67dc3de89912ce267
 
     </view>
   </view>
@@ -93,7 +143,11 @@
 
     <view class="youhui">
       <view class="b1">优惠券兑换</view>
+<<<<<<< HEAD
       <view class="more1" bindtap="handurl1" data-url="/pages/consk_box/consk_box">更多
+=======
+      <view class="more1">更多
+>>>>>>> 52f64f72e88e74a5d1fd6ab67dc3de89912ce267
         <view class="imgs2">
           <image src="../../static/group/矩形 16 拷贝 2.png"></image>
         </view>

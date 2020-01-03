@@ -3,6 +3,7 @@
 
 
 
+<<<<<<< HEAD
 
 <!-- 我的试用列表 -->
 <view class="bgc">
@@ -97,11 +98,98 @@
       </view>
 
     </view> -->
+=======
+<!-- tab栏 -->
+<view class="checktbs">
+  <i-tabs current="{{ current }}" color="#F02B50" bindchange="handleChange" i-class="tabs">
+    <i-tab key="tab1" title="申请中"></i-tab>
+    <i-tab key="tab2" title="申请成功"></i-tab>
+    <i-tab key="tab3" title="申请失败"></i-tab>
+    <i-tab key="tab4" title="我的试用报告"></i-tab>
+  </i-tabs>
+</view>
+
+<view class="bgc">
+  <!-- 申请中 -->
+  <view class="report_box">
+
+    <view class="report_top">
+      <view class="t1">2019-08-07</view>
+      <view class="t2">申请中</view>
+    </view>
+
+    <view class="report_buttom">
+      <view class="img">
+        <image src="../../static/imgs/imgs.png"></image>
+      </view>
+      <view class="report_nav">
+        <view class="t3">保湿急救 网红蓝药丸面膜</view>
+        <view class="t4">5片/盒</view>
+        <view class="t5">免费
+          <view class="t6">￥79</view>
+        </view>
+        <view class="t7">查看详情</view>
+      </view>
+    </view>
+
+  </view>
+
+  <!-- 申请成功 -->
+  <view class="report_box1">
+
+    <view class="report_top">
+      <view class="t1">2019-08-07</view>
+      <view class="t2">已完成</view>
+    </view>
+
+    <view class="report_buttom">
+      <view class="img">
+        <image src="../../static/imgs/imgs.png"></image>
+      </view>
+      <view class="report_nav">
+        <view class="t3">保湿急救 网红蓝药丸面膜</view>
+        <view class="t4">5片/盒</view>
+        <view class="t5">免费
+          <view class="t6">￥79</view>
+        </view>
+        <view class="t7">订单详情</view>
+        <view class="t8">提交报告</view>
+      </view>
+    </view>
+
+  </view>
+
+  <!-- 申请失败 -->
+  <view class="report_box2">
+
+    <view class="report_top">
+      <view class="t1">2019-08-07</view>
+      <view class="t2">申请失败</view>
+    </view>
+
+    <view class="report_buttom">
+      <view class="img">
+        <image src="../../static/imgs/imgs.png"></image>
+      </view>
+      <view class="report_nav">
+        <view class="t3">保湿急救 网红蓝药丸面膜</view>
+        <view class="t4">5片/盒</view>
+        <view class="t5">免费
+          <view class="t6">￥79</view>
+        </view>
+        <view class="t7">订单详情</view>
+      </view>
+    </view>
+>>>>>>> 52f64f72e88e74a5d1fd6ab67dc3de89912ce267
 
   </view>
 
   <!-- 我的试用报告 -->
+<<<<<<< HEAD
   <view class="report_box3" wx:if="{{currentIndex == 3}}" wx:for="{{setmyReportList}}" wx:key="waresId">
+=======
+  <view class="report_box3">
+>>>>>>> 52f64f72e88e74a5d1fd6ab67dc3de89912ce267
     <view class="nav_box">
       <view class="box_left">
         <view class="t1">
@@ -114,10 +202,17 @@
       </view>
       <view class="box_right">
         <view class="img2">
+<<<<<<< HEAD
           <image src="../../static/imgs/330.330.png"></image>
+=======
+          <image src="../../static/imgs/imgs.png"></image>
+>>>>>>> 52f64f72e88e74a5d1fd6ab67dc3de89912ce267
         </view>
       </view>
     </view>
   </view>
+<<<<<<< HEAD
 
+=======
+>>>>>>> 52f64f72e88e74a5d1fd6ab67dc3de89912ce267
 </view>

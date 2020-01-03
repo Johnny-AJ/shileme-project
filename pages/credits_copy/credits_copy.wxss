@@ -1,5 +1,6 @@
 /* pages/credits_copy/credits_copy.wxss */
 
+<<<<<<< HEAD
 /* tu */
 
 .const_box {
@@ -8,10 +9,18 @@
   background: rgba(255, 255, 255, 1);
   box-sizing: border-box;
   margin: 0 30rpx;
+=======
+.const_box {
+  height: 100%;
+  width: 100%;
+  /* border: 1px solid red; */
+  margin-left: 30rpx;
+>>>>>>> 52f64f72e88e74a5d1fd6ab67dc3de89912ce267
   display: flex;
   flex-wrap: wrap;
 }
 
+<<<<<<< HEAD
 .photo_box {
   width: 330rpx;
   height: 450rpx;
@@ -34,10 +43,28 @@
 
 .v1 {
   width: 249rpx;
+=======
+.const_box .consk {
+  width: 330rpx;
+  height: 450rpx;
+  border: 1px solid #f5f5f5;
+  text-align: center;
+  margin-left: 15rpx;
+  margin-bottom: 20rpx;
+}
+
+.consk .imf1 image {
+  width: 330rpx;
+  height: 280rpx;
+}
+
+.consk .m1 {
+>>>>>>> 52f64f72e88e74a5d1fd6ab67dc3de89912ce267
   font-size: 26rpx;
   font-family: PingFang SC;
   font-weight: bold;
   color: rgba(34, 34, 34, 1);
+<<<<<<< HEAD
   display: -webkit-box;
   overflow: hidden;
   -webkit-line-clamp: 1;
@@ -55,10 +82,16 @@
 }
 
 .v3 {
+=======
+}
+
+.consk .m2 {
+>>>>>>> 52f64f72e88e74a5d1fd6ab67dc3de89912ce267
   font-size: 26rpx;
   font-family: PingFang SC;
   font-weight: 400;
   color: rgba(247, 157, 23, 1);
+<<<<<<< HEAD
 }
 
 .v4 {
@@ -69,6 +102,12 @@
 }
 
 .v5 {
+=======
+  margin: 10rpx 0 14rpx;
+}
+
+.consk .m3 {
+>>>>>>> 52f64f72e88e74a5d1fd6ab67dc3de89912ce267
   width: 150rpx;
   height: 46rpx;
   border: 1px solid rgba(240, 43, 80, 1);
@@ -77,9 +116,14 @@
   font-family: PingFang SC;
   font-weight: 400;
   color: rgba(240, 43, 80, 1);
+<<<<<<< HEAD
   text-align: center;
   line-height: 46rpx;
   margin-left: 85rpx;
 }
 
 /* tu */
+=======
+  margin-left: 90rpx;
+}
+>>>>>>> 52f64f72e88e74a5d1fd6ab67dc3de89912ce267

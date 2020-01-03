@@ -5,6 +5,13 @@ Page({
    * 页面的初始数据
    */
   data: {
+<<<<<<< HEAD
+=======
+
+
+
+  
+>>>>>>> 52f64f72e88e74a5d1fd6ab67dc3de89912ce267
     id:'',
     name: '', //用户名
     phone: '', //手机号
@@ -18,9 +25,15 @@ Page({
    * 生命周期函数--监听页面加载
    */
   onLoad: function(e) {
+<<<<<<< HEAD
     console.log(e, 11)
     this.info(e)//根据id查询
   },
+=======
+    this.info(e)//根据id查询
+  },
+  
+>>>>>>> 52f64f72e88e74a5d1fd6ab67dc3de89912ce267
   // 按钮
   handtap(e) {
     var self = this
@@ -35,7 +48,11 @@ Page({
         city: self.data.city,
         region: self.data.region,
         address: self.data.address,
+<<<<<<< HEAD
         isDefault: self.data.id,
+=======
+        isDefault: self.data.isDefault,
+>>>>>>> 52f64f72e88e74a5d1fd6ab67dc3de89912ce267
         id: self.data.id
       },
       header: {
@@ -56,7 +73,34 @@ Page({
       }
     })
   },
+<<<<<<< HEAD
   info(e){
+=======
+  handuserName(e) {
+      this.setData({
+        name: e.detail.value
+      })
+  },
+  bindRegionChange(e) {
+    console.log(e,'adds')
+    this.setData({
+      city: e.detail.value[1], //市
+      region: e.detail.value[2], //区
+      province: e.detail.value[0], //地址
+    })
+  },
+  handNumber(e) {
+    this.setData({
+      phone: e.detail.value
+    })
+  },
+  handAddress(e) {
+    this.setData({
+      address: e.detail.value
+    })
+  },
+  info(e){//请求数据
+>>>>>>> 52f64f72e88e74a5d1fd6ab67dc3de89912ce267
     var self =this;
     wx.request({
       url: 'http://192.168.2.98:9095/api/address/info',
@@ -79,7 +123,12 @@ Page({
           isDefault: data.isDefault,
           id:data.id
         })
+<<<<<<< HEAD
         console.log(self.data,'data')
+=======
+
+  
+>>>>>>> 52f64f72e88e74a5d1fd6ab67dc3de89912ce267
       }
     })
   },
@@ -94,4 +143,8 @@ Page({
       })
     }
   }
+<<<<<<< HEAD
+=======
+  
+>>>>>>> 52f64f72e88e74a5d1fd6ab67dc3de89912ce267
 })

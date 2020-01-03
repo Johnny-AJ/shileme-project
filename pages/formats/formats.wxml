@@ -59,7 +59,26 @@
 
   <!-- 拼团规则 -->
   <view class="pricr_rules">
+<<<<<<< HEAD
     <image src="../../static/imgs/拼团规则.png"></image>
+=======
+
+    <view class="price_rules_top">
+      <image src="../../static/formats/椭圆 3.png"></image>
+      <view class="t6">拼团规则</view>
+    </view>
+
+    <view class="price_rules_bottom">
+      <view class="t7">开团/参团</view>
+      <view class="t7">>></view>
+      <view class="t7">邀请好友</view>
+      <view class="t7">>></view>
+      <view class="t7 t8">
+        <view> 满员发货</view>
+        <view> 不满自动退单</view>
+      </view>
+    </view>
+>>>>>>> 52f64f72e88e74a5d1fd6ab67dc3de89912ce267
   </view>
   <!-- 拼团规则 -->
 

@@ -5,6 +5,7 @@ Page({
    * 页面的初始数据
    */
   data: {
+<<<<<<< HEAD
     addAddressList: [],
     name: '', //用户名
     phone: '', //电话
@@ -28,10 +29,17 @@ Page({
       url: "/pages/consistent/consistent"
     })
   },
+=======
+
+  },
+
+
+>>>>>>> 52f64f72e88e74a5d1fd6ab67dc3de89912ce267
   /**
    * 生命周期函数--监听页面加载
    */
   onLoad: function(options) {
+<<<<<<< HEAD
     var self = this;
     wx.request({
       url: 'http://192.168.2.98:9095/api/address/info', //ID查询
@@ -56,6 +64,9 @@ Page({
         console.log(self.data, 'data')
       }
     })
+=======
+
+>>>>>>> 52f64f72e88e74a5d1fd6ab67dc3de89912ce267
   },
 
   /**

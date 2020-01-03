@@ -2,6 +2,7 @@
 <!-- <text>pages/fill/fill.wxml</text> -->
 
 
+<<<<<<< HEAD
 
 <textarea name="report" bindblur="handInput" placeholder="请输入试用体验..."></textarea>
 
@@ -29,3 +30,15 @@
 
 
 <view class="btn" bindtap="handleBtn" data-btn="{{btn}}">提交</view>
+=======
+<view class="box">
+  <textarea placeholder="请输入试用体验..."></textarea>
+</view>
+
+<view class="imgs">
+  <image src="../../static/group/组 2.png"></image>
+</view>
+
+
+<view class="btn">提交</view>
+>>>>>>> 52f64f72e88e74a5d1fd6ab67dc3de89912ce267

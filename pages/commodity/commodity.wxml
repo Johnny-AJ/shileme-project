@@ -10,7 +10,11 @@
       <view class="k2">￥69</view>
     </view>
     <view class="img3">
+<<<<<<< HEAD
       <image src="../../static/imgs/330.330.png"></image>
+=======
+      <image src="../../static/imgs/imgs1.png"></image>
+>>>>>>> 52f64f72e88e74a5d1fd6ab67dc3de89912ce267
     </view>
   </view>
 
@@ -19,7 +23,11 @@
 
   <!-- 下 -->
   <view class="jong">
+<<<<<<< HEAD
     <view class="jong_left" bindtap="handurl1" data-url="/pages/particulars/particulars">
+=======
+    <view class="jong_left">
+>>>>>>> 52f64f72e88e74a5d1fd6ab67dc3de89912ce267
 
       <view class="jong_box">
         <view class="j2">
@@ -27,14 +35,22 @@
       </view>
 
       <view class="imgd1">
+<<<<<<< HEAD
         <image src="../../static/imgs/小樱.jpg"></image>
+=======
+        <image src="../../static/imgs/组 22(1).png"></image>
+>>>>>>> 52f64f72e88e74a5d1fd6ab67dc3de89912ce267
         <view class="i1">米粒</view>
       </view>
     </view>
 
     <view class="jong_right">
       <view class="img4">
+<<<<<<< HEAD
         <image src="../../static/imgs/330.330.png"></image>
+=======
+        <image src="../../static/imgs/imgs1.png"></image>
+>>>>>>> 52f64f72e88e74a5d1fd6ab67dc3de89912ce267
       </view>
     </view>
 
@@ -49,14 +65,22 @@
       </view>
 
       <view class="imgd1">
+<<<<<<< HEAD
         <image src="../../static/imgs/小樱.jpg"></image>
+=======
+        <image src="../../static/imgs/组 22(1).png"></image>
+>>>>>>> 52f64f72e88e74a5d1fd6ab67dc3de89912ce267
         <view class="i1">米粒</view>
       </view>
     </view>
 
     <view class="jong_right">
       <view class="img4">
+<<<<<<< HEAD
         <image src="../../static/imgs/330.330.png"></image>
+=======
+        <image src="../../static/imgs/imgs1.png"></image>
+>>>>>>> 52f64f72e88e74a5d1fd6ab67dc3de89912ce267
       </view>
     </view>
 

@@ -2,6 +2,7 @@
 
 .bgc {
   width: 750rpx;
+<<<<<<< HEAD
   height: 100%;
   /* height: 1308rpx; */
   overflow: hidden;
@@ -33,6 +34,33 @@
 }
 
 /* tab */
+=======
+  height: 1308rpx;
+  overflow: hidden;
+  background-color: skyblue;
+}
+
+.indent.checktbs {
+  height: 90rpx;
+  width: 100%;
+}
+
+.indent.tabs {
+  width: 100%;
+  position: fixed;
+  left: 0;
+  top: 0;
+  height: 91rpx;
+  display: flex;
+  background: #fff;
+  text-align: center;
+  padding: 10rpx;
+  box-sizing: border-box;
+  border: none !important;
+}
+
+/* tab栏 */
+>>>>>>> 52f64f72e88e74a5d1fd6ab67dc3de89912ce267
 
 /* top */
 
@@ -60,8 +88,11 @@
 
 .nav_box1 {
   display: flex;
+<<<<<<< HEAD
   margin-top: 10rpx;
   margin-left: 30rpx;
+=======
+>>>>>>> 52f64f72e88e74a5d1fd6ab67dc3de89912ce267
 }
 
 .nav_box1 .nav1 {
@@ -72,6 +103,7 @@
   color: rgba(0, 0, 0, 1);
 }
 
+<<<<<<< HEAD
 .nav_box2 {
   margin-top: 10rpx;
   margin-left: 30rpx;
@@ -84,6 +116,16 @@
   height: 60rpx;
   box-sizing: border-box;
   padding-bottom: 55rpx;
+=======
+.nav_box1 {
+  margin-top: 29rpx;
+  margin-left: 30rpx;
+}
+
+.nav_box2 {
+  margin-top: 10rpx;
+  margin-left: 30rpx;
+>>>>>>> 52f64f72e88e74a5d1fd6ab67dc3de89912ce267
 }
 
 .nav_box3 {
@@ -91,7 +133,11 @@
   height: 60rpx;
   background: rgba(240, 43, 80, 1);
   border-radius: 30rpx;
+<<<<<<< HEAD
   font-size: 24rpx;
+=======
+  font-size: 26rpx;
+>>>>>>> 52f64f72e88e74a5d1fd6ab67dc3de89912ce267
   font-family: PingFang SC;
   font-weight: bold;
   color: rgba(255, 255, 255, 1);
@@ -103,13 +149,18 @@
 }
 
 .nav_box1 .nav2 {
+<<<<<<< HEAD
   width: 380rpx;
   height: 30rpx;
   font-size: 24rpx;
+=======
+  font-size: 26rpx;
+>>>>>>> 52f64f72e88e74a5d1fd6ab67dc3de89912ce267
   font-family: PingFang SC;
   font-weight: bold;
   color: rgba(34, 34, 34, 1);
   margin-left: 10rpx;
+<<<<<<< HEAD
   display: -webkit-box;
   overflow: hidden;
   -webkit-line-clamp: 1;
@@ -119,6 +170,11 @@
 .nav_box2 .nav3 {
   width: 170rpx;
   height: 20rpx;
+=======
+}
+
+.nav_box2 .nav3 {
+>>>>>>> 52f64f72e88e74a5d1fd6ab67dc3de89912ce267
   font-size: 26rpx;
   font-family: PingFang SC;
   font-weight: 400;
@@ -176,6 +232,7 @@
   top: 180rpx;
   right: 207rpx;
 }
+<<<<<<< HEAD
 
 /* 内容 */
 
@@ -282,3 +339,5 @@
   bottom: 0;
   left: 0;
 }
+=======
+>>>>>>> 52f64f72e88e74a5d1fd6ab67dc3de89912ce267

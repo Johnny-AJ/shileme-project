@@ -2,4 +2,8 @@
 <view class="img">
   <image src="../../static/imgs/组 7 (1).png"></image>
 </view>
+<<<<<<< HEAD
 <text>功能暂未开放,敬请期待!</text>
+=======
+<text>功能暂未开放,敬请期待!</text>
+>>>>>>> 52f64f72e88e74a5d1fd6ab67dc3de89912ce267

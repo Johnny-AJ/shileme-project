@@ -5,7 +5,11 @@
 <view class="bgc">
   <!-- 上图 -->
   <view class="img">
+<<<<<<< HEAD
     <image src="../../static/group/banner.png"></image>
+=======
+    <image src="../../static/group/组 99.png"></image>
+>>>>>>> 52f64f72e88e74a5d1fd6ab67dc3de89912ce267
   </view>
   <!-- 下图 -->
   <view class="img1">
@@ -44,6 +48,9 @@
 
   </view>
 
+<<<<<<< HEAD
 
+=======
+>>>>>>> 52f64f72e88e74a5d1fd6ab67dc3de89912ce267
   <!-- 急救 -->
 </view>

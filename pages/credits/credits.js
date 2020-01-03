@@ -5,6 +5,7 @@ Page({
    * 页面的初始数据
    */
   data: {
+<<<<<<< HEAD
     title: ["当前积分0", "兑换记录"],
     currentIndex: '0',
     conskList: [], //积分商品列表
@@ -36,12 +37,27 @@ Page({
         token: wx.getStorageSync("token") //token
       }
     })
+=======
+
+  },
+  // tab栏
+  handleChange({
+    detail
+  }) {
+    this.setData({
+      current: detail.key
+    });
+>>>>>>> 52f64f72e88e74a5d1fd6ab67dc3de89912ce267
   },
   /**
    * 生命周期函数--监听页面加载
    */
   onLoad: function(options) {
+<<<<<<< HEAD
     this.waresList()
+=======
+
+>>>>>>> 52f64f72e88e74a5d1fd6ab67dc3de89912ce267
   },
 
   /**

@@ -429,7 +429,10 @@
   background: rgba(0, 0, 0, 0.75);
   display: none;
 }
+<<<<<<< HEAD
 
+=======
+>>>>>>> 52f64f72e88e74a5d1fd6ab67dc3de89912ce267
 .zan-dialog__container {
   position: fixed;
   bottom: 0rpx;
@@ -457,7 +460,10 @@
 .zan-dialog--show .zan-dialog__mask {
   display: block;
 }
+<<<<<<< HEAD
 
+=======
+>>>>>>> 52f64f72e88e74a5d1fd6ab67dc3de89912ce267
 .show1 .zan-dialog__container {
   transform: translateY(0);
   background: #fff;
@@ -620,4 +626,8 @@ flex-wrap: wrap;
 .zan-dialog__container .imgs image {
   width: 100%;
   height: 100%;
+<<<<<<< HEAD
 }
+=======
+}
+>>>>>>> 52f64f72e88e74a5d1fd6ab67dc3de89912ce267

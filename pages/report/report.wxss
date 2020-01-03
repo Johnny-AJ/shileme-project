@@ -1,5 +1,6 @@
 /* pages/report/report.wxss */
 
+<<<<<<< HEAD
 .tabs_nav {
   width: 750rpx;
   height: 90rpx;
@@ -17,16 +18,41 @@
 .nab_border {
   color: #ff2159;
   border: 4rpx solid #ff2159;
+=======
+.indent.checktbs {
+  height: 90rpx;
+  width: 100%;
+}
+
+.indent.tabs {
+  width: 100%;
+  position: fixed;
+  left: 0;
+  top: 0;
+  height: 91rpx;
+  display: flex;
+  background: #fff;
+  align-items: center;
+  padding: 10rpx;
+  box-sizing: border-box;
+  border: none !important;
+>>>>>>> 52f64f72e88e74a5d1fd6ab67dc3de89912ce267
 }
 
 /* === */
 
 .bgc {
   width: 750rpx;
+<<<<<<< HEAD
   height: 11175rpx;
   overflow: hidden;
   background-color: #f5f5f5;
   /* background-color: skyblue; */
+=======
+  height: 1470rpx;
+  overflow: hidden;
+  background-color: skyblue;
+>>>>>>> 52f64f72e88e74a5d1fd6ab67dc3de89912ce267
 }
 
 /* 申请中 */
@@ -45,9 +71,13 @@
   display: flex;
   text-align: center;
   justify-content: space-between;
+<<<<<<< HEAD
   width: 750rpx;
   height: 78rpx;
   line-height: 78rpx;
+=======
+  padding: 25rpx 29rpx;
+>>>>>>> 52f64f72e88e74a5d1fd6ab67dc3de89912ce267
 }
 
 .report_top .t1 {
@@ -55,7 +85,10 @@
   font-family: PingFang SC;
   font-weight: bold;
   color: rgba(34, 34, 34, 1);
+<<<<<<< HEAD
   margin-left: 29rpx;
+=======
+>>>>>>> 52f64f72e88e74a5d1fd6ab67dc3de89912ce267
 }
 
 .report_top .t2 {
@@ -63,13 +96,19 @@
   font-family: PingFang SC;
   font-weight: 400;
   color: rgba(240, 43, 80, 1);
+<<<<<<< HEAD
   margin-right: 29rpx;
+=======
+>>>>>>> 52f64f72e88e74a5d1fd6ab67dc3de89912ce267
 }
 
 .report_buttom {
   display: flex;
+<<<<<<< HEAD
   width: 750rpx;
   height: 250rpx;
+=======
+>>>>>>> 52f64f72e88e74a5d1fd6ab67dc3de89912ce267
 }
 
 .report_buttom .img image {
@@ -140,7 +179,11 @@
 .report_box1 {
   /* border: 1px solid red; */
   width: 750rpx;
+<<<<<<< HEAD
   height: 312rpx;
+=======
+  height: 284rpx;
+>>>>>>> 52f64f72e88e74a5d1fd6ab67dc3de89912ce267
   margin-top: 20rpx;
   background-color: #fff;
 }
@@ -151,9 +194,13 @@
   display: flex;
   text-align: center;
   justify-content: space-between;
+<<<<<<< HEAD
   width: 750rpx;
   height: 78rpx;
   line-height: 78rpx;
+=======
+  padding: 25rpx 29rpx;
+>>>>>>> 52f64f72e88e74a5d1fd6ab67dc3de89912ce267
 }
 
 .report_top .t1 {
@@ -269,9 +316,13 @@
   display: flex;
   text-align: center;
   justify-content: space-between;
+<<<<<<< HEAD
   width: 750rpx;
   height: 78rpx;
   line-height: 78rpx;
+=======
+  padding: 25rpx 29rpx;
+>>>>>>> 52f64f72e88e74a5d1fd6ab67dc3de89912ce267
 }
 
 .report_top .t1 {
@@ -302,11 +353,16 @@
 .report_buttom .report_nav {
   /* border: 1px solid blue; */
   width: 512rpx;
+<<<<<<< HEAD
   margin: 20rpx 28rpx 30rpx 0;
+=======
+  margin: 30rpx 28rpx 30rpx 0;
+>>>>>>> 52f64f72e88e74a5d1fd6ab67dc3de89912ce267
   position: relative;
 }
 
 .report_nav .t3 {
+<<<<<<< HEAD
   font-size: 24rpx;
   font-family: PingFang SC;
   font-weight: bold;
@@ -315,6 +371,12 @@
   overflow: hidden;
   -webkit-line-clamp: 2;
   -webkit-box-orient: vertical;
+=======
+  font-size: 28rpx;
+  font-family: PingFang SC;
+  font-weight: bold;
+  color: rgba(34, 34, 34, 1);
+>>>>>>> 52f64f72e88e74a5d1fd6ab67dc3de89912ce267
 }
 
 .report_nav .t4 {
@@ -331,8 +393,11 @@
   font-weight: bold;
   color: rgba(240, 43, 80, 1);
   display: flex;
+<<<<<<< HEAD
   height: 30rpx;
   line-height: 30rpx;
+=======
+>>>>>>> 52f64f72e88e74a5d1fd6ab67dc3de89912ce267
 }
 
 .report_nav .t6 {

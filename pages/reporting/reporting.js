@@ -5,7 +5,11 @@ Page({
    * 页面的初始数据
    */
   data: {
+<<<<<<< HEAD
     setList: []
+=======
+
+>>>>>>> 52f64f72e88e74a5d1fd6ab67dc3de89912ce267
   },
   // tab栏
   handleChange({
@@ -15,6 +19,7 @@ Page({
       current: detail.key
     });
   },
+<<<<<<< HEAD
   handurl1(e) {
     // 路由封装
     wx.navigateTo({
@@ -38,6 +43,13 @@ Page({
   onLoad: function() {
     let self = this
     self.setReportingList()
+=======
+  /**
+   * 生命周期函数--监听页面加载
+   */
+  onLoad: function(options) {
+
+>>>>>>> 52f64f72e88e74a5d1fd6ab67dc3de89912ce267
   },
 
   /**

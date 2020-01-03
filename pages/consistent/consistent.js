@@ -1,12 +1,16 @@
 // pages/consistent/consistent.js
+<<<<<<< HEAD
 
 //免试试用
+=======
+>>>>>>> 52f64f72e88e74a5d1fd6ab67dc3de89912ce267
 Page({
 
   /**
    * 页面的初始数据
    */
   data: {
+<<<<<<< HEAD
     titleList: [{
       title: '试用申领',
       id: '0'
@@ -72,14 +76,30 @@ Page({
     wx.navigateTo({
       url: '/pages/probation/probation?id=' + e.currentTarget.dataset.id //跳转到试用详情
     })
+=======
+
+  },
+  // tab栏
+  handleChange({
+    detail
+  }) {
+    this.setData({
+      current: detail.key
+    });
+>>>>>>> 52f64f72e88e74a5d1fd6ab67dc3de89912ce267
   },
   /**
    * 生命周期函数--监听页面加载
    */
+<<<<<<< HEAD
   onLoad: function(e) {
     let self = this
     self.setprobationList()
     self.setReportingList()
+=======
+  onLoad: function(options) {
+
+>>>>>>> 52f64f72e88e74a5d1fd6ab67dc3de89912ce267
   },
 
   /**

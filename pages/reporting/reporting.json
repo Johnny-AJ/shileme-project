@@ -4,5 +4,9 @@
     "i-tabs": "../../components/tabs/index",
     "i-tab": "../../components/tab/index"
   },
+<<<<<<< HEAD
   "navigationBarTitleText": "试用报告"
+=======
+  "navigationBarTitleText": "使用报告"
+>>>>>>> 52f64f72e88e74a5d1fd6ab67dc3de89912ce267
 }
