@@ -102,16 +102,16 @@ Page({
     })
   },
   waitPayOrder(){
-  
 
     var self =this;
+    
     wx.request({
-      url: 'http://192.168.2.98:9095/api/order/findNewWaitPayOrder',
+      url: 'http://192.168.2.98:9095/api/order/findNewWaitPayOrder?time='+new Date().getTime(),
       header:{
         token: wx.getStorageSync('token')
       },
       success:function(res){
-        console.log(res.data.data,'666666')
+        console.log(res,'666666')
        self.setData({
          orderNo: res.data.data.orderNo
        })

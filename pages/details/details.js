@@ -1,3 +1,5 @@
+let http = require('../../utils/http.js')
+
 Page({
 
     /**
@@ -24,10 +26,10 @@ Page({
         allProperties: [],
         pic: '',
         token: '',
-        pageSize: 5,
-        currPage: 0,
+        
         getListByWaresId: [],
-        getListByWaresId1: []
+        getListByWaresId1: [],
+        totalCount:0
     },
 
     /**
@@ -54,7 +56,7 @@ Page({
                 },
                 success(res) {
 
-                    console.log(res.data, '66666666')
+           
                     self.setData({
                         imgsurl: res.data.data.imgUrl
                     })
@@ -76,13 +78,7 @@ Page({
 
     },
 
-    /**
-     * 生命周期函数--监听页面初次渲染完成
-     */
-    onReady: function() {
-
-    },
-
+   
     /**
      * 生命周期函数--监听页面显示
      */
@@ -113,29 +109,47 @@ Page({
     get_data(waresId) {
 
         var self = this;
-        wx.request({
-            url: 'http://192.168.2.98:9095/api/wares/details/getWaresInfo',
-            method: "get",
-            data: {
-                waresId: waresId
-            },
-            success(res) {
-                console.log(res, 'getWaresInfo')
-
-                self.setData({
-                    list: res.data.data
-                })
-                self.setData({
-                    price: self.data.list.mallPrice
-                })
-
-                self.setData({
-                    pic: self.data.list.images[0]
-                })
+      let prams = { waresId:waresId}
+      http.getRequest('/api/wares/details/getWaresInfo', prams, function (res){
+        console.log(res,'res')
 
 
-            }
+        self.setData({
+          list: res.data
         })
+        self.setData({
+          price: self.data.list.mallPrice
+        })
+
+        self.setData({
+          pic: self.data.list.images[0]
+        })
+
+
+      })
+        // wx.request({
+        //     url: 'http://192.168.2.98:9095/api/wares/details/getWaresInfo',
+        //     method: "get",
+        //     data: {
+        //         waresId: waresId
+        //     },
+        //     success(res) {
+           
+
+        //         self.setData({
+        //             list: res.data.data
+        //         })
+        //         self.setData({
+        //             price: self.data.list.mallPrice
+        //         })
+
+        //         self.setData({
+        //             pic: self.data.list.images[0]
+        //         })
+
+
+        //     }
+        // })
     },
     // 弹出领劵层方法
     toggleDialog() {
@@ -295,7 +309,7 @@ Page({
 
         if (e) {
             var dtos = JSON.stringify(e.currentTarget.dataset);
-            console.log(dtos, 'dtos')
+         
             if (e.currentTarget.dataset.propertyid == undefined) {
                 wx.showToast({
                     title: '请选择规格！',
@@ -320,15 +334,26 @@ Page({
             },
             data: {
                 waresId: self.data.waresId,
-                pageSize: self.data.pageSize,
-                currPage: self.data.currPage
+                pageSize: 5,
+                currPage: 0
 
             },
             success: function(res) {
+              
+              self.setData({
+                getcommentList:res.data.data.list,
+                totalCount: res.data.data.totalCount
+              })
                 console.log(res, 'getCommentList')
             }
         })
     },
+  gotcommentList(e){
+   
+    wx.navigateTo({
+      url: '/pages/comment/comment?waresId=' + e.currentTarget.dataset.waresid,   
+    })
+  },
     goback() {
         wx.reLaunch({
             url: '/pages/index/index',

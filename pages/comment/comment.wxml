@@ -1,84 +1,38 @@
 <!--商品评论-->
 
 <view class="comment">
-  <view class="label">
-    <view class="lcont   {{ishow?'open':'close'}}">
-      <text class="{{ischecked?'checked':''}}" bindtap="ischecked">全部</text>
-      <text>很便宜</text>
-      <text>不错</text>
-      <text>包装挺好</text>
-      <text>不划算</text>
-      <text>保湿效果好</text>
-      <text>是正品</text>
-      <text>效果好</text>
-      <text>好用</text>
-    </view>
-    <view class="imgs">
-      <view class="isopen" bindtap="open">
-        <image src="../../static/imgs/矩形 19.png" class="{{ishow?'show1':'close1'}}"></image>
-        <image src="../../static/imgs/矩形 19 (2).png" class="{{ishow?'close1':'show1'}}"></image>
-      </view>
 
-    </view>
-  </view>
   <view class="conts">
-    <view class="pj">
+ 
+    <view class="pj" wx:for="{{getcommentList}}" wx:key="*this">
       <view class="head">
-        <image src="../../static/imgs/组 22(1).png "></image>
+        <image src="../../static/scango/椭圆 4.png " wx:if="{{item.userName==null}}"></image>
+        <image src="{{item.userImg}}" ></image>
       </view>
       <view class="pr">
-        <text class="name">李四</text>
-        <text class="time">2019-8-8</text>
-     <view class="text{{isok?'spread':''}}" >
-          商品很有保证，不错！
-          <text bindtap="spread" class="{{unfold.length<55?'s1':''}}"  >全文</text>
+        <text class="name">{{item.userName}}</text>
+        <text class="name" wx:if="{{item.userName==null}}">匿名</text>
+        <text class="time">{{item.createTime}}</text>
+        <view class="text" >
+            {{item.commentInfo}}
+          <!-- <text bindtap="spread" wx:if="{{item.commentInfo.length>}}">全文</text> -->
         </view>
+        <view class="show2 ">
+          <image src="{{i}}" wx:for="{{item.images}}" wx:key="*this" wx:for-item="i"></image>
 
-
-      </view>
-    </view>
-    <view class="pj">
-      <view class="head">
-        <image src="../../static/imgs/组 22(1).png "></image>
-      </view>
-      <view class="pr">
-        <text class="name">李四</text>
-        <text class="time">2019-8-8</text>
-         <view class="text{{isok?'spread':''}}" >
-          商品很有保证，不错！
-          <text bindtap="spread" class="{{unfold.length<55?'s1':''}}"  >全文</text>
-        </view>
-        <view class="{{show2?'imgshow':'imghidden'}} ">
-          <image src="../../static/imgs/组 2.png"></image>
-          <image src="../../static/imgs/矩形 3.png"></image>
-        </view>
-
-      </view>
-
-    </view>
-    <view class="pj">
-      <view class="head">
-        <image src="../../static/imgs/组 22(1).png "></image>
-      </view>
-      <view class="pr">
-        <text class="name">李四</text>
-        <text class="time">2019-8-8</text>
-        <view class="text{{isok?'spread':''}}" >
-          商品很有保证，不错！商品很有保证，不错！商品很有保证，不错！商品很有保证，不错！商品很有保证，不错！商品很有
-          <text bindtap="spread" class="{{unfold.length<55?'s1':''}}"  >全文</text>
-        </view>
-        <view class="{{show2?'imgshow':'imghidden'}} ">
-          <image src="../../static/imgs/组 2.png"></image>
-          <image src="../../static/imgs/矩形 3.png"></image>
-          <image src="../../static/imgs/矩形 3.png"></image>
-          <image src="../../static/imgs/矩形 3.png"></image>
         </view>
 
       </view>
 
     </view>
   </view>
-
+ <view class="weui-loadmore" hidden='{{!loading}}'>
+        <view class="weui-loading"></view>
+        <view class="weui-loadmore__tips">正在加载</view>
+      </view>
+      <view class="weui-loadmore weui-loadmore_line" hidden='{{hasNext}}'>
+        <view class="weui-loadmore__tips weui-loadmore__tips_in-line">到底了</view>
+      </view>
 
 
 </view>

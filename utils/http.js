@@ -1,154 +1,94 @@
-var config = require("config.js");
+let domain = require('./config.js')
+var header = {
+  'content-type': 'application/json',
+  'token': wx.getStorageSync("token"),
+  'os': 'android',
+  'version': '1.0.0',
+  'device_token': 'ebc9f523e570ef14',
+}
 
-//统一的网络请求方法
-function request(params, isGetTonken) {
-  // 全局变量
-  var globalData = getApp().globalData;
-  // 如果正在进行登陆，就将非登陆请求放在队列中等待登陆完毕后进行调用
-  if (!isGetTonken && globalData.isLanding) {
-    globalData.requestQueue.push(params);
-    return;
-  }
+/**
+ * 供外部post请求调用  
+ */
+function post(url, params, onSuccess, onFailed) {
+
+  request(url, params, "POST", onSuccess, onFailed);
+
+}
+
+/**
+ * 供外部get请求调用
+ */
+function get(url, params, onSuccess, onFailed) {
+
+  request(url, params, "GET", onSuccess, onFailed);
+}
+
+/**
+ * function: 封装网络请求
+ * @url URL地址
+ * @params 请求参数
+ * @method 请求方式：GET/POST
+ * @onSuccess 成功回调
+ * @onFailed  失败回调
+ */
+
+function request(url, params, method, onSuccess, onFailed) {
+
+  wx.showLoading({
+    title: "正在加载中...",
+  })
+
   wx.request({
-    url: config.domain + params.url, //接口请求地址
-    data: params.data,
-    header: {
-      // 'content-type': params.method == "GET" ? 'application/x-www-form-urlencoded' : 'application/json;charset=utf-8',
-      'Authorization': params.login ? undefined : wx.getStorageSync('token')
-    },
-    method: params.method == undefined ? "POST" : params.method,
-    dataType: 'json',
-    responseType: params.responseType == undefined ? 'text' : params.responseType,
+    url: domain.domain + url,
+    data: dealParams(params),
+    method: method,
+    header: header,
     success: function(res) {
-      if (res.statusCode == 200) {
-        //如果有定义了params.callBack，则调用 params.callBack(res.data)
-        if (params.callBack) {
-          params.callBack(res.data);
+      wx.hideLoading();
+      console.log(res.data, '9999995555')
+
+      if (res.data) {
+
+        if (res.data.code == 0) {
+          /** start 根据需求 接口的返回状态码进行处理 */
+          if (res.statusCode == 200) {
+            onSuccess(res); //request success
+          } else {
+            onFailed(res.data.message); //request failed
+          }
+          /** end 处理结束*/
+        } else if (res.data.code) {
+          {
+
+            console.log('9999999')
+            wx.navigateTo({
+              url: '/pages/login/login',
+
+            })
+          }
         }
 
-      } else if (res.statusCode == 500) {
-        wx.showToast({
-          title: "服务器出了点小差",
-          icon: "none"
-        });
-      } else if (res.statusCode == 401) {
-        // 添加到请求队列
-        globalData.requestQueue.push(params);
-        // 是否正在登陆
-        if (!globalData.isLanding) {
-          globalData.isLanding = true
-          //重新获取token,再次请求接口
-          getToken();
-        }
-      } else if (res.statusCode == 400) {
-        wx.showToast({
-          title: res.data,
-          icon: "none"
-        })
-
-      } else {
-        //如果有定义了params.errCallBack，则调用 params.errCallBack(res.data)
-        if (params.errCallBack) {
-          params.errCallBack(res);
-        }
-      }
-      if (!globalData.isLanding) {
-        wx.hideLoading();
       }
     },
-    fail: function(err) {
-      wx.hideLoading();
-      wx.showToast({
-        title: "服务器出了点小差",
-        icon: "none"
-      });
+    fail: function(error) {
+      onFailed(""); //failure for other reasons
     }
   })
 }
 
-//通过code获取token,并保存到缓存
-var getToken = function() {
-  wx.login({
-    success: res => {
-      // 发送 res.code 到后台换取 openId, sessionKey, unionId
-      request({
-        login: true,
-        url: '/login?grant_type=mini_app',
-        data: {
-          principal: res.code
-        },
-        callBack: result => {
-          // 没有获取到用户昵称，说明服务器没有保存用户的昵称，也就是用户授权的信息并没有传到服务器
-          if (!result.nickName) {
-            updateUserInfo();
-          }
-          if (result.userStutas == 0) {
-            wx.showModal({
-              showCancel: false,
-              title: '提示',
-              content: '您已被禁用，不能购买，请联系客服'
-            })
-            wx.setStorageSync('token', '');
-          } else {
-            wx.setStorageSync('token', 'bearer' + result.access_token); //把token存入缓存，请求接口数据时要用
-          }
-          var globalData = getApp().globalData;
-          globalData.isLanding = false;
-          while (globalData.requestQueue.length) {
-            request(globalData.requestQueue.pop());
-          }
-        }
-      }, true)
+/**
+ * function: 根据需求处理请求参数：添加固定参数配置等
+ * @params 请求参数
+ */
+function dealParams(params) {
 
-    }
-  })
-}
-
-// 更新用户头像昵称
-function updateUserInfo() {
-  wx.getUserInfo({
-    success: (res) => {
-      var userInfo = JSON.parse(res.rawData)
-      request({
-        url: "/p/user/setUserInfo",
-        method: "PUT",
-        data: {
-          avatarUrl: userInfo.avatarUrl,
-          nickName: userInfo.nickName
-        }
-      });
-    }
-  })
-}
-
-//获取购物车商品数量
-function getCartCount() {
-  var params = {
-    url: "/p/shopCart/prodCount",
-    method: "GET",
-    data: {},
-    callBack: function(res) {
-      if (res > 0) {
-        wx.setTabBarBadge({
-          index: 2,
-          text: res + "",
-        })
-        var app = getApp();
-        app.globalData.totalCartCount = res;
-      } else {
-        wx.removeTabBarBadge({
-          index: 2
-        })
-        var app = getApp();
-        app.globalData.totalCartCount = 0;
-      }
-    }
-  };
-  request(params);
+  return params;
 }
 
 
-exports.getToken = getToken;
-exports.request = request;
-exports.getCartCount = getCartCount;
-exports.updateUserInfo = updateUserInfo;
+// 1.通过module.exports方式提供给外部调用
+module.exports = {
+  postRequest: post,
+  getRequest: get,
+}

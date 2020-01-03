@@ -108,7 +108,14 @@ padding-top: 19rpx;
   font-weight: bold;
   color: rgba(34, 34, 34, 1);
 }
+.indent .weui-loadmore_line {
+  margin-bottom: 0;
+  
 
+}
+ .indent .weui-loadmore__tips_in-line {
+   background: #f5f5f5
+ }
 .cont .cr .name {
   font-size: 30rpx;
   font-family: PingFang SC;

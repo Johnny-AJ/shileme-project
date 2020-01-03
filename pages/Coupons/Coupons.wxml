@@ -5,13 +5,18 @@
 <view class="Coupons">
 
   <view class="checktbs">
-    <view class="tbs" wx:for="{{title}}" wx:key="*this"  bindtap="changetbs"  data-index="{{index}}">
+    <view class="tbs" wx:for="{{title}}" wx:key="*this" bindtap="changetbs" data-index="{{index}}">
       <text class="{{index==current?'color':''}}">{{item.text}}</text>
     </view>
   </view>
 
   <!-- tab栏 -->
-
+ <view class="not" wx:if="{{unusedList.length==0&&timeOutList.length==0&&usedList.length==0}}">
+      <view class="imgs">
+        <image src="../../static/scango/组 1.png"></image>
+      </view>
+      <text>暂无记录！</text>
+    </view>
   <view class="coupons_box">
 
     <!-- <view class="coupons_nav">
@@ -24,43 +29,39 @@
     </view>
   </view> -->
 
-
-    <!-- <view class="not">
-    <view class="imgs">
-      <image src="../../static/scango/组 1.png"></image>
-    </view>
-    <text>暂无记录！</text>
-  </view> -->
-    <view class="cont">
+   
+    <view class="cont" wx:for="{{unusedList}}" wx:key="*this" bindtap="goto">
 
       <view class="imgs">
         <image src="../../static/scango/组 4.png"></image>
+        <!-- <image src="../../static/scango/组 3 (2).png"></image> -->
+        <!-- <image src="../../static/scango/组 3 (1).png"></image> -->
       </view>
-
-
       <view class="cl ">
         <view class="t1 ">
           <text>￥</text>
-          <text>10</text>
+          <text>{{item.money}}</text>
         </view>
         <view class="t2 ">
-          <text> 满100元可用 </text>
+          <text> 满{{item.startMoney}}元可用 </text>
         </view>
       </view>
 
       <view class="cr ">
         <view class="upper ">
-          全品类通用券
+          {{item.name}}
         </view>
 
         <view class="rights ">
           <view class="r1 ">
             <text>适用平台：</text>
-            <text>全平台</text>
+            <text hidden="{{item.discountCouponFor !=0}}">全平台</text>
+            <text hidden="{{item.discountCouponFor !=1}}">门店</text>
+            <text hidden="{{item.discountCouponFor !=2}}">指定商品</text>
           </view>
           <view class="r1 ">
             <text>有效期至：</text>
-            <text>2019-08-01</text>
+            <text>{{item.endDate}}</text>
           </view>
         </view>
 
@@ -69,44 +70,90 @@
         <image src="../../static/scango/矩形 16(1).png "></image>
       </view>
     </view>
-    <view class="cont">
+    <view class="cont" wx:for="{{timeOutList}}" wx:key="*this">
 
       <view class="imgs">
-        <image src="../../static/scango/组 4.png"></image>
+        <!-- <image src="../../static/scango/组 4.png"></image> -->
+        <!-- <image src="../../static/scango/组 3 (2).png"></image> -->
+        <image src="../../static/scango/组 3 (1).png"></image>
       </view>
-
-
       <view class="cl ">
         <view class="t1 ">
           <text>￥</text>
-          <text>10</text>
+          <text>{{item.money}}</text>
         </view>
         <view class="t2 ">
-          <text> 满100元可用 </text>
+          <text> 满{{item.startMoney}}元可用 </text>
         </view>
       </view>
 
       <view class="cr ">
         <view class="upper ">
-          全品类通用券
+          {{item.name}}
         </view>
 
         <view class="rights ">
           <view class="r1 ">
             <text>适用平台：</text>
-            <text>全平台</text>
+            <text hidden="{{item.discountCouponFor !=0}}">全平台</text>
+            <text hidden="{{item.discountCouponFor !=1}}">门店</text>
+            <text hidden="{{item.discountCouponFor !=2}}">指定商品</text>
           </view>
           <view class="r1 ">
             <text>有效期至：</text>
-            <text>2019-08-01</text>
+            <text>{{item.endDate}}</text>
           </view>
         </view>
 
       </view>
-      <!-- <view class="rimgs ">
-      <image src="../../static/scango/矩形 16(1).png "></image>
-    </view> -->
+      <view class="rimgs ">
+        <image src="../../static/scango/矩形 16(1).png "></image>
+      </view>
     </view>
+
+    <view class="cont" wx:for="{{usedList}}" wx:key="*this">
+
+      <view class="imgs">
+        <!-- <image src="../../static/scango/组 4.png"></image> -->
+        <image src="../../static/scango/组 3 (2).png"></image>
+        <!-- <image src="../../static/scango/组 3 (1).png"></image> -->
+      </view>
+      <view class="cl ">
+        <view class="t1 ">
+          <text>￥</text>
+          <text>{{item.money}}</text>
+        </view>
+        <view class="t2 ">
+          <text> 满{{item.startMoney}}元可用 </text>
+        </view>
+      </view>
+
+      <view class="cr ">
+        <view class="upper ">
+          {{item.name}}
+        </view>
+
+        <view class="rights ">
+          <view class="r1 ">
+            <text>适用平台：</text>
+            <text hidden="{{item.discountCouponFor !=0}}">全平台</text>
+            <text hidden="{{item.discountCouponFor !=1}}">门店</text>
+            <text hidden="{{item.discountCouponFor !=2}}">指定商品</text>
+          </view>
+          <view class="r1 ">
+            <text>有效期至：</text>
+            <text>{{item.endDate}}</text>
+          </view>
+        </view>
+
+      </view>
+      <view class="rimgs ">
+        <image src="../../static/scango/矩形 16(1).png "></image>
+      </view>
+    </view>
+
+
+
 
 
 

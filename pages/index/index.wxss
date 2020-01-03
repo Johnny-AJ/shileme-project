@@ -47,11 +47,17 @@
   height: 32rpx;
 }
 
-.search_box .search input {
+.search_box .search .input {
   height: 60rpx;
   width: 100%;
   font-size: 29rpx;
   margin-left: 42rpx;
+  display: flex;
+align-items: center;
+font-family:PingFang SC;
+font-weight:400;
+color:rgba(204,204,204,1);
+
 }
 
 .search_box .search_button {

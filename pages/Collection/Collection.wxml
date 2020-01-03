@@ -3,25 +3,28 @@
 
 <view class="colletion">
 
-  <label class="checkbox" wx:for="{{slideProductList}}" for="checkbox" wx:for-index="index" wx:key="{{item.id}}">
+  <label class="checkbox" wx:for="{{collection}}" for="checkbox"  wx:key="*this">
     <slide-delete pid="{{item.id}}" bindaction="handleSlideDelete" wx:key="{{item.id}}">
-      <view class="collection_nav">
+      <view class="collection_nav" bindtap="goto" data-waresId="{{item.waresId}}" wx:if="{{collection.length>0}}">
         <!-- 图片 -->
         <view>
-          <image src="../../static/cart/购物车200.200.png"></image>
+          <image src="{{item.logoUrl}}"></image>
         </view>
         <!-- 图片 -->
-
         <!-- 字体 -->
         <view class="collection_tt">
-          <view class="t1">Dr.jart+宛若新生水样保湿急救面 膜 5片/盒</view>
-          <view class="t2">1002人收藏</view>
-          <view class="t3">￥79.00</view>
+          <view class="t1">{{item.waresName}}</view>
+          <view class="t2">{{item.collectNum}}人收藏</view>
+          <view class="t3">￥{{item.mallPrice}}</view>
         </view>
         <!-- 字体 -->
-      </view>
-
+      </view>        
     </slide-delete>
   </label>
+
+  <view class="null" wx:if="{{collection.length==0}}" >
+      <image src="../../static/scango/组 1.png"></image>
+     <view> <text>暂无数据！</text></view>
+  </view>
 
 </view>

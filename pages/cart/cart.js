@@ -262,7 +262,7 @@ Page({
             },
             method: 'GET',
             success: function(res) {
-
+                console.log(res,'cartlist')
                 let slideProductList = res.data.data.list
                 for (var i = 0; i < slideProductList.length; i++) {
                     slideProductList[i].flag = false;
@@ -298,9 +298,12 @@ Page({
                 var cartlist = self.data.cartlist;
                 var productlist1 = [];
                 productlist1 = res.data.data.list,
+                  cartlist = [...cartlist, ...productlist1]
+              
+              let aa = app.filterArr(cartlist, 'waresId')
                     self.setData({
                         loading: false,
-                        cartlist: cartlist.concat(productlist1),
+                        cartlist: aa,
                         hasMore: res.data.data.list.length == 4,
                         hasNext: res.data.data.hasNext
                     })
@@ -313,17 +316,45 @@ Page({
         var self = this;
         var chooseGoods = self.data.chooseGoods;
         var dtos = self.data.dtos;
+
+      console.log(chooseGoods,'chooseGoods');
+      console.log(dtos, 'dtos');
         var a = {}
-        console.log(chooseGoods, 'chooseGoods')
+  
         chooseGoods.forEach(item => {
 
             if (item.flag) {
-                console.log(item)
-                a = { 'waresId': item.waresId, 'amount': item.amount, 'propertyId': item.id }
+             
+              a = { 'waresid': item.waresId, 'amount': item.amount, 'cartId': item.id ,'propertyid': item.specificationId }
                 dtos.push(a)
             }
         })
-        console.log(dtos, 'dots')
+
+        if(dtos.length>0){
+
+        
+         
+
+          wx.navigateTo({
+            url: '/pages/Spell_group_order/Spell_group_order?cartdots=' + JSON.stringify(dtos),
+            success: function (res) {
+            
+              self.setData({
+                dtos:[],
+                selectAllStatus:false,
+                totalPrice: app.returnFloat(0)
+              })
+              self.carlist()
+            }
+          })
+          wx.navigateTo({
+            url: '/pages/Spell_group_order/Spell_group_order?cartdots=' + JSON.stringify(dtos),
+           
+          })
+
+          
+        }
+     
 
     }
 })

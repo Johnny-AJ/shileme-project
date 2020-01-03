@@ -1,0 +1,6 @@
+<!--pages/null/null.wxml-->
+<view class="null">
+    <image src="../../static/imgs/组 7.png"></image>
+   <view> <text>此功能正在开发中</text></view>
+
+</view>

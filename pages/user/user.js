@@ -1,4 +1,6 @@
 // pages/user/user.js
+let http =require("../../utils/http.js");
+const app =getApp();
 Page({
 
     /**
@@ -83,31 +85,58 @@ Page({
     },
     carlist() { //获取商品
         var self = this;
-        wx: wx.request({
-            url: 'http://192.168.2.98:9095/api/index/findAllWaresByCate',
-            data: {
-                categoryId: '',
-                currPage: self.data.currPage,
-                pageSize: 4
-            },
-            header: {
-                token: wx.getStorageSync('token')
-            },
-            success: function(res) {
 
 
-                var cartlist = self.data.cartlist;
-                var productlist1 = [];
-                productlist1 = res.data.data.list,
-                    self.setData({
-                        loading: false,
-                        cartlist: cartlist.concat(productlist1),
-                        hasMore: res.data.data.list.length == 4,
-                        hasNext: res.data.data.hasNext
-                    })
-            },
-            fail: function(res) {},
+      let prams = {
+        categoryId: '',
+        currPage: self.data.currPage,
+        pageSize: 4
+      };
+      http.getRequest('/api/index/findAllWaresByCate', prams, function (res) {
 
+        var cartlist = self.data.cartlist;
+        var productlist1 = [];
+        productlist1 = res.data.data.list,
+          cartlist = [...cartlist, ...productlist1]
+
+        let aa = app.filterArr(cartlist, 'waresId')
+        self.setData({
+          loading: false,
+          cartlist: aa,
+          hasMore: res.data.data.list.length == 4,
+          hasNext: res.data.data.hasNext
         })
+
+      })
+        
+        // wx: wx.request({
+        //     url: 'http://192.168.2.98:9095/api/index/findAllWaresByCate',
+        //     data: {
+        //         categoryId: '',
+        //         currPage: self.data.currPage,
+        //         pageSize: 4
+        //     },
+        //     header: {
+        //         token: wx.getStorageSync('token')
+        //     },
+        //   success: function (res) {
+
+
+        //     var cartlist = self.data.cartlist;
+        //     var productlist1 = [];
+        //     productlist1 = res.data.data.list,
+        //       cartlist = [...cartlist, ...productlist1]
+
+        //     let aa = app.filterArr(cartlist, 'waresId')
+        //     self.setData({
+        //       loading: false,
+        //       cartlist: aa,
+        //       hasMore: res.data.data.list.length == 4,
+        //       hasNext: res.data.data.hasNext
+        //     })
+        //   },
+        //     fail: function(res) {},
+
+        // })
     },
 })

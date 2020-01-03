@@ -54,7 +54,7 @@
 
   <view class="discounts">
 
-    <view class="lj" bindtap="toggleDialog">
+    <view class="lj" bindtap="toggleDialog" hidden="{{getListByWaresId.length==0}}">
       <view class="title">领劵</view>
       <view class="ljcont">
 
@@ -76,39 +76,38 @@
   <view>{{index111}}</view>
   <view>{{index222}}</view>
   <view class="comment">
-    <view class="title" bindtap="goto" data-id="28">
-      <view class="conts">宝贝评价（262）</view>
+    <view class="title" bindtap="gotcommentList" data-waresId="{{waresId}}" >
+      <view class="conts">宝贝评价（{{totalCount}}）</view>
       <view class="more">查看更多
         <image src="../../static/scango/矩形 16 拷贝.png"></image>
       </view>
     </view>
     <view class="pj">
-      <view class="ttop">
-        <view>是正品(225)</view>
-        <view>保湿(225)</view>
-        <view>味道好闻(485)</view>
-        <view>晒图(225)</view>
-      </view>
+
       <view class="tbottom">
         <view class="tblog">
-          <block>
-            <view class="pl">
+        
+            <view class="pl" wx:for="{{getcommentList}}" wx:key="*this"  bindtap="gotcommentList" data-waresId="{{waresId}}">
               <view class="head">
-                <image src="../../static/scango/椭圆 4.png"></image>
+                <image src="{{item.userImg}}"  wx:if="{{item.userName}}"></image>
+                <image src="../../static/scango/椭圆 4.png"  wx:if="{{item.userName==null}}"></image>
               </view>
               <view class="cont">
-                <text class="name">匿名</text>
-                <text class="time">2019-9-6</text>
+                <text class="name"  wx:if="{{item.userName==null}}">匿名</text>
+                  <text class="name" wx:if="{{item.userName}}">{{item.userName}}</text>
+
+                <text class="time">{{item.createTime}}</text>
                 <view class="textcont">
-                  商品很有保证，不错！
+                 {{item.commentInfo}}
                 </view>
               </view>
               <view class="imsg">
-                <image src="../../static/scango/椭圆 4.png"></image>
-                <text>2张</text>
+                <image src=" {{item.images[0]}}"></image>
+                <text wx:if="{{item.images.length>1}}">{{item.images.length}}</text>
               </view>
             </view>
-          </block>
+     
+        
         </view>
       </view>
     </view>
@@ -150,8 +149,7 @@
     <view class="nowbuy" bindtap="buys" data-waresId="{{waresId}}" data-propertyId="{{defaultSku.skuid}}" data-amount="{{value1}}">
       <image src="../../static/imgs/矩形 29 拷贝 3.png"></image>立即购买</view>
   </view>
-  <!-- <view class="buy" bindtap="buys" data-waresId="{{waresId}}" data-propertyId="{{defaultSku.skuid}}" data-amount="{{value1}}">立即购买</view> -->
-  <!-- <view class="buy" bindtap="buys" data-waresId="1" data-propertyId="{{defaultSku.skuid}}" data-amount="{{value1}}">立即购买</view> -->
+   <!-- <view class="buy" bindtap="buys" data-waresId="{{waresId}}" data-propertyId="{{defaultSku.skuid}}" data-amount="{{value1}}">立即购买</view> -->
 
 
   <!-- 领劵弹出层 -->

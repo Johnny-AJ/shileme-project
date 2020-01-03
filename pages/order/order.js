@@ -51,11 +51,10 @@ Page({
                 orderId: orderId
             },
             success: function(res) {
-                console.log(res, '8888888');
+
                 let data = res.data.data;
                 switch (data.orderState) {
                     case 0:
-
                         break;
                     case 1:
                         data.text = '待付款';
@@ -73,11 +72,16 @@ Page({
 
                         data.text = '待评论';
                         break;
+                  case 7:
+
+                    data.text = '交易失败';
+                    break;
                 }
                 self.setData({
                     data: data
                 });
 
+                console.log(self.data.data)
 
             }
         })
@@ -92,39 +96,46 @@ Page({
             data: {
                 time: Date.parse(new Date())
             },
-            success: function(res) {
-                let data = res.data.data;
-                switch (data.orderState) {
-                    case 0:
+          success: function (res) {
 
-                        break;
-                    case 1:
-                        data.text = '待付款';
+            let data = res.data.data;
+            switch (data.orderState) {
+              case 0:
 
-                        break;
-                    case 2:
-                        data.text = '待发货';
+                break;
+              case 1:
+                data.text = '待付款';
 
-                        break;
-                    case 3:
+                break;
+              case 2:
+                data.text = '待发货';
 
-                        data.text = '待收货';
-                        break;
-                    case 4:
+                break;
+              case 3:
 
-                        data.text = '待评论';
-                        break;
-                }
-                self.setData({
-                    data: res.data.data
-                });
+                data.text = '待收货';
+                break;
+              case 4:
+
+                data.text = '待评论';
+                break;
+              case 7:
+
+                data.text = '交易失败';
+                break;
             }
+            self.setData({
+              data: data
+            });
+
+
+          }
         })
     },
     get_data2() {
         var self = this;
         wx.request({
-            url: 'http://192.168.2.98:9095/api/order/findNewWaitPayOrder?time=' + new Date().getTime(),
+          url: 'http://192.168.2.98:9095/api/order/findNewSucceedOrder?time=' + new Date().getTime(),
             header: {
                 token: wx.getStorageSync('token')
             },
@@ -132,33 +143,39 @@ Page({
                 time: Date.parse(new Date())
             },
             method: 'GET',
-            success: function(res) {
-                let data = res.data.data;
-                switch (data.orderState) {
-                    case 0:
+          success: function (res) {
 
-                        break;
-                    case 1:
-                        data.text = '待付款';
+            let data = res.data.data;
+            switch (data.orderState) {
+              case 0:
 
-                        break;
-                    case 2:
-                        data.text = '待发货';
+                break;
+              case 1:
+                data.text = '待付款';
 
-                        break;
-                    case 3:
+                break;
+              case 2:
+                data.text = '待发货';
 
-                        data.text = '待收货';
-                        break;
-                    case 4:
+                break;
+              case 3:
 
-                        data.text = '待评论';
-                        break;
-                }
-                self.setData({
-                    data: res.data.data
-                });
+                data.text = '待收货';
+                break;
+              case 4:
+
+                data.text = '待评论';
+                break;
+              case 7:
+
+                data.text = '交易失败';
+                break;
             }
+            self.setData({
+              data: data
+            });
+
+          }
         })
     },
     remind() {
@@ -194,13 +211,7 @@ Page({
                                 url: '/pages/view/view?allprice=' + allprice,
                             })
                         } else {
-
-
-
                         }
-                    },
-                    fail: function(res) {
-
                     }
 
                 })

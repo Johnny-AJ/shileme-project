@@ -1,0 +1,74 @@
+<!--pages/general/general.wxml-->
+<!-- <text>pages/general/general.wxml</text> -->
+
+<view class="bgc">
+
+
+  <view class="top">
+    <view class="general">
+      <view class="z1">描述相符：</view>
+      <i-cell class="s1">
+        <i-rate bind:change="onChange1" value="{{describeVal}}" size="30"></i-rate>
+      </i-cell>
+
+    </view>
+
+    <view class="general">
+      <view class="z1">物流服务：</view>
+      <i-cell class="s1">
+        <i-rate bind:change="onChange2" value="{{logisticsVal}}" size="30"></i-rate>
+      </i-cell>
+
+    </view>
+
+    <view class="general">
+      <view class="z1">门店服务</view>
+      <i-cell class="s1">
+        <i-rate bind:change="onChange3" value="{{storeVal}}" size="30"></i-rate>
+      </i-cell>
+
+    </view>
+
+    <view class="remark">
+      <textarea class="r2" maxlength="200" bindblur="message" placeholder="对商品还满意吗？说说它的优点和不足吧！"></textarea>
+    </view>
+
+    <view class="imgs">
+      <view class='uploader-img' wx:if="{{pics}}">
+        <view class='uploader-list' wx:for="{{pics}}" wx:key="item.length">
+          <image src='{{item}}' data-index="{{index}}" mode="scaleToFill" />
+          <image class='delete' data-index="{{index}}" src='../../static/imgs/del.png' mode="widthFix" bindtap='deleteImg' />
+        </view>
+      </view>
+      <view class='upAdd' bindtap='chooseImg'>
+        <image src='../../static/imgs/88888.png' mode="widthFix" />
+                              
+      </view>
+      <view class="anonymous">
+          <image src="../../static/imgs/椭圆 1.png" bindtap="anonymous" hidden="{{anonymity==0}}"></image>
+          <image src="../../static/imgs/组 6.png" bindtap="anonymous" hidden="{{anonymity==1}}"></image>
+          <text>匿名</text>
+      </view>
+    </view>
+
+  </view>
+  <view class="btm" wx:if="{{!findStore}}">
+    <view class="titele">天河美丽星美容店</view>
+    <view class="isok">
+      <view class="imgs">
+        <image src="{{storeIsOk==0?'../../static/imgs/组 4 拷贝.png':'../../static/imgs/组 4 拷贝 (1).png'}}" bindtap="storeIsOk"  data-storeIsOk="0" ></image>
+       
+      </view>
+      <view class="imgs">
+       <image src="{{storeIsOk==1?'../../static/imgs/组 4 (1).png ':'../../static/imgs/组 4 (2).png'}}" bindtap="storeIsOk"  data-storeIsOk="1" ></image>
+       
+      </view>
+    </view>
+    <textarea placeholder="请输入评价信息......" bindblur="message1"></textarea>
+   
+  </view>
+  <view class="btn"><text bindtap="btn" class="{{describeVal > 0 &&logisticsVal>0 && storeVal>0?'color':''}}">提交</text></view>
+
+ 
+
+</view>

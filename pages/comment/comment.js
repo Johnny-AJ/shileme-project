@@ -1,41 +1,30 @@
 // pages/comment/comment.js
+const app =getApp();
 Page({
 
   /**
    * 页面的初始数据
    */
   data: {
-    ishow:true,
-    show2:true,
-    isok:false,
-    ischecked:false,
-    string1:'ddddddd'
+    waresId:'',
+    currPage:1,
+    getcommentList:[],//评论列表
+    hasNext: true, //
+    loading: false, // 是否显示loading
+    hasNext: true,
+   
   },
-  open(){
-    this.setData({
-      ishow: (!this.data.ishow)
-    })
-  },
-  ischecked(){
-    this.setData({
-      ischecked: (!this.data.ischecked)
-    })
-  },
-  spread(){
-    console.log(this.data.string1.length),
-    this.setData({
-      isok:true
-    })
-  }
+
+  
   /**
    * 生命周期函数--监听页面加载
    */
-  ,
+  
   onLoad: function (options) {
-
-    wx.setNavigationBarTitle({
-      title: '评价'
+    this.setData({
+      waresId: options.waresId
     })
+    this.getcommentList()
   },
 
   /**
@@ -62,30 +51,52 @@ Page({
   },
 
   /**
-   * 生命周期函数--监听页面卸载
-   */
-  onUnload: function () {
-
-  },
-
-  /**
-   * 页面相关事件处理函数--监听用户下拉动作
-   */
-  onPullDownRefresh: function () {
-
-  },
-
-  /**
    * 页面上拉触底事件的处理函数
    */
   onReachBottom: function () {
+    var self = this;
+    if (!self.data.hasMore) return;
+    self.setData({
+      currPage: self.data.currPage + 1,
+      loading: true
+    }, () => {
+      self.getcommentList()
+    })
+  },
+  getcommentList() { //评论列表
+    var self = this;
+    wx.request({
+      url: 'http://192.168.2.98:9095/api/wares/details/getCommentList',
+      header: {
+        token: wx.getStorageSync('token')
+      },
+      data: {
+        waresId: self.data.waresId,
+        pageSize: 6,
+        currPage: self.data.currPage
 
+      },
+      success: function (res) {
+        var getcommentList = self.data.getcommentList;
+         var productlist1 = [];
+          productlist1 = res.data.data.list,
+          getcommentList = [...getcommentList, ...productlist1]
+
+        let aa = app.filterArr(getcommentList, 'id');
+        // aa.forEach(res=>{
+
+        // })
+        self.setData({
+          loading: false,
+          getcommentList: aa,
+          hasMore: res.data.data.list.length == 6,
+          hasNext: res.data.data.hasNext
+ 
+        })
+        console.log(self.data, 'getCommentList')
+      }
+    })
   },
 
-  /**
-   * 用户点击右上角分享
-   */
-  onShareAppMessage: function () {
-
-  }
+ 
 })

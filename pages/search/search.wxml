@@ -16,7 +16,7 @@
       <text>热门搜索</text>
     </view>
     <view class="searchcont"  data-url="/pages/scango/scango">
-      <text wx:for="{{getHotSearch}}" wx:key="*this"> {{item.name}}</text>
+      <text wx:for="{{getHotSearch}}" wx:key="*this" bindtap="click" data-name="{{item.name}}" > {{item.name}}</text>
 
     </view>
     <view class="history" hidden="{{searchHistory.length==0}}">

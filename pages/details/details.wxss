@@ -132,7 +132,6 @@
 
 .discounts {
   width: 100%;
-  height: 182rpx;
   margin-top: 20rpx;
 }
 
@@ -194,7 +193,7 @@
 
 .comment {
   width: 100%;
-  height: 490rpx;
+  height: 320rpx;
   box-sizing: border-box;
   padding: 0 0 0 30rpx;
   margin-top: 20rpx;
@@ -303,6 +302,7 @@
 .comment  .pj  .tbottom .pl .head image {
   width: 100%;
   height: 100%;
+  border-radius: 50%;
 }
 
 .comment  .pj  .tbottom .pl .cont {

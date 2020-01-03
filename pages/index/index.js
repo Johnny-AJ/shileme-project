@@ -1,4 +1,7 @@
 // pages/index/index.js
+
+const app =getApp();
+let http= require('../../utils/http.js')
 Page({
 
     /**
@@ -26,7 +29,7 @@ Page({
         start: 0,
         productlist: [], //最下面商品的数据
         categoryId: '',
-        currPage: 0,
+        currPage: 1,
         realistic: [], //热卖榜
         newselling: [], //新卖榜
         hasMore: true, //
@@ -100,107 +103,112 @@ Page({
         })
     },
     setSwiperData() { // 轮播图
-        wx.request({
-            url: 'http://192.168.2.98:9095/api/index/banner/banners',
-            success: (res) => {
-                this.setData({
-                    swiperList: res.data.data
-                })
-            }
+      let self= this;
+      let prams={};
+      http.getRequest('/api/index/banner/banners',prams,function(res){
+        self.setData({
+          swiperList: res.data.data
         })
+      })
+   
     },
     selling() { // 商品头部标列表
-        var self = this;
-        wx.request({
-            url: 'http://192.168.2.98:9095/api/index/findAllCategoryName',
-            success: (res) => {
 
-                self.setData({
-                    commoditylist: res.data.data
-                })
-                self.productlist();
-            }
+      let self = this;
+      let prams = {};
+      http.getRequest('/api/index/findAllCategoryName', prams, function (res) {
+        self.setData({
+          commoditylist: res.data.data
         })
+        self.productlist();
+      })
+        // wx.request({
+        //     url: 'http://192.168.2.98:9095/api/index/findAllCategoryName',
+        //     success: (res) => {
+
+        //         self.setData({
+        //             commoditylist: res.data.data
+        //         })
+        //         self.productlist();
+        //     }
+        // })
 
     },
     group() { //// 超值拼团滚动
-        var self = this;
-        wx.request({
-            url: 'http://192.168.2.98:9095/api/index/findGroupBuyRollList',
-            success: (res) => {
-
-                self.setData({
-                    buyRollList: res.data.data.arrList
-                })
 
 
-            }
+      let self = this;
+      let prams = {};
+      http.getRequest('/api/index/findGroupBuyRollList', prams, function (res) {
+        console.log(res,'res')
+        self.setData({
+          buyRollList: res.data.data.arrList
         })
+     
+      })
+       
     },
 
     tiembuy() { // 限时购
-        var self = this;
-        wx.request({
-            url: 'http://192.168.2.98:9095//api/index/timeoutbuy',
-            success: (res) => {
-                var time = res.data.data.endTime - res.data.data.nowTime;
-
-                if (time) {
-
-                    self.setData({
-                        targetTime: new Date().getTime() + time
-                    })
-                }
-
-                self.setData({
-                    timeoutbuylist: res.data.data.list
-                })
 
 
+      let self = this;
+      let prams = {};
+      http.getRequest('/api/index/timeoutbuy', prams, function (res) {
+        var time = res.data.data.endTime - res.data.data.nowTime;
 
+        if (time) {
 
-            }
+          self.setData({
+            targetTime: new Date().getTime() + time
+          })
+        }
+
+        self.setData({
+          timeoutbuylist: res.data.data.list
         })
+
+
+      })
+       
     },
 
     vector() { //请求数据
         var self = this;
         var categoryId = self.data.categoryId;
 
-        wx.request({
-            url: 'http://192.168.2.98:9095/api/index/findAllWaresByCate',
-            data: {
-                pageSize: 4,
-                categoryId: self.data.categoryId,
-                currPage: self.data.currPage
-            },
-            header: {
-                token: wx.getStorageSync('token')
-            },
-            success: function(res) {
-                var productlist = self.data.productlist;
-                var productlist1 = [];
-                productlist1 = res.data.data.list,
-                    productlist = [...productlist, ...productlist1]
+      let prams = {
+        pageSize: 4,
+        categoryId: self.data.categoryId,
+        currPage: self.data.currPage
+        };
+      http.getRequest('/api/index/findAllWaresByCate', prams, function (res) {
+        var productlist = self.data.productlist;
+        var productlist1 = [];
+        productlist1 = res.data.data.list,
+          productlist = [...productlist, ...productlist1]
 
-                let aa = self.filterArr(productlist, 'waresId')
+        let aa = app.filterArr(productlist, 'waresId')
 
 
-                self.setData({
-                    loading: false,
-                    productlist: aa,
-                    hasMore: res.data.data.list.length == 4,
+        self.setData({
+          loading: false,
+          productlist: aa,
+          hasMore: res.data.data.list.length == 4,
 
-                })
-
-                setTimeout(function() {
-                    self.setData({
-                        hasNext: res.data.data.hasNext
-                    }, 888)
-                })
-
-            }
         })
+
+        setTimeout(function () {
+          self.setData({
+            hasNext: res.data.data.hasNext
+          }, 888)
+        })
+
+
+
+      })
+
+      
 
     },
     productlist(e) { // 商品标列表
@@ -261,49 +269,73 @@ Page({
     },
 
     realistic() { //热卖榜
-        var self = this;
-        wx.request({
-            url: 'http://192.168.2.98:9095/api/index/getSellingList',
-            header: {
-                token: wx.getStorageSync('token')
-            },
-            data: {
-                categoryId: '',
-                currPage: 0,
-                pageSize: 2
-            },
-            success: function(res) {
+      var self = this;
 
-                self.setData({
-                    realistic: res.data.data.list
-                })
-
-
-
-            }
+      let prams = {
+        categoryId: '',
+        currPage: 0,
+        pageSize: 2};
+      http.getRequest('/api/index/getSellingList', prams, function (res) {
+        self.setData({
+          realistic: res.data.data.list
         })
+
+      })
+
+        // wx.request({
+        //     url: 'http://192.168.2.98:9095/api/index/getSellingList',
+        //     header: {
+        //         token: wx.getStorageSync('token')
+        //     },
+        //     data: {
+        //         categoryId: '',
+        //         currPage: 0,
+        //         pageSize: 2
+        //     },
+        //     success: function(res) {
+
+        //         self.setData({
+        //             realistic: res.data.data.list
+        //         })
+
+
+
+        //     }
+        // })
     },
     newselling() { //新卖榜
-        var self = this;
-        wx.request({
-            url: 'http://192.168.2.98:9095/api/index/getNewList',
-            header: {
-                token: wx.getStorageSync('token')
-            },
-            data: {
-                categoryId: '',
-                currPage: 0,
-                pageSize: 2
-            },
-            success: function(res) {
+      var self = this;
 
-                self.setData({
-                    newselling: res.data.data.list
-                })
-
-
-            }
+      let prams = {
+        categoryId: '',
+        currPage: 0,
+        pageSize: 2
+      };
+      http.getRequest('/api/index/getNewList', prams, function (res) {
+        self.setData({
+          newselling: res.data.data.list
         })
+
+      })
+        // wx.request({
+        //     url: 'http://192.168.2.98:9095/api/index/getNewList',
+        //     header: {
+        //         token: wx.getStorageSync('token')
+        //     },
+        //     data: {
+        //         categoryId: '',
+        //         currPage: 0,
+        //         pageSize: 2
+        //     },
+        //     success: function(res) {
+
+        //         self.setData({
+        //             newselling: res.data.data.list
+        //         })
+
+
+        //     }
+        // })
     },
     jump(e) {
         wx.navigateTo({
@@ -312,38 +344,38 @@ Page({
         })
 
     },
-    filterArr: function(arr, attribute) {
+    // filterArr: function(arr, attribute) {
 
-            
-        var new_arr = [];
+    //         
+    //     var new_arr = [];
 
-            
-        var json_arr = [];
+    //         
+    //     var json_arr = [];
 
-            
-        for (var i = 0; i < arr.length; i++) {
+    //         
+    //     for (var i = 0; i < arr.length; i++) {
 
-                    
-            if (new_arr.indexOf(arr[i][attribute]) == -1) {
+    //                 
+    //         if (new_arr.indexOf(arr[i][attribute]) == -1) {
 
-                         // -1代表没有找到
+    //                      // -1代表没有找到
 
-                            
-                new_arr.push(arr[i][attribute]);
+    //                         
+    //             new_arr.push(arr[i][attribute]);
 
-                //如果没有找到就把这个name放到arr里面，以便下次循环时用
+    //             //如果没有找到就把这个name放到arr里面，以便下次循环时用
 
-                            
-                json_arr.push(arr[i]);
+    //                         
+    //             json_arr.push(arr[i]);
 
-                        
-            } else {}
+    //                     
+    //         } else {}
 
-        }
+    //     }
 
-            
-        return json_arr;
-    },
+    //         
+    //     return json_arr;
+    // },
 
 
 

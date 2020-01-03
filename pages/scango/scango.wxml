@@ -54,12 +54,11 @@
 
   <view class="discounts">
 
-    <view class="lj" bindtap="toggleDialog">
+    <view class="lj" bindtap="toggleDialog" wx:if="{{!getListByWaresId1}}">
       <view class="title">领劵</view>
       <view class="ljcont">
 
-        <view>满100减10</view>
-        <view>满299减30</view>
+        <view wx:for="{{getListByWaresId1}}" wx:key="*this">{{item.name}}</view>
 
       </view>
       <image src="../../static/scango/矩形 16(1).png"></image>
@@ -77,39 +76,38 @@
   <view>{{index111}}</view>
   <view>{{index222}}</view>
   <view class="comment">
-    <view class="title" bindtap="goto" data-id="28">
-      <view class="conts">宝贝评价（262）</view>
+    <view class="title" bindtap="gotcommentList" data-waresId="{{waresId}}">
+      <view class="conts">宝贝评价（{{totalCount}}）</view>
       <view class="more">查看更多
         <image src="../../static/scango/矩形 16 拷贝.png"></image>
       </view>
     </view>
     <view class="pj">
-      <view class="ttop">
-        <view>是正品(225)</view>
-        <view>保湿(225)</view>
-        <view>味道好闻(485)</view>
-        <view>晒图(225)</view>
-      </view>
+
       <view class="tbottom">
         <view class="tblog">
-          <block>
-            <view class="pl">
-              <view class="head">
-                <image src="../../static/scango/椭圆 4.png"></image>
-              </view>
-              <view class="cont">
-                <text class="name">匿名</text>
-                <text class="time">2019-9-6</text>
-                <view class="textcont">
-                  商品很有保证，不错！
-                </view>
-              </view>
-              <view class="imsg">
-                <image src="../../static/scango/椭圆 4.png"></image>
-                <text>2张</text>
+
+          <view class="pl" wx:for="{{getcommentList}}" wx:key="*this" bindtap="gotcommentList" data-waresId="{{waresId}}">
+            <view class="head">
+              <image src="{{item.userImg}}" wx:if="{{item.userName}}"></image>
+              <image src="../../static/scango/椭圆 4.png" wx:if="{{item.userName==null}}"></image>
+            </view>
+            <view class="cont">
+              <text class="name" wx:if="{{item.userName==null}}">匿名</text>
+              <text class="name" wx:if="{{item.userName}}">{{item.userName}}</text>
+
+              <text class="time">{{item.createTime}}</text>
+              <view class="textcont">
+                {{item.commentInfo}}
               </view>
             </view>
-          </block>
+            <view class="imsg">
+              <image src=" {{item.images[0]}}"></image>
+              <text wx:if="{{item.images.length>1}}">{{item.images.length}}</text>
+            </view>
+          </view>
+
+
         </view>
       </view>
     </view>
@@ -128,14 +126,13 @@
     </view>
 
   </view>
-
+  
   <view class="buy" bindtap="buys" data-waresId="{{waresId}}" data-propertyId="{{defaultSku.skuid}}" data-amount="{{value1}}">立即购买</view>
-  <!-- <view class="buy" bindtap="buys" data-waresId="1" data-propertyId="{{defaultSku.skuid}}" data-amount="{{value1}}">立即购买</view> -->
 
 
   <!-- 领劵弹出层 -->
-  <view class="zan-dialog {{ showDialog ? 'zan-dialog--show' : '' }}" >
-  <!-- <view class="zan-dialog  zan-dialog--show"> -->
+  <view class="zan-dialog {{ showDialog ? 'zan-dialog--show' : '' }}">
+    <!-- <view class="zan-dialog  zan-dialog--show"> -->
     <view class="zan-dialog__mask" />
     <view class="zan-dialog__container">
       <view class="imgs">
@@ -144,42 +141,25 @@
       <view class="conts">
         <view class="title"> 优惠劵 </view>
         <view class="coupon">
-          <view class="cont">
+          <view class="cont" wx:for="{{getListByWaresId}}" wx:key="*this">
             <image src="../../static/scango/组 4.png"></image>
             <view class="cl">
-              <text class="t1">￥10</text>
-              <text class="t2">满100元可用</text>
+              <text class="t1">￥{{item.money}}</text>
+              <text class="t2">满{{item.startMoney}}元可用</text> {{itme.id}}
             </view>
             <view class="cr">
               <view class="rt">
-                <text class="t1">全品类通用券</text>
-                <text class="t2">领取</text>
-                <!-- <text class="t2">已领取</text>  -->
+                <text class="t1">{{item.name}}</text>
+                <text class="t2" wx:if="{{item.isGet==1}}" data-id="{{item.id}}" bindtap="getDiscountById">领取</text>
+                <text class="t3" wx:if="{{item.isGet==0}}">已领取</text>
               </view>
               <view class=" rb ">
-                <text class="t1 ">适用平台：全平台</text>
-                <text class="t2 ">有效期至：2019-08-01</text>
+                <text class="t1 ">适用平台：{{item.text}}</text>
+                <text class="t2 ">有效期至：{{item.endDate}}</text>
               </view>
             </view>
           </view>
-          <view class="cont">
-            <image src="../../static/scango/组 4.png"></image>
-            <view class="cl">
-              <text class="t1">￥10</text>
-              <text class="t2">满100元可用</text>
-            </view>
-            <view class="cr">
-              <view class="rt">
-                <text class="t1">全品类通用券</text>
-                <!-- <text class="t2">领取</text>  -->
-                <text class="t3">已领取</text>
-              </view>
-              <view class=" rb ">
-                <text class="t1 ">适用平台：全平台</text>
-                <text class="t2 ">有效期至：2019-08-01</text>
-              </view>
-            </view>
-          </view>
+
         </view>
         <!-- <view class="coupon1">
           <image src="../../static/imgs/组 7.png"></image>
