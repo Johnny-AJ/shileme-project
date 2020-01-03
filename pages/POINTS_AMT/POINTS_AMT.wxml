@@ -12,13 +12,13 @@
       <view class="t3">默认</view>
     </view>
     <view class="top_right">
-      <image src="../../static/cart/矩形 16.png"></image>
+      <image src="http://192.168.2.98:9095//cart/矩形 16.png"></image>
     </view>
   </view>
 
   <!-- 线 -->
   <view class="imgs1">
-    <image src="../../static/imgs/分割线.png"></image>
+    <image src="http://192.168.2.98:9095//imgs/分割线.png"></image>
   </view>
 
   <view class="nav2">

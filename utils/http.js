@@ -1,11 +1,14 @@
 let domain = require('./config.js')
-var header = {
-  'content-type': 'application/json',
-  'token': wx.getStorageSync("token"),
-  'os': 'android',
-  'version': '1.0.0',
-  'device_token': 'ebc9f523e570ef14',
-}
+
+// let token = wx.getStorageSync('token')
+  
+// let header = {
+//   'content-type': 'application/json',
+//   'token': 'token',
+//   'os': 'android',
+//   'version': '1.0.0',
+//   'device_token': 'ebc9f523e570ef14',
+// }
 
 /**
  * 供外部post请求调用  
@@ -43,10 +46,19 @@ function request(url, params, method, onSuccess, onFailed) {
     url: domain.domain + url,
     data: dealParams(params),
     method: method,
-    header: header,
+    header: {
+      'content-type': 'application/json',
+      'token': wx.getStorageSync('token'),
+      'os': 'android',
+      'version': '1.0.0',
+      'device_token': 'ebc9f523e570ef14',
+    },
     success: function(res) {
+
+      let token = wx.getStorageSync("token");
+      console.log(token,'toekn')
       wx.hideLoading();
-      console.log(res.data, '9999995555')
+      // console.log(res.data, '9999995555')
 
       if (res.data) {
 
@@ -61,7 +73,7 @@ function request(url, params, method, onSuccess, onFailed) {
         } else if (res.data.code) {
           {
 
-            console.log('9999999')
+            console.log(res.data.code,'9999999')
             wx.navigateTo({
               url: '/pages/login/login',
 

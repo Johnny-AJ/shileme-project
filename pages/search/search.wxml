@@ -2,7 +2,7 @@
 <view class="search bs">
   <view class="mysearch dj">
     <view class="sl dj">
-      <image src="../../static/imgs/搜索.png"></image>
+      <image src="http://192.168.2.98:9095//imgs/搜索.png"></image>
       <input  name="search" type='text' value='{{inputValue}}' confirm-type="search" bindconfirm="bindconfirm"  focus='{{focus}}' bindinput='bindinput' placeholder="搜索更多好物" ></input>
       <!-- <input class="weui-input" value='{{inputValue}}' data-name="inputValue" bindinput="bindKeyInput" type='text' placeholder="搜索更多好物" /> -->
     </view>
@@ -12,23 +12,22 @@
   <view class="top-search">
 
     <view class="title">
-      <image src="../../static/imgs/火.png"></image>
+      <image src="http://192.168.2.98:9095//imgs/火.png"></image>
       <text>热门搜索</text>
     </view>
     <view class="searchcont"  data-url="/pages/scango/scango">
       <text wx:for="{{getHotSearch}}" wx:key="*this" bindtap="click" data-name="{{item.name}}" > {{item.name}}</text>
 
     </view>
-    <view class="history">
+    <view class="history" hidden="{{searchHistory.length==0}}">
       <view class="title">
         <text>历史搜索</text>
-        <image src="../../static/imgs/垃圾桶.png"></image>
+        <image src="http://192.168.2.98:9095//imgs/垃圾桶.png" bindtap="deletes"></image>
       </view>
 
-      <view class="history-cont" bindtap="handurl" data-url="/pages/scango/scango">
-        <text>面膜</text>
-        <text>洗面奶</text>
-        <text>项链</text>
+      <view class="history-cont" >
+        <text wx:for="{{searchHistory}}" wx:key="*this" bindtap="click" data-name="{{item.name}}">{{item.name}}</text>
+        
       </view>
     </view>
   </view>

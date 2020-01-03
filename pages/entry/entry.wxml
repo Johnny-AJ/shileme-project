@@ -6,7 +6,7 @@
   <!-- 图片 -->
   <view class="jong">
     <view class="imgs2">
-      <image src="../../static/group/170.180.png"></image>
+      <image src="http://192.168.2.98:9095//group/170.180.png"></image>
     </view>
 
     <view class="cong">
@@ -24,27 +24,27 @@
   <!-- 退款 -->
   <view class="wong">
     <view class="imga1">
-      <image src="../../static/imgs/退款 (1).png"></image>
+      <image src="http://192.168.2.98:9095//imgs/退款 (1).png"></image>
     </view>
     <view class="nav_box">
       <view class="n1">我要退款</view>
       <view class="n2">未收到货，与门店协调退</view>
     </view>
     <view class="imga2">
-      <image src="../../static/imgs/矩形 16 拷贝.png"></image>
+      <image src="http://192.168.2.98:9095//imgs/矩形 16 拷贝.png"></image>
     </view>
   </view>
   <!-- 退货 -->
   <view class="wong">
     <view class="imga1">
-      <image src="../../static/imgs/退货-01.png"></image>
+      <image src="http://192.168.2.98:9095//imgs/退货-01.png"></image>
     </view>
     <view class="nav_box">
       <view class="n1">我要退款</view>
       <view class="n2">未收到货，与门店协调退</view>
     </view>
     <view class="imga2">
-      <image src="../../static/imgs/矩形 16 拷贝.png"></image>
+      <image src="http://192.168.2.98:9095//imgs/矩形 16 拷贝.png"></image>
     </view>
   </view>
 </view>

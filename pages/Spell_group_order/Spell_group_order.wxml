@@ -17,11 +17,11 @@
           <view class="t2" bindtap="toggleDialog">附近门店自取</view>
         </view>
           <view class="top_img" bindtap = "handurl">
-               <image src="../../static/cart/矩形 16.png" ></image>
+               <image src="http://192.168.2.98:9095//cart/矩形 16.png" ></image>
           </view>
       </view>
       <view class="imgs">
-        <image src="../../static/imgs/分割线.png" class="imgs1"></image>
+        <image src="http://192.168.2.98:9095//imgs/分割线.png" class="imgs1"></image>
       </view>
     </view>
   </view>
@@ -127,16 +127,16 @@
     <view class="zan-dialog__mask" />
     <view class="zan-dialog__container">
       <view class="imgs">
-        <image src="../../static/scango/关闭icon.png" bindtap="toggleDialog"></image>
+        <image src="http://192.168.2.98:9095//scango/关闭icon.png" bindtap="toggleDialog"></image>
       </view>
       <view class="conts">
         <view class="title"> 优惠劵 </view>
         <view class="coupon">
           <!-- <view class="cont" wx:for="{{getListByWaresId}}" wx:key="*this" bindtap="getDiscountById"> -->
           <view class="cont" wx:for="{{getListByWaresId}}" wx:key="*this" bindtap="checkdiscountId" data-discountId="{{item.id}}" >
-            <!-- <image src="../../static/scango/组 4.png" ></image> -->
-            <image src="../../static/scango/组 4.png"  wx:if="{{item.chekok}}"></image>
-            <image  src="../../static/scango/组 3 (2).png"  wx:if="{{!item.chekok}}"></image>
+            <!-- <image src="http://192.168.2.98:9095//scango/组 4.png" ></image> -->
+            <image src="http://192.168.2.98:9095//scango/组 4.png"  wx:if="{{item.chekok}}"></image>
+            <image  src="http://192.168.2.98:9095//scango/组 3 (2).png"  wx:if="{{!item.chekok}}"></image>
             <view class="cl">
               <text class="t1">￥{{item.money}}</text>
               <text class="t2">满{{item.startMoney}}元可用</text>
@@ -154,7 +154,7 @@
 
         </view>
         <!-- <view class="coupon1">
-          <image src="../../static/imgs/组 7.png"></image>
+          <image src="http://192.168.2.98:9095//imgs/组 7.png"></image>
           <text>功能暂未开放,敬请期待!</text>
         </view> -->
       </view>

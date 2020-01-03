@@ -5,7 +5,7 @@
   <!-- 图片 -->
   <view class="top_box">
     <view class="img1">
-      <image src="../../static/finetuxedos/170.180.png"></image>
+      <image src="http://192.168.2.98:9095//finetuxedos/170.180.png"></image>
     </view>
     <!--  -->
     <view class="top_box_nav">
@@ -21,17 +21,17 @@
   <!-- 正品保证 -->
   <view class="price_real">
     <view class="price_real_nav">
-      <image src="../../static/finetuxedos/icon.png"></image>
+      <image src="http://192.168.2.98:9095//finetuxedos/icon.png"></image>
       <view class="t5">正品保证</view>
     </view>
 
     <view class="price_real_nav">
-      <image src="../../static/finetuxedos/icon.png"></image>
+      <image src="http://192.168.2.98:9095//finetuxedos/icon.png"></image>
       <view class="t5">精选商品</view>
     </view>
 
     <view class="price_real_nav">
-      <image src="../../static/finetuxedos/icon.png"></image>
+      <image src="http://192.168.2.98:9095//finetuxedos/icon.png"></image>
       <view class="t5">门店体验</view>
     </view>
   </view>
@@ -44,7 +44,7 @@
   <view class="logo_box">
     <!-- logo -->
     <view class="img2">
-      <image src="../../static/finetuxedos/团团.jpg"></image>
+      <image src="http://192.168.2.98:9095//finetuxedos/团团.jpg"></image>
     </view>
     <!-- 米粒 -->
     <view class="t6">米粒</view>
@@ -88,11 +88,11 @@
 
     <view class="img1">
       <view class="head_nav">团长</view>
-      <image src="../../static/finetuxedos/团团.jpg"></image>
+      <image src="http://192.168.2.98:9095//finetuxedos/团团.jpg"></image>
     </view>
 
     <view class="img2">
-      <image src="../../static/finetuxedos/团团.jpg"></image>
+      <image src="http://192.168.2.98:9095//finetuxedos/团团.jpg"></image>
     </view>
 
   </view>
@@ -117,13 +117,13 @@
     <view class="people_box1">
 
       <view class="img_left">
-        <image src="../../static/finetuxedos/组 23.png"></image>
+        <image src="http://192.168.2.98:9095//finetuxedos/组 23.png"></image>
       </view>
 
       <view class="people_text">大家都在拼</view>
 
       <view class="img_right">
-        <image src="../../static/finetuxedos/组 23 拷贝.png"></image>
+        <image src="http://192.168.2.98:9095//finetuxedos/组 23 拷贝.png"></image>
       </view>
 
     </view>
@@ -132,7 +132,7 @@
 
       <view class="people_nav">
         <view class="people_img1">
-          <image src="../../static/finetuxedos/200.200.png"></image>
+          <image src="http://192.168.2.98:9095//finetuxedos/200.200.png"></image>
           <view class="people_to">已拼22件</view>
         </view>
         <view class="people_nav_text">
@@ -143,7 +143,7 @@
 
       <view class="people_nav">
         <view class="people_img1">
-          <image src="../../static/finetuxedos/200.200.png"></image>
+          <image src="http://192.168.2.98:9095//finetuxedos/200.200.png"></image>
           <view class="people_to">已拼22件</view>
         </view>
         <view class="people_nav_text">
@@ -154,7 +154,7 @@
 
       <view class="people_nav">
         <view class="people_img1">
-          <image src="../../static/finetuxedos/200.200.png"></image>
+          <image src="http://192.168.2.98:9095//finetuxedos/200.200.png"></image>
           <view class="people_to">已拼22件</view>
         </view>
         <view class="people_nav_text">
@@ -165,7 +165,7 @@
 
       <view class="people_nav">
         <view class="people_img1">
-          <image src="../../static/finetuxedos/200.200.png"></image>
+          <image src="http://192.168.2.98:9095//finetuxedos/200.200.png"></image>
           <view class="people_to">已拼22件</view>
         </view>
         <view class="people_nav_text">

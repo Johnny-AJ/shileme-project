@@ -2,7 +2,7 @@
 <view class="Box">
 
   <view class="Box_imgs">
-    <image mode="widthFix" src="../../static/imgs/扫码购.png"></image>
+    <image mode="widthFix" src="http://192.168.2.98:9095//imgs/扫码购.png"></image>
   </view>
 
   <view class="button">

@@ -28,7 +28,7 @@
 
       <view class="report_buttom">
         <view class="img">
-          <image src="../../static/imgs/330.330.png"></image>
+          <image src="http://192.168.2.98:9095//imgs/330.330.png"></image>
         </view>
         <view class="report_nav">
           <view class="t3">保湿急救 网红蓝药丸面膜</view>
@@ -57,7 +57,7 @@
       <view class="report_buttom">
         <view class="img">
           <image data-img="imgUrl" src="{{item.logoUrl}}"></image>
-          <!-- <image src="../../static/imgs/330.330.png"></image> -->
+          <!-- <image src="http://192.168.2.98:9095//imgs/330.330.png"></image> -->
         </view>
         <view class="report_nav">
           <view class="t3">{{item.waresName}}</view>
@@ -84,7 +84,7 @@
 
       <view class="report_buttom">
         <view class="img">
-          <image src="../../static/imgs/330.330.png"></image>
+          <image src="http://192.168.2.98:9095//imgs/330.330.png"></image>
         </view>
         <view class="report_nav">
           <view class="t3">保湿急救 网红蓝药丸面膜</view>
@@ -108,13 +108,13 @@
           这款面膜真的是猛药啊 隔天起 来洗完脸 你的皮肤呈现的就是 最佳的状态 细腻水润 掐一掐感 觉能掐出水来 出门简直是仙子...
         </view>
         <view class="img">
-          <image src="../../static/imgs/小樱.jpg"></image>
+          <image src="http://192.168.2.98:9095//imgs/小樱.jpg"></image>
           <view class="t2">米粒</view>
         </view>
       </view>
       <view class="box_right">
         <view class="img2">
-          <image src="../../static/imgs/330.330.png"></image>
+          <image src="http://192.168.2.98:9095//imgs/330.330.png"></image>
         </view>
       </view>
     </view>

@@ -8,7 +8,7 @@
   <view class="top_box">
     <view class="iong">
       <view class="img1">
-        <image src="../../static/imgs/组 22(1).png"></image>
+        <image src="http://192.168.2.98:9095//imgs/组 22(1).png"></image>
       </view>
       <view class="iong1">
         <view class="i1">9号店</view>
@@ -24,7 +24,7 @@
   <view class="top_box1">
     <view class="iong">
       <view class="img1">
-        <image src="../../static/imgs/组 22(1).png"></image>
+        <image src="http://192.168.2.98:9095//imgs/组 22(1).png"></image>
       </view>
       <view class="iong1">
         <view class="i1">9号店</view>
@@ -38,7 +38,7 @@
       <view class="n2">退款原因：退运费</view>
       <view class="n2">退款说明：</view>
       <view class="img2">
-        <image src="../../static/imgs/imgs.png"></image>
+        <image src="http://192.168.2.98:9095//imgs/imgs.png"></image>
       </view>
     </view>
   </view>

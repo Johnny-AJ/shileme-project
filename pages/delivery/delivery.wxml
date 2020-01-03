@@ -6,7 +6,7 @@
   <view class="top_box">
     <view class="t1">交易完成</view>
     <view class="imgs">
-      <image src="../../static/imgs/交易成功.png"></image>
+      <image src="http://192.168.2.98:9095//imgs/交易成功.png"></image>
     </view>
   </view>
   <!-- 交易 -->
@@ -19,7 +19,7 @@
 
     <view class="bottom_box">
       <view class="imgs1">
-        <image src="../../static/imgs/居乐乐 地点.png"></image>
+        <image src="http://192.168.2.98:9095//imgs/居乐乐 地点.png"></image>
       </view>
       <view class="t2">广东广州市天河区长白沙水路119号</view>
       <view class="t3">查看收件码</view>
@@ -29,7 +29,7 @@
 
   <!-- 线 -->
   <view class="xian">
-    <image src="../../static/imgs/分割线.png"></image>
+    <image src="http://192.168.2.98:9095//imgs/分割线.png"></image>
   </view>
   <!-- 线 -->
 
@@ -40,7 +40,7 @@
     <view class="nav_box">
       <view class="cont">
         <view class="imgs1">
-          <image src="../../static/imgs/imgs.png"></image>
+          <image src="http://192.168.2.98:9095//imgs/imgs.png"></image>
         </view>
         <view class="s1">保湿急救 网红蓝药丸面膜网红蓝药 丸面膜</view>
         <view class="s2">5片/盒</view>

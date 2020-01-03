@@ -130,7 +130,7 @@ Page({
         })
 
         self.setData({
-          pic: self.data.list.images[0]
+          pic: self.data.list.content[0]
         })
 
 

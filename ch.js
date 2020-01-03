@@ -147,5 +147,5 @@
 
 // ==============
 // <view class="img2">
-//   <image src="../../static/imgs/imgs.png"></image>
+//   <image src="http://192.168.2.98:9095//imgs/imgs.png"></image>
 // </view>

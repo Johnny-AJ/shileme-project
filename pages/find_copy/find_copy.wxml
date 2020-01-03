@@ -17,7 +17,7 @@
   <!-- tab栏 -->
   <view class="tuijian">
     <view class="imgs1">
-      <image src="../../static/imgs/矩形 14.png"></image>
+      <image src="http://192.168.2.98:9095//imgs/矩形 14.png"></image>
     </view>
     <view class="t_box">
       <view class="t1">推荐</view>
@@ -30,7 +30,7 @@
   <view class="photo_box">
     <view class="left_box">
       <view class="imgs2">
-        <image src="../../static/imgs/330.300.png"></image>
+        <image src="http://192.168.2.98:9095//imgs/330.300.png"></image>
       </view>
       <view class="left_box_nav">
         <view class="l1">敏感肌宝宝看过来~</view>
@@ -38,14 +38,14 @@
 
           <view class="const_left">
             <view class="imgs4">
-              <image src="../../static/imgs/小樱.jpg"></image>
+              <image src="http://192.168.2.98:9095//imgs/小樱.jpg"></image>
             </view>
             <view class="l2">米粒</view>
           </view>
 
           <view class="const_right">
             <view class="imgs5">
-              <image src="../../static/imgs/形状 1.png"></image>
+              <image src="http://192.168.2.98:9095//imgs/形状 1.png"></image>
             </view>
             <view class="l3">92</view>
           </view>
@@ -55,7 +55,7 @@
 
     <view class="right_box">
       <view class="imgs3">
-        <image src="../../static/imgs/1组 19.png"></image>
+        <image src="http://192.168.2.98:9095//imgs/1组 19.png"></image>
       </view>
 
       <view class="right_box_nav">
@@ -64,14 +64,14 @@
 
           <view class="const_left">
             <view class="imgs4">
-              <image src="../../static/imgs/小樱.jpg"></image>
+              <image src="http://192.168.2.98:9095//imgs/小樱.jpg"></image>
             </view>
             <view class="l2">米粒</view>
           </view>
 
           <view class="const_right">
             <view class="imgs5">
-              <image src="../../static/imgs/形状 1.png"></image>
+              <image src="http://192.168.2.98:9095//imgs/形状 1.png"></image>
             </view>
             <view class="l3">23</view>
           </view>

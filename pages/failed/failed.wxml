@@ -3,7 +3,7 @@
   <view class="orderhead">
     <view class="t1">拼团失败</view>
 
-    <image src="../../static/imgs/交易成功.png" class="img1"></image>
+    <image src="http://192.168.2.98:9095//imgs/交易成功.png" class="img1"></image>
    
   </view>
   <view class="users">
@@ -14,13 +14,13 @@
     </view>
 
     <view class="address p30">
-      <image src="../../static/imgs/居乐乐 地点.png" class="imges"></image>
+      <image src="http://192.168.2.98:9095//imgs/居乐乐 地点.png" class="imges"></image>
       <text>广东广州市天河区长白沙水路119号</text>
    
     </view>
     
   <view class="imgs">
-    <image src="../../static/imgs/分割线.png" class="imgs"></image>
+    <image src="http://192.168.2.98:9095//imgs/分割线.png" class="imgs"></image>
   </view>
 
   </view>
@@ -29,7 +29,7 @@
     <view class="conts ">
       <view class="cont p30">
         <view class="imgs">
-          <image src="../../static/imgs/交易成功.png"></image>
+          <image src="http://192.168.2.98:9095//imgs/交易成功.png"></image>
         </view>
         <view class="cr">
           <view class="name">保湿急救 网红蓝药丸面膜</view>

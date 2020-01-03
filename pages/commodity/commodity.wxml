@@ -10,7 +10,7 @@
       <view class="k2">￥69</view>
     </view>
     <view class="img3">
-      <image src="../../static/imgs/330.330.png"></image>
+      <image src="http://192.168.2.98:9095//imgs/330.330.png"></image>
     </view>
   </view>
 
@@ -27,14 +27,14 @@
       </view>
 
       <view class="imgd1">
-        <image src="../../static/imgs/小樱.jpg"></image>
+        <image src="http://192.168.2.98:9095//imgs/小樱.jpg"></image>
         <view class="i1">米粒</view>
       </view>
     </view>
 
     <view class="jong_right">
       <view class="img4">
-        <image src="../../static/imgs/330.330.png"></image>
+        <image src="http://192.168.2.98:9095//imgs/330.330.png"></image>
       </view>
     </view>
 
@@ -49,14 +49,14 @@
       </view>
 
       <view class="imgd1">
-        <image src="../../static/imgs/小樱.jpg"></image>
+        <image src="http://192.168.2.98:9095//imgs/小樱.jpg"></image>
         <view class="i1">米粒</view>
       </view>
     </view>
 
     <view class="jong_right">
       <view class="img4">
-        <image src="../../static/imgs/330.330.png"></image>
+        <image src="http://192.168.2.98:9095//imgs/330.330.png"></image>
       </view>
     </view>
 

@@ -5,7 +5,7 @@
   <!-- 头部 -->
   <view class="top_box">
     <view class="img1">
-      <image src="../../static/group/背景 (1).png"></image>
+      <image src="http://192.168.2.98:9095//group/背景 (1).png"></image>
     </view>
     <view class="k1">实时热销榜</view>
     <view class="bbox1">
@@ -23,11 +23,11 @@
   <!-- o2o -->
   <view class="cont_box">
     <view class="imgv1">
-      <image src="../../static/group/组 23 拷贝.png"></image>
+      <image src="http://192.168.2.98:9095//group/组 23 拷贝.png"></image>
     </view>
     <view class="z1">O2O限时购</view>
     <view class="imgv1">
-      <image src="../../static/group/组 23.png"></image>
+      <image src="http://192.168.2.98:9095//group/组 23.png"></image>
     </view>
   </view>
   <!-- o2o -->
@@ -35,7 +35,7 @@
   <!-- 急救 -->
   <view class="cons_box">
     <view class="imgs">
-      <image src="../../static/group/170.180.png"></image>
+      <image src="http://192.168.2.98:9095//group/170.180.png"></image>
     </view>
     <view class="navd">
       <view class="d1">急救保湿 网红蓝药丸面膜</view>

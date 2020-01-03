@@ -16,7 +16,7 @@
   <!-- 价格 -->
   <view class="price">
 
-    <image src="../../static/formats/组 7.png"></image>
+    <image src="http://192.168.2.98:9095//formats/组 7.png"></image>
 
     <view class="price_box">
 
@@ -51,10 +51,10 @@
   <!-- 活动流程 -->
   <view class="activity_box">
     <view class="img1">
-      <image src="../../static/group/活动流程.png"></image>
+      <image src="http://192.168.2.98:9095//group/活动流程.png"></image>
     </view>
     <view class="img2">
-      <image src="../../static/group/组 24.png"></image>
+      <image src="http://192.168.2.98:9095//group/组 24.png"></image>
       <view class="p1">活动须知</view>
     </view>
   </view>
@@ -64,7 +64,7 @@
   <!-- 中奖名单 -->
   <view class="zhong_box">
     <view class="imgs">
-      <image src="../../static/group/组 11.png"></image>
+      <image src="http://192.168.2.98:9095//group/组 11.png"></image>
       <view class="t1">中奖名单</view>
     </view>
 
@@ -72,31 +72,31 @@
 
     <view class="imgssss">
       <view class="img1">
-        <image src="../../static/imgs/小樱.jpg"></image>
+        <image src="http://192.168.2.98:9095//imgs/小樱.jpg"></image>
         <view class="p1">Jenny</view>
       </view>
       <view class="img1">
-        <image src="../../static/imgs/小樱.jpg"></image>
+        <image src="http://192.168.2.98:9095//imgs/小樱.jpg"></image>
         <view class="p1">Jenny</view>
       </view>
       <view class="img1">
-        <image src="../../static/imgs/小樱.jpg"></image>
+        <image src="http://192.168.2.98:9095//imgs/小樱.jpg"></image>
         <view class="p1">Jenny</view>
       </view>
       <view class="img1">
-        <image src="../../static/imgs/小樱.jpg"></image>
+        <image src="http://192.168.2.98:9095//imgs/小樱.jpg"></image>
         <view class="p1">Jenny</view>
       </view>
       <view class="img1">
-        <image src="../../static/imgs/小樱.jpg"></image>
+        <image src="http://192.168.2.98:9095//imgs/小樱.jpg"></image>
         <view class="p1">Jenny</view>
       </view>
       <view class="img1">
-        <image src="../../static/imgs/小樱.jpg"></image>
+        <image src="http://192.168.2.98:9095//imgs/小樱.jpg"></image>
         <view class="p1">Jenny</view>
       </view>
       <view class="img1">
-        <image src="../../static/imgs/小樱.jpg"></image>
+        <image src="http://192.168.2.98:9095//imgs/小樱.jpg"></image>
         <view class="p1">Jenny</view>
       </view>
     </view>
@@ -105,10 +105,10 @@
 
   <!-- 图片 -->
   <view class="img3">
-    <image src="../../static/group/O1CN01AmApMA2K4QKxuHhGL___2816529503.png"></image>
+    <image src="http://192.168.2.98:9095//group/O1CN01AmApMA2K4QKxuHhGL___2816529503.png"></image>
   </view>
   <view class="img4">
-    <image src="../../static/group/O1CN01Amf2WR2K4QKvpyOGy___2816529503.png"></image>
+    <image src="http://192.168.2.98:9095//group/O1CN01Amf2WR2K4QKvpyOGy___2816529503.png"></image>
   </view>
   <!-- 图片 -->
 
@@ -120,20 +120,20 @@
         <view class="p1">12</view>
       </view>
       <view class="imgs2">
-        <image src="../../static/group/：.png"></image>
+        <image src="http://192.168.2.98:9095//group/：.png"></image>
       </view>
       <view class="t2">
         <view class="p1">12</view>
       </view>
       <view class="imgs2">
-        <image src="../../static/group/：.png"></image>
+        <image src="http://192.168.2.98:9095//group/：.png"></image>
       </view>
       <view class="t2">
         <view class="p1">12</view>
       </view>
     </view>
     <view class="imgs3">
-      <image src="../../static/group/矩形 16 拷贝 3.png"></image>
+      <image src="http://192.168.2.98:9095//group/矩形 16 拷贝 3.png"></image>
     </view>
   </view>
   <!-- 阿牛 -->

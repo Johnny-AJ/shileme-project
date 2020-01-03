@@ -6,7 +6,7 @@
  
     <view class="pj" wx:for="{{getcommentList}}" wx:key="*this">
       <view class="head">
-        <image src="../../static/scango/椭圆 4.png " wx:if="{{item.userName==null}}"></image>
+        <image src="http://192.168.2.98:9095//scango/椭圆 4.png " wx:if="{{item.userName==null}}"></image>
         <image src="{{item.userImg}}" ></image>
       </view>
       <view class="pr">

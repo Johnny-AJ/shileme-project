@@ -1,11 +1,12 @@
 {
     "pages": [
         "pages/login/login",
-        "pages/user/user",
-        "pages/report/report",
         "pages/consistent/consistent",
-        "pages/fill/fill",
+        "pages/user/user",
+        "pages/UserRelated/UserRelated",
         "pages/index/index",
+        "pages/report/report",
+        "pages/fill/fill",
         "pages/details/details",
         "pages/POINTS_AMT/POINTS_AMT",
         "pages/commodity/commodity",
@@ -52,7 +53,6 @@
         "pages/customer/customer",
         "pages/addLogistics/addLogistics",
         "pages/logistics/logistics",
-        "pages/UserRelated/UserRelated",
         "pages/finetuxedos/finetuxedos",
         "pages/friends/friends",
         "pages/Spell/Spell"
@@ -69,26 +69,26 @@
         "list": [{
                 "pagePath": "pages/index/index",
                 "text": "首页",
-                "iconPath": "static/imgs/矢量智能对象.png",
-                "selectedIconPath": "static/imgs/矢量智能对象(1).png"
+                "iconPath": "./static/imgs/imgsa1 (6).png",
+                "selectedIconPath": "./static/imgs/imgsa1 (5).png"
             },
             {
                 "pagePath": "pages/find/find",
                 "text": "发现",
-                "iconPath": "static/imgs/组 21.png",
-                "selectedIconPath": "static/imgs/组 21(1).png"
+                "iconPath": "./static/imgs/imgsa1 (8).png",
+                "selectedIconPath": "/static/imgs/imgsa1 (7).png"
             },
             {
                 "pagePath": "pages/cart/cart",
                 "text": "购物车",
-                "iconPath": "static/imgs/购物车.png",
-                "selectedIconPath": "static/imgs/购物车(1).png"
+                "iconPath": "./static/imgs/imgsa1 (4).png",
+                "selectedIconPath": "./static/imgs/imgsa1 (3).png"
             },
             {
                 "pagePath": "pages/user/user",
                 "text": "个人中心",
-                "iconPath": "static/imgs/个人中心.png",
-                "selectedIconPath": "static/imgs/个人中心(1).png"
+                "iconPath": "./static/imgs/imgsa1 (2).png",
+                "selectedIconPath": "./static/imgs/imgsa1 (1).png"
             }
         ]
     },

@@ -6,7 +6,7 @@
   <view class="review_box">
 
     <view class="imgs1">
-      <image src="../../static/imgs/imgs.png"></image>
+      <image src="http://192.168.2.98:9095//imgs/imgs.png"></image>
     </view>
 
     <view class="t1">Dr.Jart+ 宛若新生面膜 5片/盒</view>
@@ -17,7 +17,7 @@
   <view class="review_box">
 
     <view class="imgs1">
-      <image src="../../static/imgs/imgs.png"></image>
+      <image src="http://192.168.2.98:9095//imgs/imgs.png"></image>
     </view>
 
     <view class="t1">Dr.Jart+ 宛若新生面膜 5片/盒</view>
@@ -28,7 +28,7 @@
   <view class="review_box">
 
     <view class="imgs1">
-      <image src="../../static/imgs/imgs.png"></image>
+      <image src="http://192.168.2.98:9095//imgs/imgs.png"></image>
     </view>
 
     <view class="t1">Dr.Jart+ 宛若新生面膜 5片/盒</view>

@@ -3,7 +3,7 @@
 
 <view class="top_box">
   <view class="img_box">
-    <image src="../../static/imgs/小樱.jpg"></image>
+    <image src="http://192.168.2.98:9095//imgs/小樱.jpg"></image>
     <view class="t1">用户11111</view>
   </view>
 
@@ -12,9 +12,9 @@
   </view>
 
   <view class="imgs_box">
-    <image src="../../static/imgs/330.330.png"></image>
-    <image src="../../static/imgs/330.330.png"></image>
-    <image src="../../static/imgs/330.330.png"></image>
+    <image src="http://192.168.2.98:9095//imgs/330.330.png"></image>
+    <image src="http://192.168.2.98:9095//imgs/330.330.png"></image>
+    <image src="http://192.168.2.98:9095//imgs/330.330.png"></image>
   </view>
 </view>
 
@@ -31,7 +31,7 @@
   <view class="img2_box">
     <view class="img_nav_box">
       <view class="imgs">
-        <image src="../../static/imgs/330.330.png"></image>
+        <image src="http://192.168.2.98:9095//imgs/330.330.png"></image>
       </view>
       <view class="t1">Dr.Jart 宛若新生保湿面 膜...</view>
       <view class="p1">￥160
@@ -41,7 +41,7 @@
 
     <view class="img_nav_box">
       <view class="imgs">
-        <image src="../../static/imgs/330.330.png"></image>
+        <image src="http://192.168.2.98:9095//imgs/330.330.png"></image>
       </view>
       <view class="t1">Dr.Jart 宛若新生保湿面 膜...</view>
       <view class="p1">￥160
@@ -51,7 +51,7 @@
 
     <view class="img_nav_box">
       <view class="imgs">
-        <image src="../../static/imgs/330.330.png"></image>
+        <image src="http://192.168.2.98:9095//imgs/330.330.png"></image>
       </view>
       <view class="t1">Dr.Jart 宛若新生保湿面 膜...</view>
       <view class="p1">￥160
@@ -74,7 +74,7 @@
   <view class="img2_box">
     <view class="img_nav_box">
       <view class="imgs">
-        <image src="../../static/imgs/330.330.png"></image>
+        <image src="http://192.168.2.98:9095//imgs/330.330.png"></image>
       </view>
       <view class="t1">Dr.Jart 宛若新生保湿面 膜...</view>
       <view class="p1">￥160
@@ -83,7 +83,7 @@
 
     <view class="img_nav_box">
       <view class="imgs">
-        <image src="../../static/imgs/330.330.png"></image>
+        <image src="http://192.168.2.98:9095//imgs/330.330.png"></image>
       </view>
       <view class="t1">Dr.Jart 宛若新生保湿面 膜...</view>
       <view class="p1">￥160
@@ -92,7 +92,7 @@
 
     <view class="img_nav_box">
       <view class="imgs">
-        <image src="../../static/imgs/330.330.png"></image>
+        <image src="http://192.168.2.98:9095//imgs/330.330.png"></image>
       </view>
       <view class="t1">Dr.Jart 宛若新生保湿面 膜...</view>
       <view class="p1">￥160

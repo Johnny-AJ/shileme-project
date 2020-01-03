@@ -15,7 +15,7 @@
   <!-- 价格 -->
   <view class="price">
 
-    <image src="../../static/imgs/背景 (1).png"></image>
+    <image src="http://192.168.2.98:9095//imgs/背景 (1).png"></image>
 
     <view class="price_box">
 
@@ -54,10 +54,10 @@
   <!-- 活动流程 -->
   <view class="activity_box">
     <view class="img1">
-      <image src="../../static/imgs/活动流程.png"></image>
+      <image src="http://192.168.2.98:9095//imgs/活动流程.png"></image>
     </view>
     <view class="img2">
-      <image src="../../static/imgs/组 12.png"></image>
+      <image src="http://192.168.2.98:9095//imgs/组 12.png"></image>
       <view class="p1">活动须知</view>
     </view>
   </view>
@@ -81,13 +81,13 @@
         <view class="p1">12</view>
       </view>
       <view class="imgs2">
-        <image src="../../static/group/：.png"></image>
+        <image src="http://192.168.2.98:9095//group/：.png"></image>
       </view>
       <view class="t2">
         <view class="p1">12</view>
       </view>
       <view class="imgs2">
-        <image src="../../static/group/：.png"></image>
+        <image src="http://192.168.2.98:9095//group/：.png"></image>
       </view>
       <view class="t2">
         <view class="p1">12</view>

@@ -20,7 +20,7 @@
       <view class="more">
         <view class="p1" bindtap="handurl1" data-url="/pages/credits_copy/credits_copy">更多</view>
         <view class="imgs1">
-          <image src="../../static/group/矩形 16 拷贝 2.png"></image>
+          <image src="http://192.168.2.98:9095//group/矩形 16 拷贝 2.png"></image>
         </view>
       </view>
     </view>
@@ -44,7 +44,7 @@
 
       <!-- <view class="photo_box">
         <view class="imgss">
-          <image src="../../static/imgs/330.330.png"></image>
+          <image src="http://192.168.2.98:9095//imgs/330.330.png"></image>
         </view>
         <view class="nav_text">
           <view class="v1">保湿急救蓝药丸面膜</view>
@@ -58,7 +58,7 @@
 
       <view class="photo_box">
         <view class="imgss">
-          <image src="../../static/imgs/330.330.png"></image>
+          <image src="http://192.168.2.98:9095//imgs/330.330.png"></image>
         </view>
         <view class="nav_text">
           <view class="v1">保湿急救蓝药丸面膜</view>
@@ -72,7 +72,7 @@
 
       <view class="photo_box">
         <view class="imgss">
-          <image src="../../static/imgs/330.330.png"></image>
+          <image src="http://192.168.2.98:9095//imgs/330.330.png"></image>
         </view>
         <view class="nav_text">
           <view class="v1">保湿急救蓝药丸面膜</view>
@@ -95,14 +95,14 @@
       <view class="b1">优惠券兑换</view>
       <view class="more1" bindtap="handurl1" data-url="/pages/consk_box/consk_box">更多
         <view class="imgs2">
-          <image src="../../static/group/矩形 16 拷贝 2.png"></image>
+          <image src="http://192.168.2.98:9095//group/矩形 16 拷贝 2.png"></image>
         </view>
       </view>
     </view>
 
     <view class="consk_box">
       <view class="imgs3">
-        <image src="../../static/group/组 3.png"></image>
+        <image src="http://192.168.2.98:9095//group/组 3.png"></image>
       </view>
       <view class="z1">￥10</view>
       <view class="z2">满100元可用</view>
@@ -116,7 +116,7 @@
 
     <view class="consk_box">
       <view class="imgs3">
-        <image src="../../static/group/组 3.png"></image>
+        <image src="http://192.168.2.98:9095//group/组 3.png"></image>
       </view>
       <view class="z1">￥10</view>
       <view class="z2">满100元可用</view>

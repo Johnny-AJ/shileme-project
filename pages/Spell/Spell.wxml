@@ -13,10 +13,10 @@
           <view class="t1">广东省广州市天河区长湴工业园13栋</view>
           <view class="t2" bindtap="toggleDialog">附近门店自取</view>
         </view>
-        <image src="../../static/cart/矩形 16.png"></image>
+        <image src="http://192.168.2.98:9095//cart/矩形 16.png"></image>
       </view>
       <view class="imgs">
-        <image src="../../static/imgs/分割线.png" class="imgs1"></image>
+        <image src="http://192.168.2.98:9095//imgs/分割线.png" class="imgs1"></image>
       </view>
     </view>
   </view>
@@ -30,7 +30,7 @@
     <view class="conts">
       <view class="cont p30">
         <view class="imgs">
-          <image src="../../static/imgs/imgs1.png"></image>
+          <image src="http://192.168.2.98:9095//imgs/imgs1.png"></image>
         </view>
         <view class="cr">
           <view class="name">
@@ -98,7 +98,7 @@
     <view class="zan-dialog__mask" />
     <view class="zan-dialog__container">
       <view class="imgs">
-        <image src="../../static/scango/关闭icon.png" bindtap="toggleDialog"></image>
+        <image src="http://192.168.2.98:9095//scango/关闭icon.png" bindtap="toggleDialog"></image>
       </view>
       <view class="conts">
         <view>

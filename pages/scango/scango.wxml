@@ -38,15 +38,15 @@
 
   <view class="after">
     <view class="bz">
-      <image src="../../static/scango/icon.png"></image>
+      <image src="http://192.168.2.98:9095//scango/icon.png"></image>
       <text>正品保证</text>
     </view>
     <view class="bz">
-      <image src="../../static/scango/icon.png"></image>
+      <image src="http://192.168.2.98:9095//scango/icon.png"></image>
       <text>精选商品</text>
     </view>
     <view class="bz">
-      <image src="../../static/scango/icon.png"></image>
+      <image src="http://192.168.2.98:9095//scango/icon.png"></image>
       <text>门店体验</text>
     </view>
 
@@ -61,7 +61,7 @@
         <view wx:for="{{getListByWaresId1}}" wx:key="*this">{{item.name}}</view>
 
       </view>
-      <image src="../../static/scango/矩形 16(1).png"></image>
+      <image src="http://192.168.2.98:9095//scango/矩形 16(1).png"></image>
     </view>
 
     <view class="lj" bindtap="toggleDialog1">
@@ -69,7 +69,7 @@
       <view class="xzcont">
         <text wx:if="{{selectedProp.length}}">{{selectedProp.length>0?selectedProp+'，':selectedProp}}{{value1+'件'}}</text>
       </view>
-      <image src="../../static/scango/矩形 16(1).png"></image>
+      <image src="http://192.168.2.98:9095//scango/矩形 16(1).png"></image>
     </view>
 
   </view>
@@ -79,7 +79,7 @@
     <view class="title" bindtap="gotcommentList" data-waresId="{{waresId}}">
       <view class="conts">宝贝评价（{{totalCount}}）</view>
       <view class="more">查看更多
-        <image src="../../static/scango/矩形 16 拷贝.png"></image>
+        <image src="http://192.168.2.98:9095//scango/矩形 16 拷贝.png"></image>
       </view>
     </view>
     <view class="pj">
@@ -90,7 +90,7 @@
           <view class="pl" wx:for="{{getcommentList}}" wx:key="*this" bindtap="gotcommentList" data-waresId="{{waresId}}">
             <view class="head">
               <image src="{{item.userImg}}" wx:if="{{item.userName}}"></image>
-              <image src="../../static/scango/椭圆 4.png" wx:if="{{item.userName==null}}"></image>
+              <image src="http://192.168.2.98:9095//scango/椭圆 4.png" wx:if="{{item.userName==null}}"></image>
             </view>
             <view class="cont">
               <text class="name" wx:if="{{item.userName==null}}">匿名</text>
@@ -136,13 +136,13 @@
     <view class="zan-dialog__mask" />
     <view class="zan-dialog__container">
       <view class="imgs">
-        <image src="../../static/scango/关闭icon.png" bindtap="toggleDialog"></image>
+        <image src="http://192.168.2.98:9095//scango/关闭icon.png" bindtap="toggleDialog"></image>
       </view>
       <view class="conts">
         <view class="title"> 优惠劵 </view>
         <view class="coupon">
           <view class="cont" wx:for="{{getListByWaresId}}" wx:key="*this">
-            <image src="../../static/scango/组 4.png"></image>
+            <image src="http://192.168.2.98:9095//scango/组 4.png"></image>
             <view class="cl">
               <text class="t1">￥{{item.money}}</text>
               <text class="t2">满{{item.startMoney}}元可用</text> {{itme.id}}
@@ -162,7 +162,7 @@
 
         </view>
         <!-- <view class="coupon1">
-          <image src="../../static/imgs/组 7.png"></image>
+          <image src="http://192.168.2.98:9095//imgs/组 7.png"></image>
           <text>功能暂未开放,敬请期待!</text>
         </view> -->
       </view>

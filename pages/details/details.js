@@ -100,20 +100,22 @@ Page({
     // 获取商品数据
     get_data(waresId) {
         var self = this;
+
+      console.log(waresId)
         let prams = { waresId: waresId }
         http.getRequest('/api/wares/details/getWaresInfo', prams, function(res) {
                 console.log(res, 'res')
 
 
                 self.setData({
-                    list: res.data
+                    list: res.data.data
                 })
                 self.setData({
-                    price: self.data.list.mallPrice
+                  price: self.data.mallPrice
                 })
 
                 self.setData({
-                    pic: self.data.list.images[0]
+                  pic: res.data.data.content[0]
                 })
 
 

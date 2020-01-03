@@ -23,7 +23,7 @@
       </view>
       <view class="nav3">
         <view class="imgs1">
-          <image src="../../static/imgs/小樱.jpg"></image>
+          <image src="http://192.168.2.98:9095//imgs/小樱.jpg"></image>
         </view>
         <view class="n1">米粒</view>
       </view>
@@ -31,7 +31,7 @@
 
     <view class="nav_right">
       <view class="imgs2">
-        <image src="../../static/imgs/330.330.png"></image>
+        <image src="http://192.168.2.98:9095//imgs/330.330.png"></image>
       </view>
       <view class="nav4">共2份试用报告</view>
     </view>
@@ -45,7 +45,7 @@
       </view>
       <view class="nav3">
         <view class="imgs1">
-          <image src="../../static/imgs/小樱.jpg"></image>
+          <image src="http://192.168.2.98:9095//imgs/小樱.jpg"></image>
         </view>
         <view class="n1">米粒</view>
       </view>
@@ -53,7 +53,7 @@
 
     <view class="nav_right">
       <view class="imgs2">
-        <image src="../../static/imgs/330.330.png"></image>
+        <image src="http://192.168.2.98:9095//imgs/330.330.png"></image>
       </view>
       <view class="nav4">共2份试用报告</view>
     </view>

@@ -13,7 +13,7 @@
   <!-- tab栏 -->
  <view class="not" wx:if="{{unusedList.length==0&&timeOutList.length==0&&usedList.length==0}}">
       <view class="imgs">
-        <image src="../../static/scango/组 1.png"></image>
+        <image src="http://192.168.2.98:9095//scango/组 1.png"></image>
       </view>
       <text>暂无记录！</text>
     </view>
@@ -33,9 +33,9 @@
     <view class="cont" wx:for="{{unusedList}}" wx:key="*this" bindtap="goto">
 
       <view class="imgs">
-        <image src="../../static/scango/组 4.png"></image>
-        <!-- <image src="../../static/scango/组 3 (2).png"></image> -->
-        <!-- <image src="../../static/scango/组 3 (1).png"></image> -->
+        <image src="http://192.168.2.98:9095//scango/组 4.png"></image>
+        <!-- <image src="http://192.168.2.98:9095//scango/组 3 (2).png"></image> -->
+        <!-- <image src="http://192.168.2.98:9095//scango/组 3 (1).png"></image> -->
       </view>
       <view class="cl ">
         <view class="t1 ">
@@ -67,15 +67,15 @@
 
       </view>
       <view class="rimgs ">
-        <image src="../../static/scango/矩形 16(1).png "></image>
+        <image src="http://192.168.2.98:9095//scango/矩形 16(1).png "></image>
       </view>
     </view>
     <view class="cont" wx:for="{{timeOutList}}" wx:key="*this">
 
       <view class="imgs">
-        <!-- <image src="../../static/scango/组 4.png"></image> -->
-        <!-- <image src="../../static/scango/组 3 (2).png"></image> -->
-        <image src="../../static/scango/组 3 (1).png"></image>
+        <!-- <image src="http://192.168.2.98:9095//scango/组 4.png"></image> -->
+        <!-- <image src="http://192.168.2.98:9095//scango/组 3 (2).png"></image> -->
+        <image src="http://192.168.2.98:9095//scango/组 3 (1).png"></image>
       </view>
       <view class="cl ">
         <view class="t1 ">
@@ -107,16 +107,16 @@
 
       </view>
       <view class="rimgs ">
-        <image src="../../static/scango/矩形 16(1).png "></image>
+        <image src="http://192.168.2.98:9095//scango/矩形 16(1).png "></image>
       </view>
     </view>
 
     <view class="cont" wx:for="{{usedList}}" wx:key="*this">
 
       <view class="imgs">
-        <!-- <image src="../../static/scango/组 4.png"></image> -->
-        <image src="../../static/scango/组 3 (2).png"></image>
-        <!-- <image src="../../static/scango/组 3 (1).png"></image> -->
+        <!-- <image src="http://192.168.2.98:9095//scango/组 4.png"></image> -->
+        <image src="http://192.168.2.98:9095//scango/组 3 (2).png"></image>
+        <!-- <image src="http://192.168.2.98:9095//scango/组 3 (1).png"></image> -->
       </view>
       <view class="cl ">
         <view class="t1 ">
@@ -148,7 +148,7 @@
 
       </view>
       <view class="rimgs ">
-        <image src="../../static/scango/矩形 16(1).png "></image>
+        <image src="http://192.168.2.98:9095//scango/矩形 16(1).png "></image>
       </view>
     </view>
 

@@ -33,14 +33,14 @@
           <view class="address_right">
             <view class="address_bianji" bindtap="handeditor" data-index="{{index}}" data-id="{{item.id}}">
               <view>
-                <image src="../../static/imgs/编辑.png"></image>
+                <image src="http://192.168.2.98:9095//imgs/编辑.png"></image>
                 <text>编辑</text>
               </view>
             </view>
             <!-- 删除 -->
             <view class="address_bianji" bindtap="handdel" data-id="{{item.id}}">
               <view>
-                <image src="../../static/imgs/删除.png"></image>
+                <image src="http://192.168.2.98:9095//imgs/删除.png"></image>
                 <text>删除</text>
               </view>
             </view>

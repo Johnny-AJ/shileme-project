@@ -13,7 +13,7 @@
   <!-- tab栏 -->
   <view class="tuijian">
     <view class="imgs1">
-      <image src="../../static/imgs/矩形 4.png"></image>
+      <image src="http://192.168.2.98:9095//imgs/矩形 4.png"></image>
     </view>
     <view class="t1">推荐</view>
     <view class="t_box">
@@ -26,7 +26,7 @@
   <view class="bong">
     <view class="bong_box">
       <view class="imgs2">
-        <image src="../../static/imgs/小樱.jpg"></image>
+        <image src="http://192.168.2.98:9095//imgs/小樱.jpg"></image>
       </view>
       <view class="b1">好物测评人员</view>
     </view>
@@ -37,7 +37,7 @@
       </view>
       <view class="bong_right">
         <view class="imgs3">
-          <image src="../../static/imgs/260.260.png"></image>
+          <image src="http://192.168.2.98:9095//imgs/260.260.png"></image>
         </view>
       </view>
     </view>
@@ -47,7 +47,7 @@
   <view class="bong1">
     <view class="bong_box">
       <view class="imgs2">
-        <image src="../../static/imgs/小樱.jpg"></image>
+        <image src="http://192.168.2.98:9095//imgs/小樱.jpg"></image>
       </view>
       <view class="b1">好物测评人员</view>
     </view>
@@ -58,7 +58,7 @@
       </view>
       <view class="bong_bottom">
         <view class="imgs4">
-          <image src="../../static/imgs/1组 3.png"></image>
+          <image src="http://192.168.2.98:9095//imgs/1组 3.png"></image>
         </view>
       </view>
     </view>
@@ -68,7 +68,7 @@
   <view class="bong2">
     <view class="bong_box">
       <view class="imgs2">
-        <image src="../../static/imgs/小樱.jpg"></image>
+        <image src="http://192.168.2.98:9095//imgs/小樱.jpg"></image>
       </view>
       <view class="b1">好物测评人员</view>
     </view>
@@ -79,7 +79,7 @@
       </view>
       <view class="bong_bottom1">
         <view class="imgs5">
-          <image src="../../static/imgs/1组 9.png"></image>
+          <image src="http://192.168.2.98:9095//imgs/1组 9.png"></image>
         </view>
       </view>
     </view>

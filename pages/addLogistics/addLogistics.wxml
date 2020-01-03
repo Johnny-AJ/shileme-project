@@ -7,7 +7,7 @@
 
   <!-- 头部 -->
   <view class='head'>
-    <image class='head_img' src="../../static/finetuxedos/团团.jpg"></image>
+    <image class='head_img' src="http://192.168.2.98:9095//finetuxedos/团团.jpg"></image>
     <label class='head_name'>已签收</label>
     <label class='head_title'>圆通速递：8889993221341234</label>
     <label class='head_tel_name'>官方客服:95559</label>

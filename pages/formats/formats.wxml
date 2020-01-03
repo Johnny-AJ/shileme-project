@@ -15,7 +15,7 @@
   <!-- 价格 -->
   <view class="price">
 
-    <image src="../../static/formats/组 7.png"></image>
+    <image src="http://192.168.2.98:9095//formats/组 7.png"></image>
 
     <view class="price_box">
 
@@ -41,17 +41,17 @@
   <!-- 正品保证 -->
   <view class="price_real">
     <view class="price_real_nav">
-      <image src="../../static/formats/icon.png"></image>
+      <image src="http://192.168.2.98:9095//formats/icon.png"></image>
       <view class="t5">正品保证</view>
     </view>
 
     <view class="price_real_nav">
-      <image src="../../static/formats/icon.png"></image>
+      <image src="http://192.168.2.98:9095//formats/icon.png"></image>
       <view class="t5">精选商品</view>
     </view>
 
     <view class="price_real_nav">
-      <image src="../../static/formats/icon.png"></image>
+      <image src="http://192.168.2.98:9095//formats/icon.png"></image>
       <view class="t5">门店体验</view>
     </view>
   </view>
@@ -59,7 +59,7 @@
 
   <!-- 拼团规则 -->
   <view class="pricr_rules">
-    <image src="../../static/imgs/拼团规则.png"></image>
+    <image src="http://192.168.2.98:9095//imgs/拼团规则.png"></image>
   </view>
   <!-- 拼团规则 -->
 
@@ -142,7 +142,7 @@
       <view class="baby_left">宝贝评价(262)</view>
       <view class="baby_right">查看更多</view>
       <view class="baby_img">
-        <image src="../../static/formats/矩形 16 拷贝.png"></image>
+        <image src="http://192.168.2.98:9095//formats/矩形 16 拷贝.png"></image>
       </view>
     </view>
     <view class="baby_nav">
@@ -158,7 +158,7 @@
     <view class="title" bindtap="goto" data-id="28">
       <view class="conts">宝贝评价（262）</view>
       <view class="more">查看更多
-        <image src="../../static/scango/矩形 16 拷贝.png"></image>
+        <image src="http://192.168.2.98:9095//scango/矩形 16 拷贝.png"></image>
       </view>
     </view>
     <view class="pj">
@@ -173,7 +173,7 @@
           <block>
             <view class="pl">
               <view class="head">
-                <image src="../../static/scango/椭圆 4.png"></image>
+                <image src="http://192.168.2.98:9095//scango/椭圆 4.png"></image>
               </view>
               <view class="cont">
                 <text class="name">匿名</text>
@@ -183,7 +183,7 @@
                 </view>
               </view>
               <view class="imsg">
-                <image src="../../static/scango/椭圆 4.png"></image>
+                <image src="http://192.168.2.98:9095//scango/椭圆 4.png"></image>
                 <text>2张</text>
               </view>
             </view>
@@ -214,7 +214,7 @@
 
 <!-- 商品图片 -->
 <view class="commodity_img">
-  <image src="../../static/formats/O1CN01Amf2WR2K4QKvpyOGy___2816529503.png"></image>
+  <image src="http://192.168.2.98:9095//formats/O1CN01Amf2WR2K4QKvpyOGy___2816529503.png"></image>
 </view>
 <!-- 商品图片 -->
 
@@ -222,7 +222,7 @@
 <view class="settlements_box">
 
   <view class="settlements_img" bindtap="handurl" data-url="/pages/index/index">
-    <image src="../../static/formats/start.png"></image>
+    <image src="http://192.168.2.98:9095//formats/start.png"></image>
     <text>首页</text>
   </view>
 

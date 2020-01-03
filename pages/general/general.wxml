@@ -37,16 +37,16 @@
       <view class='uploader-img' wx:if="{{pics}}">
         <view class='uploader-list' wx:for="{{pics}}" wx:key="item.length">
           <image src='{{item}}' data-index="{{index}}" mode="scaleToFill" />
-          <image class='delete' data-index="{{index}}" src='../../static/imgs/del.png' mode="widthFix" bindtap='deleteImg' />
+          <image class='delete' data-index="{{index}}" src='http://192.168.2.98:9095//imgs/del.png' mode="widthFix" bindtap='deleteImg' />
         </view>
       </view>
       <view class='upAdd' bindtap='chooseImg'>
-        <image src='../../static/imgs/88888.png' mode="widthFix" />
+        <image src='http://192.168.2.98:9095//imgs/88888.png' mode="widthFix" />
                               
       </view>
       <view class="anonymous">
-          <image src="../../static/imgs/椭圆 1.png" bindtap="anonymous" hidden="{{anonymity==0}}"></image>
-          <image src="../../static/imgs/组 6.png" bindtap="anonymous" hidden="{{anonymity==1}}"></image>
+          <image src="http://192.168.2.98:9095//imgs/椭圆 1.png" bindtap="anonymous" hidden="{{anonymity==0}}"></image>
+          <image src="http://192.168.2.98:9095//imgs/组 6.png" bindtap="anonymous" hidden="{{anonymity==1}}"></image>
           <text>匿名</text>
       </view>
     </view>
@@ -56,11 +56,11 @@
     <view class="titele">天河美丽星美容店</view>
     <view class="isok">
       <view class="imgs">
-        <image src="{{storeIsOk==0?'../../static/imgs/组 4 拷贝.png':'../../static/imgs/组 4 拷贝 (1).png'}}" bindtap="storeIsOk"  data-storeIsOk="0" ></image>
+        <image src="{{storeIsOk==0?'http://192.168.2.98:9095//imgs/组 4 拷贝.png':'http://192.168.2.98:9095//imgs/组 4 拷贝 (1).png'}}" bindtap="storeIsOk"  data-storeIsOk="0" ></image>
        
       </view>
       <view class="imgs">
-       <image src="{{storeIsOk==1?'../../static/imgs/组 4 (1).png ':'../../static/imgs/组 4 (2).png'}}" bindtap="storeIsOk"  data-storeIsOk="1" ></image>
+       <image src="{{storeIsOk==1?'http://192.168.2.98:9095//imgs/组 4 (1).png ':'http://192.168.2.98:9095//imgs/组 4 (2).png'}}" bindtap="storeIsOk"  data-storeIsOk="1" ></image>
        
       </view>
     </view>

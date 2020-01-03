@@ -4,7 +4,7 @@
 <view class="bgc">
   
   <view class="obc">
-    <image src="../../static/imgs/矩形 33.png"></image>
+    <image src="http://192.168.2.98:9095//imgs/矩形 33.png"></image>
   </view>
     <!-- tab -->
   <view class="checktbs">

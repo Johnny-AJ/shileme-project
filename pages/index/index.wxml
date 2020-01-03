@@ -5,12 +5,12 @@
   <view class="search_box">
     <view class="search">
       <view class="search_logo">
-        <image mode="widthFix" src="../../static/imgs/搜索.png"></image>
+        <image mode="widthFix" src="http://192.168.2.98:9095//imgs/搜索.png"></image>
       </view>
       <view class="input" bindtap="search" >搜索</view>
     </view>
     <view class="search_button">
-      <image src="../../static/imgs/矩形 16 拷贝 5.png"></image>
+      <image src="http://192.168.2.98:9095//imgs/imgs111.png"></image>
     </view>
 
 
@@ -30,22 +30,22 @@
   <view class="button_nav">
 
     <view class="navigator" bindtap="handurl">
-      <image mode="widthFix" src="../../static/imgs/扫码购.png"></image>
+      <image mode="widthFix" src="http://192.168.2.98:9095//imgs/扫码购.png"></image>
       <view class="text">扫码购</view>
     </view>
 
     <view class="navigator" bindtap="handurl1" data-url="/pages/consistent/consistent">
-      <image mode="widthFix" src="../../static/imgs/试用.png"></image>
+      <image mode="widthFix" src="http://192.168.2.98:9095//imgs/试用.png"></image>
       <view class="text">免费试用</view>
     </view>
 
     <view class="navigator" bindtap="handurl1" data-url="/pages/group/group">
-      <image mode="widthFix" src="../../static/imgs/拼团.png"></image>
+      <image mode="widthFix" src="http://192.168.2.98:9095//imgs/拼团.png"></image>
       <view class="text">超值拼团</view>
     </view>
 
     <view class="navigator" bindtap="handurl1" data-url="/pages/credits/credits">
-      <image mode="widthFix" src="../../static/imgs/积分兑换.png"></image>
+      <image mode="widthFix" src="http://192.168.2.98:9095//imgs/积分兑换.png"></image>
       <view class="text">积分兑换</view>
     </view>
 
@@ -55,7 +55,7 @@
   <!-- 2周年庆 -->
   <view class="content-box">
     <view>
-      <image mode="widthFix" src="../../static/imgs/周年庆.png"></image>
+      <image mode="widthFix" src="http://192.168.2.98:9095//imgs/周年庆.png"></image>
     </view>
   </view>
   <view class="conts">
@@ -65,7 +65,7 @@
         <view class="bargain_top">
           <view class="bargain_left">超值拼团</view>
           <view class="bargain_right" bindtap="jump"> 好 友 正 在 拼
-            <image src="../../static/imgs/箭头.png"></image>
+            <image src="http://192.168.2.98:9095//imgs/箭头.png"></image>
           </view>
         </view>
 
@@ -112,7 +112,7 @@
             </view>
             <!-- 右边 -->
             <view class="bargain_right" bindtap="handTime" data-aa="/pages/time_to_buy/time_to_buy"> 更 多 场 次
-              <image src="../../static/imgs/箭头.png"></image>
+              <image src="http://192.168.2.98:9095//imgs/箭头.png"></image>
             </view>
           </view>
           <!-- 下 -->
@@ -132,7 +132,7 @@
         <view class="hl .p21">
           <view class="tittle" bindtap="jump" data-url="/pages/selling_list/selling_list">
             <view class="imgage">
-              <image src="../../static/imgs/bb.png"></image>
+              <image src="http://192.168.2.98:9095//imgs/bb.png"></image>
             </view>
             <text>剁手必看指南</text>
           </view>
@@ -145,7 +145,7 @@
         </view>
         <view class="hr .p21">
           <view class="tittle" bindtap="jump" data-url="/pages/new_product/new_product">
-            <image src="../../static/imgs/aaa.png"></image>
+            <image src="http://192.168.2.98:9095//imgs/aaa.png"></image>
             <text>什么值得买</text>
           </view>
           <view class="imgs">
@@ -161,7 +161,7 @@
         <view class="conts" style="width:{{commoditylist.length*143}}rpx">
           <view class="block" bindtap="clik" wx:for="{{commoditylist}}" data-index="{{index}}" data-id="{{item.id}}" bindtap="productlist" wx:key="*this">
             <image wx:if="{{show}}" src="{{item.url}}"></image>
-            <!-- <image wx:if="{{!show}}" src="../../static/imgs/美妆.png"></image> -->
+            <!-- <image wx:if="{{!show}}" src="http://192.168.2.98:9095//imgs/美妆.png"></image> -->
             <text class=" {{index1==index?'color':''}}">{{item.name}}</text>
             <text class="i"></text>
           </view>
