@@ -1,0 +1,133 @@
+<!--pages/record/record.wxml-->
+<!-- <text>pages/record/record.wxml</text> -->
+
+<view class="bgc">
+
+  <!-- tab -->
+  <view class="tabs">
+    <view wx:for="{{title}}" wx:key="*this" class='{{currentIndex==index?"tabNax":" "}}' class="p30" data-aa="{{index}}" bindtap="handTab">
+      <view class='{{currentIndex==index?"tabVax":" "}}'>{{item}}</view>
+    </view>
+  </view>
+  <!-- tab -->
+
+  <view class="b_box">
+    <view class="imgs">
+      <image src="../../static/imgs/330.330.png"></image>
+    </view>
+
+    <view class="box_right">
+      <view class="b1">保湿急救网红蓝药丸面膜</view>
+      <view class="b1">5片/1盒</view>
+      <view class="b2">
+        <view class="b3">100积分</view>
+        <view class="b4">￥160</view>
+      </view>
+      <view class="b5">已使用</view>
+    </view>
+  </view>
+
+  <view class="b_box">
+    <view class="imgs">
+      <image src="../../static/imgs/330.330.png"></image>
+    </view>
+
+    <view class="box_right">
+      <view class="b1">保湿急救网红蓝药丸面膜</view>
+      <view class="b1">5片/1盒</view>
+      <view class="b2">
+        <view class="b3">100积分</view>
+        <view class="b4">￥160</view>
+      </view>
+      <view class="b5">已使用</view>
+    </view>
+  </view>
+
+  <view class="b_box">
+    <view class="imgs">
+      <image src="../../static/imgs/330.330.png"></image>
+    </view>
+
+    <view class="box_right">
+      <view class="b1">保湿急救网红蓝药丸面膜</view>
+      <view class="b1">5片/1盒</view>
+      <view class="b2">
+        <view class="b3">100积分</view>
+        <view class="b4">￥160</view>
+      </view>
+      <view class="b5">已使用</view>
+    </view>
+  </view>
+
+  <view class="b_box">
+    <view class="imgs">
+      <image src="../../static/imgs/330.330.png"></image>
+    </view>
+
+    <view class="box_right">
+      <view class="b1">保湿急救网红蓝药丸面膜</view>
+      <view class="b1">5片/1盒</view>
+      <view class="b2">
+        <view class="b3">100积分</view>
+        <view class="b4">￥160</view>
+      </view>
+      <view class="b5">已使用</view>
+    </view>
+  </view>
+
+  <view class="consk_box">
+    <view class="imgs3">
+      <image src="../../static/imgs/去组 3.png"></image>
+    </view>
+    <view class="z1">￥10</view>
+    <view class="z2">满100元可用</view>
+    <view class="gong_box">
+      <view class="g1">全品类通用券</view>
+      <view class="g2">适用平台：全平台</view>
+      <view class="g2">有效期至：2019-08-01</view>
+      <view class="g3">20积分</view>
+    </view>
+  </view>
+
+  <view class="consk_box">
+    <view class="imgs3">
+      <image src="../../static/group/组 3.png"></image>
+    </view>
+    <view class="z1">￥10</view>
+    <view class="z2">满100元可用</view>
+    <view class="gong_box">
+      <view class="g1">全品类通用券</view>
+      <view class="g2">适用平台：全平台</view>
+      <view class="g2">有效期至：2019-08-01</view>
+      <view class="g3">20积分</view>
+    </view>
+  </view>
+
+  <view class="consk_box">
+    <view class="imgs3">
+      <image src="../../static/imgs/去组 3.png"></image>
+    </view>
+    <view class="z1">￥10</view>
+    <view class="z2">满100元可用</view>
+    <view class="gong_box">
+      <view class="g1">全品类通用券</view>
+      <view class="g2">适用平台：全平台</view>
+      <view class="g2">有效期至：2019-08-01</view>
+      <view class="g3">20积分</view>
+    </view>
+  </view>
+
+  <view class="consk_box">
+    <view class="imgs3">
+      <image src="../../static/group/组 3.png"></image>
+    </view>
+    <view class="z1">￥10</view>
+    <view class="z2">满100元可用</view>
+    <view class="gong_box">
+      <view class="g1">全品类通用券</view>
+      <view class="g2">适用平台：全平台</view>
+      <view class="g2">有效期至：2019-08-01</view>
+      <view class="g3">20积分</view>
+    </view>
+  </view>
+</view>

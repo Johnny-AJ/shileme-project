@@ -34,7 +34,7 @@
       <view class="text">扫码购</view>
     </view>
 
-    <view class="navigator" bindtap="handurl1" data-url="/pages/free/free">
+    <view class="navigator" bindtap="handurl1" data-url="/pages/consistent/consistent">
       <image mode="widthFix" src="../../static/imgs/试用.png"></image>
       <view class="text">免费试用</view>
     </view>
@@ -44,7 +44,7 @@
       <view class="text">超值拼团</view>
     </view>
 
-    <view class="navigator" bindtap="handurl1" data-url="/pages/pointsfor/pointsfor">
+    <view class="navigator" bindtap="handurl1" data-url="/pages/credits/credits">
       <image mode="widthFix" src="../../static/imgs/积分兑换.png"></image>
       <view class="text">积分兑换</view>
     </view>
@@ -60,11 +60,8 @@
   </view>
   <view class="conts">
     <view class="bgc_color">
-
       <!-- 超值拼团 -->
       <view class="bargain_box">
-
-
         <view class="bargain_top">
           <view class="bargain_left">超值拼团</view>
           <view class="bargain_right" bindtap="jump"> 好 友 正 在 拼
@@ -77,9 +74,7 @@
             <block>
               <swiper-item wx:for="{{buyRollList}}" wx:for-item="i" wx:key="*this" wx:for-index="num" wx:if="{{i.arr.length !==0}}">
                 <view class="swiper-item">
-
                   <view class="swiper-cont" wx:key="*this" wx:for="{{i.arr}}">
-
                     <view class="imgs">
                       <image src="{{item.waresImg}}"> </image>
                       <view class="text">已拼{{item.joinNum}}件</view>
@@ -97,36 +92,26 @@
                       </view>
                     </view>
                   </view>
-
-
                 </view>
               </swiper-item>
             </block>
           </swiper>
-
-
         </view>
       </view>
 
-
-
+      <!-- 限时购 -->
       <view class="bgc_color  content">
-
         <view class="bargain_box">
           <!-- 限时购 -->
           <view class="bargain_top">
-
             <view class="bargain_left">
               <text>限 时 购</text>
               <view class="time">
-
-
                 <i-count-down target="{{targetTime}}" countdown-class="targettime" bindcallback="listtime" clear-timer="{{clearTimer}}"></i-count-down>
-
               </view>
             </view>
             <!-- 右边 -->
-            <view class="bargain_right"> 更 多 场 次
+            <view class="bargain_right" bindtap="handTime" data-aa="/pages/time_to_buy/time_to_buy"> 更 多 场 次
               <image src="../../static/imgs/箭头.png"></image>
             </view>
           </view>
@@ -139,13 +124,10 @@
                 <text><text>￥</text>{{item.mallPrice}}</text>
               </view>
             </view>
-
-
-
-
           </view>
         </view>
       </view>
+
       <view class="hot">
         <view class="hl .p21">
           <view class="tittle" bindtap="jump" data-url="/pages/selling_list/selling_list">
@@ -167,7 +149,7 @@
             <text>什么值得买</text>
           </view>
           <view class="imgs">
-            <view wx:for="{{newselling}}" wx:key="*this"  bindtap="goto" data-waresId="{{item.waresId}}">
+            <view wx:for="{{newselling}}" wx:key="*this" bindtap="goto" data-waresId="{{item.waresId}}">
               <image src="{{item.logoUrl}}"></image>
             </view>
           </view>

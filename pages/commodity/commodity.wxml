@@ -10,7 +10,7 @@
       <view class="k2">￥69</view>
     </view>
     <view class="img3">
-      <image src="../../static/imgs/imgs1.png"></image>
+      <image src="../../static/imgs/330.330.png"></image>
     </view>
   </view>
 
@@ -19,7 +19,7 @@
 
   <!-- 下 -->
   <view class="jong">
-    <view class="jong_left">
+    <view class="jong_left" bindtap="handurl1" data-url="/pages/particulars/particulars">
 
       <view class="jong_box">
         <view class="j2">
@@ -27,14 +27,14 @@
       </view>
 
       <view class="imgd1">
-        <image src="../../static/imgs/组 22(1).png"></image>
+        <image src="../../static/imgs/小樱.jpg"></image>
         <view class="i1">米粒</view>
       </view>
     </view>
 
     <view class="jong_right">
       <view class="img4">
-        <image src="../../static/imgs/imgs1.png"></image>
+        <image src="../../static/imgs/330.330.png"></image>
       </view>
     </view>
 
@@ -49,14 +49,14 @@
       </view>
 
       <view class="imgd1">
-        <image src="../../static/imgs/组 22(1).png"></image>
+        <image src="../../static/imgs/小樱.jpg"></image>
         <view class="i1">米粒</view>
       </view>
     </view>
 
     <view class="jong_right">
       <view class="img4">
-        <image src="../../static/imgs/imgs1.png"></image>
+        <image src="../../static/imgs/330.330.png"></image>
       </view>
     </view>
 

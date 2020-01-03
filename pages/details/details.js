@@ -26,17 +26,17 @@ Page({
         allProperties: [],
         pic: '',
         token: '',
-        
+
         getListByWaresId: [],
         getListByWaresId1: [],
-        totalCount:0
+        totalCount: 0
     },
 
     /**
      * 生命周期函数--监听页面加载
      */
     onLoad: function(options) {
-
+        console.log(options, "options")
         var self = this;
         this.setData({
             waresId: options.waresid
@@ -56,29 +56,21 @@ Page({
                 },
                 success(res) {
 
-           
+
                     self.setData({
                         imgsurl: res.data.data.imgUrl
                     })
-
                     self.setData({
                         skuList: res.data.data.skuList
                     })
-
                     self.groupSkuProp();
-
                 }
-
-
-
             }),
-            this.getcommentList(); //评论列表
-        this.getListByWaresId() //根据商品查询优惠券列表
-
-
+            self.getcommentList(); //评论列表
+        self.getListByWaresId() //根据商品查询优惠券列表
     },
 
-   
+
     /**
      * 生命周期函数--监听页面显示
      */
@@ -107,34 +99,33 @@ Page({
 
     // 获取商品数据
     get_data(waresId) {
-
         var self = this;
-      let prams = { waresId:waresId}
-      http.getRequest('/api/wares/details/getWaresInfo', prams, function (res){
-        console.log(res,'res')
+        let prams = { waresId: waresId }
+        http.getRequest('/api/wares/details/getWaresInfo', prams, function(res) {
+                console.log(res, 'res')
 
 
-        self.setData({
-          list: res.data
-        })
-        self.setData({
-          price: self.data.list.mallPrice
-        })
+                self.setData({
+                    list: res.data
+                })
+                self.setData({
+                    price: self.data.list.mallPrice
+                })
 
-        self.setData({
-          pic: self.data.list.images[0]
-        })
+                self.setData({
+                    pic: self.data.list.images[0]
+                })
 
 
-      })
-        // wx.request({
-        //     url: 'http://192.168.2.98:9095/api/wares/details/getWaresInfo',
-        //     method: "get",
-        //     data: {
-        //         waresId: waresId
-        //     },
-        //     success(res) {
-           
+            })
+            // wx.request({
+            //     url: 'http://192.168.2.98:9095/api/wares/details/getWaresInfo',
+            //     method: "get",
+            //     data: {
+            //         waresId: waresId
+            //     },
+            //     success(res) {
+
 
         //         self.setData({
         //             list: res.data.data
@@ -153,7 +144,6 @@ Page({
     },
     // 弹出领劵层方法
     toggleDialog() {
-
         this.setData({
             showDialog: !this.data.showDialog,
         });
@@ -181,28 +171,22 @@ Page({
     //规格选择
     groupSkuProp: function() {
         var self = this;
-
         var skuList = self.data.skuList;
-
         //当后台返回只有一个SKU时，且SKU属性值为空时，即该商品没有规格选项，该SKU直接作为默认选中SKU
         if (skuList.length == 1 && skuList[0].properties == "") {
             this.setData({
                 defaultSku: skuList[0]
             });
             return;
-
         }
 
         var skuGroup = {}; //所有的规格名(包含规格名下的规格值集合）对象，如 {"颜色"：["金色","银色"],"内存"：["64G","256G"]}
         var allProperties = []; //所有SKU的属性值集合，如 ["颜色:金色;内存:64GB","颜色:银色;内存:64GB"]
         var propKeys = []; //所有的规格名集合，如 ["颜色","内存"]
-
         for (var i = 0; i < skuList.length; i++) {
-
             //找到和商品价格一样的那个SKU，作为默认选中的SKU
             var defaultSku = this.data.defaultSku;
             var isDefault = false;
-
             // if (!defaultSku || skuList[i].price == this.data.price) {
 
 
@@ -309,7 +293,7 @@ Page({
 
         if (e) {
             var dtos = JSON.stringify(e.currentTarget.dataset);
-         
+
             if (e.currentTarget.dataset.propertyid == undefined) {
                 wx.showToast({
                     title: '请选择规格！',
@@ -339,21 +323,21 @@ Page({
 
             },
             success: function(res) {
-              
-              self.setData({
-                getcommentList:res.data.data.list,
-                totalCount: res.data.data.totalCount
-              })
+
+                self.setData({
+                    getcommentList: res.data.data.list,
+                    totalCount: res.data.data.totalCount
+                })
                 console.log(res, 'getCommentList')
             }
         })
     },
-  gotcommentList(e){
-   
-    wx.navigateTo({
-      url: '/pages/comment/comment?waresId=' + e.currentTarget.dataset.waresid,   
-    })
-  },
+    gotcommentList(e) {
+
+        wx.navigateTo({
+            url: '/pages/comment/comment?waresId=' + e.currentTarget.dataset.waresid,
+        })
+    },
     goback() {
         wx.reLaunch({
             url: '/pages/index/index',
@@ -365,7 +349,6 @@ Page({
         })
     },
     getListByWaresId() { //根据商品查询优惠券列表
-
         var self = this;
         wx.request({
             url: 'http://192.168.2.98:9095/api/discount/data/getListByWaresId',
@@ -375,10 +358,8 @@ Page({
             data: {
                 waresId: self.data.waresId,
                 storeId: ''
-
             },
             success: function(res) {
-
                 self.setData({
                     getListByWaresId: res.data.data
                 })
@@ -399,9 +380,9 @@ Page({
                 }
                 var getListByWaresId = self.data.getListByWaresId;
                 self.setData({
-                    getListByWaresId1: getListByWaresId.slice(0, 2)
-                })
-                console.log(self.data.getListByWaresId, 'getListByWaresId')
+                        getListByWaresId1: getListByWaresId.slice(0, 2)
+                    })
+                    // console.log(self.data.getListByWaresId, 'getListByWaresId')
             }
         })
     },
@@ -428,10 +409,10 @@ Page({
                     var getListByWaresId = self.data.getListByWaresId;
                     for (var i = 0; i < getListByWaresId.length; i++) {
 
-                        console.log(getListByWaresId[i], '555555')
+                        // console.log(getListByWaresId[i], '555555')
                         if (getListByWaresId[i].id == id) {
 
-                            console.log(88888)
+                            // console.log(88888)
                             getListByWaresId[i].isGet = 0;
 
                         }

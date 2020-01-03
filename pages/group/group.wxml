@@ -5,7 +5,7 @@
 <view class="bgc">
   <!-- 上图 -->
   <view class="img">
-    <image src="../../static/group/组 99.png"></image>
+    <image src="../../static/group/banner.png"></image>
   </view>
   <!-- 下图 -->
   <view class="img1">
