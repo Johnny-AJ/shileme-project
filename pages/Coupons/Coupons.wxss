@@ -1,0 +1,163 @@
+.Coupons  .checktbs {
+  height: 90rpx;
+  width: 100%;
+   display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.Coupons  .checktbs .tbs{
+  width: 250rpx;
+  height: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.Coupons  .checktbs .tbs text{
+  border-bottom: 4rpx solid #fff;
+  padding-bottom: 10rpx;
+  font-size:30rpx;
+font-family:PingFang SC; font-weight:bold;
+
+
+}
+.Coupons  .checktbs .tbs .color{
+ border-color: #F02B50;
+ color: #F02B50;
+}
+/* -------------------------- */
+
+.coupons_box {
+  width: 100%;
+  box-sizing: border-box;
+  height: 1116rpx;
+  overflow: hidden;
+  padding: 0 30rpx;
+  background: #f5f5f5;
+  z-index: 2;
+  position: relative;
+}
+
+.coupons_box .cont {
+  width: 100%;
+  height: 210rpx;
+  display: flex;
+  justify-content: space-between;
+  position: relative;
+  margin-top: 30rpx;
+  padding-right: 21rpx;
+  align-items: center;
+}
+
+.coupons_box .cont .imgs {
+  width: 100%;
+  height: 100%;
+  z-index: -1;
+  position: absolute;
+  top: 0;
+  left: 0;
+}
+
+.coupons_box .cont .imgs image {
+  width: 100%;
+  height: 100%;
+}
+.coupons_box .cont .cl{
+  width: 250rpx;
+  height: 100%;
+  display: flex;
+  justify-content: center;
+  flex-flow: wrap;
+  align-items: center;
+}
+.coupons_box .cont .cl .t1{
+  height: 162rpx;
+width: 100%;
+display: flex;
+justify-content: center;
+align-items: center;
+
+}
+
+.coupons_box .cont .cl .t2 text{
+ font-size:30rpx;
+font-family:PingFang SC;
+font-weight:400;
+
+color:rgba(255,255,255,0.8);
+
+}
+.coupons_box .cont .cl .t1 text{
+font-size:80rpx;
+font-family:PingFang SC;
+font-weight:bold;
+color:rgba(255,255,255,1);
+}
+.coupons_box .cont .cl .t2{
+  margin-top: -81rpx;
+
+}
+.coupons_box .cont .cr{
+  width: 406rpx;
+  height: 100%;
+  box-sizing: border-box;
+  padding-left: 30rpx;
+}
+.coupons_box .cont .cr .rights .r1 text{
+font-size:26rpx;
+font-family:PingFang SC;
+margin-top: -5rpx;
+font-weight:400;
+color:rgba(153,153,153,1);
+
+}
+.coupons_box .cont .cr .rights .r1 text:nth-child(2){
+  margin-left: 5rpx;
+}
+.coupons_box .cont .cr .upper{
+  height: 86rpx;
+  display: flex;
+  align-items: center;
+  font-size:30rpx;
+font-family:PingFang SC;
+font-weight:500;
+color:rgba(34,34,34,1);
+
+}
+.coupons_box .cont .rimgs{
+width: 19rpx;
+height: 30rpx;
+margin-top: -20rpx;
+}
+.coupons_box .cont .rimgs image{
+  width: 100%;
+  height: 100%;
+}
+.coupons_box  .not{
+  position: absolute;
+  top: 255rpx;
+  left: 243rpx;
+  height: 350rpx;
+  width: 265rpx;
+  display: flex;
+  flex-wrap: wrap;
+   justify-content: center;
+
+
+
+}
+.coupons_box  .not .imgs{
+  width: 100%;
+  height: 231rpx;
+
+}
+.coupons_box  .not .imgs image{
+  width: 100%;
+  height: 100%;
+}
+.coupons_box  .not text{
+  font-size:34rpx;
+font-family:PingFang SC;
+font-weight:400;
+color:rgba(102,102,102,1);
+
+}

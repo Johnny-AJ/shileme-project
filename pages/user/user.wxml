@@ -1,2 +1,121 @@
-<!--pages/user/user.wxml-->
-<text>pages/user/user.wxml</text>
+<!-- 个人中心 -->
+<view class="user">
+  <view class="username">
+    <view class="bg">
+      <image src="../../static/userimags/bg1.png"></image>
+    </view>
+    <view class="usercont">
+      <view class="img">
+        <image src="{{avatarUrl}}"></image>
+      </view>
+      <view class="text">
+        <text class="name">{{nickName}}</text>
+      </view>
+    </view>
+  </view>
+  <view class="allorders" bindtap="handurl" data-index="0">
+    <view class="oderhead">
+      <view class="ot">
+        <text class="oleft">全部订单</text>
+        <image src="../../static/userimags/矩形 34.png"></image>
+      </view>
+      <view class="ob"></view>
+    </view>
+    <view class="odercont">
+      <view class="cont" bindtap="handurl"  data-index="1"  data-orderState="1">
+        <image src="../../static/userimags/待付款.png"></image>
+        <text>待付款</text>
+      </view>
+      <view class="cont" bindtap="handurl"  data-index="2"  data-orderState="2">
+        <image src="../../static/userimags/待发货 (1).png"></image>
+        <text>待发货</text>
+      </view>
+      <view class="cont" bindtap="handurl"  data-index="3" data-orderState="3">
+        <image src="../../static/userimags/待收货 (3).png"></image>
+        <text>待收货</text>
+      </view>
+      <view class="cont"  bindtap="handurl"  data-index="4"   data-orderState="4">
+        <image src="../../static/userimags/待评价.png"></image>
+        <text>待评价</text>
+      </view>
+      <view class="cont" bindtap="handurl1">
+        <image src="../../static/userimags/退货_售后-我的.png"></image>
+        <text>退货/售后</text>
+      </view>
+
+
+    </view>
+
+  </view>
+  <view class="function m20">
+    <view class="content" bindtap="handur2" data-url="/pages/myEmms/myEmms">
+      <image src="../../static/userimags/拼团.png"></image>
+      <text> 我的拼团</text>
+    </view>
+    <view class="content" bindtap="handur2" data-url="/pages/free/free">
+      <image src="../../static/userimags/试用.png"></image>
+      <text> 我的试用</text>
+    </view>
+    <view class="content"  bindtap="handur2" data-url="/pages/Coupons/Coupons">
+      <image src="../../static/userimags/优惠券.png"></image>
+      <text> 优惠券</text>
+    </view>
+    <view class="content" bindtap="handur2" data-url="/pages/Collection/Collection">
+      <image src="../../static/userimags/收藏夹.png"></image>
+      <text> 收藏夹</text>
+    </view>
+    <view class="content" bindtap="handur2" data-url="/pages/shipping/shipping">
+      <image src="../../static/userimags/我的地址.png"></image>
+      <text> 我的地址</text>
+    </view>
+
+    <view class="content" bindtap="handur2" data-url="/pages/customer/customer">
+      <image src="../../static/userimags/联系客服.png"></image>
+      <text> 联系客服</text>
+    </view>
+    <view class="content" bindtap="handur2" data-url="/pages/aboutIntro/aboutIntro">
+      <image src="../../static/userimags/关于我们.png"></image>
+      <text> 关于我们</text>
+    </view>
+
+    <view class="content" bindtap="handur2" data-url="/pages/UserRelated/UserRelated">
+      <image src="../../static/userimags/用户协议.png"></image>
+      <text> 用户协议</text>
+    </view>
+
+  </view>
+      <view class="ltittle dc">
+      <view></view>
+
+      <image src="../../static/userimags/形状 2.png"></image>
+      <text>猜你喜欢</text>
+
+      <view class="likes"></view>
+
+    </view>
+  <view class="conts">
+    <view class="content">
+      <view class="cont" wx:for="{{cartlist}}" wx:key="*this" bindtap="goto" data-waresId="{{item.waresId}}">
+        <image src="{{item.logoUrl}}"></image>
+        <view class="name pl20">{{item.waresName}}</view>
+        <view class="content_client pl20">
+          <text hidden="{{!item.advertising}}">{{item.advertising}}</text>
+        </view>
+        <view class="price pl20">￥
+          <text class="nowprice">{{item.mallPrice}} </text>
+        </view>
+      </view>
+
+      <view class="weui-loadmore" hidden='{{!loading}}'>
+        <view class="weui-loading"></view>
+        <view class="weui-loadmore__tips">正在加载</view>
+      </view>
+      <view class="weui-loadmore weui-loadmore_line" hidden='{{hasNext}}'>
+        <view class="weui-loadmore__tips weui-loadmore__tips_in-line">到底了</view>
+      </view>
+
+    </view>
+
+  </view>
+
+</view>

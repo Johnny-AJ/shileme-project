@@ -1,0 +1,55 @@
+<!--pages/POINTS_AMT/POINTS_AMT.wxml-->
+<!-- <text>pages/POINTS_AMT/POINTS_AMT.wxml</text> -->
+
+<view class="bgc">
+
+  <view class="top_box" bindtap="handNewvoid">
+    <view class="top_left">
+      <view class="t1">{{item.name}}{{item.phone}}</view>
+      <!-- <view class="t1">花礼晴 13923856789</view> -->
+      <view class="t2">{{item.province}}{{item.city}}{{item.region}}{{item.address}}</view>
+      <!-- <view class="t2">广东省广州市天河区长湴工业园13栋</view> -->
+      <view class="t3">默认</view>
+    </view>
+    <view class="top_right">
+      <image src="../../static/cart/矩形 16.png"></image>
+    </view>
+  </view>
+
+  <!-- 线 -->
+  <view class="imgs1">
+    <image src="../../static/imgs/分割线.png"></image>
+  </view>
+
+  <view class="nav2">
+    <view class="s4">商品合计</view>
+    <view class="s4">蓝药丸面膜</view>
+  </view>
+
+  <view class="nav2">
+    <view class="s4">兑换数量</view>
+    <view class="text4">
+      <i-input-number i-class="inputs" data-id="{{item.id}}" value="{{item.num}}" min="1" max="100" bindchange="handleChange1" />
+    </view>
+  </view>
+
+  <view class="nav2">
+    <view class="s4">所需积分</view>
+    <view class="s5">100积分</view>
+  </view>
+
+  <view class="nav2">
+    <view class="s4">我的积分</view>
+    <view class="s4">230积分</view>
+  </view>
+
+  <!-- 按钮 -->
+  <view class="btn" bindtap="handleConversion">立刻兑换</view>
+</view>
+
+
+
+
+<!-- <view class="text4">
+  <i-input-number i-class="inputs" data-id="{{item.id}}" value="{{item.num}}" min="1" max="100" bindchange="handleChange1" />
+</view> -->

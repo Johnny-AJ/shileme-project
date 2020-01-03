@@ -1,0 +1,132 @@
+<!--pages/credits/credits.wxml-->
+<!-- <text>pages/credits/credits.wxml</text> -->
+
+
+<view class="bgc">
+
+  <!-- tab -->
+  <view class="tabs">
+    <view wx:for="{{title}}" wx:key="*this" class='{{currentIndex==index?"tabNax":" "}}' class="p30" data-aa="{{index}}" bindtap="handTab">
+      <view class='{{currentIndex==index?"tabVax":" "}}'>{{item}}</view>
+    </view>
+  </view>
+  <!-- tab -->
+
+  <!-- 下半身 -->
+  <view class="nav_box">
+
+    <view class="jifen">
+      <view class="r1">积分兑换</view>
+      <view class="more">
+        <view class="p1" bindtap="handurl1" data-url="/pages/credits_copy/credits_copy">更多</view>
+        <view class="imgs1">
+          <image src="../../static/group/矩形 16 拷贝 2.png"></image>
+        </view>
+      </view>
+    </view>
+
+
+    <view class="const_box">
+
+      <view class="photo_box" wx:for="{{conskList}}" wx:key="waresId">
+        <view class="imgss">
+          <image src="{{item.waresImg}}"></image>
+        </view>
+        <view class="nav_text">
+          <view class="v1">{{item.waresName}}</view>
+          <view class="v2">
+            <view class="v3">{{item.integralNumber}}</view>
+            <view class="v4">积分</view>
+          </view>
+          <view class="v5" bindtap="handurl1" data-url="/pages/POINTS_AMT/POINTS_AMT">兑换</view>
+        </view>
+      </view>
+
+      <!-- <view class="photo_box">
+        <view class="imgss">
+          <image src="../../static/imgs/330.330.png"></image>
+        </view>
+        <view class="nav_text">
+          <view class="v1">保湿急救蓝药丸面膜</view>
+          <view class="v2">
+            <view class="v3">1000</view>
+            <view class="v4">积分</view>
+          </view>
+          <view class="v5">兑换</view>
+        </view>
+      </view>
+
+      <view class="photo_box">
+        <view class="imgss">
+          <image src="../../static/imgs/330.330.png"></image>
+        </view>
+        <view class="nav_text">
+          <view class="v1">保湿急救蓝药丸面膜</view>
+          <view class="v2">
+            <view class="v3">1000</view>
+            <view class="v4">积分</view>
+          </view>
+          <view class="v5">兑换</view>
+        </view>
+      </view>
+
+      <view class="photo_box">
+        <view class="imgss">
+          <image src="../../static/imgs/330.330.png"></image>
+        </view>
+        <view class="nav_text">
+          <view class="v1">保湿急救蓝药丸面膜</view>
+          <view class="v2">
+            <view class="v3">1000</view>
+            <view class="v4">积分</view>
+          </view>
+          <view class="v5">兑换</view>
+        </view>
+      </view> -->
+
+    </view>
+  </view>
+  <!-- 下半身 -->
+
+  <!-- 优惠券 -->
+  <view class="conms_box">
+
+    <view class="youhui">
+      <view class="b1">优惠券兑换</view>
+      <view class="more1" bindtap="handurl1" data-url="/pages/consk_box/consk_box">更多
+        <view class="imgs2">
+          <image src="../../static/group/矩形 16 拷贝 2.png"></image>
+        </view>
+      </view>
+    </view>
+
+    <view class="consk_box">
+      <view class="imgs3">
+        <image src="../../static/group/组 3.png"></image>
+      </view>
+      <view class="z1">￥10</view>
+      <view class="z2">满100元可用</view>
+      <view class="gong_box">
+        <view class="g1">全品类通用券</view>
+        <view class="g2">适用平台：全平台</view>
+        <view class="g2">有效期至：2019-08-01</view>
+        <view class="g3">20积分</view>
+      </view>
+    </view>
+
+    <view class="consk_box">
+      <view class="imgs3">
+        <image src="../../static/group/组 3.png"></image>
+      </view>
+      <view class="z1">￥10</view>
+      <view class="z2">满100元可用</view>
+      <view class="gong_box">
+        <view class="g1">全品类通用券</view>
+        <view class="g2">适用平台：全平台</view>
+        <view class="g2">有效期至：2019-08-01</view>
+        <view class="g3">20积分</view>
+      </view>
+    </view>
+  </view>
+  <!-- 优惠券 -->
+</view>

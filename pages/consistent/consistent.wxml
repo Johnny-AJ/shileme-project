@@ -1,0 +1,72 @@
+<!--pages/consistent/consistent.wxml-->
+<!-- <text>pages/consistent/consistent.wxml</text> -->
+
+<view class="bgc">
+
+  <!--  tab栏 -->
+  <view class="tabs">
+    <view wx:for="{{titleList}}" wx:key="*this" class='{{currentIndex==index?"tabNav":""}}' bindtap="handTabs" data-aa="{{index}}">
+      <text class='{{currentIndex==index?"text":""}}'>{{item.title}}</text>
+    </view>
+  </view>
+  <!--  tab栏 -->
+
+  <!-- top -->
+
+  <!-- 试用申领 -->
+  <view class="left" wx:if="{{currentIndex==0}}">
+    <view class="dong" wx:for="{{probationList}}" wx:key="waresId">
+
+      <view class="imgs1">
+        <image src="{{item.waresImg}}"></image>
+      </view>
+
+      <view class="nav_box">
+        <view class="nav_box1">
+          <view class="nav1">{{item.mallPrice}}</view>
+          <view class="nav2">{{item.waresName}}</view>
+        </view>
+        <view class="nav_box2">
+          <!-- <view class="nav3">距结束：{{item.minutes}}</view> -->
+          <view class="nav3">
+            <i-count-down class="nnav2" target="{{item.minutes}}" format="{{myFormat1}}" countdown-class="targettime" bindcallback="listtime" clear-timer="{{clearTimer}}" />
+          </view>
+          <!-- <view class="nav3">距结束：8天14时00分</view> -->
+        </view>
+        <view class="nav_box3" data-id="{{item.id}}" bindtap="handurl1">{{item.title}}</view>
+      </view>
+
+      <view class="dong_1">参团人数{{item.peopleNum}}</view>
+      <view class="dong_2">{{item.title}}</view>
+      <view class="dong_3">保湿急救 网红蓝药丸面膜</view>
+      <view class="dong_4">{{item.buyLimit}}</view>
+
+    </view>
+  </view>
+
+  <!-- 试用报告 -->
+  <view class="right" wx:if="{{currentIndex==1}}" wx:for="{{setList}}" wx:key="waresId">
+    <view class="bav_box">
+
+      <view class="nav_left">
+        <view class="bav1">Dr.Jart 保湿急救 网红蓝 药丸面膜</view>
+        <view class="bav2">
+          <text>精华报告</text> 这款面膜真的是猛 药啊，隔天起来洗完脸，你 的皮肤呈现...
+        </view>
+        <view class="bav3">
+          <view class="imgss1">
+            <image src="../../static/imgs/小樱.jpg"></image>
+          </view>
+          <view class="b1">米粒</view>
+        </view>
+      </view>
+
+      <view class="nav_right">
+        <view class="imgss2">
+          <image src="../../static/imgs/330.330.png"></image>
+        </view>
+        <view class="bav4">共2份试用报告</view>
+      </view>
+    </view>
+  </view>
+</view>

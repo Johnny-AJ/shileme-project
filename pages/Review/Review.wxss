@@ -1,0 +1,49 @@
+/* pages/Review/Review.wxss */
+
+.bgc {
+  width: 750rpx;
+  height: 1334rpx;
+  background-color: skyblue;
+  overflow: hidden;
+}
+
+.review_box {
+  /* border: 1px solid blue; */
+  width: 750rpx;
+  height: 260rpx;
+  margin-top: 20rpx;
+  display: flex;
+  position: relative;
+  background-color: #fff;
+}
+
+.review_box .imgs1 image {
+  width: 170rpx;
+  height: 180rpx;
+  /* border: 1px solid red; */
+  margin: 40rpx 0 40rpx 30rpx;
+}
+
+.review_box .t1 {
+  font-size: 30rpx;
+  font-family: PingFang SC;
+  font-weight: bold;
+  color: rgba(34, 34, 34, 1);
+  margin-left: 21rpx;
+  margin-top: 40rpx;
+}
+
+.review_box .botton {
+  position: absolute;
+  bottom: 40rpx;
+  right: 30rpx;
+  width: 160rpx;
+  height: 60rpx;
+  border: 1px solid rgba(240, 43, 80, 1);
+  border-radius: 30rpx;
+  font-size: 28rpx;
+  font-family: PingFang SC;
+  font-weight: bold;
+  color: rgba(240, 43, 80, 1);
+  text-align: center;
+}

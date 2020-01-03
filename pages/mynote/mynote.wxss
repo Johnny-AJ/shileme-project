@@ -1,0 +1,51 @@
+/* pages/mynote/mynote.wxss */
+
+/* tab */
+
+.indent.checktbs {
+  height: 90rpx;
+  width: 100%;
+}
+
+.indent.tabs {
+  width: 100%;
+  position: fixed;
+  left: 0;
+  top: 0;
+  height: 91rpx;
+  display: flex;
+  background: #fff;
+  align-items: center;
+  padding-bottom: 10rpx;
+  box-sizing: border - box;
+  border: none !important;
+}
+
+/* tab */
+
+/* 申请中 */
+
+.bgc {
+  width: 750rpx;
+  height: 1470rpx;
+  background-color: skyblue;
+  overflow: hidden;
+}
+
+.mynote_box {
+  border: 1px solid #fff
+  
+  
+  ;
+}
+
+.mynote_box .top_nav {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.top_nav .t1 {
+}
+
+/* 申请中 */

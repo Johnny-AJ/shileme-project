@@ -1,0 +1,62 @@
+<!--pages/credits_copy/credits_copy.wxml-->
+<!-- <text>pages/credits_copy/credits_copy.wxml</text> -->
+
+    <view class="const_box">
+
+      <view class="photo_box" wx:for="{{conskList}}" wx:key="waresId">
+        <view class="imgss">
+          <image src="{{item.waresImg}}"></image>
+        </view>
+        <view class="nav_text">
+          <view class="v1">{{item.waresName}}</view>
+          <view class="v2">
+            <view class="v3">{{item.integralNumber}}</view>
+            <view class="v4">积分</view>
+          </view>
+          <view class="v5">兑换</view>
+        </view>
+      </view>
+
+      <!-- <view class="photo_box">
+        <view class="imgss">
+          <image src="../../static/imgs/330.330.png"></image>
+        </view>
+        <view class="nav_text">
+          <view class="v1">保湿急救蓝药丸面膜</view>
+          <view class="v2">
+            <view class="v3">1000</view>
+            <view class="v4">积分</view>
+          </view>
+          <view class="v5">兑换</view>
+        </view>
+      </view>
+
+      <view class="photo_box">
+        <view class="imgss">
+          <image src="../../static/imgs/330.330.png"></image>
+        </view>
+        <view class="nav_text">
+          <view class="v1">保湿急救蓝药丸面膜</view>
+          <view class="v2">
+            <view class="v3">1000</view>
+            <view class="v4">积分</view>
+          </view>
+          <view class="v5">兑换</view>
+        </view>
+      </view>
+
+      <view class="photo_box">
+        <view class="imgss">
+          <image src="../../static/imgs/330.330.png"></image>
+        </view>
+        <view class="nav_text">
+          <view class="v1">保湿急救蓝药丸面膜</view>
+          <view class="v2">
+            <view class="v3">1000</view>
+            <view class="v4">积分</view>
+          </view>
+          <view class="v5">兑换</view>
+        </view>
+      </view> -->
+
+    </view>

@@ -1,0 +1,291 @@
+/* pages/service/service.wxss */
+
+.bgc {
+  width: 750rpx;
+  height: 1903rpx;
+  overflow: hidden;
+  background-color: skyblue;
+}
+
+/* 待处理 */
+
+.kong_box {
+  width: 750rpx;
+  height: 457rpx;
+  background-color: #fff;
+  margin-top: 20rpx;
+  position: relative;
+}
+
+.song {
+  width: 750rpx;
+  height: 90rpx;
+  display: flex;
+  text-align: center;
+  justify-content: space-between;
+}
+
+.song .s1 {
+  font-size: 30rpx;
+  font-family: PingFang SC;
+  font-weight: bold;
+  color: rgba(34, 34, 34, 1);
+  margin-top: 29rpx;
+  margin-left: 25rpx;
+}
+
+.song .s2 {
+  font-size: 30rpx;
+  font-family: PingFang SC;
+  font-weight: 400;
+  color: rgba(240, 43, 80, 1);
+  margin-top: 29rpx;
+  margin-right: 25rpx;
+}
+
+.jong {
+  width: 750rpx;
+  height: 210rpx;
+  border: 1px solid #f5f5f5;
+  display: flex;
+}
+
+.jong .imgs2 image {
+  width: 150rpx;
+  height: 150rpx;
+}
+
+.jong .cong {
+  width: 570rpx;
+  height: 150rpx;
+  /* border: 1px solid red; */
+  margin-left: 28rpx;
+  margin-right: 29rpx;
+}
+
+.cong .nav_box {
+  display: flex;
+  text-align: center;
+  justify-content: space-between;
+  margin-bottom: 25rpx;
+}
+
+.nav_box .c1 {
+  font-size: 28rpx;
+  font-family: PingFang SC;
+  font-weight: bold;
+  color: rgba(34, 34, 34, 1);
+}
+
+.cong .nac_box {
+  display: flex;
+  text-align: center;
+  justify-content: space-between;
+}
+
+.nac_box .c2 {
+  font-size: 28rpx;
+  font-family: PingFang SC;
+  font-weight: 400;
+  color: rgba(153, 153, 153, 1);
+}
+
+.song_box {
+  display: flex;
+  position: absolute;
+  top: 310rpx;
+  right: 30rpx;
+}
+
+.song_box .s1 {
+  font-size: 28rpx;
+  font-family: PingFang SC;
+  font-weight: 400;
+  color: rgba(34, 34, 34, 1);
+}
+
+.song_box .s2 {
+  font-size: 26rpx;
+  font-family: PingFang SC;
+  font-weight: 400;
+  color: rgba(34, 34, 34, 1);
+}
+
+.qong {
+  width: 180rpx;
+  height: 60rpx;
+  border: 1px solid rgba(102, 102, 102, 1);
+  border-radius: 30rpx;
+  position: absolute;
+  top: 367rpx;
+  right: 30rpx;
+  line-height: 60rpx;
+}
+
+.qong .q1 {
+  font-size: 28rpx;
+  font-family: PingFang SC;
+  font-weight: bold;
+  color: rgba(102, 102, 102, 1);
+  text-align: center;
+}
+
+.wong {
+  width: 180rpx;
+  height: 60rpx;
+  border: 1px solid rgba(102, 102, 102, 1);
+  border-radius: 30rpx;
+  position: absolute;
+  top: 367rpx;
+  right: 230rpx;
+  line-height: 60rpx;
+}
+
+.wong .w1 {
+  font-size: 28rpx;
+  font-family: PingFang SC;
+  font-weight: bold;
+  color: rgba(102, 102, 102, 1);
+  text-align: center;
+}
+
+/* 申请失败 */
+.kong_box1 {
+  width: 750rpx;
+  height: 360rpx;
+  background-color: #fff;
+  margin-top: 20rpx;
+  position: relative;
+}
+
+.song {
+  width: 750rpx;
+  height: 90rpx;
+  display: flex;
+  text-align: center;
+  justify-content: space-between;
+}
+
+.song .s1 {
+  font-size: 30rpx;
+  font-family: PingFang SC;
+  font-weight: bold;
+  color: rgba(34, 34, 34, 1);
+  margin-top: 29rpx;
+  margin-left: 25rpx;
+}
+
+.song .s2 {
+  font-size: 30rpx;
+  font-family: PingFang SC;
+  font-weight: 400;
+  color: rgba(240, 43, 80, 1);
+  margin-top: 29rpx;
+  margin-right: 25rpx;
+}
+
+.jong {
+  width: 750rpx;
+  height: 210rpx;
+  border: 1px solid #f5f5f5;
+  display: flex;
+}
+
+.jong .imgs2 image {
+  width: 150rpx;
+  height: 150rpx;
+}
+
+.jong .cong {
+  width: 570rpx;
+  height: 150rpx;
+  /* border: 1px solid red; */
+  margin-left: 28rpx;
+  margin-right: 29rpx;
+}
+
+.cong .nav_box {
+  display: flex;
+  text-align: center;
+  justify-content: space-between;
+  margin-bottom: 25rpx;
+}
+
+.nav_box .c1 {
+  font-size: 28rpx;
+  font-family: PingFang SC;
+  font-weight: bold;
+  color: rgba(34, 34, 34, 1);
+}
+
+.cong .nac_box {
+  display: flex;
+  text-align: center;
+  justify-content: space-between;
+}
+
+.nac_box .c2 {
+  font-size: 28rpx;
+  font-family: PingFang SC;
+  font-weight: 400;
+  color: rgba(153, 153, 153, 1);
+}
+
+.song_box {
+  display: flex;
+  position: absolute;
+  top: 310rpx;
+  right: 30rpx;
+}
+
+.song_box .s1 {
+  font-size: 28rpx;
+  font-family: PingFang SC;
+  font-weight: 400;
+  color: rgba(34, 34, 34, 1);
+}
+
+.song_box .s2 {
+  font-size: 26rpx;
+  font-family: PingFang SC;
+  font-weight: 400;
+  color: rgba(34, 34, 34, 1);
+}
+
+.qong {
+  width: 180rpx;
+  height: 60rpx;
+  border: 1px solid rgba(102, 102, 102, 1);
+  border-radius: 30rpx;
+  position: absolute;
+  top: 367rpx;
+  right: 30rpx;
+  line-height: 60rpx;
+}
+
+.qong .q1 {
+  font-size: 28rpx;
+  font-family: PingFang SC;
+  font-weight: bold;
+  color: rgba(102, 102, 102, 1);
+  text-align: center;
+}
+
+.wong {
+  width: 180rpx;
+  height: 60rpx;
+  border: 1px solid rgba(102, 102, 102, 1);
+  border-radius: 30rpx;
+  position: absolute;
+  top: 367rpx;
+  right: 230rpx;
+  line-height: 60rpx;
+}
+
+.wong .w1 {
+  font-size: 28rpx;
+  font-family: PingFang SC;
+  font-weight: bold;
+  color: rgba(102, 102, 102, 1);
+  text-align: center;
+}

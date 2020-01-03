@@ -1,0 +1,15 @@
+{
+    "component": true,
+    "usingComponents": {
+      "i-tab-bar": "../../components/tab-bar/index",
+      "i-tab-bar-item": "../../components/tab-bar-item/index"
+    },
+
+    "navigationBarBackgroundColor": "#ffffff",
+    "navigationBarTextStyle": "black",
+    "navigationBarTitleText": "下单",
+    "backgroundColor": "#eeeeee",
+    "backgroundTextStyle": "light",
+    "enablePullDownRefresh": false
+ 
+}

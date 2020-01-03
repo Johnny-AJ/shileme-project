@@ -1,0 +1,136 @@
+/* pages/reporting/reporting.wxss */
+
+.bgc {
+  width: 750rpx;
+  height: 100%;
+  overflow: hidden;
+  background-color: #f5f5f5;
+  /* background-color: skyblue; */
+}
+
+.indent.checktbs {
+  height: 90rpx;
+  width: 100%;
+}
+
+.indent.tabs {
+  width: 100%;
+  position: fixed;
+  left: 0;
+  top: 0;
+  height: 91rpx;
+  display: flex;
+  background: #fff;
+  text-align: center;
+  padding: 10rpx;
+  box-sizing: border-box;
+  border: none !important;
+}
+
+/* tab栏 */
+
+/* 内容 */
+
+.nav_box {
+  width: 690rpx;
+  height: 350rpx;
+  background: rgba(255, 255, 255, 1);
+  border-radius: 10rpx;
+  box-sizing: border-box;
+  margin: 30rpx;
+  display: flex;
+}
+
+.nav_box .nav_left {
+  width: 348rpx;
+  height: 290rpx;
+  /* border: 1px solid red; */
+  margin: 30rpx;
+}
+
+.nav_box .nav_right {
+  width: 220rpx;
+  height: 290rpx;
+  /* border: 1px solid red; */
+  margin-left: 32rpx;
+  margin-top: 30rpx;
+  position: relative;
+}
+
+.nav_left .nav1 {
+  font-size: 30rpx;
+  font-family: PingFang SC;
+  font-weight: bold;
+  color: rgba(34, 34, 34, 1);
+}
+
+.nav_left .nav2 {
+  width: 328rpx;
+  height: 107rpx;
+}
+
+.nav2 text {
+  display: inline-block;
+  width: 102rpx;
+  height: 36rpx;
+  background: rgba(249, 225, 232, 1);
+  border-radius: 18rpx;
+  font-size: 20rpx;
+  font-family: PingFang SC;
+  font-weight: 400;
+  color: rgba(240, 43, 80, 1);
+  text-align: center;
+  margin-left: 6rpx;
+}
+
+.nav2 {
+  font-size: 26rpx;
+  font-family: PingFang SC;
+  font-weight: 500;
+  color: rgba(34, 34, 34, 1);
+  margin-top: 28rpx;
+}
+
+.nav3 .imgs1 {
+  margin-top: 20rpx;
+}
+
+.nav3 .imgs1 image {
+  width: 58rpx;
+  height: 58rpx;
+  border-radius: 40rpx;
+}
+
+.nav3 .n1 {
+  font-size: 26rpx;
+  font-family: PingFang SC;
+  font-weight: 500;
+  color: rgba(102, 102, 102, 1);
+  margin-top: 30rpx;
+  margin-left: 10rpx;
+}
+
+.nav3 {
+  display: flex;
+}
+
+.nav_right .imgs2 image {
+  width: 220rpx;
+  height: 290rpx;
+  z-index: -9;
+}
+
+.nav_right .nav4 {
+  width: 220rpx;
+  height: 40rpx;
+  border-radius: 20rpx 0 20rpx 0rpx;
+  background-color: #eccba1;
+  font-size: 20rpx;
+  font-family: PingFang SC;
+  font-weight: 500;
+  color: rgba(98, 73, 43, 1);
+  text-align: center;
+  position: absolute;
+  bottom: 0;
+  left: 0;
+}

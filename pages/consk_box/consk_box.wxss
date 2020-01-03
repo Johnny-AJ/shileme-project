@@ -1,0 +1,66 @@
+/* pages/consk_box/consk_box.wxss */
+
+.consk_box {
+  width: 690rpx;
+  height: 210rpx;
+  position: relative;
+  margin-bottom: 20rpx;
+}
+
+.consk_box .imgs3 {
+  padding-left: 30rpx;
+}
+
+.consk_box .imgs3 image {
+  width: 690rpx;
+  height: 210rpx;
+  z-index: -9;
+}
+
+.consk_box .z1 {
+  font-size: 80rpx;
+  font-family: PingFang SC;
+  font-weight: bold;
+  color: rgba(255, 255, 255, 1);
+  position: absolute;
+  top: 30rpx;
+  left: 61rpx;
+}
+
+.consk_box .z2 {
+  font-size: 30rpx;
+  font-family: PingFang SC;
+  font-weight: 400;
+  color: rgba(255, 255, 255, 1);
+  position: absolute;
+  top: 131rpx;
+  left: 76rpx;
+}
+
+.gong_box {
+  position: absolute;
+  top: 19rpx;
+  left: 310rpx;
+}
+
+.gong_box .g1 {
+  font-size: 30rpx;
+  font-family: PingFang SC;
+  font-weight: 500;
+  color: rgba(34, 34, 34, 1);
+  margin-bottom: 20rpx;
+}
+
+.gong_box .g2 {
+  font-size: 26rpx;
+  font-family: PingFang SC;
+  font-weight: 400;
+  color: rgba(153, 153, 153, 1);
+}
+
+.gong_box .g3 {
+  font-size: 26rpx;
+  font-family: PingFang SC;
+  font-weight: bold;
+  color: rgba(240, 43, 80, 1);
+}

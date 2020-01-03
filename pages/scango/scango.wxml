@@ -1,0 +1,240 @@
+<!-- 扫码购物 -->
+<view class="scango">
+  <view class="scgheade">
+    <view class="slideshow">
+      <swiper class="swipers" autoplay="true" circular="true" indicator-active-color="#F02B50" indicator-dots="true" current="{{currentSwiper}}" bindchange="swiperChange">
+        <block wx:for="{{list.images}}" wx:key="*this">
+          <swiper-item>
+
+            <image src="{{item}}" class="slide-image" width="100%" height="150"></image>
+
+
+          </swiper-item>
+        </block>
+      </swiper>
+      <!--重置小圆点的样式  -->
+      <view class="dots">
+        <block wx:for="{{imgUrls}}" wx:key="*this">
+          <view class="dot{{index == currentSwiper ? ' active' : ''}}"></view>
+        </block>
+      </view>
+
+    </view>
+
+    <view class="scgtxt">
+
+      <view class="title">{{list.name}}</view>
+      <view class="cont">{{list.advertising}}</view>
+      <view class="price">
+        <text class="newprice">￥<text>{{list.mallPrice}}</text></text>
+        <text class="oldprice">￥<text>{{list.marketPrice}}</text></text>
+      </view>
+
+    </view>
+
+
+
+  </view>
+
+  <view class="after">
+    <view class="bz">
+      <image src="../../static/scango/icon.png"></image>
+      <text>正品保证</text>
+    </view>
+    <view class="bz">
+      <image src="../../static/scango/icon.png"></image>
+      <text>精选商品</text>
+    </view>
+    <view class="bz">
+      <image src="../../static/scango/icon.png"></image>
+      <text>门店体验</text>
+    </view>
+
+  </view>
+
+  <view class="discounts">
+
+    <view class="lj" bindtap="toggleDialog">
+      <view class="title">领劵</view>
+      <view class="ljcont">
+
+        <view>满100减10</view>
+        <view>满299减30</view>
+
+      </view>
+      <image src="../../static/scango/矩形 16(1).png"></image>
+    </view>
+
+    <view class="lj" bindtap="toggleDialog1">
+      <view class="title">选择</view>
+      <view class="xzcont">
+        <text wx:if="{{selectedProp.length}}">{{selectedProp.length>0?selectedProp+'，':selectedProp}}{{value1+'件'}}</text>
+      </view>
+      <image src="../../static/scango/矩形 16(1).png"></image>
+    </view>
+
+  </view>
+  <view>{{index111}}</view>
+  <view>{{index222}}</view>
+  <view class="comment">
+    <view class="title" bindtap="goto" data-id="28">
+      <view class="conts">宝贝评价（262）</view>
+      <view class="more">查看更多
+        <image src="../../static/scango/矩形 16 拷贝.png"></image>
+      </view>
+    </view>
+    <view class="pj">
+      <view class="ttop">
+        <view>是正品(225)</view>
+        <view>保湿(225)</view>
+        <view>味道好闻(485)</view>
+        <view>晒图(225)</view>
+      </view>
+      <view class="tbottom">
+        <view class="tblog">
+          <block>
+            <view class="pl">
+              <view class="head">
+                <image src="../../static/scango/椭圆 4.png"></image>
+              </view>
+              <view class="cont">
+                <text class="name">匿名</text>
+                <text class="time">2019-9-6</text>
+                <view class="textcont">
+                  商品很有保证，不错！
+                </view>
+              </view>
+              <view class="imsg">
+                <image src="../../static/scango/椭圆 4.png"></image>
+                <text>2张</text>
+              </view>
+            </view>
+          </block>
+        </view>
+      </view>
+    </view>
+
+  </view>
+  <view class="table">
+    <view class="titile">
+      <view></view>
+      <text>商品信息</text>
+      <view></view>
+    </view>
+
+    <view class="contents" wx:for="{{list.content}}" wx:key='*this'>
+
+      <image src="{{item}}"></image>
+    </view>
+
+  </view>
+
+  <view class="buy" bindtap="buys" data-waresId="{{waresId}}" data-propertyId="{{defaultSku.skuid}}" data-amount="{{value1}}">立即购买</view>
+  <!-- <view class="buy" bindtap="buys" data-waresId="1" data-propertyId="{{defaultSku.skuid}}" data-amount="{{value1}}">立即购买</view> -->
+
+
+  <!-- 领劵弹出层 -->
+  <view class="zan-dialog {{ showDialog ? 'zan-dialog--show' : '' }}" >
+  <!-- <view class="zan-dialog  zan-dialog--show"> -->
+    <view class="zan-dialog__mask" />
+    <view class="zan-dialog__container">
+      <view class="imgs">
+        <image src="../../static/scango/关闭icon.png" bindtap="toggleDialog"></image>
+      </view>
+      <view class="conts">
+        <view class="title"> 优惠劵 </view>
+        <view class="coupon">
+          <view class="cont">
+            <image src="../../static/scango/组 4.png"></image>
+            <view class="cl">
+              <text class="t1">￥10</text>
+              <text class="t2">满100元可用</text>
+            </view>
+            <view class="cr">
+              <view class="rt">
+                <text class="t1">全品类通用券</text>
+                <text class="t2">领取</text>
+                <!-- <text class="t2">已领取</text>  -->
+              </view>
+              <view class=" rb ">
+                <text class="t1 ">适用平台：全平台</text>
+                <text class="t2 ">有效期至：2019-08-01</text>
+              </view>
+            </view>
+          </view>
+          <view class="cont">
+            <image src="../../static/scango/组 4.png"></image>
+            <view class="cl">
+              <text class="t1">￥10</text>
+              <text class="t2">满100元可用</text>
+            </view>
+            <view class="cr">
+              <view class="rt">
+                <text class="t1">全品类通用券</text>
+                <!-- <text class="t2">领取</text>  -->
+                <text class="t3">已领取</text>
+              </view>
+              <view class=" rb ">
+                <text class="t1 ">适用平台：全平台</text>
+                <text class="t2 ">有效期至：2019-08-01</text>
+              </view>
+            </view>
+          </view>
+        </view>
+        <!-- <view class="coupon1">
+          <image src="../../static/imgs/组 7.png"></image>
+          <text>功能暂未开放,敬请期待!</text>
+        </view> -->
+      </view>
+    </view>
+  </view>
+
+  <!-- 选择弹出层 -->
+  <view class="popup {{ showDialog1 ? 'show1' : '' }}">
+    <!-- <view class="popup show1"> -->
+
+    <view class="zan-dialog__mask" bindtap="toggleDialog1" />
+    <view class="zan-dialog__container">
+      <view class="conts">
+        <view class="trade">
+          <view class="imags">
+            <image src="{{defaultSku.imgUrl?defaultSku.imgUrl:pic}}"></image>
+
+          </view>
+          <view class="tcont">
+            <view class="name">{{list.name}}</view>
+            <text class="prcie">￥<text>{{defaultSku.price*value1?defaultSku.price*value1:list.mallPrice}}</text></text>
+            <text class="text"> <text>已选:</text> {{selectedProp.length>0?selectedProp+'，':selectedProp}}{{value1}}件</text>
+            <text class="repertory">库存：<text>{{defaultSku.repertory}}</text></text>
+          </view>
+        </view>
+        <view class="spec ">
+
+          <block wx:for="{{skuGroup}}" wx:for-index="key" wx:for-item="value" wx:key='*this'>
+            <view class="thead">{{key}}</view>
+            <view class="cont">
+              <block wx:for="{{value}}" wx:key='*this'>
+                <text class=".text {{wxs.array_contain(selectedProp,item)?'checkout':''}} {{['dashed',''][wxs.props_contain(allProperties,selectedPropObj,key,item,propKeys)]}}" bindtap="toChooseItem" data-key="{{key}}" data-val="{{item}}">{{item}}</text>
+              </block>
+            </view>
+          </block>
+
+        </view>
+
+        <view class="num">
+
+          <text>数量</text>
+          <view class="totalizer">
+            <i-input-number value="{{ value1 }}" i-class="inputs" min="1" max="100" bindchange="handleChange1" />
+          </view>
+
+        </view>
+        <view class="next" bindtap="toggleDialog1">下一步</view>
+
+      </view>
+    </view>
+  </view>
+
+
+</view>
+<wxs module="wxs" src="../../wxs/number.wxs" />

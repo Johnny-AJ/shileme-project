@@ -1,0 +1,163 @@
+<!--下单-->
+<view class="bgc">
+
+  <!-- 头部部分 -->
+  <view class="big_box">
+    <view class="flex1_box">
+      <view class="flex_box" >
+       <view class="top_box1" wx:if="{{!addressok}}" bindtap = "handurl" >
+          请填写个人信息地址
+        </view>
+        <view class="top_box" wx:else>
+          <view class="t1  ">{{address.name}}
+            <text>{{address.phone}}</text>
+            <text class="text" wx:if="{{address.isDefault ==0}}">默认</text>
+          </view>
+          <view class="t1 t3">{{address.province}}{{address.city}}{{address.region}}{{address.address}}</view>
+          <view class="t2" bindtap="toggleDialog">附近门店自取</view>
+        </view>
+          <view class="top_img" bindtap = "handurl">
+               <image src="../../static/cart/矩形 16.png" ></image>
+          </view>
+      </view>
+      <view class="imgs">
+        <image src="../../static/imgs/分割线.png" class="imgs1"></image>
+      </view>
+    </view>
+  </view>
+  <!-- 头部部分 -->
+
+  <!-- 主体部分 -->
+  <view class="body_box">
+    <view class="body-titile">
+      <text>商品信息</text>
+    </view>
+    <view class="conts">
+      <view class="cont p30" wx:for="{{orderWaresVos}}" wx:key="*this">
+        <view class="imgs">
+          <image src="{{item.logoUrl}}"></image>
+        </view>
+        <view class="cr">
+          <view class="name">
+            <text>{{item.waresName}}</text>
+            <text class="t2"><text>x{{item.amount}}</text></text>
+          </view>
+          <view class="spec">
+            <!-- <text class="t1">规格：{{item.specification}}</text> -->
+            <text class="t1"></text>
+
+          </view>
+          <view class="price">
+            <text class="price">￥{{item.price}}</text>
+          </view>
+          <!-- <view class="gifts">
+            <view class="gl">赠品:</view>
+            <view class="num">
+              <view class="nums">
+                <text>Dr.jart蓝色药丸面膜（5ml/片）</text>
+                <text>X1</text>
+              </view>
+              <view class="nums">
+                <text>Dr.jart蓝色药丸面膜（5ml/片）</text>
+                <text>X1</text>
+              </view>
+            </view>
+          </view> -->
+        </view>
+      </view>
+
+
+    </view>
+    <view class="leave">
+      <text>卖家留言</text>
+      <input type="text" placeholder="选填，有什么可以跟卖家说的" bindinput="bindKeyInput"></input>
+    </view>
+  </view>
+  <view class="coupons">
+    <view class="ctop">
+      <text class="lt">活动</text>
+      <text class="rt">无活动</text>
+    </view>
+    <view class="ccont">
+      <text class="lt">优惠劵</text>
+      <text class="color"  bindtap="toggleDialog" wx:if="{{getListByWaresId1.length>0}}" >{{getListByWaresId1.length}}张可用</text>
+      <text class="color" wx:if="{{getListByWaresId1.length==0}}" >无</text>
+    </view>
+  </view>
+  <view class="minute">
+    <view>
+      <text class="ml">折扣</text>
+      <text class="mr">-￥0.00</text>
+    </view>
+    <view>
+      <text class="ml">优惠券</text>
+      <text class="mr">-￥{{coupon}}</text>
+    </view>
+    <view>
+      <text class="ml">运费</text>
+      <text class="mr color">-￥0.00</text>
+    </view>
+    <view>
+      <text class="ml">合计</text>
+      <text class="mr">￥{{allprice-coupon}}</text>
+    </view>
+
+  </view>
+  <view class="buy">
+    <view class="bl">
+
+      <text>￥{{allprice-coupon}}</text>
+      <text> 合计： </text>
+    </view>
+    <view class="br" bindtap="goto" data-url="/pages/order/order">
+      提交订单
+    </view>
+
+  </view>
+  <!-- 主体部分 -->
+
+
+  <!-- 下半部分 -->
+  <!-- 下半部分 -->
+
+  <!-- 弹出层 -->
+
+    <view class="zan-dialog {{ showDialog ? 'zan-dialog--show' : '' }}">
+    <!-- <view class="zan-dialog  zan-dialog--show"> -->
+    <view class="zan-dialog__mask" />
+    <view class="zan-dialog__container">
+      <view class="imgs">
+        <image src="../../static/scango/关闭icon.png" bindtap="toggleDialog"></image>
+      </view>
+      <view class="conts">
+        <view class="title"> 优惠劵 </view>
+        <view class="coupon">
+          <!-- <view class="cont" wx:for="{{getListByWaresId}}" wx:key="*this" bindtap="getDiscountById"> -->
+          <view class="cont" wx:for="{{getListByWaresId}}" wx:key="*this" bindtap="checkdiscountId" data-discountId="{{item.id}}" >
+            <!-- <image src="../../static/scango/组 4.png" ></image> -->
+            <image src="../../static/scango/组 4.png"  wx:if="{{item.chekok}}"></image>
+            <image  src="../../static/scango/组 3 (2).png"  wx:if="{{!item.chekok}}"></image>
+            <view class="cl">
+              <text class="t1">￥{{item.money}}</text>
+              <text class="t2">满{{item.startMoney}}元可用</text>
+            </view>
+            <view class="cr">
+              <view class="rt">
+                <text class="t1">{{item.money}}</text>       
+              </view>
+              <view class=" rb ">
+                <text class="t1 ">适用平台：{{item.text}}</text>
+                <text class="t2 ">有效期至：{{item.endDate}}</text>
+              </view>
+            </view>
+          </view>
+
+        </view>
+        <!-- <view class="coupon1">
+          <image src="../../static/imgs/组 7.png"></image>
+          <text>功能暂未开放,敬请期待!</text>
+        </view> -->
+      </view>
+    </view>
+  </view>
+</view>

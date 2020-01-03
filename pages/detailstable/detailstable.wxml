@@ -1,0 +1,137 @@
+<!--pages/detailstable/detailstable.wxml-->
+<!-- <text>pages/detailstable/detailstable.wxml</text> -->
+
+
+<view class="bgc">
+
+  <view class="imgs1">
+    <image src="../../static/imgs/组 22.png"></image>
+  </view>
+
+  <!-- 中间 -->
+  <view class="top_box">
+
+    <view class="zong_box_wai">
+      <view class="tu">
+        <view class="imgs2">
+          <image src="../../static/imgs/小樱.jpg"></image>
+        </view>
+      </view>
+
+      <view class="hao">
+        <view class="h1">好物测评人员</view>
+        <view class="h2">2019-8-8</view>
+      </view>
+    </view>
+
+    <view class="song">收到给朋友化了这个妆，她一直很喜欢colorpop家的东西，但是官网一直容易断货，所以就在这里看看能不能找到，结果被我找到了。朋友说这个质地很软糯，是正品没错了。附：朋友的眼睛太好看了。</view>
+
+    <!-- tu -->
+    <view class="photo">
+      <view class="imgs3">
+        <image src="../../static/imgs/1发现.png"></image>
+      </view>
+      <view class="imgs3">
+        <image src="../../static/imgs/1组 17.png"></image>
+      </view>
+    </view>
+
+  </view>
+
+  <!-- 下半部 -->
+  <view class="bottom_box">
+    <view class="yong">
+      <view class="y1">用户评论(6)</view>
+    </view>
+
+    <view class="long">
+      <view class="imga1">
+        <image src="../../static/imgs/小樱.jpg"></image>
+      </view>
+
+      <view class="long2">
+        <view class="l1">好物测评人员</view>
+        <view class="l2">2019-8-8</view>
+      </view>
+    </view>
+
+    <view class="qong">
+      <view class="q1">请问这款面膜适合敏感肌吗？</view>
+    </view>
+
+    <view class="cong">
+      <view class="c1">查看全部6条评论</view>
+      <view class="imgc1">
+        <image src="../../static/imgs/矩形 16 拷贝.png"></image>
+      </view>
+    </view>
+
+    <!-- 热卖 -->
+    <view class="rong">
+      <view class="rong_box">
+        <view class="r1">热卖商品</view>
+      </view>
+
+      <view class="rong1">
+        <view class="rong1_box">
+          <view class="imgn1">
+            <image src="../../static/imgs/imgs1.png"></image>
+          </view>
+
+          <!-- 内容 -->
+          <view class="wong_box">
+            <view class="w1">Dr.Jart 宛若新生保湿面 膜...</view>
+            <view class="w2">￥160</view>
+          </view>
+        </view>
+        <view class="rong1_box">
+          <view class="imgn1">
+            <image src="../../static/imgs/imgs1.png"></image>
+          </view>
+
+          <!-- 内容 -->
+          <view class="wong_box">
+            <view class="w1">Dr.Jart 宛若新生保湿面 膜...</view>
+            <view class="w2">￥160</view>
+          </view>
+        </view>
+        <view class="rong1_box">
+          <view class="imgn1">
+            <image src="../../static/imgs/imgs1.png"></image>
+          </view>
+
+          <!-- 内容 -->
+          <view class="wong_box">
+            <view class="w1">Dr.Jart 宛若新生保湿面 膜...</view>
+            <view class="w2">￥160</view>
+          </view>
+        </view>
+      </view>
+    </view>
+
+    <!-- 评论 -->
+    <view class="dong">
+      <view class="dong_left">
+
+        <view class="photo_box">
+          <view class="imgk1">
+            <image src="../../static/imgs/赞.png"></image>
+          </view>
+          <view class="k1">点赞</view>
+        </view>
+
+        <view class="photo_box1">
+          <view class="imgk2">
+            <image src="../../static/imgs/评论.png"></image>
+          </view>
+          <view class="k2">评论</view>
+        </view>
+
+      </view>
+
+      <view class="dong_right">
+        <view class="m1">全部(2）</view>
+      </view>
+    </view>
+  </view>
+</view>

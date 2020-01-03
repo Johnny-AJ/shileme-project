@@ -1,0 +1,49 @@
+<!--pages/group/group.wxml-->
+
+<!-- 拼团专题  -->
+
+<view class="bgc">
+  <!-- 上图 -->
+  <view class="img">
+    <image src="../../static/group/banner.png"></image>
+  </view>
+  <!-- 下图 -->
+  <view class="img1">
+    <image src="../../static/group/banner.png"></image>
+  </view>
+
+  <!-- 正在拼团 -->
+  <view class="group_box">
+    <view class="group_nav">
+      <view class="t1">
+        <image src="../../static/group/组 9.png"></image>
+      </view>
+      <view class="t2">3.2万人已拼团</view>
+    </view>
+  </view>
+  <!-- 正在拼团 -->
+
+  <!-- 急救 -->
+  <view class="group_box1" wx:for="{{spelllist}}" wx:key="*this">
+
+    <view class="group_nav1">
+      <image src="../../static/group/170.180.png"></image>
+    </view>
+
+    <view class="group_text">
+      <view class="t3">{{item.name}}</view>
+      <view class="t4">{{item.numbers}}人已拼</view>
+      <view class="t5">{{item.number}}人团</view>
+      <view class="t6">￥{{item.price}}</view>
+    </view>
+
+    <view class="group_button" bindtap="handurl" data-id="{{item.id}}"> 
+     <image src="../../static/imgs/矩形 29 拷贝 2.png"></image>
+      <view class="t7">去拼团</view>
+    </view>
+
+  </view>
+
+
+  <!-- 急救 -->
+</view>

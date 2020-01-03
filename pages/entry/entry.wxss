@@ -1,0 +1,120 @@
+/* pages/entry/entry.wxss */
+
+.bgc {
+  width: 750rpx;
+  height: 1334rpx;
+  overflow: hidden;
+  background-color: skyblue;
+}
+
+/* 图片 */
+
+.jong {
+  width: 750rpx;
+  height: 210rpx;
+  border: 1px solid #f5f5f5;
+  display: flex;
+  background-color: #fff;
+  margin-bottom: 20rpx;
+}
+
+.jong .imgs2 {
+  margin-top: 30rpx;
+  margin-left: 20rpx;
+}
+
+.jong .imgs2 image {
+  width: 150rpx;
+  height: 150rpx;
+}
+
+.jong .cong {
+  width: 570rpx;
+  height: 150rpx;
+  /* border: 1px solid red; */
+  margin-left: 28rpx;
+  margin-right: 29rpx;
+}
+
+.cong {
+  padding-top: 30rpx;
+}
+
+.cong .nav_box {
+  display: flex;
+  text-align: center;
+  justify-content: space-between;
+  margin-bottom: 25rpx;
+}
+
+.nav_box .c1 {
+  font-size: 28rpx;
+  font-family: PingFang SC;
+  font-weight: bold;
+  color: rgba(34, 34, 34, 1);
+}
+
+.cong .nac_box {
+  display: flex;
+  text-align: center;
+  justify-content: space-between;
+}
+
+.nac_box .c2 {
+  font-size: 28rpx;
+  font-family: PingFang SC;
+  font-weight: 400;
+  color: rgba(153, 153, 153, 1);
+}
+
+/* 我要 */
+
+.wong {
+  width: 750rpx;
+  height: 140rpx;
+  background-color: #fff;
+  display: flex;
+  position: relative;
+}
+
+.wong .nav_box {
+  position: absolute;
+  top: 26rpx;
+  left: 97rpx;
+}
+
+.wong .imga1 {
+  width: 38rpx;
+  height: 140rpx;
+}
+
+.wong .imga1 image {
+  width: 38rpx;
+  height: 36rpx;
+  margin: 33rpx 29rpx 0 30rpx;
+}
+
+.wong .imga2 {
+  position: absolute;
+  top: 55rpx;
+  right: 30rpx;
+}
+
+.wong .imga2 image {
+  width: 19rpx;
+  height: 30rpx;
+}
+
+.nav_box .n1 {
+  font-size: 30rpx;
+  font-family: PingFang SC;
+  font-weight: bold;
+  color: rgba(34, 34, 34, 1);
+}
+
+.nav_box .n2 {
+  font-size: 26rpx;
+  font-family: PingFang SC;
+  font-weight: 400;
+  color: rgba(153, 153, 153, 1);
+}
