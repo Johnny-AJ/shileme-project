@@ -1,16 +1,4 @@
 {
-<<<<<<< HEAD
-  "usingComponents": {
-   "i-input-number": "../../components/input-number/index",
-    "i-toast": "../../components/toast/index"
-  },
-
-  "navigationBarBackgroundColor": "#ffffff",
-  "navigationBarTextStyle": "black",
-  "backgroundColor": "#eeeeee",
-  "backgroundTextStyle": "light",
-  "navigationBarTitleText": "商品详情"
-=======
     "usingComponents": {
         "i-input-number": "../../components/input-number/index",
         "i-toast": "../../components/toast/index"
@@ -21,6 +9,5 @@
     "backgroundColor": "#eeeeee",
     "backgroundTextStyle": "light",
     "navigationBarTitleText": "商品详情"
->>>>>>> 52f64f72e88e74a5d1fd6ab67dc3de89912ce267
 
 }

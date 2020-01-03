@@ -1,10 +1,6 @@
 {
-  "usingComponents": {},
-<<<<<<< HEAD
-  "navigationBarTitleText": "我的试用报告",
-=======
-  "navigationBarTitleText": "我的试用",
->>>>>>> 52f64f72e88e74a5d1fd6ab67dc3de89912ce267
-  "navigationBarTextStyle": "white",
-  "navigationBarBackgroundColor": "#ff0041"
+    "usingComponents": {},
+    "navigationBarTitleText": "我的试用报告",
+    "navigationBarTextStyle": "white",
+    "navigationBarBackgroundColor": "#ff0041"
 }

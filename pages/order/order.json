@@ -1,20 +1,9 @@
 {
-  "usingComponents": {},
-<<<<<<< HEAD
-  "navigationBarBackgroundColor": "#F02B50",
-  "navigationBarTextStyle": "white",
-  "navigationBarTitleText": "订单详情",
-  "backgroundColor": "#F02B50",
-  "backgroundTextStyle": "light",
-  "enablePullDownRefresh": false
-=======
-
+    "usingComponents": {},
     "navigationBarBackgroundColor": "#F02B50",
     "navigationBarTextStyle": "white",
     "navigationBarTitleText": "订单详情",
     "backgroundColor": "#F02B50",
     "backgroundTextStyle": "light",
     "enablePullDownRefresh": false
-
->>>>>>> 52f64f72e88e74a5d1fd6ab67dc3de89912ce267
 }
