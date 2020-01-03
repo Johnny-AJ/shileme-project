@@ -1,12 +1,12 @@
 {
     "pages": [
         "pages/login/login",
+        "pages/report/report",
+        "pages/fill/fill",
         "pages/consistent/consistent",
         "pages/user/user",
         "pages/UserRelated/UserRelated",
         "pages/index/index",
-        "pages/report/report",
-        "pages/fill/fill",
         "pages/details/details",
         "pages/POINTS_AMT/POINTS_AMT",
         "pages/commodity/commodity",

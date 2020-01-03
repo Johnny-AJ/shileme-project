@@ -1,7 +1,0 @@
-{
-    "usingComponents": {
-        "i-input-number": "../../components/input-number/index",
-        "slide-delete": "../../components/slide-delete/index"
-    },
-    "navigationBarTitleText": "积分兑换"
-}

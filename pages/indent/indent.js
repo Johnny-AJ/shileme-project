@@ -261,8 +261,8 @@ Page({
         })
     },
     comments(e) { //跳转到评论
-
-        // cartlist.forEach(i => {
+        console.log(e)
+        // cartlist.forEach(i c=> {
         //   if (i.orderId == e.currentTarget.dataset.orderid) {
 
         //     cartlist.splice(i, 1)

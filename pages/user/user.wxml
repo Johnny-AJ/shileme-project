@@ -52,7 +52,7 @@
       <image src="http://192.168.2.98:9095//userimags/拼团.png"></image>
       <text> 我的拼团</text>
     </view>
-    <view class="content" bindtap="handur2" data-url="/pages/consistent/consistent">
+    <view class="content" bindtap="handur2" data-url="/pages/report/report">
       <image src="http://192.168.2.98:9095//userimags/试用.png"></image>
       <text> 我的试用</text>
     </view>

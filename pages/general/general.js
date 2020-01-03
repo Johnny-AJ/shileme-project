@@ -33,7 +33,11 @@ Page({
           waresId: options.waresId,
         })
     }
-    this.findStore()//是否存在门店
+
+    // if(wx.getStorageSync('token')){
+    //   this.findStore()//是否存在门店
+    // }
+    
   },
 
   /**
@@ -296,7 +300,7 @@ Page({
     let self =this;
     let prams = { orderId: self.data.orderId};
     http.getRequest('/api/wares/details/getWaresInfo', prams, function (res) {
-     
+    
       self.setData({
         findStore: res.data.data
       })
