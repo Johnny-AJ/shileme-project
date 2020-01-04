@@ -1,73 +1,46 @@
 // pages/general/general.js
 
-let http =require('../../utils/http.js');
-let confing =require("../../utils/config.js")
+let http = require('../../utils/http.js');
+let confing = require("../../utils/config.js")
 Page({
 
   /**
    * 页面的初始数据
    */
   data: {
-    describeVal: 0, //描述评级 1,2,3,4,5
-    logisticsVal: 0, //物流评级  1,2,3,4,5
-    storeVal: 0, //门店评级  1,2,3,4,5
+    describeVal: '', //描述评级 1,2,3,4,5
+    logisticsVal: '', //物流评级  1,2,3,4,5
+    storeVal: '', //门店评级  1,2,3,4,5
     anonymity: 1, //是否匿名 0: 是 1: 否
     commentInfo: '', // 评论内容 最大长度200
     pics: [], //本地存储路径
     images: [], //图片列表
-    orderId:null, //订单Id
+    orderId: null, //订单Id
     waresId: null, //商品id
     remakeStore: '', //对门店评价
     storeIsOk: 0, //是否满意 0满意  1不满意
-    findStore:''
+    findStore: '',
+    btnkey: false
   },
 
   /**
    * 生命周期函数--监听页面加载
    */
   onLoad: function(options) {
-    console.log(options,'options')
+    console.log(options, 'options');
+    wx.setNavigationBarTitle({
+      title: '评论管理'
+    })
     if (options) {
-        this.setData({
-          orderId: options.orderId,
-          waresId: options.waresId,
-        })
+      this.setData({
+        orderId: options.orderId,
+        waresId: options.waresId,
+      })
     }
-
-    // if(wx.getStorageSync('token')){
-    //   this.findStore()//是否存在门店
-    // }
-    
-  },
-
-  /**
-   * 生命周期函数--监听页面初次渲染完成
-   */
-  onReady: function() {
-
-  },
-
-  /**
-   * 生命周期函数--监听页面显示
-   */
-  onShow: function() {
-
+    this.findStore() //是否存在门店
   },
 
 
-  /**
-   * 页面上拉触底事件的处理函数
-   */
-  onReachBottom: function() {
-
-  },
-
-  /**
-   * 用户点击右上角分享
-   */
-  onShareAppMessage: function() {
-
-  },
   onChange1(e) { //描述评级 1,2,3,4,5
     const index = e.detail.index;
     this.setData({
@@ -106,7 +79,7 @@ Page({
         sizeType: ['original', 'compressed'], // original 原图，compressed 压缩图，默认二者都有
         sourceType: ['album', 'camera'], // album 从相册选图，camera 使用相机，默认二者都有
         success: function(res) {
-        
+
           // 返回选定照片的本地文件路径列表，tempFilePath可以作为img标签的src属性显示图片
           var tempFilePaths = res.tempFilePaths;
           // wx.showToast({
@@ -158,106 +131,77 @@ Page({
     }
   },
   storeIsOk(e) { //是否满意
-
-    // console.log(this.data.storeIsOk,'this.data.storeIsOk')
-    // console.log(e.target.dataset.storeisok, ' e.target.dataset.storeisok')
-
-    // if (this.data.s == e.target.dataset.s) {
-    //   return;
-    // }else{
-
-    //   this.setData({
-    //     s:2
-    //   })
-    // }
-
-   
     this.setData({
       storeIsOk: e.target.dataset.storeisok,
-
     })
-    console.log(this.data.storeIsOk, 'this.data.storeIsOk11111')
   },
-  btn() {
+  btn() { //提交
     var self = this;
-    var pics = self.data.pics;
 
-    if (self.data.describeVal > 0 && self.data.logisticsVal>0 && self.data.storeVal>0){
-      if (pics.length > 0) {
-        var imgs = [];
-        pics.forEach(i => {
-          wx.uploadFile({
-            url: confing.domain+'/api/file/save', //上传图片
-            filePath: i,
-            name: 'file',
-            formData: {
-              'user': 'test'
-            },
-            success(res) {
 
-              imgs.push(JSON.parse(res.data).msg)
-              self.setData({
-                images: imgs
-              }, () => {
-                self.save()
-              })
-            }
-          })
-        })
+    let describeVal = self.data.describeVal;
+    let logisticsVal = self.data.logisticsVal;
+    let storeVal = self.data.storeVal;
+
+
+    if (Object.keys(self.data.findStore).length === 0) { //判断是否存在门店
+
+      if (describeVal > 0 && logisticsVal > 0) {
+
       } else {
-        self.save1()
+        wx.showToast({
+          title: '请点亮完成小星星',
+          icon: 'loading',
+          duration: 2000
+        })
+      }
+    } else {
+
+      if (describeVal > 0 && logisticsVal > 0 && storeVal > 0) {
+
+      } else {
+        wx.showToast({
+          title: '请点亮完成小星星',
+          icon: 'loading',
+          duration: 2000
+        })
       }
 
-    }else{
-     
+
+    }
+    var pics = self.data.pics; //本地图片
+
+
+    if (pics.length > 0) {
+      var imgs = [];
+      pics.forEach(i => {
+        wx.uploadFile({
+          url: confing.domain + '/api/file/save', //上传图片
+          filePath: i,
+          name: 'file',
+          formData: {
+            'user': 'test'
+          },
+          success(res) {
+            imgs.push(JSON.parse(res.data).msg)
+            self.setData({
+              images: imgs
+            }, () => {
+              self.save()
+            })
+          }
+        })
+      })
+    } else {
+      self.save1()
     }
 
-    
 
 
   },
 
   save() {
-
-    let prams = {
-      anonymity: self.data.anonymity,
-      commentInfo: self.data.commentInfo,
-      describeVal: self.data.describeVal,
-      images: self.data.images,
-      logisticsVal: self.data.logisticsVal,
-      orderId: self.data.orderId,
-      remakeStore: self.data.remakeStore,
-      storeIsOk: self.data.storeIsOk,
-      storeVal: self.data.storeVal,
-      waresId: self.data.waresId};
-    http.postRequest('/api/user/comment/save', prams, function (res) {
-     
-        if (res.data.code == 0) {
-          wx.showToast({
-            title: '评论成功',  //标题
-            icon: 'success',  //图标，支持"success"、"loading"
-            duration: 2000, //提示的延迟时间，单位毫秒，默认：1500
-
-            success: function () {
-              wx.navigateBack({
-                delta: 1,
-              })
-            }, //接口调用成功的回调函数
-
-          })
-
-
-
-
-
-        }
-        console.log(res, '3333333')
-      
-    })
-
-  },
-  save1() {
-
+    let self=this;
     let prams = {
       anonymity: self.data.anonymity,
       commentInfo: self.data.commentInfo,
@@ -270,15 +214,53 @@ Page({
       storeVal: self.data.storeVal,
       waresId: self.data.waresId
     };
-    http.postRequest('/api/user/comment/save', prams, function (res) {
+    http.postRequest('/api/user/comment/save', prams, function(res) {
 
       if (res.data.code == 0) {
         wx.showToast({
-          title: '评论成功',  //标题
-          icon: 'success',  //图标，支持"success"、"loading"
+          title: '评论成功', //标题
+          icon: 'success', //图标，支持"success"、"loading"
           duration: 2000, //提示的延迟时间，单位毫秒，默认：1500
 
-          success: function () {
+          success: function() {
+            wx.navigateBack({
+              delta: 1,
+            })
+          }, //接口调用成功的回调函数
+
+        })
+
+      }
+      console.log(res, '3333333')
+
+    })
+
+  },
+  save1() {
+    let self = this;
+    
+    let prams = {
+      anonymity: self.data.anonymity,
+      commentInfo: self.data.commentInfo,
+      describeVal: self.data.describeVal,
+      images: self.data.images,
+      logisticsVal: self.data.logisticsVal,
+      orderId: self.data.orderId,
+      remakeStore: self.data.remakeStore,
+      storeIsOk: self.data.storeIsOk,
+      storeVal: self.data.storeVal,
+      waresId: self.data.waresId
+    };
+    console.log(prams,'prams')
+    http.postRequest('/api/user/comment/save', prams, function(res) {
+
+      if (res.data.code == 0) {
+        wx.showToast({
+          title: '评论成功', //标题
+          icon: 'success', //图标，支持"success"、"loading"
+          duration: 2000, //提示的延迟时间，单位毫秒，默认：1500
+
+          success: function() {
             wx.navigateBack({
               delta: 1,
             })
@@ -291,16 +273,18 @@ Page({
 
 
       }
-  
+
 
     })
 
   },
-  findStore(){
-    let self =this;
-    let prams = { orderId: self.data.orderId};
-    http.getRequest('/api/wares/details/getWaresInfo', prams, function (res) {
-    
+  findStore() {
+    let self = this;
+    let prams = {
+      orderId: self.data.orderId
+    };
+    http.getRequest('/api/user/comment/findStore', prams, function(res) {
+
       self.setData({
         findStore: res.data.data
       })

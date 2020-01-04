@@ -22,6 +22,7 @@ page {
   width: 100%;
   background: #f5f5f5;
   overflow: hidden;
+  position: relative;
 }
 
 .order  .orderhead {
@@ -379,4 +380,58 @@ page {
 
 .none {
   display: none;
+}
+/* 
+.ltittle {
+  height: 112rpx;
+  width: 100%;
+}
+
+.ltittle view {
+  width: 50rpx;
+  height: 2rpx;
+  background: #999;
+  margin-right: 31rpx;
+}
+
+.ltittle .likes {
+  margin-left: 31rpx;
+}
+
+.ltittle image {
+  width: 30rpx;
+  height: 26rpx;
+  margin-right: 7rpx;
+} */
+.tbs{
+width: 64rpx;
+height: 100rpx;
+display: flex;
+justify-content: center;
+align-items: center;
+ position: absolute;
+  bottom: 50rpx;
+  left: 50rpx;
+
+}
+.tbs .t1{
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  flex-wrap:wrap;
+ 
+
+}
+.tbs .t1 image{
+  width: 65rpx;
+  height: 59rpx;
+
+}
+.tbs .t1 .text{
+ width: 100%;
+display: flex;
+justify-content: center;
+align-items: center;
+font-size: 24rpx;
+
 }

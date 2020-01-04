@@ -1,4 +1,6 @@
 // pages/Coupons/Coupons.js
+
+let http =require('../../utils/http.js')
 Page({
 
   /**
@@ -73,63 +75,91 @@ Page({
 
   unusedList() {
     var self = this;
-    wx.request({
-      url: 'http://192.168.2.98:9095/api/personal/discount/unusedList',
-      header: {
-        token: wx.getStorageSync('token')
-      },
-      data: {
-        currPage: self.data.currPage,
-        pageSize: 5
-      },
-      success: function(res) {
-
-        self.setData({
-          unusedList:res.data.data.list
-        })
-       
-      }
+    let prams={
+      currPage: self.data.currPage,
+      pageSize: 5
+    }
+    http.getRquset('/api/personal/discount/unusedList',prams,function(res){
+      self.setData({
+        unusedList: res.data.data.list
+      })
     })
+    // wx.request({
+    //   url: 'http://192.168.2.98:9095/api/personal/discount/unusedList',
+    //   header: {
+    //     token: wx.getStorageSync('token')
+    //   },
+    //   data: {
+    //     currPage: self.data.currPage,
+    //     pageSize: 5
+    //   },
+    //   success: function(res) {
+
+    //     self.setData({
+    //       unusedList:res.data.data.list
+    //     })
+       
+    //   }
+    // })
   },
   usedList() {
     var self = this;
-    wx.request({
-      url: 'http://192.168.2.98:9095/api/personal/discount/usedList',
-      header: {
-        token: wx.getStorageSync('token')
-      },
-      data: {
-        currPage: self.data.currPage,
-        pageSize: 5
-      },
-      success: function(res) {
-
-        self.setData({
-          usedList: res.data.data.list
-        })
-        console.log(res, 'res')
-      }
+    let prams = {
+      currPage: self.data.currPage,
+      pageSize: 5
+    }
+    http.getRquset('/api/personal/discount/usedList', prams, function (res) {
+      self.setData({
+        usedList: res.data.data.list
+      })
     })
+    // wx.request({
+    //   url: 'http://192.168.2.98:9095/api/personal/discount/usedList',
+    //   header: {
+    //     token: wx.getStorageSync('token')
+    //   },
+    //   data: {
+    //     currPage: self.data.currPage,
+    //     pageSize: 5
+    //   },
+    //   success: function(res) {
+
+    //     self.setData({
+    //       usedList: res.data.data.list
+    //     })
+    //     console.log(res, 'res')
+    //   }
+    // })
   },
   timeOutList() {
     var self = this;
-    wx.request({
-      url: 'http://192.168.2.98:9095/api/personal/discount/timeOutList',
-      header: {
-        token: wx.getStorageSync('token')
-      },
-      data: {
-        currPage: self.data.currPage,
-        pageSize: 5
-      },
-      success: function (res) {
-
-        self.setData({
-          timeOutList: res.data.data.list
-        })
-
-      }
+    let prams = {
+      currPage: self.data.currPage,
+      pageSize: 5
+    }
+    http.getRquset('/api/personal/discount/timeOutList', prams, function (res) {
+      self.setData({
+        timeOutList: res.data.data.list
+      })
     })
+
+    // wx.request({
+    //   url: 'http://192.168.2.98:9095/api/personal/discount/timeOutList',
+    //   header: {
+    //     token: wx.getStorageSync('token')
+    //   },
+    //   data: {
+    //     currPage: self.data.currPage,
+    //     pageSize: 5
+    //   },
+    //   success: function (res) {
+
+    //     self.setData({
+    //       timeOutList: res.data.data.list
+    //     })
+
+    //   }
+    // })
   },
   goto(){
   

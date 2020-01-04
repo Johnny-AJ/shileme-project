@@ -1,4 +1,5 @@
-// pages/POINTS_AMT/POINTS_AMT.js
+// pages/POINTS_AMT/POINTS_AMT.js;
+let http =require('../../utils/http.js')
 Page({
 
     /**
@@ -33,29 +34,42 @@ Page({
      */
     onLoad: function(options) {
         var self = this;
-        wx.request({
-            url: 'http://192.168.2.98:9095/api/address/info', //ID查询
-            data: {
-                id: options.id
-            },
-            header: {
-                token: wx.getStorageSync('token')
-            },
-            success: function(res) {
-                console.log(res, 'info')
-                var data = res.data.data;
-                self.setData({
-                    name: data.name,
-                    phone: data.phone,
-                    province: data.province,
-                    city: data.city,
-                    region: data.region,
-                    address: data.address,
-                    id: data.id
-                })
-                console.log(self.data, 'data')
-            }
+
+      http.getRuest('api/address/info', { id: options.id},function(res){
+        var data = res.data.data;
+        self.setData({
+          name: data.name,
+          phone: data.phone,
+          province: data.province,
+          city: data.city,
+          region: data.region,
+          address: data.address,
+          id: data.id
         })
+      })
+        // wx.request({
+        //     url: 'http://192.168.2.98:9095/api/address/info', //ID查询
+        //     data: {
+        //         id: options.id
+        //     },
+        //     header: {
+        //         token: wx.getStorageSync('token')
+        //     },
+        //     success: function(res) {
+        //         console.log(res, 'info')
+        //         var data = res.data.data;
+        //         self.setData({
+        //             name: data.name,
+        //             phone: data.phone,
+        //             province: data.province,
+        //             city: data.city,
+        //             region: data.region,
+        //             address: data.address,
+        //             id: data.id
+        //         })
+        //         console.log(self.data, 'data')
+        //     }
+        // })
     },
 
     /**
@@ -72,38 +86,5 @@ Page({
 
     },
 
-    /**
-     * 生命周期函数--监听页面隐藏
-     */
-    onHide: function() {
-
-    },
-
-    /**
-     * 生命周期函数--监听页面卸载
-     */
-    onUnload: function() {
-
-    },
-
-    /**
-     * 页面相关事件处理函数--监听用户下拉动作
-     */
-    onPullDownRefresh: function() {
-
-    },
-
-    /**
-     * 页面上拉触底事件的处理函数
-     */
-    onReachBottom: function() {
-
-    },
-
-    /**
-     * 用户点击右上角分享
-     */
-    onShareAppMessage: function() {
-
-    }
+ 
 })

@@ -22,8 +22,10 @@ Page({
     onLoad(options) {
         // 头部标题
 
-        this.login();
-        this.carlist(); //获取为你推荐的商品列表
+    },
+    onShow:function(){
+      this.login();
+      this.carlist(); //获取为你推荐的商品列表
     },
     onReachBottom: function() { //下拉触发
 
@@ -138,5 +140,11 @@ Page({
         //     fail: function(res) {},
 
         // })
+    },
+    goto(e) { //点击商品跳转详情页
+      let waresid = e.currentTarget.dataset.waresid
+      wx.navigateTo({
+        url: '/pages/details/details?waresid=' + waresid,
+      })
     },
 })

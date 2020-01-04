@@ -4,8 +4,8 @@
   <!-- 头部部分 -->
   <view class="big_box">
     <view class="flex1_box">
-      <view class="flex_box" >
-       <view class="top_box1" wx:if="{{!addressok}}" bindtap = "handurl" >
+      <view class="flex_box">
+        <view class="top_box1" wx:if="{{!addressok}}" bindtap="handurl">
           请填写个人信息地址
         </view>
         <view class="top_box" wx:else>
@@ -14,11 +14,11 @@
             <text class="text" wx:if="{{address.isDefault ==0}}">默认</text>
           </view>
           <view class="t1 t3">{{address.province}}{{address.city}}{{address.region}}{{address.address}}</view>
-          <view class="t2" bindtap="toggleDialog">附近门店自取</view>
+          <!-- <view class="t2" bindtap="toggleDialog">附近门店自取</view> -->
         </view>
-          <view class="top_img" bindtap = "handurl">
-               <image src="http://192.168.2.98:9095//cart/矩形 16.png" ></image>
-          </view>
+        <view class="top_img" bindtap="handurl">
+          <image src="http://192.168.2.98:9095//cart/矩形 16.png"></image>
+        </view>
       </view>
       <view class="imgs">
         <image src="http://192.168.2.98:9095//imgs/分割线.png" class="imgs1"></image>
@@ -80,8 +80,8 @@
     </view>
     <view class="ccont">
       <text class="lt">优惠劵</text>
-      <text class="color"  bindtap="toggleDialog" wx:if="{{getListByWaresId1.length>0}}" >{{getListByWaresId1.length}}张可用</text>
-      <text class="color" wx:if="{{getListByWaresId1.length==0}}" >无</text>
+      <text class="color" bindtap="toggleDialog" wx:if="{{getListByWaresId1.length>0}}">{{getListByWaresId1.length}}张可用</text>
+      <text class="color" wx:if="{{getListByWaresId1.length==0}}">无</text>
     </view>
   </view>
   <view class="minute">
@@ -113,6 +113,8 @@
       提交订单
     </view>
 
+    
+
   </view>
   <!-- 主体部分 -->
 
@@ -122,7 +124,7 @@
 
   <!-- 弹出层 -->
 
-    <view class="zan-dialog {{ showDialog ? 'zan-dialog--show' : '' }}">
+  <view class="zan-dialog {{ showDialog ? 'zan-dialog--show' : '' }}">
     <!-- <view class="zan-dialog  zan-dialog--show"> -->
     <view class="zan-dialog__mask" />
     <view class="zan-dialog__container">
@@ -133,17 +135,17 @@
         <view class="title"> 优惠劵 </view>
         <view class="coupon">
           <!-- <view class="cont" wx:for="{{getListByWaresId}}" wx:key="*this" bindtap="getDiscountById"> -->
-          <view class="cont" wx:for="{{getListByWaresId}}" wx:key="*this" bindtap="checkdiscountId" data-discountId="{{item.id}}" >
+          <view class="cont" wx:for="{{getListByWaresId}}" wx:key="*this" bindtap="checkdiscountId" data-discountId="{{item.id}}">
             <!-- <image src="http://192.168.2.98:9095//scango/组 4.png" ></image> -->
-            <image src="http://192.168.2.98:9095//scango/组 4.png"  wx:if="{{item.chekok}}"></image>
-            <image  src="http://192.168.2.98:9095//scango/组 3 (2).png"  wx:if="{{!item.chekok}}"></image>
+            <image src="http://192.168.2.98:9095//scango/组 4.png" wx:if="{{item.chekok}}"></image>
+            <image src="http://192.168.2.98:9095//scango/组 3 (2).png" wx:if="{{!item.chekok}}"></image>
             <view class="cl">
               <text class="t1">￥{{item.money}}</text>
               <text class="t2">满{{item.startMoney}}元可用</text>
             </view>
             <view class="cr">
               <view class="rt">
-                <text class="t1">{{item.money}}</text>       
+                <text class="t1">{{item.money}}</text>
               </view>
               <view class=" rb ">
                 <text class="t1 ">适用平台：{{item.text}}</text>

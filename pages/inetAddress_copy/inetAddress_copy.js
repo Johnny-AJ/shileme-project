@@ -1,4 +1,6 @@
 // pages/inetAddress_copy/inetAddress_copy.js
+
+let http =require('../../utils/http.js')
 Page({
 
     /**
@@ -25,63 +27,103 @@ Page({
     handtap(e) {
         var self = this
             // 编辑
-        wx.request({
-            url: 'http://192.168.2.98:9095/api/address/update',
-            method: 'POST',
-            data: {
-                name: self.data.name,
-                phone: self.data.phone,
-                province: self.data.province,
-                city: self.data.city,
-                region: self.data.region,
-                address: self.data.address,
-                isDefault: self.data.id,
-                id: self.data.id
-            },
-            header: {
-                'token': wx.getStorageSync("token"), //请求头携带参数
-            },
-            success: (res) => {
-                console.log(res, "修改成功")
-                if (res.data.code == 0) {
-                    wx.navigateBack({
-                        url: 'pages/shipping/shipping'
-                    })
-                } else {
-                    wx.showModal({
-                        title: '提示',
-                        content: res.data.msg,
-                    })
-                }
-            }
-        })
+      let prams={
+        name: self.data.name,
+        phone: self.data.phone,
+        province: self.data.province,
+        city: self.data.city,
+        region: self.data.region,
+        address: self.data.address,
+        isDefault: self.data.id,
+        id: self.data.id
+      }
+      http.postRequest('/api/address/update',prams,function(res){
+        if (res.data.code == 0) {
+          wx.navigateBack({
+            url: 'pages/shipping/shipping'
+          })
+        } else {
+          wx.showModal({
+            title: '提示',
+            content: res.data.msg,
+          })
+        }
+      })
+        // wx.request({
+        //     url: 'http://192.168.2.98:9095/api/address/update',
+        //     method: 'POST',
+        //     data: {
+        //         name: self.data.name,
+        //         phone: self.data.phone,
+        //         province: self.data.province,
+        //         city: self.data.city,
+        //         region: self.data.region,
+        //         address: self.data.address,
+        //         isDefault: self.data.id,
+        //         id: self.data.id
+        //     },
+        //     header: {
+        //         'token': wx.getStorageSync("token"), //请求头携带参数
+        //     },
+        //     success: (res) => {
+        //         console.log(res, "修改成功")
+        //         if (res.data.code == 0) {
+        //             wx.navigateBack({
+        //                 url: 'pages/shipping/shipping'
+        //             })
+        //         } else {
+        //             wx.showModal({
+        //                 title: '提示',
+        //                 content: res.data.msg,
+        //             })
+        //         }
+        //     }
+        // })
     },
     info(e) {
-        var self = this;
-        wx.request({
-            url: 'http://192.168.2.98:9095/api/address/info',
-            data: {
-                id: e.id
-            },
-            header: {
-                token: wx.getStorageSync('token')
-            },
-            success: function(res) {
-                console.log(res, 'info')
-                var data = res.data.data;
-                self.setData({
-                    name: data.name,
-                    phone: data.phone,
-                    province: data.province,
-                    city: data.city,
-                    region: data.region,
-                    address: data.address,
-                    isDefault: data.isDefault,
-                    id: data.id
-                })
-                console.log(self.data, 'data')
-            }
+      var self = this;
+      let prams={
+        id: e.id
+      }
+      http.getRequest('/api/address/info',prams,function(res){
+        var data = res.data.data;
+        self.setData({
+          name: data.name,
+          phone: data.phone,
+          province: data.province,
+          city: data.city,
+          region: data.region,
+          address: data.address,
+          isDefault: data.isDefault,
+          id: data.id
         })
+      })
+
+        
+        // wx.request({
+        //     url: 'http://192.168.2.98:9095/api/address/info',
+        //     data: {
+        //         id: e.id
+        //     },
+        //     header: {
+        //         token: wx.getStorageSync('token')
+        //     },
+        //     success: function(res) {
+        //         console.log(res, 'info')
+        //         var data = res.data.data;
+        //         self.setData({
+        //             name: data.name,
+        //             phone: data.phone,
+        //             province: data.province,
+        //             city: data.city,
+        //             region: data.region,
+        //             address: data.address,
+        //             isDefault: data.isDefault,
+        //             id: data.id
+        //         })
+        //         console.log(self.data, 'data')
+        //     }
+        // })
     },
     change() {
         if (this.data.isDefault == 0) {

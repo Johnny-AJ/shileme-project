@@ -53,8 +53,6 @@ Page({
         this.setSwiperData(); // 轮播图
         this.newselling(); //新卖榜
         this.realistic(); //热卖榜
-
-
     },
 
     onShow: function() {

@@ -1,4 +1,6 @@
 // pages/Collection/Collection.js
+
+let http= require('../../utils/http.js');
 Page({
 
   /**
@@ -53,27 +55,43 @@ Page({
   
   collection() {
     var self = this;
-    wx.request({
-      url: 'http://192.168.2.98:9095/api/shop/collect/getList',
-      header: {
-        token: wx.getStorageSync('token')
-      },
-      data: {
-        currPage: self.data.currPage,
-        pageSize: self.data.pageSize
-      },
-      success: function(res) {
-        var collection = self.data.collection;
-        var collectio1 = res.data.data.list;
-       
-        self.setData({
-          collection: collection.concat(collectio1),
-          hasNext: collectio1.length==5
-        })
-        console.log(res,'rex')
-      }
 
+    let prams= {
+      currPage: self.data.currPage,
+      pageSize: self.data.pageSize
+    }
+    http.getRequest('/api/shop/collect/getList',prams,function(res){
+      var collection = self.data.collection;
+      var collectio1 = res.data.data.list;
+
+      self.setData({
+        collection: collection.concat(collectio1),
+        hasNext: collectio1.length == 5
+      })
+      console.log(res, 'rex')
     })
+
+    // wx.request({
+    //   url: 'http://192.168.2.98:9095/api/shop/collect/getList',
+    //   header: {
+    //     token: wx.getStorageSync('token')
+    //   },
+    //   data: {
+    //     currPage: self.data.currPage,
+    //     pageSize: self.data.pageSize
+    //   },
+    //   success: function(res) {
+    //     var collection = self.data.collection;
+    //     var collectio1 = res.data.data.list;
+       
+    //     self.setData({
+    //       collection: collection.concat(collectio1),
+    //       hasNext: collectio1.length==5
+    //     })
+    //     console.log(res,'rex')
+    //   }
+
+    // })
   },
   handleSlideDelete({ //删除选中的id
     detail: {
@@ -82,37 +100,57 @@ Page({
   }) { //
 
   var self =this;
+    let prams ={
+      id: id
 
+    }
+    http.getRequest('/api/shop/collect/delete',prams,function(res){
+      let collection = self.data.collection;
+      // let productIndex = collection.findIndex(item => item.id === id);
 
+      for (var i = 0; i < collection.length; i++) {
+        collection[i].checked = true;
+        if (id == collection[i].id) {
 
-    wx.request({
-      url: 'http://192.168.2.98:9095/api/shop/collect/delete',
-      header: {
-        token: wx.getStorageSync('token')
-
-      },
-      data: {
-        id: id
-      },
-      success: function(res) {
-        let collection = self.data.collection;
-        // let productIndex = collection.findIndex(item => item.id === id);
-
-        for (var i = 0; i < collection.length; i++) {
-          collection[i].checked = true;
-          if (id == collection[i].id) {
-
-            collection.splice(i, 1);
-
-          }
+          collection.splice(i, 1);
 
         }
-        self.setData({
-          collection
 
-        })
       }
+      self.setData({
+        collection
+
+      })
     })
+
+    // wx.request({
+    //   url: 'http://192.168.2.98:9095/api/shop/collect/delete',
+    //   header: {
+    //     token: wx.getStorageSync('token')
+
+    //   },
+    //   data: {
+    //     id: id
+    //   },
+    //   success: function(res) {
+    //     let collection = self.data.collection;
+    //     // let productIndex = collection.findIndex(item => item.id === id);
+
+    //     for (var i = 0; i < collection.length; i++) {
+    //       collection[i].checked = true;
+    //       if (id == collection[i].id) {
+
+    //         collection.splice(i, 1);
+
+    //       }
+
+    //     }
+    //     self.setData({
+    //       collection
+
+    //     })
+    //   }
+    // })
 
   },
   goto(e){

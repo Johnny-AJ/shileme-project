@@ -3,7 +3,7 @@
 
 <view class="colletion">
 
-  <label class="checkbox" wx:for="{{collection}}" for="checkbox"  wx:key="*this">
+  <label class="checkbox" wx:for="{{collection}}" for="checkbox" wx:key="*this">
     <slide-delete pid="{{item.id}}" bindaction="handleSlideDelete" wx:key="{{item.id}}">
       <view class="collection_nav" bindtap="goto" data-waresId="{{item.waresId}}" wx:if="{{collection.length>0}}">
         <!-- 图片 -->
@@ -15,16 +15,24 @@
         <view class="collection_tt">
           <view class="t1">{{item.waresName}}</view>
           <view class="t2">{{item.collectNum}}人收藏</view>
-          <view class="t3">￥{{item.mallPrice}}</view>
+          <view class="t3">
+            <text>￥{{item.mallPrice}}</text>
+           
         </view>
-        <!-- 字体 -->
-      </view>        
-    </slide-delete>
-  </label>
+         <!-- <view class="addcart">
+            加入购物车
+          </view> -->
+      </view>
+      <!-- 字体 -->
+</view>
+</slide-delete>
+</label>
 
-  <view class="null" wx:if="{{collection.length==0}}" >
-      <image src="http://192.168.2.98:9095//scango/组 1.png"></image>
-     <view> <text>暂无数据！</text></view>
+<view class="null" wx:if="{{collection.length==0}}">
+  <image src="http://192.168.2.98:9095//scango/组 1.png"></image>
+  <view>
+    <text>暂无数据！</text>
   </view>
+</view>
 
 </view>

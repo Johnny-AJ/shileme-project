@@ -21,7 +21,7 @@
 
     </view>
 
-    <view class="general">
+    <view class="general" wx:if="{{!findStore}}">
       <view class="z1">门店服务</view>
       <i-cell class="s1">
         <i-rate bind:change="onChange3" value="{{storeVal}}" size="30"></i-rate>
@@ -37,7 +37,7 @@
       <view class='uploader-img' wx:if="{{pics}}">
         <view class='uploader-list' wx:for="{{pics}}" wx:key="item.length">
           <image src='{{item}}' data-index="{{index}}" mode="scaleToFill" />
-          <image class='delete' data-index="{{index}}" src='http://192.168.2.98:9095//imgs/del.png' mode="widthFix" bindtap='deleteImg' />
+          <image class='delete' data-index="{{index}}" src='http://192.168.2.98:9095/imgs/del.png' mode="widthFix" bindtap='deleteImg' />
         </view>
       </view>
       <view class='upAdd' bindtap='chooseImg'>
@@ -56,19 +56,19 @@
     <view class="titele">天河美丽星美容店</view>
     <view class="isok">
       <view class="imgs">
-        <image src="{{storeIsOk==0?'http://192.168.2.98:9095//imgs/组 4 拷贝.png':'http://192.168.2.98:9095//imgs/组 4 拷贝 (1).png'}}" bindtap="storeIsOk"  data-storeIsOk="0" ></image>
+        <image src="{{storeIsOk==0?'http://192.168.2.98:9095/imgs/组 4 拷贝.png':'http://192.168.2.98:9095/imgs/组 4 拷贝 (1).png'}}" bindtap="storeIsOk"  data-storeIsOk="0" ></image>
        
       </view>
       <view class="imgs">
-       <image src="{{storeIsOk==1?'http://192.168.2.98:9095//imgs/组 4 (1).png ':'http://192.168.2.98:9095//imgs/组 4 (2).png'}}" bindtap="storeIsOk"  data-storeIsOk="1" ></image>
+       <image src="{{storeIsOk==1?'http://192.168.2.98:9095/imgs/组 4 (1).png ':'http://192.168.2.98:9095/imgs/组 4 (2).png'}}" bindtap="storeIsOk"  data-storeIsOk="1" ></image>
        
       </view>
     </view>
     <textarea placeholder="请输入评价信息......" bindblur="message1"></textarea>
    
   </view>
-  <view class="btn"><text bindtap="btn" class="{{describeVal > 0 &&logisticsVal>0 && storeVal>0?'color':''}}">提交</text></view>
-
+  <view class="btn"><text bindtap="btn" class="{{describeVal > 0 &&logisticsVal>0 ?'color':''}}" wx:if="{{findStore}}">提交</text></view>
+  <view class="btn"><text bindtap="btn" class="{{describeVal > 0 &&logisticsVal>0&&storeVal>0 ?'color':''}}" wx:if="{{!findStore}}">提交</text></view>
  
 
 </view>

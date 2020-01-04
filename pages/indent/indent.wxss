@@ -17,9 +17,12 @@ position: relative;
 
 .indent  .checktbs {
   height: 90rpx;
-  width: 100%;
-  display: flex;
-  background: #fff;
+width: 100%;
+display: flex;
+background: #fff;
+position: fixed;
+top: 0;
+
 }
 .indent  .checktbs .tbs{
   width: 150rpx;
@@ -48,6 +51,7 @@ padding-top: 19rpx;
 }
 .conttent {
   width: 100%;
+  margin-top: 20rpx;
  
 }
 

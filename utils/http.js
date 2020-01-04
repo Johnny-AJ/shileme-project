@@ -55,11 +55,10 @@ function request(url, params, method, onSuccess, onFailed) {
     },
     success: function(res) {
 
-      let token = wx.getStorageSync("token");
-      console.log(token,'toekn')
+    
+   
       wx.hideLoading();
-      // console.log(res.data, '9999995555')
-
+    
       if (res.data) {
 
         if (res.data.code == 0) {
@@ -70,10 +69,10 @@ function request(url, params, method, onSuccess, onFailed) {
             onFailed(res.data.message); //request failed
           }
           /** end 处理结束*/
-        } else if (res.data.code) {
+        } else if (res.data.code==-1) {
           {
 
-            console.log(res.data.code,'9999999')
+          
             wx.navigateTo({
               url: '/pages/login/login',
 

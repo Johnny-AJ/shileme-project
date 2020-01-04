@@ -2,7 +2,16 @@
 <view class="scango">
   <view class="scgheade">
     <view class="slideshow">
-      <swiper class="swipers" autoplay="true" circular="true" indicator-active-color="#F02B50" indicator-dots="true" current="{{currentSwiper}}" bindchange="swiperChange">
+
+       <!-- <swiper indicator-dots="{{indicatorDots}}"
+        autoplay="{{autoplay}}" interval="{{interval}}" duration="{{duration}}">
+        <block wx:for="{{background}}" wx:key="*this">
+          <swiper-item>
+            <view class="swiper-item {{item}}"></view>
+          </swiper-item>
+        </block>
+      </swiper> -->
+      <swiper class="swipers" autoplay="true" interval="3000" duration="2000" circular="true"  indicator-active-color="#F02B50" indicator-dots="true" current="{{currentSwiper}}" bindchange="swiperChange">
         <block wx:for="{{list.images}}" wx:key="*this">
           <swiper-item>
 
@@ -12,12 +21,12 @@
           </swiper-item>
         </block>
       </swiper>
-      <!--重置小圆点的样式  -->
-      <view class="dots">
+      <!-- 重置小圆点的样式  --> 
+     <view class="dots">
         <block wx:for="{{imgUrls}}" wx:key="*this">
           <view class="dot{{index == currentSwiper ? ' active' : ''}}"></view>
         </block>
-      </view>
+      </view> 
 
     </view>
 
@@ -27,7 +36,7 @@
       <view class="cont">{{list.advertising}}</view>
       <view class="price">
         <text class="newprice">￥<text>{{list.mallPrice}}</text></text>
-        <text class="oldprice">￥<text>{{list.marketPrice}}</text></text>
+        <text class="oldprice">￥<text wx:if="{{list.marketPrice}}">{{list.marketPrice}}</text><text wx:if="{{!list.marketPrice}}">{{list.mallPrice}}</text> </text>
       </view>
 
     </view>
@@ -82,7 +91,7 @@
         <image src="http://192.168.2.98:9095//scango/矩形 16 拷贝.png"></image>
       </view>
     </view>
-    <view class="pj">
+    <view class="pj"  hidden="{{getcommentList.length==0}}">
 
       <view class="tbottom">
         <view class="tblog">
@@ -119,7 +128,7 @@
       <text>商品信息</text>
       <view></view>
     </view>
-
+    <view class="contentTitle">{{contentTitle}}</view>
     <view class="contents" wx:for="{{list.content}}" wx:key='*this'>
 
       <image src="{{item}}"></image>
@@ -129,7 +138,7 @@
   <view class="or">
     <view class="or-left">
       <view bindtap="goback">
-        <image src="http://192.168.2.98:9095//imgs/矢量智能对象.png"></image>
+        <image src="../../static/imgs/矢量智能对象.png"></image>
         <text class="color">首页</text>
 
       </view>
@@ -139,7 +148,7 @@
 
       </view>
       <view bindtap="goto">
-        <image src="http://192.168.2.98:9095//imgs/购物车.png"></image>
+        <image src="../../static/imgs/购物车.png"></image>
         <text>购物车</text>
 
       </view>

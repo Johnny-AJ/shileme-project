@@ -193,11 +193,10 @@
 
 .comment {
   width: 100%;
-  height: 320rpx;
   box-sizing: border-box;
   padding: 0 0 0 30rpx;
   margin-top: 20rpx;
-  position: relative;
+
   background: #fff;
 }
 
@@ -236,8 +235,8 @@
 }
 
 .comment  .pj {
-  height: 409rpx;
-  position: absolute;
+  height: 250rpx;
+ 
   left: 0rpx;
 }
 
@@ -852,7 +851,14 @@
   width: 17rpx;
   height: 17rpx;
 }
+.contentTitle{
+  width: 100%;
+  font-size: 25rpx;
+  font-family:PingFang SC;
+  padding: 50rpx 0;
+  text-align: center;
 
+}
 .conts .coupon1 {
   width: 100%;
   height: 700rpx;

@@ -1,11 +1,14 @@
 // pages/order/order.js
+let http = require("../../utils/http.js");
+const app =getApp();
 Page({
 
     /**
      * 页面的初始数据
      */
     data: {
-        data: {}
+        data: {},
+    
     },
 
     /**
@@ -24,15 +27,22 @@ Page({
             this.get_data2();
 
         }
-
+      this.carlist(); //获取为你推荐的商品列表
     },
 
-    /**
-     * 生命周期函数--监听页面初次渲染完成
-     */
-    onReady: function() {
+  onReachBottom: function () { //下拉触发
 
-    },
+
+    var self = this;
+    if (!self.data.hasMore) return;
+    self.setData({
+      currPage: self.data.currPage + 1,
+      loading: true
+    }, () => {
+      self.carlist()
+    })
+
+  },
     /**
      * 生命周期函数--监听页面显示
      */
@@ -186,38 +196,52 @@ Page({
         })
     },
     busy() {
-        wx: wx.request({
-            url: 'http://192.168.2.98:9095/api/order/updateOrderState',
-            data: {
-                orderNo
-            },
-            header: {
-                token: wx.getStorageSync('token')
-            },
 
-            success: function(res) {
-                wx.requestPayment({
-                    timeStamp: res.data.data.timeStamp,
-                    nonceStr: res.data.data.nonceStr,
-                    package: res.data.data.package,
-                    signType: res.data.data.signType,
-                    paySign: res.data.data.paySign,
-                    success(res) {
-
-                        if (res.errMsg.split(":")[1] == "ok") {
-                            var allprice = self.data.allprice;
-
-                            wx.navigateTo({
-                                url: '/pages/view/view?allprice=' + allprice,
-                            })
-                        } else {
-                        }
-                    }
-
-                })
-            },
-            fail: function(res) {},
-
+        wx.navigateTo({
+          url: 'pages/null/null',
+      
         })
+
+        // wx: wx.request({
+        //     url: 'http://192.168.2.98:9095/api/order/updateOrderState',
+        //     data: {
+        //         orderNo
+        //     },
+        //     header: {
+        //         token: wx.getStorageSync('token')
+        //     },
+
+        //     success: function(res) {
+        //         wx.requestPayment({
+        //             timeStamp: res.data.data.timeStamp,
+        //             nonceStr: res.data.data.nonceStr,
+        //             package: res.data.data.package,
+        //             signType: res.data.data.signType,
+        //             paySign: res.data.data.paySign,
+        //             success(res) {
+
+        //                 if (res.errMsg.split(":")[1] == "ok") {
+        //                     var allprice = self.data.allprice;
+
+        //                     wx.navigateTo({
+        //                         url: '/pages/view/view?allprice=' + allprice,
+        //                     })
+        //                 } else {
+        //                 }
+        //             }
+
+        //         })
+        //     },
+        //     fail: function(res) {},
+
+        // })
+    },
+    goto22(e){
+      wx.reLaunch({
+        url: e.currentTarget.dataset.url,
+      })
+      
     }
+
+ 
 })

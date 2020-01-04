@@ -1,18 +1,60 @@
 <!--pages/view/view.wxml-->
 <view class="view">
 
-    <view class="cont">
-      <view class="imgs">
-        <image src="http://192.168.2.98:9095//imgs/插画.png"></image>
-      </view>
-      <text>订单支付成功</text>
+  <view class="cont">
+    <view class="imgs">
+      <image src="http://192.168.2.98:9095//imgs/插画.png"></image>
     </view>
-    <view class="cont1">
-      <view><text>支付方式：微信零钱</text></view>
-      <view><text>支付金额：￥{{allprice}}</text></view>
-    
+    <text>订单支付成功</text>
+  </view>
+  <view class="cont1">
+    <view>
+      <text>支付方式：微信零钱</text>
     </view>
-    <view class="see" bindtap="goto">
-      查看订单
+    <view>
+      <text>支付金额：￥{{allprice}}</text>
     </view>
+
+  </view>
+  <view class="see" bindtap="goto">
+    查看订单
+  </view>
+
+
 </view>
+  <view class="lik">
+
+    <view class="ltittle dc">
+      <view></view>
+
+      <image src="http://192.168.2.98:9095//userimags/形状 2.png"></image>
+      <text>猜你喜欢</text>
+
+      <view class="likes"></view>
+
+    </view>
+    <view class="conts">
+      <view class="content">
+        <view class="cont" wx:for="{{cartlist}}" wx:key="*this" bindtap="goto11" data-waresId="{{item.waresId}}">
+          <image src="{{item.logoUrl}}"></image>
+          <view class="name pl20">{{item.waresName}}</view>
+          <view class="content_client pl20">
+            <text hidden="{{!item.advertising}}">{{item.advertising}}</text>
+          </view>
+          <view class="price pl20">￥
+            <text class="nowprice">{{item.mallPrice}} </text>
+          </view>
+        </view>
+
+        <view class="weui-loadmore" hidden='{{!loading}}'>
+          <view class="weui-loading"></view>
+          <view class="weui-loadmore__tips">正在加载</view>
+        </view>
+        <view class="weui-loadmore weui-loadmore_line" hidden='{{hasNext}}'>
+          <view class="weui-loadmore__tips weui-loadmore__tips_in-line">到底了</view>
+        </view>
+
+      </view>
+
+    </view>
+  </view>

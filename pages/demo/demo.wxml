@@ -1,11 +1,7 @@
- <view class='uploader-img  flex justify-content-start' wx:if="{{pics}}">
-          <view class='uploader-list' wx:for="{{pics}}" wx:key="item.length">
-             <image src='{{item}}' data-index="{{index}}" mode="scaleToFill" bindtap='previewImg1'/>
-             <image class='delete' data-index="{{index}}" src='../../../images/icon10.png' mode="widthFix" bindtap='deleteImg'/>
-          </view>
-        </view>
-        <view class='upAdd' bindtap='chooseImg'>
-          <image src='../../../images/img11.png' mode="widthFix"/>
-        </view>
-
-        <view class="btn" bindtap="btn">提交</view>
+<radio-group bindchange="radioChange">
+   <label wx:for="{{radioItems}}" wx:key="value">
+       <radio class="weui-check" value="{{item.value}}" checked="{{item.checked}}"/>
+       <icon  class="iconfont {{item.classname}}"></icon >
+   </label>
+   <view class='stars'>{{stars}}分</view>
+</radio-group>

@@ -1,4 +1,5 @@
-const app = getApp()
+const app = getApp();
+let http =require('../../utils/http.js')
     // pages/cart/cart.js
 Page({
 
@@ -126,34 +127,55 @@ Page({
         var self = this;
         var chooseGoods = self.data.chooseGoods;
         var id = e.currentTarget.dataset.id;
-        wx.request({
-            url: 'http://192.168.2.98:9095//api/shop/cart/updateAmount',
-            method: 'GET',
-            header: {
-                token: wx.getStorageSync('token')
-            },
-            data: {
-                amount: e.detail.value,
-                id: id
-            },
-            success: function(res) {
+      let prams={
+        amount: e.detail.value,
+        id: id
+      }
+      http.getRuest('/api/shop/cart/updateAmount',prams,function(res){
+        if (res.data.code == 0) {
 
-                if (res.data.code == 0) {
-
-                    for (var i = 0; i < chooseGoods.length; i++) {
-                        if (chooseGoods[i].id == id) {
-                            chooseGoods[i].amount = e.detail.value;
-                        }
-                        self.setData({
-
-                            chooseGoods
-                        })
-                    }
-
-                    self.totalPrice();
-                }
+          for (var i = 0; i < chooseGoods.length; i++) {
+            if (chooseGoods[i].id == id) {
+              chooseGoods[i].amount = e.detail.value;
             }
-        })
+            self.setData({
+
+              chooseGoods
+            })
+          }
+
+          self.totalPrice();
+        }
+      })
+
+        // wx.request({
+        //     url: 'http://192.168.2.98:9095//api/shop/cart/updateAmount',
+        //     method: 'GET',
+        //     header: {
+        //         token: wx.getStorageSync('token')
+        //     },
+        //     data: {
+        //         amount: e.detail.value,
+        //         id: id
+        //     },
+        //     success: function(res) {
+
+        //         if (res.data.code == 0) {
+
+        //             for (var i = 0; i < chooseGoods.length; i++) {
+        //                 if (chooseGoods[i].id == id) {
+        //                     chooseGoods[i].amount = e.detail.value;
+        //                 }
+        //                 self.setData({
+
+        //                     chooseGoods
+        //                 })
+        //             }
+
+        //             self.totalPrice();
+        //         }
+        //     }
+        // })
 
 
 
@@ -165,20 +187,22 @@ Page({
     }) { //
 
 
+      http.getRuest('/api/shop/cart/delete', { id: id},function(res){
 
-        wx.request({
-            url: 'http://192.168.2.98:9095//api/shop/cart/delete',
-            header: {
-                token: wx.getStorageSync('token')
+      })
+        // wx.request({
+        //     url: 'http://192.168.2.98:9095//api/shop/cart/delete',
+        //     header: {
+        //         token: wx.getStorageSync('token')
 
-            },
-            data: {
-                id: id
-            },
-            success: function(res) {
+        //     },
+        //     data: {
+        //         id: id
+        //     },
+        //     success: function(res) {
 
-            }
-        })
+        //     }
+        // })
 
         let chooseGoods = this.data.chooseGoods;
         let productIndex = chooseGoods.findIndex(item => item.id === id);
@@ -318,6 +342,14 @@ Page({
         var dtos = self.data.dtos;
 
       console.log(chooseGoods,'chooseGoods');
+
+      if (dtos.length==0){
+        wx.showToast({
+          title: '请勾选商品',
+          icon: 'loading',
+          duration: 2000
+        })
+      }
       console.log(dtos, 'dtos');
         var a = {}
   

@@ -26,10 +26,12 @@ Page({
         allProperties: [],
         pic: '',
         token: '',
-
+        getcommentList:[],//评论数组
         getListByWaresId: [],
         getListByWaresId1: [],
-        totalCount: 0
+        totalCount: 0,
+        contentTitle:'',
+        isCollect:1
     },
 
     /**
@@ -108,15 +110,13 @@ Page({
 
 
                 self.setData({
-                    list: res.data.data
+                  list: res.data.data,
+                  price: self.data.mallPrice,
+                  pic: res.data.data.images[0],
+                  isCollect: res.data.data.isCollect,
+                  contentTitle: res.data.data.contentTitle
                 })
-                self.setData({
-                  price: self.data.mallPrice
-                })
-
-                self.setData({
-                  pic: res.data.data.content[0]
-                })
+             
 
 
             })
@@ -158,9 +158,12 @@ Page({
     },
     // 轮播图
     swiperChange: function(e) {
+
+      if (e.detail.source == 'touch') {
         this.setData({
             currentSwiper: e.detail.current
         })
+      }
     },
     // input输入框
     handleChange1({
@@ -325,12 +328,12 @@ Page({
 
             },
             success: function(res) {
-
+                
                 self.setData({
-                    getcommentList: res.data.data.list,
+                  getcommentList: res.data.data.list,
                     totalCount: res.data.data.totalCount
                 })
-                console.log(res, 'getCommentList')
+              console.log(self.data.getcommentList, 'getCommentList')
             }
         })
     },

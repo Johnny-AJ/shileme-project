@@ -16,7 +16,7 @@
     <view class="address p30">
       <image src="http://192.168.2.98:9095//imgs/居乐乐 地点.png"></image>
       <text>{{data.province}}{{data.city}}{{data.region}}{{data.address}}</text>
-      <text class="pacode" wx:if="{{data.orderState !=1}}">查看取件码</text>
+      <!-- <text class="pacode" wx:if="{{data.orderState !=1}}">查看取件码</text> -->
     </view>
 
     <image src="http://192.168.2.98:9095//imgs/分割线.png" class="imgs"></image>
@@ -106,6 +106,16 @@
     <text class="reminders" wx:if="{{data.orderState==3||data.orderState==4}}">物流信息</text>
 
     <text class="check reminders" wx:if="{{data.orderState==1}}" bindtap="busy">付款</text>
-    <text class="feedback">我要反馈</text>
+    <!-- <text class="feedback">我要反馈</text> -->
   </view>
+  <view  class="tbs">
+  <view class="t1" bindtap="goto22" data-url="/pages/index/index">
+    <image src="../../static/imgs/imgsa1 (6).png"></image>
+   <view class="text"> <text>首页</text></view>
+  </view>
+ 
+   
+
+  </view>
+ 
 </view>

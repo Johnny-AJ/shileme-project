@@ -63,3 +63,110 @@ justify-content: center;
 align-items: center;
 margin-top: 60rpx;
 }
+
+
+.lik .conts {
+  width: 750rpx;
+  box-sizing: border-box;
+  padding: 0 20rpx;
+  padding-top: 1rpx;
+  background: #f5f5f5;
+}
+
+ .lik .conts .cont image {
+  width: 335rpx;
+  height: 300rpx;
+}
+
+.lik{
+  background: #fff;
+}
+ .lik .conts .cont {
+  width: 335rpx;
+  height: 500rpx;
+  background: #fff;
+  margin-left: 20rpx;
+  margin-top: 20rpx;
+}
+
+.lik .conts .content {
+  width: 750rpx;
+  display: flex;
+  flex-wrap: wrap;
+  background: #f5f5f5;
+  box-sizing: border-box;
+  align-items: space-between;
+  margin: -20rpx 0 0 -10rpx;
+}
+
+.lik .content .weui-loadmore__tips_in-line {
+  background: #f5f5f5;
+}
+
+.lik .pl20 {
+  box-sizing: border-box;
+  padding-left: 10rpx;
+}
+
+.lik .conts .cont .name {
+  font-size: 28rpx;
+  font-family: PingFang SC;
+  font-weight: bold;
+  color: rgba(34, 34, 34, 1);
+  margin-top: 12rpx;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
+
+.lik .conts .cont .content_client {
+  height: 36rpx;
+  font-size: 26rpx;
+  font-family: PingFang SC;
+  font-weight: 400;
+  margin-top: 12rpx;
+  color: rgba(102, 102, 102, 1);
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
+
+.lik .conts .cont .price {
+  font-size: 20rpx;
+  font-family: PingFang SC;
+  font-weight: bold;
+  color: rgba(231, 86, 79, 1);
+}
+
+.lik .conts .cont .price .nowprice {
+  font-size: 24rpx;
+  color: rgba(231, 86, 79, 1);
+}
+.lik .dc {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+} 
+
+.ltittle {
+  height: 112rpx;
+  width: 100%;
+}
+
+.ltittle view {
+  width: 50rpx;
+  height: 2rpx;
+  background: #999;
+  margin-right: 31rpx;
+}
+
+.ltittle .likes {
+  margin-left: 31rpx;
+}
+
+.ltittle image {
+  width: 30rpx;
+  height: 26rpx;
+  margin-right: 7rpx;
+}
+

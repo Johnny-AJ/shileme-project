@@ -13,9 +13,7 @@ Page({
      */
     onLoad: function(options) {
         // 头部标题
-        wx.setNavigationBarTitle({
-            title: '关于我们'
-        })
+       
     },
 
     /**

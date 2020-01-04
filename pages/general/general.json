@@ -1,6 +1,8 @@
 {
-  "usingComponents": {
-    "i-rate": "../../components/rate/index"
-  },
-  "navigationBarTitleText": "评分管理"
+   
+      "usingComponents": {
+        "i-rate": "../../components/rate/index"
+      },
+      "navigationBarTitleText": "购物车"
+
 }
