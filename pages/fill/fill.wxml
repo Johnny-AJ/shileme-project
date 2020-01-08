@@ -2,13 +2,30 @@
 <!-- <text>pages/fill/fill.wxml</text> -->
 
 
-<view class="box">
-  <textarea placeholder="请输入试用体验..."></textarea>
+
+<textarea name="report" bindblur="handInput" placeholder="请输入试用体验..."></textarea>
+
+
+<view class="imgs" bindtap='upload' type='primary'>
+  <image wx:if="{{}}" src="../../static/group/组 2.png"></image>
+
+  <!-- 上传按钮+框 -->
+  <!-- <view class='ui_uploader' wx:if="{{showUpload}}">点我</view> -->
+
+  <!-- 容器 -->
+  <view class='photo_box'>
+    <!-- 根据已选择的图片临时路径数组展示图片-->
+    <view class='ui_uploader_item' wx:for="{{uploaderList}}" wx:key="{{index}}">
+      <!-- 删除-->
+      <icon class='ui_uploader_item_icon' bindtap='clearImg' data-index="{{index}}" type="clear" size="20" color="red" />
+      <!-- 图片-->
+      <image bindtap='showImg' src='{{item}}'></image>
+    </view>
+  </view>
+
+
+
 </view>
 
-<view class="imgs">
-  <image src="../../static/group/组 2.png"></image>
-</view>
 
-
-<view class="btn">提交</view>
+<view class="btn" bindtap="handleBtn" data-btn="{{btn}}">提交</view>

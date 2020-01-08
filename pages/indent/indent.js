@@ -9,35 +9,35 @@ Page({
   data: {
     current: 0,
     tbslist: [{
-        titie: '全部',
-        indes: 0,
-        orderState: '',
-        currPage: 1
-      },
-      {
-        titie: '待付款',
-        indes: 1,
-        orderState: 1,
-        currPage: 1
-      },
-      {
-        titie: '待发货',
-        indes: 2,
-        orderState: 2,
+      titie: '全部',
+      indes: 0,
+      orderState: '',
+      currPage: 1
+    },
+    {
+      titie: '待付款',
+      indes: 1,
+      orderState: 1,
+      currPage: 1
+    },
+    {
+      titie: '待发货',
+      indes: 2,
+      orderState: 2,
 
-      },
-      {
-        titie: '待收货',
-        indes: 3,
-        orderState: 3,
+    },
+    {
+      titie: '待收货',
+      indes: 3,
+      orderState: 3,
 
-      },
-      {
-        titie: '待评价',
-        indes: 4,
-        orderState: 4,
+    },
+    {
+      titie: '待评价',
+      indes: 4,
+      orderState: 4,
 
-      },
+    },
     ],
     cartlist: [], //全部数据
     cartlist1: [], //拿到最新的数据
@@ -67,222 +67,135 @@ Page({
         })
 
 
-      } else {
-        this.setData({
-          cartlist: [],
-          current: 0,
-          currPage: 1,
-          orderState: ''
-        })
+        console.log(options)
+        if (options.index == 0) {
+          this.setData({
+            current: options.index,
+            orderState: ''
+          })
+        } else {
 
-      }
-      this.software()
-    }
+          this.setData({
+            current: options.index,
+            orderState: options.orderState
+          })
+        }
 
-
-  },
-  /**
-   * 生命周期函数--监听页面加载
-   */
-  onLoad: function(options) {
-
-    if (options.index == 0) {
-      this.setData({
-        current: options.index,
-        orderState: ''
-      })
-    } else {
-
-      this.setData({
-        current: options.index,
-        orderState: options.orderState
-      })
-    }
-
-  },
-
-  /**
-   * 生命周期函数--监听页面初次渲染完成
-   */
-  onReady: function() {
-
-  },
-
-  /**
-   * 生命周期函数--监听页面显示
-   */
-  onShow: function() {
-    this.software();
-
-  },
-
-
-
-  /**
-   * 页面上拉触底事件的处理函数
-   */
-  onReachBottom: function() {
-    var self = this;
-    if (!self.data.hasMore) return;
-    self.setData({
-      currPage: self.data.currPage + 1,
-      loading: true
-    }, () => {
-      self.software()
-    })
-
-    console.log(self.data, 'currPage')
-  },
-
-  /**
-   * 用户点击右上角分享
-   */
-  onShareAppMessage: function() {
-
-  },
-  software() {
-    var self = this;
-    wx.request({
-      url: 'http://192.168.2.98:9095/api/order/getUserOrderList?time=' + new Date().getTime(),
-      header: {
-        token: wx.getStorageSync('token')
       },
-      data: {
-        pageSize: self.data.pageSize,
-        orderState: self.data.orderState,
-        currPage: self.data.currPage
+
+      /**
+       * 生命周期函数--监听页面显示
+       */
+      onShow: function() {
+        this.software()
       },
-      success(res) {
+      software() {
 
-        var cartlist = self.data.cartlist;
-        var cartlist1 = [];
-        cartlist1 = res.data.data.list;
-        cartlist1.forEach(cartlist1 => {
-          switch (cartlist1.orderState) {
 
-            case 0:
-              break;
-            case 1:
+        var self = this;
+        wx.request({
+          url: 'http://192.168.2.98:9095/api/order/getUserOrderList',
+          header: {
+            token: wx.getStorageSync('token')
+          },
+          data: {
+            pageSize: self.data.pageSize,
+            orderState: self.data.orderState,
+            currPage: self.data.currPage
+          },
+          success(res) {
+            var cartlist = self.data.cartlist;
+            var cartlist1 = [];
+            cartlist1 = res.data.data.list;
+            self.setData({
+              loading: false,
+              cartlist: cartlist.concat(cartlist1),
+              hasMore: cartlist1.length == 5
 
-              cartlist1.text = '待付款';
+            })
+            console.log(self.data.cartlist, '66666')
 
-              break;
-            case 2:
-              cartlist1.text = '待发货';
+          })
 
-              break;
-            case 3:
 
-              cartlist1.text = '待收货';
-              break;
-            case 4:
+      },
+      confirm(e) {
+        var self = this;
+        wx.request({
+          url: 'http://192.168.2.98:9095/api/order/updateOrderStateIsSucceed?time=' + new Date().getTime(),
+          header: {
+            token: wx.getStorageSync('token')
+          },
+          data: {
+            orderId: e.currentTarget.dataset.orderid
+          },
+          success: function (res) {
+            var cartlist = self.data.cartlist;
 
-              cartlist1.text = '待评论';
-              break;
-            case 5:
+            if (res.data.code == 0) {
+              wx.showToast({
+                title: '已经确认收货',
+                icon: 'success',
+                duration: 1500,
+                success() {
 
-              cartlist1.text = '交易成功';
-              break;
-            case 7:
 
-              cartlist1.text = '交易失败';
-              break;
+                  cartlist.forEach(i => {
+                    if (i.orderId == e.currentTarget.dataset.orderid) {
+
+                      cartlist.splice(i, 1)
+                    }
+                  })
+                  self.setData({
+                    cartlist
+                  })
+                }
+              })
+            }
+            console.log(res, 'updateOrderStateIsSucceed')
           }
 
         })
+      },
+      goto(e) { //跳转到订单详情
+        let orderId = e.currentTarget.dataset.orderid;
+        wx.navigateTo({
+          url: '/pages/order/order?orderId=' + orderId + '&s=0'
+        })
+      },
+      buys(e) {
+        console.log()
+      },
+      remind() { //提示发货
+        wx.showToast({
+          title: '提醒成功',
+          icon: 'success',
+          duration: 2000
+        })
+      },
+      comments(e) { //跳转到评论
 
-       
-        cartlist = [...cartlist, ...cartlist1];
+        // cartlist.forEach(i => {
+        //   if (i.orderId == e.currentTarget.dataset.orderid) {
 
-        self.setData({
-          loading: false,
-          cartlist: app.filterArr(cartlist, 'orderId'),
-          hasMore: cartlist1.length == 5
+        //     cartlist.splice(i, 1)
+        //   }
+        // })
+        var self = this;
+
+
+
+        wx.navigateTo({
+          url: '/pages/general/general?waresId=' + e.currentTarget.dataset.waresid + '&orderId=' + e.currentTarget.dataset.orderid,
+          success(res) {
+            self.software();
+            var cartlist = self.data.cartlist;
+            self.setData({
+              cartlist
+            })
+          }
         })
 
       }
 
     })
-
-
-  },
-  confirm(e) {
-    var self = this;
-    wx.request({
-      url: 'http://192.168.2.98:9095/api/order/updateOrderStateIsSucceed?time=' + new Date().getTime(),
-      header: {
-        token: wx.getStorageSync('token')
-      },
-      data: {
-        orderId: e.currentTarget.dataset.orderid
-      },
-      success: function(res) {
-        var cartlist = self.data.cartlist;
-
-        if (res.data.code == 0) {
-          wx.showToast({
-            title: '已经确认收货',
-            icon: 'success',
-            duration: 1500,
-            success() {
-
-  
-              cartlist.forEach(i => {
-                if (i.orderId == e.currentTarget.dataset.orderid) {
-
-                  cartlist.splice(i, 1)
-                }
-              })
-              self.setData({
-                cartlist
-              })
-            }
-          })
-        }
-        console.log(res, 'updateOrderStateIsSucceed')
-      }
-
-    })
-  },
-  goto(e) { //跳转到订单详情
-    let orderId = e.currentTarget.dataset.orderid;
-    wx.navigateTo({
-      url: '/pages/order/order?orderId=' + orderId + '&s=0'
-    })
-  },
-  buys(e) {
-    console.log()
-  },
-  remind() { //提示发货
-    wx.showToast({
-      title: '提醒成功',
-      icon: 'success',
-      duration: 2000
-    })
-  },
-  comments(e) { //跳转到评论
-
-    // cartlist.forEach(i => {
-    //   if (i.orderId == e.currentTarget.dataset.orderid) {
-
-    //     cartlist.splice(i, 1)
-    //   }
-    // })
-    var self =this;
-    
-   
-    
-    wx.navigateTo({
-      url: '/pages/general/general?waresId=' + e.currentTarget.dataset.waresid + '&orderId=' + e.currentTarget.dataset.orderid,
-      success(res){
-        self.software() ;
-        var cartlist = self.data.cartlist;
-        self.setData({
-          cartlist
-        })
-      }
-    })
-
-  }
-
-})

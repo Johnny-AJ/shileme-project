@@ -63,5 +63,4 @@
   font-family: PingFang SC;
   font-weight: bold;
   color: rgba(240, 43, 80, 1);
-  margin-top: 20rpx;
 }

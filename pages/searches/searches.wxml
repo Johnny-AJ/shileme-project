@@ -5,7 +5,7 @@
         <view class="search_logo">
           <image mode="widthFix" src="../../static/imgs/搜索.png"></image>
         </view>
-        <input placeholder="{{seachtext}}" bindinput="bindKeyInput" value='{{inputValue}}' data-name="inputValue"  type='text'></input>
+        <input placeholder="{{inputValue}}" bindinput="bindKeyInput" value='{{inputValue}}' data-name="inputValue"  type='text'></input>
       </view>
       <view class="search_button">
         取消
@@ -13,9 +13,14 @@
     </view>
     <view class="checktbs">
 
-      <view class="tabs" wx:for="{{tittle}}" wx:key="*this" bindtap="change" data-type="{{item.type}}" data-index="{{index}}">
+      <view class="tabs" wx:for="{{tittle}}" wx:key="*this" bindtap="change" data-index="{{index}}">
         <text class="{{subscript==index?'color':''}}">{{item.text}}</text>
       </view>
+      <!-- <i-tabs current="{{ current }}" i-class="tabs" color="#F02B50" bindchange="handleChange" i-class="tabs">
+        <i-tab key="tab1" title="全部"></i-tab>
+        <i-tab key="tab2" title="价格从低到到高"></i-tab>
+        <i-tab key="tab3" title="价格从高到低"></i-tab>
+      </i-tabs> -->
     </view>
 
   </view>

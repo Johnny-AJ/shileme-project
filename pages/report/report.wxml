@@ -3,92 +3,105 @@
 
 
 
-<!-- tab栏 -->
-<view class="checktbs">
-  <i-tabs current="{{ current }}" color="#F02B50" bindchange="handleChange" i-class="tabs">
-    <i-tab key="tab1" title="申请中"></i-tab>
-    <i-tab key="tab2" title="申请成功"></i-tab>
-    <i-tab key="tab3" title="申请失败"></i-tab>
-    <i-tab key="tab4" title="我的试用报告"></i-tab>
-  </i-tabs>
-</view>
 
+<!-- 我的试用列表 -->
 <view class="bgc">
-  <!-- 申请中 -->
-  <view class="report_box">
 
-    <view class="report_top">
-      <view class="t1">2019-08-07</view>
-      <view class="t2">申请中</view>
-    </view>
-
-    <view class="report_buttom">
-      <view class="img">
-        <image src="../../static/imgs/imgs.png"></image>
-      </view>
-      <view class="report_nav">
-        <view class="t3">保湿急救 网红蓝药丸面膜</view>
-        <view class="t4">5片/盒</view>
-        <view class="t5">免费
-          <view class="t6">￥79</view>
-        </view>
-        <view class="t7">查看详情</view>
+  <!-- tab栏 -->
+  <view class="tabs">
+    <view class="tabs_nav">
+      <view wx:for="{{titleList}}" wx:key="*this" class="{{currentIndex==index?'hidden':'show'}}" data-index='{{index}}' bindtap="handTabs">{{item.title}}
+        <view class="{{currentIndex==index?'nab_border':''}}"></view>
       </view>
     </view>
-
   </view>
 
-  <!-- 申请成功 -->
-  <view class="report_box1">
+  <view class="nav_box" wx:if="{{currentIndex <3 }}">
 
-    <view class="report_top">
-      <view class="t1">2019-08-07</view>
-      <view class="t2">已完成</view>
-    </view>
+    <!-- 申请中 -->
+    <!-- <view class="report_box" wx:if="{{currentIndex == 0}}">
 
-    <view class="report_buttom">
-      <view class="img">
-        <image src="../../static/imgs/imgs.png"></image>
+      <view class="report_top">
+        <view class="t1">2019-08-07</view>
+        <view class="t2">申请中</view>
       </view>
-      <view class="report_nav">
-        <view class="t3">保湿急救 网红蓝药丸面膜</view>
-        <view class="t4">5片/盒</view>
-        <view class="t5">免费
-          <view class="t6">￥79</view>
+
+      <view class="report_buttom">
+        <view class="img">
+          <image src="../../static/imgs/330.330.png"></image>
         </view>
-        <view class="t7">订单详情</view>
-        <view class="t8">提交报告</view>
-      </view>
-    </view>
-
-  </view>
-
-  <!-- 申请失败 -->
-  <view class="report_box2">
-
-    <view class="report_top">
-      <view class="t1">2019-08-07</view>
-      <view class="t2">申请失败</view>
-    </view>
-
-    <view class="report_buttom">
-      <view class="img">
-        <image src="../../static/imgs/imgs.png"></image>
-      </view>
-      <view class="report_nav">
-        <view class="t3">保湿急救 网红蓝药丸面膜</view>
-        <view class="t4">5片/盒</view>
-        <view class="t5">免费
-          <view class="t6">￥79</view>
+        <view class="report_nav">
+          <view class="t3">保湿急救 网红蓝药丸面膜</view>
+          <view class="t4">5片/盒</view>
+          <view class="t5">免费
+            <view class="t6">￥79</view>
+          </view>
+          <view class="t7">查看详情</view>
         </view>
-        <view class="t7">订单详情</view>
       </view>
+
+    </view> -->
+
+    <!-- 申请成功 -->
+    <view class="report_box1" wx:for="{{setapplyList}}" wx:key="waresId">
+
+      <view class="report_top">
+        <view class="t1">{{item.createTime}}</view>
+        <!-- <view class="t1">2019-08-07</view> -->
+        <!-- <view class="t1">{{item.status}}</view> -->
+        <view class="t2" wx:if="{{item.status == 0}}">申请中</view>
+        <view class="t2" wx:if="{{item.status == 1}}">申请成功</view>
+        <view class="t2" wx:if="{{item.status == 2}}">申请失败</view>
+      </view>
+
+      <view class="report_buttom">
+        <view class="img">
+          <image data-img="imgUrl" src="{{item.logoUrl}}"></image>
+          <!-- <image src="../../static/imgs/330.330.png"></image> -->
+        </view>
+        <view class="report_nav">
+          <view class="t3">{{item.waresName}}</view>
+          <!-- <view class="t3">保湿急救 网红蓝药丸面膜</view> -->
+          <view class="t4">5片/盒</view>
+          <view class="t5">免费
+            <view class="t6">{{item.mallPrice}}</view>
+            <!-- <view class="t6">￥79</view> -->
+          </view>
+          <view class="t7">订单详情</view>
+          <view class="t8" bindtap="handleStatus" data-id="{{item.probationId}}" wx:if="{{item.status == 1}}">提交报告</view>
+        </view>
+      </view>
+
     </view>
+
+    <!-- 申请失败 -->
+    <!-- <view class="report_box2" wx:if="{{currentIndex == 2}}">
+
+      <view class="report_top">
+        <view class="t1">2019-08-07</view>
+        <view class="t2">申请失败</view>
+      </view>
+
+      <view class="report_buttom">
+        <view class="img">
+          <image src="../../static/imgs/330.330.png"></image>
+        </view>
+        <view class="report_nav">
+          <view class="t3">保湿急救 网红蓝药丸面膜</view>
+          <view class="t4">5片/盒</view>
+          <view class="t5">免费
+            <view class="t6">￥79</view>
+          </view>
+          <view class="t7">订单详情</view>
+        </view>
+      </view>
+
+    </view> -->
 
   </view>
 
   <!-- 我的试用报告 -->
-  <view class="report_box3">
+  <view class="report_box3" wx:if="{{currentIndex == 3}}" wx:for="{{setmyReportList}}" wx:key="waresId">
     <view class="nav_box">
       <view class="box_left">
         <view class="t1">
@@ -101,7 +114,7 @@
       </view>
       <view class="box_right">
         <view class="img2">
-          <image src="../../static/imgs/imgs.png"></image>
+          <image src="../../static/imgs/330.330.png"></image>
         </view>
       </view>
     </view>

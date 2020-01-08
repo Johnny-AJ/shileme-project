@@ -11,7 +11,7 @@
 .imgs image {
   width: 150rpx;
   height: 150rpx;
-  margin: 30rpx;
+  margin-right: 30rpx;
 }
 
 .btn {
@@ -26,4 +26,50 @@
   text-align: center;
   line-height: 88rpx;
   margin: 30rpx;
+  position: absolute;
+  bottom: 30rpx;
+  right: 6rpx;
+}
+
+.imgs {
+  display: flex;
+}
+
+image {
+  width: 150rpx;
+  height: 150rpx;
+  z-index: -9;
+  margin-right: 23rpx;
+}
+
+.photo_box {
+  width: 705rpx;
+  height: 150rpx;
+  display: flex;
+  align-items: center;
+  border: 1px solid red;
+  flex-wrap: wrap;
+  margin: 20rpx;
+}
+
+.ui_uploader_item {
+  display: flex;
+  position: relative;
+}
+
+.ui_uploader_item_icon {
+  position: absolute;
+  top: 0;
+  left: 0;
+}
+
+.page {
+  position: relative;
+}
+
+textarea {
+  border: 1px solid red;
+  background-color: #f5f5f5;
+  margin: 20rpx;
+  font-size: 24rpx;
 }

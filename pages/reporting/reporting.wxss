@@ -2,9 +2,10 @@
 
 .bgc {
   width: 750rpx;
-  height: 1308rpx;
+  height: 100%;
   overflow: hidden;
-  background-color: skyblue;
+  background-color: #f5f5f5;
+  /* background-color: skyblue; */
 }
 
 .indent.checktbs {
@@ -97,6 +98,7 @@
 .nav3 .imgs1 image {
   width: 58rpx;
   height: 58rpx;
+  border-radius: 40rpx;
 }
 
 .nav3 .n1 {

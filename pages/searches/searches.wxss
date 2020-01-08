@@ -156,6 +156,7 @@ width: 160rpx;
   width: 100%;
   padding: 0 0 82rpx 0;
   display: flex;
+  justify-content: space-between;
   flex-wrap: wrap;
 }
 .checktbs .tabs  .color{

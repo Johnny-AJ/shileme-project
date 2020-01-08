@@ -1,124 +1,89 @@
 {
-	"description": "项目配置文件",
-	"packOptions": {
-		"ignore": []
-	},
-	"setting": {
-		"urlCheck": false,
-		"es6": true,
-		"enhance": false,
-		"postcss": true,
-		"preloadBackgroundData": false,
-		"minified": true,
-		"newFeature": true,
-		"coverView": true,
-<<<<<<< HEAD
-		"autoAudits": false,
-		"showShadowRootInWxmlPanel": true,
-		"scopeDataCheck": false,
-=======
-		"nodeModules": true,
-		"autoAudits": false,
-		"uglifyFileName": true,
->>>>>>> 1eb06d9583af236b7485e283fba9b2d4b18d2d9d
-		"checkInvalidKey": true,
-		"checkSiteMap": true,
-		"uploadWithSourceMap": true,
-		"babelSetting": {
-			"ignore": [],
-			"disablePlugins": [],
-			"outputPath": ""
-		},
-<<<<<<< HEAD
-		"nodeModules": true
-=======
-		"preloadBackgroundData": false,
-		"showShadowRootInWxmlPanel": true,
-		"scopeDataCheck": false
->>>>>>> 1eb06d9583af236b7485e283fba9b2d4b18d2d9d
-	},
-	"compileType": "miniprogram",
-	"libVersion": "2.9.4",
-	"appid": "wx528c4e364682d4e2",
-	"projectname": "shileme-project",
-	"debugOptions": {
-		"hidedInDevtools": []
-	},
-	"isGameTourist": false,
-	"simulatorType": "wechat",
-	"simulatorPluginLibVersion": {},
-	"condition": {
-		"search": {
-			"current": -1,
-			"list": []
-		},
-		"conversation": {
-			"current": -1,
-			"list": []
-		},
-		"plugin": {
-			"current": -1,
-			"list": []
-		},
-		"game": {
-			"currentL": -1,
-			"list": []
-		},
-		"miniprogram": {
-<<<<<<< HEAD
-			"current": -1,
-			"list": [
-				{
-					"id": -1,
-					"name": "pages/scango/scango",
-=======
-			"current": 3,
-			"list": [
-				{
-					"id": 0,
-					"name": "扫码购",
->>>>>>> 1eb06d9583af236b7485e283fba9b2d4b18d2d9d
-					"pathName": "pages/scango/scango",
-					"query": "",
-					"scene": null
-				},
-				{
-<<<<<<< HEAD
-					"id": -1,
-					"name": "pages/user/user",
-=======
-					"id": 1,
-					"name": "个人",
->>>>>>> 1eb06d9583af236b7485e283fba9b2d4b18d2d9d
-					"pathName": "pages/user/user",
-					"query": "",
-					"scene": null
-				},
-				{
-<<<<<<< HEAD
-					"id": -1,
-					"name": "pages/login/login",
-=======
-					"id": 2,
-					"name": "登录",
->>>>>>> 1eb06d9583af236b7485e283fba9b2d4b18d2d9d
-					"pathName": "pages/login/login",
-					"query": "",
-					"scene": null
-				},
-				{
-<<<<<<< HEAD
-					"id": -1,
-					"name": "pages/index/index",
-=======
-					"id": 3,
-					"name": "首页",
->>>>>>> 1eb06d9583af236b7485e283fba9b2d4b18d2d9d
-					"pathName": "pages/index/index",
-					"query": "",
-					"scene": null
-				}
-			]
-		}
-	}
+    "description": "项目配置文件",
+    "packOptions": {
+        "ignore": []
+    },
+    "setting": {
+        "urlCheck": false,
+        "es6": true,
+        "enhance": false,
+        "postcss": true,
+        "minified": true,
+        "newFeature": true,
+        "coverView": true,
+        "nodeModules": true,
+        "autoAudits": false,
+        "uglifyFileName": true,
+        "checkInvalidKey": true,
+        "checkSiteMap": true,
+        "uploadWithSourceMap": true,
+        "babelSetting": {
+            "ignore": [],
+            "disablePlugins": [],
+            "outputPath": ""
+        },
+        "preloadBackgroundData": false,
+        "showShadowRootInWxmlPanel": true,
+        "scopeDataCheck": false
+    },
+    "compileType": "miniprogram",
+    "libVersion": "2.9.4",
+    "appid": "wx528c4e364682d4e2",
+    "projectname": "shileme-project",
+    "debugOptions": {
+        "hidedInDevtools": []
+    },
+    "isGameTourist": false,
+    "simulatorType": "wechat",
+    "simulatorPluginLibVersion": {},
+    "condition": {
+        "search": {
+            "current": -1,
+            "list": []
+        },
+        "conversation": {
+            "current": -1,
+            "list": []
+        },
+        "plugin": {
+            "current": -1,
+            "list": []
+        },
+        "game": {
+            "currentL": -1,
+            "list": []
+        },
+        "miniprogram": {
+            "current": 3,
+            "list": [{
+                    "id": 0,
+                    "name": "扫码购",
+                    "pathName": "pages/scango/scango",
+                    "query": "",
+                    "scene": null
+                },
+                {
+                    "id": 1,
+                    "name": "个人",
+                    "pathName": "pages/user/user",
+                    "query": "",
+                    "scene": null
+                },
+                {
+                    "id": 2,
+                    "name": "登录",
+                    "pathName": "pages/login/login",
+                    "query": "",
+                    "scene": null
+                },
+                {
+                    "id": 3,
+                    "name": "首页",
+                    "pathName": "pages/index/index",
+                    "query": "",
+                    "scene": null
+                }
+            ]
+        }
+    }
 }

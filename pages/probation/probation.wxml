@@ -6,7 +6,7 @@
   <view class="swiper_box">
     <swiper indicator-active-color='#f02b50' indicator-dots="false" autoplay='false' interval='3000' circular="false">
       <swiper-item wx:for="{{swiperList}}" wx:key="goods_is">
-        <image src="{{item}}"></image>
+        <image src="{{item.url}}"></image>
       </swiper-item>
     </swiper>
   </view>
@@ -15,25 +15,26 @@
   <!-- 价格 -->
   <view class="price">
 
-    <image src="../../static/formats/组 7.png"></image>
+    <image src="../../static/imgs/背景 (1).png"></image>
 
     <view class="price_box">
 
       <view class="price_left">
-        <view class="t1">免费</view>
+        <view class="t1">{{priceList.title}}</view>
+        <!-- <view class="t1">免费</view> -->
       </view>
 
       <view class="price_left1">
         <view class="price_top">
-          <view class="t2">￥79</view>
-          <view class="t3">26人正在参与</view>
+          <view class="t2">￥{{priceList.mallPrice}}</view>
+          <!-- <view class="t2">￥79</view> -->
+          <view class="t3">{{priceList.peopleNum}}人正在参与</view>
         </view>
-        <view class="price_bottom">
-          限30件
-        </view>
+        <view class="price_bottom">限{{priceList.buyLimit}}件</view>
+        <!-- <view class="price_bottom">限30件</view> -->
       </view>
 
-      <view class="price_right">查看商品</view>
+      <view class="price_right" bindtap="handDetails" data-waresId="{{priceList.waresId}}">查看商品</view>
 
     </view>
 
@@ -42,8 +43,10 @@
 
   <!-- 新生 -->
   <view class="price_new">
-    <view class="t3">宛若新生 网红蓝药丸面膜</view>
-    <view class="t4">保湿急救 网红蓝药丸面膜保湿急救 网红蓝药丸面 膜5片装</view>
+    <view class="t3">{{priceList.waresName}}</view>
+    <!-- <view class="t3">宛若新生 网红蓝药丸面膜</view> -->
+    <view class="t4">{{priceList.waresName}}</view>
+    <!-- <view class="t4">保湿急救 网红蓝药丸面膜保湿急救 网红蓝药丸面 膜5片装</view> -->
   </view>
   <!-- 新生 -->
 
@@ -51,10 +54,10 @@
   <!-- 活动流程 -->
   <view class="activity_box">
     <view class="img1">
-      <image src="../../static/group/活动流程.png"></image>
+      <image src="../../static/imgs/活动流程.png"></image>
     </view>
     <view class="img2">
-      <image src="../../static/group/组 24.png"></image>
+      <image src="../../static/imgs/组 12.png"></image>
       <view class="p1">活动须知</view>
     </view>
   </view>
@@ -63,17 +66,17 @@
 
   <!-- 图片 -->
   <view class="img3">
-    <image src="../../static/group/O1CN01AmApMA2K4QKxuHhGL___2816529503.png"></image>
+    <image src="{{priceList.waresImg}}"></image>
   </view>
   <view class="img4">
-    <image src="../../static/group/O1CN01Amf2WR2K4QKvpyOGy___2816529503.png"></image>
+    <image src="{{priceList.waresImg}}"></image>
   </view>
   <!-- 图片 -->
 
   <!-- 阿牛 -->
   <view class="end_box">
     <view class="t1">距结束还剩8天</view>
-    <view class="images1">
+    <!-- <view class="images1">
       <view class="t2">
         <view class="p1">12</view>
       </view>
@@ -89,9 +92,13 @@
       <view class="t2">
         <view class="p1">12</view>
       </view>
+    </view> -->
+    <view class="nav3">
+      <i-count-down class="nnav2" target="{{targetTime}}" format="{{myFormat1}}" countdown-class="targettime" bindcallback="listtime" clear-timer="{{clearTimer}}" />
     </view>
-    <view class="imgs3">
-      <image src="../../static/group/矩形 16 拷贝 3.png"></image>
+    <view class="imgs3" data-id="{{priceList.id}}" bindtap="handSuccess">
+      <view wx:if="{{status == 1}}">立刻申请</view>
+      <view wx:if="{{status == 0}}">已申请</view>
     </view>
   </view>
   <!-- 阿牛 -->

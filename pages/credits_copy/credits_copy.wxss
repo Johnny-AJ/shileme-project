@@ -1,44 +1,74 @@
 /* pages/credits_copy/credits_copy.wxss */
 
+/* tu */
+
 .const_box {
-  height: 100%;
   width: 100%;
-  /* border: 1px solid red; */
-  margin-left: 30rpx;
+  height: 100%;
+  background: rgba(255, 255, 255, 1);
+  box-sizing: border-box;
+  margin: 0 30rpx;
   display: flex;
   flex-wrap: wrap;
 }
 
-.const_box .consk {
+.photo_box {
   width: 330rpx;
   height: 450rpx;
-  border: 1px solid #f5f5f5;
-  text-align: center;
-  margin-left: 15rpx;
-  margin-bottom: 20rpx;
+  background: rgba(255, 255, 255, 1);
+  border: 1rpx solid rgba(204, 204, 204, 1);
+  margin-right: 30rpx;
+  margin-bottom: 30rpx;
 }
 
-.consk .imf1 image {
+.imgss image {
   width: 330rpx;
   height: 280rpx;
+  vertical-align: top;
 }
 
-.consk .m1 {
+.nav_text {
+  width: 330rpx;
+  height: 170rpx;
+}
+
+.v1 {
+  width: 249rpx;
   font-size: 26rpx;
   font-family: PingFang SC;
   font-weight: bold;
   color: rgba(34, 34, 34, 1);
+  display: -webkit-box;
+  overflow: hidden;
+  -webkit-line-clamp: 1;
+  -webkit-box-orient: vertical;
+  margin-left: 40rpx;
+  text-align: center;
 }
 
-.consk .m2 {
+.v2 {
+  display: flex;
+  width: 330rpx;
+  margin-left: 115rpx;
+  margin-top: 5rpx;
+  margin-bottom: 10rpx;
+}
+
+.v3 {
   font-size: 26rpx;
   font-family: PingFang SC;
   font-weight: 400;
   color: rgba(247, 157, 23, 1);
-  margin: 10rpx 0 14rpx;
 }
 
-.consk .m3 {
+.v4 {
+  font-size: 26rpx;
+  font-family: PingFang SC;
+  font-weight: 400;
+  color: rgba(34, 34, 34, 1);
+}
+
+.v5 {
   width: 150rpx;
   height: 46rpx;
   border: 1px solid rgba(240, 43, 80, 1);
@@ -47,5 +77,9 @@
   font-family: PingFang SC;
   font-weight: 400;
   color: rgba(240, 43, 80, 1);
-  margin-left: 90rpx;
+  text-align: center;
+  line-height: 46rpx;
+  margin-left: 85rpx;
 }
+
+/* tu */
