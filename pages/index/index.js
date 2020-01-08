@@ -103,6 +103,7 @@ Page({
         let self = this;
         let prams = {};
         http.getRequest('/api/index/banner/banners', prams, function(res) {
+          console.log(res,'banners')
             self.setData({
                 swiperList: res.data.data
             })

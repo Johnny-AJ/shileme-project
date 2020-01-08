@@ -2,15 +2,6 @@
 <view class="scango">
   <view class="scgheade">
     <view class="slideshow">
-
-       <!-- <swiper indicator-dots="{{indicatorDots}}"
-        autoplay="{{autoplay}}" interval="{{interval}}" duration="{{duration}}">
-        <block wx:for="{{background}}" wx:key="*this">
-          <swiper-item>
-            <view class="swiper-item {{item}}"></view>
-          </swiper-item>
-        </block>
-      </swiper> -->
       <swiper class="swipers" autoplay="true" interval="3000" duration="2000" circular="true"  indicator-active-color="#F02B50" indicator-dots="true" current="{{currentSwiper}}" bindchange="swiperChange">
         <block wx:for="{{list.images}}" wx:key="*this">
           <swiper-item>
@@ -84,9 +75,9 @@
   </view>
   <view>{{index111}}</view>
   <view>{{index222}}</view>
-  <view class="comment">
+  <view class="comment" hidden="{{getcommentList.length==0}}">
     <view class="title" bindtap="gotcommentList" data-waresId="{{waresId}}" >
-      <view class="conts">宝贝评价（{{totalCount}}）</view>
+      <view class="conts">宝贝评价（{{totalCount}}） </view>
       <view class="more">查看更多
         <image src="http://192.168.2.98:9095//scango/矩形 16 拷贝.png"></image>
       </view>
@@ -94,15 +85,15 @@
     <view class="pj"  hidden="{{getcommentList.length==0}}">
 
       <view class="tbottom">
-        <view class="tblog">
+        <view class="tblog" style="width:{{getcommentList.length*626}}rpx">
         
             <view class="pl" wx:for="{{getcommentList}}" wx:key="*this"  bindtap="gotcommentList" data-waresId="{{waresId}}">
               <view class="head">
-                <image src="{{item.userImg}}"  wx:if="{{item.userName}}"></image>
-                <image src="http://192.168.2.98:9095//scango/椭圆 4.png"  wx:if="{{item.userName==null}}"></image>
+                <image src="{{item.userImg}}"   wx:if="{{typeof(item.userImg)!='undefined'}}"></image>
+                <image src="http://192.168.2.98:9095//scango/椭圆 4.png"  wx:if="{{typeof(item.userImg) =='undefined'}}"></image>
               </view>
               <view class="cont">
-                <text class="name"  wx:if="{{item.userName==null}}">匿名</text>
+                <text class="name"  wx:if="{{typeof(item.userName)=='undefined'}}">匿名</text>
                   <text class="name" wx:if="{{item.userName}}">{{item.userName}}</text>
 
                 <text class="time">{{item.createTime}}</text>
@@ -142,10 +133,13 @@
         <text class="color">首页</text>
 
       </view>
-      <view  data-waresId="{{waresId}}" bindtap="defined">
+      <view  data-waresId="{{waresId}}" bindtap="defined" wx:if="{{isCollect ==1}}">
         <image src="http://192.168.2.98:9095//imgs/形状 1.png"></image>
         <text>收藏</text>
-
+      </view>
+      <view  data-waresId="{{waresId}}" bindtap="deleteByWaresId"  wx:if="{{isCollect ==0}}">
+        <image src="../../static/imgs/形状 1.png"></image>
+        <text class="color">收藏</text>
       </view>
       <view bindtap="goto">
         <image src="../../static/imgs/购物车.png"></image>
@@ -210,13 +204,14 @@
         <view class="trade">
           <view class="imags">
             <image src="{{defaultSku.imgUrl?defaultSku.imgUrl:pic}}"></image>
-
           </view>
           <view class="tcont">
             <view class="name">{{list.name}}</view>
-            <text class="prcie">￥<text>{{defaultSku.price*value1?defaultSku.price*value1:list.mallPrice}}</text></text>
-            <text class="text"> <text>已选:</text> {{selectedProp.length>0?selectedProp+'，':selectedProp}}{{value1}}件</text>
-            <text class="repertory">库存：<text>{{defaultSku.repertory}}</text></text>
+            <view class="prcie">￥<text>{{defaultSku.price?defaultSku.price:list.mallPrice}}</text></view>
+             <view class="repertory">库存：<text>{{defaultSku.repertory}}</text></view>
+            <view class="text"> <text>已选:</text> {{selectedProp.length>0?selectedProp+'，':selectedProp}} <text hidden="{{selectedProp.length==0}}">{{value1}} 件</text></view>
+           
+             <view class="text">每人限购{{astrictNum}}件</view>
           </view>
         </view>
         <view class="spec ">

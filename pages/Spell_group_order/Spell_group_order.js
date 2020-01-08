@@ -40,9 +40,6 @@ Page({
 
     var self = this;
 
-    self.setData({
-      token: wx.getStorageSync('token')
-    })
 
     self.setData({
       options: options
@@ -57,7 +54,7 @@ Page({
         })
       }
     }
-    this.oders(); // 获取扫码购的参数
+  
   },
 
   /**
@@ -72,11 +69,8 @@ Page({
    */
   onShow: function() {
 
-    
-    let addressId = wx.getStorageSync('addressId');
-    if (addressId){
-      this.checked(addressId);
-    }
+    this.oders(); // 获取扫码购的参数
+  
    
   },
 
@@ -108,8 +102,8 @@ Page({
       addressId: self.data.addressId,
       waresList: self.data.dtos,
     }
-
-    http.postRuest('/api/order/saveOrder?time=' + new Date().getTime(),prams,function(res){
+    console.log(self.data.addressId,'self.data.addressId')
+    http.postRequest('/api/order/saveOrder?time=' + new Date().getTime(),prams,function(res){
       // 微信支付
       wx.requestPayment({
         timeStamp: res.data.data.timeStamp,
@@ -132,10 +126,7 @@ Page({
           }
         },
         fail: function (res) {
-
-          console.log(res, '66666666')
           var waresList = JSON.stringify(self.data.dtos);
-
           wx.navigateTo({
             url: '/pages/view1/view1?discountId=' + self.data.discountId + '&remark=' + self.data.inputValue + '&addressId=' + self.data.address.id + '&waresList=' + waresList + '&allprice=' + self.data.allprice,
           })
@@ -143,57 +134,6 @@ Page({
 
       })
     })
-    // wx.request({
-    //   // 支付地址
-    //   url: 'http://192.168.2.98:9095/api/order/saveOrder?time=' + new Date().getTime(),
-    //   method: "POST",
-    //   header: {
-    //     token: wx.getStorageSync('token')
-    //   },
-    //   data: {
-    //     discountId: self.data.discountId,
-    //     remark: self.data.inputValue,
-    //     addressId: self.data.addressId,
-    //     waresList: self.data.dtos,
-
-    //   },
-    //   success: function(res) {
-       
-    //     // 微信支付
-    //     wx.requestPayment({
-    //       timeStamp: res.data.data.timeStamp,
-    //       nonceStr: res.data.data.nonceStr,
-    //       package: res.data.data.package,
-    //       signType: res.data.data.signType,
-    //       paySign: res.data.data.paySign,
-    //       success(res) {
-
-    //         if (res.errMsg.split(":")[1] == "ok") {
-    //           var allprice = self.data.allprice;
-
-    //           wx.navigateTo({
-    //             url: '/pages/view/view?allprice=' + allprice,
-    //           })
-    //         } else {
-
-
-
-    //         }
-    //       },
-    //       fail: function(res) {
-
-    //         console.log(res, '66666666')
-    //         var waresList = JSON.stringify(self.data.dtos);
-
-    //         wx.navigateTo({
-    //           url: '/pages/view1/view1?discountId=' + self.data.discountId + '&remark=' + self.data.inputValue + '&addressId=' + self.data.address.id + '&waresList=' + waresList + '&allprice=' + self.data.allprice,
-    //         })
-    //       }
-
-    //     })
-
-    //   }
-    // })
    
   },
   /**
@@ -217,10 +157,9 @@ Page({
       }
     }
 
-    if (self.data.token) {
+   
     
-
-      http.postRuest('/api/order/savePlace', { dtos: self.data.dtos},function(res){
+      http.postRequest('/api/order/savePlace', { dtos: self.data.dtos},function(res){
         if (res.data.code == 500) {
           wx.showToast({
             title: '库存不足！',
@@ -251,6 +190,8 @@ Page({
           getListByWaresId: res.data.data.marketings
         })
         var getListByWaresId = self.data.getListByWaresId;
+
+        console.log(res,'getListByWaresId')
         if (getListByWaresId) {
           for (var i = 0; i < getListByWaresId.length; i++) {
             getListByWaresId[i].chekok = false;
@@ -281,16 +222,13 @@ Page({
         self.setData({
           address: res.data.data.address
         })
-
+        console.log(self.data.address,'address')
         self.setData({
           orderWaresVos: res.data.data.orderWaresVos
         })
 
         var address = self.data.address;
 
-        self.setData({
-          addressId: self.data.address.id
-        })
         if (address == null) { //判断地址是否存在默认
 
 
@@ -304,116 +242,25 @@ Page({
           })
 
 
+          self.setData({
+            addressId: self.data.address.id
+          })
+
+          let addressId = wx.getStorageSync('addressId');
+          if (addressId) {
+            self.setData({
+              addressId
+            })
+        
+            self.checked(addressId);
+          }
         }
       })
-      // wx.request({
-      //   url: 'http://192.168.2.98:9095/api/order/savePlace',
-      //   method: 'POST',
-      //   header: {
-      //     'token': self.data.token
-      //   },
-      //   data: {
-      //     dtos: self.data.dtos
-      //   },
-      //   success: (res) => {
-
-        
-      //     if (res.data.code == 500) {
-      //       wx.showToast({
-      //         title: '库存不足！',
-      //         icon: 'loading',
-      //         duration: 2000,
-      //         success: function(res) {
-      //           setTimeout(function() {
-      //             wx.navigateBack({
-      //               delta: 1,
-      //             })
-      //           }, 2000)
-      //         }
-      //       })
-      //     }
-
-      //     self.setData({
-      //       allprice: res.data.data.allprice
-      //     }, () => {
-      //       self.setData({
-      //         coupon: app.returnFloat(self.data.coupon)
-      //       })
-
-      //       self.setData({
-      //         allprice: app.returnFloat(self.data.allprice)
-      //       })
-      //     })
-      //     self.setData({
-      //       getListByWaresId: res.data.data.marketings
-      //     })
-      //     var getListByWaresId = self.data.getListByWaresId;
-      //     if (getListByWaresId) {
-      //       for (var i = 0; i < getListByWaresId.length; i++) {
-      //         getListByWaresId[i].chekok = false;
-      //         getListByWaresId[i].text = '';
-      //         if (getListByWaresId[i].discountCouponFor == 0) {
-      //           getListByWaresId[i].text = '全平台'
-      //         } else {
-      //           getListByWaresId[i].text = '指定商品'
-      //         }
-
-      //         if (self.data.allprice > getListByWaresId[i].startMoney) {
-
-      //           getListByWaresId[i].chekok = true;
-      //           var getListByWaresId1 = self.data.getListByWaresId1;
-      //           getListByWaresId1.push(getListByWaresId[i])
-      //           self.setData({
-      //             getListByWaresId1
-      //           })
-      //         }
-
-      //       }
-      //     }
-
-      //     self.setData({
-      //       getListByWaresId
-      //     })
-
-      //     self.setData({
-      //       address: res.data.data.address
-      //     })
-
-      //     self.setData({
-      //       orderWaresVos: res.data.data.orderWaresVos
-      //     })
-
-      //     var address = self.data.address;
-
-      //     self.setData({
-      //       addressId: self.data.address.id
-      //     })
-      //     if (address == null) { //判断地址是否存在默认
-
-
-      //       self.setData({
-      //         addressok: false
-      //       })
-      //     } else {
-
-      //       self.setData({
-      //         addressok: true
-      //       })
-
-
-      //     }
-      //   },
-      //   fail: (error) => {
-
-      //   }
-      // })
-    }
+    
 
   },
   handurl: function(e) { //路由跳转到填写地址
     var self = this;
-
-
     wx.navigateTo({
       url: '/pages/shipping/shipping'
     })
@@ -428,14 +275,14 @@ Page({
   },
 
   bindKeyInput: function(e) { //卖家留言
-    this.setData({
+  let self =this;
+    self.setData({
       inputValue: e.detail.value
     })
   },
   checked(addressId) { //从新选择地址
     var self = this;
-   
-    http.getRuset('/api/address/list',{},function(res){
+    http.getRequest('/api/address/list',{},function(res){
       self.setData({
         addAddressList: res.data.data
       });
@@ -446,7 +293,7 @@ Page({
 
           if (addAddressList[i].id == addressId) {
 
-            this.setData({
+            self.setData({
               address: addAddressList[i]
             }, () => {
               wx.setStorageSync('addressId', '')

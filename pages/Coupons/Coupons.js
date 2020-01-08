@@ -79,7 +79,7 @@ Page({
       currPage: self.data.currPage,
       pageSize: 5
     }
-    http.getRquset('/api/personal/discount/unusedList',prams,function(res){
+    http.getRequest('/api/personal/discount/unusedList',prams,function(res){
       self.setData({
         unusedList: res.data.data.list
       })
@@ -108,7 +108,7 @@ Page({
       currPage: self.data.currPage,
       pageSize: 5
     }
-    http.getRquset('/api/personal/discount/usedList', prams, function (res) {
+    http.getRequest('/api/personal/discount/usedList', prams, function (res) {
       self.setData({
         usedList: res.data.data.list
       })
@@ -137,7 +137,7 @@ Page({
       currPage: self.data.currPage,
       pageSize: 5
     }
-    http.getRquset('/api/personal/discount/timeOutList', prams, function (res) {
+    http.getRequest('/api/personal/discount/timeOutList', prams, function (res) {
       self.setData({
         timeOutList: res.data.data.list
       })

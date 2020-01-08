@@ -98,7 +98,7 @@ Page({
   },
   goto() {
     wx.navigateTo({
-      url: '/pages/order/order?s=2',
+      url: '/pages/order/order?s=1',
     })
   },
   waitPayOrder(){

@@ -1,36 +1,47 @@
 // pages/order/order.js
 let http = require("../../utils/http.js");
-const app =getApp();
+const app = getApp();
 Page({
 
-    /**
-     * 页面的初始数据
-     */
-    data: {
-        data: {},
-    
-    },
+  /**
+   * 页面的初始数据
+   */
+  data: {
+    data: {},
+    targetTime1: 0,
+     clearTimer: false,
+     myFormat1: ['天', '时', '分', '秒'],
+     orderId:''
+  },
 
-    /**
-     * 生命周期函数--监听页面加载
-     */
-    onLoad: function(options) {
-        if (options.s == '0') {
-            this.get_data(options.orderId);
-        }
-        if (options.s == '1') {
+  /**
+   * 生命周期函数--监听页面加载
+   */
+  onLoad: function(options) {
+    if (options.s == '0') {
+      this.setData({
+        orderId: options.orderId
+      })
+      this.get_data();
+    }
+    if (options.s == '1') {
 
-            this.get_data1();
+      this.get_data1();
 
-        }
-        if (options.s == '2') {
-            this.get_data2();
+    }
+    if (options.s == '2') {
+      this.get_data2();
 
-        }
-      this.carlist(); //获取为你推荐的商品列表
-    },
+    }
 
-  onReachBottom: function () { //下拉触发
+
+  },
+  onUnload() {
+    this.setData({
+      clearTimer: true
+    });
+  },
+  onReachBottom: function() { //下拉触发
 
 
     var self = this;
@@ -43,205 +54,210 @@ Page({
     })
 
   },
-    /**
-     * 生命周期函数--监听页面显示
-     */
-    onShow: function() {
+  /**
+   * 生命周期函数--监听页面显示
+   */
+  onShow: function() {
 
-    },
+  },
 
-    get_data(orderId) {
-        var self = this;
-        wx.request({
-            url: 'http://192.168.2.98:9095/api/order/findByOrderId?time=' + new Date().getTime(),
-            header: {
-                token: wx.getStorageSync('token')
-            },
-            data: {
-                orderId: orderId
-            },
-            success: function(res) {
+  get_data() {
+    var self = this;
+    wx.request({
+      url: 'http://192.168.2.98:9095/api/order/findByOrderId?time=' + new Date().getTime(),
+      header: {
+        token: wx.getStorageSync('token')
+      },
+      data: {
+        orderId: self.data.orderId
+      },
+      success: function(res) {
 
-                let data = res.data.data;
-                switch (data.orderState) {
-                    case 0:
-                        break;
-                    case 1:
-                        data.text = '待付款';
+        let data = res.data.data;
+        switch (data.orderState) {
+          case 0:
+            break;
+          case 1:
+            data.text = '待付款';
+            break;
+          case 2:
+            data.text = '待发货';
 
-                        break;
-                    case 2:
-                        data.text = '待发货';
+            break;
+          case 3:
 
-                        break;
-                    case 3:
+            data.text = '待收货';
+            break;
+          case 4:
 
-                        data.text = '待收货';
-                        break;
-                    case 4:
+            data.text = '待评论';
+            break;
+          case 5:
 
-                        data.text = '待评论';
-                        break;
-                  case 7:
+            data.text = '交易成功';
+            break;
+          case 7:
 
-                    data.text = '交易失败';
-                    break;
-                }
-                self.setData({
-                    data: data
-                });
+            data.text = '交易失败';
+            break;
+        }
+        self.setData({
+          data: data
+        });
 
-                console.log(self.data.data)
-
-            }
+        self.setData({
+          targetTime1: new Date().getTime() + data.autoReceiveTime,
         })
-    },
-    get_data1() {
-        var self = this;
-        wx.request({
-            url: 'http://192.168.2.98:9095/api/order/findNewSucceedOrder?time=' + new Date().getTime(),
-            header: {
-                token: wx.getStorageSync('token')
-            },
-            data: {
-                time: Date.parse(new Date())
-            },
-          success: function (res) {
+        console.log(self.data.data,'findByOrderId')
 
-            let data = res.data.data;
-            switch (data.orderState) {
-              case 0:
+      }
+    })
+  },
+  get_data1() {
+    var self = this;
+    wx.request({
+      url: 'http://192.168.2.98:9095/api/order/findNewWaitPayOrder?time=' + new Date().getTime(),
+      header: {
+        token: wx.getStorageSync('token')
+      },
+      data: {
+  
+      },
+      success: function(res) {
+    
+        let data = res.data.data;
+        switch (data.orderState) {
+          case 0:
+            break;
+          case 1:
+            data.text = '待付款';
 
-                break;
-              case 1:
-                data.text = '待付款';
+            break;
+          case 2:
+            data.text = '待发货';
+            break;
+          case 3:
 
-                break;
-              case 2:
-                data.text = '待发货';
+            data.text = '待收货';
+            break;
+          case 4:
+            data.text = '待评论';
+            break;
+          case 7:
+            data.text = '交易失败';
+            break;
+        }
+        self.setData({
+          data: data,
+          orderId:data.id
+        });
+        console.log(self.data.data, 'findNewWaitPayOrder')
 
-                break;
-              case 3:
+      }
+    })
+  },
+  get_data2() {
+    var self = this;
+    wx.request({
+      url: 'http://192.168.2.98:9095/api/order/findNewSucceedOrder?time=' + new Date().getTime(),
+      header: {
+        token: wx.getStorageSync('token')
+      },
+      data: {
+        time: Date.parse(new Date())
+      },
+      method: 'GET',
+      success: function(res) {
 
-                data.text = '待收货';
-                break;
-              case 4:
+        let data = res.data.data;
+        switch (data.orderState) {
+          case 0:
+            break;
+          case 1:
+            data.text = '待付款';
 
-                data.text = '待评论';
-                break;
-              case 7:
+            break;
+          case 2:
+            data.text = '待发货';
 
-                data.text = '交易失败';
-                break;
-            }
-            self.setData({
-              data: data
-            });
+            break;
+          case 3:
+
+            data.text = '待收货';
+            break;
+          case 4:
+
+            data.text = '待评论';
+            break;
+          case 7:
+
+            data.text = '交易失败';
+            break;
+        }
+        self.setData({
+          data: data
+        });
+
+      }
+    })
+  },
+  remind() {
+    wx.showToast({
+      title: '提醒成功',
+      icon: 'success',
+      duration: 2000
+    })
+  },
+  busy() {
+      var self =this;
+    console.log(self.data.data,'data')
+
+
+    http.getRequest('/api/order/updateOrderState', { orderNo: self.data.data.orderNo},function(res){
+      wx.requestPayment({
+        timeStamp: res.data.data.timeStamp,
+        nonceStr: res.data.data.nonceStr,
+        package: res.data.data.package,
+        signType: res.data.data.signType,
+        paySign: res.data.data.paySign,
+        success(res) {
+
+          if (res.errMsg.split(":")[1] == "ok") {
+            
+            
+             self.get_data()
+
+            // wx.navigateBack({
+            //   delta: 1,
+            // })
+            // var allprice = self.data.allprice;
+
+            // wx.navigateTo({
+            //   url: '/pages/view/view?allprice=' + allprice,
+            // })
+          } else {
+
 
 
           }
-        })
-    },
-    get_data2() {
-        var self = this;
-        wx.request({
-          url: 'http://192.168.2.98:9095/api/order/findNewSucceedOrder?time=' + new Date().getTime(),
-            header: {
-                token: wx.getStorageSync('token')
-            },
-            data: {
-                time: Date.parse(new Date())
-            },
-            method: 'GET',
-          success: function (res) {
+        },
+        fail: function (res) {
+          // var waresList = JSON.stringify(self.data.dtos);
+          // wx.navigateTo({
+          //   url: '/pages/view1/view1?discountId=' + self.data.discountId + '&remark=' + self.data.inputValue + '&addressId=' + self.data.address.id + '&waresList=' + waresList + '&allprice=' + self.data.allprice,
+          // })
+        }
 
-            let data = res.data.data;
-            switch (data.orderState) {
-              case 0:
-
-                break;
-              case 1:
-                data.text = '待付款';
-
-                break;
-              case 2:
-                data.text = '待发货';
-
-                break;
-              case 3:
-
-                data.text = '待收货';
-                break;
-              case 4:
-
-                data.text = '待评论';
-                break;
-              case 7:
-
-                data.text = '交易失败';
-                break;
-            }
-            self.setData({
-              data: data
-            });
-
-          }
-        })
-    },
-    remind() {
-        wx.showToast({
-            title: '提醒成功',
-            icon: 'success',
-            duration: 2000
-        })
-    },
-    busy() {
-
-        wx.navigateTo({
-          url: 'pages/null/null',
-      
-        })
-
-        // wx: wx.request({
-        //     url: 'http://192.168.2.98:9095/api/order/updateOrderState',
-        //     data: {
-        //         orderNo
-        //     },
-        //     header: {
-        //         token: wx.getStorageSync('token')
-        //     },
-
-        //     success: function(res) {
-        //         wx.requestPayment({
-        //             timeStamp: res.data.data.timeStamp,
-        //             nonceStr: res.data.data.nonceStr,
-        //             package: res.data.data.package,
-        //             signType: res.data.data.signType,
-        //             paySign: res.data.data.paySign,
-        //             success(res) {
-
-        //                 if (res.errMsg.split(":")[1] == "ok") {
-        //                     var allprice = self.data.allprice;
-
-        //                     wx.navigateTo({
-        //                         url: '/pages/view/view?allprice=' + allprice,
-        //                     })
-        //                 } else {
-        //                 }
-        //             }
-
-        //         })
-        //     },
-        //     fail: function(res) {},
-
-        // })
-    },
-    goto22(e){
-      wx.reLaunch({
-        url: e.currentTarget.dataset.url,
       })
-      
-    }
-
+    })
  
+  },
+  goto22(e) {
+    wx.reLaunch({
+      url: e.currentTarget.dataset.url,
+    })
+
+  }
+
+
 })

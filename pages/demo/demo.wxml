@@ -1,7 +1,5 @@
-<radio-group bindchange="radioChange">
-   <label wx:for="{{radioItems}}" wx:key="value">
-       <radio class="weui-check" value="{{item.value}}" checked="{{item.checked}}"/>
-       <icon  class="iconfont {{item.classname}}"></icon >
-   </label>
-   <view class='stars'>{{stars}}分</view>
-</radio-group>
+
+<view class='page'>
+  <!-- 文本视图 -->
+ <view  bindtap="btn">提交</view>
+</view>

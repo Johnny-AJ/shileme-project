@@ -199,7 +199,7 @@ Page({
           cartlist: app.filterArr(cartlist, 'orderId'),
           hasMore: cartlist1.length == 5
         })
-
+        console.log(self.data.cartlist,'cartlist')
       }
 
     })
@@ -251,7 +251,44 @@ Page({
     })
   },
   buys(e) {
-    console.log()
+    console.log(e,'e')
+    http.getRequest('/api/order/updateOrderState', { orderNo: e.currentTarget.dataset.orderno }, function (res) {
+      wx.requestPayment({
+        timeStamp: res.data.data.timeStamp,
+        nonceStr: res.data.data.nonceStr,
+        package: res.data.data.package,
+        signType: res.data.data.signType,
+        paySign: res.data.data.paySign,
+        success(res) {
+
+          if (res.errMsg.split(":")[1] == "ok") {
+
+
+            self.get_data()
+
+            // wx.navigateBack({
+            //   delta: 1,
+            // })
+            // var allprice = self.data.allprice;
+
+            // wx.navigateTo({
+            //   url: '/pages/view/view?allprice=' + allprice,
+            // })
+          } else {
+
+
+
+          }
+        },
+        fail: function (res) {
+          // var waresList = JSON.stringify(self.data.dtos);
+          // wx.navigateTo({
+          //   url: '/pages/view1/view1?discountId=' + self.data.discountId + '&remark=' + self.data.inputValue + '&addressId=' + self.data.address.id + '&waresList=' + waresList + '&allprice=' + self.data.allprice,
+          // })
+        }
+
+      })
+    })
   },
   remind() { //提示发货
     wx.showToast({
@@ -261,17 +298,7 @@ Page({
     })
   },
   comments(e) { //跳转到评论
-
-    // cartlist.forEach(i => {
-    //   if (i.orderId == e.currentTarget.dataset.orderid) {
-
-    //     cartlist.splice(i, 1)
-    //   }
-    // })
     var self =this;
-    
-   
-    
     wx.navigateTo({
       url: '/pages/general/general?waresId=' + e.currentTarget.dataset.waresid + '&orderId=' + e.currentTarget.dataset.orderid,
       success(res){
@@ -283,10 +310,11 @@ Page({
       }
     })
     // wx.navigateTo({
-    //   url: '/pages/general/general' 
+    //   url: '/pages/general /general' 
      
     // })
 
-  }
+  },
+  
 
 })

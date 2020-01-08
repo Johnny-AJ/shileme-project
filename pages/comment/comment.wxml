@@ -3,22 +3,22 @@
 <view class="comment">
 
   <view class="conts">
- 
+
     <view class="pj" wx:for="{{getcommentList}}" wx:key="*this">
       <view class="head">
         <image src="http://192.168.2.98:9095//scango/椭圆 4.png " wx:if="{{item.userName==null}}"></image>
-        <image src="{{item.userImg}}" ></image>
+        <image src="{{item.userImg}}"></image>
       </view>
       <view class="pr">
         <text class="name">{{item.userName}}</text>
         <text class="name" wx:if="{{item.userName==null}}">匿名</text>
         <text class="time">{{item.createTime}}</text>
-        <view class="text" >
-            {{item.commentInfo}}
+        <view class="text">
+          {{item.commentInfo}}
           <!-- <text bindtap="spread" wx:if="{{item.commentInfo.length>}}">全文</text> -->
         </view>
         <view class="show2 ">
-          <image src="{{i}}" wx:for="{{item.images}}" wx:key="*this" wx:for-item="i"></image>
+          <image src="{{i}}" wx:for="{{item.images}}" wx:key="*this" wx:for-item="i" data-src="{{i}}" bindtap="previewImage"></image>
 
         </view>
 
@@ -26,13 +26,13 @@
 
     </view>
   </view>
- <view class="weui-loadmore" hidden='{{!loading}}'>
-        <view class="weui-loading"></view>
-        <view class="weui-loadmore__tips">正在加载</view>
-      </view>
-      <view class="weui-loadmore weui-loadmore_line" hidden='{{hasNext}}'>
-        <view class="weui-loadmore__tips weui-loadmore__tips_in-line">到底了</view>
-      </view>
+  <view class="weui-loadmore" hidden='{{!loading}}'>
+    <view class="weui-loading"></view>
+    <view class="weui-loadmore__tips">正在加载</view>
+  </view>
+  <view class="weui-loadmore weui-loadmore_line" hidden='{{hasNext ||getcommentList.length<5}}'>
+    <view class="weui-loadmore__tips weui-loadmore__tips_in-line">到底了</view>
+  </view>
 
 
 </view>

@@ -12,7 +12,7 @@ Page({
     hasNext: true, //
     loading: false, // 是否显示loading
     hasNext: true,
-   
+    imageList:[],//存放所有的图片数据
   },
 
   
@@ -83,9 +83,23 @@ Page({
           getcommentList = [...getcommentList, ...productlist1]
 
         let aa = app.filterArr(getcommentList, 'id');
-        // aa.forEach(res=>{
 
-        // })
+       var arry=[]
+        aa.forEach(res=>{
+          if (res.images.length>0){
+            // arry.concat(res.images)
+
+            arry = [...arry, ...res.images]
+          
+          }
+       
+          
+        })
+
+          self.setData({
+            imageList: arry
+          })
+
         self.setData({
           loading: false,
           getcommentList: aa,
@@ -93,10 +107,20 @@ Page({
           hasNext: res.data.data.hasNext
  
         })
-        console.log(self.data, 'getCommentList')
+        // console.log(self.data, 'getCommentList')
       }
     })
   },
+   previewImage: function (e) {
+
+    //  console.log('previewImage',e)
+    var current = e.target.dataset.src
+
+    wx.previewImage({
+      current: current.toString(),
+      urls: this.data.imageList
+    })
+  }
 
  
 })

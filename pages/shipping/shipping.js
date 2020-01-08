@@ -121,7 +121,7 @@ Page({
         this.address();
     },
     click(e) {
-        console.log()
+        console.log('665656')
             // var addressId = e.currentTarget.dataset.addressid;
             // console.log(addressId,'addressId666')
         wx.setStorageSync('addressId', e.currentTarget.dataset.addressid)

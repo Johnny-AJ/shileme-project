@@ -54,7 +54,7 @@
 
   <view class="discounts">
 
-    <view class="lj" bindtap="toggleDialog" wx:if="{{!getListByWaresId1}}">
+    <view class="lj" bindtap="toggleDialog" hidden="{{!getListByWaresId}}">
       <view class="title">领劵</view>
       <view class="ljcont">
 
@@ -75,14 +75,14 @@
   </view>
   <view>{{index111}}</view>
   <view>{{index222}}</view>
-  <view class="comment">
+  <view class="comment" hidden="{{getcommentList.length==0}}">
     <view class="title" bindtap="gotcommentList" data-waresId="{{waresId}}">
       <view class="conts">宝贝评价（{{totalCount}}）</view>
       <view class="more">查看更多
         <image src="http://192.168.2.98:9095//scango/矩形 16 拷贝.png"></image>
       </view>
     </view>
-    <view class="pj">
+    <view class="pj" hidden="{{getcommentList.length==0}}">
 
       <view class="tbottom">
         <view class="tblog">
@@ -119,7 +119,7 @@
       <text>商品信息</text>
       <view></view>
     </view>
-
+    <view class="contentTitle">{{contentTitle}}</view>
     <view class="contents" wx:for="{{list.content}}" wx:key='*this'>
 
       <image src="{{item}}"></image>
@@ -127,7 +127,7 @@
 
   </view>
   
-  <view class="buy" bindtap="buys" data-waresId="{{waresId}}" data-propertyId="{{defaultSku.skuid}}" data-amount="{{value1}}">立即购买</view>
+  <view class="buy" bindtap="buys" data-waresId="{{waresId}}"  data-propertyId="{{defaultSku.skuid}}" data-amount="{{value1}}">立即购买</view>
 
 
   <!-- 领劵弹出层 -->

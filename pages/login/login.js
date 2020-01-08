@@ -30,7 +30,29 @@ Page({
               self.setData({
                 token: res.data.msg
               })
+              wx.getSetting({
+                success(res) {
+                  // console.log("res", res)
+                  if (res.authSetting['scope.userInfo']) {
 
+                    // 已经授权，可以直接调用 getUserInfo 获取头像昵称
+                    wx.getUserInfo({
+                      success(res) {
+                        console.log(res, '2202222')
+                        wx.setStorageSync('avatarUrl', res.userInfo.avatarUrl) //头像
+                        wx.setStorageSync('nickName', res.userInfo.nickName) //名字
+
+                      },
+                      fail(res) {
+                        console.log("获取用户信息失败", res)
+                      }
+                    })
+                  } else {
+                    console.log("未授权=====")
+                    // that.showSettingToast("请授权")
+                  }
+                }
+              })
               wx.request({
                 url: 'http://192.168.2.98:9095//api/wechat/updateUserInfo',
                 data: {

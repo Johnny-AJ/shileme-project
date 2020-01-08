@@ -1,5 +1,8 @@
 {
-    "usingComponents": {},
+    "usingComponents": {
+
+      "i-count-down": "../../components/count-down/index"
+    },
     "navigationBarBackgroundColor": "#F02B50",
     "navigationBarTextStyle": "white",
     "navigationBarTitleText": "订单详情",

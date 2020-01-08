@@ -65,12 +65,9 @@ Page({
 
     },
     clear() {
-        this.setData({
-            inputValue: ''
-        })
-        this.setData({
-            seach: []
-        })
+       wx.navigateBack({
+         delta: 1,
+       })
 
     },
     getHotSearch() { //热门搜索

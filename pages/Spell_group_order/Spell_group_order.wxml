@@ -145,7 +145,7 @@
             </view>
             <view class="cr">
               <view class="rt">
-                <text class="t1">{{item.money}}</text>
+                <text class="t1">{{item.name}}</text>
               </view>
               <view class=" rb ">
                 <text class="t1 ">适用平台：{{item.text}}</text>

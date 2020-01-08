@@ -20,7 +20,7 @@
   <view class="swiper_box">
     <swiper indicator-dots="false" autoplay="false" interval="3000" circular="false">
       <swiper-item wx:for="{{swiperList}}" wx:key='*this'>
-        <image mode="widthFix" src="{{item.url}}"></image>
+        <image mode="widthFix" src="{{item.url}}" bindtap="goto" data-waresId="{{item.waresId}}"></image>
       </swiper-item>
     </swiper>
   </view>

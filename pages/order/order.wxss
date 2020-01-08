@@ -45,6 +45,7 @@ page {
 }
 
 .order  .orderhead  .t2 {
+  display: flex;
   font-size: 28rpx;
   font-weight: 400;
   color: rgba(255, 255, 255, 0.9);
@@ -310,7 +311,7 @@ page {
 
 .detailed {
   width: 100%;
-  height: 266rpx;
+
   margin-top: 19rpx;
   background: #fff;
 }
@@ -331,12 +332,12 @@ page {
 }
 
 .detailed .time {
-  width: 100%;
-  height: 180rpx;
+  width: 690rpx;
+  margin-left: 30rpx;
   font-size: 26rpx;
   font-family: PingFang SC;
   font-weight: 400;
-  padding-top: 29rpx;
+  padding: 29rpx 0;
   color: rgba(34, 34, 34, 1);
 }
 

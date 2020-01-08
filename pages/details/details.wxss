@@ -272,7 +272,7 @@
 }
 
 .comment  .pj  .tbottom  .tblog {
-  width: 3130rpx;
+
   height: 200rpx;
 }
 
@@ -688,13 +688,13 @@
 .popup  .trade .tcont {
   width: 430rpx;
   height: 100%;
-  position: relative;
+ 
 }
 
 .popup  .trade .tcont .name {
   margin-top: 30rpx;
   width: 100%;
-  height: 80rpx;
+  height: 83rpx;
   overflow: hidden;
   text-overflow: ellipsis;
   display: -webkit-box;
@@ -714,10 +714,7 @@
 }
 
 .popup  .trade .tcont .prcie {
-  position: absolute;
-  top: 150rpx;
   font-size: 26rpx;
-  left: 0;
   font-family: PingFang SC;
   font-weight: bold;
   color: rgba(240, 43, 80, 1);
@@ -728,9 +725,7 @@
 }
 
 .popup  .trade .tcont .repertory {
-  position: absolute;
-  top: 196rpx;
-  left: 0;
+ 
   font-size: 26rpx;
   font-family: PingFang SC;
   font-weight: bold;

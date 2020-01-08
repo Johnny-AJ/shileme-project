@@ -1,3 +1,5 @@
+let http = require('../../utils/http.js')
+
 Page({
 
   /**
@@ -24,17 +26,16 @@ Page({
     allProperties: [],
     pic: '',
     token: '',
-
     getListByWaresId: [],
     getListByWaresId1: [],
-    totalCount: 0
+    totalCount: 0,
+    contentTitle:''
   },
 
   /**
    * 生命周期函数--监听页面加载
    */
-  onLoad: function (options) {
-
+  onLoad: function(options) {
     var self = this;
     this.setData({
       waresId: options.waresId
@@ -43,34 +44,42 @@ Page({
     // this.setData({
     //   waresId: 9
     // })
-
-    this.get_data(options.waresid); // 获取商品数据
+    // this.get_data()
+    this.get_data(); // 获取商品数据
     var self = this;
-    wx.request({ //获取商品规格
-      url: 'http://192.168.2.98:9095/api/wares/details/getPropertyList',
-      method: "get",
-      data: {
-        waresId: self.data.waresId
-      },
-      success(res) {
+    //获取商品规格
+    http.getRequest('/api/wares/details/getPropertyList', {
+      waresId: self.data.waresId
+    }, function(res) {
+      self.setData({
+        imgsurl: res.data.data.imgUrl,
+        skuList: res.data.data.skuList
+      })
+      self.groupSkuProp();
+    })
+    // wx.request({ //获取商品规格
+    //   url: 'http://192.168.2.98:9095/api/wares/details/getPropertyList',
+    //   method: "get",
+    //   data: {
+    //     waresId: self.data.waresId
+    //   },
+    //   success(res) {
+    //     self.setData({
+    //       imgsurl: res.data.data.imgUrl
+    //     })
 
-        console.log(res.data, '66666666')
-        self.setData({
-          imgsurl: res.data.data.imgUrl
-        })
+    //     self.setData({
+    //       skuList: res.data.data.skuList
+    //     })
 
-        self.setData({
-          skuList: res.data.data.skuList
-        })
+    //     self.groupSkuProp();
 
-        self.groupSkuProp();
-
-      }
+    //   }
 
 
 
-    }),
-      this.getcommentList(); //评论列表
+    // }),
+    this.getcommentList(); //评论列表
     this.getListByWaresId() //根据商品查询优惠券列表
 
 
@@ -79,14 +88,14 @@ Page({
   /**
    * 生命周期函数--监听页面初次渲染完成
    */
-  onReady: function () {
+  onReady: function() {
 
   },
 
   /**
    * 生命周期函数--监听页面显示
    */
-  onShow: function () {
+  onShow: function() {
     this.getDiscountById();
 
 
@@ -95,14 +104,14 @@ Page({
   /**
    * 生命周期函数--监听页面隐藏
    */
-  onHide: function () {
+  onHide: function() {
 
   },
 
   /**
    * 生命周期函数--监听页面卸载
    */
-  onUnload: function () {
+  onUnload: function() {
 
   },
 
@@ -112,30 +121,31 @@ Page({
   // 获取商品数据
   get_data() {
 
-    var self = this;
-    wx.request({
-      url: 'http://192.168.2.98:9095/api/wares/details/getWaresInfo',
-      method: "get",
-      data: {
-        waresId: self.data.waresId
-      },
-      success(res) {
-        console.log(res, 'getWaresInfo')
+    let self = this;
 
-        self.setData({
-          list: res.data.data
-        })
-        self.setData({
-          price: self.data.list.mallPrice
-        })
+    http.getRequest('/api/wares/details/getWaresInfo', {
+      waresId: self.data.waresId
+    }, function(res) {
 
-        self.setData({
-          pic: self.data.list.content[0]
-        })
+      console.log(res.data.data, 'res')
 
 
-      }
+      self.setData({
+        list: res.data.data,
+        contentTitle: res.data.data.contentTitle
+      })
+
+      self.setData({
+        price: self.data.list.mallPrice,
+        pic: self.data.list.images[0]
+
+      })
+
+      console.log(self.data, '696969')
+
     })
+
+
   },
   // 弹出领劵层方法
   toggleDialog() {
@@ -151,7 +161,7 @@ Page({
     });
   },
   // 轮播图
-  swiperChange: function (e) {
+  swiperChange: function(e) {
     this.setData({
       currentSwiper: e.detail.current
     })
@@ -165,7 +175,7 @@ Page({
     })
   },
   //规格选择
-  groupSkuProp: function () {
+  groupSkuProp: function() {
     var self = this;
 
     var skuList = self.data.skuList;
@@ -238,7 +248,7 @@ Page({
       allProperties: allProperties
     });
   },
-  parseSelectedObjToVals: function () {
+  parseSelectedObjToVals: function() {
     var selectedPropObj = this.data.selectedPropObj;
     var selectedProperties = "";
     var selectedProp = [];
@@ -266,7 +276,7 @@ Page({
     });
 
   },
-  toChooseItem: function (e) {
+  toChooseItem: function(e) {
 
     if (e) {
       var val = e.currentTarget.dataset.val;
@@ -281,7 +291,7 @@ Page({
 
   },
 
-  array_contain: function (array, obj) {
+  array_contain: function(array, obj) {
     for (var i = 0; i < array.length; i++) {
       if (array[i] == obj) //如果要求数据类型也一致，这里可使用恒等号===
         return true;
@@ -289,18 +299,20 @@ Page({
     return false;
   },
 
-  buys: function (e) { // 立即购买
+  buys: function(e) { // 立即购买
 
     var self = this;
 
     if (e) {
       var dtos = JSON.stringify(e.currentTarget.dataset);
-      console.log(dtos, 'dtos')
       if (e.currentTarget.dataset.propertyid == undefined) {
         wx.showToast({
           title: '请选择规格！',
           icon: 'loading',
-          duration: 2000
+          duration: 2000,
+          success:function(){
+            self.toggleDialog1()
+          }
         })
       } else {
         wx.navigateTo({
@@ -313,26 +325,37 @@ Page({
   },
   getcommentList() { //评论列表
     var self = this;
-    wx.request({
-      url: 'http://192.168.2.98:9095/api/wares/details/getCommentList',
-      header: {
-        token: wx.getStorageSync('token')
-      },
-      data: {
-        waresId: self.data.waresId,
-        pageSize: 5,
-        currPage: 0
+    let prams = {
+      waresId: self.data.waresId,
+      pageSize: 5,
+      currPage: 0
+    }
+    http.getRequest('/api/wares/details/getCommentList', prams, function(res) {
 
-      },
-      success: function (res) {
-
-        self.setData({
-          getcommentList: res.data.data.list,
-          totalCount: res.data.data.totalCount
-        })
-        console.log(res, 'getCommentList')
-      }
+      self.setData({
+        getcommentList: res.data.data.list,
+        totalCount: res.data.data.totalCount
+      })
     })
+    // wx.request({
+    //   url: 'http://192.168.2.98:9095/api/wares/details/getCommentList',
+    //   header: {
+    //     token: wx.getStorageSync('token')
+    //   },
+    //   data: {
+    //     waresId: self.data.waresId,
+    //     pageSize: 5,
+    //     currPage: 0
+
+    //   },
+    //   success: function (res) {
+
+    //     self.setData({
+    //       getcommentList: res.data.data.list,
+    //       totalCount: res.data.data.totalCount
+    //     })
+    //   }
+    // })
   },
   gotcommentList(e) {
 
@@ -353,43 +376,74 @@ Page({
   getListByWaresId() { //根据商品查询优惠券列表
 
     var self = this;
-    wx.request({
-      url: 'http://192.168.2.98:9095/api/discount/data/getListByWaresId',
-      header: {
-        token: wx.getStorageSync('token')
-      },
-      data: {
-        waresId: self.data.waresId,
-        storeId: ''
+    let prams = {
+      waresId: self.data.waresId,
+      storeId: ''
+    }
+    http.getRequest('/api/discount/data/getListByWaresId', prams, function(res) {
+      self.setData({
+        getListByWaresId: res.data.data
+      })
+      var getListByWaresId = self.data.getListByWaresId;
 
-      },
-      success: function (res) {
-
-        self.setData({
-          getListByWaresId: res.data.data
-        })
-        var getListByWaresId = self.data.getListByWaresId;
-        for (var i = 0; i < getListByWaresId.length; i++) {
-          getListByWaresId[i].text = '';
-          if (getListByWaresId[i].discountCouponFor == 0) {
-            getListByWaresId[i].text = '全平台'
-          } else if (getListByWaresId[i].discountCouponFor == 1) {
-            getListByWaresId[i].text = '门店'
-          } else {
-            getListByWaresId[i].text = '指定商品'
-          }
-          self.setData({
-            getListByWaresId
-          })
-
+     
+      for (var i = 0; i < getListByWaresId.length; i++) {
+        getListByWaresId[i].text = '';
+        if (getListByWaresId[i].discountCouponFor == 0) {
+          getListByWaresId[i].text = '全平台'
+        } else if (getListByWaresId[i].discountCouponFor == 1) {
+          getListByWaresId[i].text = '门店'
+        } else {
+          getListByWaresId[i].text = '指定商品'
         }
-        var getListByWaresId = self.data.getListByWaresId;
         self.setData({
-          getListByWaresId1: getListByWaresId.slice(0, 2)
+          getListByWaresId
         })
-        console.log(self.data.getListByWaresId, 'getListByWaresId')
+
       }
+      // var getListByWaresId = self.data.getListByWaresId;
+      self.setData({
+        getListByWaresId1: getListByWaresId.slice(0, 2)
+      })
+
+      console.log(self.data.getListByWaresId1, 'getListByWaresId')
     })
+    // wx.request({
+    //   url: 'http://192.168.2.98:9095/api/discount/data/getListByWaresId',
+    //   header: {
+    //     token: wx.getStorageSync('token')
+    //   },
+    //   data: {
+    //     waresId: self.data.waresId,
+    //     storeId: ''
+
+    //   },
+    //   success: function (res) {
+
+    //     self.setData({
+    //       getListByWaresId: res.data.data
+    //     })
+    //     var getListByWaresId = self.data.getListByWaresId;
+    //     for (var i = 0; i < getListByWaresId.length; i++) {
+    //       getListByWaresId[i].text = '';
+    //       if (getListByWaresId[i].discountCouponFor == 0) {
+    //         getListByWaresId[i].text = '全平台'
+    //       } else if (getListByWaresId[i].discountCouponFor == 1) {
+    //         getListByWaresId[i].text = '门店'
+    //       } else {
+    //         getListByWaresId[i].text = '指定商品'
+    //       }
+    //       self.setData({
+    //         getListByWaresId
+    //       })
+
+    //     }
+    //     var getListByWaresId = self.data.getListByWaresId;
+    //     self.setData({
+    //       getListByWaresId1: getListByWaresId.slice(0, 2)
+    //     })
+    //   }
+    // })
   },
   getDiscountById(e) { // 领取优惠券
 
@@ -398,39 +452,54 @@ Page({
 
     }
     var self = this;
-    wx.request({
-      url: 'http://192.168.2.98:9095/api/discount/data/getDiscountById',
-      header: {
-        token: wx.getStorageSync('token')
-      },
-      data: {
-        id: id
 
-      },
-      success: function (res) {
-
-
-        if (res.data.code == '0') {
-          var getListByWaresId = self.data.getListByWaresId;
-          for (var i = 0; i < getListByWaresId.length; i++) {
-
-            console.log(getListByWaresId[i], '555555')
-            if (getListByWaresId[i].id == id) {
-
-              console.log(88888)
-              getListByWaresId[i].isGet = 0;
-
-            }
+    http.getRequest('/api/discount/data/getDiscountById', {
+      id: id
+    }, function(res) {
+      if (res.data.code == '0') {
+        var getListByWaresId = self.data.getListByWaresId;
+        for (var i = 0; i < getListByWaresId.length; i++) {
+          if (getListByWaresId[i].id == id) {
+            getListByWaresId[i].isGet = 0;
 
           }
-          self.setData({
-            getListByWaresId: getListByWaresId
-          })
 
         }
+        self.setData({
+          getListByWaresId: getListByWaresId
+        })
 
       }
     })
+    // wx.request({
+    //   url: 'http://192.168.2.98:9095/api/discount/data/getDiscountById',
+    //   header: {
+    //     token: wx.getStorageSync('token')
+    //   },
+    //   data: {
+    //     id: id
+
+    //   },
+    //   success: function (res) {
+
+
+    //     if (res.data.code == '0') {
+    //       var getListByWaresId = self.data.getListByWaresId;
+    //       for (var i = 0; i < getListByWaresId.length; i++) {
+    //         if (getListByWaresId[i].id == id) {
+    //           getListByWaresId[i].isGet = 0;
+
+    //         }
+
+    //       }
+    //       self.setData({
+    //         getListByWaresId: getListByWaresId
+    //       })
+
+    //     }
+
+    //   }
+    // })
 
 
   },
@@ -440,26 +509,37 @@ Page({
 
     if (e) {
       if (e.currentTarget.dataset.propertyid) {
-        var dto = JSON.stringify(e.currentTarget.dataset)
-        wx.request({
-          url: 'http://192.168.2.98:9095/api/shop/cart/add',
-          header: {
-            token: wx.getStorageSync('token'),
-            'content-type': 'application/json' // 默认值
-          },
-          method: 'POST',
-          data: dto,
-          success: function (res) {
-            if (res.data.code == 0) {
-              wx.showToast({
-                title: '加入购物车成功',
-                icon: 'success',
-                duration: 1000
-              })
-            }
+        var dto = JSON.stringify(e.currentTarget.dataset);
+        http.postRequest('/api/shop/cart/add', {
+          dto
+        }, function(res) {
+          if (res.data.code == 0) {
+            wx.showToast({
+              title: '加入购物车成功',
+              icon: 'success',
+              duration: 1000
+            })
           }
-
         })
+        // wx.request({
+        //   url: 'http://192.168.2.98:9095/api/shop/cart/add',
+        //   header: {
+        //     token: wx.getStorageSync('token'),
+        //     'content-type': 'application/json' // 默认值
+        //   },
+        //   method: 'POST',
+        //   data: dto,
+        //   success: function (res) {
+        //     if (res.data.code == 0) {
+        //       wx.showToast({
+        //         title: '加入购物车成功',
+        //         icon: 'success',
+        //         duration: 1000
+        //       })
+        //     }
+        //   }
+
+        // })
       } else {
         wx.showToast({
           title: '请添加规格',
@@ -471,28 +551,40 @@ Page({
 
 
   },
-  defined(e) {
+  defined(e) { //加入收藏
     var self = this;
     if (e) {
       if (e.currentTarget.dataset.waresid) {
-        wx.request({
-          url: 'http://192.168.2.98:9095/api/shop/collect/add',
-          data: {
-            waresId: e.currentTarget.dataset.waresid
-          },
-          header: {
-            token: wx.getStorageSync('token')
-          },
-          success: function (res) {
-            if (res.data.code == '0') {
-              wx.showToast({
-                title: '已经加入收藏',
-                icon: 'success',
-                duration: 1000
-              })
-            }
+
+        http.getRequest('/api/shop/collect/add', {
+          waresId: e.currentTarget.dataset.waresid
+        }, function(res) {
+          if (res.data.code == '0') {
+            wx.showToast({
+              title: '已经加入收藏',
+              icon: 'success',
+              duration: 1000
+            })
           }
         })
+        // wx.request({
+        //   url: 'http://192.168.2.98:9095/api/shop/collect/add',
+        //   data: {
+        //     waresId: e.currentTarget.dataset.waresid
+        //   },
+        //   header: {
+        //     token: wx.getStorageSync('token')
+        //   },
+        //   success: function (res) {
+        //     if (res.data.code == '0') {
+        //       wx.showToast({
+        //         title: '已经加入收藏',
+        //         icon: 'success',
+        //         duration: 1000
+        //       })
+        //     }
+        //   }
+        // })
       }
     }
   }

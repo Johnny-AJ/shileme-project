@@ -14,7 +14,7 @@ Page({
         getListByWaresId: [], //优惠劵列表
         showDialog: false, //领劵开关
         slideProductList: [], //购物车详细信息
-        selectAllStatus: false,
+        selectAllStatus: false,//是否全选
         cartlist: [],
         currPage: 0,
         hasNext: true, //
@@ -29,13 +29,20 @@ Page({
      */
     onLoad: function(options) {
 
-
+      
+     
 
     },
     onShow: function() {
         this.carlist(); //获取为你推荐的商品列表
         this.getList(); //获取购物车列表
         this.getListByWaresId(); //获取优惠劵列表
+      this.setData({
+        totalPrice: app.returnFloat(0),
+        selectAllStatus: false
+      })
+
+       console.log(this.data.selectAllStatus, 'selectAllStatus')
     },
     onReachBottom: function() {
 
@@ -131,7 +138,7 @@ Page({
         amount: e.detail.value,
         id: id
       }
-      http.getRuest('/api/shop/cart/updateAmount',prams,function(res){
+      http.getRequest('/api/shop/cart/updateAmount',prams,function(res){
         if (res.data.code == 0) {
 
           for (var i = 0; i < chooseGoods.length; i++) {
@@ -187,7 +194,7 @@ Page({
     }) { //
 
 
-      http.getRuest('/api/shop/cart/delete', { id: id},function(res){
+      http.getRequest('/api/shop/cart/delete', { id: id},function(res){
 
       })
         // wx.request({
@@ -247,94 +254,140 @@ Page({
 
         var self = this;
         var getListByWaresId = [];
-        wx.request({
-            url: 'http://192.168.2.98:9095/api/discount/data/getListByWaresIds',
-            header: {
-                token: wx.getStorageSync('token')
-            },
-            data: {
 
-            },
-            success: function(res) {
-
-                self.setData({
-                    getListByWaresId: res.data.data
-                })
-                var getListByWaresId = self.data.getListByWaresId;
-
-                self.setData({
-                    getListByWaresId
-                })
-                self.setData({
-                    getListByWaresId1: getListByWaresId.slice(0, 2)
-                })
-
-                // }
-            }
+      http.getRequest('/api/discount/data/getListByWaresIds',{},function(res){
+        self.setData({
+          getListByWaresId: res.data.data
         })
+        var getListByWaresId = self.data.getListByWaresId;
+
+        self.setData({
+          getListByWaresId
+        })
+        self.setData({
+          getListByWaresId1: getListByWaresId.slice(0, 2)
+        })
+      })
+        // wx.request({
+        //     url: 'http://192.168.2.98:9095/api/discount/data/getListByWaresIds',
+        //     header: {
+        //         token: wx.getStorageSync('token')
+        //     },
+        //     data: {
+
+        //     },
+        //     success: function(res) {
+
+        //         self.setData({
+        //             getListByWaresId: res.data.data
+        //         })
+        //         var getListByWaresId = self.data.getListByWaresId;
+
+        //         self.setData({
+        //             getListByWaresId
+        //         })
+        //         self.setData({
+        //             getListByWaresId1: getListByWaresId.slice(0, 2)
+        //         })
+
+        //         // }
+        //     }
+        // })
     },
 
     getList() { //购物车列表
         var self = this;
-        wx: wx.request({
-            url: 'http://192.168.2.98:9095/api/shop/cart/getList',
-            data: {
 
-            },
-            header: {
-                token: wx.getStorageSync('token')
-            },
-            method: 'GET',
-            success: function(res) {
-                console.log(res,'cartlist')
-                let slideProductList = res.data.data.list
-                for (var i = 0; i < slideProductList.length; i++) {
-                    slideProductList[i].flag = false;
-                }
-                self.setData({
-                    slideProductList: slideProductList,
-                    chooseGoods: slideProductList
-                })
-
-            },
-            fail: function(res) {
-
-            }
-
+      http.getRequest('/api/shop/cart/getList',{},function(res){
+        let slideProductList = res.data.data.list
+        for (var i = 0; i < slideProductList.length; i++) {
+          slideProductList[i].flag = false;
+        }
+        self.setData({
+          slideProductList: slideProductList,
+          chooseGoods: slideProductList
         })
+      })
+        // wx: wx.request({
+        //     url: 'http://192.168.2.98:9095/api/shop/cart/getList',
+        //     data: {
+
+        //     },
+        //     header: {
+        //         token: wx.getStorageSync('token')
+        //     },
+        //     method: 'GET',
+        //     success: function(res) {
+        //         console.log(res,'cartlist')
+        //         let slideProductList = res.data.data.list
+        //         for (var i = 0; i < slideProductList.length; i++) {
+        //             slideProductList[i].flag = false;
+        //         }
+        //         self.setData({
+        //             slideProductList: slideProductList,
+        //             chooseGoods: slideProductList
+        //         })
+
+        //     },
+        //     fail: function(res) {
+
+        //     }
+
+        // })
 
     },
     carlist() { //获取商品
         var self = this;
-        wx: wx.request({
-            url: 'http://192.168.2.98:9095/api/index/findAllWaresByCate',
-            data: {
-                categoryId: '',
-                currPage: self.data.currPage,
-                pageSize: 4
-            },
-            header: {
-                token: wx.getStorageSync('token')
-            },
-            success: function(res) {
 
+        let prams={
+          categoryId: '',
+          currPage: self.data.currPage,
+          pageSize: 4
+        }
+      http.getRequest('/api/index/findAllWaresByCate',prams,function(res){
 
-                var cartlist = self.data.cartlist;
-                var productlist1 = [];
-                productlist1 = res.data.data.list,
-                  cartlist = [...cartlist, ...productlist1]
-              
-              let aa = app.filterArr(cartlist, 'waresId')
-                    self.setData({
-                        loading: false,
-                        cartlist: aa,
-                        hasMore: res.data.data.list.length == 4,
-                        hasNext: res.data.data.hasNext
-                    })
-            },
-            fail: function(res) {},
+        var cartlist = self.data.cartlist;
+        var productlist1 = [];
+        productlist1 = res.data.data.list,
+          cartlist = [...cartlist, ...productlist1]
 
+        let aa = app.filterArr(cartlist, 'waresId')
+        self.setData({
+          loading: false,
+          cartlist: aa,
+          hasMore: res.data.data.list.length == 4,
+          hasNext: res.data.data.hasNext
         })
+      })
+        // wx: wx.request({
+        //     url: 'http://192.168.2.98:9095/api/index/findAllWaresByCate',
+        //     data: {
+        //         categoryId: '',
+        //         currPage: self.data.currPage,
+        //         pageSize: 4
+        //     },
+        //     header: {
+        //         token: wx.getStorageSync('token')
+        //     },
+        //     success: function(res) {
+
+
+        //         var cartlist = self.data.cartlist;
+        //         var productlist1 = [];
+        //         productlist1 = res.data.data.list,
+        //           cartlist = [...cartlist, ...productlist1]
+              
+        //       let aa = app.filterArr(cartlist, 'waresId')
+        //             self.setData({
+        //                 loading: false,
+        //                 cartlist: aa,
+        //                 hasMore: res.data.data.list.length == 4,
+        //                 hasNext: res.data.data.hasNext
+        //             })
+        //     },
+        //     fail: function(res) {},
+
+        // })
     },
     buys() {
         var self = this;
