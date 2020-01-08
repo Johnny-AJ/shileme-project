@@ -11,11 +11,7 @@
 .imgs image {
   width: 150rpx;
   height: 150rpx;
-<<<<<<< HEAD
   margin-right: 30rpx;
-=======
-  margin: 30rpx;
->>>>>>> 52f64f72e88e74a5d1fd6ab67dc3de89912ce267
 }
 
 .btn {
@@ -30,7 +26,6 @@
   text-align: center;
   line-height: 88rpx;
   margin: 30rpx;
-<<<<<<< HEAD
   position: absolute;
   bottom: 30rpx;
   right: 6rpx;
@@ -77,6 +72,4 @@ textarea {
   background-color: #f5f5f5;
   margin: 20rpx;
   font-size: 24rpx;
-=======
->>>>>>> 52f64f72e88e74a5d1fd6ab67dc3de89912ce267
 }

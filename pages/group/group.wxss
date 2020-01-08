@@ -108,15 +108,9 @@ page {
   font-weight: bold;
   color: rgba(34, 34, 34, 1);
   display: -webkit-box;
-<<<<<<< HEAD
   -webkit-box-orient: vertical;
   -webkit-line-clamp: 2;
   overflow: hidden;
-=======
--webkit-box-orient: vertical;
--webkit-line-clamp: 2;
-overflow: hidden;
->>>>>>> 52f64f72e88e74a5d1fd6ab67dc3de89912ce267
 }
 
 .group_box1 .group_text .t4 {
@@ -157,11 +151,7 @@ overflow: hidden;
   position: absolute;
   top: 155rpx;
   left: 545rpx;
-<<<<<<< HEAD
   z-index: 3;
-=======
-  z-index: 3
->>>>>>> 52f64f72e88e74a5d1fd6ab67dc3de89912ce267
 }
 
 .group_button image {
@@ -170,11 +160,7 @@ overflow: hidden;
   position: absolute;
   left: 0;
   top: 0;
-<<<<<<< HEAD
   z-index: -1;
-=======
-  z-index: -1
->>>>>>> 52f64f72e88e74a5d1fd6ab67dc3de89912ce267
 }
 
 .group_button .t7 {
@@ -183,15 +169,8 @@ overflow: hidden;
   display: flex;
   justify-content: center;
   align-items: center;
-<<<<<<< HEAD
   font-size: 32rpx;
   font-family: PingFang SC;
   font-weight: 400;
   color: rgba(255, 255, 255, 1);
-=======
-  font-size:32rpx;
-font-family:PingFang SC;
-font-weight:400;
-color:rgba(255,255,255,1);
->>>>>>> 52f64f72e88e74a5d1fd6ab67dc3de89912ce267
 }

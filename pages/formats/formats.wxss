@@ -156,50 +156,9 @@
   margin-bottom: 20rpx;
 }
 
-<<<<<<< HEAD
 .pricr_rules image {
   width: 750rpx;
   height: 140rpx;
-=======
-.pricr_rules .price_rules_top {
-  display: flex;
-  align-items: center;
-}
-
-.pricr_rules image {
-  width: 12rpx;
-  height: 12rpx;
-}
-
-.pricr_rules .price_rules_top {
-  padding: 20rpx 0 0 30rpx;
-}
-
-.pricr_rules .price_rules_top .t6 {
-  font-size: 30rpx;
-  font-family: PingFang SC;
-  font-weight: 400;
-  color: rgba(34, 34, 34, 1);
-}
-
-.pricr_rules .price_rules_bottom {
-  display: flex;
-  align-items: center;
-  justify-content: space-between;
-  padding: 0 30rpx 0 35rpx;
-}
-
-.pricr_rules .price_rules_bottom .t7 {
-  font-size: 28rpx;
-  font-family: PingFang SC;
-  font-weight: 400;
-  color: rgba(51, 51, 51, 1);
-}
-
-.t8 {
-  width: 171rpx;
-  height: 66rpx;
->>>>>>> 52f64f72e88e74a5d1fd6ab67dc3de89912ce267
 }
 
 /* ========== */
@@ -271,7 +230,6 @@
   font-weight: bold;
   color: rgba(153, 153, 153, 1);
 }
-<<<<<<< HEAD
 
 .swiper_buttom {
   width: 200rpx;
@@ -280,16 +238,6 @@
 }
 
 .swiper_buttom .t11 {
-=======
-.swiper_buttom{
-  width: 200rpx;
-  display: flex;
-  flex-wrap: wrap;
-
-}
-.swiper_buttom .t11 {
-
->>>>>>> 52f64f72e88e74a5d1fd6ab67dc3de89912ce267
   font-size: 28rpx;
   font-family: PingFang SC;
   font-weight: bold;
@@ -306,7 +254,6 @@
   font-weight: bold;
   color: rgba(153, 153, 153, 1);
 }
-<<<<<<< HEAD
 
 .swiper_buttom .t12 i-count-down {
   display: flex;
@@ -322,22 +269,6 @@
   color: rgba(153, 153, 153, 1);
 }
 
-=======
-.swiper_buttom .t12 i-count-down{
-  display: flex;
-  align-items: center;
-  box-sizing: border-box;
-padding-bottom: 33rpx;
-
-
-}
-.swiper_buttom .t12 i-count-down text{
-  font-size:28rpx;
-font-family:PingFang SC;
-font-weight:bold;
-color:rgba(153,153,153,1);
-}
->>>>>>> 52f64f72e88e74a5d1fd6ab67dc3de89912ce267
 .swiper_botton {
   width: 166rpx;
   height: 66rpx;

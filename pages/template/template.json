@@ -1,13 +1,8 @@
 {
     "component": true,
     "usingComponents": {
-<<<<<<< HEAD
-      "i-tab-bar": "../../components/tab-bar/index",
-      "i-tab-bar-item": "../../components/tab-bar-item/index"
-=======
         "i-tab-bar": "../../components/tab-bar/index",
         "i-tab-bar-item": "../../components/tab-bar-item/index"
->>>>>>> 52f64f72e88e74a5d1fd6ab67dc3de89912ce267
     },
 
     "navigationBarBackgroundColor": "#ffffff",
@@ -16,9 +11,5 @@
     "backgroundColor": "#eeeeee",
     "backgroundTextStyle": "light",
     "enablePullDownRefresh": false
-<<<<<<< HEAD
- 
-=======
 
->>>>>>> 52f64f72e88e74a5d1fd6ab67dc3de89912ce267
 }

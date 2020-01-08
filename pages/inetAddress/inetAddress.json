@@ -1,15 +1,7 @@
 {
-<<<<<<< HEAD
-  "usingComponents": {
-    "i-radio-group": "../../components/radio-group/index",
-    "i-radio": "../../components/radio/index"
-  },
-  "navigationBarTitleText": "新增地址"
-=======
     "usingComponents": {
         "i-radio-group": "../../components/radio-group/index",
         "i-radio": "../../components/radio/index"
     },
     "navigationBarTitleText": "新增地址"
->>>>>>> 52f64f72e88e74a5d1fd6ab67dc3de89912ce267
 }

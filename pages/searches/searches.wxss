@@ -156,10 +156,7 @@ width: 160rpx;
   width: 100%;
   padding: 0 0 82rpx 0;
   display: flex;
-<<<<<<< HEAD
   justify-content: space-between;
-=======
->>>>>>> 52f64f72e88e74a5d1fd6ab67dc3de89912ce267
   flex-wrap: wrap;
 }
 .checktbs .tabs  .color{

@@ -1,126 +1,38 @@
 {
-<<<<<<< HEAD
-  "pages": [
-    "pages/login/login",
-    "pages/report/report",
-    "pages/consistent/consistent",
-    "pages/fill/fill",
-    "pages/index/index",
-    "pages/details/details",
-    "pages/POINTS_AMT/POINTS_AMT",
-    "pages/commodity/commodity",
-    "pages/particulars/particulars",
-    "pages/reporting/reporting",
-    "pages/indent/indent",
-    "pages/probation/probation",
-    "pages/record/record",
-    "pages/credits/credits",
-    "pages/credits_copy/credits_copy",
-    "pages/formats/formats",
-    "pages/group/group",
-    "pages/myEmms/myEmms",
-    "pages/order/order",
-    "pages/cart/cart",
-    "pages/failure/failure",
-    "pages/searches/searches",
-    "pages/find/find",
-    "pages/search/search",
-    "pages/user/user",
-    "pages/inetAddress_copy/inetAddress_copy",
-    "pages/Coupons/Coupons",
-    "pages/Collection/Collection",
-    "pages/Spell_group_order/Spell_group_order",
-    "pages/view/view",
-    "pages/new_product/new_product",
-    "pages/selling_list/selling_list",
-    "pages/detailstable/detailstable",
-    "pages/between/between",
-    "pages/refunded/refunded",
-    "pages/entry/entry",
-    "pages/refundDate/refundDate",
-    "pages/returning/returning",
-    "pages/sales/sales",
-    "pages/history/history",
-    "pages/service/service",
-    "pages/shipping/shipping",
-    "pages/consk_box/consk_box",
-    "pages/time_to_buy/time_to_buy",
-    "pages/delivery/delivery",
-    "pages/thename/thename",
-    "pages/inetAddress/inetAddress",
-    "pages/view1/view1",
-    "pages/scango/scango",
-    "pages/mynote/mynote",
-    "pages/customer/customer",
-    "pages/addLogistics/addLogistics",
-    "pages/Review/Review",
-    "pages/logistics/logistics",
-    "pages/UserRelated/UserRelated",
-    "pages/finetuxedos/finetuxedos",
-    "pages/friends/friends",
-    "pages/comment/comment",
-    "pages/Spell/Spell"
-  ],
-  "window": {
-    "backgroundTextStyle": "light",
-    "navigationBarBackgroundColor": "#fff",
-    "navigationBarTitleText": "WeChat",
-    "navigationBarTextStyle": "black"
-  },
-  "tabBar": {
-    "color": "#666",
-    "selectedColor": "#ff2d4a",
-    "list": [
-      {
-        "pagePath": "pages/index/index",
-        "text": "首页",
-        "iconPath": "static/imgs/矢量智能对象.png",
-        "selectedIconPath": "static/imgs/矢量智能对象(1).png"
-      },
-      {
-        "pagePath": "pages/find/find",
-        "text": "发现",
-        "iconPath": "static/imgs/组 21.png",
-        "selectedIconPath": "static/imgs/组 21(1).png"
-      },
-      {
-        "pagePath": "pages/cart/cart",
-        "text": "购物车",
-        "iconPath": "static/imgs/购物车.png",
-        "selectedIconPath": "static/imgs/购物车(1).png"
-      },
-      {
-        "pagePath": "pages/user/user",
-        "text": "个人中心",
-        "iconPath": "static/imgs/个人中心.png",
-        "selectedIconPath": "static/imgs/个人中心(1).png"
-      }
-    ]
-  },
-  "style": "v2",
-  "sitemapLocation": "sitemap.json"
-=======
     "pages": [
+        "pages/login/login",
+        "pages/report/report",
+        "pages/consistent/consistent",
+        "pages/fill/fill",
         "pages/index/index",
+        "pages/details/details",
+        "pages/POINTS_AMT/POINTS_AMT",
+        "pages/commodity/commodity",
+        "pages/particulars/particulars",
+        "pages/reporting/reporting",
+        "pages/indent/indent",
+        "pages/probation/probation",
+        "pages/record/record",
+        "pages/credits/credits",
+        "pages/credits_copy/credits_copy",
+        "pages/formats/formats",
+        "pages/group/group",
+        "pages/myEmms/myEmms",
+        "pages/order/order",
+        "pages/cart/cart",
+        "pages/failure/failure",
         "pages/searches/searches",
         "pages/find/find",
         "pages/search/search",
         "pages/user/user",
         "pages/inetAddress_copy/inetAddress_copy",
         "pages/Coupons/Coupons",
-        "pages/cart/cart",
-        "pages/indent/indent",
-        "pages/login/login",
-        "pages/order/order",
         "pages/Collection/Collection",
         "pages/Spell_group_order/Spell_group_order",
         "pages/view/view",
         "pages/new_product/new_product",
         "pages/selling_list/selling_list",
         "pages/detailstable/detailstable",
-        "pages/consistent/consistent",
-        "pages/reporting/reporting",
-        "pages/commodity/commodity",
         "pages/between/between",
         "pages/refunded/refunded",
         "pages/entry/entry",
@@ -131,23 +43,13 @@
         "pages/service/service",
         "pages/shipping/shipping",
         "pages/consk_box/consk_box",
-        "pages/credits/credits",
-        "pages/credits_copy/credits_copy",
         "pages/time_to_buy/time_to_buy",
-        "pages/POINTS_AMT/POINTS_AMT",
         "pages/delivery/delivery",
-        "pages/details/details",
-        "pages/failure/failure",
-        "pages/probation/probation",
         "pages/thename/thename",
-        "pages/fill/fill",
-        "pages/particulars/particulars",
-        "pages/report/report",
         "pages/inetAddress/inetAddress",
         "pages/view1/view1",
         "pages/scango/scango",
         "pages/mynote/mynote",
-        "pages/myEmms/myEmms",
         "pages/customer/customer",
         "pages/addLogistics/addLogistics",
         "pages/Review/Review",
@@ -170,30 +72,29 @@
         "list": [{
                 "pagePath": "pages/index/index",
                 "text": "首页",
-                "iconPath": "static/imgs/start.png",
-                "selectedIconPath": "static/imgs/矢量智能对象.png"
+                "iconPath": "static/imgs/矢量智能对象.png",
+                "selectedIconPath": "static/imgs/矢量智能对象(1).png"
             },
             {
                 "pagePath": "pages/find/find",
                 "text": "发现",
-                "iconPath": "static/imgs/find21.png",
-                "selectedIconPath": "static/imgs/组 21@2x.png"
+                "iconPath": "static/imgs/组 21.png",
+                "selectedIconPath": "static/imgs/组 21(1).png"
             },
             {
                 "pagePath": "pages/cart/cart",
                 "text": "购物车",
                 "iconPath": "static/imgs/购物车.png",
-                "selectedIconPath": "static/imgs/购物车2.png"
+                "selectedIconPath": "static/imgs/购物车(1).png"
             },
             {
                 "pagePath": "pages/user/user",
                 "text": "个人中心",
                 "iconPath": "static/imgs/个人中心.png",
-                "selectedIconPath": "static/imgs/个人中心@2x（1）.png"
+                "selectedIconPath": "static/imgs/个人中心(1).png"
             }
         ]
     },
     "style": "v2",
     "sitemapLocation": "sitemap.json"
->>>>>>> 52f64f72e88e74a5d1fd6ab67dc3de89912ce267
 }

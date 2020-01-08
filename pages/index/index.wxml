@@ -34,11 +34,7 @@
       <view class="text">扫码购</view>
     </view>
 
-<<<<<<< HEAD
     <view class="navigator" bindtap="handurl1" data-url="/pages/consistent/consistent">
-=======
-    <view class="navigator" bindtap="handurl1" data-url="/pages/free/free">
->>>>>>> 52f64f72e88e74a5d1fd6ab67dc3de89912ce267
       <image mode="widthFix" src="../../static/imgs/试用.png"></image>
       <view class="text">免费试用</view>
     </view>
@@ -48,11 +44,7 @@
       <view class="text">超值拼团</view>
     </view>
 
-<<<<<<< HEAD
     <view class="navigator" bindtap="handurl1" data-url="/pages/credits/credits">
-=======
-    <view class="navigator" bindtap="handurl1" data-url="/pages/pointsfor/pointsfor">
->>>>>>> 52f64f72e88e74a5d1fd6ab67dc3de89912ce267
       <image mode="widthFix" src="../../static/imgs/积分兑换.png"></image>
       <view class="text">积分兑换</view>
     </view>
@@ -68,16 +60,8 @@
   </view>
   <view class="conts">
     <view class="bgc_color">
-<<<<<<< HEAD
       <!-- 超值拼团 -->
       <view class="bargain_box">
-=======
-
-      <!-- 超值拼团 -->
-      <view class="bargain_box">
-
-
->>>>>>> 52f64f72e88e74a5d1fd6ab67dc3de89912ce267
         <view class="bargain_top">
           <view class="bargain_left">超值拼团</view>
           <view class="bargain_right" bindtap="jump"> 好 友 正 在 拼
@@ -90,13 +74,7 @@
             <block>
               <swiper-item wx:for="{{buyRollList}}" wx:for-item="i" wx:key="*this" wx:for-index="num" wx:if="{{i.arr.length !==0}}">
                 <view class="swiper-item">
-<<<<<<< HEAD
                   <view class="swiper-cont" wx:key="*this" wx:for="{{i.arr}}">
-=======
-
-                  <view class="swiper-cont" wx:key="*this" wx:for="{{i.arr}}">
-
->>>>>>> 52f64f72e88e74a5d1fd6ab67dc3de89912ce267
                     <view class="imgs">
                       <image src="{{item.waresImg}}"> </image>
                       <view class="text">已拼{{item.joinNum}}件</view>
@@ -114,16 +92,10 @@
                       </view>
                     </view>
                   </view>
-<<<<<<< HEAD
-=======
-
-
->>>>>>> 52f64f72e88e74a5d1fd6ab67dc3de89912ce267
                 </view>
               </swiper-item>
             </block>
           </swiper>
-<<<<<<< HEAD
         </view>
       </view>
 
@@ -140,32 +112,6 @@
             </view>
             <!-- 右边 -->
             <view class="bargain_right" bindtap="handTime" data-aa="/pages/time_to_buy/time_to_buy"> 更 多 场 次
-=======
-
-
-        </view>
-      </view>
-
-
-
-      <view class="bgc_color  content">
-
-        <view class="bargain_box">
-          <!-- 限时购 -->
-          <view class="bargain_top">
-
-            <view class="bargain_left">
-              <text>限 时 购</text>
-              <view class="time">
-
-
-                <i-count-down target="{{targetTime}}" countdown-class="targettime" bindcallback="listtime" clear-timer="{{clearTimer}}"></i-count-down>
-
-              </view>
-            </view>
-            <!-- 右边 -->
-            <view class="bargain_right"> 更 多 场 次
->>>>>>> 52f64f72e88e74a5d1fd6ab67dc3de89912ce267
               <image src="../../static/imgs/箭头.png"></image>
             </view>
           </view>
@@ -178,20 +124,10 @@
                 <text><text>￥</text>{{item.mallPrice}}</text>
               </view>
             </view>
-<<<<<<< HEAD
           </view>
         </view>
       </view>
 
-=======
-
-
-
-
-          </view>
-        </view>
-      </view>
->>>>>>> 52f64f72e88e74a5d1fd6ab67dc3de89912ce267
       <view class="hot">
         <view class="hl .p21">
           <view class="tittle" bindtap="jump" data-url="/pages/selling_list/selling_list">
@@ -213,11 +149,7 @@
             <text>什么值得买</text>
           </view>
           <view class="imgs">
-<<<<<<< HEAD
             <view wx:for="{{newselling}}" wx:key="*this" bindtap="goto" data-waresId="{{item.waresId}}">
-=======
-            <view wx:for="{{newselling}}" wx:key="*this"  bindtap="goto" data-waresId="{{item.waresId}}">
->>>>>>> 52f64f72e88e74a5d1fd6ab67dc3de89912ce267
               <image src="{{item.logoUrl}}"></image>
             </view>
           </view>
