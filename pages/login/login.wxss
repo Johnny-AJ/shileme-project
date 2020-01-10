@@ -1,24 +1,78 @@
-/* pages/login/login.wxss */
-
-.Box .Box_imgs {
-  width: 750rpx;
-  text-align: center;
-  padding-top: 255rpx;
+.Box{
+  width: 100%;
+  height: 100%;
 }
-
-.Box .Box_imgs image {
-  width: 181rpx;
-  height: 181rpx;
+page{
+  background: #f5f5f5
 }
+.Box .box-top{
+  height:300rpx;
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-wrap: wrap;
+  box-sizing: border-box;
+  padding-top: 20rpx;
+  padding-bottom: 10rpx;
+  background:rgba(255,255,255,1);
+}
+.Box .box-top image{
+  height: 100rpx;
+  width: 100rpx;
+}
+.Box .box-top view{
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  margin-top: -50rpx;
+  font-size:34rpx;
+font-family:PingFang SC;
+font-weight:500;
+color:rgba(34,34,34,1);
+}
+.Box .box-btm{
+  width: 100%;
+  height: 900rpx;
+  box-sizing: border-box;
+  padding: 0 30rpx;
+}
+.Box .box-btm .text{
+  height: 220rpx;
+  width: 100%;
+  display: flex;
+  align-items: flex-start;
+  flex-wrap: wrap;
+ font-size:34rpx;
+font-family:PingFang SC;
+font-weight:500;
+color:rgba(34,34,34,1);
 
-/* .Box .button {
-  padding-top: 50rpx;
-} */
+}
+.Box .box-btm .text view{
+  width: 100%;
+  font-size:32rpx;
+  font-family:PingFang SC;
+  font-weight:400;
+  color:rgba(34,34,34,1);
+}
+.Box .box-btm .text .t1{
+  margin-top: 60rpx;
 
-.Box .button {
-  font-size: 35rpx;
-  line-height: 35rpx;
-  border-radius: 40rpx;
-  padding-top: 50rpx;
-  color: #fff;
+}
+.Box .box-btm .text .t2{
+  margin-bottom: 40rpx;
+  font-size:28rpx;
+  display: flex;
+  align-items: center;
+color:rgba(153,153,153,1);
+}
+.Box .box-btm .text image{
+width: 28rpx;
+height: 28rpx;
+margin-right: 10rpx;
+}
+.Box .box-btm button{
+  width: 100%;
+  background: #01BE00
 }

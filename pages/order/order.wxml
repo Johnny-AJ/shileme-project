@@ -63,7 +63,7 @@
         </view>
         <view>
           <text>商品总价</text>
-          <text>￥{{data.fullPrice}}</text>
+          <text>￥{{data.totalPrice}}</text>
         </view>
         <view>
           <text>优惠券</text>
@@ -76,7 +76,7 @@
       </view>
       <view class="money  p30">
         <text class="t1">实付款</text>
-        <text class="t2">￥{{data.totalPrice}}</text>
+        <text class="t2">￥{{data.totalPrice-data.discountsPrice-data.fullPrice}}</text>
       </view>
     </view>
 

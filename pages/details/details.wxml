@@ -208,7 +208,7 @@
           <view class="tcont">
             <view class="name">{{list.name}}</view>
             <view class="prcie">￥<text>{{defaultSku.price?defaultSku.price:list.mallPrice}}</text></view>
-             <view class="repertory">库存：<text>{{defaultSku.repertory}}</text></view>
+             <view class="repertory">库存：<text>{{defaultSku.repertory?defaultSku.repertory:list.repertory}}</text></view>
             <view class="text"> <text>已选:</text> {{selectedProp.length>0?selectedProp+'，':selectedProp}} <text hidden="{{selectedProp.length==0}}">{{value1}} 件</text></view>
            
              <view class="text">每人限购{{astrictNum}}件</view>

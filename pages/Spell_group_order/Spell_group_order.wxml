@@ -14,7 +14,7 @@
             <text class="text" wx:if="{{address.isDefault ==0}}">默认</text>
           </view>
           <view class="t1 t3">{{address.province}}{{address.city}}{{address.region}}{{address.address}}</view>
-          <!-- <view class="t2" bindtap="toggleDialog">附近门店自取</view> -->
+          <view class="t2" bindtap="toggleDialog1">附近门店自取</view>
         </view>
         <view class="top_img" bindtap="handurl">
           <image src="http://192.168.2.98:9095//cart/矩形 16.png"></image>
@@ -113,7 +113,7 @@
       提交订单
     </view>
 
-    
+
 
   </view>
   <!-- 主体部分 -->
@@ -159,6 +159,43 @@
           <image src="http://192.168.2.98:9095//imgs/组 7.png"></image>
           <text>功能暂未开放,敬请期待!</text>
         </view> -->
+      </view>
+    </view>
+  </view>
+  <view class="zan-dialog {{ showDialog1 ? 'zan-dialog--show1' : '' }}">
+    <!-- <view class="zan-dialog  zan-dialog--show"> -->
+    <view class="zan-dialog__mask" />
+    <view class="zan-dialog__container">
+      <view class="imgs">
+        <image src="http://192.168.2.98:9095//scango/关闭icon.png" bindtap="toggleDialog1"></image>
+      </view>
+      <view class="stores">
+        <view class="stores-title">代收门店</view>
+        <view class="stores-btm">
+          <view class="sl">
+            <text wx:for="{{stores}}" wx:key="*this" bindtap="changestores" data-index="{{index}}" class="{{index==sindex?'color':''}}">{{item.name}}</text>
+         
+
+
+          </view>
+          <view class="sr">
+            <view class="sr-cont">
+              <view>
+                <text class="ll">1号店</text>
+                <text class="rr">（500米）</text>
+              </view>
+              <view>
+                <text class="ll">电话：</text>
+                <text class="rr">13923812345</text>
+              </view>
+              <view>
+                <text class="ll">地址：</text>
+                <text class="rr">广东省广州市天河区长湴白沙水路 119号</text>
+              </view>
+            </view>
+           
+          </view>
+        </view>
       </view>
     </view>
   </view>

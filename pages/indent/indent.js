@@ -47,6 +47,71 @@ Page({
     hasNext: true,
     loading: false, // 是否显示loading
   },
+
+  /**
+   * 生命周期函数--监听页面加载
+   */
+  onLoad: function(options) {
+    var self =this;
+    if (options.index == 0) {
+      this.setData({
+        current: options.index,
+        orderState: ''
+      },()=>{
+        self.software();
+      })
+      
+    } else {
+      this.setData({
+        current: options.index,
+        orderState: options.orderState
+      }, () => {
+        self.software();
+      })
+     
+    }
+
+  },
+
+  /**
+   * 生命周期函数--监听页面初次渲染完成
+   */
+  onReady: function() {
+
+  },
+
+  /**
+   * 生命周期函数--监听页面显示
+   */
+  onShow: function() {
+
+
+  },
+
+
+
+  /**
+   * 页面上拉触底事件的处理函数
+   */
+  onReachBottom: function() {
+    var self = this;
+    if (!self.data.hasMore) return;
+    self.setData({
+      currPage: self.data.currPage + 1,
+      loading: true
+    }, () => {
+      self.software()
+    })
+
+    console.log(self.data, 'currPage')
+  },
+
+  /**
+   * 用户点击右上角分享
+   */
+  onShareAppMessage: function() {
+
+  },
   goto(e) {
 
     wx.reLaunch({
@@ -79,65 +144,6 @@ Page({
       this.software()
     }
 
-
-  },
-  /**
-   * 生命周期函数--监听页面加载
-   */
-  onLoad: function(options) {
-
-    if (options.index == 0) {
-      this.setData({
-        current: options.index,
-        orderState: ''
-      })
-    } else {
-
-      this.setData({
-        current: options.index,
-        orderState: options.orderState
-      })
-    }
-
-  },
-
-  /**
-   * 生命周期函数--监听页面初次渲染完成
-   */
-  onReady: function() {
-
-  },
-
-  /**
-   * 生命周期函数--监听页面显示
-   */
-  onShow: function() {
-    this.software();
-
-  },
-
-
-
-  /**
-   * 页面上拉触底事件的处理函数
-   */
-  onReachBottom: function() {
-    var self = this;
-    if (!self.data.hasMore) return;
-    self.setData({
-      currPage: self.data.currPage + 1,
-      loading: true
-    }, () => {
-      self.software()
-    })
-
-    console.log(self.data, 'currPage')
-  },
-
-  /**
-   * 用户点击右上角分享
-   */
-  onShareAppMessage: function() {
 
   },
   software() {
@@ -191,7 +197,7 @@ Page({
 
         })
 
-       
+
         cartlist = [...cartlist, ...cartlist1];
 
         self.setData({
@@ -199,7 +205,7 @@ Page({
           cartlist: app.filterArr(cartlist, 'orderId'),
           hasMore: cartlist1.length == 5
         })
-        console.log(self.data.cartlist,'cartlist')
+        console.log(self.data.cartlist, 'cartlist')
       }
 
     })
@@ -226,7 +232,7 @@ Page({
             duration: 1500,
             success() {
 
-  
+
               cartlist.forEach(i => {
                 if (i.orderId == e.currentTarget.dataset.orderid) {
 
@@ -239,7 +245,7 @@ Page({
             }
           })
         }
-        console.log(res, 'updateOrderStateIsSucceed')
+     
       }
 
     })
@@ -251,8 +257,10 @@ Page({
     })
   },
   buys(e) {
-    console.log(e,'e')
-    http.getRequest('/api/order/updateOrderState', { orderNo: e.currentTarget.dataset.orderno }, function (res) {
+
+    http.getRequest('/api/order/updateOrderState', {
+      orderNo: e.currentTarget.dataset.orderno
+    }, function(res) {
       wx.requestPayment({
         timeStamp: res.data.data.timeStamp,
         nonceStr: res.data.data.nonceStr,
@@ -280,7 +288,7 @@ Page({
 
           }
         },
-        fail: function (res) {
+        fail: function(res) {
           // var waresList = JSON.stringify(self.data.dtos);
           // wx.navigateTo({
           //   url: '/pages/view1/view1?discountId=' + self.data.discountId + '&remark=' + self.data.inputValue + '&addressId=' + self.data.address.id + '&waresList=' + waresList + '&allprice=' + self.data.allprice,
@@ -298,11 +306,11 @@ Page({
     })
   },
   comments(e) { //跳转到评论
-    var self =this;
+    var self = this;
     wx.navigateTo({
       url: '/pages/general/general?waresId=' + e.currentTarget.dataset.waresid + '&orderId=' + e.currentTarget.dataset.orderid,
-      success(res){
-        self.software() ;
+      success(res) {
+        self.software();
         var cartlist = self.data.cartlist;
         self.setData({
           cartlist
@@ -311,10 +319,10 @@ Page({
     })
     // wx.navigateTo({
     //   url: '/pages/general /general' 
-     
+
     // })
 
   },
-  
+
 
 })

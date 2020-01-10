@@ -147,7 +147,7 @@ Page({
       wx.showToast({
         title: '最多只能买' + this.data.astrictNum+'件',
         icon: 'loading',
-        duration: 2000
+        duration: 500
       })
     }else{
       this.setData({
@@ -393,8 +393,6 @@ Page({
     if (e) {
       if (e.currentTarget.dataset.propertyid) {
         var dto = JSON.stringify(e.currentTarget.dataset)
-
-
         http.postRequest('/api/shop/cart/add', dto, function(res) {
           if (res.data.code == 0) {
 

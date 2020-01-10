@@ -1,6 +1,8 @@
 {
     "pages": [
         "pages/index/index",
+        "pages/login/login",
+        "pages/Spell_group_order/Spell_group_order",
         "pages/user/user",
         "pages/comment/comment",
         "pages/demo/demo",
@@ -9,9 +11,7 @@
         "pages/UserRelated/UserRelated",
        "pages/Review/Review",
         "pages/Collection/Collection",
-        "pages/login/login",
         "pages/order/order",
-        "pages/Spell_group_order/Spell_group_order",
         "pages/details/details",
         "pages/view/view",
         "pages/null/null",

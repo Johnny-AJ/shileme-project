@@ -8,6 +8,7 @@ Page({
    */
   data: {
     showDialog: false,
+    showDialog1: false,
     waresId: '',
     propertyId: '',
     num: '',
@@ -29,6 +30,15 @@ Page({
     getListByWaresId1: [], //优惠劵列表
     coupon: 0, //优惠金额
     cartok:false,//判断是否是购物车传来的数据
+    stores:[
+      { name:'附近门店'},
+      { name: '白云区' },
+      { name: '番禺区' },
+      { name: '天河区' },
+      { name: '越秀区' },
+      { name: '黄埔区' },
+    ],//门店名数组
+    sindex:0,//门店下标
   },
 
   /**
@@ -179,10 +189,7 @@ Page({
           allprice: res.data.data.allprice
         }, () => {
           self.setData({
-            coupon: app.returnFloat(self.data.coupon)
-          })
-
-          self.setData({
+            coupon: app.returnFloat(self.data.coupon),
             allprice: app.returnFloat(self.data.allprice)
           })
         })
@@ -191,8 +198,11 @@ Page({
         })
         var getListByWaresId = self.data.getListByWaresId;
 
-        console.log(res,'getListByWaresId')
+        console.log(getListByWaresId,'getListByWaresId')
+
+
         if (getListByWaresId) {
+          var getListByWaresId1 = self.data.getListByWaresId1;
           for (var i = 0; i < getListByWaresId.length; i++) {
             getListByWaresId[i].chekok = false;
             getListByWaresId[i].text = '';
@@ -201,11 +211,8 @@ Page({
             } else {
               getListByWaresId[i].text = '指定商品'
             }
-
-            if (self.data.allprice > getListByWaresId[i].startMoney) {
-
+            if (self.data.allprice >= getListByWaresId[i].startMoney) {
               getListByWaresId[i].chekok = true;
-              var getListByWaresId1 = self.data.getListByWaresId1;
               getListByWaresId1.push(getListByWaresId[i])
               self.setData({
                 getListByWaresId1
@@ -213,45 +220,30 @@ Page({
             }
 
           }
+          console.log(self.data.getListByWaresId1,'getListByWaresId1')
         }
-
         self.setData({
-          getListByWaresId
-        })
-
-        self.setData({
-          address: res.data.data.address
-        })
-        console.log(self.data.address,'address')
-        self.setData({
+          getListByWaresId,
+          address: res.data.data.address,
           orderWaresVos: res.data.data.orderWaresVos
         })
-
         var address = self.data.address;
 
         if (address == null) { //判断地址是否存在默认
-
-
           self.setData({
             addressok: false
           })
         } else {
 
           self.setData({
-            addressok: true
-          })
-
-
-          self.setData({
+            addressok: true,
             addressId: self.data.address.id
           })
-
           let addressId = wx.getStorageSync('addressId');
           if (addressId) {
             self.setData({
               addressId
-            })
-        
+            })       
             self.checked(addressId);
           }
         }
@@ -267,10 +259,9 @@ Page({
 
 
   },
-  toggleDialog() { //弹出页关闭
+  toggleDialog() { //优惠劵弹出页关闭
     this.setData({
       showDialog: !this.data.showDialog,
-
     });
   },
 
@@ -304,36 +295,7 @@ Page({
         }
       }
     })
-    // wx.request({
-    //   url: 'http://192.168.2.98:9095/api/address/list',
-    //   method: 'GET',
-    //   header: {
-    //     token: wx.getStorageSync('token')
-    //   },
-    //   success: res => {
-    //     self.setData({
-    //       addAddressList: res.data.data
-    //     });
-    //     var addAddressList = self.data.addAddressList;
-
-    //     if (addAddressList) {
-    //       for (var i = 0; i < addAddressList.length; i++) {
-
-    //         if (addAddressList[i].id == addressId) {
-
-    //           this.setData({
-    //             address: addAddressList[i]
-    //           }, () => {
-    //             wx.setStorageSync('addressId', '')
-    //           })
-
-    //         }
-
-    //       }
-    //     }
-    //   }
-
-    // })
+    
 
   },
 
@@ -343,16 +305,21 @@ Page({
       showDialog: !this.data.showDialog,
     });
   },
+  toggleDialog1() { //优惠劵选择弹出
+
+    this.setData({
+      showDialog1: !this.data.showDialog1,
+    });
+  },
   checkdiscountId(e) { //选中优惠劵
-
     var self = this;
-    var getListByWaresId = self.data.getListByWaresId;
+    var getListByWaresId1 = self.data.getListByWaresId1;
     var allprice = self.data.allprice;
-    for (var i = 0; i < getListByWaresId.length; i++) {
-      if (getListByWaresId[i].startMoney < allprice) {
+    for (var i = 0; i < getListByWaresId1.length; i++) {
+      if (getListByWaresId1[i].startMoney <= allprice) {
 
-        if (e.currentTarget.dataset.discountid == getListByWaresId[i].id) {
-          var aa = app.returnFloat(getListByWaresId[i].money);
+        if (e.currentTarget.dataset.discountid == getListByWaresId1[i].id) {
+          var aa = app.returnFloat(getListByWaresId1[i].money);
 
           self.setData({
             discountId: e.currentTarget.dataset.discountid,
@@ -365,10 +332,15 @@ Page({
 
       }
       self.setData({
-        getListByWaresId
+        getListByWaresId1
       })
     }
   },
+  changestores(e){
+    this.setData({
+      sindex:e.currentTarget.dataset.index
+    })
+  }
 
 
 
