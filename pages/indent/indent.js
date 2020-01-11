@@ -7,7 +7,7 @@ Page({
    * 页面的初始数据
    */
   data: {
-    current: 0,
+    current: 1,
     tbslist: [{
         titie: '全部',
         indes: 0,
@@ -53,7 +53,11 @@ Page({
    */
   onLoad: function(options) {
     var self =this;
+
+    console.log(options,'options')
     if (options.index == 0) {
+
+      console.log(1)
       this.setData({
         current: options.index,
         orderState: ''
@@ -62,6 +66,7 @@ Page({
       })
       
     } else {
+      console.log(2)
       this.setData({
         current: options.index,
         orderState: options.orderState
@@ -72,23 +77,6 @@ Page({
     }
 
   },
-
-  /**
-   * 生命周期函数--监听页面初次渲染完成
-   */
-  onReady: function() {
-
-  },
-
-  /**
-   * 生命周期函数--监听页面显示
-   */
-  onShow: function() {
-
-
-  },
-
-
 
   /**
    * 页面上拉触底事件的处理函数
@@ -102,8 +90,6 @@ Page({
     }, () => {
       self.software()
     })
-
-    console.log(self.data, 'currPage')
   },
 
   /**
@@ -202,10 +188,9 @@ Page({
 
         self.setData({
           loading: false,
-          cartlist: app.filterArr(cartlist, 'orderId'),
+          cartlist: cartlist,
           hasMore: cartlist1.length == 5
         })
-        console.log(self.data.cartlist, 'cartlist')
       }
 
     })

@@ -116,11 +116,12 @@
   width: 100%;
   height: 159rpx;
   display: flex;
+  
 }
 
 .allorders .odercont .cont {
   width: 150rpx;
-  height: 100%;
+  height: 159rpx;
   display: flex;
   flex-direction: row-reverse;
   justify-content: center;
@@ -128,8 +129,23 @@
   flex-wrap: wrap;
   box-sizing: border-box;
   padding: 28rpx 0 0 0;
+  position: relative;
 }
+/* .allorders .odercont .icons  {
+position: absolute;
+width: 100rpx;
+height: 100rpx;
+left: 50rpx;
+top: 50rpx;
 
+} */
+.allorders .odercont .icon  {
+
+width: 31rpx;
+position: absolute;
+top: 20rpx;
+
+}
 .allorders .odercont .cont  image {
   width: 50rpx;
   height: 40rpx;

@@ -127,7 +127,7 @@
 
   </view>
   
-  <view class="buy" bindtap="buys" data-waresId="{{waresId}}"  data-propertyId="{{defaultSku.skuid}}" data-amount="{{value1}}">立即购买</view>
+  <view class="buy" bindtap="buys" data-waresId="{{waresId}}"  data-propertyId="{{defaultSku.skuid}}" data-amount="{{value1}}" data-storeId="{{storeId}}">立即购买</view>
 
 
   <!-- 领劵弹出层 -->
@@ -171,7 +171,7 @@
 
   <!-- 选择弹出层 -->
   <view class="popup {{ showDialog1 ? 'show1' : '' }}">
-    <!-- <view class="popup show1"> -->
+  
 
     <view class="zan-dialog__mask" bindtap="toggleDialog1" />
     <view class="zan-dialog__container">
@@ -179,13 +179,14 @@
         <view class="trade">
           <view class="imags">
             <image src="{{defaultSku.imgUrl?defaultSku.imgUrl:pic}}"></image>
-
           </view>
           <view class="tcont">
             <view class="name">{{list.name}}</view>
-            <text class="prcie">￥<text>{{defaultSku.price*value1?defaultSku.price*value1:list.mallPrice}}</text></text>
-            <text class="text"> <text>已选:</text> {{selectedProp.length>0?selectedProp+'，':selectedProp}}{{value1}}件</text>
-            <text class="repertory">库存：<text>{{defaultSku.repertory}}</text></text>
+            <view class="prcie">￥<text>{{defaultSku.price?defaultSku.price:list.mallPrice}}</text></view>
+             <view class="repertory">库存：<text>{{defaultSku.repertory?defaultSku.repertory:list.repertory}}</text></view>
+            <view class="text"> <text>已选:</text> {{selectedProp.length>0?selectedProp+'，':selectedProp}} <text hidden="{{selectedProp.length==0}}">{{value1}} 件</text></view>
+           
+             <view class="text">每人限购{{astrictNum}}件</view>
           </view>
         </view>
         <view class="spec ">
@@ -209,12 +210,11 @@
           </view>
 
         </view>
-        <view class="next" bindtap="toggleDialog1">下一步</view>
+        <view class="next" bindtap="buys" data-waresId="{{waresId}}"  data-propertyId="{{defaultSku.skuid}}" data-amount="{{value1}}" data-storeId="{{storeId}}" >下一步</view>
 
       </view>
     </view>
   </view>
-
 
 </view>
 <wxs module="wxs" src="../../wxs/number.wxs" />

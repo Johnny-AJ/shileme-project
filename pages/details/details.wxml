@@ -235,7 +235,7 @@
           </view>
 
         </view>
-        <view class="next" bindtap="toggleDialog1">下一步</view>
+        <view class="next" bindtap="buys" data-waresId="{{waresId}}" data-propertyId="{{defaultSku.skuid}}" data-amount="{{value1}}">下一步</view>
 
       </view>
     </view>

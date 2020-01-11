@@ -64,16 +64,18 @@ Page({
 
         wx.scanCode({
             success: (res) => {
-                var result = res.result.split("=")[1];
 
-                _this.setData({
-                    result: result,
+           
 
-                })
-
-                if (_this.data.result) {
+        
+                var result = res.result;
+              
+              let code = result.match(/slm(\S*)/)[1];
+              let coding = code.split('/')[1]
+              console.log(coding, 'coding')
+              if (coding) {
                     wx.navigateTo({
-                        url: '/pages/scango/scango?waresId=' + _this.data.result
+                      url: '/pages/scango/scango?coding=' + coding
                     })
                 } else {
                     $Toast({

@@ -73,23 +73,23 @@
       <input type="text" placeholder="选填，有什么可以跟卖家说的" bindinput="bindKeyInput"></input>
     </view>
   </view>
-  <view class="coupons">
+  <view class="coupons" >
     <view class="ctop">
-      <text class="lt">活动</text>
+      <text class="lt">活动{{showscango}}</text>
       <text class="rt">无活动</text>
     </view>
-    <view class="ccont">
+    <view class="ccont"  wx:if="{{showscango}}">
       <text class="lt">优惠劵</text>
       <text class="color" bindtap="toggleDialog" wx:if="{{getListByWaresId1.length>0}}">{{getListByWaresId1.length}}张可用</text>
       <text class="color" wx:if="{{getListByWaresId1.length==0}}">无</text>
     </view>
   </view>
   <view class="minute">
-    <view>
+    <view  wx:if="{{showscango}}">
       <text class="ml">折扣</text>
       <text class="mr">-￥0.00</text>
     </view>
-    <view>
+    <view wx:if="{{showscango}}">
       <text class="ml">优惠券</text>
       <text class="mr">-￥{{coupon}}</text>
     </view>
@@ -109,9 +109,10 @@
       <text>￥{{allprice-coupon}}</text>
       <text> 合计： </text>
     </view>
-    <view class="br" bindtap="goto" data-url="/pages/order/order">
+    <view class="br" bindtap="goto"  data-url="/pages/order/order">
       提交订单
     </view>
+  
 
 
 

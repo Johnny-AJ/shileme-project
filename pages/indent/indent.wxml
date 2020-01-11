@@ -26,7 +26,7 @@
           </view>
           <view class="spec">
             <text class="t1">{{item.specification}}</text>
-            <text class="t2"><text>x1</text></text>
+            <text class="t2"><text>x{{item.amount}}</text></text>
           </view>
 
         </view>
@@ -36,7 +36,7 @@
         <view class="number">
           <text class="t1">共{{item.amount}}件</text>
           <text class="t2">实付：</text>
-          <text class="price">￥ <text>{{item.price}}</text></text>
+          <text class="price">￥ <text>{{item.totalPrice}}</text></text>
         </view>
         <view class="way p30">
 

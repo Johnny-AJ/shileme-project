@@ -89,6 +89,9 @@
       <text>订单信息</text>
     </view>
     <view class="time p30">
+    <view class="t1">
+       积分：获得{{data.integral}}点积分 
+      </view>
       <view class="t1">
         订单编号：
         <text>{{data.orderNo}}</text>

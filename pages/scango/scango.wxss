@@ -65,16 +65,7 @@
 .attr_value_disabled {
   color: #ccc;
 }
-.contentTitle{
-  width: 690rpx;
-  padding: 20rpx 0;
-  display: flex;
-  justify-content: center;
-   font-size: 28rpx;
-  font-family: PingFang SC;
-  font-weight: 500;
-  color: rgba(102, 102, 102, 1);
-}
+
 .scgtxt .title {
   width: 100%;
   margin-top: 21rpx;
@@ -141,7 +132,6 @@
 
 .discounts {
   width: 100%;
-
   margin-top: 20rpx;
 }
 
@@ -203,11 +193,10 @@
 
 .comment {
   width: 100%;
-  height: 320rpx;
   box-sizing: border-box;
   padding: 0 0 0 30rpx;
   margin-top: 20rpx;
-  position: relative;
+
   background: #fff;
 }
 
@@ -246,8 +235,8 @@
 }
 
 .comment  .pj {
-  height: 409rpx;
-  position: absolute;
+  height: 250rpx;
+ 
   left: 0rpx;
 }
 
@@ -283,7 +272,7 @@
 }
 
 .comment  .pj  .tbottom  .tblog {
-  width: 3130rpx;
+
   height: 200rpx;
 }
 
@@ -699,13 +688,13 @@
 .popup  .trade .tcont {
   width: 430rpx;
   height: 100%;
-  position: relative;
+ 
 }
 
 .popup  .trade .tcont .name {
   margin-top: 30rpx;
   width: 100%;
-  height: 80rpx;
+  height: 83rpx;
   overflow: hidden;
   text-overflow: ellipsis;
   display: -webkit-box;
@@ -725,10 +714,7 @@
 }
 
 .popup  .trade .tcont .prcie {
-  position: absolute;
-  top: 150rpx;
   font-size: 26rpx;
-  left: 0;
   font-family: PingFang SC;
   font-weight: bold;
   color: rgba(240, 43, 80, 1);
@@ -739,9 +725,7 @@
 }
 
 .popup  .trade .tcont .repertory {
-  position: absolute;
-  top: 196rpx;
-  left: 0;
+ 
   font-size: 26rpx;
   font-family: PingFang SC;
   font-weight: bold;
@@ -862,7 +846,14 @@
   width: 17rpx;
   height: 17rpx;
 }
+.contentTitle{
+  width: 100%;
+  font-size: 25rpx;
+  font-family:PingFang SC;
+  padding: 50rpx 0;
+  text-align: center;
 
+}
 .conts .coupon1 {
   width: 100%;
   height: 700rpx;

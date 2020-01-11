@@ -262,42 +262,16 @@ Page({
         var getListByWaresId = self.data.getListByWaresId;
 
         self.setData({
-          getListByWaresId
-        })
-        self.setData({
+          getListByWaresId,
           getListByWaresId1: getListByWaresId.slice(0, 2)
         })
+       
       })
-        // wx.request({
-        //     url: 'http://192.168.2.98:9095/api/discount/data/getListByWaresIds',
-        //     header: {
-        //         token: wx.getStorageSync('token')
-        //     },
-        //     data: {
-
-        //     },
-        //     success: function(res) {
-
-        //         self.setData({
-        //             getListByWaresId: res.data.data
-        //         })
-        //         var getListByWaresId = self.data.getListByWaresId;
-
-        //         self.setData({
-        //             getListByWaresId
-        //         })
-        //         self.setData({
-        //             getListByWaresId1: getListByWaresId.slice(0, 2)
-        //         })
-
-        //         // }
-        //     }
-        // })
+       
     },
 
     getList() { //购物车列表
         var self = this;
-
       http.getRequest('/api/shop/cart/getList',{},function(res){
         let slideProductList = res.data.data.list
         for (var i = 0; i < slideProductList.length; i++) {
@@ -308,32 +282,7 @@ Page({
           chooseGoods: slideProductList
         })
       })
-        // wx: wx.request({
-        //     url: 'http://192.168.2.98:9095/api/shop/cart/getList',
-        //     data: {
-
-        //     },
-        //     header: {
-        //         token: wx.getStorageSync('token')
-        //     },
-        //     method: 'GET',
-        //     success: function(res) {
-        //         console.log(res,'cartlist')
-        //         let slideProductList = res.data.data.list
-        //         for (var i = 0; i < slideProductList.length; i++) {
-        //             slideProductList[i].flag = false;
-        //         }
-        //         self.setData({
-        //             slideProductList: slideProductList,
-        //             chooseGoods: slideProductList
-        //         })
-
-        //     },
-        //     fail: function(res) {
-
-        //     }
-
-        // })
+       
 
     },
     carlist() { //获取商品
@@ -353,8 +302,9 @@ Page({
 
         let aa = app.filterArr(cartlist, 'waresId')
         self.setData({
-          loading: false,
+       
           cartlist: aa,
+          loading: false,
           hasMore: res.data.data.list.length == 4,
           hasNext: res.data.data.hasNext
         })

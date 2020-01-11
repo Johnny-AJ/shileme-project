@@ -1,3 +1,4 @@
+let http = require('../../utils/http.js')
 Page({
 
   /**
@@ -5,7 +6,7 @@ Page({
    */
   data: {
     seachtext: '', //传过来的数据
-    pageSize: 4,
+   
     currPage: 1,
     seach: [],
     type: '',
@@ -25,7 +26,10 @@ Page({
         type: 1
 
       }
-    ]
+    ],
+    hasMore:false,
+    loading: false, // 是否显示loading
+    hasNext: true,
 
 
 
@@ -42,59 +46,70 @@ Page({
     self.search()
   },
 
-  /**
-   * 生命周期函数--监听页面初次渲染完成
-   */
-  onReady: function() {
 
-  },
-
-  /**
-   * 生命周期函数--监听页面显示
-   */
-  onShow: function() {
-
-  },
-
-  /**
-   * 页面上拉触底事件的处理函数
-   */
   onReachBottom: function() {
 
-  },
 
-  /**
-   * 用户点击右上角分享
-   */
-  onShareAppMessage: function() {
+    var self = this;
+    if (!self.data.hasMore) return;
+    self.setData({
+      currPage: self.data.currPage + 1,
+      loading: true
+    }, () => {
+      self.search()
+    })
 
   },
   search() { //搜索结果
     var self = this
+    let prams = {
+      type: self.data.type,
+      pageSize: 4,
+      currPage: self.data.currPage,
+      search: self.data.seachtext
+    }
+   
+    http.getRequest('/api/search/wares/searchWares', prams, function(res) {
+    
+        var seach = self.data.seach;
+        var productlist1 = [];
+        productlist1 = res.data.data.list,
+          seach = [...seach, ...productlist1]
+        self.setData({
+          seach: seach,
+          loading: false,
+          hasMore: res.data.data.list.length == 4,
+          hasNext: res.data.data.hasNext
+        })
 
-    wx.request({
-      url: 'http://192.168.2.98:9095/api/search/wares/searchWares',
-      header: {
-        token: wx.getStorageSync('token')
-      },
-      data: {
-        type: self.data.type,
-        pageSize: self.data.pageSize,
-        currPage: self.data.currPage,
-        search: self.data.seachtext
-      },
-      success: function(res) {
-        if (res.data.data.list.length == 0) {
-          self.setData({
-            seach: []
-          })
-        } else {
-          self.setData({
-            seach: res.data.data.list
-          })
-        }
-      }
+
+      
     })
+
+    console.log(self.data.seach,'seach')
+    // wx.request({
+    //   url: 'http://192.168.2.98:9095/api/search/wares/searchWares',
+    //   header: {
+    //     token: wx.getStorageSync('token')
+    //   },
+    //   data: {
+    //     type: self.data.type,
+    //     pageSize: self.data.pageSize,
+    //     currPage: self.data.currPage,
+    //     search: self.data.seachtext
+    //   },
+    //   success: function(res) {
+    //     if (res.data.data.list.length == 0) {
+    //       self.setData({
+    //         seach: []
+    //       })
+    //     } else {
+    //       self.setData({
+    //         seach: res.data.data.list
+    //       })
+    //     }
+    //   }
+    // })
   },
   change(e) { //改变tab页
     console.log(e)
@@ -134,5 +149,20 @@ Page({
     }
 
 
-  }
+  },
+  bindconfirm: function(e) {
+    var that = this;
+    var discountName = e.detail.value['search - input'] ? e.detail.value['search - input'] : e.detail.value;
+    console.log(discountName, 'discountName')
+    if (discountName.trim()) {
+      that.setData({
+        type: '',
+        currPage: 1,
+        seachtext: discountName.trim()
+      }, () => {
+        that.search()
+      })
+
+    }
+  },
 })

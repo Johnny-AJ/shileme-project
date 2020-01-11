@@ -13,8 +13,8 @@
       </view>
     </view>
   </view>
-  <view class="allorders" bindtap="handurl" data-index="0">
-    <view class="oderhead">
+  <view class="allorders">
+    <view class="oderhead" bindtap="handurl" data-index="0">
       <view class="ot">
         <text class="oleft">全部订单</text>
         <image src="http://192.168.2.98:9095//userimags/矩形 34.png"></image>
@@ -22,11 +22,19 @@
       <view class="ob"></view>
     </view>
     <view class="odercont">
+
       <view class="cont" bindtap="handurl" data-index="1" data-orderState="1">
+        <i-badge count="5" overflow-count="10" i-class="icon">
+          <view class="icons"></view>
+        </i-badge>
         <image src="http://192.168.2.98:9095//userimags/待付款.png"></image>
+
         <text>待付款</text>
       </view>
       <view class="cont" bindtap="handurl" data-index="2" data-orderState="2">
+       <i-badge count="123" overflow-count="10" i-class="icon">
+          <view class="icons"></view>
+        </i-badge>
         <image src="http://192.168.2.98:9095//userimags/待发货 (1).png"></image>
         <text>待发货</text>
       </view>
@@ -35,6 +43,9 @@
         <text>待收货</text>
       </view>
       <view class="cont" bindtap="handurl" data-index="4" data-orderState="4">
+        <i-badge count="123" overflow-count="10" i-class="icon">
+          <view class="icons"></view>
+        </i-badge>
         <image src="http://192.168.2.98:9095//userimags/待评价.png"></image>
         <text>待评价</text>
       </view>

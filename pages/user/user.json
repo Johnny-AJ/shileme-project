@@ -1,4 +1,6 @@
 {
-  "usingComponents": {},
+  "usingComponents": {
+    "i-badge": "../../components/badge/index"
+  },
   "navigationBarTitleText": "个人中心"
 }

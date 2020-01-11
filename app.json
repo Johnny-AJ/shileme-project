@@ -1,9 +1,12 @@
 {
     "pages": [
         "pages/index/index",
+        "pages/searches/searches",
+        "pages/service/service",
         "pages/login/login",
-        "pages/Spell_group_order/Spell_group_order",
+        "pages/shipping1/shipping1",
         "pages/user/user",
+        "pages/Spell_group_order/Spell_group_order",
         "pages/comment/comment",
         "pages/demo/demo",
         "pages/indent/indent",
@@ -31,7 +34,6 @@
         "pages/myEmms/myEmms",
         "pages/cart/cart",
         "pages/failure/failure",
-        "pages/searches/searches",
         "pages/find/find",
         "pages/search/search",
         "pages/inetAddress_copy/inetAddress_copy",

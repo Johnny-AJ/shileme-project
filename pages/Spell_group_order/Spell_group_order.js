@@ -25,6 +25,7 @@ Page({
     isdefault: 1,
     addressId: '',
     addAddressList: [],
+    showscango:true,
     getListByWaresId: [], //优惠劵列表
     showDialog: false, //领劵开关
     getListByWaresId1: [], //优惠劵列表
@@ -47,7 +48,7 @@ Page({
 
 
   onLoad: function(options) {
-
+    console.log(options,'999999')
     var self = this;
 
 
@@ -56,6 +57,16 @@ Page({
     })
 
     if (options) {
+      if (options.show){
+        // console.log()
+        self.setData({
+          showscango:false,
+          storeId: options.storeId,
+          amount: options.amount,
+          propertyId: options.propertyId,
+          waresId: options.waresId
+        })
+      }
       if (options.cartdots) {
         var dtos = JSON.parse(options.cartdots);
         console.log(dtos)
@@ -146,6 +157,48 @@ Page({
     })
    
   },
+  scangoto(e) { //提交订单
+    var self = this;
+    let prams = {
+      amount: self.data.amount,
+      storeId: self.data.storeId,
+      propertyId: self.data.propertyId,
+      waresId: self.data.waresId,
+    }
+    console.log(self.data.addressId, 'self.data.addressId')
+    http.postRequest('/api/order/saveScanPlac?time=' + new Date().getTime(), prams, function (res) {
+      // 微信支付
+      wx.requestPayment({
+        timeStamp: res.data.data.timeStamp,
+        nonceStr: res.data.data.nonceStr,
+        package: res.data.data.package,
+        signType: res.data.data.signType,
+        paySign: res.data.data.paySign,
+        success(res) {
+
+          if (res.errMsg.split(":")[1] == "ok") {
+            var allprice = self.data.allprice;
+
+            wx.navigateTo({
+              url: '/pages/view/view?allprice=' + allprice,
+            })
+          } else {
+
+
+
+          }
+        },
+        fail: function (res) {
+          var waresList = JSON.stringify(self.data.dtos);
+          wx.navigateTo({
+            url: '/pages/view1/view1?discountId=' + self.data.discountId + '&remark=' + self.data.inputValue + '&addressId=' + self.data.address.id + '&waresList=' + waresList + '&allprice=' + self.data.allprice,
+          })
+        }
+
+      })
+    })
+
+  },
   /**
    * 页面上拉触底事件的处理函数
    */
@@ -157,7 +210,6 @@ Page({
     var self = this;
     if (self.data.options.dtos) {
       var list = JSON.parse(self.data.options.dtos);
-
       if (list) {
         let dd = [];
         var dtos = dd.concat(list);
@@ -165,26 +217,9 @@ Page({
           dtos: dtos
         })
       }
-    }
-
-   
-    
-      http.postRequest('/api/order/savePlace', { dtos: self.data.dtos},function(res){
-        if (res.data.code == 500) {
-          wx.showToast({
-            title: '库存不足！',
-            icon: 'loading',
-            duration: 2000,
-            success: function (res) {
-              setTimeout(function () {
-                wx.navigateBack({
-                  delta: 1,
-                })
-              }, 2000)
-            }
-          })
-        }
-
+    }  
+    if (self.data.showscango){//判断是扫码购还是普通商品
+      http.postRequest('/api/order/savePlace', { dtos: self.data.dtos }, function (res) {
         self.setData({
           allprice: res.data.data.allprice
         }, () => {
@@ -198,7 +233,7 @@ Page({
         })
         var getListByWaresId = self.data.getListByWaresId;
 
-        console.log(getListByWaresId,'getListByWaresId')
+        console.log(getListByWaresId, 'getListByWaresId')
 
 
         if (getListByWaresId) {
@@ -220,7 +255,7 @@ Page({
             }
 
           }
-          console.log(self.data.getListByWaresId1,'getListByWaresId1')
+          console.log(self.data.getListByWaresId1, 'getListByWaresId1')
         }
         self.setData({
           getListByWaresId,
@@ -243,11 +278,56 @@ Page({
           if (addressId) {
             self.setData({
               addressId
-            })       
+            })
             self.checked(addressId);
           }
         }
       })
+    }else{
+
+      let prams1={
+        amount: self.data.amount,
+        storeId: self.data.storeId,
+        propertyId: self.data.propertyId,
+        waresId: self.data.waresId,
+
+      }
+      http.postRequest('/api/order/saveScanPlace', prams1 , function (res) {
+        self.setData({
+          allprice: res.data.data.allprice
+        }, () => {
+          self.setData({
+            coupon: app.returnFloat(self.data.coupon),
+            allprice: app.returnFloat(self.data.allprice)
+          })
+        })
+        self.setData({
+          address: res.data.data.address,
+          orderWaresVos: res.data.data.orderWaresVos
+        })
+        var address = self.data.address;
+
+        if (address == null) { //判断地址是否存在默认
+          self.setData({
+            addressok: false
+          })
+        } else {
+
+          self.setData({
+            addressok: true,
+            addressId: self.data.address.id
+          })
+          let addressId = wx.getStorageSync('addressId');
+          if (addressId) {
+            self.setData({
+              addressId
+            })
+            self.checked(addressId);
+          }
+        }
+      })
+    } 
+     
     
 
   },

@@ -4,7 +4,8 @@
 <view class="bgc">
 
   <!-- 待寄回/待商家处理 -->
-  <view class="kong_box">
+
+ <view class="kong_box">
     <view class="song">
       <view class="s1">2019-08-07</view>
       <view class="s2">待商家处理</view>
@@ -18,7 +19,7 @@
       <view class="cong">
         <view class="nav_box">
           <view class="c1">保湿急救 网红蓝药丸面膜</view>
-          <view class="c1">￥79</view>
+          <view class="c2">￥79</view>
         </view>
         <view class="nac_box">
           <view class="c2">5片/盒</view>
@@ -28,47 +29,10 @@
     </view>
 
     <view class="song_box">
-      <view class="s1">共1件</view>
-      <view class="s1">实付：</view>
-      <view class="s2">￥79.00</view>
-    </view>
-
-    <view class="qong">
-      <view class="q1">填写快递单</view>
-    </view>
-    <view class="wong">
-      <view class="w1">撤销申请</view>
+      <view class="s1"><text class="t1">共1件</text><text class="t2">实付：</text><text class="t3">￥79.00</text></view>
+      <view class="s2"><text>填写快递单</text><text>撤销申请</text></view>
     </view>
   </view>
 
-  <!-- 退货/申请失败 -->
-  <view class="kong_box1">
-    <view class="song">
-      <view class="s1">2019-08-07</view>
-      <view class="s2">退货/退款 已退款</view>
-    </view>
-
-    <view class="jong">
-      <view class="imgs2">
-        <image src="http://192.168.2.98:9095//group/170.180.png"></image>
-      </view>
-
-      <view class="cong">
-        <view class="nav_box">
-          <view class="c1">保湿急救 网红蓝药丸面膜</view>
-          <view class="c1">￥79</view>
-        </view>
-        <view class="nac_box">
-          <view class="c2">5片/盒</view>
-          <view class="c2">X1</view>
-        </view>
-      </view>
-    </view>
-
-    <view class="song_box">
-      <view class="s1">共1件</view>
-      <view class="s1">实付：</view>
-      <view class="s2">￥79.00</view>
-    </view>
-  </view>
+  
 </view>

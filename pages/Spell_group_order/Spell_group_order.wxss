@@ -314,7 +314,7 @@ page{
 
 .coupons {
   width: 100%;
-  height: 120rpx;
+
   background: #fff;
   margin-top: 20rpx;
 }
@@ -345,7 +345,7 @@ page{
 
 .minute {
   width: 100%;
-  height: 240rpx;
+
   margin-top: 20rpx;
   background: #fff;
   margin-bottom: 20rpx;

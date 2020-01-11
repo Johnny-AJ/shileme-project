@@ -5,7 +5,7 @@
         <view class="search_logo">
           <image mode="widthFix" src="http://192.168.2.98:9095//imgs/搜索.png"></image>
         </view>
-        <input placeholder="{{seachtext}}" bindinput="bindKeyInput" value='{{inputValue}}' data-name="inputValue"  type='text'></input>
+        <input placeholder="{{seachtext}}" bindinput="bindKeyInput" value='{{inputValue}}' onfirm-type="search" bindconfirm="bindconfirm" data-name="inputValue" type='text'></input>
       </view>
       <view class="search_button">
         取消
@@ -23,15 +23,15 @@
 
 
     <view class="imgs" wx:if="{{seach.length==0}}">
-        <image src="http://192.168.2.98:9095//imgs/组 1 (1).png"></image>
-   
-        <text>搜索无结果！</text>
-    
+      <image src="http://192.168.2.98:9095//imgs/组 1 (1).png"></image>
+
+      <text>搜索无结果！</text>
+
     </view>
 
 
 
-    <view class="contents"  wx:if="{{seach.length>0}}">
+    <view class="contents" wx:if="{{seach.length>0}}">
       <view class="cont" wx:for="{{seach}}" wx:key="*this" data-id="{{item.id}}">
         <image src="{{item.logoUrl}}"></image>
         <view class="name pl20">{{item.name}}</view>
@@ -40,10 +40,18 @@
           <text class="nowprice">{{item.mallPrice}}</text>
         </view>
       </view>
-     
+
 
 
     </view>
+      <view class="weui-loadmore" hidden='{{!loading}}'>
+    <view class="weui-loading"></view>
+    <view class="weui-loadmore__tips">正在加载</view>
+  </view>
+  <view class="weui-loadmore weui-loadmore_line" hidden='{{hasNext}}'>
+    <view class="weui-loadmore__tips weui-loadmore__tips_in-line">到底了</view>
+  </view>
 
   </view>
+
 </view>
