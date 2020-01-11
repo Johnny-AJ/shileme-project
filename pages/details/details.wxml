@@ -64,8 +64,8 @@
       <image src="http://192.168.2.98:9095//scango/矩形 16(1).png"></image>
     </view>
 
-    <view class="lj" bindtap="toggleDialog1">
-      <view class="title">选择</view>
+    <view class="lj" bindtap="click3">
+      <view class="title">选择规格</view>
       <view class="xzcont">
         <text wx:if="{{selectedProp.length}}">{{selectedProp.length>0?selectedProp+'，':selectedProp}}{{value1+'件'}}</text>
       </view>
@@ -77,7 +77,7 @@
   <view>{{index222}}</view>
   <view class="comment" hidden="{{getcommentList.length==0}}">
     <view class="title" bindtap="gotcommentList" data-waresId="{{waresId}}" >
-      <view class="conts">宝贝评价（{{totalCount}}） </view>
+      <view class="conts">宝贝评价（{{totalCount}}）</view>
       <view class="more">查看更多
         <image src="http://192.168.2.98:9095//scango/矩形 16 拷贝.png"></image>
       </view>
@@ -147,7 +147,7 @@
 
       </view>
     </view>
-    <view class="cart"  bindtap="addcart"  data-waresId="{{waresId}}" data-propertyId="{{defaultSku.skuid?defaultSku.skuid:''}}" data-amount="{{value1}}" >
+    <view class="cart"  bindtap="addcart" >
       <image src="http://192.168.2.98:9095//imgs/矩形 29 拷贝 2.png" ></image>加入购物车</view>
     <view class="nowbuy" bindtap="buys" data-waresId="{{waresId}}" data-propertyId="{{defaultSku.skuid}}" data-amount="{{value1}}">
       <image src="http://192.168.2.98:9095//imgs/矩形 29 拷贝 3.png"></image>立即购买</view>
@@ -235,7 +235,8 @@
           </view>
 
         </view>
-        <view class="next" bindtap="buys" data-waresId="{{waresId}}" data-propertyId="{{defaultSku.skuid}}" data-amount="{{value1}}">下一步</view>
+        <view class="next" wx:if="{{!showaddcart}}" bindtap="buys" data-waresId="{{waresId}}" data-propertyId="{{defaultSku.skuid}}" data-amount="{{value1}}">下一步</view>
+         <view class="next"  wx:if="{{showaddcart}}"  data-waresId="{{waresId}}" data-propertyId="{{defaultSku.skuid?defaultSku.skuid:''}}" data-amount="{{value1}}" bindtap="confirm">确认</view>
 
       </view>
     </view>

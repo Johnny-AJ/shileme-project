@@ -32,45 +32,42 @@ Page({
     totalCount: 0,
     contentTitle: '',
     isCollect: 1, //是否已收藏;0:Y,1:N
-    astrictNum: 0 ,//限购件数
-    storeId:''
+    astrictNum: 0, //限购件数
+    storeId: '',
+    q: {}
   },
 
   /**
    * 生命周期函数--监听页面加载
    */
   onLoad: function(options) {
-    // console.log(options, "options")
     var self = this;
-
-    http.getRequest('/api/wares/details/findStoreIdWaresId', {
-      coding: options.coding
-    }, function(res) {
+    var result = options.result;
+    
+    if (result){
+    
+      let code = result.match(/slm(\S*)/)[1];
+      let coding = code.split('/')[1];
+     
       self.setData({
-        waresId: res.data.data.waresId,
-        storeId: res.data.data.storeId
-      },()=>{
-        self.get_data()
-
-        //获取商品规格
-        http.getRequest('/api/wares/details/getPropertyList', {
-          waresId: self.data.waresId
-        }, function (res) {
-          self.setData({
-            imgsurl: res.data.data.imgUrl,
-            skuList: res.data.data.skuList
-          })
-          self.groupSkuProp();
-
-        })
-
-        self.getcommentList(); //评论列表
-        self.getListByWaresId() //根据商品查询优惠券列表
+        coding
+      }, () => {
+        self.order()
       })
+    }
+    
+    if (options.q){
+      var result = options.q;
+      if (result) {
+        let code = result.slice(-21);
+        self.setData({
+          coding: code
+        }, () => {
+          self.order()
+        })
+      }
+    }
 
-    })
- 
-  
 
 
 
@@ -97,12 +94,39 @@ Page({
   onUnload: function() {
 
   },
+  order(){
 
+    let self =this;
+    http.getRequest('/api/wares/details/findStoreIdWaresId', {
+      coding: self.data.coding
+    }, function (res) {
+      self.setData({
+        waresId: res.data.data.waresId,
+        storeId: res.data.data.storeId
+      }, () => {
+        self.get_data()
+
+        //获取商品规格
+        http.getRequest('/api/wares/details/getPropertyList', {
+          waresId: self.data.waresId
+        }, function (res) {
+          self.setData({
+            imgsurl: res.data.data.imgUrl,
+            skuList: res.data.data.skuList
+          })
+          self.groupSkuProp();
+
+        })
+
+        self.getcommentList(); //评论列表
+        self.getListByWaresId() //根据商品查询优惠券列表
+      })
+
+    })
+  },
   // 获取商品数据
   get_data() {
     var self = this;
-
-    
     let prams = {
       waresId: self.data.waresId
     }

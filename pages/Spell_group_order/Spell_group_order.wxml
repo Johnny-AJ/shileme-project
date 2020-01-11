@@ -78,18 +78,18 @@
       <text class="lt">活动{{showscango}}</text>
       <text class="rt">无活动</text>
     </view>
-    <view class="ccont"  wx:if="{{showscango}}">
+    <view class="ccont" >
       <text class="lt">优惠劵</text>
       <text class="color" bindtap="toggleDialog" wx:if="{{getListByWaresId1.length>0}}">{{getListByWaresId1.length}}张可用</text>
       <text class="color" wx:if="{{getListByWaresId1.length==0}}">无</text>
     </view>
   </view>
   <view class="minute">
-    <view  wx:if="{{showscango}}">
+    <view >
       <text class="ml">折扣</text>
-      <text class="mr">-￥0.00</text>
+      <text class="mr">-￥{{quota}}</text>
     </view>
-    <view wx:if="{{showscango}}">
+    <view>
       <text class="ml">优惠券</text>
       <text class="mr">-￥{{coupon}}</text>
     </view>

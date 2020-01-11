@@ -68,14 +68,11 @@ Page({
            
 
         
-                var result = res.result;
-              
-              let code = result.match(/slm(\S*)/)[1];
-              let coding = code.split('/')[1]
-              console.log(coding, 'coding')
-              if (coding) {
+              var result = res.result;  
+            
+              if (result) {
                     wx.navigateTo({
-                      url: '/pages/scango/scango?coding=' + coding
+                      url: '/pages/scango/scango?result=' + result
                     })
                 } else {
                     $Toast({

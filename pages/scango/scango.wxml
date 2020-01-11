@@ -52,6 +52,7 @@
 
   </view>
 
+
   <view class="discounts">
 
     <view class="lj" bindtap="toggleDialog" hidden="{{!getListByWaresId}}">

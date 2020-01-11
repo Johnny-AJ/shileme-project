@@ -17,8 +17,8 @@ Page({
     address: {},
     addressok: true,
     orderWaresVos: [],
-    quota: {},
-    allprice: 0,
+    quota: 0.00,
+    allprice: 0.00,
     inputValue: '',
     options: {},
     discountId: '',
@@ -220,8 +220,11 @@ Page({
     }  
     if (self.data.showscango){//判断是扫码购还是普通商品
       http.postRequest('/api/order/savePlace', { dtos: self.data.dtos }, function (res) {
+
+        console.log(res,'savePlace')
         self.setData({
-          allprice: res.data.data.allprice
+          allprice: res.data.data.allprice,
+          allpquotarice: res.data.data.quota
         }, () => {
           self.setData({
             coupon: app.returnFloat(self.data.coupon),
@@ -294,7 +297,8 @@ Page({
       }
       http.postRequest('/api/order/saveScanPlace', prams1 , function (res) {
         self.setData({
-          allprice: res.data.data.allprice
+          allprice: res.data.data.allprice,
+          allpquotarice: res.data.data.quota
         }, () => {
           self.setData({
             coupon: app.returnFloat(self.data.coupon),

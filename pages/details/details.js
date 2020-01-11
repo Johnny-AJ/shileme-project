@@ -32,7 +32,8 @@ Page({
     totalCount: 0,
     contentTitle: '',
     isCollect: 1, //是否已收藏;0:Y,1:N
-    astrictNum:0  //限购件数
+    astrictNum: 0, //限购件数
+    showaddcart: true,
   },
 
   /**
@@ -65,7 +66,7 @@ Page({
 
     self.getcommentList(); //评论列表
     self.getListByWaresId() //根据商品查询优惠券列表
-    
+
   },
 
 
@@ -103,7 +104,7 @@ Page({
     }
     http.getRequest('/api/wares/details/getWaresInfo', prams, function(res) {
 
-      console.log(res,'getWaresInfo')
+      console.log(res, 'getWaresInfo')
       self.setData({
         list: res.data.data,
         price: self.data.mallPrice,
@@ -114,7 +115,7 @@ Page({
       })
 
     })
-   
+
   },
   // 弹出领劵层方法
   toggleDialog() {
@@ -124,7 +125,7 @@ Page({
   },
   // 弹出规格层方法
   toggleDialog1() {
-   
+
     this.setData({
       showDialog1: !this.data.showDialog1
     });
@@ -143,20 +144,20 @@ Page({
     detail
   }) {
 
-    if (detail.value > this.data.astrictNum){
+    if (detail.value > this.data.astrictNum) {
       wx.showToast({
-        title: '最多只能买' + this.data.astrictNum+'件',
+        title: '最多只能买' + this.data.astrictNum + '件',
         icon: 'loading',
         duration: 500
       })
-    }else{
+    } else {
       this.setData({
         value1: detail.value
       })
     }
-    
 
-   
+
+
   },
   //规格选择
   groupSkuProp: function() {
@@ -277,9 +278,13 @@ Page({
         wx.showToast({
           title: '请选择规格！',
           icon: 'loading',
-          duration: 2000,
-          success: function () {
-            self.toggleDialog1()
+          duration: 500,
+          success: function() {
+            self.setData({
+              showaddcart: false
+            }, () => {
+              self.toggleDialog1()
+            })
           }
         })
       } else {
@@ -294,15 +299,14 @@ Page({
   getcommentList() { //评论列表
     var self = this;
 
-    let prams={
+    let prams = {
       waresId: self.data.waresId,
       pageSize: 5,
       currPage: 0
     }
+    http.getRequest('/api/wares/details/getCommentList', prams, function(res) {
 
-    http.getRequest('/api/wares/details/getCommentList',prams,function(res){
-
-      console.log(res,'getCommentList')
+      console.log(res, 'getCommentList')
       self.setData({
         getcommentList: res.data.data.list,
         totalCount: res.data.data.totalCount
@@ -320,7 +324,7 @@ Page({
       url: '/pages/index/index',
     })
   },
-  goto() {
+  goto() { //去购物车
     wx.reLaunch({
       url: '/pages/cart/cart'
     })
@@ -330,8 +334,8 @@ Page({
     let prams = {
       waresId: self.data.waresId,
       storeId: ''
-      }
-    http.getRequest('/api/discount/data/getListByWaresId',prams,function(res){
+    }
+    http.getRequest('/api/discount/data/getListByWaresId', prams, function(res) {
       self.setData({
         getListByWaresId: res.data.data
       })
@@ -361,7 +365,9 @@ Page({
     if (e) {
       var id = e.currentTarget.dataset.id;
 
-      http.getRequest('/api/discount/data/getDiscountById', { id: id }, function (res) {
+      http.getRequest('/api/discount/data/getDiscountById', {
+        id: id
+      }, function(res) {
         if (res.data.code == '0') {
           var getListByWaresId = self.data.getListByWaresId;
           for (var i = 0; i < getListByWaresId.length; i++) {
@@ -384,37 +390,20 @@ Page({
       })
 
     }
-  
+
   },
   addcart(e) { //加入购物车
     var self = this;
 
+    var list = self.data.list;
 
-    if (e) {
-      if (e.currentTarget.dataset.propertyid) {
-        var dto = JSON.stringify(e.currentTarget.dataset)
-        http.postRequest('/api/shop/cart/add', dto, function(res) {
-          if (res.data.code == 0) {
+    self.setData({
+      showaddcart: true
+    }, () => {
+      self.toggleDialog1()
+    })
 
-            wx.showToast({
-              title: '加入购物车成功',
-              icon: 'success',
-              duration: 1000
-            })
-          }
-        })
-      } else {
-        wx.showToast({
-          title: '请选择规格！',
-          icon: 'loading',
-          duration: 2000,
-          success: function () {
-            self.toggleDialog1()
-          }
-        })
-
-      }
-    }
+   
 
 
   },
@@ -428,13 +417,19 @@ Page({
         }, function(res) {
           if (res.data.code == '0') {
 
+            wx.showToast({
+              title: '已加入收藏',
+              icon: 'success',
+              duration: 500,
+            })
+
             self.setData({
               isCollect: 0
             })
 
           }
         })
-    
+
       }
     }
   },
@@ -446,10 +441,80 @@ Page({
     }, function(res) {
 
       if (res.data.code == 0) {
+        wx.showToast({
+          title: '已取消收藏',
+          icon: 'loading',
+          duration: 500,
+        })
         self.setData({
           isCollect: 1
         })
       }
+    })
+  },
+  confirm(e) { //点击规格的确认按钮
+    let self = this;
+
+    if (e) {
+
+      let num = e.currentTarget.dataset.amount;
+      let defaultSku = self.data.defaultSku;
+      if (e.currentTarget.dataset.propertyid) {
+        if (defaultSku.repertory >= num) {
+          var dto = JSON.stringify(e.currentTarget.dataset)
+          http.postRequest('/api/shop/cart/add', dto, function (res) {
+            if (res.data.code == 0) {
+              self.setData({
+                showaddcart: false
+              }, () => {
+                self.toggleDialog1()
+              })
+              wx.showToast({
+                title: '加入购物车成功',
+                icon: 'success',
+                duration: 1000
+              })
+            }
+          })
+        } else {
+          wx.showToast({
+            title: '库存不足！',
+            icon: 'loading',
+            duration: 500,
+          })
+
+        }
+      } else {
+        wx.showToast({
+          title: '请选择规格！',
+          icon: 'loading',
+          duration: 500,
+        })
+
+      }
+
+    }
+    // if (e.currentTarget.dataset.waresid) {
+    //   self.setData({
+    //     showaddcart: false
+    //   }, () => {
+    //     self.toggleDialog1()
+    //   })
+    // } else {
+    //   wx.showToast({
+    //     title: '请选择规格！',
+    //     icon: 'loading',
+    //     duration: 500,
+    //   })
+
+    // }
+  },
+  click3(){
+    let self =this;
+    self.setData({
+      showaddcart: false
+    }, () => {
+      self.toggleDialog1()
     })
   }
 

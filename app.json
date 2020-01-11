@@ -1,9 +1,9 @@
 {
     "pages": [
         "pages/index/index",
+        "pages/login/login",
         "pages/searches/searches",
         "pages/service/service",
-        "pages/login/login",
         "pages/shipping1/shipping1",
         "pages/user/user",
         "pages/Spell_group_order/Spell_group_order",

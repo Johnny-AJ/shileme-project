@@ -154,7 +154,7 @@
 }
 
 .discounts .lj .title {
-  width: 70rpx;
+ 
   display: inline-block;
 }
 
